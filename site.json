@@ -1,0 +1,184 @@
+{
+  "vertical": "bank8",
+  "name": "Bank8",
+  "org": "Bank8-dev",
+  "domain": "bank8.dev",
+  "tagline": "Banking, payments, and open banking on Sentin8 — a core ledger with double-entry postings, ISO 20022 payment orchestration, and FDX v6.5 data exchange.",
+  "accent": "#1B6CA8",
+  "pillarsLead": "Bank8 inherits the Sentin8 security model by construction — every service runs behind the platform's authorization pipeline, tenant isolation, and post-quantum TLS.",
+  "pillars": [
+    {
+      "title": "Double-entry, provable invariants",
+      "summary": "Posting batches are balance-validated per denomination before any write; balances, transactions, postings, audit, and outbox commit atomically."
+    },
+    {
+      "title": "Consent-checked data sharing",
+      "summary": "Every FDX provider call passes the consent middleware (valid, unexpired, scope-covered) plus CSDF data minimization — no exceptions."
+    },
+    {
+      "title": "Idempotent money movement",
+      "summary": "Postings and payment instructions are idempotent per key; retries are safe by construction, terminal states never regress."
+    },
+    {
+      "title": "Detection, never shadow-filing",
+      "summary": "Compliance detects (KYC, screening, monitoring); Reporting is the single filing executor — separation of duty is structural."
+    },
+    {
+      "title": "Tenant isolation on every row",
+      "summary": "Every table FORCE-RLS'd on env_id; customer-held records add holder scoping. The bank8 database is the vertical's own — the platform never queries it."
+    }
+  ],
+  "units": [
+    {
+      "slug": "ledger",
+      "kind": "service",
+      "name": "Bank8:Ledger",
+      "repo": "bank8-ledger",
+      "org": "Bank8-dev",
+      "summary": "The core ledger: accounts, products, double-entry postings, balances, schedules, and the full configuration library — the system of record for money positions.",
+      "scopes": [
+        "bank8:ledger:accounts:read",
+        "bank8:ledger:postings:write"
+      ]
+    },
+    {
+      "slug": "payments",
+      "kind": "service",
+      "name": "Bank8:Payments",
+      "repo": "bank8-payments",
+      "org": "Bank8-dev",
+      "summary": "Payment orchestration: instructions, ISO 20022 scheme flows, cards, mandates, rules — money movement over every rail, never shadow-writing the ledger.",
+      "scopes": [
+        "bank8:payments:instructions:write",
+        "bank8:payments:schemes:read"
+      ]
+    },
+    {
+      "slug": "fdx",
+      "kind": "service",
+      "name": "Bank8:FDX",
+      "repo": "bank8-fdx",
+      "org": "Bank8-dev",
+      "summary": "FDX v6.5 open banking: consent-checked data sharing between institutions, notifications, recipient registry — the consent authority for every provider call.",
+      "scopes": [
+        "bank8:fdx:consents:read",
+        "bank8:fdx:providers:read"
+      ]
+    },
+    {
+      "slug": "reporting",
+      "kind": "service",
+      "name": "Bank8:Reporting",
+      "repo": "bank8-reporting",
+      "org": "Bank8-dev",
+      "summary": "Regulatory reporting: jurisdiction registry, filing calendar, generation/packaging (XBRL/CSV), submission/amendment — the vertical's single filing executor.",
+      "scopes": [
+        "bank8:reporting:filings:write",
+        "bank8:reporting:calendar:read"
+      ]
+    },
+    {
+      "slug": "risk",
+      "kind": "service",
+      "name": "Bank8:Risk",
+      "repo": "bank8-risk",
+      "org": "Bank8-dev",
+      "summary": "Prudential risk: exposures, capital (Basel), liquidity (LCR/NSFR), IFRS 9 ECL, limit monitoring with breach events, stress scenarios.",
+      "scopes": [
+        "bank8:risk:limits:read",
+        "bank8:risk:capital:read"
+      ]
+    },
+    {
+      "slug": "compliance",
+      "kind": "service",
+      "name": "Bank8:Compliance",
+      "repo": "bank8-compliance",
+      "org": "Bank8-dev",
+      "summary": "AML/CTF: KYC/CDD, beneficial ownership, PEP, sanctions screening, transaction monitoring, alert/case lifecycle — detection only, filing via Reporting.",
+      "scopes": [
+        "bank8:compliance:alerts:write",
+        "bank8:compliance:cases:read"
+      ]
+    }
+  ],
+  "apps": [
+    {
+      "slug": "ebank",
+      "kind": "app",
+      "name": "eBank",
+      "repo": "bank8-ebank",
+      "org": "Bank8-dev",
+      "summary": "The retail customer app: account opening, balances, transfers, statements, notifications — and the customer side of FDX consent review and revocation."
+    },
+    {
+      "slug": "efintech",
+      "kind": "app",
+      "name": "eFinTech",
+      "repo": "bank8-efintech",
+      "org": "Bank8-dev",
+      "summary": "The FDX recipient app: a fintech consuming consented bank data through the open-banking flows."
+    },
+    {
+      "slug": "eteller",
+      "kind": "app",
+      "name": "eTeller",
+      "repo": "bank8-eteller",
+      "org": "Bank8-dev",
+      "summary": "The staff terminal: teller operations, customer search, account servicing — behind the same Shield authorization as every app."
+    },
+    {
+      "slug": "admin",
+      "kind": "app",
+      "name": "Bank8 Admin",
+      "repo": "bank8-admin",
+      "org": "Bank8-dev",
+      "summary": "The staff dashboard: instance overview, product activation, FDX provider administration — RFW-rendered in Sentin8:Dash."
+    }
+  ],
+  "sdks": [
+    {
+      "slug": "sdk",
+      "kind": "sdk",
+      "name": "bank8 Rust SDK",
+      "repo": "bank8-sdk",
+      "org": "Bank8-dev",
+      "summary": "The unified namespace facade (bank8::ledger::…, bank8::payments::…) over the contracts crates — the typed integration surface for every bank8 API.",
+      "href": "/docs/sdk/"
+    }
+  ],
+  "showcaseTitle": "Built on the Sentin8 platform",
+  "showcaseLead": "Bank8 contains no platform infrastructure of its own — identity, events, storage, scheduling, and supervision come from the platform services.",
+  "showcase": [
+    {
+      "slug": "sentin8",
+      "name": "Sentin8 — the platform",
+      "chip": "sentin8.dev",
+      "accent": "#D4AF37",
+      "summary": "17 services: identity, events, storage, workflows, scheduling — everything bank8 doesn't rebuild.",
+      "href": "https://sentin8.dev/"
+    },
+    {
+      "slug": "hotel8",
+      "name": "Hotel8",
+      "chip": "hotel8.dev",
+      "accent": "#C08A3E",
+      "summary": "Delegates payments to Bank8:Payments for its property commerce.",
+      "href": "https://hotel8.dev/"
+    },
+    {
+      "slug": "bill8",
+      "name": "Bill8",
+      "chip": "bill8.dev",
+      "accent": "#7B4FBF",
+      "summary": "Delegates payments to Bank8:Payments for billing settlement.",
+      "href": "https://bill8.dev/"
+    }
+  ],
+  "crossrefs": [
+    {
+      "label": "Bank8:Payments is consumed by hotel8 and bill8",
+      "url": "https://bank8.dev/docs/products/payments/"
+    }
+  ]
+}
