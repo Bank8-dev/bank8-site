@@ -2,34 +2,34 @@
 sidebar_position: 3
 ---
 
-# Bank8:Payments — payment orchestration
+# Bank8:Payments - payment orchestration
 
 Money movement over every rail: instructions, ISO 20022 scheme flows,
-cards, mandates, rules — with an embedded async re-drive worker for
+cards, mandates, rules - with an embedded async re-drive worker for
 at-fault settlement recovery. Payments orchestrates; **Bank8:Ledger is
 the only writer of money positions** (never shadow-written here).
 
 ## Use cases
 
 ### Rails & schemes
-- **ISO 20022 flows** — pain/pacs message families per scheme; each
+- **ISO 20022 flows** - pain/pacs message families per scheme; each
   instruction is a durable record with its own lifecycle.
-- **Cards** — authorization capture flows over card networks.
-- **Mandates** — recurring payment mandates with their own state
+- **Cards** - authorization capture flows over card networks.
+- **Mandates** - recurring payment mandates with their own state
   machine (draft → active → suspended → cancelled).
 
 ### Orchestration discipline
-- **Step execution in Sentin8:Flow** — multi-leg scheme flows run as
+- **Step execution in Sentin8:Flow** - multi-leg scheme flows run as
   durable workflows; each step calls back for its data; failures
   retry, compensate, or park.
-- **Idempotency everywhere** — instructions are idempotent per key;
+- **Idempotency everywhere** - instructions are idempotent per key;
   terminal states never regress (guarded updates).
-- **Re-drive worker** — at-fault settlements re-drive automatically
+- **Re-drive worker** - at-fault settlements re-drive automatically
   (embedded SSE consumer over Bus events).
 
 ### Cross-vertical consumers
-- **Hotel8 commerce** — property POS/settlement flows delegate here.
-- **Bill8 settlement** — billing payments settle through the same
+- **Hotel8 commerce** - property POS/settlement flows delegate here.
+- **Bill8 settlement** - billing payments settle through the same
   orchestration.
 
 ## API surface (90 endpoints, selected)
@@ -52,8 +52,8 @@ monitoring) through declarative triggers.
 
 The complete detail lives in this product's sub-pages:
 
-- [Architecture (DDD)](design) — the full document, harvested from the unit's repository at build time.
-- [Business rules (BRD)](business) — the full document, harvested from the unit's repository at build time.
-- [Security](security) — the full document, harvested from the unit's repository at build time.
-- [Overview (repo README)](/docs/reference/payments/) — the maintainer's README in the consolidated reference section.
+- [Architecture (DDD)](design) - the full document, harvested from the unit's repository at build time.
+- [Business rules (BRD)](business) - the full document, harvested from the unit's repository at build time.
+- [Security](security) - the full document, harvested from the unit's repository at build time.
+- [Overview (repo README)](/docs/reference/payments/) - the maintainer's README in the consolidated reference section.
 

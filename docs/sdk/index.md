@@ -5,7 +5,7 @@ sidebar_position: 1
 # bank8 Rust SDK
 
 The unified namespace facade: every bank8 crate imports through
-`bank8::{service}::{…}` — the typed integration surface for every
+`bank8::{service}::{…}` - the typed integration surface for every
 bank8 API, consumed as a pinned git tag.
 
 ```rust
@@ -38,5 +38,5 @@ SDK consumers; clients are typed over the platform's BFF proxy routes.
 
 ## Deep dive
 
-[bank8-sdk reference](/docs/reference/sdk/) — harvested from
+[bank8-sdk reference](/docs/reference/sdk/) - harvested from
 `Bank8-dev/bank8-sdk`.

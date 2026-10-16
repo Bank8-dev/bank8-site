@@ -1,11 +1,11 @@
 ---
-title: "eFinTech — Business rules (BRD)"
+title: "eFinTech - Business rules (BRD)"
 sidebar_label: "Business rules (BRD)"
 mdx:
   format: md
 custom_edit_url: https://github.com/Bank8-dev/bank8-efintech/edit/main/BUSINESS.md
 ---
-# BUSINESS.md: Bank8:eFintech — Business Requirements & Functionality
+# BUSINESS.md: Bank8:eFintech - Business Requirements & Functionality
 
 > Audience: product owners, business analysts, and anyone evaluating what
 > Bank8:eFintech **does for the business**. For architecture read `README.md`;
@@ -16,8 +16,8 @@ custom_edit_url: https://github.com/Bank8-dev/bank8-efintech/edit/main/BUSINESS.
 - Demonstrate the **FDX Data Recipient** side of open banking end to end: a
   fintech app that discovers external providers, obtains customer consent, and
   displays consented financial data.
-- Prove that third-party data retrieval can run entirely on platform rails —
-  hosted consent UI, BFF proxy, consent registry — with zero bespoke provider
+- Prove that third-party data retrieval can run entirely on platform rails -
+  hosted consent UI, BFF proxy, consent registry - with zero bespoke provider
   integrations in the app.
 
 ## 2. Business Scope (What the Service Provides)
@@ -67,14 +67,14 @@ Operations it triggers *upstream*:
 | Consent revoke | Consent-terminated event; linked recipient tokens invalidated |
 | Consent refresh | Re-authorization journey; consent lifecycle restarts |
 
-**Inbound (consumed):** none directly — consent status is tracked by bounded
+**Inbound (consumed):** none directly - consent status is tracked by bounded
 polling of the recipient consents endpoint. No SSE/WebSocket channel is used
 in this app today.
 
 ## 5. Business Rules & Invariants
 
 1. All external data access follows an explicit customer consent; no consent,
-   no data — for any UI path.
+   no data - for any UI path.
 2. The customer's authorization journey always happens in the hosted consent
    UI (identity plane), never in the fintech app.
 3. Consent status is always surfaced truthfully, including failure and

@@ -2,22 +2,22 @@
 sidebar_position: 6
 ---
 
-# Bank8:Risk — prudential risk measurement
+# Bank8:Risk - prudential risk measurement
 
 Exposures, capital (Basel), liquidity (LCR/NSFR), IFRS 9 ECL, limit
-monitoring with breach events, and stress scenarios — measurement and
+monitoring with breach events, and stress scenarios - measurement and
 alerting, with an embedded measure worker consuming ledger/payments
 events.
 
 ## Use cases
 
-- **Limit monitoring** — per-customer/per-product limits; a breach
+- **Limit monitoring** - per-customer/per-product limits; a breach
   emits `bank8:risk:limit:breached` which Compliance consumes into its
   case flow.
-- **Capital & liquidity** — Basel capital ratios and LCR/NSFR series
+- **Capital & liquidity** - Basel capital ratios and LCR/NSFR series
   computed on the posting stream.
-- **IFRS 9 ECL** — expected credit loss staging per portfolio.
-- **Stress scenarios** — what-if measurement over scenario definitions.
+- **IFRS 9 ECL** - expected credit loss staging per portfolio.
+- **Stress scenarios** - what-if measurement over scenario definitions.
 
 ## API surface (selected)
 
@@ -32,8 +32,8 @@ events.
 
 The complete detail lives in this product's sub-pages:
 
-- [Architecture (DDD)](design) — the full document, harvested from the unit's repository at build time.
-- [Business rules (BRD)](business) — the full document, harvested from the unit's repository at build time.
-- [Security](security) — the full document, harvested from the unit's repository at build time.
-- [Overview (repo README)](/docs/reference/risk/) — the maintainer's README in the consolidated reference section.
+- [Architecture (DDD)](design) - the full document, harvested from the unit's repository at build time.
+- [Business rules (BRD)](business) - the full document, harvested from the unit's repository at build time.
+- [Security](security) - the full document, harvested from the unit's repository at build time.
+- [Overview (repo README)](/docs/reference/risk/) - the maintainer's README in the consolidated reference section.
 

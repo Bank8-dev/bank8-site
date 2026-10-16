@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Samples
 
-First calls against a running bank8 deployment — through the BFF
+First calls against a running bank8 deployment - through the BFF
 proxy, from cURL and Dart.
 
 ## 1. Open an account (customer app flow)
@@ -45,7 +45,7 @@ curl -b jar.txt \
   }'
 ```
 
-The batch is balance-validated before any write — an unbalanced batch
+The batch is balance-validated before any write - an unbalanced batch
 is 422, never a compensating entry. Retries with the same
 `idempotency_key` are safe.
 
@@ -63,7 +63,7 @@ curl -b jar.txt \
 ```
 
 Every subsequent provider data call passes the consent middleware and
-CSDF minimization — the customer can revoke at any time in eBank.
+CSDF minimization - the customer can revoke at any time in eBank.
 
 ## 4. From Dart (the eBank pattern)
 
@@ -89,5 +89,5 @@ let balances = ledger_client
     .await?;
 ```
 
-The client rides the platform's certificate-presenting transport — no
+The client rides the platform's certificate-presenting transport - no
 token configuration, no static secret to leak.

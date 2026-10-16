@@ -1,11 +1,11 @@
 ---
-title: "eBank — Architecture (DDD)"
+title: "eBank - Architecture (DDD)"
 sidebar_label: "Architecture (DDD)"
 mdx:
   format: md
 custom_edit_url: https://github.com/Bank8-dev/bank8-ebank/edit/main/DESIGN.md
 ---
-# DESIGN.md: Bank8:eBank — Detailed Design Document
+# DESIGN.md: Bank8:eBank - Detailed Design Document
 
 Overview-level material lives in `README.md`; the business view lives in
 `BUSINESS.md`. This document carries the wire-level app contract (bootstrap,
@@ -48,15 +48,15 @@ graph TD
 ```mermaid
 graph TD
     subgraph eBank process (Flutter web)
-        MAIN[main.dart — bootstrap + theme] --> CTX[EBankContext inherited provider]
+        MAIN[main.dart - bootstrap + theme] --> CTX[EBankContext inherited provider]
         CTX --> SVC[EBankServices six BffApiClients]
-        CTX --> AUTH[AuthProvider — BFF session]
+        CTX --> AUTH[AuthProvider - BFF session]
         CTX --> PROV[ensureLedgerCustomer provisioning]
-        SHELL[ebank_shell — hash router + sidebar] --> PAGES[pages/*]
+        SHELL[ebank_shell - hash router + sidebar] --> PAGES[pages/*]
         SHELL --> SSE[NotificationSseClient /subscribe]
         PAGES --> HOOKS[hooks.dart + fdx_hooks.dart DataState adapters]
         HOOKS --> SVC
-        PAGES --> ADMIN[pages/admin — instance / products / fdx]
+        PAGES --> ADMIN[pages/admin - instance / products / fdx]
         ADMIN --> SVC
     end
 ```
@@ -79,7 +79,7 @@ sequenceDiagram
     F-->>B: 200 JSON
     B-->>H: decoded DTOs
     H-->>P: DataState.data
-    note over F,L: 401/403 on expired session or scope gap — hook surfaces error frame
+    note over F,L: 401/403 on expired session or scope gap - hook surfaces error frame
 ```
 
 Request lifecycle (internal transfer):
@@ -97,7 +97,7 @@ sequenceDiagram
     L-->>F: 201 posting batch
     F-->>S: 201
     S-->>P: receipt state
-    note over P,L: retry with same idempotency_key is safe (201/200 replay) — 4xx surfaces inline
+    note over P,L: retry with same idempotency_key is safe (201/200 replay) - 4xx surfaces inline
 ```
 
 ## 3. Data Model
@@ -159,7 +159,7 @@ flowchart LR
   Sentin8:Auth hosted UI.
 - **Tenant resolution.** Bootstrap reads the runtime context from the app's
   own origin (the TLS proxy injects instance identity); unknown host or
-  context failure is fatal (`BootstrapErrorPage`) — never defaulted.
+  context failure is fatal (`BootstrapErrorPage`) - never defaulted.
 - **Authorization.** Pages render by role: `/admin` is staff-only (staff group
   membership + admin scopes as resolved by the BFF); customers never see
   internal accounts (holder-scoped RLS upstream makes them nonexistent).
@@ -224,7 +224,7 @@ customer-visible; a customer can always see and revoke who shares their data.
 | E2E (UI only, browser) | customer journeys through the real BFF (sign-up → account opening → transfer → statements → consent grant/revoke) | Playwright + Flutter semantics bridge (`e2e-ts/tests/ui/`) |
 
 Not tested here (platform scope): token issuance, consent enforcement
-internals, ledger posting math, RLS isolation — covered by the owning
+internals, ledger posting math, RLS isolation - covered by the owning
 services' test suites.
 
 ```mermaid

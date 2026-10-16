@@ -2,11 +2,11 @@
 sidebar_position: 1
 ---
 
-# Developers — building on bank8
+# Developers - building on bank8
 
 ## The single-repo story
 
-Clone any bank8 service and build — the platform SDK and the bank8 SDK
+Clone any bank8 service and build - the platform SDK and the bank8 SDK
 arrive as pinned git dependencies, and committed `.sqlx` caches mean
 no live database is needed to compile:
 
@@ -27,7 +27,7 @@ vertical enroll      # registers services, scopes, admin UIs, triggers, ident ma
 make start           # captain spawns the fleet (platform + bank8 services)
 ```
 
-No migration code exists — greenfield: schema changes rewrite the init
+No migration code exists - greenfield: schema changes rewrite the init
 SQL and re-run `vertical init`.
 
 ## Make targets (group folder)
@@ -52,10 +52,10 @@ SQL and re-run `vertical init`.
 ## E2E
 
 `bank8-e2e` drives the real user flows through the browser + BFF
-proxy only — sign-up, org/env creation, teller provisioning, customer
-journeys, FDX consent — never direct SQL or backend calls.
+proxy only - sign-up, org/env creation, teller provisioning, customer
+journeys, FDX consent - never direct SQL or backend calls.
 
 ## Deep dive
 
-Every service's full docs live in its [reference section](/docs/reference/) —
+Every service's full docs live in its [reference section](/docs/reference/) -
 harvested from the public repositories at build time.

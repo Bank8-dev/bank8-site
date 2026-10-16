@@ -1,4 +1,4 @@
-# README.md: Bank8:Site — bank8.dev
+# README.md: Bank8:Site - bank8.dev
 
 > The Bank8 public website at [bank8.dev](https://bank8.dev): every
 > product, app, and SDK of the finance vertical, with its banking
@@ -14,7 +14,7 @@ compliance), four apps (ebank, efintech, eteller, admin), and the bank8
 SDK; per-product pages with use cases in detail and API surface tables;
 the vertical's security invariants; developer lifecycle; samples; and a
 **Reference** section harvested at build time from each unit repo's own
-docs trio — the repositories stay the source of truth.
+docs trio - the repositories stay the source of truth.
 
 ## 2. Motivation
 
@@ -22,7 +22,7 @@ Bank8's six services carry 300+ endpoints of maintainer-grade docs, but
 nothing explains to a bank's evaluation team *what the vertical does for
 them*: the double-entry guarantees, consent-checked open banking, the
 detection/filing separation, and the cross-vertical story (hotel8 and
-bill8 both delegate payments here). This site is that layer — with
+bill8 both delegate payments here). This site is that layer - with
 architecture deep-dives harvested so marketing can never drift from
 the code.
 
