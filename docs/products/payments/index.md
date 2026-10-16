@@ -48,7 +48,12 @@ the only writer of money positions** (never shadow-written here).
 regeneration and downstream consumers (risk measurement, compliance
 monitoring) through declarative triggers.
 
-## Deep dive
+## Full documentation
 
-[Payments reference](/docs/reference/payments/) — harvested from
-`Bank8-dev/bank8-payments`.
+The complete detail lives in this product's sub-pages:
+
+- [Architecture (DDD)](design) — the full document, harvested from the unit's repository at build time.
+- [Business rules (BRD)](business) — the full document, harvested from the unit's repository at build time.
+- [Security](security) — the full document, harvested from the unit's repository at build time.
+- [Overview (repo README)](/docs/reference/payments/) — the maintainer's README in the consolidated reference section.
+

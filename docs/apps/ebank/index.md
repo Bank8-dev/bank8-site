@@ -34,7 +34,12 @@ statements, notifications, and the customer side of FDX data sharing
 - Admin surface — instance dashboard, ledger product activation, FDX
   provider administration
 
-## Deep dive
+## Full documentation
 
-[eBank reference](/docs/reference/ebank/) — README, DESIGN, BUSINESS
-harvested from `Bank8-dev/bank8-ebank`.
+The complete detail lives in this product's sub-pages:
+
+- [Architecture (DDD)](design) — the full document, harvested from the unit's repository at build time.
+- [Business rules (BRD)](business) — the full document, harvested from the unit's repository at build time.
+- [Security](security) — the full document, harvested from the unit's repository at build time.
+- [Overview (repo README)](/docs/reference/ebank/) — the maintainer's README in the consolidated reference section.
+

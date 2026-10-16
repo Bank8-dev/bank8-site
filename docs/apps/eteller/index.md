@@ -19,7 +19,12 @@ request, not at token expiry.
 - **Audited actions** — every posting override and servicing action
   lands in the platform's audit journal before the response returns.
 
-## Deep dive
+## Full documentation
 
-[eTeller reference](/docs/reference/eteller/) — harvested from
-`Bank8-dev/bank8-eteller`.
+The complete detail lives in this product's sub-pages:
+
+- [Architecture (DDD)](design) — the full document, harvested from the unit's repository at build time.
+- [Business rules (BRD)](business) — the full document, harvested from the unit's repository at build time.
+- [Security](security) — the full document, harvested from the unit's repository at build time.
+- [Overview (repo README)](/docs/reference/eteller/) — the maintainer's README in the consolidated reference section.
+

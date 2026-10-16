@@ -53,7 +53,12 @@ service owns exclusively.
 - Audit + outbox inserts propagate errors *inside* the posting
   transaction: a posting whose audit/event write fails never commits.
 
-## Deep dive
+## Full documentation
 
-[Ledger reference](/docs/reference/ledger/) — README, DESIGN, and
-BUSINESS harvested from `Bank8-dev/bank8-ledger`.
+The complete detail lives in this product's sub-pages:
+
+- [Architecture (DDD)](design) — the full document, harvested from the unit's repository at build time.
+- [Business rules (BRD)](business) — the full document, harvested from the unit's repository at build time.
+- [Security](security) — the full document, harvested from the unit's repository at build time.
+- [Overview (repo README)](/docs/reference/ledger/) — the maintainer's README in the consolidated reference section.
+

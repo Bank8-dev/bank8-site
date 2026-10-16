@@ -30,7 +30,12 @@ structural, not procedural).
 | Monitoring | rules, alerts | `bank8:compliance:alerts:*` |
 | Cases | case lifecycle | `bank8:compliance:cases:*` |
 
-## Deep dive
+## Full documentation
 
-[Compliance reference](/docs/reference/compliance/) — harvested from
-`Bank8-dev/bank8-compliance`.
+The complete detail lives in this product's sub-pages:
+
+- [Architecture (DDD)](design) — the full document, harvested from the unit's repository at build time.
+- [Business rules (BRD)](business) — the full document, harvested from the unit's repository at build time.
+- [Security](security) — the full document, harvested from the unit's repository at build time.
+- [Overview (repo README)](/docs/reference/compliance/) — the maintainer's README in the consolidated reference section.
+

@@ -2,7 +2,7 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 import {
-  Hero, Section, ProductGrid, AppGrid, SdkGrid, VerticalShowcase, SecurityPillars,
+  Hero, Section, StartHere, ProductGrid, AppGrid, SdkGrid, VerticalShowcase, SecurityPillars,
 } from '@sentin8/site-engine/components';
 import site from '../../site.json';
 
@@ -23,13 +23,32 @@ export default function Home() {
           ]}
         />
 
+        <StartHere items={[
+          {
+            title: 'Product tour',
+            description: 'What Bank8 is and what each product does — the full vertical picture, product by product.',
+            href: '/docs',
+            primary: true,
+          },
+          {
+            title: 'Security',
+            description: 'The banking invariants and the inherited platform guarantees — post-quantum, zero secrets, tenant isolation.',
+            href: '/docs/security',
+          },
+          {
+            title: 'Get started',
+            description: 'Clone one repo and build — developer quickstart, samples, and every API surface.',
+            href: '/docs/developers',
+          },
+        ]} />
+
         {site.units?.length ? (
           <Section
             id="products"
             title={isPlatform ? 'Platform services' : 'Products'}
             lead={isPlatform
-              ? 'Every platform service, one plane each: certificates, identity, domain truth, durable change signals.'
-              : 'Every service this vertical ships, each owning its own data and API surface.'}
+              ? 'Every platform service, one plane each — click any card for its full dossier: use cases, architecture, business rules.'
+              : 'Every service this vertical ships, each owning its own data and API surface — click any card for its full dossier: use cases, architecture, business rules.'}
           >
             <ProductGrid
               items={site.units.map((u) => ({

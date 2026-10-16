@@ -51,7 +51,12 @@ cross-tenant database reads exist anywhere.
   bank's own integration path — the recipient never writes into the
   provider.
 
-## Deep dive
+## Full documentation
 
-[FDX reference](/docs/reference/fdx/) — harvested from
-`Bank8-dev/bank8-fdx`.
+The complete detail lives in this product's sub-pages:
+
+- [Architecture (DDD)](design) — the full document, harvested from the unit's repository at build time.
+- [Business rules (BRD)](business) — the full document, harvested from the unit's repository at build time.
+- [Security](security) — the full document, harvested from the unit's repository at build time.
+- [Overview (repo README)](/docs/reference/fdx/) — the maintainer's README in the consolidated reference section.
+

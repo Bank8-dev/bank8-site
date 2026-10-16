@@ -28,7 +28,12 @@ events.
 | Liquidity | LCR/NSFR | `bank8:risk:liquidity:read` |
 | ECL | staging, measurements | `bank8:risk:ecl:read` |
 
-## Deep dive
+## Full documentation
 
-[Risk reference](/docs/reference/risk/) — harvested from
-`Bank8-dev/bank8-risk`.
+The complete detail lives in this product's sub-pages:
+
+- [Architecture (DDD)](design) — the full document, harvested from the unit's repository at build time.
+- [Business rules (BRD)](business) — the full document, harvested from the unit's repository at build time.
+- [Security](security) — the full document, harvested from the unit's repository at build time.
+- [Overview (repo README)](/docs/reference/risk/) — the maintainer's README in the consolidated reference section.
+

@@ -27,7 +27,12 @@ service that talks to regulators.
 | Calendar | filings due, schedules | `bank8:reporting:calendar:*` |
 | Filings | generate, package, submit, amend | `bank8:reporting:filings:*` |
 
-## Deep dive
+## Full documentation
 
-[Reporting reference](/docs/reference/reporting/) — harvested from
-`Bank8-dev/bank8-reporting`.
+The complete detail lives in this product's sub-pages:
+
+- [Architecture (DDD)](design) — the full document, harvested from the unit's repository at build time.
+- [Business rules (BRD)](business) — the full document, harvested from the unit's repository at build time.
+- [Security](security) — the full document, harvested from the unit's repository at build time.
+- [Overview (repo README)](/docs/reference/reporting/) — the maintainer's README in the consolidated reference section.
+

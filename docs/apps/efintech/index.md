@@ -20,7 +20,12 @@ activation, and consented reads through Bank8:FDX.
 - **Data minimization in practice** — reads surface only what the
   consent covers (CSDF-filtered by the provider).
 
-## Deep dive
+## Full documentation
 
-[eFinTech reference](/docs/reference/efintech/) — harvested from
-`Bank8-dev/bank8-efintech`.
+The complete detail lives in this product's sub-pages:
+
+- [Architecture (DDD)](design) — the full document, harvested from the unit's repository at build time.
+- [Business rules (BRD)](business) — the full document, harvested from the unit's repository at build time.
+- [Security](security) — the full document, harvested from the unit's repository at build time.
+- [Overview (repo README)](/docs/reference/efintech/) — the maintainer's README in the consolidated reference section.
+
