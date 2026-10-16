@@ -3,9 +3,9 @@
   "name": "Bank8",
   "org": "Bank8-dev",
   "domain": "bank8.dev",
-  "tagline": "Banking, payments, and open banking on Sentin8 \u2014 a core ledger with double-entry postings, ISO 20022 payment orchestration, and FDX v6.5 data exchange.",
+  "tagline": "Banking, payments, and open banking on Sentin8 — a core ledger with double-entry postings, ISO 20022 payment orchestration, and FDX v6.5 data exchange.",
   "accent": "#1B6CA8",
-  "pillarsLead": "Bank8 inherits the Sentin8 security model by construction \u2014 every service runs behind the platform's authorization pipeline, tenant isolation, and post-quantum TLS.",
+  "pillarsLead": "Bank8 inherits the Sentin8 security model by construction — every service runs behind the platform's authorization pipeline, tenant isolation, and post-quantum TLS.",
   "pillars": [
     {
       "title": "Double-entry, provable invariants",
@@ -13,7 +13,7 @@
     },
     {
       "title": "Consent-checked data sharing",
-      "summary": "Every FDX provider call passes the consent middleware (valid, unexpired, scope-covered) plus CSDF data minimization \u2014 no exceptions."
+      "summary": "Every FDX provider call passes the consent middleware (valid, unexpired, scope-covered) plus CSDF data minimization — no exceptions."
     },
     {
       "title": "Idempotent money movement",
@@ -21,11 +21,11 @@
     },
     {
       "title": "Detection, never shadow-filing",
-      "summary": "Compliance detects (KYC, screening, monitoring); Reporting is the single filing executor \u2014 separation of duty is structural."
+      "summary": "Compliance detects (KYC, screening, monitoring); Reporting is the single filing executor — separation of duty is structural."
     },
     {
       "title": "Tenant isolation on every row",
-      "summary": "Every table FORCE-RLS'd on env_id; customer-held records add holder scoping. The bank8 database is the vertical's own \u2014 the platform never queries it."
+      "summary": "Every table FORCE-RLS'd on env_id; customer-held records add holder scoping. The bank8 database is the vertical's own — the platform never queries it."
     }
   ],
   "units": [
@@ -35,7 +35,7 @@
       "name": "Bank8:Ledger",
       "repo": "bank8-ledger",
       "org": "Bank8-dev",
-      "summary": "The core ledger: accounts, products, double-entry postings, balances, schedules, and the full configuration library \u2014 the system of record for money positions.",
+      "summary": "The core ledger: accounts, products, double-entry postings, balances, schedules, and the full configuration library — the system of record for money positions.",
       "scopes": [
         "bank8:ledger:accounts:read",
         "bank8:ledger:postings:write"
@@ -47,7 +47,7 @@
       "name": "Bank8:Payments",
       "repo": "bank8-payments",
       "org": "Bank8-dev",
-      "summary": "Payment orchestration: instructions, ISO 20022 scheme flows, cards, mandates, rules \u2014 money movement over every rail, never shadow-writing the ledger.",
+      "summary": "Payment orchestration: instructions, ISO 20022 scheme flows, cards, mandates, rules — money movement over every rail, never shadow-writing the ledger.",
       "scopes": [
         "bank8:payments:instructions:write",
         "bank8:payments:schemes:read"
@@ -59,7 +59,7 @@
       "name": "Bank8:FDX",
       "repo": "bank8-fdx",
       "org": "Bank8-dev",
-      "summary": "FDX v6.5 open banking: consent-checked data sharing between institutions, notifications, recipient registry \u2014 the consent authority for every provider call.",
+      "summary": "FDX v6.5 open banking: consent-checked data sharing between institutions, notifications, recipient registry — the consent authority for every provider call.",
       "scopes": [
         "bank8:fdx:consents:read",
         "bank8:fdx:providers:read"
@@ -71,7 +71,7 @@
       "name": "Bank8:Reporting",
       "repo": "bank8-reporting",
       "org": "Bank8-dev",
-      "summary": "Regulatory reporting: jurisdiction registry, filing calendar, generation/packaging (XBRL/CSV), submission/amendment \u2014 the vertical's single filing executor.",
+      "summary": "Regulatory reporting: jurisdiction registry, filing calendar, generation/packaging (XBRL/CSV), submission/amendment — the vertical's single filing executor.",
       "scopes": [
         "bank8:reporting:filings:write",
         "bank8:reporting:calendar:read"
@@ -95,7 +95,7 @@
       "name": "Bank8:Compliance",
       "repo": "bank8-compliance",
       "org": "Bank8-dev",
-      "summary": "AML/CTF: KYC/CDD, beneficial ownership, PEP, sanctions screening, transaction monitoring, alert/case lifecycle \u2014 detection only, filing via Reporting.",
+      "summary": "AML/CTF: KYC/CDD, beneficial ownership, PEP, sanctions screening, transaction monitoring, alert/case lifecycle — detection only, filing via Reporting.",
       "scopes": [
         "bank8:compliance:alerts:write",
         "bank8:compliance:cases:read"
@@ -109,7 +109,7 @@
       "name": "eBank",
       "repo": "bank8-ebank",
       "org": "Bank8-dev",
-      "summary": "The retail customer app: account opening, balances, transfers, statements, notifications \u2014 and the customer side of FDX consent review and revocation."
+      "summary": "The retail customer app: account opening, balances, transfers, statements, notifications — and the customer side of FDX consent review and revocation."
     },
     {
       "slug": "efintech",
@@ -125,7 +125,7 @@
       "name": "eTeller",
       "repo": "bank8-eteller",
       "org": "Bank8-dev",
-      "summary": "The staff terminal: teller operations, customer search, account servicing \u2014 behind the same Shield authorization as every app."
+      "summary": "The staff terminal: teller operations, customer search, account servicing — behind the same Shield authorization as every app."
     },
     {
       "slug": "admin",
@@ -133,7 +133,7 @@
       "name": "Bank8 Admin",
       "repo": "bank8-admin",
       "org": "Bank8-dev",
-      "summary": "The staff dashboard: instance overview, product activation, FDX provider administration \u2014 RFW-rendered in Sentin8:Dash."
+      "summary": "The staff dashboard: instance overview, product activation, FDX provider administration — RFW-rendered in Sentin8:Dash."
     }
   ],
   "sdks": [
@@ -143,19 +143,19 @@
       "name": "bank8 Rust SDK",
       "repo": "bank8-sdk",
       "org": "Bank8-dev",
-      "summary": "The unified namespace facade (bank8::ledger::\u2026, bank8::payments::\u2026) over the contracts crates \u2014 the typed integration surface for every bank8 API.",
+      "summary": "The unified namespace facade (bank8::ledger::…, bank8::payments::…) over the contracts crates — the typed integration surface for every bank8 API.",
       "href": "/docs/sdk/"
     }
   ],
   "showcaseTitle": "Built on the Sentin8 platform",
-  "showcaseLead": "Bank8 contains no platform infrastructure of its own \u2014 identity, events, storage, scheduling, and supervision come from the platform services.",
+  "showcaseLead": "Bank8 contains no platform infrastructure of its own — identity, events, storage, scheduling, and supervision come from the platform services.",
   "showcase": [
     {
       "slug": "sentin8",
-      "name": "Sentin8 \u2014 the platform",
+      "name": "Sentin8 — the platform",
       "chip": "sentin8.dev",
       "accent": "#D4AF37",
-      "summary": "17 services: identity, events, storage, workflows, scheduling \u2014 everything bank8 doesn't rebuild.",
+      "summary": "17 services: identity, events, storage, workflows, scheduling — everything bank8 doesn't rebuild.",
       "href": "https://sentin8.dev/"
     },
     {
@@ -180,37 +180,5 @@
       "label": "Bank8:Payments is consumed by hotel8 and bill8",
       "url": "https://bank8.dev/docs/products/payments/"
     }
-  ],
-  "eyebrow": "Banking \u00b7 payments \u00b7 open banking on Sentin8",
-  "stats": [
-    {
-      "value": "6",
-      "label": "services"
-    },
-    {
-      "value": "4",
-      "label": "apps"
-    },
-    {
-      "value": "91",
-      "label": "ledger endpoints"
-    },
-    {
-      "value": "1",
-      "label": "identity plane"
-    }
-  ],
-  "code": {
-    "title": "post a transfer",
-    "lang": "bash",
-    "lines": [
-      "$ curl -b jar.txt https://bff.ops.sys.example.com/proxy/ledger/v1/postings",
-      "  -d '{",
-      "    \"batch_id\": \"b-001\",",
-      "    \"idempotency_key\": \"b-001\",",
-      "    \"instructions\": [{ \"type\": \"transfer\", \"amount\": \"10.00\" }]",
-      "  }'",
-      "# balanced before any write \u00b7 idempotent \u00b7 audited"
-    ]
-  }
+  ]
 }
