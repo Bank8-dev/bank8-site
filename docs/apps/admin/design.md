@@ -5,7 +5,7 @@ mdx:
   format: md
 custom_edit_url: https://github.com/Bank8-dev/bank8-admin/edit/main/DESIGN.md
 ---
-# DESIGN.md: Bank8:Admin - Detailed Design Document
+# Bank8:Admin - Detailed Design Document
 
 Overview-level material lives in `README.md`; the business view lives in
 `BUSINESS.md`.

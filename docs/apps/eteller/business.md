@@ -5,7 +5,7 @@ mdx:
   format: md
 custom_edit_url: https://github.com/Bank8-dev/bank8-eteller/edit/main/BUSINESS.md
 ---
-# BUSINESS.md: Bank8:eTeller - Business Requirements & Functionality
+# Bank8:eTeller - Business Requirements & Functionality
 
 > Audience: product owners, business analysts, and anyone evaluating what
 > Bank8:eTeller **does for the business**. For architecture read `README.md`;

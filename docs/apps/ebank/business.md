@@ -5,7 +5,7 @@ mdx:
   format: md
 custom_edit_url: https://github.com/Bank8-dev/bank8-ebank/edit/main/BUSINESS.md
 ---
-# BUSINESS.md: Bank8:eBank - Business Requirements & Functionality
+# Bank8:eBank - Business Requirements & Functionality
 
 > Audience: product owners, business analysts, and anyone evaluating what
 > Bank8:eBank **does for the business**. For architecture read `README.md`;
