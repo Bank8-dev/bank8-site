@@ -17,8 +17,7 @@ Sentin8 Bank8:Ledger - core ledger, posting engine, product library.
 
 ### `POST /v1/account-migrations`
 
-`POST /v1/account-migrations` - submit a bulk account migration batch
-(Data-Loader-style staging; idempotent re-run via `:bulkRetry`).
+`POST /v1/account-migrations` - submit a bulk account migration batch (Data-Loader-style staging; idempotent re-run via `:bulkRetry`).
 
 Gate: `bank8:ledger:accounts:write`
 
@@ -36,7 +35,7 @@ Gate: `bank8:ledger:accounts:write`
 | --- | --- | --- |
 | 200 | Migration batch created and staged | `BulkBatchResponse` |
 | 400 | kind must be 'migration' or 'account_update' | - |
-| 403 | Missing bank8:ledger:accounts:write scope | - |
+| 403 | Missing `bank8:ledger:accounts:write` scope | - |
 
 ### `GET /v1/account-plan-assocs`
 
@@ -49,7 +48,7 @@ Gate: `bank8:ledger:products:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Plan associations | `PlanAssocResponse`[] |
-| 403 | Missing bank8:ledger:products:read scope | - |
+| 403 | Missing `bank8:ledger:products:read` scope | - |
 
 ### `POST /v1/account-plan-assocs`
 
@@ -69,7 +68,7 @@ Gate: `bank8:ledger:products:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Associated | `PlanAssocResponse` |
-| 403 | Missing bank8:ledger:products:write scope | - |
+| 403 | Missing `bank8:ledger:products:write` scope | - |
 
 ### `GET /v1/account-schedule-tags`
 
@@ -82,7 +81,7 @@ Gate: `bank8:ledger:schedules:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Account schedule tags | `AccountScheduleTagResponse`[] |
-| 403 | Missing bank8:ledger:schedules:read scope | - |
+| 403 | Missing `bank8:ledger:schedules:read` scope | - |
 
 ### `POST /v1/account-schedule-tags`
 
@@ -108,7 +107,7 @@ Gate: `bank8:ledger:schedules:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Account schedule tag upserted | `AccountScheduleTagResponse` |
-| 403 | Missing bank8:ledger:schedules:write scope | - |
+| 403 | Missing `bank8:ledger:schedules:write` scope | - |
 
 ### `GET /v1/account-update-batches`
 
@@ -127,13 +126,11 @@ Gate: `bank8:ledger:accounts:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Bulk batches | `BulkBatchResponse`[] |
-| 403 | Missing bank8:ledger:accounts:read scope | - |
+| 403 | Missing `bank8:ledger:accounts:read` scope | - |
 
 ### `POST /v1/account-update-batches/{id}/bulk-retry`
 
-`POST /v1/account-update-batches/{id}/bulk-retry` - retry failed rows in a
-bulk batch (Sentin8 Jobs bulk-operations pattern). Staged rows are applied
-account-by-account; already-applied rows are skipped (idempotent).
+`POST /v1/account-update-batches/&#123;id&#125;/bulk-retry` - retry failed rows in a bulk batch (Sentin8 Jobs bulk-operations pattern). Staged rows are applied account-by-account; already-applied rows are skipped (idempotent).
 
 Gate: `bank8:ledger:accounts:write`
 
@@ -142,7 +139,7 @@ Gate: `bank8:ledger:accounts:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Retry result | - |
-| 403 | Missing bank8:ledger:accounts:write scope | - |
+| 403 | Missing `bank8:ledger:accounts:write` scope | - |
 | 404 | Batch not found | - |
 
 ### `GET /v1/accounts`
@@ -164,25 +161,11 @@ Gate: `bank8:ledger:accounts:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | List of accounts | `AccountResponse`[] |
-| 403 | Missing bank8:ledger:accounts:read scope | - |
+| 403 | Missing `bank8:ledger:accounts:read` scope | - |
 
 ### `POST /v1/accounts`
 
-`POST /v1/accounts` - create account (v1 legacy).
-.5: holder callers can only create accounts owned by
-themselves. Server-side defence-in-depth:
-- If the caller is a holder (§4.3c - no `holder:view-all` scope) and
-they did not supply `customer_id`, we resolve it from their Auth
-user id (via `customers`).
-- If the caller is a holder and they did supply a `customer_id` that
-does not match their own, we return 403 (they cannot create
-accounts for someone else).
-- If no `customers` row exists for the holder, we return 403
-- there is no way to own the account, so creating it would leave an
-orphan (the list/get handlers then hide it forever).
-- Callers with `holder:view-all` (staff / sys / M2M) are
-unrestricted: they can pass any `customer_id` or none (for
-internal accounts).
+`POST /v1/accounts` - create account (v1 legacy). .5: holder callers can only create accounts owned by themselves. Server-side defence-in-depth: - If the caller is a holder (§4.3c - no ``holder:view-all`` scope) and they did not supply `customer_id`, we resolve it from their Auth user id (via `customers`). - If the caller is a holder and they did supply a `customer_id` that does not match their own, we return 403 (they cannot create accounts for someone else). - If no `customers` row exists for the holder, we return 403 - there is no way to own the account, so creating it would leave an orphan (the list/get handlers then hide it forever). - Callers with ``holder:view-all`` (staff / sys / M2M) are unrestricted: they can pass any `customer_id` or none (for internal accounts).
 
 Gate: `bank8:ledger:accounts:write`
 
@@ -203,14 +186,11 @@ Gate: `bank8:ledger:accounts:write`
 | --- | --- | --- |
 | 200 | Account created | `AccountResponse` |
 | 400 | Invalid account type or module validation failed | - |
-| 403 | Missing bank8:ledger:accounts:write scope | - |
+| 403 | Missing `bank8:ledger:accounts:write` scope | - |
 
 ### `GET /v1/accounts/{id}`
 
-`GET /v1/accounts/{id}` - account detail.
-.5: customer-realm callers can only fetch their own accounts
-the service layer verifies the account's `customer_id` matches the
-caller's customer before returning. RLS is the backstop.
+`GET /v1/accounts/&#123;id&#125;` - account detail. .5: customer-realm callers can only fetch their own accounts the service layer verifies the account's `customer_id` matches the caller's customer before returning. RLS is the backstop.
 
 Gate: `bank8:ledger:accounts:read`
 
@@ -225,12 +205,12 @@ Gate: `bank8:ledger:accounts:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Account detail | `AccountResponse` |
-| 403 | Missing bank8:ledger:accounts:read scope | - |
+| 403 | Missing `bank8:ledger:accounts:read` scope | - |
 | 404 | Account not found | - |
 
 ### `PUT /v1/accounts/{id}`
 
-`PUT /v1/accounts/{id}` - update account (status, nickname).
+`PUT /v1/accounts/&#123;id&#125;` - update account (status, nickname).
 
 Gate: `bank8:ledger:accounts:write`
 
@@ -252,11 +232,11 @@ Gate: `bank8:ledger:accounts:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Account updated | `AccountResponse` |
-| 403 | Missing bank8:ledger:accounts:write scope | - |
+| 403 | Missing `bank8:ledger:accounts:write` scope | - |
 
 ### `GET /v1/accounts/{id}/attributes`
 
-`GET /v1/accounts/{id}/attributes` - list account attribute values.
+`GET /v1/accounts/&#123;id&#125;/attributes` - list account attribute values.
 
 Gate: `bank8:ledger:accounts:read`
 
@@ -265,11 +245,11 @@ Gate: `bank8:ledger:accounts:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Account attributes | `AccountAttributeResponse`[] |
-| 403 | Missing bank8:ledger:accounts:read scope | - |
+| 403 | Missing `bank8:ledger:accounts:read` scope | - |
 
 ### `PUT /v1/accounts/{id}/attributes`
 
-`PUT /v1/accounts/{id}/attributes` - upsert account attribute values.
+`PUT /v1/accounts/&#123;id&#125;/attributes` - upsert account attribute values.
 
 Gate: `bank8:ledger:accounts:write`
 
@@ -285,11 +265,11 @@ Gate: `bank8:ledger:accounts:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Attribute upserted | `AccountAttributeResponse` |
-| 403 | Missing bank8:ledger:accounts:write scope | - |
+| 403 | Missing `bank8:ledger:accounts:write` scope | - |
 
 ### `GET /v1/accounts/{id}/balances`
 
-`GET /v1/accounts/{id}/balances` - live balances.
+`GET /v1/accounts/&#123;id&#125;/balances` - live balances.
 
 Gate: `bank8:ledger:balances:read`
 
@@ -304,11 +284,11 @@ Gate: `bank8:ledger:balances:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Account balances | `BalanceResponse`[] |
-| 403 | Missing bank8:ledger:balances:read scope | - |
+| 403 | Missing `bank8:ledger:balances:read` scope | - |
 
 ### `GET /v1/accounts/{id}/devices`
 
-`GET /v1/accounts/{id}/devices` - list attached payment devices.
+`GET /v1/accounts/&#123;id&#125;/devices` - list attached payment devices.
 
 Gate: `bank8:ledger:accounts:read`
 
@@ -317,11 +297,11 @@ Gate: `bank8:ledger:accounts:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Payment devices | `PaymentDeviceResponse`[] |
-| 403 | Missing bank8:ledger:accounts:read scope | - |
+| 403 | Missing `bank8:ledger:accounts:read` scope | - |
 
 ### `POST /v1/accounts/{id}/devices`
 
-`POST /v1/accounts/{id}/devices` - attach a payment device.
+`POST /v1/accounts/&#123;id&#125;/devices` - attach a payment device.
 
 Gate: `bank8:ledger:accounts:write`
 
@@ -337,11 +317,11 @@ Gate: `bank8:ledger:accounts:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Device attached | `PaymentDeviceResponse` |
-| 403 | Missing bank8:ledger:accounts:write scope | - |
+| 403 | Missing `bank8:ledger:accounts:write` scope | - |
 
 ### `GET /v1/accounts/{id}/schedules`
 
-`GET /v1/accounts/{id}/schedules` - list schedules for an account.
+`GET /v1/accounts/&#123;id&#125;/schedules` - list schedules for an account.
 
 Gate: `bank8:ledger:schedules:read`
 
@@ -356,11 +336,11 @@ Gate: `bank8:ledger:schedules:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Schedules for account | `ScheduleResponse`[] |
-| 403 | Missing bank8:ledger:schedules:read scope | - |
+| 403 | Missing `bank8:ledger:schedules:read` scope | - |
 
 ### `GET /v1/accounts/{id}/statements`
 
-`GET /v1/accounts/{id}/statements` - list statements.
+`GET /v1/accounts/&#123;id&#125;/statements` - list statements.
 
 Gate: `bank8:ledger:accounts:read`
 
@@ -375,11 +355,11 @@ Gate: `bank8:ledger:accounts:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Account statements | `StatementResponse`[] |
-| 403 | Missing bank8:ledger:accounts:read scope | - |
+| 403 | Missing `bank8:ledger:accounts:read` scope | - |
 
 ### `GET /v1/accounts/{id}/transactions`
 
-`GET /v1/accounts/{id}/transactions` - transaction history.
+`GET /v1/accounts/&#123;id&#125;/transactions` - transaction history.
 
 Gate: `bank8:ledger:accounts:read`
 
@@ -396,7 +376,7 @@ Gate: `bank8:ledger:accounts:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Transaction history | `TransactionResponse`[] |
-| 403 | Missing bank8:ledger:accounts:read scope | - |
+| 403 | Missing `bank8:ledger:accounts:read` scope | - |
 
 ### `GET /v1/adjustments`
 
@@ -409,13 +389,11 @@ Gate: `bank8:ledger:postings:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Adjustments (newest first) | `AdjustmentResponse`[] |
-| 403 | Missing bank8:ledger:postings:read scope | - |
+| 403 | Missing `bank8:ledger:postings:read` scope | - |
 
 ### `POST /v1/adjustments`
 
-`POST /v1/adjustments` - create an adjustment: recompute the account state
-for backdated postings/parameter changes by re-running the on-schedule
-modules from the effective date and submitting a correction batch.
+`POST /v1/adjustments` - create an adjustment: recompute the account state for backdated postings/parameter changes by re-running the on-schedule modules from the effective date and submitting a correction batch.
 
 Gate: `bank8:ledger:postings:write`
 
@@ -433,12 +411,11 @@ Gate: `bank8:ledger:postings:write`
 | --- | --- | --- |
 | 200 | Adjustment created and applied (correction batch submitted) | `AdjustmentResponse` |
 | 400 | Invalid request | - |
-| 403 | Missing bank8:ledger:postings:write scope | - |
+| 403 | Missing `bank8:ledger:postings:write` scope | - |
 
 ### `POST /v1/adjustments/bulk-retry`
 
-`POST /v1/adjustments:bulkRetry` - retry failed adjustments (Sentin8 Jobs
-pattern).
+`POST /v1/adjustments:bulkRetry` - retry failed adjustments (Sentin8 Jobs pattern).
 
 Gate: `bank8:ledger:postings:write`
 
@@ -447,11 +424,11 @@ Gate: `bank8:ledger:postings:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Retried count | - |
-| 403 | Missing bank8:ledger:postings:write scope | - |
+| 403 | Missing `bank8:ledger:postings:write` scope | - |
 
 ### `GET /v1/adjustments/{id}`
 
-`GET /v1/adjustments/{id}` - adjustment detail.
+`GET /v1/adjustments/&#123;id&#125;` - adjustment detail.
 
 Gate: `bank8:ledger:postings:read`
 
@@ -480,12 +457,11 @@ Gate: `bank8:ledger:audit:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Audit events | `AuditEventResponse`[] |
-| 403 | Missing bank8:ledger:audit:read scope | - |
+| 403 | Missing `bank8:ledger:audit:read` scope | - |
 
 ### `GET /v1/audit/action-logs`
 
-`GET /v1/audit/action-logs` - action-filtered audit view (business Audit
-API `action_logs`).
+`GET /v1/audit/action-logs` - action-filtered audit view (business Audit API `action_logs`).
 
 Gate: `bank8:ledger:audit:read`
 
@@ -500,11 +476,11 @@ Gate: `bank8:ledger:audit:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Action logs | `AuditEventResponse`[] |
-| 403 | Missing bank8:ledger:audit:read scope | - |
+| 403 | Missing `bank8:ledger:audit:read` scope | - |
 
 ### `GET /v1/calendar/bookkeeping-date/{date}`
 
-`GET /v1/calendar/bookkeeping-date/{date}` - bookkeeping date for a day.
+`GET /v1/calendar/bookkeeping-date/&#123;date&#125;` - bookkeeping date for a day.
 
 Gate: `bank8:ledger:schedules:read`
 
@@ -519,11 +495,11 @@ Gate: `bank8:ledger:schedules:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Bookkeeping date | `BookkeepingDateResponse` |
-| 403 | Missing bank8:ledger:schedules:read scope | - |
+| 403 | Missing `bank8:ledger:schedules:read` scope | - |
 
 ### `PUT /v1/calendar/bookkeeping-date/{date}`
 
-`PUT /v1/calendar/bookkeeping-date/{date}` - set the bookkeeping date.
+`PUT /v1/calendar/bookkeeping-date/&#123;date&#125;` - set the bookkeeping date.
 
 Gate: `bank8:ledger:schedules:write`
 
@@ -539,7 +515,7 @@ Gate: `bank8:ledger:schedules:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Bookkeeping date set | `BookkeepingDateResponse` |
-| 403 | Missing bank8:ledger:schedules:write scope | - |
+| 403 | Missing `bank8:ledger:schedules:write` scope | - |
 
 ### `GET /v1/calendars`
 
@@ -552,7 +528,7 @@ Gate: `bank8:ledger:schedules:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | List of calendars | `CalendarResponse`[] |
-| 403 | Missing bank8:ledger:schedules:read scope | - |
+| 403 | Missing `bank8:ledger:schedules:read` scope | - |
 
 ### `POST /v1/calendars`
 
@@ -573,11 +549,11 @@ Gate: `bank8:ledger:schedules:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Calendar created | `CalendarResponse` |
-| 403 | Missing bank8:ledger:schedules:write scope | - |
+| 403 | Missing `bank8:ledger:schedules:write` scope | - |
 
 ### `GET /v1/calendars/{id}/events`
 
-`GET /v1/calendars/{id}/events` - list calendar events.
+`GET /v1/calendars/&#123;id&#125;/events` - list calendar events.
 
 Gate: `bank8:ledger:schedules:read`
 
@@ -586,11 +562,11 @@ Gate: `bank8:ledger:schedules:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Calendar events | `CalendarEventResponse`[] |
-| 403 | Missing bank8:ledger:schedules:read scope | - |
+| 403 | Missing `bank8:ledger:schedules:read` scope | - |
 
 ### `POST /v1/calendars/{id}/events`
 
-`POST /v1/calendars/{id}/events` - add a calendar event.
+`POST /v1/calendars/&#123;id&#125;/events` - add a calendar event.
 
 Gate: `bank8:ledger:schedules:write`
 
@@ -608,11 +584,11 @@ Gate: `bank8:ledger:schedules:write`
 | --- | --- | --- |
 | 200 | Event added | `CalendarEventResponse` |
 | 400 | Invalid event_type | - |
-| 403 | Missing bank8:ledger:schedules:write scope | - |
+| 403 | Missing `bank8:ledger:schedules:write` scope | - |
 
 ### `GET /v1/calendars/{id}/periods`
 
-`GET /v1/calendars/{id}/periods` - list calendar periods.
+`GET /v1/calendars/&#123;id&#125;/periods` - list calendar periods.
 
 Gate: `bank8:ledger:schedules:read`
 
@@ -621,11 +597,11 @@ Gate: `bank8:ledger:schedules:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Calendar periods | `CalendarPeriodResponse`[] |
-| 403 | Missing bank8:ledger:schedules:read scope | - |
+| 403 | Missing `bank8:ledger:schedules:read` scope | - |
 
 ### `POST /v1/calendars/{id}/periods`
 
-`POST /v1/calendars/{id}/periods` - add a calendar period.
+`POST /v1/calendars/&#123;id&#125;/periods` - add a calendar period.
 
 Gate: `bank8:ledger:schedules:write`
 
@@ -643,12 +619,11 @@ Gate: `bank8:ledger:schedules:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Period added | `CalendarPeriodResponse` |
-| 403 | Missing bank8:ledger:schedules:write scope | - |
+| 403 | Missing `bank8:ledger:schedules:write` scope | - |
 
 ### `GET /v1/contract-events`
 
-`GET /v1/contract-events` - contract execution history (audit events with
-target_resource_type='contract'/'func_hook').
+`GET /v1/contract-events` - contract execution history (audit events with target_resource_type='contract'/'func_hook').
 
 Gate: `bank8:ledger:audit:read`
 
@@ -657,12 +632,11 @@ Gate: `bank8:ledger:audit:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Contract execution events | `AuditEventResponse`[] |
-| 403 | Missing bank8:ledger:audit:read scope | - |
+| 403 | Missing `bank8:ledger:audit:read` scope | - |
 
 ### `GET /v1/contract-modules`
 
-`GET /v1/contract-modules` - contract module catalog (Func modules
-registered per product; sourced from the products' contract_modules field).
+`GET /v1/contract-modules` - contract module catalog (Func modules registered per product; sourced from the products' contract_modules field).
 
 Gate: `bank8:ledger:products:read`
 
@@ -671,14 +645,11 @@ Gate: `bank8:ledger:products:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Contract module catalog | `ContractModuleResponse`[] |
-| 403 | Missing bank8:ledger:products:read scope | - |
+| 403 | Missing `bank8:ledger:products:read` scope | - |
 
 ### `POST /v1/contracts/simulate`
 
-`POST /v1/contracts:simulate` - execute a module hook against synthetic
-account state . Calls Sentin8:Func `POST /v1/modules/{id}/execute`
-with a mock host-function context; **no persistence occurs** - the raw
-hook result is returned for preview/dry-run use.
+`POST /v1/`contracts:simulate`` - execute a module hook against synthetic account state . Calls Sentin8:Func `POST /v1/modules/&#123;id&#125;/execute` with a mock host-function context; **no persistence occurs** - the raw hook result is returned for preview/dry-run use.
 
 Gate: `bank8:ledger:postings:write`
 
@@ -697,15 +668,12 @@ Gate: `bank8:ledger:postings:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Simulation result (raw Func hook output) | - |
-| 403 | Missing bank8:ledger:postings:write scope | - |
+| 403 | Missing `bank8:ledger:postings:write` scope | - |
 | 503 | Sentin8:Func not configured | - |
 
 ### `GET /v1/customers`
 
-`GET /v1/customers` - list/search customers.
-Optional `?search=<text>` filters by display_name or email (case-insensitive
-substring match). Without a search term, returns all customers in the
-caller's org/env (subject to RLS).
+`GET /v1/customers` - list/search customers. Optional `?search=<text>` filters by display_name or email (case-insensitive substring match). Without a search term, returns all customers in the caller's org/env (subject to RLS).
 
 Gate: `bank8:ledger:accounts:read`
 
@@ -721,14 +689,11 @@ Gate: `bank8:ledger:accounts:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | List of customers | `CustomerResponse`[] |
-| 403 | Missing bank8:ledger:accounts:read scope | - |
+| 403 | Missing `bank8:ledger:accounts:read` scope | - |
 
 ### `POST /v1/customers`
 
-`POST /v1/customers` - create a customer.
-If the caller is a user token, the `sentin8_auth_user_id` is stamped
-from their token claims so that holder-scoped RLS and
-`resolve_caller_customer_id` can find the row.
+`POST /v1/customers` - create a customer. If the caller is a user token, the `sentin8_auth_user_id` is stamped from their token claims so that holder-scoped RLS and `resolve_caller_customer_id` can find the row.
 
 Gate: `bank8:ledger:customers:write`
 
@@ -745,12 +710,12 @@ Gate: `bank8:ledger:customers:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Customer created | `CustomerResponse` |
-| 403 | Missing bank8:ledger:customers:write scope | - |
+| 403 | Missing `bank8:ledger:customers:write` scope | - |
 | 409 | Customer already exists | - |
 
 ### `GET /v1/customers/{id}`
 
-`GET /v1/customers/{id}` - customer detail.
+`GET /v1/customers/&#123;id&#125;` - customer detail.
 
 Gate: `bank8:ledger:accounts:read`
 
@@ -765,7 +730,7 @@ Gate: `bank8:ledger:accounts:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Customer detail | `CustomerResponse` |
-| 403 | Missing bank8:ledger:accounts:read scope | - |
+| 403 | Missing `bank8:ledger:accounts:read` scope | - |
 | 404 | Customer not found | - |
 
 ### `POST /v1/customers/{id}/link-auth`
@@ -791,12 +756,12 @@ Gate: `bank8:ledger:customers:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Customer linked to auth user | `CustomerResponse` |
-| 403 | Missing bank8:ledger:customers:write scope | - |
+| 403 | Missing `bank8:ledger:customers:write` scope | - |
 | 409 | Auth user already linked to another customer | - |
 
 ### `PUT /v1/customers/{id}/update`
 
-`PUT /v1/customers/{id}/update` - update customer (display name / contact).
+`PUT /v1/customers/&#123;id&#125;/update` - update customer (display name / contact).
 
 Gate: `bank8:ledger:customers:write`
 
@@ -819,7 +784,7 @@ Gate: `bank8:ledger:customers:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Customer updated | `CustomerResponse` |
-| 403 | Missing bank8:ledger:customers:write scope | - |
+| 403 | Missing `bank8:ledger:customers:write` scope | - |
 | 404 | Not found | - |
 
 ### `GET /v1/derived-parameter-values`
@@ -840,7 +805,7 @@ Gate: `bank8:ledger:accounts:read`
 | --- | --- | --- |
 | 200 | Derived parameter values | `Value` |
 | 400 | account_id required | - |
-| 403 | Missing bank8:ledger:accounts:read scope | - |
+| 403 | Missing `bank8:ledger:accounts:read` scope | - |
 
 ### `GET /v1/dlq`
 
@@ -853,11 +818,11 @@ Gate: `bank8:ledger:dlq:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | DLQ entries | `DlqResponse`[] |
-| 403 | Missing bank8:ledger:dlq:read scope | - |
+| 403 | Missing `bank8:ledger:dlq:read` scope | - |
 
 ### `POST /v1/dlq/{id}/republish`
 
-`POST /v1/dlq/{id}/republish` - republish a DLQ entry (local posting or Cron schedule).
+`POST /v1/dlq/&#123;id&#125;/republish` - republish a DLQ entry (local posting or Cron schedule).
 
 Gate: `bank8:ledger:dlq:republish`
 
@@ -872,7 +837,7 @@ Gate: `bank8:ledger:dlq:republish`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | DLQ entry republished | - |
-| 403 | Missing bank8:ledger:dlq:republish scope | - |
+| 403 | Missing `bank8:ledger:dlq:republish` scope | - |
 | 404 | DLQ entry not found | - |
 
 ### `GET /v1/global-parameters`
@@ -886,7 +851,7 @@ Gate: `bank8:ledger:products:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Global parameters | `GlobalParameterResponse`[] |
-| 403 | Missing bank8:ledger:products:read scope | - |
+| 403 | Missing `bank8:ledger:products:read` scope | - |
 
 ### `POST /v1/global-parameters`
 
@@ -907,11 +872,11 @@ Gate: `bank8:ledger:products:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Global parameter upserted | `GlobalParameterResponse` |
-| 403 | Missing bank8:ledger:products:write scope | - |
+| 403 | Missing `bank8:ledger:products:write` scope | - |
 
 ### `GET /v1/global-parameters/{id}`
 
-`GET /v1/global-parameters/{id}` - global parameter detail.
+`GET /v1/global-parameters/&#123;id&#125;` - global parameter detail.
 
 Gate: `bank8:ledger:products:read`
 
@@ -924,9 +889,7 @@ Gate: `bank8:ledger:products:read`
 
 ### `GET /v1/internal-accounts`
 
-`GET /v1/internal-accounts` - list internal accounts (nickname/product_type
-filter). Staff-realm callers may pass the org-validated `?env_id=` override
-per tenant-isolation design §10.1 (handled by the shared env resolution).
+`GET /v1/internal-accounts` - list internal accounts (nickname/product_type filter). Staff-realm callers may pass the org-validated `?env_id=` override per tenant-isolation design §10.1 (handled by the shared env resolution).
 
 Gate: `bank8:ledger:accounts:read`
 
@@ -935,12 +898,11 @@ Gate: `bank8:ledger:accounts:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Internal accounts | `InternalAccountResponse`[] |
-| 403 | Missing bank8:ledger:accounts:read scope | - |
+| 403 | Missing `bank8:ledger:accounts:read` scope | - |
 
 ### `POST /v1/internal-accounts`
 
-`POST /v1/internal-accounts` - create an internal account
-(counterparty plumbing: cash deposit, clearing, suspense, etc.).
+`POST /v1/internal-accounts` - create an internal account (counterparty plumbing: cash deposit, clearing, suspense, etc.).
 
 Gate: `bank8:ledger:accounts:write`
 
@@ -957,12 +919,12 @@ Gate: `bank8:ledger:accounts:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Internal account created | `InternalAccountResponse` |
-| 403 | Missing bank8:ledger:accounts:write scope | - |
+| 403 | Missing `bank8:ledger:accounts:write` scope | - |
 | 409 | Nickname exists | - |
 
 ### `GET /v1/internal-accounts/{id}`
 
-`GET /v1/internal-accounts/{id}` - internal account detail.
+`GET /v1/internal-accounts/&#123;id&#125;` - internal account detail.
 
 Gate: `bank8:ledger:accounts:read`
 
@@ -991,11 +953,11 @@ Gate: `bank8:ledger:jobs:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | List of jobs | `JobResponse`[] |
-| 403 | Missing bank8:ledger:jobs:read scope | - |
+| 403 | Missing `bank8:ledger:jobs:read` scope | - |
 
 ### `GET /v1/jobs/{id}`
 
-`GET /v1/jobs/{id}` - job detail.
+`GET /v1/jobs/&#123;id&#125;` - job detail.
 
 Gate: `bank8:ledger:jobs:read`
 
@@ -1010,12 +972,12 @@ Gate: `bank8:ledger:jobs:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Job detail | `JobResponse` |
-| 403 | Missing bank8:ledger:jobs:read scope | - |
+| 403 | Missing `bank8:ledger:jobs:read` scope | - |
 | 404 | Job not found | - |
 
 ### `POST /v1/jobs/{id}/retry`
 
-`POST /v1/jobs/{id}/retry` - retry a failed job.
+`POST /v1/jobs/&#123;id&#125;/retry` - retry a failed job.
 
 Gate: `bank8:ledger:jobs:admin`
 
@@ -1030,7 +992,7 @@ Gate: `bank8:ledger:jobs:admin`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Job retried | `JobResponse` |
-| 403 | Missing bank8:ledger:jobs:admin scope | - |
+| 403 | Missing `bank8:ledger:jobs:admin` scope | - |
 
 ### `POST /v1/jobs:batchRepublish`
 
@@ -1049,7 +1011,7 @@ Gate: `bank8:ledger:jobs:admin`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Jobs overridden | - |
-| 403 | Missing bank8:ledger:jobs:admin scope | - |
+| 403 | Missing `bank8:ledger:jobs:admin` scope | - |
 
 ### `GET /v1/journal-events`
 
@@ -1069,11 +1031,11 @@ Gate: `bank8:ledger:postings:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Journal events (newest first) | `JournalEventResponse`[] |
-| 403 | Missing bank8:ledger:postings:read scope | - |
+| 403 | Missing `bank8:ledger:postings:read` scope | - |
 
 ### `GET /v1/journal-events/{id}`
 
-`GET /v1/journal-events/{id}` - one journal event.
+`GET /v1/journal-events/&#123;id&#125;` - one journal event.
 
 Gate: `bank8:ledger:postings:read`
 
@@ -1086,10 +1048,7 @@ Gate: `bank8:ledger:postings:read`
 
 ### `POST /v1/journal-events/{id}/replay`
 
-`POST /v1/journal-events/{id}/replay` - re-drive a journal event
-idempotently . The journal row carries the full operation payload;
-posting replays are no-ops thanks to posting idempotency keys. Other
-resource kinds re-apply the recorded operation.
+`POST /v1/journal-events/&#123;id&#125;/replay` - re-drive a journal event idempotently . The journal row carries the full operation payload; posting replays are no-ops thanks to posting idempotency keys. Other resource kinds re-apply the recorded operation.
 
 Gate: `bank8:ledger:postings:write`
 
@@ -1111,7 +1070,7 @@ Gate: `bank8:ledger:products:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Plans | `PlanResponse`[] |
-| 403 | Missing bank8:ledger:products:read scope | - |
+| 403 | Missing `bank8:ledger:products:read` scope | - |
 
 ### `POST /v1/plans`
 
@@ -1133,12 +1092,12 @@ Gate: `bank8:ledger:products:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Plan created | `PlanResponse` |
-| 403 | Missing bank8:ledger:products:write scope | - |
+| 403 | Missing `bank8:ledger:products:write` scope | - |
 | 409 | Plan name exists | - |
 
 ### `GET /v1/plans/{id}`
 
-`GET /v1/plans/{id}` - plan detail.
+`GET /v1/plans/&#123;id&#125;` - plan detail.
 
 Gate: `bank8:ledger:products:read`
 
@@ -1151,8 +1110,7 @@ Gate: `bank8:ledger:products:read`
 
 ### `POST /v1/plans/{id}/migrations`
 
-`POST /v1/plans/{id}/migrations` - migrate accounts onto a plan
-(PlanMigration): re-associates the from-plan accounts and closes it.
+`POST /v1/plans/&#123;id&#125;/migrations` - migrate accounts onto a plan (PlanMigration): re-associates the from-plan accounts and closes it.
 
 Gate: `bank8:ledger:products:write`
 
@@ -1167,7 +1125,7 @@ Gate: `bank8:ledger:products:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Migration completed | - |
-| 403 | Missing bank8:ledger:products:write scope | - |
+| 403 | Missing `bank8:ledger:products:write` scope | - |
 
 ### `GET /v1/post-posting-failures`
 
@@ -1180,12 +1138,11 @@ Gate: `bank8:ledger:postings:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Post-posting hook failures (DLQ subset) | `Value`[] |
-| 403 | Missing bank8:ledger:postings:read scope | - |
+| 403 | Missing `bank8:ledger:postings:read` scope | - |
 
 ### `POST /v1/post-posting-failures/{id}/republish`
 
-`POST /v1/post-posting-failures/{id}/republish` - re-run the post-posting
-hook for a committed batch (delegates to Sentin8:Func).
+`POST /v1/post-posting-failures/&#123;id&#125;/republish` - re-run the post-posting hook for a committed batch (delegates to Sentin8:Func).
 
 Gate: `bank8:ledger:postings:write`
 
@@ -1217,7 +1174,7 @@ Gate: `bank8:ledger:postings:write`
 | --- | --- | --- |
 | 200 | Posting batch processed | `PostingResponse` |
 | 400 | Invalid amount or empty instructions | - |
-| 403 | Missing bank8:ledger:postings:write scope | - |
+| 403 | Missing `bank8:ledger:postings:write` scope | - |
 
 ### `POST /v1/postings/async`
 
@@ -1239,11 +1196,11 @@ Gate: `bank8:ledger:postings:write`
 | --- | --- | --- |
 | 200 | Async posting enqueued | - |
 | 400 | Empty instructions | - |
-| 403 | Missing bank8:ledger:postings:write scope | - |
+| 403 | Missing `bank8:ledger:postings:write` scope | - |
 
 ### `GET /v1/postings/{id}`
 
-`GET /v1/postings/{id}` - batch status.
+`GET /v1/postings/&#123;id&#125;` - batch status.
 
 Gate: `bank8:ledger:postings:read`
 
@@ -1258,12 +1215,12 @@ Gate: `bank8:ledger:postings:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Posting batch status | `PostingResponse` |
-| 403 | Missing bank8:ledger:postings:read scope | - |
+| 403 | Missing `bank8:ledger:postings:read` scope | - |
 | 404 | Posting not found | - |
 
 ### `GET /v1/postings/{id}/instructions`
 
-`GET /v1/postings/{id}/instructions` - list instructions in a batch.
+`GET /v1/postings/&#123;id&#125;/instructions` - list instructions in a batch.
 
 Gate: `bank8:ledger:postings:read`
 
@@ -1278,7 +1235,7 @@ Gate: `bank8:ledger:postings:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | List of posting instructions | - |
-| 403 | Missing bank8:ledger:postings:read scope | - |
+| 403 | Missing `bank8:ledger:postings:read` scope | - |
 
 ### `GET /v1/processing-groups`
 
@@ -1291,7 +1248,7 @@ Gate: `bank8:ledger:schedules:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Processing groups | `ProcessingGroupResponse`[] |
-| 403 | Missing bank8:ledger:schedules:read scope | - |
+| 403 | Missing `bank8:ledger:schedules:read` scope | - |
 
 ### `POST /v1/processing-groups`
 
@@ -1314,11 +1271,11 @@ Gate: `bank8:ledger:schedules:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Processing group upserted | `ProcessingGroupResponse` |
-| 403 | Missing bank8:ledger:schedules:write scope | - |
+| 403 | Missing `bank8:ledger:schedules:write` scope | - |
 
 ### `POST /v1/processing-groups/{id}/pause`
 
-`POST /v1/processing-groups/{id}/pause` - pause EOD processing.
+`POST /v1/processing-groups/&#123;id&#125;/pause` - pause EOD processing.
 
 Gate: `bank8:ledger:schedules:write`
 
@@ -1330,7 +1287,7 @@ Gate: `bank8:ledger:schedules:write`
 
 ### `POST /v1/processing-groups/{id}/resume`
 
-`POST /v1/processing-groups/{id}/resume` - resume EOD processing.
+`POST /v1/processing-groups/&#123;id&#125;/resume` - resume EOD processing.
 
 Gate: `bank8:ledger:schedules:write`
 
@@ -1351,7 +1308,7 @@ Gate: `bank8:ledger:products:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | List of products | `ProductResponse`[] |
-| 403 | Missing bank8:ledger:products:read scope | - |
+| 403 | Missing `bank8:ledger:products:read` scope | - |
 
 ### `POST /v1/products`
 
@@ -1373,11 +1330,11 @@ Gate: `bank8:ledger:products:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Product created | `ProductResponse` |
-| 403 | Missing bank8:ledger:products:write scope | - |
+| 403 | Missing `bank8:ledger:products:write` scope | - |
 
 ### `GET /v1/products/{id}`
 
-`GET /v1/products/{id}` - product detail.
+`GET /v1/products/&#123;id&#125;` - product detail.
 
 Gate: `bank8:ledger:products:read`
 
@@ -1392,12 +1349,12 @@ Gate: `bank8:ledger:products:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Product detail | `ProductResponse` |
-| 403 | Missing bank8:ledger:products:read scope | - |
+| 403 | Missing `bank8:ledger:products:read` scope | - |
 | 404 | Product not found | - |
 
 ### `PUT /v1/products/{id}`
 
-`PUT /v1/products/{id}` - update product.
+`PUT /v1/products/&#123;id&#125;` - update product.
 
 Gate: `bank8:ledger:products:write`
 
@@ -1420,12 +1377,11 @@ Gate: `bank8:ledger:products:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Product updated | `ProductResponse` |
-| 403 | Missing bank8:ledger:products:write scope | - |
+| 403 | Missing `bank8:ledger:products:write` scope | - |
 
 ### `POST /v1/products/{id}/activate`
 
-`POST /v1/products/{id}/activate` - activate a product.
-Also accepts `ledger:write` (broad write scope) for end-user app tokens.
+`POST /v1/products/&#123;id&#125;/activate` - activate a product. Also accepts ``ledger:write`` (broad write scope) for end-user app tokens.
 
 Gate: `bank8:ledger:products:publish`
 
@@ -1440,11 +1396,11 @@ Gate: `bank8:ledger:products:publish`
 | Status | Description | Body |
 | --- | --- | --- |
 | 204 | Product activated | - |
-| 403 | Missing bank8:ledger:products:publish scope | - |
+| 403 | Missing `bank8:ledger:products:publish` scope | - |
 
 ### `GET /v1/products/{id}/versions`
 
-`GET /v1/products/{id}/versions` - list product versions.
+`GET /v1/products/&#123;id&#125;/versions` - list product versions.
 
 Gate: `bank8:ledger:products:read`
 
@@ -1459,11 +1415,11 @@ Gate: `bank8:ledger:products:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | List of product versions | `ProductVersionResponse`[] |
-| 403 | Missing bank8:ledger:products:read scope | - |
+| 403 | Missing `bank8:ledger:products:read` scope | - |
 
 ### `POST /v1/products/{id}/versions`
 
-`POST /v1/products/{id}/versions` - create a product version.
+`POST /v1/products/&#123;id&#125;/versions` - create a product version.
 
 Gate: `bank8:ledger:products:write`
 
@@ -1488,7 +1444,7 @@ Gate: `bank8:ledger:products:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Product version created | `ProductVersionResponse` |
-| 403 | Missing bank8:ledger:products:write scope | - |
+| 403 | Missing `bank8:ledger:products:write` scope | - |
 
 ### `GET /v1/schedule-tags`
 
@@ -1501,7 +1457,7 @@ Gate: `bank8:ledger:schedules:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Schedule tags | `ScheduleTagResponse`[] |
-| 403 | Missing bank8:ledger:schedules:read scope | - |
+| 403 | Missing `bank8:ledger:schedules:read` scope | - |
 
 ### `POST /v1/schedule-tags`
 
@@ -1521,13 +1477,12 @@ Gate: `bank8:ledger:schedules:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Tag created | `ScheduleTagResponse` |
-| 403 | Missing bank8:ledger:schedules:write scope | - |
+| 403 | Missing `bank8:ledger:schedules:write` scope | - |
 | 409 | Tag name exists | - |
 
 ### `POST /v1/schedule-tags/{id}/assocs`
 
-`POST /v1/schedule-tags/{id}/assocs` - attach a tag to a schedule
-(tag status ACTIVE/INACTIVE controls the schedule).
+`POST /v1/schedule-tags/&#123;id&#125;/assocs` - attach a tag to a schedule (tag status ACTIVE/INACTIVE controls the schedule).
 
 Gate: `bank8:ledger:schedules:write`
 
@@ -1542,7 +1497,7 @@ Gate: `bank8:ledger:schedules:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Associated | - |
-| 403 | Missing bank8:ledger:schedules:write scope | - |
+| 403 | Missing `bank8:ledger:schedules:write` scope | - |
 
 ### `GET /v1/schedules`
 
@@ -1562,14 +1517,11 @@ Gate: `bank8:ledger:schedules:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | List of schedules | `ScheduleResponse`[] |
-| 403 | Missing bank8:ledger:schedules:read scope | - |
+| 403 | Missing `bank8:ledger:schedules:read` scope | - |
 
 ### `POST /v1/schedules`
 
-`POST /v1/schedules` - create a schedule, delegating execution to Cron.
-Ledger stores a local reference in `schedules` and creates the actual
-schedule in Cron via `POST /v1/schedules`. Cron fires the schedule and
-proxy-calls Ledger's `POST /v1/internal/schedules/run` to execute the work.
+`POST /v1/schedules` - create a schedule, delegating execution to Cron. Ledger stores a local reference in `schedules` and creates the actual schedule in Cron via `POST /v1/schedules`. Cron fires the schedule and proxy-calls Ledger's `POST /v1/internal/schedules/run` to execute the work.
 
 Gate: `bank8:ledger:schedules:write`
 
@@ -1586,11 +1538,11 @@ Gate: `bank8:ledger:schedules:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Schedule created | `ScheduleResponse` |
-| 403 | Missing bank8:ledger:schedules:write scope | - |
+| 403 | Missing `bank8:ledger:schedules:write` scope | - |
 
 ### `GET /v1/schedules/{id}`
 
-`GET /v1/schedules/{id}` - schedule detail.
+`GET /v1/schedules/&#123;id&#125;` - schedule detail.
 
 Gate: `bank8:ledger:schedules:read`
 
@@ -1605,14 +1557,12 @@ Gate: `bank8:ledger:schedules:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Schedule detail | `ScheduleResponse` |
-| 403 | Missing bank8:ledger:schedules:read scope | - |
+| 403 | Missing `bank8:ledger:schedules:read` scope | - |
 | 404 | Schedule not found | - |
 
 ### `GET /v1/streams`
 
-`GET /v1/streams` - client-facing streaming catalog: the `event_type`
-families the ledger emits on the `bus:{envId}:ledger` stream family
-(business "Core Streaming API"; topic mapping in design §11).
+`GET /v1/streams` - client-facing streaming catalog: the `event_type` families the ledger emits on the `bus:&#123;envId&#125;:ledger` stream family (business "Core Streaming API"; topic mapping in design §11).
 
 Gate: `bank8:ledger:accounts:read`
 
@@ -1621,7 +1571,7 @@ Gate: `bank8:ledger:accounts:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Emitted event families | - |
-| 403 | Missing bank8:ledger:accounts:read scope | - |
+| 403 | Missing `bank8:ledger:accounts:read` scope | - |
 
 ### `GET /v1/supervisor-contracts`
 
@@ -1634,7 +1584,7 @@ Gate: `bank8:ledger:products:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Supervisor contracts | `SupervisorContractResponse`[] |
-| 403 | Missing bank8:ledger:products:read scope | - |
+| 403 | Missing `bank8:ledger:products:read` scope | - |
 
 ### `POST /v1/supervisor-contracts`
 
@@ -1656,12 +1606,12 @@ Gate: `bank8:ledger:products:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Supervisor contract created | `SupervisorContractResponse` |
-| 403 | Missing bank8:ledger:products:write scope | - |
+| 403 | Missing `bank8:ledger:products:write` scope | - |
 | 409 | Name exists | - |
 
 ### `GET /v1/supervisor-contracts/{id}`
 
-`GET /v1/supervisor-contracts/{id}` - supervisor contract detail.
+`GET /v1/supervisor-contracts/&#123;id&#125;` - supervisor contract detail.
 
 Gate: `bank8:ledger:products:read`
 
@@ -1683,7 +1633,7 @@ Gate: `bank8:ledger:balances:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | End-of-period balances | `BalanceV2Response`[] |
-| 403 | Missing bank8:ledger:balances:read scope | - |
+| 403 | Missing `bank8:ledger:balances:read` scope | - |
 
 ### `GET /v2/balances/live`
 
@@ -1696,7 +1646,7 @@ Gate: `bank8:ledger:balances:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Live committed balances | `BalanceV2Response`[] |
-| 403 | Missing bank8:ledger:balances:read scope | - |
+| 403 | Missing `bank8:ledger:balances:read` scope | - |
 
 ### `GET /v2/balances/series`
 
@@ -1717,5 +1667,5 @@ Gate: `bank8:ledger:balances:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Balance series buckets | `Value`[] |
-| 403 | Missing bank8:ledger:balances:read scope | - |
+| 403 | Missing `bank8:ledger:balances:read` scope | - |
 

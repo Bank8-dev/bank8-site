@@ -17,8 +17,7 @@ Sentin8 Bank8:Payments - payment orchestration, delegates to Sentin8:Flow.
 
 ### `GET /v1/allowed-endpoints`
 
-`GET /v1/allowed-endpoints` - scope→endpoint map for this service
-(helps clients pick the right token scope per endpoint; ).
+`GET /v1/allowed-endpoints` - scope→endpoint map for this service (helps clients pick the right token scope per endpoint; ).
 
 Gate: `bank8:payments:users:read`
 
@@ -27,7 +26,7 @@ Gate: `bank8:payments:users:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Allowed endpoints (scope → endpoint map) | `AllowedEndpointResponse`[] |
-| 403 | Missing bank8:payments:users:read scope | - |
+| 403 | Missing `bank8:payments:users:read` scope | - |
 
 ### `GET /v1/app/dashboard-versions`
 
@@ -40,7 +39,7 @@ Gate: `bank8:payments:app:dashboards:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Dashboard versions | `ResourceVersionResponse`[] |
-| 403 | Missing bank8:payments:app:dashboards:read scope | - |
+| 403 | Missing `bank8:payments:app:dashboards:read` scope | - |
 
 ### `POST /v1/app/dashboard-versions`
 
@@ -60,11 +59,11 @@ Gate: `bank8:payments:app:dashboards:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Dashboard version created | `ResourceVersionResponse` |
-| 403 | Missing bank8:payments:app:dashboards:write scope | - |
+| 403 | Missing `bank8:payments:app:dashboards:write` scope | - |
 
 ### `POST /v1/app/dashboard-versions/validate`
 
-`POST /v1/app/dashboard-versions:validate` - validate a dashboard version.
+`POST /v1/app/`dashboard-versions:validate`` - validate a dashboard version.
 
 Gate: `bank8:payments:app:dashboards:read`
 
@@ -80,7 +79,7 @@ Gate: `bank8:payments:app:dashboards:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Validation result | - |
-| 403 | Missing bank8:payments:app:dashboards:read scope | - |
+| 403 | Missing `bank8:payments:app:dashboards:read` scope | - |
 
 ### `GET /v1/app/template-presets`
 
@@ -99,12 +98,11 @@ Gate: `bank8:payments:app:templates:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Presets | `TemplatePresetResponse`[] |
-| 403 | Missing bank8:payments:app:templates:read scope | - |
+| 403 | Missing `bank8:payments:app:templates:read` scope | - |
 
 ### `POST /v1/app/template-presets`
 
-`POST /v1/app/template-presets` - create a reusable payment-initiation
-preset for a template.
+`POST /v1/app/template-presets` - create a reusable payment-initiation preset for a template.
 
 Gate: `bank8:payments:app:templates:write`
 
@@ -121,11 +119,11 @@ Gate: `bank8:payments:app:templates:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Preset created | `TemplatePresetResponse` |
-| 403 | Missing bank8:payments:app:templates:write scope | - |
+| 403 | Missing `bank8:payments:app:templates:write` scope | - |
 
 ### `DELETE /v1/app/template-presets/{id}`
 
-`DELETE /v1/app/template-presets/{id}` - delete a preset.
+`DELETE /v1/app/template-presets/&#123;id&#125;` - delete a preset.
 
 Gate: `bank8:payments:app:templates:write`
 
@@ -140,7 +138,7 @@ Gate: `bank8:payments:app:templates:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Preset deleted | - |
-| 403 | Missing bank8:payments:app:templates:write scope | - |
+| 403 | Missing `bank8:payments:app:templates:write` scope | - |
 | 404 | Not found | - |
 
 ### `GET /v1/app/template-versions`
@@ -154,7 +152,7 @@ Gate: `bank8:payments:app:templates:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Template versions | `ResourceVersionResponse`[] |
-| 403 | Missing bank8:payments:app:templates:read scope | - |
+| 403 | Missing `bank8:payments:app:templates:read` scope | - |
 
 ### `POST /v1/app/template-versions`
 
@@ -174,12 +172,11 @@ Gate: `bank8:payments:app:templates:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Template version created | `ResourceVersionResponse` |
-| 403 | Missing bank8:payments:app:templates:write scope | - |
+| 403 | Missing `bank8:payments:app:templates:write` scope | - |
 
 ### `POST /v1/app/template-versions/validate`
 
-`POST /v1/app/template-versions:validate` - validate a template version
-payload without creating it.
+`POST /v1/app/`template-versions:validate`` - validate a template version payload without creating it.
 
 Gate: `bank8:payments:app:templates:read`
 
@@ -195,13 +192,11 @@ Gate: `bank8:payments:app:templates:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Validation result | - |
-| 403 | Missing bank8:payments:app:templates:read scope | - |
+| 403 | Missing `bank8:payments:app:templates:read` scope | - |
 
 ### `GET /v1/audit`
 
-`GET /v1/audit` - query audit events (Story ).
-Returns a paginated list of audit events with filters by action,
-target resource type, and date range. Requires `payments:admin` scope.
+`GET /v1/audit` - query audit events (Story ). Returns a paginated list of audit events with filters by action, target resource type, and date range. Requires ``payments:admin`` scope.
 
 Gate: `bank8:payments:audit:read`
 
@@ -219,7 +214,7 @@ Gate: `bank8:payments:audit:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | List of audit events | `AuditEventResponse`[] |
-| 403 | Missing bank8:payments:audit:read scope | - |
+| 403 | Missing `bank8:payments:audit:read` scope | - |
 
 ### `GET /v1/cards`
 
@@ -232,13 +227,11 @@ Gate: `bank8:payments:cards:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | List of cards | `CardResponse`[] |
-| 403 | Missing bank8:payments:cards:read scope | - |
+| 403 | Missing `bank8:payments:cards:read` scope | - |
 
 ### `POST /v1/cards`
 
-`POST /v1/cards` - create a card.
-Gated by `FeatureGate::Cards`. The PAN is obfuscated with the
-placeholder `CardEncryption` before being stored in `encrypted_pan`.
+`POST /v1/cards` - create a card. Gated by `FeatureGate::Cards`. The PAN is obfuscated with the placeholder `CardEncryption` before being stored in `encrypted_pan`.
 
 Gate: `bank8:payments:cards:write`
 
@@ -257,12 +250,11 @@ Gate: `bank8:payments:cards:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Card created | `CardResponse` |
-| 403 | Missing bank8:payments:cards:write scope | - |
+| 403 | Missing `bank8:payments:cards:write` scope | - |
 
 ### `PUT /v1/cards/3ds-records/{id}`
 
-`PUT /v1/cards/3ds-records/{id}` - update 3DS authentication state
-(; also fixes the list route path to /v1/cards/3ds-records).
+`PUT /v1/cards/3ds-records/&#123;id&#125;` - update 3DS authentication state (; also fixes the list route path to /v1/cards/3ds-records).
 
 Gate: `bank8:payments:3ds-records:write`
 
@@ -284,7 +276,7 @@ Gate: `bank8:payments:3ds-records:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | 3DS record updated | - |
-| 403 | Missing bank8:payments:3ds-records:write scope | - |
+| 403 | Missing `bank8:payments:3ds-records:write` scope | - |
 | 404 | Record not found | - |
 
 ### `GET /v1/cards/card-order-batches`
@@ -298,12 +290,11 @@ Gate: `bank8:payments:card-orders:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Order batches | `CardOrderBatchResponse`[] |
-| 403 | Missing bank8:payments:card-orders:read scope | - |
+| 403 | Missing `bank8:payments:card-orders:read` scope | - |
 
 ### `POST /v1/cards/card-order-batches`
 
-`POST /v1/cards/card-order-batches` - group card orders into a
-manufacturing batch.
+`POST /v1/cards/card-order-batches` - group card orders into a manufacturing batch.
 
 Gate: `bank8:payments:card-orders:write`
 
@@ -319,12 +310,11 @@ Gate: `bank8:payments:card-orders:write`
 | --- | --- | --- |
 | 200 | Order batch created | `CardOrderBatchResponse` |
 | 400 | Empty order list | - |
-| 403 | Missing bank8:payments:card-orders:write scope | - |
+| 403 | Missing `bank8:payments:card-orders:write` scope | - |
 
 ### `GET /v1/cards/card-orders`
 
-`GET /v1/cards/card-orders` - list card orders (business
-`card_orders:read`; `:batchGet` semantics via id list param).
+`GET /v1/cards/card-orders` - list card orders (business ``card_orders:read``; `:batchGet` semantics via id list param).
 
 Gate: `bank8:payments:card-orders:read`
 
@@ -333,12 +323,11 @@ Gate: `bank8:payments:card-orders:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Card orders | `CardOrderResponse`[] |
-| 403 | Missing bank8:payments:card-orders:read scope | - |
+| 403 | Missing `bank8:payments:card-orders:read` scope | - |
 
 ### `POST /v1/cards/card-orders`
 
-`POST /v1/cards/card-orders` - create a card order (manufacturing /
-personalisation bureau).
+`POST /v1/cards/card-orders` - create a card order (manufacturing / personalisation bureau).
 
 Gate: `bank8:payments:card-orders:write`
 
@@ -354,13 +343,12 @@ Gate: `bank8:payments:card-orders:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Card order created | `CardOrderResponse` |
-| 403 | Missing bank8:payments:card-orders:write scope | - |
+| 403 | Missing `bank8:payments:card-orders:write` scope | - |
 | 404 | Card not found | - |
 
 ### `GET /v1/cards/card-tokens/{id}`
 
-`GET /v1/cards/card-tokens/{id}` - fetch a card token's lifecycle state
-(; `tokens/{token_id}` business shape).
+`GET /v1/cards/card-tokens/&#123;id&#125;` - fetch a card token's lifecycle state (; `tokens/&#123;token_id&#125;` business shape).
 
 Gate: `bank8:payments:cards:read`
 
@@ -375,12 +363,12 @@ Gate: `bank8:payments:cards:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Card token | - |
-| 403 | Missing bank8:payments:cards:read scope | - |
+| 403 | Missing `bank8:payments:cards:read` scope | - |
 | 404 | Token not found | - |
 
 ### `PUT /v1/cards/card-tokens/{id}`
 
-`PUT /v1/cards/card-tokens/{id}` - card token lifecycle write (MDES; ).
+`PUT /v1/cards/card-tokens/&#123;id&#125;` - card token lifecycle write (MDES; ).
 
 Gate: `bank8:payments:card-tokens:write`
 
@@ -401,14 +389,12 @@ Gate: `bank8:payments:card-tokens:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Token updated | - |
-| 403 | Missing bank8:payments:card-tokens:write scope | - |
+| 403 | Missing `bank8:payments:card-tokens:write` scope | - |
 | 404 | Token not found | - |
 
 ### `PUT /v1/cards/cardholders/{id}`
 
-`PUT /v1/cards/cardholders/{id}` - update a cardholder. **CLOSED status
-cascades: all the cardholder's cards transition to DISABLED** (business
-rule; done in the same transaction).
+`PUT /v1/cards/cardholders/&#123;id&#125;` - update a cardholder. **CLOSED status cascades: all the cardholder's cards transition to DISABLED** (business rule; done in the same transaction).
 
 Gate: `bank8:payments:cardholders:write`
 
@@ -429,12 +415,12 @@ Gate: `bank8:payments:cardholders:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Cardholder updated (cascade applied when closing) | - |
-| 403 | Missing bank8:payments:cardholders:write scope | - |
+| 403 | Missing `bank8:payments:cardholders:write` scope | - |
 | 404 | Cardholder not found | - |
 
 ### `GET /v1/cards/cardholders/{id}/cards`
 
-`GET /v1/cards/cardholders/{id}/cards` - list a cardholder's cards.
+`GET /v1/cards/cardholders/&#123;id&#125;/cards` - list a cardholder's cards.
 
 Gate: `bank8:payments:cards:read`
 
@@ -449,11 +435,11 @@ Gate: `bank8:payments:cards:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Cards for the cardholder | - |
-| 403 | Missing bank8:payments:cards:read scope | - |
+| 403 | Missing `bank8:payments:cards:read` scope | - |
 
 ### `GET /v1/cards/issuance`
 
-`GET /v1/cards/issuance` - issuance list (business `issuance:read`).
+`GET /v1/cards/issuance` - issuance list (business ``issuance:read``).
 
 Gate: `bank8:payments:issuance:read`
 
@@ -462,12 +448,11 @@ Gate: `bank8:payments:issuance:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Issued cards | `CardResponse`[] |
-| 403 | Missing bank8:payments:issuance:read scope | - |
+| 403 | Missing `bank8:payments:issuance:read` scope | - |
 
 ### `POST /v1/cards/issuance/issue`
 
-`POST /v1/cards/issuance:issue` - issue a card (delegates to the existing
-card-issuing handler; the business route shape).
+`POST /v1/cards/`issuance:issue`` - issue a card (delegates to the existing card-issuing handler; the business route shape).
 
 Gate: `bank8:payments:issuance:write`
 
@@ -486,12 +471,11 @@ Gate: `bank8:payments:issuance:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Card issued | `CardResponse` |
-| 403 | Missing bank8:payments:issuance:write scope | - |
+| 403 | Missing `bank8:payments:issuance:write` scope | - |
 
 ### `POST /v1/cards/issuance/{id}/get-details`
 
-`POST /v1/cards/issuance/{id}:getDetails` - fetch the encrypted card
-details (ECDH P-256 session; client-side decrypt only, §4.12).
+`POST /v1/cards/issuance/&#123;id&#125;:getDetails` - fetch the encrypted card details (ECDH P-256 session; client-side decrypt only, §4.12).
 
 Gate: `bank8:payments:issuance:read`
 
@@ -506,12 +490,12 @@ Gate: `bank8:payments:issuance:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Encrypted card details (opaque envelope) | - |
-| 403 | Missing bank8:payments:issuance:read scope | - |
+| 403 | Missing `bank8:payments:issuance:read` scope | - |
 | 404 | Card not found | - |
 
 ### `POST /v1/cards/issuance/{id}/get-pin`
 
-`POST /v1/cards/issuance/{id}:getPIN` - fetch the encrypted PIN block.
+`POST /v1/cards/issuance/&#123;id&#125;:getPIN` - fetch the encrypted PIN block.
 
 Gate: `bank8:payments:issuance:read`
 
@@ -526,13 +510,12 @@ Gate: `bank8:payments:issuance:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Encrypted PIN envelope | - |
-| 403 | Missing bank8:payments:issuance:read scope | - |
+| 403 | Missing `bank8:payments:issuance:read` scope | - |
 | 404 | Card not found | - |
 
 ### `POST /v1/cards/issuance/{id}/replace`
 
-`POST /v1/cards/issuance/{id}:replace` - replace a card (delegates to the
-existing replace handler; business route shape).
+`POST /v1/cards/issuance/&#123;id&#125;:replace` - replace a card (delegates to the existing replace handler; business route shape).
 
 Gate: `bank8:payments:issuance:write`
 
@@ -547,13 +530,12 @@ Gate: `bank8:payments:issuance:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Card replaced | - |
-| 403 | Missing bank8:payments:issuance:write scope | - |
+| 403 | Missing `bank8:payments:issuance:write` scope | - |
 | 404 | Card not found | - |
 
 ### `POST /v1/cards/issuance/{id}/reset-lvt`
 
-`POST /v1/cards/issuance/{id}:resetLVT` - reset the Limited Value Tracker
-(contactless accumulator; ).
+`POST /v1/cards/issuance/&#123;id&#125;:resetLVT` - reset the Limited Value Tracker (contactless accumulator; ).
 
 Gate: `bank8:payments:issuance:write`
 
@@ -568,12 +550,12 @@ Gate: `bank8:payments:issuance:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | LVT reset | - |
-| 403 | Missing bank8:payments:issuance:write scope | - |
+| 403 | Missing `bank8:payments:issuance:write` scope | - |
 | 404 | Card not found | - |
 
 ### `POST /v1/cards/issuance/{id}/reset-pin-attempts`
 
-`POST /v1/cards/issuance/{id}:resetPINAttempts` - reset the PIN try counter.
+`POST /v1/cards/issuance/&#123;id&#125;:resetPINAttempts` - reset the PIN try counter.
 
 Gate: `bank8:payments:issuance:write`
 
@@ -588,13 +570,12 @@ Gate: `bank8:payments:issuance:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | PIN attempts reset | - |
-| 403 | Missing bank8:payments:issuance:write scope | - |
+| 403 | Missing `bank8:payments:issuance:write` scope | - |
 | 404 | Card not found | - |
 
 ### `POST /v1/cards/issuance/{id}/update-pin`
 
-`POST /v1/cards/issuance/{id}:updatePIN` - update the card PIN (hashes the
-new PIN server-side; never stored in clear, §4.12).
+`POST /v1/cards/issuance/&#123;id&#125;:updatePIN` - update the card PIN (hashes the new PIN server-side; never stored in clear, §4.12).
 
 Gate: `bank8:payments:issuance:write`
 
@@ -615,13 +596,12 @@ Gate: `bank8:payments:issuance:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | PIN updated | - |
-| 403 | Missing bank8:payments:issuance:write scope | - |
+| 403 | Missing `bank8:payments:issuance:write` scope | - |
 | 404 | Card not found | - |
 
 ### `GET /v1/cards/products/{id}`
 
-`GET /v1/cards/products/{id}` - card product with issuing/expiry plan and
-card profile.
+`GET /v1/cards/products/&#123;id&#125;` - card product with issuing/expiry plan and card profile.
 
 Gate: `bank8:payments:cards:read`
 
@@ -636,13 +616,12 @@ Gate: `bank8:payments:cards:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Card product | `CardProductPlanResponse` |
-| 403 | Missing bank8:payments:cards:read scope | - |
+| 403 | Missing `bank8:payments:cards:read` scope | - |
 | 404 | Card product not found | - |
 
 ### `PUT /v1/cards/products/{id}`
 
-`PUT /v1/cards/products/{id}` - update issuing/expiry plan on a card
-product.
+`PUT /v1/cards/products/&#123;id&#125;` - update issuing/expiry plan on a card product.
 
 Gate: `bank8:payments:cards:write`
 
@@ -665,13 +644,12 @@ Gate: `bank8:payments:cards:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Card product updated | `CardProductPlanResponse` |
-| 403 | Missing bank8:payments:cards:write scope | - |
+| 403 | Missing `bank8:payments:cards:write` scope | - |
 | 404 | Card product not found | - |
 
 ### `GET /v1/cards/products/{id}/account-ranges`
 
-`GET /v1/cards/products/{id}/account-ranges` - list BIN account ranges
-attached to a card product.
+`GET /v1/cards/products/&#123;id&#125;/account-ranges` - list BIN account ranges attached to a card product.
 
 Gate: `bank8:payments:cards:read`
 
@@ -686,12 +664,11 @@ Gate: `bank8:payments:cards:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Account ranges | `AccountRangeResponse`[] |
-| 403 | Missing bank8:payments:cards:read scope | - |
+| 403 | Missing `bank8:payments:cards:read` scope | - |
 
 ### `POST /v1/cards/products/{id}/add-account-ranges`
 
-`POST /v1/cards/products/{id}:addAccountRanges` - attach BIN account
-ranges to a card product.
+`POST /v1/cards/products/&#123;id&#125;:addAccountRanges` - attach BIN account ranges to a card product.
 
 Gate: `bank8:payments:cards:write`
 
@@ -712,13 +689,12 @@ Gate: `bank8:payments:cards:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Account ranges added | - |
-| 403 | Missing bank8:payments:cards:write scope | - |
+| 403 | Missing `bank8:payments:cards:write` scope | - |
 | 404 | Card product not found | - |
 
 ### `POST /v1/cards/products/{id}/remove-account-ranges`
 
-`POST /v1/cards/products/{id}:removeAccountRanges` - detach BIN account
-ranges.
+`POST /v1/cards/products/&#123;id&#125;:removeAccountRanges` - detach BIN account ranges.
 
 Gate: `bank8:payments:cards:write`
 
@@ -739,13 +715,12 @@ Gate: `bank8:payments:cards:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Account ranges removed | - |
-| 403 | Missing bank8:payments:cards:write scope | - |
+| 403 | Missing `bank8:payments:cards:write` scope | - |
 | 404 | Card product not found | - |
 
 ### `POST /v1/cards/sessions/initiate`
 
-`POST /v1/cards/sessions:initiate` - initiate an encrypted card session
-(client key exchange; delegates to the existing session handler).
+`POST /v1/cards/`sessions:initiate`` - initiate an encrypted card session (client key exchange; delegates to the existing session handler).
 
 Gate: `bank8:payments:issuance:write`
 
@@ -757,11 +732,11 @@ Gate: `bank8:payments:issuance:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Session created (public key + token) | - |
-| 403 | Missing bank8:payments:issuance:write scope | - |
+| 403 | Missing `bank8:payments:issuance:write` scope | - |
 
 ### `GET /v1/cards/{id}`
 
-`GET /v1/cards/{id}` - get a card.
+`GET /v1/cards/&#123;id&#125;` - get a card.
 
 Gate: `bank8:payments:cards:read`
 
@@ -776,13 +751,12 @@ Gate: `bank8:payments:cards:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Card detail | `CardResponse` |
-| 403 | Missing bank8:payments:cards:read scope | - |
+| 403 | Missing `bank8:payments:cards:read` scope | - |
 | 404 | Card not found | - |
 
 ### `PUT /v1/cards/{id}/profile`
 
-`PUT /v1/cards/{id}/profile` - set the Card Profile (chip behaviour /
-scheme approval: Mastercard CPV/CNS, Visa DPS; ).
+`PUT /v1/cards/&#123;id&#125;/profile` - set the Card Profile (chip behaviour / scheme approval: Mastercard CPV/CNS, Visa DPS; ).
 
 Gate: `bank8:payments:cards:write`
 
@@ -803,13 +777,12 @@ Gate: `bank8:payments:cards:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Card profile set | - |
-| 403 | Missing bank8:payments:cards:write scope | - |
+| 403 | Missing `bank8:payments:cards:write` scope | - |
 | 404 | Card not found | - |
 
 ### `GET /v1/config-packs`
 
-`GET /v1/config-packs` - list installed payment config packs (; the
-pack contents are versioned resources: rules/rule-sets/parameter-values).
+`GET /v1/config-packs` - list installed payment config packs (; the pack contents are versioned resources: rules/rule-sets/parameter-values).
 
 Gate: `bank8:payments:rules:read`
 
@@ -818,7 +791,7 @@ Gate: `bank8:payments:rules:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Config packs (summary of versioned resources) | - |
-| 403 | Missing bank8:payments:rules:read scope | - |
+| 403 | Missing `bank8:payments:rules:read` scope | - |
 
 ### `GET /v1/core-versions`
 
@@ -831,7 +804,7 @@ Gate: `bank8:payments:cores:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Core versions | `ResourceVersionResponse`[] |
-| 403 | Missing bank8:payments:cores:read scope | - |
+| 403 | Missing `bank8:payments:cores:read` scope | - |
 
 ### `POST /v1/core-versions`
 
@@ -851,7 +824,7 @@ Gate: `bank8:payments:cores:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Core version created | `ResourceVersionResponse` |
-| 403 | Missing bank8:payments:cores:write scope | - |
+| 403 | Missing `bank8:payments:cores:write` scope | - |
 
 ### `GET /v1/cores`
 
@@ -864,7 +837,7 @@ Gate: `bank8:payments:cores:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | List of cores | `CoreResponse`[] |
-| 403 | Missing bank8:payments:cores:read scope | - |
+| 403 | Missing `bank8:payments:cores:read` scope | - |
 
 ### `POST /v1/cores`
 
@@ -884,11 +857,11 @@ Gate: `bank8:payments:cores:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Core created | `CoreResponse` |
-| 403 | Missing bank8:payments:cores:write scope | - |
+| 403 | Missing `bank8:payments:cores:write` scope | - |
 
 ### `GET /v1/cores/{id}`
 
-`GET /v1/cores/{id}` - get a core (Story ).
+`GET /v1/cores/&#123;id&#125;` - get a core (Story ).
 
 Gate: `bank8:payments:cores:read`
 
@@ -903,13 +876,12 @@ Gate: `bank8:payments:cores:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Core detail | `CoreResponse` |
-| 403 | Missing bank8:payments:cores:read scope | - |
+| 403 | Missing `bank8:payments:cores:read` scope | - |
 | 404 | Core not found | - |
 
 ### `PUT /v1/cores/{id}`
 
-`PUT /v1/cores/{id}` - update a core (CBS) config, including the postings
-URL and the online/offline balance endpoint flag.
+`PUT /v1/cores/&#123;id&#125;` - update a core (CBS) config, including the postings URL and the online/offline balance endpoint flag.
 
 Gate: `bank8:payments:cores:write`
 
@@ -932,13 +904,12 @@ Gate: `bank8:payments:cores:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Core updated | - |
-| 403 | Missing bank8:payments:cores:write scope | - |
+| 403 | Missing `bank8:payments:cores:write` scope | - |
 | 404 | Core not found | - |
 
 ### `PUT /v1/cores/{id}/balance-endpoint`
 
-`PUT /v1/cores/{id}/balance-endpoint` - switch the CBS balance endpoint
-between online (live query) and offline (cached) modes.
+`PUT /v1/cores/&#123;id&#125;/balance-endpoint` - switch the CBS balance endpoint between online (live query) and offline (cached) modes.
 
 Gate: `bank8:payments:cores:write`
 
@@ -960,13 +931,12 @@ Gate: `bank8:payments:cores:write`
 | --- | --- | --- |
 | 200 | Balance endpoint mode updated | - |
 | 400 | Invalid mode | - |
-| 403 | Missing bank8:payments:cores:write scope | - |
+| 403 | Missing `bank8:payments:cores:write` scope | - |
 | 404 | Core not found | - |
 
 ### `GET /v1/instruction-file-specification-versions`
 
-`GET /v1/instruction-file-specification-versions` - spec versions
-(non-v1beta alias route).
+`GET /v1/instruction-file-specification-versions` - spec versions (non-v1beta alias route).
 
 Gate: `bank8:payments:files:read`
 
@@ -975,12 +945,11 @@ Gate: `bank8:payments:files:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Spec versions | `ResourceVersionResponse`[] |
-| 403 | Missing bank8:payments:files:read scope | - |
+| 403 | Missing `bank8:payments:files:read` scope | - |
 
 ### `POST /v1/instruction-file-specification-versions`
 
-`POST /v1/instruction-file-specification-versions` - create a spec
-version (non-v1beta alias route).
+`POST /v1/instruction-file-specification-versions` - create a spec version (non-v1beta alias route).
 
 Gate: `bank8:payments:files:write`
 
@@ -997,7 +966,7 @@ Gate: `bank8:payments:files:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Spec version created | `ResourceVersionResponse` |
-| 403 | Missing bank8:payments:files:write scope | - |
+| 403 | Missing `bank8:payments:files:write` scope | - |
 
 ### `GET /v1/instructions`
 
@@ -1016,12 +985,11 @@ Gate: `bank8:payments:instructions:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | List of instructions | `InstructionResponse`[] |
-| 403 | Missing bank8:payments:instructions:read scope | - |
+| 403 | Missing `bank8:payments:instructions:read` scope | - |
 
 ### `POST /v1/instructions`
 
-`POST /v1/instructions` - create and initiate an instruction.
-Delegates workflow execution to Flow.
+`POST /v1/instructions` - create and initiate an instruction. Delegates workflow execution to Flow.
 
 Gate: `bank8:payments:instructions:write`
 
@@ -1030,12 +998,11 @@ Gate: `bank8:payments:instructions:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Instruction created | `InstructionResponse` |
-| 403 | Missing bank8:payments:instructions:write scope | - |
+| 403 | Missing `bank8:payments:instructions:write` scope | - |
 
 ### `POST /v1/instructions/bulk-retry`
 
-`POST /v1/instructions:bulkRetry` - bulk retry errored instructions
-(Sentin8 Jobs pattern).
+`POST /v1/instructions:bulkRetry` - bulk retry errored instructions (Sentin8 Jobs pattern).
 
 Gate: `bank8:payments:instructions:write`
 
@@ -1050,12 +1017,11 @@ Gate: `bank8:payments:instructions:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Bulk retry results | - |
-| 403 | Missing bank8:payments:instructions:write scope | - |
+| 403 | Missing `bank8:payments:instructions:write` scope | - |
 
 ### `POST /v1/instructions/initiate`
 
-`POST /v1/instructions:initiate` - business initiation route (same engine
-as `POST /v1/instructions`).
+`POST /v1/`instructions:initiate`` - business initiation route (same engine as `POST /v1/instructions`).
 
 Gate: `bank8:payments:instructions:write`
 
@@ -1064,11 +1030,11 @@ Gate: `bank8:payments:instructions:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Instruction initiated | `InstructionResponse` |
-| 403 | Missing bank8:payments:instructions:write scope | - |
+| 403 | Missing `bank8:payments:instructions:write` scope | - |
 
 ### `GET /v1/instructions/{id}`
 
-`GET /v1/instructions/{id}` - instruction detail.
+`GET /v1/instructions/&#123;id&#125;` - instruction detail.
 
 Gate: `bank8:payments:instructions:read`
 
@@ -1083,13 +1049,12 @@ Gate: `bank8:payments:instructions:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Instruction detail | `InstructionResponse` |
-| 403 | Missing bank8:payments:instructions:read scope | - |
+| 403 | Missing `bank8:payments:instructions:read` scope | - |
 | 404 | Instruction not found | - |
 
 ### `PUT /v1/instructions/{id}`
 
-`PUT /v1/instructions/{id}` - update an instruction (status updates
-including cancel - the business convention; no `/cancel` subpath).
+`PUT /v1/instructions/&#123;id&#125;` - update an instruction (status updates including cancel - the business convention; no `/cancel` subpath).
 
 Gate: `bank8:payments:instructions:write`
 
@@ -1112,13 +1077,13 @@ Gate: `bank8:payments:instructions:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Instruction updated | `InstructionResponse` |
-| 403 | Missing bank8:payments:instructions:write scope | - |
+| 403 | Missing `bank8:payments:instructions:write` scope | - |
 | 404 | Instruction not found | - |
 | 409 | State transition conflict | - |
 
 ### `POST /v1/instructions/{id}/cancel`
 
-`POST /v1/instructions/{id}/cancel` - any state → cancelled (Story ).
+`POST /v1/instructions/&#123;id&#125;/cancel` - any state → cancelled (Story ).
 
 Gate: `bank8:payments:instructions:write`
 
@@ -1133,13 +1098,12 @@ Gate: `bank8:payments:instructions:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Instruction cancelled | `InstructionResponse` |
-| 403 | Missing bank8:payments:instructions:write scope | - |
+| 403 | Missing `bank8:payments:instructions:write` scope | - |
 | 409 | State transition conflict | - |
 
 ### `POST /v1/instructions/{id}/process`
 
-`POST /v1/instructions:process` - process an instruction against its
-logic (moves it to processing; the worker continues the workflow).
+`POST /v1/`instructions:process`` - process an instruction against its logic (moves it to processing; the worker continues the workflow).
 
 Gate: `bank8:payments:instructions:write`
 
@@ -1154,14 +1118,13 @@ Gate: `bank8:payments:instructions:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Instruction processing | - |
-| 403 | Missing bank8:payments:instructions:write scope | - |
+| 403 | Missing `bank8:payments:instructions:write` scope | - |
 | 404 | Instruction not found | - |
 | 409 | State transition conflict | - |
 
 ### `POST /v1/instructions/{id}/repair`
 
-`POST /v1/instructions/{id}/repair` - rewind the instruction to a step and
-re-process via Flow (Story ).
+`POST /v1/instructions/&#123;id&#125;/repair` - rewind the instruction to a step and re-process via Flow (Story ).
 
 Gate: `bank8:payments:instructions:write`
 
@@ -1183,12 +1146,12 @@ Gate: `bank8:payments:instructions:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Instruction repaired | `InstructionResponse` |
-| 403 | Missing bank8:payments:instructions:write scope | - |
+| 403 | Missing `bank8:payments:instructions:write` scope | - |
 | 404 | Instruction not found | - |
 
 ### `POST /v1/instructions/{id}/retry`
 
-`POST /v1/instructions/{id}/retry` - failed → pending (Story ).
+`POST /v1/instructions/&#123;id&#125;/retry` - failed → pending (Story ).
 
 Gate: `bank8:payments:instructions:write`
 
@@ -1203,7 +1166,7 @@ Gate: `bank8:payments:instructions:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Instruction retried | `InstructionResponse` |
-| 403 | Missing bank8:payments:instructions:write scope | - |
+| 403 | Missing `bank8:payments:instructions:write` scope | - |
 | 409 | State transition conflict | - |
 
 ### `GET /v1/integration-versions`
@@ -1217,7 +1180,7 @@ Gate: `bank8:payments:integrations:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Integration versions | `ResourceVersionResponse`[] |
-| 403 | Missing bank8:payments:integrations:read scope | - |
+| 403 | Missing `bank8:payments:integrations:read` scope | - |
 
 ### `POST /v1/integration-versions`
 
@@ -1237,12 +1200,11 @@ Gate: `bank8:payments:integrations:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Integration version created | `ResourceVersionResponse` |
-| 403 | Missing bank8:payments:integrations:write scope | - |
+| 403 | Missing `bank8:payments:integrations:write` scope | - |
 
 ### `POST /v1/integration-versions/{id}/retry`
 
-`POST /v1/integration-versions/{id}:retry` - retry a failed integration
-version (business convention; ).
+`POST /v1/integration-versions/&#123;id&#125;:retry` - retry a failed integration version (business convention; ).
 
 Gate: `bank8:payments:integrations:write`
 
@@ -1257,7 +1219,7 @@ Gate: `bank8:payments:integrations:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Version retried | - |
-| 403 | Missing bank8:payments:integrations:write scope | - |
+| 403 | Missing `bank8:payments:integrations:write` scope | - |
 | 404 | Not found | - |
 
 ### `GET /v1/integrations`
@@ -1271,7 +1233,7 @@ Gate: `bank8:payments:integrations:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | List of integrations | `IntegrationResponse`[] |
-| 403 | Missing bank8:payments:integrations:read scope | - |
+| 403 | Missing `bank8:payments:integrations:read` scope | - |
 
 ### `POST /v1/integrations`
 
@@ -1293,13 +1255,11 @@ Gate: `bank8:payments:integrations:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Integration created | `IntegrationResponse` |
-| 403 | Missing bank8:payments:integrations:write scope | - |
+| 403 | Missing `bank8:payments:integrations:write` scope | - |
 
 ### `POST /v1/integrations/callback/{token}`
 
-`POST /v1/integrations:callback/{token}` - the HTTPAsyncStep contract
-(§4.4): an integration calls back with the response payload after an
-arbitrary delay; the waiting instruction resumes its workflow.
+`POST /v1/`integrations:callback`/&#123;token&#125;` - the HTTPAsyncStep contract (§4.4): an integration calls back with the response payload after an arbitrary delay; the waiting instruction resumes its workflow.
 
 Gate: `bank8:payments:integrations:write`
 
@@ -1314,13 +1274,12 @@ Gate: `bank8:payments:integrations:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Callback accepted; instruction resumed | - |
-| 403 | Missing bank8:payments:integrations:write scope | - |
+| 403 | Missing `bank8:payments:integrations:write` scope | - |
 | 404 | Unknown or expired callback token | - |
 
 ### `GET /v1/integrations/payment-initiation-apps`
 
-`GET /v1/integrations/payment-initiation-apps` - list registered
-initiation apps.
+`GET /v1/integrations/payment-initiation-apps` - list registered initiation apps.
 
 Gate: `bank8:payments:integrations:read`
 
@@ -1329,12 +1288,11 @@ Gate: `bank8:payments:integrations:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Initiation apps | `InitiationAppResponse`[] |
-| 403 | Missing bank8:payments:integrations:read scope | - |
+| 403 | Missing `bank8:payments:integrations:read` scope | - |
 
 ### `POST /v1/integrations/payment-initiation-apps`
 
-`POST /v1/integrations/payment-initiation-apps` - register a
-payment-initiation app.
+`POST /v1/integrations/payment-initiation-apps` - register a payment-initiation app.
 
 Gate: `bank8:payments:integrations:write`
 
@@ -1351,11 +1309,11 @@ Gate: `bank8:payments:integrations:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | App registered | `InitiationAppResponse` |
-| 403 | Missing bank8:payments:integrations:write scope | - |
+| 403 | Missing `bank8:payments:integrations:write` scope | - |
 
 ### `GET /v1/integrations/{id}`
 
-`GET /v1/integrations/{id}` - get an integration (Story ).
+`GET /v1/integrations/&#123;id&#125;` - get an integration (Story ).
 
 Gate: `bank8:payments:integrations:read`
 
@@ -1370,7 +1328,7 @@ Gate: `bank8:payments:integrations:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Integration detail | `IntegrationResponse` |
-| 403 | Missing bank8:payments:integrations:read scope | - |
+| 403 | Missing `bank8:payments:integrations:read` scope | - |
 | 404 | Integration not found | - |
 
 ### `GET /v1/logics`
@@ -1384,7 +1342,7 @@ Gate: `bank8:payments:logics:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | List of logics | `LogicResponse`[] |
-| 403 | Missing bank8:payments:logics:read scope | - |
+| 403 | Missing `bank8:payments:logics:read` scope | - |
 
 ### `POST /v1/logics`
 
@@ -1404,7 +1362,7 @@ Gate: `bank8:payments:logics:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Logic created | `LogicResponse` |
-| 403 | Missing bank8:payments:logics:write scope | - |
+| 403 | Missing `bank8:payments:logics:write` scope | - |
 
 ### `GET /v1/mandates`
 
@@ -1417,7 +1375,7 @@ Gate: `bank8:payments:mandates:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | List of mandates | `MandateResponse`[] |
-| 403 | Missing bank8:payments:mandates:read scope | - |
+| 403 | Missing `bank8:payments:mandates:read` scope | - |
 
 ### `POST /v1/mandates`
 
@@ -1445,11 +1403,11 @@ Gate: `bank8:payments:mandates:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Mandate created | `MandateResponse` |
-| 403 | Missing bank8:payments:mandates:write scope | - |
+| 403 | Missing `bank8:payments:mandates:write` scope | - |
 
 ### `GET /v1/mandates/{id}`
 
-`GET /v1/mandates/{id}` - get a mandate.
+`GET /v1/mandates/&#123;id&#125;` - get a mandate.
 
 Gate: `bank8:payments:mandates:read`
 
@@ -1464,13 +1422,12 @@ Gate: `bank8:payments:mandates:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Mandate detail | `MandateResponse` |
-| 403 | Missing bank8:payments:mandates:read scope | - |
+| 403 | Missing `bank8:payments:mandates:read` scope | - |
 | 404 | Mandate not found | - |
 
 ### `POST /v1/membership-directory-records/search`
 
-`POST /v1/membership-directory-records:search` - registry-validated
-membership directory search (BIC reachability, account resolution).
+`POST /v1/`membership-directory-records:search`` - registry-validated membership directory search (BIC reachability, account resolution).
 
 Gate: `bank8:payments:membership-directories:read`
 
@@ -1480,7 +1437,7 @@ Gate: `bank8:payments:membership-directories:read`
 | --- | --- | --- |
 | 200 | Directory records matching the filters | - |
 | 400 | Invalid search filters | - |
-| 403 | Missing bank8:payments:membership-directories:read scope | - |
+| 403 | Missing `bank8:payments:membership-directories:read` scope | - |
 
 ### `GET /v1/membership-directory-versions`
 
@@ -1493,7 +1450,7 @@ Gate: `bank8:payments:membership-directories:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Directory versions | `ResourceVersionResponse`[] |
-| 403 | Missing bank8:payments:membership-directories:read scope | - |
+| 403 | Missing `bank8:payments:membership-directories:read` scope | - |
 
 ### `POST /v1/membership-directory-versions`
 
@@ -1513,12 +1470,11 @@ Gate: `bank8:payments:membership-directories:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Directory version created | `ResourceVersionResponse` |
-| 403 | Missing bank8:payments:membership-directories:write scope | - |
+| 403 | Missing `bank8:payments:membership-directories:write` scope | - |
 
 ### `GET /v1/on-us/routing`
 
-`GET /v1/on-us/routing` - B8 On-Us routing table: routes
-instructions to another B8 member bank without leaving the platform.
+`GET /v1/on-us/routing` - B8 On-Us routing table: routes instructions to another B8 member bank without leaving the platform.
 
 Gate: `bank8:payments:instructions:read`
 
@@ -1527,7 +1483,7 @@ Gate: `bank8:payments:instructions:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | On-Us routing entries | - |
-| 403 | Missing bank8:payments:instructions:read scope | - |
+| 403 | Missing `bank8:payments:instructions:read` scope | - |
 
 ### `GET /v1/openmetrics/federate`
 
@@ -1540,12 +1496,11 @@ Gate: `bank8:payments:openmetrics:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Federation metrics | - |
-| 403 | Missing bank8:payments:openmetrics:read scope | - |
+| 403 | Missing `bank8:payments:openmetrics:read` scope | - |
 
 ### `GET /v1/openmetrics/metrics`
 
-`GET /v1/openmetrics/metrics` - OpenMetrics-format metrics (;
-delegates to the shared Prometheus handler).
+`GET /v1/openmetrics/metrics` - OpenMetrics-format metrics (; delegates to the shared Prometheus handler).
 
 Gate: `bank8:payments:openmetrics:read`
 
@@ -1554,7 +1509,7 @@ Gate: `bank8:payments:openmetrics:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | OpenMetrics metrics | - |
-| 403 | Missing bank8:payments:openmetrics:read scope | - |
+| 403 | Missing `bank8:payments:openmetrics:read` scope | - |
 
 ### `GET /v1/parameter-values`
 
@@ -1567,7 +1522,7 @@ Gate: `bank8:payments:parameters:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Parameter values | `ParameterValueResponse`[] |
-| 403 | Missing bank8:payments:parameters:read scope | - |
+| 403 | Missing `bank8:payments:parameters:read` scope | - |
 
 ### `POST /v1/parameter-values`
 
@@ -1587,12 +1542,11 @@ Gate: `bank8:payments:parameters:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Parameter value created | `ParameterValueResponse` |
-| 403 | Missing bank8:payments:parameters:write scope | - |
+| 403 | Missing `bank8:payments:parameters:write` scope | - |
 
 ### `PUT /v1/parameter-values/{id}`
 
-`PUT /v1/parameter-values/{id}` - update (or unset via empty body) a
-parameter value.
+`PUT /v1/parameter-values/&#123;id&#125;` - update (or unset via empty body) a parameter value.
 
 Gate: `bank8:payments:parameters:write`
 
@@ -1613,7 +1567,7 @@ Gate: `bank8:payments:parameters:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Parameter value updated (or unset) | - |
-| 403 | Missing bank8:payments:parameters:write scope | - |
+| 403 | Missing `bank8:payments:parameters:write` scope | - |
 | 404 | Not found | - |
 
 ### `GET /v1/payees`
@@ -1627,7 +1581,7 @@ Gate: `bank8:payments:payments:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Payees | `PayeeResponse`[] |
-| 403 | Missing bank8:payments:payments:read scope | - |
+| 403 | Missing `bank8:payments:payments:read` scope | - |
 
 ### `POST /v1/payees`
 
@@ -1649,11 +1603,11 @@ Gate: `bank8:payments:payments:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Payee created | `PayeeResponse` |
-| 403 | Missing bank8:payments:payments:write scope | - |
+| 403 | Missing `bank8:payments:payments:write` scope | - |
 
 ### `POST /v1/payees/search`
 
-`POST /v1/payees:search` - registry-validated payee search.
+`POST /v1/`payees:search`` - registry-validated payee search.
 
 Gate: `bank8:payments:payments:read`
 
@@ -1666,7 +1620,7 @@ Gate: `bank8:payments:payments:read`
 
 ### `GET /v1/payees/{id}`
 
-`GET /v1/payees/{id}` - payee detail.
+`GET /v1/payees/&#123;id&#125;` - payee detail.
 
 Gate: `bank8:payments:payments:read`
 
@@ -1679,7 +1633,7 @@ Gate: `bank8:payments:payments:read`
 
 ### `PUT /v1/payees/{id}`
 
-`PUT /v1/payees/{id}` - update payee.
+`PUT /v1/payees/&#123;id&#125;` - update payee.
 
 Gate: `bank8:payments:payments:write`
 
@@ -1701,7 +1655,7 @@ Gate: `bank8:payments:payments:write`
 
 ### `DELETE /v1/payees/{id}`
 
-`DELETE /v1/payees/{id}` - remove a payee (soft-delete via status).
+`DELETE /v1/payees/&#123;id&#125;` - remove a payee (soft-delete via status).
 
 Gate: `bank8:payments:payments:write`
 
@@ -1716,13 +1670,12 @@ Gate: `bank8:payments:payments:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Payee removed | - |
-| 403 | Missing bank8:payments:payments:write scope | - |
+| 403 | Missing `bank8:payments:payments:write` scope | - |
 | 404 | Payee not found | - |
 
 ### `GET /v1/payment-statuses`
 
-`GET /v1/payment-statuses` - the full processing-status model exposed to
-clients (; the per-type amount context keys are returned with each).
+`GET /v1/payment-statuses` - the full processing-status model exposed to clients (; the per-type amount context keys are returned with each).
 
 Gate: `bank8:payments:payments:read`
 
@@ -1731,7 +1684,7 @@ Gate: `bank8:payments:payments:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Processing status model | `StatusModelEntry`[] |
-| 403 | Missing bank8:payments:payments:read scope | - |
+| 403 | Missing `bank8:payments:payments:read` scope | - |
 
 ### `GET /v1/payments`
 
@@ -1744,11 +1697,11 @@ Gate: `bank8:payments:payments:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | List of payments | `PaymentResponse`[] |
-| 403 | Missing bank8:payments:payments:read scope | - |
+| 403 | Missing `bank8:payments:payments:read` scope | - |
 
 ### `GET /v1/payments/{id}`
 
-`GET /v1/payments/{id}` - payment detail.
+`GET /v1/payments/&#123;id&#125;` - payment detail.
 
 Gate: `bank8:payments:payments:read`
 
@@ -1763,13 +1716,12 @@ Gate: `bank8:payments:payments:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Payment detail | `PaymentResponse` |
-| 403 | Missing bank8:payments:payments:read scope | - |
+| 403 | Missing `bank8:payments:payments:read` scope | - |
 | 404 | Payment not found | - |
 
 ### `POST /v1/records/search`
 
-`POST /v1/records/search` - generic membership-directory record search
-(registry-validated; delegates to the directory search).
+`POST /v1/records/search` - generic membership-directory record search (registry-validated; delegates to the directory search).
 
 Gate: `bank8:payments:membership-directories:read`
 
@@ -1782,12 +1734,11 @@ Gate: `bank8:payments:membership-directories:read`
 | --- | --- | --- |
 | 200 | Search results | - |
 | 400 | Invalid search operators (registry) | - |
-| 403 | Missing bank8:payments:membership-directories:read scope | - |
+| 403 | Missing `bank8:payments:membership-directories:read` scope | - |
 
 ### `GET /v1/roles`
 
-`GET /v1/roles` - read view of the roles configured for this environment
-(roles live in Sentin8:Auth; this is a projection for admin UIs).
+`GET /v1/roles` - read view of the roles configured for this environment (roles live in Sentin8:Auth; this is a projection for admin UIs).
 
 Gate: `bank8:payments:users:read`
 
@@ -1796,7 +1747,7 @@ Gate: `bank8:payments:users:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Roles (projection from Sentin8:Auth) | `RoleViewResponse`[] |
-| 403 | Missing bank8:payments:users:read scope | - |
+| 403 | Missing `bank8:payments:users:read` scope | - |
 
 ### `GET /v1/rule-set-versions`
 
@@ -1809,7 +1760,7 @@ Gate: `bank8:payments:rules:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Rule set versions | `ResourceVersionResponse`[] |
-| 403 | Missing bank8:payments:rules:read scope | - |
+| 403 | Missing `bank8:payments:rules:read` scope | - |
 
 ### `POST /v1/rule-set-versions`
 
@@ -1829,12 +1780,11 @@ Gate: `bank8:payments:rules:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Rule set version created | `ResourceVersionResponse` |
-| 403 | Missing bank8:payments:rules:write scope | - |
+| 403 | Missing `bank8:payments:rules:write` scope | - |
 
 ### `POST /v1/rule-set-versions/{id}/retry`
 
-`POST /v1/rule-set-versions/{id}/retry` - retry a failed rule set
-version publish.
+`POST /v1/rule-set-versions/&#123;id&#125;/retry` - retry a failed rule set version publish.
 
 Gate: `bank8:payments:rules:write`
 
@@ -1849,7 +1799,7 @@ Gate: `bank8:payments:rules:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Retry accepted | `ResourceVersionResponse` |
-| 403 | Missing bank8:payments:rules:write scope | - |
+| 403 | Missing `bank8:payments:rules:write` scope | - |
 | 404 | Version not found | - |
 
 ### `GET /v1/rule-versions`
@@ -1869,7 +1819,7 @@ Gate: `bank8:payments:rules:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Rule versions | `ResourceVersionResponse`[] |
-| 403 | Missing bank8:payments:rules:read scope | - |
+| 403 | Missing `bank8:payments:rules:read` scope | - |
 
 ### `POST /v1/rule-versions`
 
@@ -1889,12 +1839,11 @@ Gate: `bank8:payments:rules:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Rule version created | `ResourceVersionResponse` |
-| 403 | Missing bank8:payments:rules:write scope | - |
+| 403 | Missing `bank8:payments:rules:write` scope | - |
 
 ### `POST /v1/rule-versions/{id}/retry`
 
-`POST /v1/rule-versions/{id}/retry` - retry a failed rule version
-publish (; delegates to the shared retry_version helper).
+`POST /v1/rule-versions/&#123;id&#125;/retry` - retry a failed rule version publish (; delegates to the shared retry_version helper).
 
 Gate: `bank8:payments:rules:write`
 
@@ -1909,7 +1858,7 @@ Gate: `bank8:payments:rules:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Retry accepted | `ResourceVersionResponse` |
-| 403 | Missing bank8:payments:rules:write scope | - |
+| 403 | Missing `bank8:payments:rules:write` scope | - |
 | 404 | Version not found | - |
 
 ### `GET /v1/rules`
@@ -1923,7 +1872,7 @@ Gate: `bank8:payments:rules:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | List of rules | `RuleResponse`[] |
-| 403 | Missing bank8:payments:rules:read scope | - |
+| 403 | Missing `bank8:payments:rules:read` scope | - |
 
 ### `POST /v1/rules`
 
@@ -1946,12 +1895,11 @@ Gate: `bank8:payments:rules:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Rule created | `RuleResponse` |
-| 403 | Missing bank8:payments:rules:write scope | - |
+| 403 | Missing `bank8:payments:rules:write` scope | - |
 
 ### `POST /v1/rules/attach-to-instrument`
 
-`POST /v1/rules:attachToInstrument` - attach a decision rule to a payment
-instrument (; the rule still applies per-instruction at runtime).
+`POST /v1/rules:attachToInstrument` - attach a decision rule to a payment instrument (; the rule still applies per-instruction at runtime).
 
 Gate: `bank8:payments:rules:write`
 
@@ -1968,7 +1916,7 @@ Gate: `bank8:payments:rules:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Rule attached | - |
-| 403 | Missing bank8:payments:rules:write scope | - |
+| 403 | Missing `bank8:payments:rules:write` scope | - |
 | 404 | Rule not found | - |
 
 ### `POST /v1/rules/detach-from-instrument`
@@ -1989,11 +1937,11 @@ Gate: `bank8:payments:rules:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Rule detached | - |
-| 403 | Missing bank8:payments:rules:write scope | - |
+| 403 | Missing `bank8:payments:rules:write` scope | - |
 
 ### `POST /v1/rules/{id}/publish`
 
-`POST /v1/rules/{id}/publish` - publish a new rule version (Story ).
+`POST /v1/rules/&#123;id&#125;/publish` - publish a new rule version (Story ).
 
 Gate: `bank8:payments:rules:write`
 
@@ -2015,11 +1963,11 @@ Gate: `bank8:payments:rules:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Rule version published | `RuleVersionResponse` |
-| 403 | Missing bank8:payments:rules:write scope | - |
+| 403 | Missing `bank8:payments:rules:write` scope | - |
 
 ### `POST /v1/sandbox/cards/simulate`
 
-`POST /v1/sandbox/cards:simulate` - simulate a card transaction.
+`POST /v1/sandbox/`cards:simulate`` - simulate a card transaction.
 
 Gate: `bank8:payments:sandbox:write`
 
@@ -2042,8 +1990,7 @@ Gate: `bank8:payments:sandbox:write`
 
 ### `POST /v1/sandbox/credit-transfers/simulate`
 
-`POST /v1/sandbox/credit-transfers:simulate` - simulate an SEPA credit
-transfer.
+`POST /v1/sandbox/`credit-transfers:simulate`` - simulate an SEPA credit transfer.
 
 Gate: `bank8:payments:sandbox:write`
 
@@ -2066,7 +2013,7 @@ Gate: `bank8:payments:sandbox:write`
 
 ### `POST /v1/sandbox/fedwire/simulate`
 
-`POST /v1/sandbox/fedwire:simulate` - simulate a FedWire payment.
+`POST /v1/sandbox/`fedwire:simulate`` - simulate a FedWire payment.
 
 Gate: `bank8:payments:sandbox:write`
 
@@ -2089,8 +2036,7 @@ Gate: `bank8:payments:sandbox:write`
 
 ### `POST /v1/sandbox/instructions/{id}/resume`
 
-`POST /v1/sandbox/instructions/{id}:resume` - fast-forward a stuck
-instruction through its state machine.
+`POST /v1/sandbox/instructions/&#123;id&#125;:resume` - fast-forward a stuck instruction through its state machine.
 
 Gate: `bank8:payments:sandbox:write`
 
@@ -2110,8 +2056,7 @@ Gate: `bank8:payments:sandbox:write`
 
 ### `POST /v1/sandbox/scheduled-payments/{id}/fast-forward`
 
-`POST /v1/sandbox/scheduled-payments/{id}:fastForward` - execute the next
-scheduled occurrence immediately (+ ).
+`POST /v1/sandbox/scheduled-payments/&#123;id&#125;:fastForward` - execute the next scheduled occurrence immediately (+ ).
 
 Gate: `bank8:payments:sandbox:write`
 
@@ -2131,7 +2076,7 @@ Gate: `bank8:payments:sandbox:write`
 
 ### `POST /v1/sandbox/swift-agi/simulate`
 
-`POST /v1/sandbox/swift-agi:simulate` - simulate a SWIFT AGI payment
+`POST /v1/sandbox/`swift-agi:simulate`` - simulate a SWIFT AGI payment
 
 Gate: `bank8:payments:sandbox:write`
 
@@ -2154,8 +2099,7 @@ Gate: `bank8:payments:sandbox:write`
 
 ### `GET /v1/users`
 
-`GET /v1/users` - list users visible to this environment (read view;
-identities stay in Sentin8:Auth - this is a projection).
+`GET /v1/users` - list users visible to this environment (read view; identities stay in Sentin8:Auth - this is a projection).
 
 Gate: `bank8:payments:users:read`
 
@@ -2164,12 +2108,11 @@ Gate: `bank8:payments:users:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Users | `PlatformUserResponse`[] |
-| 403 | Missing bank8:payments:users:read scope | - |
+| 403 | Missing `bank8:payments:users:read` scope | - |
 
 ### `GET /v1beta/instruction-file-specification-versions`
 
-`GET /v1beta/instruction-file-specification-versions` - list file
-specification versions (active-version semantics; ).
+`GET /v1beta/instruction-file-specification-versions` - list file specification versions (active-version semantics; ).
 
 Gate: `bank8:payments:files:read`
 
@@ -2178,12 +2121,11 @@ Gate: `bank8:payments:files:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Specification versions | `ResourceVersionResponse`[] |
-| 403 | Missing bank8:payments:files:read scope | - |
+| 403 | Missing `bank8:payments:files:read` scope | - |
 
 ### `POST /v1beta/instruction-file-specification-versions`
 
-`POST /v1beta/instruction-file-specification-versions` - create a file
-specification version.
+`POST /v1beta/instruction-file-specification-versions` - create a file specification version.
 
 Gate: `bank8:payments:files:write`
 
@@ -2200,13 +2142,11 @@ Gate: `bank8:payments:files:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Specification version created | `ResourceVersionResponse` |
-| 403 | Missing bank8:payments:files:write scope | - |
+| 403 | Missing `bank8:payments:files:write` scope | - |
 
 ### `POST /v1beta/instruction-file-specification-versions/validate`
 
-`POST /v1beta/instruction-file-specification-versions:validate` - validate
-a specification version payload without creating it (active-version
-semantics; the design's `:validate` convention).
+`POST /v1beta/`instruction-file-specification-versions:validate`` - validate a specification version payload without creating it (active-version semantics; the design's `:validate` convention).
 
 Gate: `bank8:payments:files:read`
 
@@ -2224,12 +2164,11 @@ Gate: `bank8:payments:files:read`
 | --- | --- | --- |
 | 200 | Validation result | - |
 | 400 | Invalid specification | - |
-| 403 | Missing bank8:payments:files:read scope | - |
+| 403 | Missing `bank8:payments:files:read` scope | - |
 
 ### `POST /v1beta/instruction-files/initiate`
 
-`POST /v1beta/instruction-files:initiate` - initiate an instruction file
-(submission route; - the business submission surface).
+`POST /v1beta/`instruction-files:initiate`` - initiate an instruction file (submission route; - the business submission surface).
 
 Gate: `bank8:payments:files:write`
 
@@ -2244,7 +2183,7 @@ Gate: `bank8:payments:files:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | File initiated for processing | - |
-| 403 | Missing bank8:payments:files:write scope | - |
+| 403 | Missing `bank8:payments:files:write` scope | - |
 
 ### `GET /v1beta/scheduled-payments`
 
@@ -2257,7 +2196,7 @@ Gate: `bank8:payments:scheduled-payments:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Scheduled payments | `ScheduledPaymentResponse`[] |
-| 403 | Missing bank8:payments:scheduled-payments:read scope | - |
+| 403 | Missing `bank8:payments:scheduled-payments:read` scope | - |
 
 ### `POST /v1beta/scheduled-payments`
 
@@ -2282,11 +2221,11 @@ Gate: `bank8:payments:scheduled-payments:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Scheduled payment created | `ScheduledPaymentResponse` |
-| 403 | Missing bank8:payments:scheduled-payments:write scope | - |
+| 403 | Missing `bank8:payments:scheduled-payments:write` scope | - |
 
 ### `GET /v1beta/scheduled-payments/{id}`
 
-`GET /v1beta/scheduled-payments/{id}` - fetch one scheduled payment.
+`GET /v1beta/scheduled-payments/&#123;id&#125;` - fetch one scheduled payment.
 
 Gate: `bank8:payments:scheduled-payments:read`
 
@@ -2301,12 +2240,12 @@ Gate: `bank8:payments:scheduled-payments:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Scheduled payment | `ScheduledPaymentResponse` |
-| 403 | Missing bank8:payments:scheduled-payments:read scope | - |
+| 403 | Missing `bank8:payments:scheduled-payments:read` scope | - |
 | 404 | Not found | - |
 
 ### `DELETE /v1beta/scheduled-payments/{id}`
 
-`DELETE /v1beta/scheduled-payments/{id}` - cancel a scheduled payment.
+`DELETE /v1beta/scheduled-payments/&#123;id&#125;` - cancel a scheduled payment.
 
 Gate: `bank8:payments:scheduled-payments:write`
 
@@ -2321,13 +2260,12 @@ Gate: `bank8:payments:scheduled-payments:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Cancelled | - |
-| 403 | Missing bank8:payments:scheduled-payments:write scope | - |
+| 403 | Missing `bank8:payments:scheduled-payments:write` scope | - |
 | 404 | Not found | - |
 
 ### `POST /v1beta/scheduled-payments/{id}/fast-forward`
 
-`POST /v1beta/scheduled-payments/{id}:fastForward` - execute the next
-occurrence immediately (; non-sandbox).
+`POST /v1beta/scheduled-payments/&#123;id&#125;:fastForward` - execute the next occurrence immediately (; non-sandbox).
 
 Gate: `bank8:payments:scheduled-payments:write`
 
@@ -2342,7 +2280,7 @@ Gate: `bank8:payments:scheduled-payments:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Next occurrence executed | - |
-| 403 | Missing bank8:payments:scheduled-payments:write scope | - |
+| 403 | Missing `bank8:payments:scheduled-payments:write` scope | - |
 | 404 | Not found | - |
 
 
@@ -2350,14 +2288,7 @@ Gate: `bank8:payments:scheduled-payments:write`
 
 ### `POST /v1/internal/authorisations/expire`
 
-`POST /v1/internal/authorisations/expire` - Sentin8:Cron proxy-back for
-the daily Authorisation Expiry run . Scans authorisation
-instructions past their scheme expiry TTL (7d default / 30d pre-auth /
-14d mass-transit / 1h AFD, measured from `transmission_date_time`),
-emits the caad.008 AdministrativeInitiation with
-`ALTERNATE_MESSAGE_REASON_AUTOMATED_AUTHORISATION_EXPIRY` (party `VP`),
-records the Release posting to Bank8:Ledger, and moves the payment to
-`PAYMENT_STATUS_EXPIRED`.
+`POST /v1/internal/authorisations/expire` - Sentin8:Cron proxy-back for the daily Authorisation Expiry run . Scans authorisation instructions past their scheme expiry TTL (7d default / 30d pre-auth / 14d mass-transit / 1h AFD, measured from `transmission_date_time`), emits the caad.008 AdministrativeInitiation with `ALTERNATE_MESSAGE_REASON_AUTOMATED_AUTHORISATION_EXPIRY` (party `VP`), records the Release posting to Bank8:Ledger, and moves the payment to `PAYMENT_STATUS_EXPIRED`.
 
 **Request body** (`application/json`):
 

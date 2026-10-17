@@ -26,7 +26,7 @@ Gate: `fdx:admin`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | List of audit entries | -[] |
-| 403 | Missing fdx:admin scope | - |
+| 403 | Missing `fdx:admin` scope | - |
 
 ### `GET /v1/admin/consents`
 
@@ -45,7 +45,7 @@ Gate: `fdx:admin`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | List of all consents | `ConsentResponse`[] |
-| 403 | Missing fdx:admin scope | - |
+| 403 | Missing `fdx:admin` scope | - |
 
 ### `GET /v1/admin/provider-profile`
 
@@ -58,7 +58,7 @@ Gate: `fdx:admin`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Provider profile | - |
-| 403 | Missing fdx:admin scope | - |
+| 403 | Missing `fdx:admin` scope | - |
 
 ### `PUT /v1/admin/provider-profile`
 
@@ -79,7 +79,7 @@ Gate: `fdx:admin`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Provider profile updated | - |
-| 403 | Missing fdx:admin scope | - |
+| 403 | Missing `fdx:admin` scope | - |
 
 ### `GET /v1/admin/recipients`
 
@@ -92,11 +92,11 @@ Gate: `fdx:admin`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | List of recipients | -[] |
-| 403 | Missing fdx:admin scope | - |
+| 403 | Missing `fdx:admin` scope | - |
 
 ### `POST /v1/admin/recipients/{id}/activate`
 
-`POST /v1/admin/recipients/{id}/activate` - activate a data recipient.
+`POST /v1/admin/recipients/&#123;id&#125;/activate` - activate a data recipient.
 
 Gate: `fdx:admin`
 
@@ -111,12 +111,12 @@ Gate: `fdx:admin`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Recipient activated | - |
-| 403 | Missing fdx:admin scope | - |
+| 403 | Missing `fdx:admin` scope | - |
 | 404 | Recipient not found | - |
 
 ### `POST /v1/admin/recipients/{id}/suspend`
 
-`POST /v1/admin/recipients/{id}/suspend` - suspend a data recipient.
+`POST /v1/admin/recipients/&#123;id&#125;/suspend` - suspend a data recipient.
 
 Gate: `fdx:admin`
 
@@ -131,14 +131,12 @@ Gate: `fdx:admin`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Recipient suspended | - |
-| 403 | Missing fdx:admin scope | - |
+| 403 | Missing `fdx:admin` scope | - |
 | 404 | Recipient not found | - |
 
 ### `GET /v1/recipient/consents`
 
-`GET /v1/recipient/consents` - list active consents for the recipient.
-Returns `{"consents": [...]}` (wrapped) so the eFintech app's
-FdxConsentsHook can parse `response.data['consents']`.
+`GET /v1/recipient/consents` - list active consents for the recipient. Returns `&#123;"consents": [...]&#125;` (wrapped) so the eFintech app's FdxConsentsHook can parse `response.data['consents']`.
 
 Gate: `fdx:read`
 
@@ -153,23 +151,11 @@ Gate: `fdx:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | List of recipient consents | - |
-| 403 | Missing fdx:read scope | - |
+| 403 | Missing `fdx:read` scope | - |
 
 ### `POST /v1/recipient/consents/start`
 
-`POST /v1/recipient/consents/start` - start consent authorization.
-The two-ledger recipient flow (fdx DESIGN.md §1 + §4 consent-flow
-sequence): the recipient-side fdx instance writes its OWN registry
-(a `pending` row in `recipient_consents`, in the recipient tenant),
-ensures its per-provider OAuth client exists at the provider's
-authorization server (DCR, cached in `fdx.recipients`), and pushes a
-PAR request whose `state` carries `"<consent handle>|<app origin>"`.
-The AS's authorize screen runs the ceremony; the browser redirect
-comes back to THIS instance's `/fdx/consents/callback` (the
-registered redirect_uri), which activates the row and exchanges the
-code. The provider's grant row is seeded by the provider's OWN
-auth-family consumer from `sentin8:auth:grant:created` - never by
-this side.
+`POST /v1/recipient/consents/start` - start consent authorization. The two-ledger recipient flow (fdx DESIGN.md §1 + §4 consent-flow sequence): the recipient-side fdx instance writes its OWN registry (a `pending` row in `recipient_consents`, in the recipient tenant), ensures its per-provider OAuth client exists at the provider's authorization server (DCR, cached in `fdx.recipients`), and pushes a PAR request whose `state` carries `"<consent handle>\|<app origin>"`. The AS's authorize screen runs the ceremony; the browser redirect comes back to THIS instance's `/fdx/consents/callback` (the registered redirect_uri), which activates the row and exchanges the code. The provider's grant row is seeded by the provider's OWN auth-family consumer from ``sentin8:auth:grant:created`` - never by this side.
 
 Gate: `fdx:read`
 
@@ -188,11 +174,11 @@ Gate: `fdx:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Consent started with authorization URL | - |
-| 403 | Missing fdx:read scope | - |
+| 403 | Missing `fdx:read` scope | - |
 
 ### `GET /v1/recipient/consents/{id}`
 
-`GET /v1/recipient/consents/{id}` - get a specific recipient consent.
+`GET /v1/recipient/consents/&#123;id&#125;` - get a specific recipient consent.
 
 Gate: `fdx:read`
 
@@ -207,12 +193,12 @@ Gate: `fdx:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Recipient consent detail | `ConsentResponse` |
-| 403 | Missing fdx:read scope | - |
+| 403 | Missing `fdx:read` scope | - |
 | 404 | Consent not found | - |
 
 ### `POST /v1/recipient/consents/{id}/refresh`
 
-`POST /v1/recipient/consents/{id}/refresh` - trigger data refresh.
+`POST /v1/recipient/consents/&#123;id&#125;/refresh` - trigger data refresh.
 
 Gate: `fdx:read`
 
@@ -227,12 +213,12 @@ Gate: `fdx:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Consent refreshed | - |
-| 403 | Missing fdx:read scope | - |
+| 403 | Missing `fdx:read` scope | - |
 | 404 | Consent not found | - |
 
 ### `POST /v1/recipient/consents/{id}/revoke`
 
-`POST /v1/recipient/consents/{id}/revoke` - revoke a recipient consent.
+`POST /v1/recipient/consents/&#123;id&#125;/revoke` - revoke a recipient consent.
 
 Gate: `fdx:read`
 
@@ -247,20 +233,11 @@ Gate: `fdx:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Consent revoked | `ConsentResponse` |
-| 403 | Missing fdx:read scope | - |
+| 403 | Missing `fdx:read` scope | - |
 
 ### `GET /v1/recipient/providers`
 
-`GET /v1/recipient/providers` - list FDX data providers from the
-`provider_profiles` registry.
-Provider profiles are auto-registered when an environment's
-`is_fdx_provider` flag is turned on (see Sys `update_env`), with the
-env's auth domain used as the issuer URL. The table has no RLS, so the
-catalog is visible cross-org - any recipient can discover and connect to
-any active provider. No static seed data is required.
-Response shape matches the eFintech recipient catalog contract:
-`{ "providers": [{ id, name, supportedDataClusters, status, ... }] }`,
-where each card reads `name`, `supportedDataClusters`, and `status`.
+`GET /v1/recipient/providers` - list FDX data providers from the `provider_profiles` registry. Provider profiles are auto-registered when an environment's `is_fdx_provider` flag is turned on (see Sys `update_env`), with the env's auth domain used as the issuer URL. The table has no RLS, so the catalog is visible cross-org - any recipient can discover and connect to any active provider. No static seed data is required. Response shape matches the eFintech recipient catalog contract: `&#123; "providers": [&#123; id, name, supportedDataClusters, status, ... &#125;] &#125;`, where each card reads `name`, `supportedDataClusters`, and `status`.
 
 Gate: `fdx:read`
 
@@ -269,11 +246,11 @@ Gate: `fdx:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | List of FDX data providers | - |
-| 403 | Missing fdx:read scope | - |
+| 403 | Missing `fdx:read` scope | - |
 
 ### `GET /v1/recipient/providers/{id}`
 
-`GET /v1/recipient/providers/{id}` - get a specific FDX data provider.
+`GET /v1/recipient/providers/&#123;id&#125;` - get a specific FDX data provider.
 
 Gate: `fdx:read`
 
@@ -288,6 +265,6 @@ Gate: `fdx:read`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | FDX data provider detail | - |
-| 403 | Missing fdx:read scope | - |
+| 403 | Missing `fdx:read` scope | - |
 | 404 | Provider not found | - |
 

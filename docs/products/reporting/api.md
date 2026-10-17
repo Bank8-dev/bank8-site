@@ -43,7 +43,7 @@ Sentin8 Bank8:Reporting - regulatory filing calendar, generation, packaging, sub
 
 ### `GET /v1/runs/{id}`
 
-`GET /v1/runs/{id}` - filing run detail.
+`GET /v1/runs/&#123;id&#125;` - filing run detail.
 
 **Responses**:
 
@@ -53,8 +53,7 @@ Sentin8 Bank8:Reporting - regulatory filing calendar, generation, packaging, sub
 
 ### `POST /v1/runs/{id}/regenerate`
 
-`POST /v1/runs/{id}/regenerate` - reset a non-submitted run to draft
-(guarded: terminal states never regress; corrections are amendments).
+`POST /v1/runs/&#123;id&#125;/regenerate` - reset a non-submitted run to draft (guarded: terminal states never regress; corrections are amendments).
 
 **Responses**:
 

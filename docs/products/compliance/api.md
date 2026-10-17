@@ -33,9 +33,7 @@ Sentin8 Bank8:Compliance - AML/CTF: KYC/CDD, sanctions screening, transaction mo
 
 ### `POST /v1/alerts/{id}/case`
 
-`POST /v1/alerts/{id}/case` - escalate an alert to a case with an
-audited actor claim (the assignee). The alert transitions to
-`escalated` in the same transaction.
+`POST /v1/alerts/&#123;id&#125;/case` - escalate an alert to a case with an audited actor claim (the assignee). The alert transitions to `escalated` in the same transaction.
 
 **Request body** (`application/json`):
 
@@ -51,11 +49,7 @@ audited actor claim (the assignee). The alert transitions to
 
 ### `POST /v1/alerts/{id}/status`
 
-`POST /v1/alerts/{id}/status` - queue operation on an alert (claim /
-review / close) with an audited actor: the caller's verified identity
-drives the journal entry; the transition is guarded against terminal
-states (closed alerts never reopen - a new detection raises a new
-alert).
+`POST /v1/alerts/&#123;id&#125;/status` - queue operation on an alert (claim / review / close) with an audited actor: the caller's verified identity drives the journal entry; the transition is guarded against terminal states (closed alerts never reopen - a new detection raises a new alert).
 
 **Request body** (`application/json`):
 
@@ -72,7 +66,7 @@ alert).
 
 ### `GET /v1/cases/{id}`
 
-`GET /v1/cases/{id}` - case detail with its alert.
+`GET /v1/cases/&#123;id&#125;` - case detail with its alert.
 
 **Responses**:
 
@@ -82,11 +76,7 @@ alert).
 
 ### `POST /v1/cases/{id}/conclude`
 
-`POST /v1/cases/{id}/conclude` - conclude a case as reportable: the
-report kind lands in `suspicious_activities` and
-`bank8:compliance:suspicious:detected` is emitted exactly once -
-Reporting files it through its own durable consume (detection here,
-filing there - the single-filing-executor rule, DESIGN.md §8).
+`POST /v1/cases/&#123;id&#125;/conclude` - conclude a case as reportable: the report kind lands in `suspicious_activities` and ``bank8:compliance:suspicious:detected`` is emitted exactly once - Reporting files it through its own durable consume (detection here, filing there - the single-filing-executor rule, DESIGN.md §8).
 
 **Request body** (`application/json`):
 
@@ -102,10 +92,7 @@ filing there - the single-filing-executor rule, DESIGN.md §8).
 
 ### `POST /v1/cases/{id}/dismiss`
 
-`POST /v1/cases/{id}/dismiss` - dismiss a case as not reportable:
-the recorded reason lands in the case row and NO suspicious activity
-is emitted - Reporting never sees a dismissed case (a dismissed
-case is terminal; a new detection opens a new case).
+`POST /v1/cases/&#123;id&#125;/dismiss` - dismiss a case as not reportable: the recorded reason lands in the case row and NO suspicious activity is emitted - Reporting never sees a dismissed case (a dismissed case is terminal; a new detection opens a new case).
 
 **Request body** (`application/json`):
 
@@ -123,11 +110,7 @@ case is terminal; a new detection opens a new case).
 
 ### `GET /v1/cases/{id}/evidence`
 
-`GET /v1/cases/{id}/evidence` - the case's investigation evidence:
-the originating alert, every sanctions screen against its subject,
-and the customer's risk profile (when resolved). Read-only -
-evidence is the input to the conclude/dismiss decision, never
-mutated by it.
+`GET /v1/cases/&#123;id&#125;/evidence` - the case's investigation evidence: the originating alert, every sanctions screen against its subject, and the customer's risk profile (when resolved). Read-only - evidence is the input to the conclude/dismiss decision, never mutated by it.
 
 **Responses**:
 
@@ -137,8 +120,7 @@ mutated by it.
 
 ### `GET /v1/customers/{id}/beneficial-owners`
 
-`GET /v1/customers/{id}/beneficial-owners` - list the customer's
-disclosed beneficial owners (references only).
+`GET /v1/customers/&#123;id&#125;/beneficial-owners` - list the customer's disclosed beneficial owners (references only).
 
 **Responses**:
 
@@ -148,9 +130,7 @@ disclosed beneficial owners (references only).
 
 ### `POST /v1/customers/{id}/beneficial-owners`
 
-`POST /v1/customers/{id}/beneficial-owners` - disclose a beneficial
-owner against a KYC record (idempotent per (kyc, identity_ref) -
-re-disclosing the same owner converges to the same row).
+`POST /v1/customers/&#123;id&#125;/beneficial-owners` - disclose a beneficial owner against a KYC record (idempotent per (kyc, identity_ref) - re-disclosing the same owner converges to the same row).
 
 **Request body** (`application/json`):
 
@@ -167,7 +147,7 @@ re-disclosing the same owner converges to the same row).
 
 ### `GET /v1/customers/{id}/kyc`
 
-`GET /v1/customers/{id}/kyc` - list a customer's KYC records.
+`GET /v1/customers/&#123;id&#125;/kyc` - list a customer's KYC records.
 
 **Responses**:
 
@@ -177,7 +157,7 @@ re-disclosing the same owner converges to the same row).
 
 ### `POST /v1/customers/{id}/kyc`
 
-`POST /v1/customers/{id}/kyc` - create a KYC record for a customer.
+`POST /v1/customers/&#123;id&#125;/kyc` - create a KYC record for a customer.
 
 **Request body** (`application/json`):
 
@@ -190,10 +170,7 @@ re-disclosing the same owner converges to the same row).
 
 ### `POST /v1/customers/{id}/pep`
 
-`POST /v1/customers/{id}/pep` - record a PEP (politically exposed
-person) determination. One live determination per KYC record - a
-re-determination updates it in place (the latest determination is
-authoritative; history rides the audit journal).
+`POST /v1/customers/&#123;id&#125;/pep` - record a PEP (politically exposed person) determination. One live determination per KYC record - a re-determination updates it in place (the latest determination is authoritative; history rides the audit journal).
 
 **Request body** (`application/json`):
 
@@ -210,10 +187,7 @@ authoritative; history rides the audit journal).
 
 ### `POST /v1/customers/{id}/risk-profile`
 
-`POST /v1/customers/{id}/risk-profile` - upsert the customer's AML
-risk rating (low/medium/high) with a recorded rationale. The rating
-drives monitoring intensity; a PEP determination forces at least
-`high` (a PEP can never sit below it).
+`POST /v1/customers/&#123;id&#125;/risk-profile` - upsert the customer's AML risk rating (low/medium/high) with a recorded rationale. The rating drives monitoring intensity; a PEP determination forces at least `high` (a PEP can never sit below it).
 
 **Request body** (`application/json`):
 
@@ -231,9 +205,7 @@ drives monitoring intensity; a PEP determination forces at least
 
 ### `GET /v1/rules`
 
-`GET /v1/rules` - list the tenant's monitoring rules (thresholds
-derive from the jurisdiction registry - reporting's return-template
-definitions - materialized at env-init; never code).
+`GET /v1/rules` - list the tenant's monitoring rules (thresholds derive from the jurisdiction registry - reporting's return-template definitions - materialized at env-init; never code).
 
 **Responses**:
 

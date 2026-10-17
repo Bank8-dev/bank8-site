@@ -43,9 +43,7 @@ Sentin8 Bank8:Risk - prudential risk measurement: capital, liquidity, credit (EC
 
 ### `POST /v1/limits`
 
-`POST /v1/limits` - upsert a limit threshold (admin-scoped;
-idempotent per (env, limit_type)). The limit_type must be one of the
-schema's CHECK values.
+`POST /v1/limits` - upsert a limit threshold (admin-scoped; idempotent per (env, limit_type)). The limit_type must be one of the schema's CHECK values.
 
 **Request body** (`application/json`):
 
@@ -63,7 +61,7 @@ schema's CHECK values.
 
 ### `GET /v1/limits/{id}`
 
-`GET /v1/limits/{id}` - limit detail with breach history.
+`GET /v1/limits/&#123;id&#125;` - limit detail with breach history.
 
 **Responses**:
 
@@ -73,9 +71,7 @@ schema's CHECK values.
 
 ### `POST /v1/stress/run`
 
-`POST /v1/stress/run` - run a scenario's shocks against a
-point-in-time snapshot (on-demand full recompute; never touches the
-incremental hot path). Idempotent per (scenario, snapshot ref).
+`POST /v1/stress/run` - run a scenario's shocks against a point-in-time snapshot (on-demand full recompute; never touches the incremental hot path). Idempotent per (scenario, snapshot ref).
 
 **Request body** (`application/json`):
 
@@ -91,9 +87,7 @@ incremental hot path). Idempotent per (scenario, snapshot ref).
 
 ### `POST /v1/stress/scenarios`
 
-`POST /v1/stress/scenarios` - author a declarative scenario
-(admin-scoped). Idempotent per (env, name): re-authoring a scenario
-updates its assumptions in place (registry data, not code).
+`POST /v1/stress/scenarios` - author a declarative scenario (admin-scoped). Idempotent per (env, name): re-authoring a scenario updates its assumptions in place (registry data, not code).
 
 **Request body** (`application/json`):
 
