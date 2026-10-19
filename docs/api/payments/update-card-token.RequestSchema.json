@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"type":"object","properties":{"status":{"type":["string","null"],"description":"PENDING_CREATION | INACTIVE | ACTIVE | SUSPENDED"}},"title":"UpdateCardTokenRequest"}}},"required":true}}

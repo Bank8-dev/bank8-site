@@ -1,0 +1,1 @@
+{"parameters":[{"name":"account_id","in":"query","description":"Account filter","required":false,"schema":{"type":"string","format":"uuid"}},{"name":"from","in":"query","description":"Range start","required":false,"schema":{"type":"string","format":"date-time"}},{"name":"to","in":"query","description":"Range end","required":false,"schema":{"type":"string","format":"date-time"}}]}

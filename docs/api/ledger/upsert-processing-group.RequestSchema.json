@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"type":"object","required":["name"],"properties":{"eod_cut_off":{"type":"string"},"grace_period_minutes":{"type":"integer","format":"int32"},"name":{"type":"string"},"paused":{"type":"boolean"},"utc_offset":{"type":"string"}},"title":"UpsertProcessingGroupRequest"}}},"required":true}}

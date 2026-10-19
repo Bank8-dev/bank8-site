@@ -1,0 +1,1 @@
+{"parameters":[{"name":"customer_id","in":"query","description":"Filter by customer","required":false,"schema":{"type":"string","format":"uuid"}}]}

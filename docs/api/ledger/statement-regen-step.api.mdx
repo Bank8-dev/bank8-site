@@ -1,0 +1,68 @@
+---
+id: statement-regen-step
+title: "`POST /v1/internal/statements/regen` — Flow proxy-back for the
+`statement-regen` workflow (design §10)."
+description: "Authorization mirrors the platform's canonical Flow proxy-back gate"
+sidebar_label: "`POST /v1/internal/statements/regen` — Flow proxy-back for the
+`statement-regen` workflow (design §10)."
+hide_title: true
+hide_table_of_contents: true
+api: eJztVV2O20YMvgoxL/Gi8t8mD4HytC1QIGi2m3bdJ3th0SPamlriqMORvaohoE89QJA79B49Sk5SULY3u9kiJ8iTpJkP5Efy46eDibgRk86N40iBsTR3iclJbHB1dJ5Naq6aWPjg/kT9hsqF4INALAjqEuPah+qFgEX27CyW8GPp91AHf98OV2i3sMFICx5IK5CtS79f5lSSHqYp3ZNtIi0lUp1dpH1Mi2VJAapGItSBhDgC8oKVxdCJNJTD9eU1rAgDBdi7WECmKMevU2kl1WByDp3BQPm8kAWfQUMlMZRWMrClI44XI5gFZKl9iOByRcUWBu9/Gc7e3cJ3D1XCD1cXC3YCFdrCMT1gE2AfQSjsnCXAx+16A9qXtvKNwKe/P8CryTRZ8D543oBYX9Pp9OUIZgXB3oftuucLxDtwAjZ4kaEtyG4pB9ygY4naqAUfO3CC2hJdBQN83HmLDJ7LFtBG8AzIx6hRIPot8YIVgXkeSOTNk4nqCxOs2hpFSGDnEDIny/P9EvPKcXYxMonxNYW+2Le5SY1EjFQRx2WgDXE/W5OYQFJ7FhKTHszlZKKPpzK7+ckkxnqOxFFvsa5LZ/vA499FIQcjtqAKTXrouq5LzKvJ9Hmcn33sZ6CzsRgpNz3y5XPktRNxvOkLLynfUDjNRNVpNIGQbYKLrUnnd4mpKBZea6y9RJOYGmNhUjPeTcfn7Rk/lC/jvn6TGMdrr8mjiyWZ1KyQt6+Hx4Tmy2W7PYoUvldQ+u7I6tNfH8H6cGaZgBJQ5sQbx5To0PPGRijdKmBodSqls8RCmpix0rzXb2dw8ytc1WgLGl6OJsqtl/DaUfhfQJeYHQU5UpuMpscjzV4hPwqdvb+5ncFXG5H1VXxpDmsfjmLOHvDDE/y8CzDISdyG4d9/ppNecE86dvismW9O9c2pvupUsa1VrZHu47gu0bGquQmlqui4zHOzm/Yre/oZJp/9THoX05W+S0yhDpDOzeGwQqHfQtl1evxHQ+FkFjsMDle68PO7LjEFYa5LNj+YLbWqVWupVhfZYdkoq2d+1z22HF0w03X/AQ38vcI=
+sidebar_class_name: "post api-method"
+info_path: docs/api/ledger/bank-8-ledger
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"`POST /v1/internal/statements/regen` — Flow proxy-back for the\n`statement-regen` workflow (design §10)."}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/v1/internal/statements/regen"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Authorization mirrors the platform's canonical Flow proxy-back gate
+(sys `flow_delegate::execute_step`): the caller must present an
+Auth-issued M2M bearer with `sentin8:sys:steps:execute` (Flow's
+`sentin8-flow-sys` client). Transport identity (PQ-TLS + platform CA)
+is machine identity, not service authorization; anonymous → 401,
+wrong scope → 403. The workflow's env is cross-checked against the
+bearer's env claim (a proxy-back can only act on an env its token
+can address; the platform plane bypasses via `is_platform_admin`).
+
+<ParamsDetails>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./statement-regen-step.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./statement-regen-step.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

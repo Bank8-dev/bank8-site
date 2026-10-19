@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"type":"object","required":["directory_id"],"properties":{"directory_id":{"type":"string","format":"uuid"},"status":{"type":"string"}},"title":"CreateDirectoryVersionRequest"}}},"required":true}}

@@ -1,0 +1,79 @@
+---
+id: update-alert-status
+title: "`POST /v1/alerts/{id}/status` — queue operation on an alert (claim /
+review / close) with an audited actor: the caller's verified identity
+drives the journal entry; the transition is guarded against terminal
+states (closed alerts never reopen — a new detection raises a new
+alert)."
+description: "`POST /v1/alerts/{id}/status` — queue operation on an alert (claim /"
+sidebar_label: "`POST /v1/alerts/{id}/status` — queue operation on an alert (claim /
+review / close) with an audited actor: the caller's verified identity
+drives the journal entry; the transition is guarded against terminal
+states (closed alerts never reopen — a new detection raises a new
+alert)."
+hide_title: true
+hide_table_of_contents: true
+api: eJztVcFuGzcQ/RViLk2AtVcOekg3J0dpgaANUtjOoZCEZESOtHS4wzXJXUUQFuhH9Av7JcGQqmw3RtsPqC4Sho8z8948jg6QcBuhWUCLbByFCKsKfE8Bk/X81kADQ28w0Ud0FNLHmDANESoIdDdQTK+92UNzAO05ESf5iX3vrM7369voWWJRt9Sh/Er7nqABv74lnaACQ1EH2wsaGrgqWdXam73a+KCQVS58VgqrFJCjFbR6djfQQOrUbFR//v6HSi0tGXXyQWmHtlM2KhyMTWTUaFHOlUbnKHwXlTXEyaa9spwPMnDJt34IjO75+ZGnDWREoyP5VQV9kLLJUszsSvyeXUzB8hamqYJkk5PQh6zipXC5zvAjVZgEdV8lhYFyIPaeY8n/YjaTr8dSQfWfRZ9yje9nPzyRRU4ehz79+v76RtXjRZ2Vj/XBmqkuHD9ljf8mvPJ8mpN6VlSvlxxotLRTtdLOR3qudja1GXecRh5S83ggIwW7sWROk1myCXakmGHHuSjiFPavcuiBH2xU2wGDkdRbtByTShQ6y+iWLO1TlO58FEBmpphGCiqQ74kzM1RMO2Uokc45A9pIsYSXnG9lV3SUWi+Po/dRXNxjaqGBp0WDCiLpIdi0h2axqkAGdHX/fn78gl0vJrl30slBFVje+Gyto5HWyJ9fnmnf9c4ia/rmDV2LcvxSvRZgMz8BM8HLd7/U85ufGvXzb/N6/uZNpSKyLs8n6kDElrdVkRWLBp1nm3zI8Uyu1hhJObshvdeORA9nNXHMFBg7afPd2xv1/kpd9qhbOntxPoMKylA3lsKTgKmCkUIsLGbnFyUkCnfID1L/b9B/N+gjS5z2UqIvqe4dWhZlh+DkrHh3AeMFVFDqQgWNNeLb08ZrxejNAg6HNUb6ENw0SfhuoHB09YjB4lo8ulhNFbSERga9OMBn2kMD87Ktzm6kF4G7QXr6ZnNN1V83LrWmPv0jdvXgLYotoIL18S+p80buBNzJGsdd2Zk+a5LXao4dwCFvB9wKtuSUz1dhF4Lm
+sidebar_class_name: "post api-method"
+info_path: docs/api/compliance/bank-8-compliance
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"`POST /v1/alerts/{id}/status` — queue operation on an alert (claim /\nreview / close) with an audited actor: the caller's verified identity\ndrives the journal entry; the transition is guarded against terminal\nstates (closed alerts never reopen — a new detection raises a new\nalert)."}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/v1/alerts/{id}/status"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+`POST /v1/alerts/{id}/status` — queue operation on an alert (claim /
+review / close) with an audited actor: the caller's verified identity
+drives the journal entry; the transition is guarded against terminal
+states (closed alerts never reopen — a new detection raises a new
+alert).
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./update-alert-status.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./update-alert-status.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

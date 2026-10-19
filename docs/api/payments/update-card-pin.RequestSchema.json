@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"type":"object","required":["new_pin_hash"],"properties":{"new_pin_hash":{"type":"string","description":"Pre-hashed PIN block from the encrypted session (server never sees the clear PIN)."}},"title":"UpdatePinRequest"}}},"required":true}}

@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"Due schedules dispatched (Cron proxy-back target)","content":{"application/json":{"schema":{}}}},"401":{"description":"Not authenticated"}}}

@@ -1,0 +1,103 @@
+---
+id: start-consent
+title: "`POST /v1/recipient/consents/start` — start consent authorization.
+The two-ledger recipient flow (fdx DESIGN.md §1 + §4 consent-flow
+sequence): the recipient-side fdx instance writes its OWN registry
+(a `pending` row in `recipient_consents`, in the recipient tenant),
+ensures its per-provider OAuth client exists at the provider's
+authorization server (DCR, cached in `fdx.recipients`), and pushes a
+PAR request whose `state` carries `'<consent handle>|<app origin>'`.
+The AS's authorize screen runs the ceremony; the browser redirect
+comes back to THIS instance's `/fdx/consents/callback` (the
+registered redirect_uri), which activates the row and exchanges the
+code. The provider's grant row is seeded by the provider's OWN
+auth-family consumer from `sentin8:auth:grant:created` — never by
+this side."
+description: "`POST /v1/recipient/consents/start` — start consent authorization."
+sidebar_label: "`POST /v1/recipient/consents/start` — start consent authorization.
+The two-ledger recipient flow (fdx DESIGN.md §1 + §4 consent-flow
+sequence): the recipient-side fdx instance writes its OWN registry
+(a `pending` row in `recipient_consents`, in the recipient tenant),
+ensures its per-provider OAuth client exists at the provider's
+authorization server (DCR, cached in `fdx.recipients`), and pushes a
+PAR request whose `state` carries `'<consent handle>|<app origin>'`.
+The AS's authorize screen runs the ceremony; the browser redirect
+comes back to THIS instance's `/fdx/consents/callback` (the
+registered redirect_uri), which activates the row and exchanges the
+code. The provider's grant row is seeded by the provider's OWN
+auth-family consumer from `sentin8:auth:grant:created` — never by
+this side."
+hide_title: true
+hide_table_of_contents: true
+api: eJztV9uO2zYQ/ZUBX7KLyvZenVQNAmxu7QJpdmE7aAF7saLJkcVEIhWS8qWugX5E/yH/kU/plxRDyfJ6s1gUfY5fbI2Gw+GcM4fjNfN85lg8ZqlcspuImRIt98roS8li5jy3/lYY7VB7FjGLnyt0/qWRKxavmTDa04t4zXhZ5kqElb2PzmiyOZFhwemXX5XIYmamH1Fs4yiLkjYWlfOmQHurJItYac1cye2TE6ZER3mVljLzCl2z261FqSwKf1tZtdtjzJy3Ss9YxHSV57RUohNWlZQai9koQ+BlCakNyUv4MHgH3sA2HEy5+EQGnnq00JwdDkruHEqYrib65du3tLwAnyGM3g0hM85rXuBhF95oYSRKUNqb8P7qovIZJM5zjwk4A8pPtKvsXM3RBY/ri0GPVz4zVv2BPcHzPKRgTaVlx1tVdtkm2ivTrqLtYVNjC+5ZzKpKSfK/W8hv/DcEQVu+/JHybVoQdkG4tXzFIqY8Fu6B4JtNxLzyOdmGxKBXdREHNXtqhx0FvK0wGFxJfiHiydERfe1D14SBwEqUsFA+g23lAvUITBb9Z15uQiZnR6ff7vWrck7pGaRyGVvkEkIVGPk7FJVVfsXi8Zpt37N4fLP5hmzJ9dVwBL35cc+iUKVC7XsNo1wvHCOBf/76uz5Ry7W9I3UnmijrF6aTo5yhhTYUpLlZwEEql/D6zfDy5/fdQsLXL8fwA3z9crYN1yGviXZUfC3wMA6ka4N0nJJIxwSlnedaICys8uhAeQdXv70HizPlvF1N9AGHpEQtlZ4lYM0ClIakjbTVCZdE9GJvF/CoufaH0UQjsb8JX6LtbInadIrIgz8ulfMOuA9xtj5P3ETvA+7QztHCwetXgwgEF1noPUhSuey2u7vkMAKuJZSVy9ABn+jriwE0agaLzDhsW1RwaxU6SCbs+RaRjGuZ44s/n5NyGKtmSr+YsKTB5mL4xLWgIThhETXYStf9LdBiYfTqp/A0tWbhAop1/020MAW6VnZGv1wOWyieOEh6qVzuSLOVhwQOfIYTXYODFiXcFcTDCBaZEhlw4dWc+0ZqCDOqAy5FxvWstk6CZHVhtFdomFmufY2yA4cog/rdg4MIUkPSSXmh8lVgXVWgrRUyoayVfhaTSxxCxsIi9yhr5msk+EhVfUb7KIldFrECfWboBiqNowuj5D5jMXusk1jEqMEHuyvqzZIXJanQQxfGTuj2lJWdpvzZedo/65w/PX7aOTvvn3Smp6nonIgf+6dpv89T3r93T92Jta+qO/tWQ1t9JWFVOjVBPhutnHL96VmHLuL7OjKsqwgvySN++/r3UDtTogZapPQsArLO+93zFp1dpaiiuRKoXSgGXVUkcZcjuBrARUld0znpHpGkS9opVWgfdNhEbI7W1UkddY9rE2FUcH0n9Hfd+65733Xvf+jeXtu3g5XHpe+VOVea2q0Z2GpJHLP5cdCdBvJ6+gk1I9kJwngTMZpQyXm9nnKHH2y+2ZD5c4WW5pibiM25VXxKOjQmbcqQSxKB8Zp9wlU9fNFM1RlRSuSeV2EWvD9fbaLtigshsPSP+t7cUXqSDBaxafPfojCS1li+oOPxBYsZo78ntDqMiMG2ZjnXs4rPyLeOSZ9/AXQGlC0=
+sidebar_class_name: "post api-method"
+info_path: docs/api/fdx/bank-8-fdx
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"`POST /v1/recipient/consents/start` — start consent authorization.\nThe two-ledger recipient flow (fdx DESIGN.md §1 + §4 consent-flow\nsequence): the recipient-side fdx instance writes its OWN registry\n(a `pending` row in `recipient_consents`, in the recipient tenant),\nensures its per-provider OAuth client exists at the provider's\nauthorization server (DCR, cached in `fdx.recipients`), and pushes a\nPAR request whose `state` carries `'<consent handle>|<app origin>'`.\nThe AS's authorize screen runs the ceremony; the browser redirect\ncomes back to THIS instance's `/fdx/consents/callback` (the\nregistered redirect_uri), which activates the row and exchanges the\ncode. The provider's grant row is seeded by the provider's OWN\nauth-family consumer from `sentin8:auth:grant:created` — never by\nthis side."}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/v1/recipient/consents/start"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+`POST /v1/recipient/consents/start` — start consent authorization.
+The two-ledger recipient flow (fdx DESIGN.md §1 + §4 consent-flow
+sequence): the recipient-side fdx instance writes its OWN registry
+(a `pending` row in `recipient_consents`, in the recipient tenant),
+ensures its per-provider OAuth client exists at the provider's
+authorization server (DCR, cached in `fdx.recipients`), and pushes a
+PAR request whose `state` carries `"<consent handle>|<app origin>"`.
+The AS's authorize screen runs the ceremony; the browser redirect
+comes back to THIS instance's `/fdx/consents/callback` (the
+registered redirect_uri), which activates the row and exchanges the
+code. The provider's grant row is seeded by the provider's OWN
+auth-family consumer from `sentin8:auth:grant:created` — never by
+this side.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./start-consent.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./start-consent.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

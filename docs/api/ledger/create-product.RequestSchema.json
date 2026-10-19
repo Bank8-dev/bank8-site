@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"type":"object","required":["product_type","name"],"properties":{"modules":{},"name":{"type":"string"},"parameters":{},"product_type":{"type":"string"}},"title":"CreateProductRequest"}}},"required":true}}

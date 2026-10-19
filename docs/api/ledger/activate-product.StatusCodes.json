@@ -1,0 +1,1 @@
+{"responses":{"204":{"description":"Product activated"},"403":{"description":"Missing bank8:ledger:products:publish scope"}}}

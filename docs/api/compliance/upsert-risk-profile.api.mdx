@@ -1,0 +1,76 @@
+---
+id: upsert-risk-profile
+title: "`POST /v1/customers/{id}/risk-profile` — upsert the customer's AML
+risk rating (low/medium/high) with a recorded rationale. The rating
+drives monitoring intensity; a PEP determination forces at least
+`high` (a PEP can never sit below it)."
+description: "`POST /v1/customers/{id}/risk-profile` — upsert the customer's AML"
+sidebar_label: "`POST /v1/customers/{id}/risk-profile` — upsert the customer's AML
+risk rating (low/medium/high) with a recorded rationale. The rating
+drives monitoring intensity; a PEP determination forces at least
+`high` (a PEP can never sit below it)."
+hide_title: true
+hide_table_of_contents: true
+api: eJzlVcFu20gM/RWCl20BJUqCPRTaU+p2gWIbNEjdw8IOGnqGtqYZzagzlF3DELAfsV/YLyko2Y2DBLt7X18kc0gO+d4jtUOhVcZqhjUF6zllvC0wtpxIXAzvLFbYtZmTfE4u339uU1w6z1hg4q8dZ3kd7RarHZoYhIPoK7Wtd2aIL7/kGNSWTc0N6ZtsW8YK4+ILG8ECLWeTXKveWOHNmBUW0W5hGROMl7uwAqkZTJclNpx+yXB59R60JNBKwwq+//W3uszDWDl5BpehoWBJYtrCCzp4bpzUsRNwkiGxicmyhcSUY9Bjl+ehC9RZJ7Tw/PJ036xLbBWoMYsaDxcpZG1S0MRx1ib3Pg/tZklq6I+jnp72BYoTPcJPQ983Lt9fj5DvkcFevR7qkdTxYMhtDHm8/eLsTB+PkcXiP3PUD3f8enHxTBY9eWy6u/7wcQrl+rw8sJPLnbN9qeyc7AVzN/AzkvkMk/NwTOULHzdlw9Z1TVm7Vf1yoAzoiK0DiKcwrXkfNw82uTVnaGJwEtNApnacnWx/A4Lrt9dgWTg1LgwJVGGGM5CAZ8oyD3d6352KRZ0NBQi85gTZCSzYxw04GRTRsNRRp6ONWWXcktRY4b/AgAVmNl1yssVqdlugYn/zMElvv1HTjtI4SOggjkfKOdKTC8s4SGkvnAWF+1cnJjatdxQMPxmxjxzEhVfwWh2ryU/HgaHLq/flZPp7BX/8OSknb94UkCkYjcyQTWLWESlAEoVMg/0I7QLIc5LSUGbwbslmazwrWt4ZDnnoK1CjZV69m8KHG7hsydR8cnF6hgU6q6UtHadnHfoC15zy2MXZ6floUvwbCkep/5+CfETyz80i/E3K1pMLilWXvJ6NWp3h+lyXwgEjLLByVnV2LNjbAmtVeDXD3W5BmT8l3/dq/tpx2qt4TcnprtR/fYE1k1UOZzu85y1WOBkXz8lUi1J332lxT5ZQXxwiLo3hVv7R9/ZoCJVxLHCx/xg10WpMos0wNptx/cUBnP1+3ujDU1h1tFLfMaf+fgAi73ys
+sidebar_class_name: "post api-method"
+info_path: docs/api/compliance/bank-8-compliance
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"`POST /v1/customers/{id}/risk-profile` — upsert the customer's AML\nrisk rating (low/medium/high) with a recorded rationale. The rating\ndrives monitoring intensity; a PEP determination forces at least\n`high` (a PEP can never sit below it)."}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/v1/customers/{id}/risk-profile"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+`POST /v1/customers/{id}/risk-profile` — upsert the customer's AML
+risk rating (low/medium/high) with a recorded rationale. The rating
+drives monitoring intensity; a PEP determination forces at least
+`high` (a PEP can never sit below it).
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./upsert-risk-profile.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./upsert-risk-profile.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

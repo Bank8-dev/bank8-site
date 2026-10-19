@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"type":"object","description":"Request body for dismissing a case — the reason is mandatory (a\ndismissal without a recorded reason is unauditable).","required":["reason"],"properties":{"reason":{"type":"string"}},"title":"DismissCaseRequest"}}},"required":true}}

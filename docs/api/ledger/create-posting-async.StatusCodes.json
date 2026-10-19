@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"Async posting enqueued"},"400":{"description":"Empty instructions"},"403":{"description":"Missing bank8:ledger:postings:write scope"}}}

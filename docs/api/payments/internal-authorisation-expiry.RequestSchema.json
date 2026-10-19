@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"type":"object","properties":{"batch_size":{"type":"integer","format":"int64","description":"Max instructions to expire in one run."},"env_id":{"type":["string","null"],"format":"uuid"}},"title":"AuthorisationExpiryRequest"}}},"required":true}}

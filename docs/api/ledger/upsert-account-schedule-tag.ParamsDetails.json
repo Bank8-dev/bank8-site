@@ -1,0 +1,1 @@
+{"parameters":[{"name":"account_id","in":"path","description":"Account id (path variant: /v1/accounts/{id}/schedule-tags)","required":true,"schema":{"type":"string","format":"uuid"}}]}

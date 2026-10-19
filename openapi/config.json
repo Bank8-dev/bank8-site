@@ -1,0 +1,50 @@
+{
+  "ledger": {
+    "specPath": "openapi/ledger-spec.json",
+    "outputDir": "docs/api/ledger",
+    "sidebarOptions": {
+      "groupPathsBy": "tag",
+      "categoryLinkSource": "info"
+    }
+  },
+  "payments": {
+    "specPath": "openapi/payments-spec.json",
+    "outputDir": "docs/api/payments",
+    "sidebarOptions": {
+      "groupPathsBy": "tag",
+      "categoryLinkSource": "info"
+    }
+  },
+  "fdx": {
+    "specPath": "openapi/fdx-spec.json",
+    "outputDir": "docs/api/fdx",
+    "sidebarOptions": {
+      "groupPathsBy": "tag",
+      "categoryLinkSource": "info"
+    }
+  },
+  "reporting": {
+    "specPath": "openapi/reporting-spec.json",
+    "outputDir": "docs/api/reporting",
+    "sidebarOptions": {
+      "groupPathsBy": "tag",
+      "categoryLinkSource": "info"
+    }
+  },
+  "risk": {
+    "specPath": "openapi/risk-spec.json",
+    "outputDir": "docs/api/risk",
+    "sidebarOptions": {
+      "groupPathsBy": "tag",
+      "categoryLinkSource": "info"
+    }
+  },
+  "compliance": {
+    "specPath": "openapi/compliance-spec.json",
+    "outputDir": "docs/api/compliance",
+    "sidebarOptions": {
+      "groupPathsBy": "tag",
+      "categoryLinkSource": "info"
+    }
+  }
+}

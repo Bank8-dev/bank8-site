@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"Derived parameter values","content":{"application/json":{"schema":{"title":"Value"}}}},"400":{"description":"account_id required"},"403":{"description":"Missing bank8:ledger:accounts:read scope"}}}

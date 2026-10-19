@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"type":"object","required":["dashboard_id"],"properties":{"dashboard_id":{"type":"string","format":"uuid"},"status":{"type":"string"}},"title":"CreateAppDashboardVersionRequest"}}},"required":true}}

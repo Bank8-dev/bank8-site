@@ -1,0 +1,74 @@
+---
+id: download-statement
+title: "`GET /fdx/v6/accounts/{accountId}/statements/{statementId}` — statement
+download. The Ledger statement object lives in Sentin8:Storage at
+`buckets/statements/objects/{envId}/{accountId}/{statementId}.pdf`;
+this handler mints a short-lived read URL via the Storage link API and
+answers 302 Found with the `Location` header (spec: statement image may
+be served inline or via redirect; §5.0a signed URLs)."
+description: "`GET /fdx/v6/accounts/{accountId}/statements/{statementId}` — statement"
+sidebar_label: "`GET /fdx/v6/accounts/{accountId}/statements/{statementId}` — statement
+download. The Ledger statement object lives in Sentin8:Storage at
+`buckets/statements/objects/{envId}/{accountId}/{statementId}.pdf`;
+this handler mints a short-lived read URL via the Storage link API and
+answers 302 Found with the `Location` header (spec: statement image may
+be served inline or via redirect; §5.0a signed URLs)."
+hide_title: true
+hide_table_of_contents: true
+api: eJztVNtuE0EM/RXLTyBts2mBCm2fiigoolwERUJqKjKZcbJDN55hxtm2Wq3ER/AP/AefwpcgJ72kLeKZB5525LF9zvicdYdi5hmrY5y5czwpMERKRnzgkcMKXTjjJhj3OYsRWhALFpgox8CZMlYd7gyH+nGUbfJRC7HCt6+wQBtYtKDq0MTYeLtqW37JmtJhtjUtDFZd3/d9gY+H2/f7vAkCZik1sWg5OVxlPrqf+drn7HkOUhO8eP4JrBJkKbMNkWBuhFBRMtll8nKB1fFJcafF5OXBEZQzd162u6WxNixZctldnkauL6+HkMvu+jxy/QR+ffsO15ExX41tAEc1wSG5OaWbewjTL2QFGt9SBs/wQd/HT6sPEpKZExgZ82S6tKckeRN0XZfLjrhVPpvcbhEaRDeb7I1Zap+hNuwaSrDwLBkM5Dok2VJwB4mMg4/vD6H1ZjW7KwqN51PYfzcCw27MhvMZpQyPhjvwIizZwZmXelUwOQxrYSdQk3GU4EGOZKuN5/qFdlyYizFPCTIlRfbceCYIaQWdyPlEVvbg548ng6GB7OdMK2r54QALXJDUQR05J7VgNFJjhffV8n+RCQv0PAtqHvHSEFY4NXz6dEutf9cNl5rAM82o1FKqcYjEoEWe58XKaO3u4AnEFFrvKJWJrI+eWJRz4y1xJsVjs1C416MjePse9qOxNW3tDIZKySnSzFP6Y0JfYEspr0kNB9vrUAxZFoY3Wv937z/s3lvW6lAuokomdC5lbIxnlXSZGr1bO3u9jgtsd7HAKzWxwMo7LPBmqBraGJ0u8Dpk0QZdNzWZPqam7zX8dUnpcu21JnkzVf8fn/QFrh+O1XGHp3SBFe5bS1H/stY0SyV6b333Jxt/5MuDI+z730TEOOg=
+sidebar_class_name: "get api-method"
+info_path: docs/api/fdx/bank-8-fdx
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"`GET /fdx/v6/accounts/{accountId}/statements/{statementId}` — statement\ndownload. The Ledger statement object lives in Sentin8:Storage at\n`buckets/statements/objects/{envId}/{accountId}/{statementId}.pdf`;\nthis handler mints a short-lived read URL via the Storage link API and\nanswers 302 Found with the `Location` header (spec: statement image may\nbe served inline or via redirect; §5.0a signed URLs)."}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/fdx/v6/accounts/{id}/statements/{statementId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+`GET /fdx/v6/accounts/{accountId}/statements/{statementId}` — statement
+download. The Ledger statement object lives in Sentin8:Storage at
+`buckets/statements/objects/{envId}/{accountId}/{statementId}.pdf`;
+this handler mints a short-lived read URL via the Storage link API and
+answers 302 Found with the `Location` header (spec: statement image may
+be served inline or via redirect; §5.0a signed URLs).
+
+<ParamsDetails>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./download-statement.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./download-statement.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

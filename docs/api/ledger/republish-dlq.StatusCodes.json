@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"DLQ entry republished"},"403":{"description":"Missing bank8:ledger:dlq:republish scope"},"404":{"description":"DLQ entry not found"}}}

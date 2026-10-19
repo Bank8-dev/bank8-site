@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"Admin overview (accounts-backed summary)","content":{"application/json":{"schema":{}}}},"401":{"description":"Not authenticated"},"403":{"description":"Missing the ledger scope gate"}}}

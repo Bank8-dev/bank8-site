@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"type":"object","properties":{"modules":{},"name":{"type":["string","null"]},"parameters":{}},"title":"UpdateProductRequest"}}},"required":true}}

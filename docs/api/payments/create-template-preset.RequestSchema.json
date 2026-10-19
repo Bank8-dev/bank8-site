@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"type":"object","required":["template_id","name"],"properties":{"name":{"type":"string"},"preset_values":{"title":"Value"},"template_id":{"type":"string","format":"uuid"}},"title":"CreateTemplatePresetRequest"}}},"required":true}}

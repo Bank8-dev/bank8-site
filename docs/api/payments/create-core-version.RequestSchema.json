@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"type":"object","required":["core_id"],"properties":{"core_id":{"type":"string","format":"uuid"},"status":{"type":"string"}},"title":"CreateCoreVersionRequest"}}},"required":true}}

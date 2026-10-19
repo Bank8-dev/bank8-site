@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"Emitted event families"},"403":{"description":"Missing bank8:ledger:accounts:read scope"}}}

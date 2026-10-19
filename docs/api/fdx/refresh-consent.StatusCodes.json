@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"Consent refreshed","content":{"application/json":{"schema":{}}}},"403":{"description":"Missing fdx:read scope"},"404":{"description":"Consent not found"}}}

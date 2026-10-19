@@ -1,0 +1,1 @@
+{"parameters":[{"name":"calendar_id","in":"query","description":"Calendar id","required":true,"schema":{"type":"string","format":"uuid"}}]}

@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"Retry result"},"403":{"description":"Missing bank8:ledger:accounts:write scope"},"404":{"description":"Batch not found"}}}

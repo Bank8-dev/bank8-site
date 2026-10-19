@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"type":"object","required":["name","expression","action"],"properties":{"action":{"type":"string"},"expected_parameters":{},"expression":{"type":"string"},"name":{"type":"string"},"rule_type":{"type":["string","null"]}},"title":"CreateRuleRequest"}}},"required":true}}

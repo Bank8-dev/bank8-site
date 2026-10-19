@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"type":"object","required":["start_date","end_date"],"properties":{"descriptor":{"type":["string","null"]},"end_date":{"type":"string","format":"date"},"period_type":{"type":"string"},"start_date":{"type":"string","format":"date"}},"title":"CreateCalendarPeriodRequest"}}},"required":true}}

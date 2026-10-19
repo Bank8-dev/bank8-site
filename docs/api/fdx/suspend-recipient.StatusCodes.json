@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"Recipient suspended","content":{"application/json":{"schema":{}}}},"403":{"description":"Missing fdx:admin scope"},"404":{"description":"Recipient not found"}}}

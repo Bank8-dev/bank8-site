@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"type":"object","properties":{"authentication_status":{"type":["string","null"],"description":"pending | frictionless | challenged | authenticated | failed | declined"},"risk_score":{"type":["string","null"]}},"title":"Update3dsRecordRequest"}}},"required":true}}

@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"Bulk retry results"},"403":{"description":"Missing bank8:payments:instructions:write scope"}}}

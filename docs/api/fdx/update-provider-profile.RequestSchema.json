@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"type":"object","required":["provider_name","issuer_url","fdx_version"],"properties":{"fdx_version":{"type":"string"},"issuer_url":{"type":"string"},"provider_name":{"type":"string"}},"title":"UpdateProviderProfileRequest"}}},"required":true}}

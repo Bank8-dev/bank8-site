@@ -1,0 +1,1 @@
+{"parameters":[{"name":"action","in":"query","description":"Filter by action","required":false,"schema":{"type":"string"}}]}

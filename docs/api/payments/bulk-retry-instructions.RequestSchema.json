@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"type":"object","properties":{"instruction_ids":{"type":"array","items":{"type":"string","format":"uuid"},"description":"Empty = retry all errored instructions in the env."}},"title":"BulkRetryRequest"}}},"required":true}}

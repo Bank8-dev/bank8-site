@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"Product activated (same contract as POST /v1/products/{id}/activate)"},"404":{"description":"Unknown product"}}}

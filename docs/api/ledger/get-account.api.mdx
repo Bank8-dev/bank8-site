@@ -1,0 +1,78 @@
+---
+id: get-account
+title: "`GET /v1/accounts/{id}` — account detail.
+.5: customer-realm callers can only fetch their own accounts
+the service layer verifies the account's `customer_id` matches the
+caller's customer before returning. RLS is the backstop."
+description: "`GET /v1/accounts/{id}` — account detail."
+sidebar_label: "`GET /v1/accounts/{id}` — account detail.
+.5: customer-realm callers can only fetch their own accounts
+the service layer verifies the account's `customer_id` matches the
+caller's customer before returning. RLS is the backstop."
+hide_title: true
+hide_table_of_contents: true
+api: eJzlVs1u20YQfpXBXGIDtCSnLhDw5rRBYCBpAcc9yYK92h2Jay9nmd2hHEEg0IfoE/ZJiuVSshXZqXvuieTu/H7zzQw3KGoZsZyiI7OkgLMCfUNBifV8YbDEJcmN0tq3LFhgo4KqSSgknQ2yqglLtAYLtIwlNkoqLNBQ1ME2yQiWeJ7V4eJXLDDQ19YGMlhKaKnAqCuqFZYblHWTjEUJlpdY4MKHWgmW2LbWYNfNknJsPEeKSf7tZJIez/syJMo6LFB7FmJJkqppnNV9auO7mMQ3h+79/I607AU6zQkSr276lwGOm16jwChK2thnzb623DvAHkcmc6OSMR1ISf6YFdiEhLHYnMeeuQMcugK18zHr7m6njzBx61wyuoPLKKETsTX1uo+OfwTxvk4bArG8V06xph863Qf/l6wI2te1FSED82wDju68ZTKwCL7eHsbj0TX/1joHdgHsd7LBPwB9s1EirEngiOkBBozgwUqVZBsfxfIyHo9ywFF8TSGV51UQZUZ9V7HnoB9q/u/sLPCVYmz1fW6bFwPtnnLn1VVrgjetlv+MwVZvn37PBTUQ/RCnrkCx4uix/y6HRsWuS7dnk58OW/WzjdHyEuaK79+Vef6UQ6FjGUgZiNo3fXJnk7OXe529wMK3bPpIIuk2WFn3A+pl21hOZ90Bg28/friC8ep0vJUdb6zpbuHvP//acTCPltE1j34uYUu9k0DK1aCVcxQiaMXg2a1hQaIrkIpsAP/AWyPxmqUiiBRWVhM4taYAKwp2YSkm8a3gmwi3T+h9C7USXWWZa87u3sRdGDCnhQ8EgaQNbHk5gstPX8Bmm3Ol76P4ZoQF1iSVHwZ8P9ilwhIPUu8H+8L3RR9K3GN6MuyL7wH8QiyW38H7HvhPvVCPnk5hZaVi275AvLRMBQwcBGfnQYV1is9ZTYlA5W7LfL64gt8v4bxRuqKTt6NJis0kfwtL4VmBrsAVhZhDm4xO81HyXit+Yvr/U/a9au0aWeibjBunLCd82uDSXabEFFenjzsvrbnSmjRIKh8lXW82cxXpj+C6Lh1/bSmk3psVuFLBqnnizHSDxsb0brBcKBfpIJLdnsajy2HzHsPen8OzsQ6HiteYHLo2fWGB97TOPyZdmlwVKZMoMt0MF+daUyNPVA7+DdJs2PXIxw9X2HX/AOeyLrs=
+sidebar_class_name: "get api-method"
+info_path: docs/api/ledger/bank-8-ledger
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"`GET /v1/accounts/{id}` — account detail.\n.5: customer-realm callers can only fetch their own accounts\nthe service layer verifies the account's `customer_id` matches the\ncaller's customer before returning. RLS is the backstop."}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v1/accounts/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+`GET /v1/accounts/{id}` — account detail.
+.5: customer-realm callers can only fetch their own accounts
+the service layer verifies the account's `customer_id` matches the
+caller's customer before returning. RLS is the backstop.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./get-account.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./get-account.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./get-account.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"type":"object","required":["calendar_id","bookkeeping_date"],"properties":{"bookkeeping_date":{"type":"string","format":"date"},"calendar_id":{"type":"string","format":"uuid"}},"title":"UpsertBookkeepingDateRequest"}}},"required":true}}

@@ -1,0 +1,88 @@
+---
+id: calendar-due-check
+title: "`POST /v1/internal/calendar/schedules/run` — Cron fires this daily.
+Marks due obligations and creates their filing runs — idempotent per
+(obligation, period): the unique index is the dedupe floor, so a
+re-fired calendar never double-creates (reporting DESIGN.md §5/§8).
+Cron owns timing; this owns correctness. The `sentin8:cron` workload
+is granted `bank8:reporting:runs:write` in this service's registration
+(the ledger-storage precedent), so the same Shield gate every human
+mutation passes also gates the scheduled fire — no bypass."
+description: "`POST /v1/internal/calendar/schedules/run` — Cron fires this daily."
+sidebar_label: "`POST /v1/internal/calendar/schedules/run` — Cron fires this daily.
+Marks due obligations and creates their filing runs — idempotent per
+(obligation, period): the unique index is the dedupe floor, so a
+re-fired calendar never double-creates (reporting DESIGN.md §5/§8).
+Cron owns timing; this owns correctness. The `sentin8:cron` workload
+is granted `bank8:reporting:runs:write` in this service's registration
+(the ledger-storage precedent), so the same Shield gate every human
+mutation passes also gates the scheduled fire — no bypass."
+hide_title: true
+hide_table_of_contents: true
+api: eJztVUGOGzcQ/EqjL9kFRtKugQCL8Sl2EmMPjgPv5iQtLGrYmqHFac42ScmCICCP8B/8Dz8lLwmas1IcJwc/wLpIaDVrqotV0wdMpo1Yz9FxImHj8aHCMJCY5ALfWqyxMZ7YGnlnM71rOmo2WKHQY6aYXgS7x/qATeBEnPSnGQbvmnJ89j4G1lpsOuoN1ofj8TiedUIW6ySZSiEOgSNF7X12daVflmIjblAYrPFX5x23kxMVsJmgUIEm9IOnRBYVOlKTxaU91vOH6iuM5e9v7u5htr2enWadnfBmStBmT3EmmZfw158f4aUEhrUTipA6F8Ea5/fTBb82somFQFh515ZBIxi20AiZVNrJCawLZZDMseA5S/0QVCUYSBZ88c/xSisu2Mtaz0Jm95gJHFv6AK7ggSWbB4K1D0EqiAHMgoUmys/CWRamLQnYkFeeJic6F0JDkKRkfv7l7vbVb9PewudPP84+f7q5nC64DBp2HCG53nH7fJy3VJogQk1iinEK9x3BMhInxzd1I4GXsAuy8cHYBbsIrRhOZGG5Mry5qc+PrVWDeicu0RIcj/CRZOsa+iGCUOtiGg234Aud1pNtSSYxBTEtwSDUkCVOl2V07YimJ7jrHHkLrUkEOvkeutwbXnCfU4GDwcRIEYyPobSNYp5u25b7LbfDAVZ77Z5ihT2lLqj1hxATVjiY1GGN32AdrNDxOqiBk0uesMYixuQsBn5ty7tRUHhRRHt7vitlJdRmb1KQ/clOp8dW0BI/pbSCwTQb0zpuK4h51bsYXWCdxLuGOJLyYdMrnde39/DmLfw0mKajybPplVJWbd3akfxvw7HCLUkc6V5Nr8eSatMb/gL6e8C+B+zbAvavBBww7Qf1T6IPaTZ441j9lcXrf2P25ri9Ltl6WlLVeSthhWdv6V7KrBus0+DWczwcVibSH+KPRy0/ZpKn3bA14sxKEzp/OFbYkbFq//kBN7THGl+OG21yr9y03Wfl+J/tdnz44n2hAcAKV09bsQ9Wz4jZKTOzwxpRt2txtDaU2gG94TabVntHTP38DWolu88=
+sidebar_class_name: "post api-method"
+info_path: docs/api/reporting/bank-8-reporting
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"`POST /v1/internal/calendar/schedules/run` — Cron fires this daily.\nMarks due obligations and creates their filing runs — idempotent per\n(obligation, period): the unique index is the dedupe floor, so a\nre-fired calendar never double-creates (reporting DESIGN.md §5/§8).\nCron owns timing; this owns correctness. The `sentin8:cron` workload\nis granted `bank8:reporting:runs:write` in this service's registration\n(the ledger-storage precedent), so the same Shield gate every human\nmutation passes also gates the scheduled fire — no bypass."}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/v1/internal/calendar/schedules/run"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+`POST /v1/internal/calendar/schedules/run` — Cron fires this daily.
+Marks due obligations and creates their filing runs — idempotent per
+(obligation, period): the unique index is the dedupe floor, so a
+re-fired calendar never double-creates (reporting DESIGN.md §5/§8).
+Cron owns timing; this owns correctness. The `sentin8:cron` workload
+is granted `bank8:reporting:runs:write` in this service's registration
+(the ledger-storage precedent), so the same Shield gate every human
+mutation passes also gates the scheduled fire — no bypass.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./calendar-due-check.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./calendar-due-check.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

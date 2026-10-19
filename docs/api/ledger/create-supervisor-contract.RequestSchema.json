@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"type":"object","required":["name","func_module_id"],"properties":{"func_module_id":{"type":"string"},"member_account_ids":{"title":"Value"},"name":{"type":"string"},"parameters":{"title":"Value"}},"title":"CreateSupervisorContractRequest"}}},"required":true}}

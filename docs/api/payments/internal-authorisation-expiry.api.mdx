@@ -1,0 +1,88 @@
+---
+id: internal-authorisation-expiry
+title: "`POST /v1/internal/authorisations/expire` — Sentin8:Cron proxy-back for
+the daily Authorisation Expiry run . Scans authorisation
+instructions past their scheme expiry TTL (7d default / 30d pre-auth /
+14d mass-transit / 1h AFD, measured from `transmission_date_time`),
+emits the caad.008 AdministrativeInitiation with
+`ALTERNATE_MESSAGE_REASON_AUTOMATED_AUTHORISATION_EXPIRY` (party `VP`),
+records the Release posting to Bank8:Ledger, and moves the payment to
+`PAYMENT_STATUS_EXPIRED`."
+description: "`POST /v1/internal/authorisations/expire` — Sentin8:Cron proxy-back for"
+sidebar_label: "`POST /v1/internal/authorisations/expire` — Sentin8:Cron proxy-back for
+the daily Authorisation Expiry run . Scans authorisation
+instructions past their scheme expiry TTL (7d default / 30d pre-auth /
+14d mass-transit / 1h AFD, measured from `transmission_date_time`),
+emits the caad.008 AdministrativeInitiation with
+`ALTERNATE_MESSAGE_REASON_AUTOMATED_AUTHORISATION_EXPIRY` (party `VP`),
+records the Release posting to Bank8:Ledger, and moves the payment to
+`PAYMENT_STATUS_EXPIRED`."
+hide_title: true
+hide_table_of_contents: true
+api: eJztVttu4zYQ/RVinraA5EsuTqo37cbbGohjw1aKLuxApsWRxY1EaknKidcw0I/oF/ZLipHsjd0s2qCvrV8sDA/ncnhmyC04vrIQzKDkmwKVs75UDo3iOTx4oEs03EmtBgICOKzEvHKZNtLWSzE+l9JswAODXyq07r0WGwi2kGjlUDn65GWZy6SGtz9brchmkwwLTl9uUyIEoJefMXHgQWkorpNoaXXJXZLFVn7FIyylskIDHqTaFNw1pt4FeCDQJkaWFAsCGPJnJpV1pkrIYpnTrE4YmVRMK2SmUi3YeYBqHUvxEmMG1hmpVuCBqvKajm+xqkoK2O08cNLllE94zEi/JmTSsAE7whE10qCAwJkKa4MttbJNiWedDv2dZt54ofSYQVvlxMy/pvQl/gya8kVtzZFbjEttnVQrCx7YR1mWKKja02M47HrDGey+4/lt2w7R34I+Yn9PeKUmDVG7mvOLzvlrVofSWqlWzKJZywSZTXSJtbNT3GI8mkasve62D6pvn6jethtCFuyP335nU1ROquvgg9GKlUY/b/wlTx5Zqs1cuQyZ4DLfsBOVsKMDbrFpwpVlJyHm6kS4JbeOuQylYfU5Y6PjDYuiW/buSjCBKa9yx9rsvCNYadAnd6w9V90LwQpure8MV1YSpJux8OONxwrktjIoWGp0wRY1oCCOtIoFdxg7WeDiB2+usJDOUgIs4Vy0Op1rFopCKmkdzYg1DpR0sintSbpsrhbhbdSf3IVRPx72p9Pwp3486YfT0V0c3kejYRj1b+jr59FkMA2jwegu7v86Hkw+Ldi7khu3YYtfxnVog4k2ogk+aZTF9sqifn7P1eN1cItihcZjXAlW6DU28P1YY07P1WIcfhr276J4GoXR/bSJ1r9ZtMCDAl2maciRX5pB3GUQwD8LgHoGk8pIt4Fg9uABNePkZRL2n3lR5vjXSdZ5GThwnvLry7R34V9eda/8i8vemb88TxP/LPmxd572ejzlPeoOqVJdt8Ze9kuq2z8M7lejby/KPT3jPazW64EVbZIMm/PTymMCc1xxh/WUPGj6Y66fiKFcJqhsXYjiBcUfDiI2mrCw5EmG/lmrAx5IQdtSiea7gJ0HazS2SbDT6jYm4rzg6sj1/+3332q/E+V+G/4On127zLlUpJLK5LTWdOYM1l2S2+Gx4sGpPsDb31h0k2XU08EMttslt3hv8t2OzF8qNPumXXMj+ZK6avaw8yBDLkjBsy084gYC+NBcvH5EiRE8ryjBV5fwzjvsCJMES/e32IejsUN6Bw+W+7dToQXtMfyJrmn+BAEAPcea2oJtY9tCztWq4ivCNj7p9yf1vmun
+sidebar_class_name: "post api-method"
+info_path: docs/api/payments/bank-8-payments
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"`POST /v1/internal/authorisations/expire` — Sentin8:Cron proxy-back for\nthe daily Authorisation Expiry run . Scans authorisation\ninstructions past their scheme expiry TTL (7d default / 30d pre-auth /\n14d mass-transit / 1h AFD, measured from `transmission_date_time`),\nemits the caad.008 AdministrativeInitiation with\n`ALTERNATE_MESSAGE_REASON_AUTOMATED_AUTHORISATION_EXPIRY` (party `VP`),\nrecords the Release posting to Bank8:Ledger, and moves the payment to\n`PAYMENT_STATUS_EXPIRED`."}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/v1/internal/authorisations/expire"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+`POST /v1/internal/authorisations/expire` — Sentin8:Cron proxy-back for
+the daily Authorisation Expiry run . Scans authorisation
+instructions past their scheme expiry TTL (7d default / 30d pre-auth /
+14d mass-transit / 1h AFD, measured from `transmission_date_time`),
+emits the caad.008 AdministrativeInitiation with
+`ALTERNATE_MESSAGE_REASON_AUTOMATED_AUTHORISATION_EXPIRY` (party `VP`),
+records the Release posting to Bank8:Ledger, and moves the payment to
+`PAYMENT_STATUS_EXPIRED`.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./internal-authorisation-expiry.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./internal-authorisation-expiry.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

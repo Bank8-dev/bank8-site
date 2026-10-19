@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"type":"object","required":["name"],"properties":{"name":{"type":"string"},"status":{"type":"string"}},"title":"CreateScheduleTagRequest"}}},"required":true}}

@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"Balance endpoint mode updated"},"400":{"description":"Invalid mode"},"403":{"description":"Missing bank8:payments:cores:write scope"},"404":{"description":"Core not found"}}}

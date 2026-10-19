@@ -1,0 +1,67 @@
+---
+id: debatch-step
+title: "Execute the `debatch_file` step: split the file's records into chunked
+instruction batches (design §10). The step is idempotent on
+`file_id:chunk_index` — a workflow retry re-enters here and the
+terminal-file guard makes completed work a no-op."
+description: "The chunk count derives from the file's `size_bytes` (the"
+sidebar_label: "Execute the `debatch_file` step: split the file's records into chunked
+instruction batches (design §10). The step is idempotent on
+`file_id:chunk_index` — a workflow retry re-enters here and the
+terminal-file guard makes completed work a no-op."
+hide_title: true
+hide_table_of_contents: true
+api: eJzdVF2OEzkQvkqpXgCp84d4QL1PLAtahJZBM8NTGCWOXUl747a9rurMZKOW9hB7B+7BUTgJqu6MdoA9AU8t2VVflb+fPqGYHWO9xGyOLUXhiY9CJZqANxU6Ylt8Fp8i1njdENimi3uwqYsCjoo/EMO2pBakIdj6QI8Y1uz/ptXmKMRreCwNfYzrl79/ePd2dfnq5cXlb1frSSGbioONEdsANxQCZCoj+pNf4HydTWEfd1C8I4YByEeW0lndaKLjJpzJwoEK+xSh0M6zUCEH21Qe7mSDYZ5ihSlTMdr+xmGNjoYVViyUscJCnFNkYqxP+HQ+18+3HFy8xQptikJR9NbkHLwdAGd/spackG1DrcH61Pd9X+Gz+eJHnHdJwHTSUBRtJ4daymS74uWI9fKmwpakSbplTixYYTbSYI2zw2J2L9JMn8ez8zOwQh+3SaeJl0BY48bE/fPJvbj4vaRXOj8+h1+1rH5/LoMv//wL5x5IxTbEMpJWgaNAOyOqR4Jze/06pFslN3hLkUkXiKbV+X+8uYaLS3iRjW1o8nQ61x2dtm09lf8t6Cs864k1zqeL8Ug5aE18AP3qjmwnNKi8vhdS+ViDylkD5+DloQlGWzH4KGn0GrlvLDUakhgeO2K/i/D502L+ZArqfMUEz+AdtTnJQE38GNeKvfKuHvBWPjq6Ww8EGrhNZb8N6RYKSTlCoQmpbgwNFQIT3ehpodL6aMJgaNh1pjhozZ4YbGpzICE3QIGBmCYpT7+X8fSfI3+OkMoxq8JCdzLLwfioDuhK0KeOKVjiYTHY/fyzqnBIwsDMmIWbChvNTb3E02ljmD6U0Pd6/FdH5RyxgynebDQpy5u+woaMU1cuT7inI9b4wlrKmr2DCZ2u9EPe+4dBfX9xdY19/xVuduEN
+sidebar_class_name: "post api-method"
+info_path: docs/api/payments/bank-8-payments
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Execute the `debatch_file` step: split the file's records into chunked\ninstruction batches (design §10). The step is idempotent on\n`file_id:chunk_index` — a workflow retry re-enters here and the\nterminal-file guard makes completed work a no-op."}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/v1/internal/files/debatch"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+The chunk count derives from the file's `size_bytes` (the
+`CHUNK_RECORDS`-record batch shell per chunk); record parsing rides the
+instruction-file-spec version registered for the file's class.
+
+<ParamsDetails>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./debatch-step.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./debatch-step.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"Encrypted card details (opaque envelope)"},"403":{"description":"Missing bank8:payments:issuance:read scope"},"404":{"description":"Card not found"}}}

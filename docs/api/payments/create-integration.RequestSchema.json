@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"type":"object","required":["name"],"properties":{"auth_config":{},"config":{},"integration_kind":{"type":"string"},"name":{"type":"string"}},"title":"CreateIntegrationRequest"}}},"required":true}}

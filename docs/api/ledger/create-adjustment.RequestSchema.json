@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"type":"object","required":["account_id","reason","effective_date"],"properties":{"account_id":{"type":"string","format":"uuid"},"effective_date":{"type":"string","format":"date-time"},"reason":{"type":"string"}},"title":"CreateAdjustmentRequest"}}},"required":true}}

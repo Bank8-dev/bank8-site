@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"type":"object","properties":{"display_name":{"type":["string","null"]},"email":{"type":["string","null"]},"phone":{"type":["string","null"]}},"title":"UpdateCustomerRequest"}}},"required":true}}

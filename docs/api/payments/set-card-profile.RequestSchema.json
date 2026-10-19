@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"type":"object","required":["profile_id"],"properties":{"profile_id":{"type":"string","description":"Card Profile id (chip behaviour / scheme approval)."}},"title":"SetCardProfileRequest"}}},"required":true}}

@@ -1,0 +1,1 @@
+{"parameters":[{"name":"token","in":"path","description":"Callback token from the initial HTTPAsyncStep call","required":true,"schema":{"type":"string"}}]}

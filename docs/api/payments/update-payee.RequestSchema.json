@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"type":"object","properties":{"account_identifier":{"type":["string","null"]},"metadata":{"oneOf":[{"type":"null"},{"title":"Value"}]},"name":{"type":["string","null"]},"status":{"type":["string","null"]}},"title":"UpdatePayeeRequest"}}},"required":true}}

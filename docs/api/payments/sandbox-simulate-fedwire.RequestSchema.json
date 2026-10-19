@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"type":"object","properties":{"amount":{"type":["string","null"]},"card_id":{"type":["string","null"],"format":"uuid"},"currency":{"type":["string","null"]},"instruction_id":{"type":["string","null"],"format":"uuid"},"outcome":{"type":["string","null"]}},"title":"SandboxSimulateRequest"}}},"required":true}}

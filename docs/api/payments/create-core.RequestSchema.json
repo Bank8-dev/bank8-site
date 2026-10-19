@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"type":"object","required":["name"],"properties":{"description":{"type":["string","null"]},"name":{"type":"string"}},"title":"CreateCoreRequest"}}},"required":true}}

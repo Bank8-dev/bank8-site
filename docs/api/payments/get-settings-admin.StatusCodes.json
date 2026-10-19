@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"Service settings","content":{"application/json":{"schema":{}}}},"403":{"description":"Caller lacks the payments admin scope"}}}

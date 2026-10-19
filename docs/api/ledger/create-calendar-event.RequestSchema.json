@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"type":"object","required":["event_date","event_type"],"properties":{"description":{"type":["string","null"]},"event_date":{"type":"string","format":"date"},"event_type":{"type":"string"}},"title":"CreateCalendarEventRequest"}}},"required":true}}

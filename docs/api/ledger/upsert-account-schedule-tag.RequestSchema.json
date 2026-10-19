@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"type":"object","required":["tag_id"],"properties":{"status":{"type":"string"},"tag_id":{"type":"string","format":"uuid"}},"title":"UpsertAccountScheduleTagRequest"}}},"required":true}}

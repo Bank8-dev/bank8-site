@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"Entry republished (same contract as POST /v1/dlq/{id}/republish)","content":{"application/json":{"schema":{}}}},"404":{"description":"Unknown DLQ entry"}}}

@@ -1,0 +1,61 @@
+---
+id: health
+title: "`GET /v1/health` — service health payload."
+description: "Carries the binary's build identity (`version`/`build`, BUILDID-1) so"
+sidebar_label: "`GET /v1/health` — service health payload."
+hide_title: true
+hide_table_of_contents: true
+api: eJzdkt1q20AQhV9lmBsnsPFProLu8mOCIU3ASQrFMWgsTaLF0u5mZyRqjKAP0Sfsk5SV0zQtfYJeLczszpzz7dmj0otgtsKGlXBtsGQpog1qvcMMLylGywJaMWyso7gbCWxaW5dgS3ZqdQdHecdRrHf5JB9auYGLx8XN1eLqZHYM4p9cQUHJupFA451VHyH40NakLJA3tGUQJW0lHwl8ni/vF3e3UPi6bRw8+wjccdw9OetEyRUMP759HxQV3knbWPcCF4vb8+WXkbyrMuDSKyCQiiKXUERSHskYDfrAkZLBRYkZVky1VmgwsgTvhAWzPZ5Op+n4k8aN7dixCBy9OTYHFsfY9waFizZa3WG2WpvEs/Jp/gsrGgykFWY46WaT94XWPfu0RK3WjBluyG3PTqKVLf79D/fJlTuDi3QlW1rZDhBCbAe/VEN6Bg2TtJEbdppBQcEq1QZq+9racoBSRC6twtH88uY4NRqrYkA0sgxoaluwE06qHDVJ1KfFA9wt4TxQUfHJ6XiahA9Lny3Hf17oDb7xwQyn49mhFLxoQ+7D6Px6/gC/ieSDJeHY2YLhUINAu9pTOf6byB4L75Sd/q8h1V1IjJS/6iTUZF1i2MY6WT+EaYXdDM2v/K4NVl40lff7DQk/xrrvU/m15fgWyo6ipU0K22rdf8jo9fwB+/4nn0tl7A==
+sidebar_class_name: "get api-method"
+info_path: docs/api/risk/bank-8-risk
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"`GET /v1/health` — service health payload."}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v1/health"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Carries the binary's build identity (`version`/`build`, BUILDID-1) so
+captain's monitor populates `make status`'s VERSION column for every
+instance — the consuming BINARY's identity, never a shared crate's.
+
+<ParamsDetails>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./health.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./health.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

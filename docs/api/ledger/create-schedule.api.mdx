@@ -1,0 +1,76 @@
+---
+id: create-schedule
+title: "`POST /v1/schedules` — create a schedule, delegating execution to Cron.
+Ledger stores a local reference in `schedules` and creates the actual
+schedule in Cron via `POST /v1/schedules`. Cron fires the schedule and
+proxy-calls Ledger's `POST /v1/internal/schedules/run` to execute the work."
+description: "`POST /v1/schedules` — create a schedule, delegating execution to Cron."
+sidebar_label: "`POST /v1/schedules` — create a schedule, delegating execution to Cron.
+Ledger stores a local reference in `schedules` and creates the actual
+schedule in Cron via `POST /v1/schedules`. Cron fires the schedule and
+proxy-calls Ledger's `POST /v1/internal/schedules/run` to execute the work."
+hide_title: true
+hide_table_of_contents: true
+api: eJztVs1uG0cMfpUBL72MZPlPcfeWBD0EaJDCdk+yIFOzXGni0cxmhitLEBboQ/QJ+yQFd1c/lgwnQHOsLlpwyY/fkB85uwHGWYJsBI7yGUUYawglRWQb/KccMjCRkGmSzJzyyhFoiPStosQfQr6GbAMmeCbP8ohl6axpYs++puDFJoELlCdelwQZhOlXMtzh2Ei5ZN/CTxonDSYGP6FVGSklG7zQKqMQY0upSWVMqDxPbL6HHkHiaP0MNPjKOQkqQlwgQwZVZXOoT4H3vLrYWh+ROfWoNbBlJ6aPTXXuuoDbtjJQi8v+eBwragypDD61/C8GA/nLKZloS26owBZHtUXPpRA/o7pWkL5XYg2JkavUvGrST5B/ZuF3mCcVPXDPkanHdkE/2qxDHq/gbdM7TDyJlX+R/y3eL4h4Wv2H6O/paVf5N6W2F1krI1FZreFqcHkqpM82Jetnaor+6SZrRzvb0kjZc7RMKplQUpMikami5TVkow28FQPZaFyP9VG2xz++3N2rs+X52c79Uf3z19+djBWqrV2rnBzNkIUcrchUAqE4qI8x+P6D/71JqxKHSEmhcsGgU5EKiuQNKevV40ES9HmXJCmek0LDFboHv3URf0FWS4vqNZr99nVhY4ewi0SfP/gyhtW6Z9C5pFpqv6QDHOuZoke3BzyLlX+U87SHowbzOcSnPmhYEM+D7NQyJBnREnkOGbxgBBpktm/3O/a3FS5KR8ezB5cF3lwXw6ve9bvzd72r6+FFb3pZmN6F+XV4WQyHWODwlTE/GJIjXR4OlS9Co8ZOe40met0Vcdz+O/Js/Y360Ain62DT/hBJtUFayZmbrvuZ9aRVGUNeGVbOTiPGtdTHWUMi7GwDHheS9/One/XlVr0v0cypd9EfgAy85CssxVcdag1Lit1RB/3z1iTZF+gPoP8X7Y+J9kWvd/uJacVnpUPrpbpVdPKu1fMIlucH4kqyF+ci+GwEm80UE/0ZXV2L+VtFUZbOWMMSo8WpazeMhjlhLg0ebeCJ1nLRtvdg7769vJboKuFxcifWehvx3hgq+U3f8cFMSn1Aw7T7qlmEXGIiPstdis+QAcinkUQ3i7qxbcChn1U4E98WU37/AsnDQac=
+sidebar_class_name: "post api-method"
+info_path: docs/api/ledger/bank-8-ledger
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"`POST /v1/schedules` — create a schedule, delegating execution to Cron.\nLedger stores a local reference in `schedules` and creates the actual\nschedule in Cron via `POST /v1/schedules`. Cron fires the schedule and\nproxy-calls Ledger's `POST /v1/internal/schedules/run` to execute the work."}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/v1/schedules"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+`POST /v1/schedules` — create a schedule, delegating execution to Cron.
+Ledger stores a local reference in `schedules` and creates the actual
+schedule in Cron via `POST /v1/schedules`. Cron fires the schedule and
+proxy-calls Ledger's `POST /v1/internal/schedules/run` to execute the work.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./create-schedule.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./create-schedule.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

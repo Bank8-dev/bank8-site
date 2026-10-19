@@ -1,0 +1,74 @@
+---
+id: verify-pin
+title: "Verify a card PIN.
+`pin_hash` is the (already hashed) PIN the client sent, encrypted with
+the session public key. Payments never stores or sees the clear PIN. The
+stored `pin_hash` column on `cards` is compared against the
+provided value; on mismatch `pin_attempts` is incremented and the
+card is suspended when it reaches 3."
+description: "Verify a card PIN."
+sidebar_label: "Verify a card PIN.
+`pin_hash` is the (already hashed) PIN the client sent, encrypted with
+the session public key. Payments never stores or sees the clear PIN. The
+stored `pin_hash` column on `cards` is compared against the
+provided value; on mismatch `pin_attempts` is incremented and the
+card is suspended when it reaches 3."
+hide_title: true
+hide_table_of_contents: true
+api: eJztlM9u1DAQxl9lNCeQ0v3TckDhVA5IFeof0cJld9V67enGNBkbj7NlFUXiIXhCngRNsq1Ky5Ejp0j2N1++Gf/sDrPZCJYLjGbXEGfBVYEhUjLZBz5xWOKWkr/dXUfPWGAiiYGFBMsOD2cz/TgSm3zUAizx/CMWaANn4qy7Jsba28Fu+lVU0qHYihqDZdf3fV/gm9n8pc9ZyGDaXBFnLSeHg/LopfLUi3jeQK4IHtoAsSESbEwm1F8I2Tb5vMNysSqe1X8ZGgQD1iQHFydnkyXfRM/XlZHqBrwMzq9Mnci4HegqudcqHDZs7YkzCHEugNimXczk4N7naskqEBLxgSG269pbuKPdBC4ecjJtKYHkkEggJBAi2duSSUMauKpoyYPEwZNgNtRtwxAYbjS5DFFtaKJRodkYz5LVa8kxha135GBr6pbeaU3jpTHZVqOjyZmamEcPzzaRxlMbdqPFMBwvIK1EYvW6r4jBZ0hkbEUCRxMssKFcBcUmBslYYDS5whKn2/l0CDntvOun0fN05AoL9Hwb9FSzzzVhiWvDd28PHoF8flyXSgS/hfcqKx8H+evHz4fTh5A0UB4hLsBRTUqCQA6wLy8/1OFeA9feEgtpADaN/v/05ArOP8Fx1LYODiczzei07NZT+qugL/SayBhwNpmPSzqCxvAT6/+o/UPU/sCiw7yLOuJM3/M01sazHkGbat0bKVzgdq6Pk3aABZbeKaDDu7aHcVVgpdyWC+y6tRH6nOq+1+VvLaX967E1yZu1orpY9QVWZJxisejwjnZY4rG1FJX9YQJYvnwC+9WTi3JxfnmFff8bm8bwiw==
+sidebar_class_name: "post api-method"
+info_path: docs/api/payments/bank-8-payments
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Verify a card PIN.\n`pin_hash` is the (already hashed) PIN the client sent, encrypted with\nthe session public key. Payments never stores or sees the clear PIN. The\nstored `pin_hash` column on `cards` is compared against the\nprovided value; on mismatch `pin_attempts` is incremented and the\ncard is suspended when it reaches 3."}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/v1/cards/{id}/pin/verify"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Verify a card PIN.
+`pin_hash` is the (already hashed) PIN the client sent, encrypted with
+the session public key. Payments never stores or sees the clear PIN. The
+stored `pin_hash` column on `cards` is compared against the
+provided value; on mismatch `pin_attempts` is incremented and the
+card is suspended when it reaches 3.
+
+<ParamsDetails>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./verify-pin.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./verify-pin.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

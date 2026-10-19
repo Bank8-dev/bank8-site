@@ -1,0 +1,82 @@
+---
+id: execute-step
+title: "`POST /v1/internal/steps/execute` — Flow proxy-back for filing
+workflow steps (DESIGN.md §4; the proxy-back contract is one of the
+narrow internal-API exceptions — the steps are already
+event-triggered, the proxy-back is their data access). The env rides
+the step input (Flow records it at workflow creation); the dispatch
+owns the guarded state transitions."
+description: "`POST /v1/internal/steps/execute` — Flow proxy-back for filing"
+sidebar_label: "`POST /v1/internal/steps/execute` — Flow proxy-back for filing
+workflow steps (DESIGN.md §4; the proxy-back contract is one of the
+narrow internal-API exceptions — the steps are already
+event-triggered, the proxy-back is their data access). The env rides
+the step input (Flow records it at workflow creation); the dispatch
+owns the guarded state transitions."
+hide_title: true
+hide_table_of_contents: true
+api: eJztVUuOG0cMvQrBlQ2UpBkjC6OzGueHWSQ2PJOVNIipKqq7olZVmcWWRhAE+BC5Q+6Ro+QkAVtSMJl8gGyyijYS2I/kI/n0+oBKbcVmjjEpS6IeHxzmwkIac7oN2CA/sh+Uf6jKBR0Kfxy46psc9tgc0OeknNR+Uil99GPi7Meak8Wq73hD2ByOx+MpNwoHbFQGHgO15FS5GvbV1ZV9Ba5eYrEy2OCdcoEzhYDu3/SzjpX9IFH32Mwf3LPSH969vbuH2fZ6dhl+ZjPW2bndB/j100/wdZ93UCQ/7idL8mtYZYFV7GNqF2mXZb2y52MevPjyq7vbb76bbgL88vNnn4N2/DTTqAt5hVghJ4a8MsQiJRLJO7iQmNy8uwV+9DzyrCMJq3TqQcJAvTCF/SLxlpNOVGLbsnBwzzvGapEoEEgJyHuu9eUU7jsGTluQGLgu0qU4xFQGhRfjxMI+S6gQFUjh90G98Ljwl6fpQqyF1HeLlHdpbAbtQBI4QFVSBhVKNY6DTNHhhrXLJqqSq6LDQtphg39/A3QY0yrbaTVqz9jgktL69US4ZNGYWnx+1jtOGtNreGO45v0FN+5RuB160iz78w3BU88pkDhoOZ1l76CQX1MbU+ugDstNrDXmZAP00XOqbHwSbYzOt7f38PY93BTyHU9eTa+McjAOq8jyl4Cjwy1LPdG9ml6fQraSDaUnpf8X6H8u0D9I6YC6L3YI5UedlZ5iskMN0tuzk3bnuL0eRXq2T4fjGtBdfNMMtTO1N3M8HJZU+Xvpj0cLfxxYzs60JYm0NH3PH44OO6Zg4pkfcM17bPCLk+1N7o2QwfvBiP3JAo/uknHj7UD/iH148oc0qaHD5dnWNzlYjtDOLJ922CDai2FclAHG2AF7Su1ArWFPNe3zG4i8QAY=
+sidebar_class_name: "post api-method"
+info_path: docs/api/reporting/bank-8-reporting
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"`POST /v1/internal/steps/execute` — Flow proxy-back for filing\nworkflow steps (DESIGN.md §4; the proxy-back contract is one of the\nnarrow internal-API exceptions — the steps are already\nevent-triggered, the proxy-back is their data access). The env rides\nthe step input (Flow records it at workflow creation); the dispatch\nowns the guarded state transitions."}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/v1/internal/steps/execute"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+`POST /v1/internal/steps/execute` — Flow proxy-back for filing
+workflow steps (DESIGN.md §4; the proxy-back contract is one of the
+narrow internal-API exceptions — the steps are already
+event-triggered, the proxy-back is their data access). The env rides
+the step input (Flow records it at workflow creation); the dispatch
+owns the guarded state transitions.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./execute-step.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./execute-step.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

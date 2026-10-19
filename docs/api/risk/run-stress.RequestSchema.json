@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"type":"object","description":"Request body for `POST /v1/stress/run` — an on-demand full recompute\nof the measured dimensions with a scenario's shocks applied.","required":["scenario_id"],"properties":{"scenario_id":{"type":"string","format":"uuid"}},"title":"StressRunRequest"}}},"required":true}}

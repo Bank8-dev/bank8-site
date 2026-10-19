@@ -11,7 +11,7 @@ Sentin8 Bank8:Ledger - core ledger, posting engine, product library.
 > served live at `GET /openapi.json`) - the source of truth is the
 > service’s own `#[utoipa::path]` annotations.
 
-**91 endpoints**.
+**158 endpoints** across 5 groups.
 
 ## ledger
 
@@ -82,32 +82,6 @@ Gate: `bank8:ledger:schedules:read`
 | --- | --- | --- |
 | 200 | Account schedule tags | `AccountScheduleTagResponse`[] |
 | 403 | Missing `bank8:ledger:schedules:read` scope | - |
-
-### `POST /v1/account-schedule-tags`
-
-`POST /v1/account-schedule-tags` - create/override an account schedule tag.
-
-Gate: `bank8:ledger:schedules:write`
-
-**Request body** (`application/json`):
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `status` | string | no |  |
-| `tag_id` | string | yes |  |
-
-**Parameters**:
-
-| Name | In | Required | Type |
-| --- | --- | --- | --- |
-| `account_id` | path | yes | string |
-
-**Responses**:
-
-| Status | Description | Body |
-| --- | --- | --- |
-| 200 | Account schedule tag upserted | `AccountScheduleTagResponse` |
-| 403 | Missing `bank8:ledger:schedules:write` scope | - |
 
 ### `GET /v1/account-update-batches`
 
@@ -319,6 +293,32 @@ Gate: `bank8:ledger:accounts:write`
 | 200 | Device attached | `PaymentDeviceResponse` |
 | 403 | Missing `bank8:ledger:accounts:write` scope | - |
 
+### `POST /v1/accounts/{id}/schedule-tags`
+
+`POST /v1/account-schedule-tags` - create/override an account schedule tag.
+
+Gate: `bank8:ledger:schedules:write`
+
+**Request body** (`application/json`):
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `status` | string | no |  |
+| `tag_id` | string | yes |  |
+
+**Parameters**:
+
+| Name | In | Required | Type |
+| --- | --- | --- | --- |
+| `account_id` | path | yes | string |
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Account schedule tag upserted | `AccountScheduleTagResponse` |
+| 403 | Missing `bank8:ledger:schedules:write` scope | - |
+
 ### `GET /v1/accounts/{id}/schedules`
 
 `GET /v1/accounts/&#123;id&#125;/schedules` - list schedules for an account.
@@ -439,7 +439,19 @@ Gate: `bank8:ledger:postings:read`
 | 200 | Adjustment | `AdjustmentResponse` |
 | 404 | Not found | - |
 
-### `GET /v1/audit`
+### `GET /v1/admin/accounts`
+
+`GET /v1/admin/accounts` - admin view of `GET /v1/accounts` (same handler).
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Accounts (admin view) | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the ledger scope gate | - |
+
+### `GET /v1/admin/audit`
 
 `GET /v1/audit` - query audit events.
 
@@ -458,6 +470,216 @@ Gate: `bank8:ledger:audit:read`
 | --- | --- | --- |
 | 200 | Audit events | `AuditEventResponse`[] |
 | 403 | Missing `bank8:ledger:audit:read` scope | - |
+
+### `GET /v1/admin/customers`
+
+`GET /v1/admin/customers` - admin view of `GET /v1/customers`.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Customers (admin view) | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the ledger scope gate | - |
+
+### `GET /v1/admin/dlq`
+
+`GET /v1/admin/dlq` - admin view of `GET /v1/dlq`.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | DLQ entries (admin view) | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the ledger scope gate | - |
+
+### `POST /v1/admin/dlq/{id}/republish`
+
+`POST /v1/admin/dlq/&#123;id&#125;/republish` - RFW alias of `POST /v1/dlq/&#123;id&#125;/republish`.
+
+**Parameters**:
+
+| Name | In | Required | Type |
+| --- | --- | --- | --- |
+| `id` | path | yes | string |
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Entry republished (same contract as POST /v1/dlq/&#123;id&#125;/republish) | - |
+| 404 | Unknown DLQ entry | - |
+
+### `GET /v1/admin/flag-definitions`
+
+`GET /v1/admin/flag-definitions` - admin view of `GET /v1/flag-definitions`.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Flag definitions (admin view) | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the ledger scope gate | - |
+
+### `GET /v1/admin/flags`
+
+`GET /v1/admin/flags` - admin view of `GET /v1/flags`.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Flags (admin view) | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the ledger scope gate | - |
+
+### `GET /v1/admin/jobs`
+
+`GET /v1/admin/jobs` - admin view of `GET /v1/jobs`.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Jobs (admin view) | - |
+
+### `GET /v1/admin/parameters`
+
+`GET /v1/admin/parameters` - admin view of `GET /v1/parameters`.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Parameters (admin view) | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the ledger scope gate | - |
+
+### `GET /v1/admin/postings`
+
+`GET /v1/admin/postings` - posting batches list (RFW DataTable).
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Posting batches (admin view) | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the ledger scope gate | - |
+
+### `GET /v1/admin/products`
+
+`GET /v1/admin/products` - admin view of `GET /v1/products`.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Products (admin view) | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the ledger scope gate | - |
+
+### `GET /v1/admin/products/{id}`
+
+`GET /v1/admin/products/&#123;id&#125;` - admin view of `GET /v1/products/&#123;id&#125;`.
+
+**Parameters**:
+
+| Name | In | Required | Type |
+| --- | --- | --- | --- |
+| `id` | path | yes | string |
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Product (admin view) | - |
+| 404 | Unknown product | - |
+
+### `POST /v1/admin/products/{id}/activate`
+
+`POST /v1/admin/products/&#123;id&#125;/activate` - RFW alias of `POST /v1/products/&#123;id&#125;/activate`.
+
+**Parameters**:
+
+| Name | In | Required | Type |
+| --- | --- | --- | --- |
+| `id` | path | yes | string |
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Product activated (same contract as POST /v1/products/&#123;id&#125;/activate) | - |
+| 404 | Unknown product | - |
+
+### `GET /v1/admin/products/{id}/versions`
+
+`GET /v1/admin/products/&#123;id&#125;/versions` - admin view of `GET /v1/products/&#123;id&#125;/versions`.
+
+**Parameters**:
+
+| Name | In | Required | Type |
+| --- | --- | --- | --- |
+| `id` | path | yes | string |
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Product versions (admin view) | - |
+| 404 | Unknown product | - |
+
+### `GET /v1/admin/restriction-definitions`
+
+`GET /v1/admin/restriction-definitions` - admin view of `GET /v1/restriction-definitions`.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Restriction definitions (admin view) | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the ledger scope gate | - |
+
+### `GET /v1/admin/restriction-sets`
+
+`GET /v1/admin/restriction-sets` - admin view of `GET /v1/restriction-sets`.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Restriction sets (admin view) | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the ledger scope gate | - |
+
+### `GET /v1/admin/schedules`
+
+`GET /v1/admin/schedules` - admin view of `GET /v1/schedules`.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Schedules (admin view) | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the ledger scope gate | - |
+
+### `GET /v1/audit`
+
+`GET /v1/audit` - alias of `GET /v1/admin/audit` (same handler).
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Audit events (same contract as GET /v1/admin/audit) | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the ledger scope gate | - |
 
 ### `GET /v1/audit/action-logs`
 
@@ -840,6 +1062,54 @@ Gate: `bank8:ledger:dlq:republish`
 | 403 | Missing `bank8:ledger:dlq:republish` scope | - |
 | 404 | DLQ entry not found | - |
 
+### `GET /v1/flag-definitions`
+
+`GET /v1/flag-definitions` - list flag definitions.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the ledger scope gate | - |
+
+### `POST /v1/flag-definitions`
+
+`POST /v1/flag-definitions` - create a flag definition.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the ledger scope gate | - |
+
+### `GET /v1/flags`
+
+`GET /v1/flags` - list flags.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the ledger scope gate | - |
+
+### `POST /v1/flags`
+
+`POST /v1/flags` - set a flag on an account or customer.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the ledger scope gate | - |
+
 ### `GET /v1/global-parameters`
 
 `GET /v1/global-parameters` - list global parameters.
@@ -1058,6 +1328,90 @@ Gate: `bank8:ledger:postings:write`
 | --- | --- | --- |
 | 200 | Replay accepted (result object) | - |
 | 404 | Journal event not found | - |
+
+### `GET /v1/parameter-value-hierarchy-nodes`
+
+`GET /v1/parameter-value-hierarchy-nodes` - list hierarchy nodes.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the ledger scope gate | - |
+
+### `POST /v1/parameter-value-hierarchy-nodes`
+
+`POST /v1/parameter-value-hierarchy-nodes` - create a hierarchy node.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the ledger scope gate | - |
+
+### `GET /v1/parameter-values`
+
+`GET /v1/parameter-values` - list parameter values.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the ledger scope gate | - |
+
+### `POST /v1/parameter-values`
+
+`POST /v1/parameter-values` - create a parameter value.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the ledger scope gate | - |
+
+### `GET /v1/parameter-values:viewEffective`
+
+`GET /v1/parameter-values:viewEffective` - resolve effective parameter value at a point in time, with hierarchy precedence (account > hierarchy > global).
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the ledger scope gate | - |
+
+### `GET /v1/parameters`
+
+`GET /v1/parameters` - list parameters.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the ledger scope gate | - |
+
+### `POST /v1/parameters`
+
+`POST /v1/parameters` - create a parameter definition.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the ledger scope gate | - |
 
 ### `GET /v1/plans`
 
@@ -1446,6 +1800,54 @@ Gate: `bank8:ledger:products:write`
 | 200 | Product version created | `ProductVersionResponse` |
 | 403 | Missing `bank8:ledger:products:write` scope | - |
 
+### `GET /v1/restriction-definitions`
+
+`GET /v1/restriction-definitions` - list restriction definitions.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the ledger scope gate | - |
+
+### `POST /v1/restriction-definitions`
+
+`POST /v1/restriction-definitions` - create a restriction definition.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the ledger scope gate | - |
+
+### `GET /v1/restriction-sets`
+
+`GET /v1/restriction-sets` - list restriction sets.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the ledger scope gate | - |
+
+### `POST /v1/restriction-sets`
+
+`POST /v1/restriction-sets` - apply a restriction set to an account or customer.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the ledger scope gate | - |
+
 ### `GET /v1/schedule-tags`
 
 `GET /v1/schedule-tags` - list schedule tags.
@@ -1668,4 +2070,485 @@ Gate: `bank8:ledger:balances:read`
 | --- | --- | --- |
 | 200 | Balance series buckets | `Value`[] |
 | 403 | Missing `bank8:ledger:balances:read` scope | - |
+
+
+## admin-ui
+
+### `POST /v1/admin/accounts`
+
+`POST /v1/admin/accounts` - create-account form submission.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the ledger scope gate | - |
+
+### `PUT /v1/admin/accounts/{id}`
+
+`PUT /v1/admin/accounts/&#123;id&#125;` - update-account form submission.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the ledger scope gate | - |
+
+### `GET /v1/admin/balances`
+
+`GET /v1/admin/balances` - account balances view (RFW DataTable rows).
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the ledger scope gate | - |
+
+### `POST /v1/admin/dlq/{id}/discard`
+
+`POST /v1/admin/dlq/&#123;id&#125;/discard` - discard a DLQ entry (no republish).
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the ledger scope gate | - |
+
+### `POST /v1/admin/flags`
+
+`POST /v1/admin/flags` - create-flag form submission.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the ledger scope gate | - |
+
+### `GET /v1/admin/overview`
+
+`GET /v1/admin/overview` - the overview page's data (accounts-backed summary; same handler as `GET /v1/accounts`).
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Admin overview (accounts-backed summary) | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the ledger scope gate | - |
+
+### `POST /v1/admin/parameters`
+
+`POST /v1/admin/parameters` - create-parameter form submission.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the ledger scope gate | - |
+
+### `POST /v1/admin/postings`
+
+`POST /v1/admin/postings` - new-posting form submission (batch of one).
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the ledger scope gate | - |
+
+### `POST /v1/admin/products`
+
+`POST /v1/admin/products` - handle product creation form submission. Called by the RFW form renderer when the user clicks "Create Product". Creates the product and returns an `AdminUiResponse::redirect` so the RFW renderer navigates back to the products list.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the ledger scope gate | - |
+
+### `PUT /v1/admin/products/{id}`
+
+`PUT /v1/admin/products/&#123;id&#125;` - handle product edit form submission.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the ledger scope gate | - |
+
+### `POST /v1/admin/products/{id}/versions`
+
+`POST /v1/admin/products/&#123;id&#125;/versions` - create a new product version.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the ledger scope gate | - |
+
+### `GET /v1/admin/reconcile`
+
+`GET /v1/admin/reconcile` - reconciliation summary (posting totals).
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the ledger scope gate | - |
+
+### `POST /v1/admin/restriction-sets`
+
+`POST /v1/admin/restriction-sets` - create-restriction form submission.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the ledger scope gate | - |
+
+### `GET /v1/admin/settings`
+
+`GET /v1/admin/settings` - static ledger settings payload.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the ledger scope gate | - |
+
+### `GET /v1/admin/statements`
+
+`GET /v1/admin/statements` - recent statements (RFW DataTable rows).
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the ledger scope gate | - |
+
+### `GET /v1/admin/ui/{page}`
+
+GET /v1/admin/ui/&#123;page&#125; - return RFW definition for the requested admin page.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the ledger scope gate | - |
+
+
+## policy
+
+### `GET /v1/admin/attributes`
+
+Gate: `sentin8:admin`
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Principal attributes of this service | -[] |
+| 403 | Caller lacks the admin scope | - |
+
+### `PUT /v1/admin/attributes`
+
+Gate: `sentin8:admin`
+
+**Request body** (`application/json`):
+
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Attribute stored | - |
+| 400 | Invalid attribute definition | - |
+| 403 | Caller lacks the admin scope | - |
+
+### `DELETE /v1/admin/attributes`
+
+Gate: `sentin8:admin`
+
+**Parameters**:
+
+| Name | In | Required | Type |
+| --- | --- | --- | --- |
+| `id` | query | yes | string |
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Attribute deleted | - |
+| 403 | Caller lacks the admin scope | - |
+
+### `GET /v1/admin/policy-sets`
+
+Gate: `sentin8:admin`
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Policy sets of this service | -[] |
+| 403 | Caller lacks the admin scope | - |
+
+### `POST /v1/admin/policy-sets/disable`
+
+Gate: `sentin8:admin`
+
+**Request body** (`application/json`):
+
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Sets disabled | - |
+| 403 | Caller lacks the admin scope | - |
+
+### `POST /v1/admin/policy-sets/enforce`
+
+Gate: `sentin8:admin`
+
+**Request body** (`application/json`):
+
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Sets switched to enforce mode | - |
+| 403 | Caller lacks the admin scope | - |
+
+### `POST /v1/admin/policy-sets/shadow`
+
+Gate: `sentin8:admin`
+
+**Request body** (`application/json`):
+
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Sets switched to shadow mode | - |
+| 403 | Caller lacks the admin scope | - |
+
+### `GET /v1/admin/policy-sets/{name}`
+
+Gate: `sentin8:admin`
+
+**Parameters**:
+
+| Name | In | Required | Type |
+| --- | --- | --- | --- |
+| `name` | path | yes | string |
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | The policy set | - |
+| 403 | Caller lacks the admin scope | - |
+| 404 | Unknown policy set name | - |
+
+### `PUT /v1/admin/policy-sets/{name}`
+
+Gate: `sentin8:admin`
+
+**Request body** (`application/json`):
+
+
+**Parameters**:
+
+| Name | In | Required | Type |
+| --- | --- | --- | --- |
+| `name` | path | yes | string |
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Policy set stored | - |
+| 400 | Invalid policy set definition | - |
+| 403 | Caller lacks the admin scope | - |
+
+### `DELETE /v1/admin/policy-sets/{name}`
+
+Gate: `sentin8:admin`
+
+**Parameters**:
+
+| Name | In | Required | Type |
+| --- | --- | --- | --- |
+| `name` | path | yes | string |
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Policy set deleted | - |
+| 403 | Caller lacks the admin scope | - |
+
+### `POST /v1/admin/policy-sets/{name}/test`
+
+Gate: `sentin8:admin`
+
+**Request body** (`application/json`):
+
+
+**Parameters**:
+
+| Name | In | Required | Type |
+| --- | --- | --- | --- |
+| `name` | path | yes | string |
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Dry-run decision trace | - |
+| 403 | Caller lacks the admin scope | - |
+
+### `GET /v1/admin/relations`
+
+Gate: `sentin8:admin`
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | ReBAC relations of this service | -[] |
+| 403 | Caller lacks the admin scope | - |
+
+### `PUT /v1/admin/relations`
+
+Gate: `sentin8:admin`
+
+**Request body** (`application/json`):
+
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Relation stored | - |
+| 400 | Invalid relation definition | - |
+| 403 | Caller lacks the admin scope | - |
+
+### `DELETE /v1/admin/relations`
+
+Gate: `sentin8:admin`
+
+**Parameters**:
+
+| Name | In | Required | Type |
+| --- | --- | --- | --- |
+| `id` | query | yes | string |
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Relation deleted | - |
+| 403 | Caller lacks the admin scope | - |
+
+### `GET /v1/admin/relations/check`
+
+Gate: `sentin8:admin`
+
+**Parameters**:
+
+| Name | In | Required | Type |
+| --- | --- | --- | --- |
+| `subject` | query | yes | string |
+| `relation` | query | yes | string |
+| `object` | query | yes | string |
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | The check verdict | - |
+| 403 | Caller lacks the admin scope | - |
+
+
+## meta
+
+### `GET /v1/health`
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Liveness (version, build) | - |
+
+
+## internal
+
+### `POST /v1/internal/func-host`
+
+`POST /v1/internal/func-host` - Sentin8:Func proxy-back for host functions. Authorization: M2M token with ``bank8:ledger:postings:write`` (the Func runtime authenticates with the posting service's M2M identity because host functions can move money). Tenant context comes from the `env_id` in the request body - the Func runtime resolves it from the hook context, and the M2M token's own env claim is cross-checked.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the ledger scope gate | - |
+
+### `POST /v1/internal/schedules/run`
+
+`POST /v1/internal/schedules/run` - Cron proxy-back endpoint. Cron calls this when a Ledger schedule fires. Ledger executes the scheduled work (§4.3): it resolves the schedule's `schedule_type`, loads the affected account(s) with their product modules + parameters, runs the on-schedule module functions to generate posting instructions, and submits them as one atomic posting batch. A `bank8_ledger_jobs` row records the outcome `failed` + `error_message` when any step fails (never unconditionally completed); `last_run_at` is updated only via propagated, awaited writes.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Due schedules dispatched (Cron proxy-back target) | - |
+| 401 | Not authenticated | - |
+
+### `POST /v1/internal/statements/regen`
+
+`POST /v1/internal/statements/regen` - Flow proxy-back for the `statement-regen` workflow (design §10).
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the ledger scope gate | - |
 

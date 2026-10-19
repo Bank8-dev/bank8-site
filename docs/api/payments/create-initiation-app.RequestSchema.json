@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"type":"object","required":["name"],"properties":{"app_type":{"type":"string","description":"payment_initiation | payment_app"},"config":{"title":"Value"},"name":{"type":"string"}},"title":"CreateInitiationAppRequest"}}},"required":true}}

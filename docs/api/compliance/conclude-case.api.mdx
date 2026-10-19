@@ -1,0 +1,79 @@
+---
+id: conclude-case
+title: "`POST /v1/cases/{id}/conclude` — conclude a case as reportable: the
+report kind lands in `suspicious_activities` and
+`bank8:compliance:suspicious:detected` is emitted exactly once —
+Reporting files it through its own durable consume (detection here,
+filing there — the single-filing-executor rule, DESIGN.md §8)."
+description: "`POST /v1/cases/{id}/conclude` — conclude a case as reportable: the"
+sidebar_label: "`POST /v1/cases/{id}/conclude` — conclude a case as reportable: the
+report kind lands in `suspicious_activities` and
+`bank8:compliance:suspicious:detected` is emitted exactly once —
+Reporting files it through its own durable consume (detection here,
+filing there — the single-filing-executor rule, DESIGN.md §8)."
+hide_title: true
+hide_table_of_contents: true
+api: eJztVcFuIzcM/RWCpxZQ4mRPwdyyzrYIttstkvRQOEFMS7SHG400K2mcGMYA/Yj+Q/+jn9IvKTjjxE63LXrosXOZEUVRfI+PnC0WWmWsZlhTcJ5TxjuDseVERWK4dFihjcH6zvG9pcxoMPHnjnN5G90Gq61uFw5FP6ltvdjh5ORTjkFt2dbckH6VTctYYVx8YlvQoONsk7TqjRVejVFhEd0GljHB7loJKyDQq4Ey5C63YiV2GX7/+RcoNUPiNqYCDxLcbegy58Gaa0rsYH417L6X4OawjpYWnae0Od7BkMROwY8x7jWG4m+TMlCEs+Z9uLmHkUuSsMK+N1ikeDVNd0RNKfMODvbqsL+qpI4HQ25jyGP8Nycn+npNB5p/TWzfD5e8Pj//4eP1DUzWpxOlLk+24vrJcyXnA3nPqwN6R6i08Fwpi7fhgFzwFFwGCTDfV+GebJG1KFVzIK3AfEHh4ayysWm9ULBc7b0rx4VtYTcHycCNlMIO+Ils8RuIwbImdhvGomnll+I5gxQodYrdqgYpGeJjANclTVNB5K5h+GoMLTFAzYnNbViK1whFly9iyRJWno/GvSN+YtuVmCB1ng1cvLu+/Pb748bBb7+efa0aabjUUXugjVkl21KpscK/oRUNZrZdkrLBanZnUEt1te+Wd0/UtKqUP2nqRUsGJSzjILKdpAYyj/ZkftE21xyKhDN4O7A+fXEcEJ9/+G4yvfmmgvc/TSfTiwsDmcJAUoZsE3OQsDJQEoVMI3lNDFJiGuzkOZUBKHhZst1Yz8qKF8shDzgCNZrmh8sb+HgF5y3Zmo/eHJ+gQXGa2lI4/aVDb3DNKY8oTo5PR5Py3FA4CP2/kP8LIb8SzcsMK/xUJq0nCcp9l7zujRqf4fpUZ5ByjgYrceNEGoV+Z7DWjqhmuN0uKPOPyfe9mj93nHbqX1MShaar3mDN5FQLsy0+8GYclzrfjm40GXX3nSb1xazrzfOJc2u5Lf/oe3fQtKocNLjY/aia6PRMoked/vQ4Ttk4kDIOerVt0VNYdbRS3zGmPn8AscmOAw==
+sidebar_class_name: "post api-method"
+info_path: docs/api/compliance/bank-8-compliance
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"`POST /v1/cases/{id}/conclude` — conclude a case as reportable: the\nreport kind lands in `suspicious_activities` and\n`bank8:compliance:suspicious:detected` is emitted exactly once —\nReporting files it through its own durable consume (detection here,\nfiling there — the single-filing-executor rule, DESIGN.md §8)."}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/v1/cases/{id}/conclude"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+`POST /v1/cases/{id}/conclude` — conclude a case as reportable: the
+report kind lands in `suspicious_activities` and
+`bank8:compliance:suspicious:detected` is emitted exactly once —
+Reporting files it through its own durable consume (detection here,
+filing there — the single-filing-executor rule, DESIGN.md §8).
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./conclude-case.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./conclude-case.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

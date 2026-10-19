@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"type":"object","required":["implementation"],"properties":{"expected_parameters":{},"implementation":{"type":"string"}},"title":"PublishRuleVersionRequest"}}},"required":true}}

@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"type":"object","required":["name","steps"],"properties":{"name":{"type":"string"},"steps":{}},"title":"CreateLogicRequest"}}},"required":true}}

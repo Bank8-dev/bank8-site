@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"Cancelled"},"403":{"description":"Missing bank8:payments:scheduled-payments:write scope"},"404":{"description":"Not found"}}}

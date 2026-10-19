@@ -1,0 +1,1 @@
+{"parameters":[{"name":"template_id","in":"query","description":"Filter by template","required":false,"schema":{"type":"string","format":"uuid"}}]}

@@ -1,0 +1,109 @@
+---
+id: create-account
+title: "`POST /v1/accounts` — create account (v1 legacy).
+.5: holder callers can only create accounts owned by
+themselves. Server-side defence-in-depth:
+- If the caller is a holder (§4.3c — no `holder:view-all` scope) and
+they did not supply `customer_id`, we resolve it from their Auth
+user id (via `customers`).
+- If the caller is a holder and they did supply a `customer_id` that
+does not match their own, we return 403 (they cannot create
+accounts for someone else).
+- If no `customers` row exists for the holder, we return 403
+— there is no way to own the account, so creating it would leave an
+orphan (the list/get handlers then hide it forever).
+- Callers with `holder:view-all` (staff / sys / M2M) are
+unrestricted: they can pass any `customer_id` or none (for
+internal accounts)."
+description: "`POST /v1/accounts` — create account (v1 legacy)."
+sidebar_label: "`POST /v1/accounts` — create account (v1 legacy).
+.5: holder callers can only create accounts owned by
+themselves. Server-side defence-in-depth:
+- If the caller is a holder (§4.3c — no `holder:view-all` scope) and
+they did not supply `customer_id`, we resolve it from their Auth
+user id (via `customers`).
+- If the caller is a holder and they did supply a `customer_id` that
+does not match their own, we return 403 (they cannot create
+accounts for someone else).
+- If no `customers` row exists for the holder, we return 403
+— there is no way to own the account, so creating it would leave an
+orphan (the list/get handlers then hide it forever).
+- Callers with `holder:view-all` (staff / sys / M2M) are
+unrestricted: they can pass any `customer_id` or none (for
+internal accounts)."
+hide_title: true
+hide_table_of_contents: true
+api: eJztV9tuGzcQ/ZUBn2RgJfmedN+coA8G6qZI3CfLsChyVsuEO9yQ3FUEQUA/ov/Q/+in9EuK4a4utlLDLZq3+MUr7syZs3M5JFciynkQ+Z2wqOfoxX0mXI1eRuPoWotcKI8y4oNUyjUURSY8fm4wxDdOL0W+EspRRIr8KOvaGpVcxx+DI14LqsRK8lNc1ihy4WYfUW1wjEfNwXv0h2Rzn4naM4loMCTc/bc7pBC9oblYZ0I1IboK/YPRu/d3G4NMUGMtwxbOVzKKXDSN0eyokVxlKFH+KjIZ9Ylkhc/ArhNd3aj4r8Nv/B5/2GGEdSaiiZapvU3luOoy8r4rhVizxS6f0TeYFkLtKHQ5PD0+5n8ag/Km7r5X9DDQ1ViL7P+ppmEkpPYhPTyqXiZClLEJ4knuU9cR6gfJYD0f/vEfmsG60Pm+qBZaRhxGU2Hy3QU+gP5Hn8Z7pPhGWknquTJmT7L/tnME5arKxIgaZh0GDD46Q6ih8K7aLIaj0YR+bqwFUwC5ra13C8AvJsQAS4wwIFxAnyNYmFiybe1CNDQPR6NvOy19zZ9L3QbrhWYvm79d77y4at96ZLeNfpinvWneznE3qTzI60ycf21Wr6mV1uhtbRkUnIfK6cYipJepMlBIYzGRPT8+OwS6MSEYmsNM0qfXeSf7eY8a8oU3ESEoV2NiGlA13sSlyO9W4hkXkd/drw9afPrLuw+3MG5PxhvrKfz12++94Gy/ZdCegMW5VEtu8tFFDqWzGj0oaS36AEoSOLLLJ44B3ILnZLacUCyxCmhbDCP4gL5FPwxGI2gskBQODQ011rHMJzSE6wJiiT08mAByE3Hw5x/nozOVWJKDabectwYXQ2nttEvNEUjSKeYStNFALkJo6touYbo3XtMMFggeg7MtgondQMcSjYerJpYTagLH1zBojdy5hinn4TmakjRso/eR5ePYEEsZJ6QdhsSvklGVfXC3oJ5abDzB+fEZDBKcksS2XZontM1z4TwEV6EjBLQBt/w4Rzva+2rELsy+Y/wk3IQ4wbFEj/xd5GAhlxAdM0tefeQMguvYcMuaCAvXWA0WZYsgaULO16WkxB6sCXE8xwilJJ36JpZIUHIbcPKdxxZ9R/1t31lJIg+rPAhRFgWMISwDjOHm9OYIpMcJNeSRB1lF1Dlscga1DAEkPSk/zydxygaF8xMyFNGTtNv2PRqJTFQYS8cnLVZpkYlaxlLkYn9oRCZ4B36/O3n9+EVWtcXDDXEnRI9kXpwV8vVFcXk+vHh18mp4fnF5OpydFWp4qn64PCsuL2UhL59uyntgOx3ere1L6EvxH8vn3tZhqHBJK3tlTFIz7A+lT2XlA1I09BreJD36KRl1uuI8QueUbXY9QJobwgz62GDNzEu/5Nxbo5B1N1+J/uturm/h3Xu4qqUqcXg6Oha8V3G8wqD/qsE6Ey360FE7Hp10Sxy9krQH/V0Mv4vhdzF8Xgwfzfn25BTxSxzXVhriyWq85XedTt6J9mR3yQh8ZitZR/M7sVrNZMBfvV2veflzg56PMfeZaKU3cma7Q0smSpSaZ/tuJT7hkk/m3S1oeNtdWVppG6ZxcCNaZxuPK6Wwjs/a3u9JPSuByMSsv0NXTrOPlwu+ScmFyEW6EbF3OkGmtZWwkuaNnLNth8l/fwN91IQ7
+sidebar_class_name: "post api-method"
+info_path: docs/api/ledger/bank-8-ledger
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"`POST /v1/accounts` — create account (v1 legacy).\n.5: holder callers can only create accounts owned by\nthemselves. Server-side defence-in-depth:\n- If the caller is a holder (§4.3c — no `holder:view-all` scope) and\nthey did not supply `customer_id`, we resolve it from their Auth\nuser id (via `customers`).\n- If the caller is a holder and they did supply a `customer_id` that\ndoes not match their own, we return 403 (they cannot create\naccounts for someone else).\n- If no `customers` row exists for the holder, we return 403\n— there is no way to own the account, so creating it would leave an\norphan (the list/get handlers then hide it forever).\n- Callers with `holder:view-all` (staff / sys / M2M) are\nunrestricted: they can pass any `customer_id` or none (for\ninternal accounts)."}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/v1/accounts"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+`POST /v1/accounts` — create account (v1 legacy).
+.5: holder callers can only create accounts owned by
+themselves. Server-side defence-in-depth:
+- If the caller is a holder (§4.3c — no `holder:view-all` scope) and
+they did not supply `customer_id`, we resolve it from their Auth
+user id (via `customers`).
+- If the caller is a holder and they did supply a `customer_id` that
+does not match their own, we return 403 (they cannot create
+accounts for someone else).
+- If no `customers` row exists for the holder, we return 403
+— there is no way to own the account, so creating it would leave an
+orphan (the list/get handlers then hide it forever).
+- Callers with `holder:view-all` (staff / sys / M2M) are
+unrestricted: they can pass any `customer_id` or none (for
+internal accounts).
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./create-account.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./create-account.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

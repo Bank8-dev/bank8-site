@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"type":"object","required":["template_id"],"properties":{"status":{"type":"string"},"template_id":{"type":"string","format":"uuid"}},"title":"CreateAppTemplateVersionRequest"}}},"required":true}}

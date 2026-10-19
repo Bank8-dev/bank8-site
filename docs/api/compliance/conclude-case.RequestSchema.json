@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"type":"object","description":"Request body for concluding a case as suspicious — the report kind\nuses the shared `ReportKind` vocabulary.","required":["report_kind"],"properties":{"report_kind":{"type":"string"}},"title":"ConcludeCaseRequest"}}},"required":true}}

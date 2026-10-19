@@ -1,0 +1,80 @@
+---
+id: internal-schedule-run
+title: "`POST /v1/internal/schedules/run` — Cron proxy-back endpoint.
+Cron calls this when a Ledger schedule fires. Ledger executes the scheduled
+work (§4.3): it resolves the schedule's `schedule_type`, loads the affected
+account(s) with their product modules + parameters, runs the on-schedule
+module functions to generate posting instructions, and submits them as one
+atomic posting batch. A `bank8_ledger_jobs` row records the outcome
+`failed` + `error_message` when any step fails (never unconditionally
+completed); `last_run_at` is updated only via propagated, awaited writes."
+description: "`POST /v1/internal/schedules/run` — Cron proxy-back endpoint."
+sidebar_label: "`POST /v1/internal/schedules/run` — Cron proxy-back endpoint.
+Cron calls this when a Ledger schedule fires. Ledger executes the scheduled
+work (§4.3): it resolves the schedule's `schedule_type`, loads the affected
+account(s) with their product modules + parameters, runs the on-schedule
+module functions to generate posting instructions, and submits them as one
+atomic posting batch. A `bank8_ledger_jobs` row records the outcome
+`failed` + `error_message` when any step fails (never unconditionally
+completed); `last_run_at` is updated only via propagated, awaited writes."
+hide_title: true
+hide_table_of_contents: true
+api: eJztVc2OG0UQfpVSXdhVZm1vyCEaTgtcIgFBJJzslafcU7Y721M9dFfba1kj8RC8A+/Bo/AkqDxeEzZw45iTNV1/X1V9n+uISpuM9Ry9KCehgPcVxp4TqY/ypsX6Yllmt+W2BF6mIlhh4txHyZyxPuLL2cx+Ws4u+d5iscZvC8NTUIbW557UPuHqmxQF+hQfDzcrcg+glDas11ihi6Isasmo74N3JyDTD9kyHtHSdYT1cRiGocJXs9tPy/4QFajolkUtnFs018yuJK8HrOf31bOI5se3797DdHc7fWp2esE9TUUa+PPX3+A5aJa2j150spCTyVEIGXTrM+y3LEDwHbcbTpcZwNonzpOnZ35kV5Qt5O85tQvZx/QAV3/8/mry5XUNXiFxjmH3zPGLDM1lI3rouakgRGpHL1qv2allI+diEb3K17D3ujWrT9ZGW5xCF8flvICeEnWsnHIFqciYJsrNU42FjL6wLuJsbhk0wobFuMLQx6xeNuAlayqjQwUkLeSy6rye8nVAGaLwQkhj590lamXEmMAdNCuSh9fLcJrQ8kNc5QZS3ENiF9O5t1jUxY4X0qzJB24beAENpxTTsuOcacPNeQFygKzcg/lluBLecYIiLkrrDSGFcFiIi10fWLm9/gqaQFmN4EvSBnyG0rdGIYgSDrDzZJPraWNvFdCevBn3ySvnCVbYsW6jqcY6wwp70i3W+N/Uwgq9rKOxWL0GxhpPI7gZR4DPqfrOWC2v4Wtzqs9MMna6mBjGoOoyV5aNF64u6w5+lSgdDGnwjiWzFRbqrO73b97D25/grie35ZuXk5lha63e2nP6V4ehwh2nPEKbTW7HJ6vekXyU+rPAPgvs/xHYP9RwRNsL1qj8qNM+kBfjX0nBbKP25ri7PYnsfN8qvDDPjlgRu3hbU2s9x+NxRZl/TmEY7PmXwul8MHaUPK1Mn/P7ocItU2uamB/xgQ9Y451z3JvidxSKQfrkeg33H/09mB5wGP4C55GyWw==
+sidebar_class_name: "post api-method"
+info_path: docs/api/ledger/bank-8-ledger
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"`POST /v1/internal/schedules/run` — Cron proxy-back endpoint.\nCron calls this when a Ledger schedule fires. Ledger executes the scheduled\nwork (§4.3): it resolves the schedule's `schedule_type`, loads the affected\naccount(s) with their product modules + parameters, runs the on-schedule\nmodule functions to generate posting instructions, and submits them as one\natomic posting batch. A `bank8_ledger_jobs` row records the outcome\n`failed` + `error_message` when any step fails (never unconditionally\ncompleted); `last_run_at` is updated only via propagated, awaited writes."}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/v1/internal/schedules/run"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+`POST /v1/internal/schedules/run` — Cron proxy-back endpoint.
+Cron calls this when a Ledger schedule fires. Ledger executes the scheduled
+work (§4.3): it resolves the schedule's `schedule_type`, loads the affected
+account(s) with their product modules + parameters, runs the on-schedule
+module functions to generate posting instructions, and submits them as one
+atomic posting batch. A `bank8_ledger_jobs` row records the outcome
+`failed` + `error_message` when any step fails (never unconditionally
+completed); `last_run_at` is updated only via propagated, awaited writes.
+
+<ParamsDetails>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./internal-schedule-run.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./internal-schedule-run.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"type":"object","description":"Request body for recording a PEP determination against a KYC record.","required":["kyc_id","is_pep"],"properties":{"is_pep":{"type":"boolean"},"kyc_id":{"type":"string","format":"uuid"}},"title":"PepDeterminationRequest"}}},"required":true}}

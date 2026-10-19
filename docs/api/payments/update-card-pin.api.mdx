@@ -1,0 +1,72 @@
+---
+id: update-card-pin
+title: "`POST /v1/cards/issuance/{id}:updatePIN` — update the card PIN (hashes the
+new PIN server-side; never stored in clear, §4.12)."
+description: "`POST /v1/cards/issuance/{id}:updatePIN` — update the card PIN (hashes the"
+sidebar_label: "`POST /v1/cards/issuance/{id}:updatePIN` — update the card PIN (hashes the
+new PIN server-side; never stored in clear, §4.12)."
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVEtu2zAQvQoxqwSgP0mzCNhVm7aAF0mNJF25RkqLY4uJRLIkZdcQBPQQvUPv0aP0JMWQysdx2nW1sOThzPDNezPTQpSrAGIGTm5rNDHAnIN16GXU1kwUCGickhFvCunVjdMGODjpZY0RPUW2YGSNIEAr4KANCHAylsBBYSi8dpQIBJxJr9jkHXDw+LXRHhWI6BvkEIoSawmihbh1lClEr80KOCytr2UkDI1W0HXzHIwhvrVqSxGFNRFNpE/pXKWLhHt0G+jOdj+1XdxiEXdAzMDghiq7KWUoqX7niYGoMVDkzukLIHfLnHockCcqNp1csEVlizu29LZmsUSGpvBbF1GxgCFoa9hBQL9GzwzSb0AMybGoUHrKcDiEruMQdazo1k9JjKk2l5kH6Oh0l9FkCM6akAs4Ho/p9Qzn5IJlZRV0HE7Gr/Z9znUI2qzYQpq7U3HfIUKH0EhToNh4HZGFwjrMOU72cyTZjY1saRujUi0Bi8bruE3N88/cIGZzEn035Zfpx6trNlofjagnw+g+ZtRq1Ylc1HRy8YX9/v6jrzFzSlCo7oMkUCL6szG4ScaswyBoha/v1YjWo2LaZDk4+/XzZHh0fDgEDjXG0tJ4OBtimolYgoC/oBplGIM8P9Sdl499/P6brB2p+7zX7nuso7la2tR8fR8k2gYPQ/ucois0UZtT9jaxO+3dEiF9DLO+KDHEPOicKaxwJSOxYlkfLj5UdkPFVrpAEzLCPOznk2v28ZK9cbIocXA8HNPsKwpbavQvOnQc1uhDBjgeHmUT0VdL8yT1fyHvDp0PMx/xWxy5SmpD0Btf0VlWfgbrI+CQIBMXPWjgINJifNIAcw4lNY2YQdsuZMBPvuo6Mn9t0NNYzDmspddyQVrPWlA60LcCsZRVwD14D1sQDi77VXDIHhfui+h7ozRboNuqhv4Bhzvc5mXezTsOJUpFes7a/uAsXzW4pvDHwL3lS2P7MCOkKHBY9Eu7topivNzQIpabfLFN5aSNlWwtVNKsGrki35yTnj87402y
+sidebar_class_name: "post api-method"
+info_path: docs/api/payments/bank-8-payments
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"`POST /v1/cards/issuance/{id}:updatePIN` — update the card PIN (hashes the\nnew PIN server-side; never stored in clear, §4.12)."}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/v1/cards/issuance/{id}/update-pin"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+`POST /v1/cards/issuance/{id}:updatePIN` — update the card PIN (hashes the
+new PIN server-side; never stored in clear, §4.12).
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./update-card-pin.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./update-card-pin.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./update-card-pin.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

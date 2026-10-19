@@ -11,9 +11,89 @@ Sentin8 Bank8:Payments - payment orchestration, delegates to Sentin8:Flow.
 > served live at `GET /openapi.json`) - the source of truth is the
 > service’s own `#[utoipa::path]` annotations.
 
-**120 endpoints** across 2 groups.
+**242 endpoints** across 7 groups.
 
 ## payments
+
+### `GET /v1/3ds-records`
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `GET /v1/account-links`
+
+`GET /v1/account-links` - list account links.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `POST /v1/account-links`
+
+`POST /v1/account-links` - create an account link.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `GET /v1/account-links/{id}`
+
+`GET /v1/account-links/&#123;id&#125;` - get an account link.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `GET /v1/account-ranges`
+
+`GET /v1/account-ranges` - list account ranges.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `POST /v1/account-ranges`
+
+`POST /v1/account-ranges` - create an account range.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `GET /v1/aggregations`
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
 
 ### `GET /v1/allowed-endpoints`
 
@@ -215,6 +295,136 @@ Gate: `bank8:payments:audit:read`
 | --- | --- | --- |
 | 200 | List of audit events | `AuditEventResponse`[] |
 | 403 | Missing `bank8:payments:audit:read` scope | - |
+
+### `GET /v1/business-day-definitions`
+
+`GET /v1/business-day-definitions` - list business day definitions.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `POST /v1/business-day-definitions`
+
+`POST /v1/business-day-definitions` - create a business day definition.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `GET /v1/calendars`
+
+`GET /v1/calendars` - list calendars.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `POST /v1/calendars`
+
+`POST /v1/calendars` - create a calendar.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `GET /v1/card-products`
+
+`GET /v1/card-products` - list card products.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `POST /v1/card-products`
+
+`POST /v1/card-products` - create a card product.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `GET /v1/card-products/{id}`
+
+`GET /v1/card-products/&#123;id&#125;` - get a card product.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `GET /v1/card-tokens`
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `GET /v1/cardholders`
+
+`GET /v1/cardholders` - list cardholders. .7: holder callers see only their own cardholders (forced here; RLS is the backstop). Staff/sys/M2M see all active cardholders in the env.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `POST /v1/cardholders`
+
+`POST /v1/cardholders` - create a cardholder. .7: `customer_id` is a Ledger customer id (by value; existence is the caller's contract - Ledger owns customer validation via its public API; no cross-schema FK).
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `GET /v1/cardholders/{id}`
+
+`GET /v1/cardholders/&#123;id&#125;` - get a cardholder. .7: holder callers can only fetch their own cardholders.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
 
 ### `GET /v1/cards`
 
@@ -754,6 +964,78 @@ Gate: `bank8:payments:cards:read`
 | 403 | Missing `bank8:payments:cards:read` scope | - |
 | 404 | Card not found | - |
 
+### `PATCH /v1/cards/{id}`
+
+`PATCH /v1/cards/&#123;id&#125;` - update a card (status / expiry). When `status` is provided it is validated against the card state machine (`cards::validate_card_transition`) before being applied.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `POST /v1/cards/{id}/activate`
+
+`POST /v1/cards/&#123;id&#125;/activate` - pending_creation/inactive → active.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `POST /v1/cards/{id}/encrypted-session`
+
+Create a new encrypted card session. Inserts a row in `card_sessions` (defined by migration `14-payments.sql`) with `status = 'active'` and returns the session id together with a short-lived session token (a UUID) and the placeholder public key the client should use to encrypt the sensitive payload. The session expires after 5 minutes by default.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `POST /v1/cards/{id}/freeze`
+
+`POST /v1/cards/&#123;id&#125;/freeze` - active → suspended.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `POST /v1/cards/{id}/pin/change`
+
+Change a card PIN. Verifies `old_pin_hash` against the stored `pin_hash`; on success the stored hash is replaced with `new_pin_hash` and `pin_attempts` is reset. On failure `pin_attempts` is incremented (same policy as `verify_pin`).
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `POST /v1/cards/{id}/pin/verify`
+
+Verify a card PIN. `pin_hash` is the (already hashed) PIN the client sent, encrypted with the session public key. Payments never stores or sees the clear PIN. The stored `pin_hash` column on `cards` is compared against the provided value; on mismatch `pin_attempts` is incremented and the card is suspended when it reaches 3.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
 ### `PUT /v1/cards/{id}/profile`
 
 `PUT /v1/cards/&#123;id&#125;/profile` - set the Card Profile (chip behaviour / scheme approval: Mastercard CPV/CNS, Visa DPS; ).
@@ -780,6 +1062,30 @@ Gate: `bank8:payments:cards:write`
 | 403 | Missing `bank8:payments:cards:write` scope | - |
 | 404 | Card not found | - |
 
+### `POST /v1/cards/{id}/replace`
+
+`POST /v1/cards/&#123;id&#125;/replace` - create a replacement card, disable the old.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `POST /v1/cards/{id}/unfreeze`
+
+`POST /v1/cards/&#123;id&#125;/unfreeze` - suspended → active.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
 ### `GET /v1/config-packs`
 
 `GET /v1/config-packs` - list installed payment config packs (; the pack contents are versioned resources: rules/rule-sets/parameter-values).
@@ -805,26 +1111,6 @@ Gate: `bank8:payments:cores:read`
 | --- | --- | --- |
 | 200 | Core versions | `ResourceVersionResponse`[] |
 | 403 | Missing `bank8:payments:cores:read` scope | - |
-
-### `POST /v1/core-versions`
-
-`POST /v1/core-versions` - create a core version.
-
-Gate: `bank8:payments:cores:write`
-
-**Request body** (`application/json`):
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `core_id` | string | yes |  |
-| `status` | string | no |  |
-
-**Responses**:
-
-| Status | Description | Body |
-| --- | --- | --- |
-| 200 | Core version created | `ResourceVersionResponse` |
-| 403 | Missing `bank8:payments:cores:write` scope | - |
 
 ### `GET /v1/cores`
 
@@ -879,33 +1165,29 @@ Gate: `bank8:payments:cores:read`
 | 403 | Missing `bank8:payments:cores:read` scope | - |
 | 404 | Core not found | - |
 
-### `PUT /v1/cores/{id}`
+### `DELETE /v1/cores/{id}`
 
-`PUT /v1/cores/&#123;id&#125;` - update a core (CBS) config, including the postings URL and the online/offline balance endpoint flag.
-
-Gate: `bank8:payments:cores:write`
-
-**Request body** (`application/json`):
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `name` | string,null | no |  |
-| `postings_url` | string,null | no | Optional new postings URL (CBS reconciliation target). |
-| `status` | string,null | no |  |
-
-**Parameters**:
-
-| Name | In | Required | Type |
-| --- | --- | --- | --- |
-| `id` | path | yes | string |
+`DELETE /v1/cores/&#123;id&#125;` - soft delete a core (Story ).
 
 **Responses**:
 
 | Status | Description | Body |
 | --- | --- | --- |
-| 200 | Core updated | - |
-| 403 | Missing `bank8:payments:cores:write` scope | - |
-| 404 | Core not found | - |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `PATCH /v1/cores/{id}`
+
+`PATCH /v1/cores/&#123;id&#125;` - update a core (Story ).
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
 
 ### `PUT /v1/cores/{id}/balance-endpoint`
 
@@ -933,6 +1215,146 @@ Gate: `bank8:payments:cores:write`
 | 400 | Invalid mode | - |
 | 403 | Missing `bank8:payments:cores:write` scope | - |
 | 404 | Core not found | - |
+
+### `POST /v1/cores/{id}/versions`
+
+`POST /v1/core-versions` - create a core version.
+
+Gate: `bank8:payments:cores:write`
+
+**Request body** (`application/json`):
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `core_id` | string | yes |  |
+| `status` | string | no |  |
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Core version created | `ResourceVersionResponse` |
+| 403 | Missing `bank8:payments:cores:write` scope | - |
+
+### `GET /v1/dashboards`
+
+`GET /v1/dashboards` - list dashboards.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `POST /v1/dashboards`
+
+`POST /v1/dashboards` - create a dashboard.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `GET /v1/dashboards/{id}`
+
+`GET /v1/dashboards/&#123;id&#125;` - get a dashboard.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `POST /v1/dashboards/{id}/publish`
+
+`POST /v1/dashboards/&#123;id&#125;/publish` - publish the latest draft version.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `POST /v1/dashboards/{id}/versions`
+
+`POST /v1/dashboards/&#123;id&#125;/versions` - create a new dashboard version.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `GET /v1/files`
+
+`GET /v1/files` - list uploaded files.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `POST /v1/files`
+
+`POST /v1/files` - register an uploaded file.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `GET /v1/files/{id}`
+
+`GET /v1/files/&#123;id&#125;` - file detail.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `POST /v1/files/{id}/submit`
+
+`POST /v1/files/&#123;id&#125;/submit` - submit an uploaded file for debatch + processing (inbound flow).
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `GET /v1/instruction-batches`
+
+`GET /v1/instruction-batches` - list instruction batches.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
 
 ### `GET /v1/instruction-file-specification-versions`
 
@@ -967,6 +1389,97 @@ Gate: `bank8:payments:files:write`
 | --- | --- | --- |
 | 200 | Spec version created | `ResourceVersionResponse` |
 | 403 | Missing `bank8:payments:files:write` scope | - |
+
+### `POST /v1/instruction-file-specification-versions/validate`
+
+`POST /v1beta/instruction-file-specification-versions` - create a file specification version.
+
+Gate: `bank8:payments:files:write`
+
+**Request body** (`application/json`):
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `schema` | `Value` | no | The specification payload (validated against the schema before creation). |
+| `specification_id` | string | yes |  |
+| `status` | string | no |  |
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Specification version created | `ResourceVersionResponse` |
+| 403 | Missing `bank8:payments:files:write` scope | - |
+
+### `GET /v1/instruction-file-specifications`
+
+`GET /v1/instruction-file-specifications` - list specifications.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `POST /v1/instruction-file-specifications`
+
+`POST /v1/instruction-file-specifications` - create a specification.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `GET /v1/instruction-files`
+
+`GET /v1/instruction-files` - list instruction files.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `POST /v1/instruction-files`
+
+`POST /v1/instruction-files` - create an instruction file.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `POST /v1/instruction-files/{id}/initiate`
+
+`POST /v1beta/`instruction-file-specification-versions:validate`` - validate a specification version payload without creating it (active-version semantics; the design's `:validate` convention).
+
+Gate: `bank8:payments:files:read`
+
+**Request body** (`application/json`):
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `schema` | `Value` | no | The specification payload (validated against the schema before creation). |
+| `specification_id` | string | yes |  |
+| `status` | string | no |  |
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Validation result | - |
+| 400 | Invalid specification | - |
+| 403 | Missing `bank8:payments:files:read` scope | - |
 
 ### `GET /v1/instructions`
 
@@ -1017,19 +1530,6 @@ Gate: `bank8:payments:instructions:write`
 | Status | Description | Body |
 | --- | --- | --- |
 | 200 | Bulk retry results | - |
-| 403 | Missing `bank8:payments:instructions:write` scope | - |
-
-### `POST /v1/instructions/initiate`
-
-`POST /v1/`instructions:initiate`` - business initiation route (same engine as `POST /v1/instructions`).
-
-Gate: `bank8:payments:instructions:write`
-
-**Responses**:
-
-| Status | Description | Body |
-| --- | --- | --- |
-| 200 | Instruction initiated | `InstructionResponse` |
 | 403 | Missing `bank8:payments:instructions:write` scope | - |
 
 ### `GET /v1/instructions/{id}`
@@ -1100,6 +1600,26 @@ Gate: `bank8:payments:instructions:write`
 | 200 | Instruction cancelled | `InstructionResponse` |
 | 403 | Missing `bank8:payments:instructions:write` scope | - |
 | 409 | State transition conflict | - |
+
+### `POST /v1/instructions/{id}/cancel-async`
+
+`POST /v1/instructions/&#123;id&#125;:process` - process the instruction now (business route shape; wraps the state-machine step).
+
+Gate: `bank8:payments:instructions:write`
+
+**Parameters**:
+
+| Name | In | Required | Type |
+| --- | --- | --- | --- |
+| `id` | path | yes | string |
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Instruction advanced | - |
+| 403 | Missing `bank8:payments:instructions:write` scope | - |
+| 404 | Instruction not found | - |
 
 ### `POST /v1/instructions/{id}/process`
 
@@ -1331,6 +1851,30 @@ Gate: `bank8:payments:integrations:read`
 | 403 | Missing `bank8:payments:integrations:read` scope | - |
 | 404 | Integration not found | - |
 
+### `DELETE /v1/integrations/{id}`
+
+`DELETE /v1/integrations/&#123;id&#125;` - soft delete an integration (Story ).
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `PATCH /v1/integrations/{id}`
+
+`PATCH /v1/integrations/&#123;id&#125;` - update an integration (Story ).
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
 ### `GET /v1/logics`
 
 `GET /v1/logics` - list logics.
@@ -1341,7 +1885,7 @@ Gate: `bank8:payments:logics:read`
 
 | Status | Description | Body |
 | --- | --- | --- |
-| 200 | List of logics | `LogicResponse`[] |
+| 200 | Logics list | - |
 | 403 | Missing `bank8:payments:logics:read` scope | - |
 
 ### `POST /v1/logics`
@@ -1363,6 +1907,30 @@ Gate: `bank8:payments:logics:write`
 | --- | --- | --- |
 | 200 | Logic created | `LogicResponse` |
 | 403 | Missing `bank8:payments:logics:write` scope | - |
+
+### `GET /v1/logics/{id}`
+
+`GET /v1/logics/&#123;id&#125;` - logic detail.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `POST /v1/logics/{id}/migrate-wasm`
+
+`POST /v1/logics/&#123;id&#125;/migrate-wasm` - migrate an instruction logic's inline hooks to Func WASM modules (Story ). Loads the logic, walks its steps, and for every `BasicStep` whose `config.hook` is set and `config.wasmModuleId` is absent, creates a Func module from the step's config and uploads it via `func_client`. Returns the list of created module ids (and any per-step errors).
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
 
 ### `GET /v1/mandates`
 
@@ -1425,6 +1993,90 @@ Gate: `bank8:payments:mandates:read`
 | 403 | Missing `bank8:payments:mandates:read` scope | - |
 | 404 | Mandate not found | - |
 
+### `PATCH /v1/mandates/{id}`
+
+`PATCH /v1/mandates/&#123;id&#125;` - update a mandate.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `GET /v1/manual-decisions`
+
+`GET /v1/manual-decisions` - list manual decisions.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `GET /v1/manual-decisions/{id}`
+
+`GET /v1/manual-decisions/&#123;id&#125;` - manual decision detail.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `POST /v1/manual-decisions/{id}/submit`
+
+`POST /v1/manual-decisions/&#123;id&#125;/submit` - submit a manual decision. Records the submitter, the decision payload, and marks the decision as `submitting`. The downstream task system picks up the row from there.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `GET /v1/membership-directories`
+
+`GET /v1/membership-directories` - list membership directories.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `POST /v1/membership-directories`
+
+`POST /v1/membership-directories` - create a membership directory.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `GET /v1/membership-directories/{id}`
+
+`GET /v1/membership-directories/&#123;id&#125;` - get a membership directory.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
 ### `POST /v1/membership-directory-records/search`
 
 `POST /v1/`membership-directory-records:search`` - registry-validated membership directory search (BIC reachability, account resolution).
@@ -1471,6 +2123,18 @@ Gate: `bank8:payments:membership-directories:write`
 | --- | --- | --- |
 | 200 | Directory version created | `ResourceVersionResponse` |
 | 403 | Missing `bank8:payments:membership-directories:write` scope | - |
+
+### `GET /v1/metrics`
+
+`GET /v1/metrics` - Prometheus/OpenMetrics text format (Story ). Exports instruction counts, payment counts, and processing latency. Requires ``bank8:payments:metrics:read`` scope.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
 
 ### `GET /v1/on-us/routing`
 
@@ -1569,6 +2233,66 @@ Gate: `bank8:payments:parameters:write`
 | 200 | Parameter value updated (or unset) | - |
 | 403 | Missing `bank8:payments:parameters:write` scope | - |
 | 404 | Not found | - |
+
+### `GET /v1/parameters`
+
+`GET /v1/parameters` - list parameters.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `POST /v1/parameters`
+
+`POST /v1/parameters` - create a parameter.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `GET /v1/parameters/{id}`
+
+`GET /v1/parameters/&#123;id&#125;` - get a parameter.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `DELETE /v1/parameters/{id}`
+
+`DELETE /v1/parameters/&#123;id&#125;` - soft delete a parameter. Sets `status = 'deleted'` so the row is retained for audit but excluded from `resolve_parameter` and `list_parameters`.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `PATCH /v1/parameters/{id}`
+
+`PATCH /v1/parameters/&#123;id&#125;` - update a parameter.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
 
 ### `GET /v1/payees`
 
@@ -1672,6 +2396,65 @@ Gate: `bank8:payments:payments:write`
 | 200 | Payee removed | - |
 | 403 | Missing `bank8:payments:payments:write` scope | - |
 | 404 | Payee not found | - |
+
+### `GET /v1/payment-instruments`
+
+`GET /v1/payment-instruments` - list payment instruments.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `POST /v1/payment-instruments`
+
+`POST /v1/payment-instruments` - create a payment instrument.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+
+### `GET /v1/payment-instruments/{id}`
+
+`GET /v1/payment-instruments/&#123;id&#125;` - get a payment instrument.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `DELETE /v1/payment-instruments/{id}`
+
+`DELETE /v1/payment-instruments/&#123;id&#125;` - deactivate a payment instrument.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `PATCH /v1/payment-instruments/{id}`
+
+`PATCH /v1/payment-instruments/&#123;id&#125;` - update a payment instrument.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
 
 ### `GET /v1/payment-statuses`
 
@@ -1801,6 +2584,30 @@ Gate: `bank8:payments:rules:write`
 | 200 | Retry accepted | `ResourceVersionResponse` |
 | 403 | Missing `bank8:payments:rules:write` scope | - |
 | 404 | Version not found | - |
+
+### `GET /v1/rule-sets`
+
+`GET /v1/rule-sets` - list rule sets.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `POST /v1/rule-sets`
+
+`POST /v1/rule-sets` - create a rule set (Story ).
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
 
 ### `GET /v1/rule-versions`
 
@@ -2097,6 +2904,124 @@ Gate: `bank8:payments:sandbox:write`
 | 200 | Simulated SWIFT AGI payment | `SandboxSimulationResponse` |
 | 403 | Sandbox feature disabled | - |
 
+### `GET /v1/tasks`
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `GET /v1/tasks/{id}`
+
+`GET /v1/tasks/&#123;id&#125;` - task detail.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `POST /v1/tasks/{id}/approve`
+
+`POST /v1/tasks/&#123;id&#125;/approve` - approve a task (advances approval stages).
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `POST /v1/tasks/{id}/claim`
+
+`POST /v1/tasks/&#123;id&#125;/claim` - claim a task.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `POST /v1/tasks/{id}/reject`
+
+`POST /v1/tasks/&#123;id&#125;/reject` - reject a task.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `GET /v1/templates`
+
+`GET /v1/templates` - list templates.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `POST /v1/templates`
+
+`POST /v1/templates` - create a template.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `GET /v1/templates/{id}`
+
+`GET /v1/templates/&#123;id&#125;` - get a template.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `POST /v1/templates/{id}/publish`
+
+`POST /v1/templates/&#123;id&#125;/publish` - publish the latest draft version of a template. Marks the latest draft version as `published` and sets it as the template's `active_version_id`.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+### `POST /v1/templates/{id}/versions`
+
+`POST /v1/templates/&#123;id&#125;/versions` - create a new template version.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
 ### `GET /v1/users`
 
 `GET /v1/users` - list users visible to this environment (read view; identities stay in Sentin8:Auth - this is a projection).
@@ -2109,81 +3034,6 @@ Gate: `bank8:payments:users:read`
 | --- | --- | --- |
 | 200 | Users | `PlatformUserResponse`[] |
 | 403 | Missing `bank8:payments:users:read` scope | - |
-
-### `GET /v1beta/instruction-file-specification-versions`
-
-`GET /v1beta/instruction-file-specification-versions` - list file specification versions (active-version semantics; ).
-
-Gate: `bank8:payments:files:read`
-
-**Responses**:
-
-| Status | Description | Body |
-| --- | --- | --- |
-| 200 | Specification versions | `ResourceVersionResponse`[] |
-| 403 | Missing `bank8:payments:files:read` scope | - |
-
-### `POST /v1beta/instruction-file-specification-versions`
-
-`POST /v1beta/instruction-file-specification-versions` - create a file specification version.
-
-Gate: `bank8:payments:files:write`
-
-**Request body** (`application/json`):
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `schema` | `Value` | no | The specification payload (validated against the schema before creation). |
-| `specification_id` | string | yes |  |
-| `status` | string | no |  |
-
-**Responses**:
-
-| Status | Description | Body |
-| --- | --- | --- |
-| 200 | Specification version created | `ResourceVersionResponse` |
-| 403 | Missing `bank8:payments:files:write` scope | - |
-
-### `POST /v1beta/instruction-file-specification-versions/validate`
-
-`POST /v1beta/`instruction-file-specification-versions:validate`` - validate a specification version payload without creating it (active-version semantics; the design's `:validate` convention).
-
-Gate: `bank8:payments:files:read`
-
-**Request body** (`application/json`):
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `schema` | `Value` | no | The specification payload (validated against the schema before creation). |
-| `specification_id` | string | yes |  |
-| `status` | string | no |  |
-
-**Responses**:
-
-| Status | Description | Body |
-| --- | --- | --- |
-| 200 | Validation result | - |
-| 400 | Invalid specification | - |
-| 403 | Missing `bank8:payments:files:read` scope | - |
-
-### `POST /v1beta/instruction-files/initiate`
-
-`POST /v1beta/`instruction-files:initiate`` - initiate an instruction file (submission route; - the business submission surface).
-
-Gate: `bank8:payments:files:write`
-
-**Request body** (`application/json`):
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `file_id` | string | yes |  |
-
-**Responses**:
-
-| Status | Description | Body |
-| --- | --- | --- |
-| 200 | File initiated for processing | - |
-| 403 | Missing `bank8:payments:files:write` scope | - |
 
 ### `GET /v1beta/scheduled-payments`
 
@@ -2284,7 +3134,456 @@ Gate: `bank8:payments:scheduled-payments:write`
 | 404 | Not found | - |
 
 
+## account-links
+
+### `DELETE /v1/account-links/{id}`
+
+`DELETE /v1/account-links/&#123;id&#125;` - deactivate an account link.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Account link deactivated | - |
+| 401 | Not authenticated | - |
+| 403 | Caller lacks the bank8 scope | - |
+
+
+## policy
+
+### `GET /v1/admin/attributes`
+
+Gate: `sentin8:admin`
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Principal attributes of this service | -[] |
+| 403 | Caller lacks the admin scope | - |
+
+### `PUT /v1/admin/attributes`
+
+Gate: `sentin8:admin`
+
+**Request body** (`application/json`):
+
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Attribute stored | - |
+| 400 | Invalid attribute definition | - |
+| 403 | Caller lacks the admin scope | - |
+
+### `DELETE /v1/admin/attributes`
+
+Gate: `sentin8:admin`
+
+**Parameters**:
+
+| Name | In | Required | Type |
+| --- | --- | --- | --- |
+| `id` | query | yes | string |
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Attribute deleted | - |
+| 403 | Caller lacks the admin scope | - |
+
+### `GET /v1/admin/policy-sets`
+
+Gate: `sentin8:admin`
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Policy sets of this service | -[] |
+| 403 | Caller lacks the admin scope | - |
+
+### `POST /v1/admin/policy-sets/disable`
+
+Gate: `sentin8:admin`
+
+**Request body** (`application/json`):
+
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Sets disabled | - |
+| 403 | Caller lacks the admin scope | - |
+
+### `POST /v1/admin/policy-sets/enforce`
+
+Gate: `sentin8:admin`
+
+**Request body** (`application/json`):
+
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Sets switched to enforce mode | - |
+| 403 | Caller lacks the admin scope | - |
+
+### `POST /v1/admin/policy-sets/shadow`
+
+Gate: `sentin8:admin`
+
+**Request body** (`application/json`):
+
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Sets switched to shadow mode | - |
+| 403 | Caller lacks the admin scope | - |
+
+### `GET /v1/admin/policy-sets/{name}`
+
+Gate: `sentin8:admin`
+
+**Parameters**:
+
+| Name | In | Required | Type |
+| --- | --- | --- | --- |
+| `name` | path | yes | string |
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | The policy set | - |
+| 403 | Caller lacks the admin scope | - |
+| 404 | Unknown policy set name | - |
+
+### `PUT /v1/admin/policy-sets/{name}`
+
+Gate: `sentin8:admin`
+
+**Request body** (`application/json`):
+
+
+**Parameters**:
+
+| Name | In | Required | Type |
+| --- | --- | --- | --- |
+| `name` | path | yes | string |
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Policy set stored | - |
+| 400 | Invalid policy set definition | - |
+| 403 | Caller lacks the admin scope | - |
+
+### `DELETE /v1/admin/policy-sets/{name}`
+
+Gate: `sentin8:admin`
+
+**Parameters**:
+
+| Name | In | Required | Type |
+| --- | --- | --- | --- |
+| `name` | path | yes | string |
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Policy set deleted | - |
+| 403 | Caller lacks the admin scope | - |
+
+### `POST /v1/admin/policy-sets/{name}/test`
+
+Gate: `sentin8:admin`
+
+**Request body** (`application/json`):
+
+
+**Parameters**:
+
+| Name | In | Required | Type |
+| --- | --- | --- | --- |
+| `name` | path | yes | string |
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Dry-run decision trace | - |
+| 403 | Caller lacks the admin scope | - |
+
+### `GET /v1/admin/relations`
+
+Gate: `sentin8:admin`
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | ReBAC relations of this service | -[] |
+| 403 | Caller lacks the admin scope | - |
+
+### `PUT /v1/admin/relations`
+
+Gate: `sentin8:admin`
+
+**Request body** (`application/json`):
+
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Relation stored | - |
+| 400 | Invalid relation definition | - |
+| 403 | Caller lacks the admin scope | - |
+
+### `DELETE /v1/admin/relations`
+
+Gate: `sentin8:admin`
+
+**Parameters**:
+
+| Name | In | Required | Type |
+| --- | --- | --- | --- |
+| `id` | query | yes | string |
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Relation deleted | - |
+| 403 | Caller lacks the admin scope | - |
+
+### `GET /v1/admin/relations/check`
+
+Gate: `sentin8:admin`
+
+**Parameters**:
+
+| Name | In | Required | Type |
+| --- | --- | --- | --- |
+| `subject` | query | yes | string |
+| `relation` | query | yes | string |
+| `object` | query | yes | string |
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | The check verdict | - |
+| 403 | Caller lacks the admin scope | - |
+
+
+## payments-admin
+
+### `GET /v1/admin/calendars`
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Admin calendars rows (latest 50) | - |
+| 401 | Not authenticated | - |
+| 403 | Caller lacks the payments admin scope | - |
+
+### `GET /v1/admin/cards`
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Admin cards rows (latest 50) | - |
+| 401 | Not authenticated | - |
+| 403 | Caller lacks the payments admin scope | - |
+
+### `GET /v1/admin/cores`
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Admin cores rows (latest 50) | - |
+| 401 | Not authenticated | - |
+| 403 | Caller lacks the payments admin scope | - |
+
+### `GET /v1/admin/decisions`
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Admin decisions rows (latest 50) | - |
+| 401 | Not authenticated | - |
+| 403 | Caller lacks the payments admin scope | - |
+
+### `GET /v1/admin/directories`
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Admin directories rows (latest 50) | - |
+| 401 | Not authenticated | - |
+| 403 | Caller lacks the payments admin scope | - |
+
+### `GET /v1/admin/files`
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Admin files rows (latest 50) | - |
+| 401 | Not authenticated | - |
+| 403 | Caller lacks the payments admin scope | - |
+
+### `GET /v1/admin/instructions`
+
+`GET /v1/admin/instructions` - recent instructions (admin view).
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Recent instructions (admin view) | - |
+| 403 | Caller lacks the payments admin scope | - |
+
+### `GET /v1/admin/integrations`
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Admin integrations rows (latest 50) | - |
+| 401 | Not authenticated | - |
+| 403 | Caller lacks the payments admin scope | - |
+
+### `GET /v1/admin/mandates`
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Admin mandates rows (latest 50) | - |
+| 401 | Not authenticated | - |
+| 403 | Caller lacks the payments admin scope | - |
+
+### `GET /v1/admin/overview`
+
+`GET /v1/admin/overview` - counts for the overview dashboard.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Admin overview counts | - |
+| 403 | Caller lacks the payments admin scope | - |
+
+### `GET /v1/admin/parameters`
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Admin parameters rows (latest 50) | - |
+| 401 | Not authenticated | - |
+| 403 | Caller lacks the payments admin scope | - |
+
+### `GET /v1/admin/payments`
+
+`GET /v1/admin/payments` - recent payments (admin view).
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Recent payments (admin view) | - |
+| 403 | Caller lacks the payments admin scope | - |
+
+### `GET /v1/admin/rules`
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Admin rules rows (latest 50) | - |
+| 401 | Not authenticated | - |
+| 403 | Caller lacks the payments admin scope | - |
+
+### `GET /v1/admin/settings`
+
+`GET /v1/admin/settings` - service settings view.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Service settings | - |
+| 403 | Caller lacks the payments admin scope | - |
+
+### `GET /v1/admin/simulator`
+
+`GET /v1/admin/simulator` - simulator availability (sandbox gate).
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | Simulator state | - |
+| 403 | Caller lacks the payments admin scope | - |
+
+
+## admin-ui
+
+### `GET /v1/admin/ui/{page}`
+
+GET /v1/admin/ui/&#123;page&#125; - return RFW definition for the requested admin page.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+
+## meta
+
+### `GET /v1/health`
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+| 403 | Missing the payments scope gate | - |
+
+
 ## payments-internal
+
+### `GET /v1/internal/account-links/{id}`
+
+`GET /v1/internal/account-links/&#123;id&#125;` - internal lookup.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
 
 ### `POST /v1/internal/authorisations/expire`
 
@@ -2303,4 +3602,165 @@ Gate: `bank8:payments:scheduled-payments:write`
 | --- | --- | --- |
 | 200 | Expiry run result | `ExpiryRunResult` |
 | 403 | Missing service scope | - |
+
+### `GET /v1/internal/calendars/{id}`
+
+`GET /v1/internal/calendars/&#123;id&#125;` - internal lookup.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+
+### `GET /v1/internal/cardholders/{id}`
+
+`GET /v1/internal/cardholders/&#123;id&#125;` - internal lookup.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+
+### `GET /v1/internal/cards/{id}`
+
+`GET /v1/internal/cards/&#123;id&#125;` - internal lookup.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+
+### `POST /v1/internal/files/debatch`
+
+Execute the `debatch_file` step: split the file's records into chunked instruction batches (design §10). The step is idempotent on ``file_id:chunk_index`` - a workflow retry re-enters here and the terminal-file guard makes completed work a no-op.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+
+### `GET /v1/internal/instructions/{id}`
+
+`GET /v1/internal/instructions/&#123;id&#125;` - internal instruction lookup.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+
+### `PATCH /v1/internal/instructions/{id}`
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+
+### `GET /v1/internal/integrations/{id}`
+
+`GET /v1/internal/integrations/&#123;id&#125;` - internal lookup.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+
+### `GET /v1/internal/mandates/{id}`
+
+`GET /v1/internal/mandates/&#123;id&#125;` - internal lookup.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+
+### `GET /v1/internal/manual-decisions/{id}`
+
+`GET /v1/internal/manual-decisions/&#123;id&#125;` - internal lookup.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+
+### `GET /v1/internal/parameters/{id}`
+
+`GET /v1/internal/parameters/&#123;id&#125;` - internal lookup.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+
+### `GET /v1/internal/payment-instruments/{id}`
+
+`GET /v1/internal/payment-instruments/&#123;id&#125;` - internal lookup.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+
+### `GET /v1/internal/payments/{id}`
+
+`GET /v1/internal/payments/&#123;id&#125;` - internal payment lookup.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+
+### `GET /v1/internal/rules/{id}`
+
+`GET /v1/internal/rules/&#123;id&#125;` - internal lookup.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+
+### `POST /v1/internal/schedules/trigger`
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
+
+### `POST /v1/internal/steps/execute`
+
+`POST /v1/internal/steps/execute` - Flow proxy-back for Payments domain steps.
+
+**Responses**:
+
+| Status | Description | Body |
+| --- | --- | --- |
+| 200 | OK | - |
+| 401 | Not authenticated | - |
 

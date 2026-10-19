@@ -1,0 +1,1 @@
+{"parameters":[{"name":"kind","in":"query","description":"'migration' or 'account_update'","required":true,"schema":{"type":"string"}}]}

@@ -1,0 +1,68 @@
+---
+id: replay-journal-event
+title: "`POST /v1/journal-events/{id}/replay` — re-drive a journal event
+idempotently . The journal row carries the full operation payload;
+posting replays are no-ops thanks to posting idempotency keys. Other
+resource kinds re-apply the recorded operation."
+description: "`POST /v1/journal-events/{id}/replay` — re-drive a journal event"
+sidebar_label: "`POST /v1/journal-events/{id}/replay` — re-drive a journal event
+idempotently . The journal row carries the full operation payload;
+posting replays are no-ops thanks to posting idempotency keys. Other
+resource kinds re-apply the recorded operation."
+hide_title: true
+hide_table_of_contents: true
+api: eJzlVNtuEzEQ/ZXRPIHk3Ko+VOYJ3opAQW14SqLWsSdZN45txt6U1WolPoIv5EuQd0NoC+IHeFrJOzPnzDnHbjGrXUK5REdmR4xrgSESq2yDvzYokSk61dw9hJq9cnd0JJ9RIFOKwSdKKFu8mE7Lx1DSbGNpRYk3fSMorSlmMvCKKdUuQ9g8kM6vsRN4Ob38s+/9gAQ9EviQYRtqb7DrBCbSNdvcoFy2uFF+fyUH3jKGlK3fJfnINhPK5bpbixeT7z/NbxcwOc4mp21GPUaatNZ0k2HRe/jx7TswjQzbI4GCh6d0Vt4aOsSQyWfXwBgWFZ0rODyCVsyWEuSKYFs7B2cxIarGBWXerPyJKwyICRQT+DAKsfQpv0+QA/wqOgPqBvbUpDHMc0W88kwp1KwJ9tabVCirGF3TQzPpwIbMb/gxCjxQrkLxtMxGgVHlCiX+WxAUaP02FJ+yzY5QDsKPToF5KfIt+Wz9Fbzr3fnQF/Wa6sAEQ5M4b0d+Zz0JiBxMrTM4u2HFTWHrrCafqAB7dSi4H68XML+Bt1HpikYX42nhZgre1hL/taATeCROA7XpeDYcFfSD8k9G/+/ReOZhi7mJRZVMX/MkOmV9Ua1mV/4NqVnicYYCn6uFAqU1/evQR2ctsCpRk0ts241K9Jld15XjLzVxucVrgUfFVm3ccGefhLQ4gl33EzxdpWY=
+sidebar_class_name: "post api-method"
+info_path: docs/api/ledger/bank-8-ledger
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"`POST /v1/journal-events/{id}/replay` — re-drive a journal event\nidempotently . The journal row carries the full operation payload;\nposting replays are no-ops thanks to posting idempotency keys. Other\nresource kinds re-apply the recorded operation."}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/v1/journal-events/{id}/replay"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+`POST /v1/journal-events/{id}/replay` — re-drive a journal event
+idempotently . The journal row carries the full operation payload;
+posting replays are no-ops thanks to posting idempotency keys. Other
+resource kinds re-apply the recorded operation.
+
+<ParamsDetails>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./replay-journal-event.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./replay-journal-event.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

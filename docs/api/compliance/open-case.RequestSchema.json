@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"type":"object","description":"Request body for escalating an alert to a case.","required":["assignee"],"properties":{"assignee":{"type":"string"}},"title":"OpenCaseRequest"}}},"required":true}}

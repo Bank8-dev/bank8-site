@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"type":"object","required":["order_ids"],"properties":{"order_ids":{"type":"array","items":{"type":"string","format":"uuid"}}},"title":"CreateCardOrderBatchRequest"}}},"required":true}}

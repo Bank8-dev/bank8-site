@@ -1,0 +1,66 @@
+---
+id: view-effective-parameter
+title: "`GET /v1/parameter-values:viewEffective` — resolve effective parameter value
+at a point in time, with hierarchy precedence (account > hierarchy > global)."
+description: "Results are served from a bounded TTL cache (design §10): the"
+sidebar_label: "`GET /v1/parameter-values:viewEffective` — resolve effective parameter value
+at a point in time, with hierarchy precedence (account > hierarchy > global)."
+hide_title: true
+hide_table_of_contents: true
+api: eJztlMFuG0cMhl+F4MkBVraU9hDsIUACGEHQpAFS9SQZ8Wj2l3aaEWc7w11XEBboQ+Qd+h59lD5JwZXtOHGRHnvpaYFZDv+f5Mc5srpd4XrFEc0Oma8qblB8Dp2GJFzze5Q+aiGXQQV5QEPbnPbkaJN6adDQcvmGvPMt6KxBCTuhP/9YzJ/UpC3W0rns9lDk2eBiD7rJQUGd05ZCoSAFWWdJ4oFugrZ0je0WXsOADyZzXVFJ5NZS2pR1kiqI21kLFws5aUgSYYDorMlhgFCQwcXQOLNvCgI0aM5pOZlJRYPsaJ8Eh5MJwYBMPsmpTG1Dua3mr98/0b17yigp9pZ1Ldoiw5JrdlKct1MXaXOg2wacOSrqImgLUHY6BTvyKWd4FZSylgZWaEWSlBxFpxB/sIwNnpxzxalDnqp43XDNQ8DNh8+9uffFFWeULklB4frIT+dz+3w5w3c/cMU+iULU/rqui8FPyS9+KRZy5OJb7B3Xx3Ecx4q/ny8e5/nRrPbaQtSuo+Ep8rvHkW9DKdZobUEnsqj41IF2TsEmUOD7HPTA9eqq4j20TVbnDsoV22S45othcfEVP6W2TlzeNYIrDrJNZkCDRnDNGycfn81ucf6a5p/MujyjlxZUvzk5s0H7lO+cVnSHCWQXBBV1OTW9V4phk10+2HRi8JACExa3N923r5f07j296Aye2dPzuXlrTG8bkP8xYKx4QC4na/PzxenI1PdOHqS+fnW5pH9vxvVUyQTqALqH5QHE0621OCOuS0GUgpCGParT9rUB2WXfHqjL8GggHnTmvE+9KD1/8P857WLauDih+kWPj59J+//x+K8eDz10Bo7iN73oogtiYPU52nhOy7XiYTFt2jfX66riNhW18ONx4wp+znEc7fjXHvl2eQeXg9vY8q2uxopbuMaAXx35Iw5c8wvv0dlaTxJcP35/xodPwKvLJY/j35KMWP4=
+sidebar_class_name: "get api-method"
+info_path: docs/api/ledger/bank-8-ledger
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"`GET /v1/parameter-values:viewEffective` — resolve effective parameter value\nat a point in time, with hierarchy precedence (account > hierarchy > global)."}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v1/parameter-values:viewEffective"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Results are served from a bounded TTL cache (design §10): the
+parameter-value write path is insert-only with `effective_from`, so a
+short TTL self-heals and no event-driven invalidation is needed. The
+posting money path never consults this cache — parameter resolution
+there is transactional by design (a stale fee rate is a correctness
+defect, not a latency trade).
+
+<ParamsDetails>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./view-effective-parameter.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./view-effective-parameter.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

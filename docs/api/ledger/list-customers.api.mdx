@@ -1,0 +1,78 @@
+---
+id: list-customers
+title: "`GET /v1/customers` — list/search customers.
+Optional `?search=<text>` filters by display_name or email (case-insensitive
+substring match). Without a search term, returns all customers in the
+caller's org/env (subject to RLS)."
+description: "`GET /v1/customers` — list/search customers."
+sidebar_label: "`GET /v1/customers` — list/search customers.
+Optional `?search=<text>` filters by display_name or email (case-insensitive
+substring match). Without a search term, returns all customers in the
+caller's org/env (subject to RLS)."
+hide_title: true
+hide_table_of_contents: true
+api: eJzlVs1uGzcQfpXBXGKjlGSnPQSL/iAt0iBAggCOix5kQaa4s1rGXHJDzioVhAX6EH3CPkkxXEWSLcVJztVFEufvm2+GM9wg62XCYoqOyiVFnCkMLUXNNvhXJRbobOK56RKHhmJCha2OuiGWP8V0g143hAUm0tHUqNB6LPBDR3GNCktKJtpWnGGBv0eiEdNfDIM2nJU2tU6v5+IEQgRqtHXnqDDSh85GKrGotEukMJmaGo3FBnnd5oAcrV9i36sdBvKruS0fx3Ct45IYBlWoQoTEuqrAaOeG/L4h9Ey0Uxt8oiTypxcX8nU/4mubGEIFhxya4Jk8i7JuW2dN5nvyPonF5jiijlFLLpapSQfnYfGeDN8DPcVMwSGzqDCx5i5HjqSZyrlmKXUbpdhsB/gHsqNkFVYhNiLBUjON2DaE/YM4xxQpzCXdS6Z7h75zDme9EsCPxes6W4qntg6eHvcUKQW3onJ+GtaRycPuuNraw9YexL6ALlHa1298r2ttBT74ETUtr9WND1xT/GgTQaWdS7DQ5g44ANcEzvo7KkF3XIvL+CRBZWPiwdF34PT29xgPc/kSg59NIhseoc+nn2CLBwU70Df+q1BnFxlkIs/WP5uLdC7S+WExT0A9quq2M09dbGTLTo5+24K/2l427OWj8IeL74/v2xubkvVLWGh/96wYxlqhjQmd51RE0iUkE1rKERKZLlpe51H2eQssprP+iOjbly+uYbK6nOzIvYV///4HZGROtiNuz/uNf5sNtYPbXwbpTz/KNPz5FirrZKDCYg0nRyKcGZ1oZH0inyzbFd341C0GqqDRbOrzMfxpuQ4dg/40X5lioyASd9En0M7t4YD1Ut0bPwy+JwlCXE7Ir+AsdXmqSP2vXr87H6PChrgOsg2WxHkFcI0F3ks9j90q5EJuy5b5HG0Xy0Py3g2dA79m0l9npcyeCZFgMFLQhsSSIvml9aSgjaHsDIOzi6jjWrA5a0h6otjtgTevruHtFTxvtalp9HR8IdhKiVdZiicVeoUrimmAdjG+HI4keqP9gev/T8nvVWt3OQX8pHXaeuGni3kuDe0wxdWlLJhdQ8wU1iGxSDabhU70R3R9L8fDapYrV9qkF+5g2T4Iu1uU3/J4OIn1jtaHz5SVdp0oobwfvh7Fl58PjwTfvU/2wWfyJ1qJnmeMwpp0KU063WytnhtDLR9YHb0YxMvuhr58cY19/x8YX3Jy
+sidebar_class_name: "get api-method"
+info_path: docs/api/ledger/bank-8-ledger
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"`GET /v1/customers` — list/search customers.\nOptional `?search=<text>` filters by display_name or email (case-insensitive\nsubstring match). Without a search term, returns all customers in the\ncaller's org/env (subject to RLS)."}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v1/customers"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+`GET /v1/customers` — list/search customers.
+Optional `?search=<text>` filters by display_name or email (case-insensitive
+substring match). Without a search term, returns all customers in the
+caller's org/env (subject to RLS).
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./list-customers.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./list-customers.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./list-customers.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

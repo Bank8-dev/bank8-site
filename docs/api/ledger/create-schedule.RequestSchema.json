@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"type":"object","required":["schedule_type","cron_expression"],"properties":{"account_id":{"type":["string","null"],"format":"uuid"},"cron_expression":{"type":"string"},"schedule_type":{"type":"string"}},"title":"CreateScheduleRequest"}}},"required":true}}

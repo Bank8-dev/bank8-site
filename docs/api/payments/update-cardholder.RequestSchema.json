@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"type":"object","properties":{"status":{"type":["string","null"],"description":"INACTIVE | ACTIVE | SUSPENDED | CLOSED (CLOSED cascades to cards)."}},"title":"UpdateCardholderRequest"}}},"required":true}}

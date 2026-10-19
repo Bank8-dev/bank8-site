@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"type":"object","required":["card_id"],"properties":{"card_id":{"type":"string","format":"uuid"},"shipping_address":{"title":"Value"}},"title":"CreateCardOrderRequest"}}},"required":true}}

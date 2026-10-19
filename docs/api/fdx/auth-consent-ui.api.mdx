@@ -1,0 +1,80 @@
+---
+id: auth-consent-ui
+title: "`GET /v1/auth/consent/ui` — return RFW consent page definition.
+Returns a JSON RFW definition that auth-ui renders. The definition
+includes:
+- Scope list with FDX-specific descriptions and Material Icons code points
+- Account selection DataTable (checkboxes, nickname, type, masked number, balance)
+- 'Authorize' button (POST to /v1/auth/consent/approve)
+- 'Deny' button (POST to /v1/auth/consent/deny)
+- Data endpoint declaration for account fetch (/v1/auth/consent/accounts)"
+description: "`GET /v1/auth/consent/ui` — return RFW consent page definition."
+sidebar_label: "`GET /v1/auth/consent/ui` — return RFW consent page definition.
+Returns a JSON RFW definition that auth-ui renders. The definition
+includes:
+- Scope list with FDX-specific descriptions and Material Icons code points
+- Account selection DataTable (checkboxes, nickname, type, masked number, balance)
+- 'Authorize' button (POST to /v1/auth/consent/approve)
+- 'Deny' button (POST to /v1/auth/consent/deny)
+- Data endpoint declaration for account fetch (/v1/auth/consent/accounts)"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVdtuEzEQ/ZXRPLWScysXVfsW1IsKaovaIJCSqnW8k6zJxjb2bGhYrcRH8IV8CZpNKkrTB97hybLnzJkz9rFdI+t5wmyMxrtEjvFGoQ8UNVvvznLMUFdc3G6jt5VFhZFSkHnCrMaDfl+GnJKJNkgWZnj5DpUwsjBmNeoQSmtazt7nJJAakyloqTGrm6ZpFL7sD3Z5LjyD1CfHkk45tsgXu8hzm5J1c+CC4OToE2wF95LxgWCumVCqJDJVtLzGbHyjnlDcnR6PoLca9KRi74Ggsnfw8/sPiMRVdHB18vGBG4KeE+Q0s84KRXfirlpQAg1vry8vWvDvOHChN+10KguRXE4xdWFUPCaZOOtMWeWUsonrwHUrv7SJ4avlQlrrpEDGzqyBR/ITaJfDuWaKVpdwJhLB+JwgeOs4CdfQGF85hkQlmVbQkWY90tOSYM8UZBZTf09JgbNm4fSSFPA6kIKlTgvKwVXLKUUFU11qZ2hfOCc4rLjw0X6jCcK0YvYO9t5fXo+A/e5m6hCiXz2kHpFb/01WTm7dpoheIJe3PUFOptQbo8LMR9Db/mbEpoC93eKbeNpHhUviwou758SoMGguMMNnDh8VWjfzYji2XBJmONVucdiZ5ff41EHX4lN3CG8EkYkNxTk+kANJsm6uWnOuXndfgeyEzSn2IhkbLDnuosLSGnKJpJ4cgTj7bASXVzAM2hTUOej2RVIulWaW4rOARuGKYtqI6ncHm6XgEy+1e0T93/H/juP/cGqN0idmyHTPvVBq68QhVSwltrkNY1wNULXP/+Yxb78HhZWVP6LwiQVT11Od6EMsm0aWv1QUt4/rSkcrOy2zRmFBOhe7jmtc0BozHBpDQQhXuqxEy84n0dw8uqinxyNsml+zvVJ0
+sidebar_class_name: "get api-method"
+info_path: docs/api/fdx/bank-8-fdx
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"`GET /v1/auth/consent/ui` — return RFW consent page definition.\nReturns a JSON RFW definition that auth-ui renders. The definition\nincludes:\n- Scope list with FDX-specific descriptions and Material Icons code points\n- Account selection DataTable (checkboxes, nickname, type, masked number, balance)\n- 'Authorize' button (POST to /v1/auth/consent/approve)\n- 'Deny' button (POST to /v1/auth/consent/deny)\n- Data endpoint declaration for account fetch (/v1/auth/consent/accounts)"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v1/auth/consent/ui"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+`GET /v1/auth/consent/ui` — return RFW consent page definition.
+Returns a JSON RFW definition that auth-ui renders. The definition
+includes:
+- Scope list with FDX-specific descriptions and Material Icons code points
+- Account selection DataTable (checkboxes, nickname, type, masked number, balance)
+- "Authorize" button (POST to /v1/auth/consent/approve)
+- "Deny" button (POST to /v1/auth/consent/deny)
+- Data endpoint declaration for account fetch (/v1/auth/consent/accounts)
+
+<ParamsDetails>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./auth-consent-ui.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./auth-consent-ui.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

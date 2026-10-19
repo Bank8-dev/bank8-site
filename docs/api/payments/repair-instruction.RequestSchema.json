@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"type":"object","properties":{"input":{"description":"Optional updated input for the instruction."},"rewind_to":{"type":"integer","description":"Step index to rewind to (0 = restart from beginning).","minimum":0}},"title":"RepairRequest"}}},"required":true}}

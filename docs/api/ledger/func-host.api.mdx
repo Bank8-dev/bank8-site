@@ -1,0 +1,74 @@
+---
+id: func-host
+title: "`POST /v1/internal/func-host` — Sentin8:Func proxy-back for host functions.
+Authorization: M2M token with `bank8:ledger:postings:write` (the Func
+runtime authenticates with the posting service's M2M identity because
+host functions can move money). Tenant context comes from the `env_id`
+in the request body — the Func runtime resolves it from the hook
+context, and the M2M token's own env claim is cross-checked."
+description: "`POST /v1/internal/func-host` — Sentin8:Func proxy-back for host functions."
+sidebar_label: "`POST /v1/internal/func-host` — Sentin8:Func proxy-back for host functions.
+Authorization: M2M token with `bank8:ledger:postings:write` (the Func
+runtime authenticates with the posting service's M2M identity because
+host functions can move money). Tenant context comes from the `env_id`
+in the request body — the Func runtime resolves it from the hook
+context, and the M2M token's own env claim is cross-checked."
+hide_title: true
+hide_table_of_contents: true
+api: eJztlEtu2zAQhq8ymE1aQH6lXQTcpYsCQZumaNKVbcQ0NbZYS0OFpJSogoAeoifsSYqR7LwvUKArAuTPmX9mPrLFqLcB1RwtR/Ksc1wm6EryOlrHZykq3FRsrjMXIiboKZSOAwVULR5Pp7KkFIy3pehR4cUnTNA4jsRRTnVZ5tb00SY/gkhaDCajQqNqu67rEnw/nb2M88VF0FXMiKNcpxR75buXynMbguUtxIwgp3RLHoJxJcFWR0JJEMhU3sYG1XyZPLu9+npxeQWTejY5dGAiBY+k4BX8+fUbLsUCn6iPFRsovbtrRmttdrBxHkQFopdoYbzg0ypmztuffcEKzo/PIbodMdzamMFqrXl3ogaXqnQhWt4GdettpBW8kQoky4J9xdEW9KQDYYghov1NCORra+go9IlsKtLYwJqMrgIt+Kk9MJqhcDVB4Ziat2O4ItYcoR/XnawFBdh4V/RZVsT1tU1XC7bcb3i6qShEWLu06VtzMAwHv56Cy2sKYONDnMy53YL3SRLQnPbb9705CuBuGYhrMLm2BdgAxrsQRiYjs6N0jAkWFDMnOJYDiaWOGSp8fXCYoOWNE1aijTmhwr7zo6Hz+ByC/YjhQz+ezwNEUqBx/gBVct914q1lSoSFtDIRcrv22jfiMreGOJAkZl1I3vOzK7j4BqelNhmNjsdT8dYPamPJvyroEqzJh8HadDwbtiR7oflR6P/o/hvoPmGtxdiUMj2JOClzbVmmW/lczgaq51jPeoT3X3KCD2QvE+xXNce2XetA333edbJ9U5Hff3G19lavhfv5skswI50Ka/MWd9SgwlNjqJRXUuu8EjMvfulu+ejJCWfYdX8BvH0wnQ==
+sidebar_class_name: "post api-method"
+info_path: docs/api/ledger/bank-8-ledger
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"`POST /v1/internal/func-host` — Sentin8:Func proxy-back for host functions.\nAuthorization: M2M token with `bank8:ledger:postings:write` (the Func\nruntime authenticates with the posting service's M2M identity because\nhost functions can move money). Tenant context comes from the `env_id`\nin the request body — the Func runtime resolves it from the hook\ncontext, and the M2M token's own env claim is cross-checked."}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/v1/internal/func-host"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+`POST /v1/internal/func-host` — Sentin8:Func proxy-back for host functions.
+Authorization: M2M token with `bank8:ledger:postings:write` (the Func
+runtime authenticates with the posting service's M2M identity because
+host functions can move money). Tenant context comes from the `env_id`
+in the request body — the Func runtime resolves it from the hook
+context, and the M2M token's own env claim is cross-checked.
+
+<ParamsDetails>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./func-host.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./func-host.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,75 @@
+---
+id: list-recipient-consents
+title: "`GET /v1/recipient/consents` — list active consents for the recipient.
+Returns `{'consents': [...]}` (wrapped) so the eFintech app's
+FdxConsentsHook can parse `response.data['consents']`."
+description: "`GET /v1/recipient/consents` — list active consents for the recipient."
+sidebar_label: "`GET /v1/recipient/consents` — list active consents for the recipient.
+Returns `{'consents': [...]}` (wrapped) so the eFintech app's
+FdxConsentsHook can parse `response.data['consents']`."
+hide_title: true
+hide_table_of_contents: true
+api: eJzdVNtu2zAM/RWBL90A10m7Cwq/dVvTFVgxoOuAAUnQKBIda7UlVaK9BIaBfcS+cF8y0Lk0bfMFezIgn0Me8pBsgeQiQjaGXC9hmoDzGCQZZ680ZFCaSHcBlfEGLd0pZyNaipCAl0FWSBiY3IKVFUIGqo7kKgx3RkMCxkIGDzWGFSSgMapgPIeGDEamJAxivhJbCiQQ8KE2ATVkuSwjJhBVgZWErAVaeY4fKRi7gARyFypJkEFdGw1dN2V29KwvMv50OOTP06RfTCThcrErSOwVpJwltMQs6X1pVN+Fwc/I1PZRStd1XQJvh29exr82MRq7ELleZgGlFlE5j8D4iKoOhlZ9s7b/IRtPWfnTKLPLi1sxaE4GO5mDrcyZ+Pv7j2BThFRkGtwVIHIXBBX4WFs6sTdIdbBRzNoJbIETyMQ4TdNpNxOvfgXpPerXIrqejCNjCVUhpPdHcWJHevlxw/vs3L1Q0govQ0Qx23Y71ZLk+Ggb/mg6SyGBCqlwPEALpH5YqIAMDhfVD0ruepcNlWzzXNr7s2OeyOfN+YaWjD0THxiRjT796DviPFrBJGMXieDX5n36TvjgGqMxPCZlbaVRaCNyvs3UXl/diq834txLVeDxaTpkSZoz5QbDQUCXQIMhrkUN05P1k3eRKmn3Qv8PZj5xYLeKhEsa+FIay5XXoeR/a6PH0Jz067xRv96utdnTBAoXiUFtO5cRv4ey6/h5fSh4P7SJcl7u3YFnCnareviMHBR4j6sX96mRZc1I4CVsZDCctV/KBAqUmr0ftxvquVLoaY/14kpwlN3gX17cQtf9A+Fg3ZM=
+sidebar_class_name: "get api-method"
+info_path: docs/api/fdx/bank-8-fdx
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"`GET /v1/recipient/consents` — list active consents for the recipient.\nReturns `{'consents': [...]}` (wrapped) so the eFintech app's\nFdxConsentsHook can parse `response.data['consents']`."}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v1/recipient/consents"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+`GET /v1/recipient/consents` — list active consents for the recipient.
+Returns `{"consents": [...]}` (wrapped) so the eFintech app's
+FdxConsentsHook can parse `response.data['consents']`.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./list-recipient-consents.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./list-recipient-consents.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./list-recipient-consents.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

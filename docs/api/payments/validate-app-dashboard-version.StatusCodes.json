@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"Validation result"},"403":{"description":"Missing bank8:payments:app:dashboards:read scope"}}}

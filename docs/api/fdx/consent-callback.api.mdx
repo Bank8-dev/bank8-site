@@ -1,0 +1,83 @@
+---
+id: consent-callback
+title: "`GET /fdx/consents/callback` — OAuth callback from Auth after consent.
+Per the FDX design §4.3:
+5. External provider redirects to Auth callback
+6. Auth validates state, nonce, JARM
+7. Auth exchanges code for tokens
+8. FDX creates consent record (active), enqueues data retrieval
+For now (dev), this activates the consent and redirects back to the
+eFintech app. In production, this would exchange the code for tokens
+at Auth, store the token grants, and enqueue data retrieval."
+description: "`GET /fdx/consents/callback` — OAuth callback from Auth after consent."
+sidebar_label: "`GET /fdx/consents/callback` — OAuth callback from Auth after consent.
+Per the FDX design §4.3:
+5. External provider redirects to Auth callback
+6. Auth validates state, nonce, JARM
+7. Auth exchanges code for tokens
+8. FDX creates consent record (active), enqueues data retrieval
+For now (dev), this activates the consent and redirects back to the
+eFintech app. In production, this would exchange the code for tokens
+at Auth, store the token grants, and enqueue data retrieval."
+hide_title: true
+hide_table_of_contents: true
+api: eJztVV1u2zgQvspgnlqAld3/QG9ZNCnSIptFmwIFYmPLkGOLjTxkyZHqwBDQQ/QOvcceZU9SjGwHadIb7D5JGH7zzd835AbFLgvWF7jwa5wbjImylRD5xGONLnIhlr+dbdtL667QYKaS1Fqw3uCT6VQ/norLIakb1nj2Fo16CrHoqU2pDW4knXwuCtlgcQ2tLNabYRgGg8+mj+/z/BkFbCcNsag7eRyRT+8jT0MpgZcgDcHxq4+wS3tSXEwESyuEGqWQ63KQa6wv5uYOxafXR+cwWfj1ZOdcJvuiP8G/377D2WEnDextsMhxBaPJLoTyPmQ1478o3yTiqYQlwz8/nlVP6xk/r+BoLZTZtpBy7IOnDJl8yOSkgET4JciMX1RbS2/b4K1QgSJWyABHdmTgzeG70xm/3KFo7RrLSyrgoidYxAwSr4jLjA+qbWMyjSy7bCGTi9nDA+sk9PTQAPGXjjoq4K1YyCQ5UG/bGR/HDBy/wgNP/UMD0oQCo9fIp/XuOS37WzWNzZKoiBnTcWAh14BNqYIT1ib4zukIdpRfY9f6m0J2vHdqsTKWa6BIzFvMeATLbFmKGTPYFXKnjgoNrkiaqOJekqDBZKXBGn8/ejQYeBFVcRKkJazx0vLVwSPdlrsSeq9C5QP4QxG1tlt1ExMxqFPgpRmH0L+ont+Mf5LJhRRUOmiwDY64kMZju9JwpyfncPYODpN1DT16Uk01Ja+RFoHybwGDwZ5y2SY1rR5vTSkWWVm+Rf2/5P8rkv9FpxuU66TzF1rLJLU2sOqjy62ebddh+xyY/f1f9He/EnODTSyioM3m0hb6kNthUPOXjvLucu1tDvZSF+ZiPhhsyHpV68UGr+gaazx0jpKuX2/bTpO590gM81ur+vroHIfhJ1NlVLM=
+sidebar_class_name: "get api-method"
+info_path: docs/api/fdx/bank-8-fdx
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"`GET /fdx/consents/callback` — OAuth callback from Auth after consent.\nPer the FDX design §4.3:\n5. External provider redirects to Auth callback\n6. Auth validates state, nonce, JARM\n7. Auth exchanges code for tokens\n8. FDX creates consent record (active), enqueues data retrieval\nFor now (dev), this activates the consent and redirects back to the\neFintech app. In production, this would exchange the code for tokens\nat Auth, store the token grants, and enqueue data retrieval."}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/fdx/consents/callback"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+`GET /fdx/consents/callback` — OAuth callback from Auth after consent.
+Per the FDX design §4.3:
+5. External provider redirects to Auth callback
+6. Auth validates state, nonce, JARM
+7. Auth exchanges code for tokens
+8. FDX creates consent record (active), enqueues data retrieval
+For now (dev), this activates the consent and redirects back to the
+eFintech app. In production, this would exchange the code for tokens
+at Auth, store the token grants, and enqueue data retrieval.
+
+<ParamsDetails>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./consent-callback.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./consent-callback.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      
