@@ -1,17 +1,11 @@
 ---
 id: list-customers
-title: "`GET /v1/customers` — list/search customers.
-Optional `?search=<text>` filters by display_name or email (case-insensitive
-substring match). Without a search term, returns all customers in the
-caller's org/env (subject to RLS)."
-description: "`GET /v1/customers` — list/search customers."
-sidebar_label: "`GET /v1/customers` — list/search customers.
-Optional `?search=<text>` filters by display_name or email (case-insensitive
-substring match). Without a search term, returns all customers in the
-caller's org/env (subject to RLS)."
+title: "`GET /v1/customers`"
+description: "list/search customers."
+sidebar_label: "`GET /v1/customers`"
 hide_title: true
 hide_table_of_contents: true
-api: eJzlVs1uGzcQfpXBXGKjlGSnPQSL/iAt0iBAggCOix5kQaa4s1rGXHJDzioVhAX6EH3CPkkxXEWSLcVJztVFEufvm2+GM9wg62XCYoqOyiVFnCkMLUXNNvhXJRbobOK56RKHhmJCha2OuiGWP8V0g143hAUm0tHUqNB6LPBDR3GNCktKJtpWnGGBv0eiEdNfDIM2nJU2tU6v5+IEQgRqtHXnqDDSh85GKrGotEukMJmaGo3FBnnd5oAcrV9i36sdBvKruS0fx3Ct45IYBlWoQoTEuqrAaOeG/L4h9Ey0Uxt8oiTypxcX8nU/4mubGEIFhxya4Jk8i7JuW2dN5nvyPonF5jiijlFLLpapSQfnYfGeDN8DPcVMwSGzqDCx5i5HjqSZyrlmKXUbpdhsB/gHsqNkFVYhNiLBUjON2DaE/YM4xxQpzCXdS6Z7h75zDme9EsCPxes6W4qntg6eHvcUKQW3onJ+GtaRycPuuNraw9YexL6ALlHa1298r2ttBT74ETUtr9WND1xT/GgTQaWdS7DQ5g44ANcEzvo7KkF3XIvL+CRBZWPiwdF34PT29xgPc/kSg59NIhseoc+nn2CLBwU70Df+q1BnFxlkIs/WP5uLdC7S+WExT0A9quq2M09dbGTLTo5+24K/2l427OWj8IeL74/v2xubkvVLWGh/96wYxlqhjQmd51RE0iUkE1rKERKZLlpe51H2eQssprP+iOjbly+uYbK6nOzIvYV///4HZGROtiNuz/uNf5sNtYPbXwbpTz/KNPz5FirrZKDCYg0nRyKcGZ1oZH0inyzbFd341C0GqqDRbOrzMfxpuQ4dg/40X5lioyASd9En0M7t4YD1Ut0bPwy+JwlCXE7Ir+AsdXmqSP2vXr87H6PChrgOsg2WxHkFcI0F3ks9j90q5EJuy5b5HG0Xy0Py3g2dA79m0l9npcyeCZFgMFLQhsSSIvml9aSgjaHsDIOzi6jjWrA5a0h6otjtgTevruHtFTxvtalp9HR8IdhKiVdZiicVeoUrimmAdjG+HI4keqP9gev/T8nvVWt3OQX8pHXaeuGni3kuDe0wxdWlLJhdQ8wU1iGxSDabhU70R3R9L8fDapYrV9qkF+5g2T4Iu1uU3/J4OIn1jtaHz5SVdp0oobwfvh7Fl58PjwTfvU/2wWfyJ1qJnmeMwpp0KU063WytnhtDLR9YHb0YxMvuhr58cY19/x8YX3Jy
+api: eJzdVttuGzcQ/ZXBvMRGKclO+xAsekFapEEABwEcF32QBJnizmoZc8kNOatUEAT0I/qF/ZJidjfS2pKd5LV6kcS5nbkdcousVwmzKTrKVxRxrjDUFDXb4N/kmKGziRemSRwqigkV1jrqilj+ZNMtel0RZphIR1OiQusxw48NxQ0qzCmZaGtxhhn+HolGTH8xdNpwlttUO71ZiBMIEajS1p2jwkgfGxspx6zQLpHCZEqqNGZb5E3dBuRo/Qp3O7XHQH69sPnTGG50XBFDpwpFiJBYFwUY7VyX3zeEnot2qoNPlET+/OJCvu5HvLKJIRQwrKEJnsmzKOu6dta09Z58SGKxPY6oY9SSi2Wq0uA8LD+Q4Xugp9iWYFhZVJhYc9NGjqSZ8oVmaXUdpdlsO/gD2VGyCosQK5FgrplGbCvC3YM4xyVS2Lb0IJkeHPrGOZzvlAB+Kl7T2Fw81WXw9LSnSCm4NeWL07COTB5Ox3VvD709iH0GTaJ06N/43tTaAnzwI6pq3qiZD1xS/GQTQaGdS7DU5g44AJcEzvo7ykE3XIrL+CxBYWPiztF34HT/e4zDXL5UwUeTaA2P0Lenn2GLBwV70DP/VahbFy3IRJ6tf7EQ6UKki2EzT0A96mo/macWG9myk6PfevDX/bLhTj4Kf7j4/njf3tqUrF/BUvu7F1lHa5k2JjSeUxZJ55BMqKmNkMg00fKmpbLHLTCbzndHhRZqnPRUdqjvzL9rFbSD21866U8/Cuv9fAuFdUKcsNzASeqDM6MTjaxP5JNlu6aZT82yKwlUmk15PoY/LZehYdCfeZQpVgoicRN9Au3cAQ5YL12c+Y7gniUIcTUhv4az1LTsIX2+vnp/PkaFFXEZhPVXxC3Vc4kZTtaXkyF7WV+EtmF9e9q6jfoL5GGR3ncTAr+2xb1qleDfv/8BEyJBZ6SgDoklRfIr60lBHUPeGAZnl1HHjWBz1pD0Ptvz/ds3N/DuGl7W2pQ0ej6+EGy5xCssxZMKO4VriqmDdjG+7I4keqX9wPXt61c3cC/v24eZbQ8s/j+chH4ZBe2kdtp6qVMTWx7qxmKK60u5UPaDMVdYhsQi2W6XOtEf0e12ctxdxbJiuU166QaX66Ml/YbHwkmsd7QZPkvW2jWihPJe+HoUX34uPBF8/x45BJ/Ln2glesspCkvSuQzrdNtbvTSGah5YHb0QxMt+U1+/usHd7j8RhGtF
 sidebar_class_name: "get api-method"
 info_path: docs/api/ledger/bank-8-ledger
 custom_edit_url: null
@@ -29,7 +23,7 @@ import Translate from "@docusaurus/Translate";
 <Heading
   as={"h1"}
   className={"openapi__heading"}
-  children={"`GET /v1/customers` — list/search customers.\nOptional `?search=<text>` filters by display_name or email (case-insensitive\nsubstring match). Without a search term, returns all customers in the\ncaller's org/env (subject to RLS)."}
+  children={"`GET /v1/customers`"}
 >
 </Heading>
 
@@ -43,7 +37,7 @@ import Translate from "@docusaurus/Translate";
 
 
 
-`GET /v1/customers` — list/search customers.
+list/search customers.
 Optional `?search=<text>` filters by display_name or email (case-insensitive
 substring match). Without a search term, returns all customers in the
 caller's org/env (subject to RLS).

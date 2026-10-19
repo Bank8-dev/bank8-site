@@ -1,21 +1,11 @@
 ---
 id: verify-pin
-title: "Verify a card PIN.
-`pin_hash` is the (already hashed) PIN the client sent, encrypted with
-the session public key. Payments never stores or sees the clear PIN. The
-stored `pin_hash` column on `cards` is compared against the
-provided value; on mismatch `pin_attempts` is incremented and the
-card is suspended when it reaches 3."
+title: "`POST /v1/cards/{id}/pin/verify`"
 description: "Verify a card PIN."
-sidebar_label: "Verify a card PIN.
-`pin_hash` is the (already hashed) PIN the client sent, encrypted with
-the session public key. Payments never stores or sees the clear PIN. The
-stored `pin_hash` column on `cards` is compared against the
-provided value; on mismatch `pin_attempts` is incremented and the
-card is suspended when it reaches 3."
+sidebar_label: "`POST /v1/cards/{id}/pin/verify`"
 hide_title: true
 hide_table_of_contents: true
-api: eJztlM9u1DAQxl9lNCeQ0v3TckDhVA5IFeof0cJld9V67enGNBkbj7NlFUXiIXhCngRNsq1Ky5Ejp0j2N1++Gf/sDrPZCJYLjGbXEGfBVYEhUjLZBz5xWOKWkr/dXUfPWGAiiYGFBMsOD2cz/TgSm3zUAizx/CMWaANn4qy7Jsba28Fu+lVU0qHYihqDZdf3fV/gm9n8pc9ZyGDaXBFnLSeHg/LopfLUi3jeQK4IHtoAsSESbEwm1F8I2Tb5vMNysSqe1X8ZGgQD1iQHFydnkyXfRM/XlZHqBrwMzq9Mnci4HegqudcqHDZs7YkzCHEugNimXczk4N7naskqEBLxgSG269pbuKPdBC4ecjJtKYHkkEggJBAi2duSSUMauKpoyYPEwZNgNtRtwxAYbjS5DFFtaKJRodkYz5LVa8kxha135GBr6pbeaU3jpTHZVqOjyZmamEcPzzaRxlMbdqPFMBwvIK1EYvW6r4jBZ0hkbEUCRxMssKFcBcUmBslYYDS5whKn2/l0CDntvOun0fN05AoL9Hwb9FSzzzVhiWvDd28PHoF8flyXSgS/hfcqKx8H+evHz4fTh5A0UB4hLsBRTUqCQA6wLy8/1OFeA9feEgtpADaN/v/05ArOP8Fx1LYODiczzei07NZT+qugL/SayBhwNpmPSzqCxvAT6/+o/UPU/sCiw7yLOuJM3/M01sazHkGbat0bKVzgdq6Pk3aABZbeKaDDu7aHcVVgpdyWC+y6tRH6nOq+1+VvLaX967E1yZu1orpY9QVWZJxisejwjnZY4rG1FJX9YQJYvnwC+9WTi3JxfnmFff8bm8bwiw==
+api: eJztVE1v1EAM/SuWTyCl+9FyqMKpHJAq1A/RwmV31Z2duJuhiWcYT7ZEUSR+BL+QX4KcbEvVwo0jp5Fmnt8828/uMJmtYL7AYNqaOAmuMvSBoknO82mBOe4outv2JjjGDCNJ8CwkmHd4OJvpUZDY6IIGYI4XHzBD6zkRJ301IVTODnTTL6KQDsWWVBvMu77v+wzfzOYvec59AtOkkjhpOBU4II9eIs+ciOMtpJLgIQ0Q6wPB1iRC/ULINtGlFvPFKnsW/3lIEAxYEwu4PD2fLHkdHN+URso1OBmYX5kqkila0FsqXitweLCVI04gxCkDYhvbkKiAe5fKJStASMR5htBsKmfhjtoJXD7oZNpRBEk+koCPIESypyUTBzVwXdKSB0gBT4RZXzU1g2dYq3IZpFpfB6NAszWOJSnXkkP0O1dQATtTNfRWY2ontUm2HBlNSlSHNHI4tpFUntJwMVIMxXEC0kggVq77khhcgkjGliRwNMEMa0qlV9sELwkzDCaVmON0N58OIqedK/ppcDwdfYUZOr712tXkUkWY48bw3fHBoyGft+tKHcHH8E5h+WMhf37/8dB98FEFpdHEGRRUkTpBIHnYh+fvK3+vgitniYVUAJta/z87vYaLj3ASNK2Dw8lMNRYaduso/hHQZzomMgqcTebjlZagNvyEen15cXUNfy3G+nmy3e9J+m/Tf2nT1AbtR6JvaRoq41j71cRKSz5adoG7uW4ylYwZ5q5QNw9LcO/cVYalmjxfYNdtjNCnWPW9Xn9tKO5Xzc5EZzbq68Wqz7AkU6iHFh3eUYs5nlhLQQdlSBnzl/uyXz2ZKvUP9v0vcCj/2g==
 sidebar_class_name: "post api-method"
 info_path: docs/api/payments/bank-8-payments
 custom_edit_url: null
@@ -33,7 +23,7 @@ import Translate from "@docusaurus/Translate";
 <Heading
   as={"h1"}
   className={"openapi__heading"}
-  children={"Verify a card PIN.\n`pin_hash` is the (already hashed) PIN the client sent, encrypted with\nthe session public key. Payments never stores or sees the clear PIN. The\nstored `pin_hash` column on `cards` is compared against the\nprovided value; on mismatch `pin_attempts` is incremented and the\ncard is suspended when it reaches 3."}
+  children={"`POST /v1/cards/{id}/pin/verify`"}
 >
 </Heading>
 

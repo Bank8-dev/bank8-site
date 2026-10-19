@@ -1,15 +1,11 @@
 ---
 id: update-cardholder
-title: "`PUT /v1/cards/cardholders/{id}` — update a cardholder. **CLOSED status
-cascades: all the cardholder's cards transition to DISABLED** (business
-rule; done in the same transaction)."
-description: "`PUT /v1/cards/cardholders/{id}` — update a cardholder. **CLOSED status"
-sidebar_label: "`PUT /v1/cards/cardholders/{id}` — update a cardholder. **CLOSED status
-cascades: all the cardholder's cards transition to DISABLED** (business
-rule; done in the same transaction)."
+title: "`PUT /v1/cards/cardholders/{id}`"
+description: "update a cardholder. **CLOSED status"
+sidebar_label: "`PUT /v1/cards/cardholders/{id}`"
 hide_title: true
 hide_table_of_contents: true
-api: eJzVVc1uGzcQfhViLrUNWpLTHILtybZUQEB+DEvqRRGa0XKkZbJLbkiuFWGzQB6iT9gnKYZcS3aUtOfqwhU5M/zmm2+GLQTcesiWUOO+IhM8rCTYmhwGbc1UQQZNrTDQnzk6VdhSkQMJNTqsKJBj3xYMVgQZaAUStIEMagwFSFDkc6drDgUZ3B4iiOkYJDj63GhHCrLgGpLg84IqhKyFsK85ng9Omy1I2FhXYWAsjVbQdavkTD7cWLVnj9yaQCbwJ9Z1qfOIf/jR883taWi7/kh54EwcZxs0+WgXMDT+aLc8YjBNWTI5z3Oavr2+nU//mIiv4vAxW8zuJm/Hk7H4Km5fv5tNxuKsX3P0OSryIljBhPrzAXSdhKBDybAWkesjUfcpS+jY6DlfccPX1vgE/cVoxMtPKU9lVOKsxyAiT6TEriAj8tJ6bbbn0El4Ofr1NNIb7dlArNF8epU9qiU7qsJnO6cDCZ/bmlKYl/8KyNggNrYxKjLgKW+cDvuop/+6BLLlqjupxYe7xVwMH66GkdnhE69hq1X3Qfz97a+eBoHieDwQFxd9fVL935vHOmUCy1KEgp6Y/+JT6URwaLzmy7mc4+ns+ub1ZHxxIc7WjdeGvH9vXFPSb0JZQ0KbGMhjRckVc/Y9H4CEikJhudnqJoqS2yeDn+cCElja98cmmHzBqmYNHUX8qN2Om3Jjo6p7nUWCLw89/z2TMzJBm1fiJtbhrjeL/PU+wrq8IB/SnJBCUUlbDEnZvXv2e2l3nF2pczI+YusnxZvpXLy7F9c15gVdvhiMeHAodttocj806CQ8kPMJ4GhwlbZq60OF5kno/7EKnhXhMKoCfQnDukRtOOHGlXyWFLKEhyuQEIH0a58rSMi04nlVWB/Ysm3X6Gnhyq7j7c8NOW62lYQHdBrXrItlC0p7/laQbbD0dALqMGjh7L6fR+fi+8n+Q+T9Jpo98J1lw/9Awifap7ejW3USCkJ+YhhKOrhNF17O2f3oeDLleR4c2uhuMQcJ6/5xqKxiF4c7fnVwl+61Mac4O+NeCyWabYNbtk0h+fcPoCh0XA==
+api: eJzNVc1uGzcQfhViLrUNWpLTHILtybZUQEB+DEvqRRGa0XKkZcIlNyTXiqAs0IfoE/ZJiiHXlmMn6bW6kEvNzzcfvxkeIOI2QLGEBvc12RhgJcE15DFqZ6cKCmgbhZH+LNGryhlFHiQ06LGmSJ59D2CxJihAK5CgLRTQYKxAgqJQet1wKCjg+iGCmI5BgqfPrfakoIi+JQmhrKhGKA4Q9w3HC9FruwUJG+drjIyl1Qq6bpWdKcQrp/bsUTobyUbeYtMYXSb8w4+BMx+eh3brj1RGrsRztVFTSHYRYxuOdssjBtsaw+R8W9P07eX1fPrHRHwVD5vZYnYzeTuejMVXcf363WwyFif9WmIoUVEQ0QkmNJwOoOskRB0Nw1okro9E3eYqoWOjb/lKB6FxNmToL0YjXn5Ieb5GJU56DCLxRErsKrKiNC5ouz2FTsLL0a/PI73RgQ3EGu2nV8W9WoqjKkKx8zqSCKVrKId5+VNA1kWxca1ViYFAZet13Cc9/VcSKJar7tld5AoFiqP9QJyd9dTnq31v76+gEGiMiBU9Mv8l5FsR0aMNmuPyTY2ns8ur15Px2Zk4WbdBWwrhvfWtod+EcpaEtilQwJqyK5bsezoACTXFynEfNW3SG3dGAcO7i2FKNXxU3PCgVQcSWLW3R31PvmDdsDyO+ryXZcf9tnFJsL2EEnfnD+38lKQZ2ajtK3GVKL7pzcQ/f/0teh/hfFlRiHkESKHI0BZjFm3vXvxu3I6rM7okGxK2fgi8mc7Fu1tx2WBZ0fmLwYhngmK3jSb/XYNOwh35kAGOBhf5qHEh1mgfhf5ws5iLHzP34Wmxj8bC/1Qc/TSK9CUOG4PacuGtN4w9K2UJdxcgIWXu175mkFBoxSOpciGy5eGwxkALb7qOjz+35LmfVhLu0Gtcsz6WB1A68F5BsUET6Cekndz2I+dUPB3e30XeH6LdA+c0LX+BhE+0z89Dt+okVIT8ijCU/Md1Tng+Z/ej47NBzi3/0E43izlIWPfzv3aKXTzu+GHBXc7rUk1pPKazAxi02xa3bJtD8u9fHDVoQA==
 sidebar_class_name: "put api-method"
 info_path: docs/api/payments/bank-8-payments
 custom_edit_url: null
@@ -27,7 +23,7 @@ import Translate from "@docusaurus/Translate";
 <Heading
   as={"h1"}
   className={"openapi__heading"}
-  children={"`PUT /v1/cards/cardholders/{id}` — update a cardholder. **CLOSED status\ncascades: all the cardholder's cards transition to DISABLED** (business\nrule; done in the same transaction)."}
+  children={"`PUT /v1/cards/cardholders/{id}`"}
 >
 </Heading>
 
@@ -41,7 +37,7 @@ import Translate from "@docusaurus/Translate";
 
 
 
-`PUT /v1/cards/cardholders/{id}` — update a cardholder. **CLOSED status
+update a cardholder. **CLOSED status
 cascades: all the cardholder's cards transition to DISABLED** (business
 rule; done in the same transaction).
 

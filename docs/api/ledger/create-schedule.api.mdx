@@ -1,17 +1,11 @@
 ---
 id: create-schedule
-title: "`POST /v1/schedules` — create a schedule, delegating execution to Cron.
-Ledger stores a local reference in `schedules` and creates the actual
-schedule in Cron via `POST /v1/schedules`. Cron fires the schedule and
-proxy-calls Ledger's `POST /v1/internal/schedules/run` to execute the work."
-description: "`POST /v1/schedules` — create a schedule, delegating execution to Cron."
-sidebar_label: "`POST /v1/schedules` — create a schedule, delegating execution to Cron.
-Ledger stores a local reference in `schedules` and creates the actual
-schedule in Cron via `POST /v1/schedules`. Cron fires the schedule and
-proxy-calls Ledger's `POST /v1/internal/schedules/run` to execute the work."
+title: "`POST /v1/schedules`"
+description: "create a schedule, delegating execution to Cron."
+sidebar_label: "`POST /v1/schedules`"
 hide_title: true
 hide_table_of_contents: true
-api: eJztVs1uG0cMfpUBL72MZPlPcfeWBD0EaJDCdk+yIFOzXGni0cxmhitLEBboQ/QJ+yQFd1c/lgwnQHOsLlpwyY/fkB85uwHGWYJsBI7yGUUYawglRWQb/KccMjCRkGmSzJzyyhFoiPStosQfQr6GbAMmeCbP8ohl6axpYs++puDFJoELlCdelwQZhOlXMtzh2Ei5ZN/CTxonDSYGP6FVGSklG7zQKqMQY0upSWVMqDxPbL6HHkHiaP0MNPjKOQkqQlwgQwZVZXOoT4H3vLrYWh+ROfWoNbBlJ6aPTXXuuoDbtjJQi8v+eBwragypDD61/C8GA/nLKZloS26owBZHtUXPpRA/o7pWkL5XYg2JkavUvGrST5B/ZuF3mCcVPXDPkanHdkE/2qxDHq/gbdM7TDyJlX+R/y3eL4h4Wv2H6O/paVf5N6W2F1krI1FZreFqcHkqpM82Jetnaor+6SZrRzvb0kjZc7RMKplQUpMikami5TVkow28FQPZaFyP9VG2xz++3N2rs+X52c79Uf3z19+djBWqrV2rnBzNkIUcrchUAqE4qI8x+P6D/71JqxKHSEmhcsGgU5EKiuQNKevV40ES9HmXJCmek0LDFboHv3URf0FWS4vqNZr99nVhY4ewi0SfP/gyhtW6Z9C5pFpqv6QDHOuZoke3BzyLlX+U87SHowbzOcSnPmhYEM+D7NQyJBnREnkOGbxgBBpktm/3O/a3FS5KR8ezB5cF3lwXw6ve9bvzd72r6+FFb3pZmN6F+XV4WQyHWODwlTE/GJIjXR4OlS9Co8ZOe40met0Vcdz+O/Js/Y360Ain62DT/hBJtUFayZmbrvuZ9aRVGUNeGVbOTiPGtdTHWUMi7GwDHheS9/One/XlVr0v0cypd9EfgAy85CssxVcdag1Lit1RB/3z1iTZF+gPoP8X7Y+J9kWvd/uJacVnpUPrpbpVdPKu1fMIlucH4kqyF+ci+GwEm80UE/0ZXV2L+VtFUZbOWMMSo8WpazeMhjlhLg0ebeCJ1nLRtvdg7769vJboKuFxcifWehvx3hgq+U3f8cFMSn1Aw7T7qlmEXGIiPstdis+QAcinkUQ3i7qxbcChn1U4E98WU37/AsnDQac=
+api: eJztVk1vGzcQ/SvEXHqhPvyluHtLgh4CNEhhuydZkEfcWYkxRW7IWVmCsEB+RH9hf0kxuytLlgynQHOsLlpwZ948vnlD7hYY5wmyMTjK5xRhoiGUFJFt8J9yyMBEQqZpMgvKK0egIdK3ihJ/CPkGsi2Y4Jk8yyOWpbOmyR18TcHLmiQuUZ54UxJkEGZfyXCHYyPlUn0HP22CNJgY/JTWZaSUbPBCq4xCjC2lppQxofI8tfkeegyJo/Vz0OAr5ySpCHGJDBlUlc2hPgXe8+pya31E5jSi1sCWnSx9bNS57RJuWmWglpD99jhW1CykMvjU8j8fDuUvp2SiLbmhAjsc1YqeixA/Q10rSD+SWENi5Co1r5ryU+SfKfwz5omiB+E5MvXYLunfNuuQxyt4u/IOE09j5V/Uf4v3CyKe1v8h+0d+elb+TavtTdbaSFxWa7gcXpwa6bNNyfq5mqF/vM7a0c52NFL2FC2TSiaU1JRIZKpoeQPZeAtv5UA2ntQTfVStba1CtYvWKidHc2ThQGsylUQqDupjDL5/739v0FXiECkpVC4YdCpSQZG8IWW9engu/aDQ591IJMULUmi4QnfvdyESL8hqZVE9/PHl9k4NVmeDPUK/fV3Y2CE8Z6LP730Zw3rTM+hcUi21X9IBjvVM0aPbAw5i5R9kP+3mqMF8CvGxDxqWxIsgR2cZkkxiibyADF4wAg0ywjf7o/S3NS5LR8cjBhcFXl8Vo8ve1buzd73Lq9F5b3ZRmN65+XV0UYxGWODolWk+mIUj+x3Oji9CY7rOYk3re91NcNzlW/Js/bX60Pij6+Df3/9SJkRSbZJWsuem635uPWlVxpBXhpWzs4hxI/o4a0j8m23B41Lqfv50p77cqPclmgX1zvtDkLmWeoWl+GpArWFFsdvqsH/WLkn1JfoD6NfccLy1gzvsfy+/9HJnGaY1D0qH1ovKVXQiWuvrMazODkyW5BhciPGzMWy3M0z0Z3R1LcvfKopyxkw0rDBanLn2QNGwIMyl0eMtPNJG7tW2Ib279q5aoauEx8kVWOtdxntjqOQ3YycHsymCgIZZ9xGzDLnkRHySqxOfIAOQLyHJbs7lZm0LDv28wrnEtpjy+wfwzzo5
 sidebar_class_name: "post api-method"
 info_path: docs/api/ledger/bank-8-ledger
 custom_edit_url: null
@@ -29,7 +23,7 @@ import Translate from "@docusaurus/Translate";
 <Heading
   as={"h1"}
   className={"openapi__heading"}
-  children={"`POST /v1/schedules` — create a schedule, delegating execution to Cron.\nLedger stores a local reference in `schedules` and creates the actual\nschedule in Cron via `POST /v1/schedules`. Cron fires the schedule and\nproxy-calls Ledger's `POST /v1/internal/schedules/run` to execute the work."}
+  children={"`POST /v1/schedules`"}
 >
 </Heading>
 
@@ -43,7 +37,7 @@ import Translate from "@docusaurus/Translate";
 
 
 
-`POST /v1/schedules` — create a schedule, delegating execution to Cron.
+create a schedule, delegating execution to Cron.
 Ledger stores a local reference in `schedules` and creates the actual
 schedule in Cron via `POST /v1/schedules`. Cron fires the schedule and
 proxy-calls Ledger's `POST /v1/internal/schedules/run` to execute the work.

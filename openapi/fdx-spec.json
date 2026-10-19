@@ -15,7 +15,7 @@
         "tags": [
           "fdx"
         ],
-        "summary": "`GET /fdx/consents/callback` — OAuth callback from Auth after consent.\nPer the FDX design §4.3:\n5. External provider redirects to Auth callback\n6. Auth validates state, nonce, JARM\n7. Auth exchanges code for tokens\n8. FDX creates consent record (active), enqueues data retrieval\nFor now (dev), this activates the consent and redirects back to the\neFintech app. In production, this would exchange the code for tokens\nat Auth, store the token grants, and enqueue data retrieval.",
+        "summary": "`GET /fdx/consents/callback`",
         "operationId": "consent_callback",
         "responses": {
           "200": {
@@ -33,7 +33,8 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "description": "OAuth callback from Auth after consent.\nPer the FDX design §4.3:\n5. External provider redirects to Auth callback\n6. Auth validates state, nonce, JARM\n7. Auth exchanges code for tokens\n8. FDX creates consent record (active), enqueues data retrieval\nFor now (dev), this activates the consent and redirects back to the\neFintech app. In production, this would exchange the code for tokens\nat Auth, store the token grants, and enqueue data retrieval."
       }
     },
     "/fdx/v6/accounts": {
@@ -41,7 +42,7 @@
         "tags": [
           "fdx"
         ],
-        "summary": "`GET /fdx/v6/accounts` — search customer accounts (proxies to Ledger).\nThe incoming Bearer (the bank's own customer token OR a delegated\nrecipient token — both carry the provider customer as `sub`) is\nforwarded to Ledger, so RLS scopes the rows to the consenting\ncustomer either way (fdx DESIGN.md §1 — the consent grant keys on the\ntoken subject).",
+        "summary": "`GET /fdx/v6/accounts`",
         "operationId": "get_accounts",
         "responses": {
           "200": {
@@ -59,7 +60,8 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "description": "search customer accounts (proxies to Ledger).\nThe incoming Bearer (the bank's own customer token OR a delegated\nrecipient token — both carry the provider customer as `sub`) is\nforwarded to Ledger, so RLS scopes the rows to the consenting\ncustomer either way (fdx DESIGN.md §1 — the consent grant keys on the\ntoken subject)."
       }
     },
     "/fdx/v6/accounts/{id}": {
@@ -67,7 +69,7 @@
         "tags": [
           "fdx"
         ],
-        "summary": "`GET /fdx/v6/accounts/{accountId}` — account detail (proxies to Ledger).",
+        "summary": "`GET /fdx/v6/accounts/{id}`",
         "operationId": "get_account_detail",
         "responses": {
           "200": {
@@ -85,7 +87,8 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "description": "`GET /fdx/v6/accounts/{accountId}` — account detail (proxies to Ledger)."
       }
     },
     "/fdx/v6/accounts/{id}/payment-networks": {
@@ -93,7 +96,7 @@
         "tags": [
           "fdx"
         ],
-        "summary": "`GET /fdx/v6/accounts/{accountId}/payment-networks` — payment network info.",
+        "summary": "`GET /fdx/v6/accounts/{id}/payment-networks`",
         "operationId": "get_payment_networks",
         "responses": {
           "200": {
@@ -111,7 +114,8 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "description": "`GET /fdx/v6/accounts/{accountId}/payment-networks` — payment network info."
       }
     },
     "/fdx/v6/accounts/{id}/payment-networks/{paymentNetworkId}": {
@@ -119,7 +123,7 @@
         "tags": [
           "fdx"
         ],
-        "summary": "`GET /fdx/v6/accounts/{accountId}/payment-networks/{paymentNetworkId}`\nthe payment network(s) for this `bankId`/`identifier` pair (; proxy\nto Ledger's payment-networks read, filtered to the requested id).",
+        "summary": "`GET /fdx/v6/accounts/{id}/payment-networks/{paymentNetworkId}`",
         "operationId": "get_payment_network",
         "responses": {
           "200": {
@@ -137,7 +141,8 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "description": "`GET /fdx/v6/accounts/{accountId}/payment-networks/{paymentNetworkId}`\nthe payment network(s) for this `bankId`/`identifier` pair (; proxy\nto Ledger's payment-networks read, filtered to the requested id)."
       }
     },
     "/fdx/v6/accounts/{id}/payment-networks/{paymentNetworkId}/revocation": {
@@ -145,7 +150,7 @@
         "tags": [
           "fdx"
         ],
-        "summary": "`GET /fdx/v6/accounts/{accountId}/payment-networks/{paymentNetworkId}/revocation`\n— revocation lifecycle events for the identifier.",
+        "summary": "`GET /fdx/v6/accounts/{id}/payment-networks/{paymentNetworkId}/revocation`",
         "operationId": "get_payment_network_revocations",
         "responses": {
           "200": {
@@ -163,13 +168,14 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "description": "`GET /fdx/v6/accounts/{accountId}/payment-networks/{paymentNetworkId}/revocation`\n— revocation lifecycle events for the identifier."
       },
       "put": {
         "tags": [
           "fdx"
         ],
-        "summary": "`PUT /fdx/v6/accounts/{accountId}/payment-networks/{paymentNetworkId}/revocation`\n— revoke the payment network identifier (; persists the revocation\nrecord and answers 204 No Content per spec).",
+        "summary": "`PUT /fdx/v6/accounts/{id}/payment-networks/{paymentNetworkId}/revocation`",
         "operationId": "revoke_payment_network",
         "responses": {
           "200": {
@@ -187,7 +193,8 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "description": "`PUT /fdx/v6/accounts/{accountId}/payment-networks/{paymentNetworkId}/revocation`\n— revoke the payment network identifier (; persists the revocation\nrecord and answers 204 No Content per spec)."
       }
     },
     "/fdx/v6/accounts/{id}/statements": {
@@ -195,7 +202,7 @@
         "tags": [
           "fdx"
         ],
-        "summary": "`GET /fdx/v6/accounts/{accountId}/statements` — list statements (proxy to Ledger).",
+        "summary": "`GET /fdx/v6/accounts/{id}/statements`",
         "operationId": "list_account_statements",
         "responses": {
           "200": {
@@ -213,7 +220,8 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "description": "`GET /fdx/v6/accounts/{accountId}/statements` — list statements (proxy to Ledger)."
       }
     },
     "/fdx/v6/accounts/{id}/statements/{statementId}": {
@@ -221,7 +229,7 @@
         "tags": [
           "fdx"
         ],
-        "summary": "`GET /fdx/v6/accounts/{accountId}/statements/{statementId}` — statement\ndownload. The Ledger statement object lives in Sentin8:Storage at\n`buckets/statements/objects/{envId}/{accountId}/{statementId}.pdf`;\nthis handler mints a short-lived read URL via the Storage link API and\nanswers 302 Found with the `Location` header (spec: statement image may\nbe served inline or via redirect; §5.0a signed URLs).",
+        "summary": "`GET /fdx/v6/accounts/{id}/statements/{statementId}`",
         "operationId": "download_statement",
         "responses": {
           "200": {
@@ -239,7 +247,8 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "description": "`GET /fdx/v6/accounts/{accountId}/statements/{statementId}` — statement\ndownload. The Ledger statement object lives in Sentin8:Storage at\n`buckets/statements/objects/{envId}/{accountId}/{statementId}.pdf`;\nthis handler mints a short-lived read URL via the Storage link API and\nanswers 302 Found with the `Location` header (spec: statement image may\nbe served inline or via redirect; §5.0a signed URLs)."
       }
     },
     "/fdx/v6/accounts/{id}/transactions": {
@@ -247,7 +256,7 @@
         "tags": [
           "fdx"
         ],
-        "summary": "`GET /fdx/v6/accounts/{accountId}/transactions` — transactions (proxies\nto Ledger; no hardcoded empty results).",
+        "summary": "`GET /fdx/v6/accounts/{id}/transactions`",
         "operationId": "get_account_transactions",
         "responses": {
           "200": {
@@ -265,7 +274,8 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "description": "`GET /fdx/v6/accounts/{accountId}/transactions` — transactions (proxies\nto Ledger; no hardcoded empty results)."
       }
     },
     "/fdx/v6/availability": {
@@ -273,7 +283,7 @@
         "tags": [
           "fdx"
         ],
-        "summary": "`GET /fdx/v6/availability` — provider availability status.",
+        "summary": "`GET /fdx/v6/availability`",
         "operationId": "get_availability",
         "responses": {
           "200": {
@@ -291,7 +301,8 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "description": "provider availability status."
       }
     },
     "/fdx/v6/capability": {
@@ -299,7 +310,7 @@
         "tags": [
           "fdx"
         ],
-        "summary": "`GET /fdx/v6/capability` — provider capability metadata.",
+        "summary": "`GET /fdx/v6/capability`",
         "operationId": "get_capability",
         "responses": {
           "200": {
@@ -317,7 +328,8 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "description": "provider capability metadata."
       }
     },
     "/fdx/v6/certification-metrics": {
@@ -325,7 +337,7 @@
         "tags": [
           "fdx"
         ],
-        "summary": "`GET /fdx/v6/certification-metrics` — certification metrics (design\n§10: counts over the tables this service already owns — `data_call*`\nrows in `audit_events` plus consent granted/revoked transitions —\nbehind a short bounded cache; the rollup table + evidence admin page\nare the follow-on). The literal-zero stub is gone: these are real\ncounters now.",
+        "summary": "`GET /fdx/v6/certification-metrics`",
         "operationId": "get_certification_metrics",
         "responses": {
           "200": {
@@ -343,7 +355,8 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "description": "certification metrics (design\n§10: counts over the tables this service already owns — `data_call*`\nrows in `audit_events` plus consent granted/revoked transitions —\nbehind a short bounded cache; the rollup table + evidence admin page\nare the follow-on). The literal-zero stub is gone: these are real\ncounters now."
       }
     },
     "/fdx/v6/consents/{id}": {
@@ -351,7 +364,7 @@
         "tags": [
           "fdx"
         ],
-        "summary": "`GET /fdx/v6/consents/{consentId}` — consent grant introspection.",
+        "summary": "`GET /fdx/v6/consents/{id}`",
         "operationId": "get_fdx_consent",
         "responses": {
           "200": {
@@ -369,7 +382,8 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "description": "`GET /fdx/v6/consents/{consentId}` — consent grant introspection."
       }
     },
     "/fdx/v6/consents/{id}/lifecycle": {
@@ -377,7 +391,7 @@
         "tags": [
           "consent"
         ],
-        "summary": "`PUT /fdx/v6/consents/{consentId}/lifecycle` — set the consent duration\nmodel.",
+        "summary": "`PUT /fdx/v6/consents/{id}/lifecycle`",
         "operationId": "update_consent_lifecycle",
         "responses": {
           "200": {
@@ -395,7 +409,8 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "description": "`PUT /fdx/v6/consents/{consentId}/lifecycle` — set the consent duration\nmodel."
       }
     },
     "/fdx/v6/consents/{id}/revocation": {
@@ -403,7 +418,7 @@
         "tags": [
           "consent"
         ],
-        "summary": "`GET /fdx/v6/consents/{consentId}/revocation` — the revocation record\n(reason/initiator/timestamp; ).",
+        "summary": "`GET /fdx/v6/consents/{id}/revocation`",
         "operationId": "get_consent_revocation",
         "responses": {
           "200": {
@@ -421,13 +436,14 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "description": "`GET /fdx/v6/consents/{consentId}/revocation` — the revocation record\n(reason/initiator/timestamp; )."
       },
       "put": {
         "tags": [
           "consent"
         ],
-        "summary": "`PUT /fdx/v6/consents/{consentId}/revocation` — the FDX\nRevocationRequest (reason/initiator/otherReason). Existing handler\n`handlers::revoke_fdx_consent` is extended here: the revocation\nrow is persisted and a CONSENT_REVOKED notification is queued.",
+        "summary": "`PUT /fdx/v6/consents/{id}/revocation`",
         "operationId": "revoke_consent_with_record",
         "responses": {
           "200": {
@@ -445,7 +461,8 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "description": "`PUT /fdx/v6/consents/{consentId}/revocation` — the FDX\nRevocationRequest (reason/initiator/otherReason). Existing handler\n`handlers::revoke_fdx_consent` is extended here: the revocation\nrow is persisted and a CONSENT_REVOKED notification is queued."
       }
     },
     "/fdx/v6/consents/{id}/revoke": {
@@ -453,7 +470,7 @@
         "tags": [
           "consent"
         ],
-        "summary": "`POST /fdx/v6/consents/{consentId}/revoke` — POST alias of the PUT\nrevocation surface (fdx DESIGN.md §4): the recipient-side fdx instance\ncalls this with the delegated provider token after revoking its own\nregistry row, so a fintech-initiated revocation lands on the provider's\ngrant ledger and takes effect on the next data call. The delegated\ntoken's `sub` IS the grant's customer — the same subject the bank's own\ndashboard revokes for.",
+        "summary": "`POST /fdx/v6/consents/{id}/revoke`",
         "operationId": "revoke_consent_with_record_post",
         "responses": {
           "200": {
@@ -463,7 +480,8 @@
             "description": "Delegated subject must be the grant's customer"
           }
         },
-        "security": []
+        "security": [],
+        "description": "`POST /fdx/v6/consents/{consentId}/revoke` — POST alias of the PUT\nrevocation surface (fdx DESIGN.md §4): the recipient-side fdx instance\ncalls this with the delegated provider token after revoking its own\nregistry row, so a fintech-initiated revocation lands on the provider's\ngrant ledger and takes effect on the next data call. The delegated\ntoken's `sub` IS the grant's customer — the same subject the bank's own\ndashboard revokes for."
       }
     },
     "/fdx/v6/customers": {
@@ -471,7 +489,7 @@
         "tags": [
           "fdx"
         ],
-        "summary": "`GET /fdx/v6/customers` — list customers (proxy to Ledger).",
+        "summary": "`GET /fdx/v6/customers`",
         "operationId": "list_customers",
         "responses": {
           "200": {
@@ -489,7 +507,8 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "description": "list customers (proxy to Ledger)."
       }
     },
     "/fdx/v6/customers/current": {
@@ -497,7 +516,7 @@
         "tags": [
           "fdx"
         ],
-        "summary": "`GET /fdx/v6/customers/current` — current customer (proxy to Ledger).",
+        "summary": "`GET /fdx/v6/customers/current`",
         "operationId": "get_current_customer",
         "responses": {
           "200": {
@@ -515,7 +534,8 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "description": "current customer (proxy to Ledger)."
       }
     },
     "/fdx/v6/notification-subscriptions": {
@@ -523,7 +543,7 @@
         "tags": [
           "fdx"
         ],
-        "summary": "`GET /fdx/v6/notification-subscriptions` — list subscriptions.",
+        "summary": "`GET /fdx/v6/notification-subscriptions`",
         "operationId": "list_notification_subscriptions",
         "responses": {
           "200": {
@@ -541,13 +561,14 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "description": "list subscriptions."
       },
       "post": {
         "tags": [
           "fdx"
         ],
-        "summary": "`POST /fdx/v6/notification-subscriptions` — create a subscription\n/. The per-subscription HMAC secret is generated here and\nstored as a sentin8-secrets:// reference — never plaintext.",
+        "summary": "`POST /fdx/v6/notification-subscriptions`",
         "operationId": "create_notification_subscription",
         "responses": {
           "200": {
@@ -565,7 +586,8 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "description": "create a subscription\n/. The per-subscription HMAC secret is generated here and\nstored as a sentin8-secrets:// reference — never plaintext."
       }
     },
     "/fdx/v6/notification-subscriptions/{subscriptionId}": {
@@ -573,7 +595,7 @@
         "tags": [
           "fdx"
         ],
-        "summary": "`GET /fdx/v6/notification-subscriptions/{subscriptionId}` — detail.",
+        "summary": "`GET /fdx/v6/notification-subscriptions/{subscriptionId}`",
         "operationId": "get_notification_subscription",
         "responses": {
           "200": {
@@ -591,13 +613,14 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "description": "detail."
       },
       "delete": {
         "tags": [
           "fdx"
         ],
-        "summary": "`DELETE /fdx/v6/notification-subscriptions/{subscriptionId}` — delete a\nsubscription (; soft delete + release the secret reference).",
+        "summary": "`DELETE /fdx/v6/notification-subscriptions/{subscriptionId}`",
         "operationId": "delete_notification_subscription",
         "responses": {
           "200": {
@@ -615,7 +638,8 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "description": "delete a\nsubscription (; soft delete + release the secret reference)."
       }
     },
     "/fdx/v6/notifications": {
@@ -623,7 +647,7 @@
         "tags": [
           "fdx"
         ],
-        "summary": "`GET /fdx/v6/notifications` — notification feed (polling alternative to\nwebhook delivery; ).",
+        "summary": "`GET /fdx/v6/notifications`",
         "operationId": "list_notifications_feed",
         "responses": {
           "200": {
@@ -641,13 +665,14 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "description": "notification feed (polling alternative to\nwebhook delivery; )."
       },
       "post": {
         "tags": [
           "fdx"
         ],
-        "summary": "`POST /fdx/v6/notifications` — inbound notification ingest (\n`fdx:notifications:publish`). Records the notification, queues it for\ndelivery to matching subscriptions, and emits the Bus event the\ndelivery consumer reacts to.",
+        "summary": "`POST /fdx/v6/notifications`",
         "operationId": "publish_notification",
         "responses": {
           "200": {
@@ -665,7 +690,8 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "description": "inbound notification ingest (\n`fdx:notifications:publish`). Records the notification, queues it for\ndelivery to matching subscriptions, and emits the Bus event the\ndelivery consumer reacts to."
       }
     },
     "/fdx/v6/operation-support": {
@@ -673,7 +699,7 @@
         "tags": [
           "fdx"
         ],
-        "summary": "`GET /fdx/v6/operation-support` — explicit machine-readable statement of\nwhich FDX families this provider implements vs reserves (§3.1); pairs\nwith the middleware 501s so clients can preflight.",
+        "summary": "`GET /fdx/v6/operation-support`",
         "operationId": "get_operation_support",
         "responses": {
           "200": {
@@ -691,7 +717,8 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "description": "explicit machine-readable statement of\nwhich FDX families this provider implements vs reserves (§3.1); pairs\nwith the middleware 501s so clients can preflight."
       }
     },
     "/fdx/v6/payees": {
@@ -699,7 +726,7 @@
         "tags": [
           "fdx"
         ],
-        "summary": "`GET /fdx/v6/payees` — payee search/list (proxy to Bank8:Payments\n`GET /v1/payees`).",
+        "summary": "`GET /fdx/v6/payees`",
         "operationId": "list_payees",
         "responses": {
           "200": {
@@ -717,13 +744,14 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "description": "payee search/list (proxy to Bank8:Payments\n`GET /v1/payees`)."
       },
       "post": {
         "tags": [
           "fdx"
         ],
-        "summary": "`POST /fdx/v6/payees` — create a payee (proxy to Bank8:Payments).",
+        "summary": "`POST /fdx/v6/payees`",
         "operationId": "create_payee",
         "responses": {
           "200": {
@@ -741,7 +769,8 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "description": "create a payee (proxy to Bank8:Payments)."
       }
     },
     "/fdx/v6/payees/{payeeId}": {
@@ -749,7 +778,7 @@
         "tags": [
           "fdx"
         ],
-        "summary": "`PUT /fdx/v6/payees/{payeeId}` — update a payee (proxy to Bank8:Payments).",
+        "summary": "`PUT /fdx/v6/payees/{payeeId}`",
         "operationId": "update_payee",
         "responses": {
           "200": {
@@ -767,7 +796,8 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "description": "update a payee (proxy to Bank8:Payments)."
       }
     },
     "/fdx/v6/payment-initiation-parties": {
@@ -775,7 +805,7 @@
         "tags": [
           "fdx"
         ],
-        "summary": "`POST /fdx/v6/payment-initiation-parties` — register a payment\ninitiation party.",
+        "summary": "`POST /fdx/v6/payment-initiation-parties`",
         "operationId": "create_pip_party",
         "responses": {
           "200": {
@@ -793,7 +823,8 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "description": "register a payment\ninitiation party."
       }
     },
     "/fdx/v6/payment-initiation-parties/{partyId}": {
@@ -801,7 +832,7 @@
         "tags": [
           "fdx"
         ],
-        "summary": "`GET /fdx/v6/payment-initiation-parties/{paymentInitiationPartyId}`\nparty detail.",
+        "summary": "`GET /fdx/v6/payment-initiation-parties/{partyId}`",
         "operationId": "get_pip_party",
         "responses": {
           "200": {
@@ -819,7 +850,8 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "description": "`GET /fdx/v6/payment-initiation-parties/{paymentInitiationPartyId}`\nparty detail."
       }
     },
     "/fdx/v6/payment-initiation-parties/{partyId}/payment-methods": {
@@ -827,7 +859,7 @@
         "tags": [
           "fdx"
         ],
-        "summary": "`POST /fdx/v6/payment-initiation-parties/{partyId}/payment-methods`\nregister a payment method for the party.",
+        "summary": "`POST /fdx/v6/payment-initiation-parties/{partyId}/payment-methods`",
         "operationId": "create_pip_payment_method",
         "responses": {
           "200": {
@@ -845,7 +877,8 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "description": "register a payment method for the party."
       }
     },
     "/fdx/v6/payment-initiation-parties/{partyId}/payment-methods/{regId}": {
@@ -853,7 +886,7 @@
         "tags": [
           "fdx"
         ],
-        "summary": "`DELETE /fdx/v6/payment-initiation-parties/{partyId}/payment-methods/{regId}`\n— revoke a party payment method.",
+        "summary": "`DELETE /fdx/v6/payment-initiation-parties/{partyId}/payment-methods/{regId}`",
         "operationId": "revoke_pip_payment_method",
         "responses": {
           "200": {
@@ -871,7 +904,8 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "description": "revoke a party payment method."
       }
     },
     "/fdx/v6/payments": {
@@ -879,7 +913,7 @@
         "tags": [
           "fdx"
         ],
-        "summary": "`POST /fdx/v6/payments` — payment initiation (proxy to Payments).",
+        "summary": "`POST /fdx/v6/payments`",
         "operationId": "create_payment",
         "responses": {
           "200": {
@@ -897,7 +931,8 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "description": "payment initiation (proxy to Payments)."
       }
     },
     "/fdx/v6/payments/{paymentId}": {
@@ -905,7 +940,7 @@
         "tags": [
           "fdx"
         ],
-        "summary": "`GET /fdx/v6/payments/{paymentId}` — payment status read (proxy to\nBank8:Payments `GET /v1/payments/{id}`).",
+        "summary": "`GET /fdx/v6/payments/{paymentId}`",
         "operationId": "get_payment",
         "responses": {
           "200": {
@@ -923,7 +958,8 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "description": "payment status read (proxy to\nBank8:Payments `GET /v1/payments/{id}`)."
       }
     },
     "/fdx/v6/recurring-payments": {
@@ -931,7 +967,7 @@
         "tags": [
           "fdx"
         ],
-        "summary": "`GET /fdx/v6/recurring-payments` — search recurring payments (;\nproxies the payments scheduled-payments list).",
+        "summary": "`GET /fdx/v6/recurring-payments`",
         "operationId": "list_recurring_payments",
         "responses": {
           "200": {
@@ -949,13 +985,14 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "description": "search recurring payments (;\nproxies the payments scheduled-payments list)."
       },
       "post": {
         "tags": [
           "fdx"
         ],
-        "summary": "`POST /fdx/v6/recurring-payments` — create a recurring payment\n(; backed by Bank8:Payments `scheduled_payments`).",
+        "summary": "`POST /fdx/v6/recurring-payments`",
         "operationId": "create_recurring_payment",
         "responses": {
           "200": {
@@ -973,7 +1010,8 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "description": "create a recurring payment\n(; backed by Bank8:Payments `scheduled_payments`)."
       }
     },
     "/fdx/v6/recurring-payments/{recurringPaymentId}": {
@@ -981,7 +1019,7 @@
         "tags": [
           "fdx"
         ],
-        "summary": "`GET /fdx/v6/recurring-payments/{recurringPaymentId}` — detail.",
+        "summary": "`GET /fdx/v6/recurring-payments/{recurringPaymentId}`",
         "operationId": "get_recurring_payment",
         "responses": {
           "200": {
@@ -999,7 +1037,8 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "description": "detail."
       }
     },
     "/fdx/v6/recurring-payments/{recurringPaymentId}/payments": {
@@ -1007,7 +1046,7 @@
         "tags": [
           "fdx"
         ],
-        "summary": "`GET /fdx/v6/recurring-payments/{recurringPaymentId}/payments` — the\nexecuted occurrences (; proxies payments for the source schedule).",
+        "summary": "`GET /fdx/v6/recurring-payments/{recurringPaymentId}/payments`",
         "operationId": "list_recurring_payment_occurrences",
         "responses": {
           "200": {
@@ -1025,7 +1064,8 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "description": "the\nexecuted occurrences (; proxies payments for the source schedule)."
       }
     },
     "/fdx/v6/transfers": {
@@ -1033,7 +1073,7 @@
         "tags": [
           "fdx"
         ],
-        "summary": "`POST /fdx/v6/transfers` — account transfer initiation (proxy to Payments).",
+        "summary": "`POST /fdx/v6/transfers`",
         "operationId": "create_transfer",
         "responses": {
           "200": {
@@ -1051,7 +1091,8 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "description": "account transfer initiation (proxy to Payments)."
       }
     },
     "/fdx/v6/transfers/{transferId}": {
@@ -1059,7 +1100,7 @@
         "tags": [
           "fdx"
         ],
-        "summary": "`GET /fdx/v6/transfers/{transferId}` — transfer status read (proxy to\nBank8:Payments).",
+        "summary": "`GET /fdx/v6/transfers/{transferId}`",
         "operationId": "get_transfer",
         "responses": {
           "200": {
@@ -1077,13 +1118,14 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "description": "transfer status read (proxy to\nBank8:Payments)."
       },
       "delete": {
         "tags": [
           "fdx"
         ],
-        "summary": "`DELETE /fdx/v6/transfers/{transferId}` — cancel a transfer (spec\n`cancelTransfer`; proxies Bank8:Payments cancel where the scheme allows).",
+        "summary": "`DELETE /fdx/v6/transfers/{transferId}`",
         "operationId": "cancel_transfer",
         "responses": {
           "200": {
@@ -1101,13 +1143,14 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "description": "cancel a transfer (spec\n`cancelTransfer`; proxies Bank8:Payments cancel where the scheme allows)."
       },
       "patch": {
         "tags": [
           "fdx"
         ],
-        "summary": "`PATCH /fdx/v6/transfers/{transferId}` — update a transfer (amount/due\ndate where the scheme allows; proxies Bank8:Payments).",
+        "summary": "`PATCH /fdx/v6/transfers/{transferId}`",
         "operationId": "update_transfer",
         "responses": {
           "200": {
@@ -1125,7 +1168,8 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "description": "update a transfer (amount/due\ndate where the scheme allows; proxies Bank8:Payments)."
       }
     },
     "/v1/admin/attributes": {
@@ -1154,7 +1198,8 @@
           {
             "sentin8:admin": []
           }
-        ]
+        ],
+        "summary": "`GET /v1/admin/attributes`"
       },
       "put": {
         "tags": [
@@ -1189,7 +1234,8 @@
           {
             "sentin8:admin": []
           }
-        ]
+        ],
+        "summary": "`PUT /v1/admin/attributes`"
       },
       "delete": {
         "tags": [
@@ -1219,7 +1265,8 @@
           {
             "sentin8:admin": []
           }
-        ]
+        ],
+        "summary": "`DELETE /v1/admin/attributes`"
       }
     },
     "/v1/admin/audit": {
@@ -1227,7 +1274,7 @@
         "tags": [
           "fdx"
         ],
-        "summary": "`GET /v1/admin/audit` — audit trail (admin).",
+        "summary": "`GET /v1/admin/audit`",
         "operationId": "list_admin_audit",
         "responses": {
           "200": {
@@ -1249,7 +1296,8 @@
           {
             "fdx:admin": []
           }
-        ]
+        ],
+        "description": "audit trail (admin)."
       }
     },
     "/v1/admin/consents": {
@@ -1257,7 +1305,7 @@
         "tags": [
           "fdx"
         ],
-        "summary": "`GET /v1/admin/consents` — consent overview (admin).",
+        "summary": "`GET /v1/admin/consents`",
         "operationId": "list_all_consents",
         "parameters": [
           {
@@ -1293,7 +1341,8 @@
           {
             "fdx:admin": []
           }
-        ]
+        ],
+        "description": "consent overview (admin)."
       }
     },
     "/v1/admin/policy-sets": {
@@ -1322,7 +1371,8 @@
           {
             "sentin8:admin": []
           }
-        ]
+        ],
+        "summary": "`GET /v1/admin/policy-sets`"
       }
     },
     "/v1/admin/policy-sets/disable": {
@@ -1351,7 +1401,8 @@
           {
             "sentin8:admin": []
           }
-        ]
+        ],
+        "summary": "`POST /v1/admin/policy-sets/disable`"
       }
     },
     "/v1/admin/policy-sets/enforce": {
@@ -1380,7 +1431,8 @@
           {
             "sentin8:admin": []
           }
-        ]
+        ],
+        "summary": "`POST /v1/admin/policy-sets/enforce`"
       }
     },
     "/v1/admin/policy-sets/shadow": {
@@ -1409,7 +1461,8 @@
           {
             "sentin8:admin": []
           }
-        ]
+        ],
+        "summary": "`POST /v1/admin/policy-sets/shadow`"
       }
     },
     "/v1/admin/policy-sets/{name}": {
@@ -1449,7 +1502,8 @@
           {
             "sentin8:admin": []
           }
-        ]
+        ],
+        "summary": "`GET /v1/admin/policy-sets/{name}`"
       },
       "put": {
         "tags": [
@@ -1495,7 +1549,8 @@
           {
             "sentin8:admin": []
           }
-        ]
+        ],
+        "summary": "`PUT /v1/admin/policy-sets/{name}`"
       },
       "delete": {
         "tags": [
@@ -1525,7 +1580,8 @@
           {
             "sentin8:admin": []
           }
-        ]
+        ],
+        "summary": "`DELETE /v1/admin/policy-sets/{name}`"
       }
     },
     "/v1/admin/policy-sets/{name}/test": {
@@ -1570,7 +1626,8 @@
           {
             "sentin8:admin": []
           }
-        ]
+        ],
+        "summary": "`POST /v1/admin/policy-sets/{name}/test`"
       }
     },
     "/v1/admin/provider-profile": {
@@ -1578,7 +1635,7 @@
         "tags": [
           "fdx"
         ],
-        "summary": "`GET /v1/admin/provider-profile` — get provider profile.",
+        "summary": "`GET /v1/admin/provider-profile`",
         "operationId": "get_provider_profile",
         "responses": {
           "200": {
@@ -1597,13 +1654,14 @@
           {
             "fdx:admin": []
           }
-        ]
+        ],
+        "description": "get provider profile."
       },
       "put": {
         "tags": [
           "fdx"
         ],
-        "summary": "`PUT /v1/admin/provider-profile` — update provider profile.",
+        "summary": "`PUT /v1/admin/provider-profile`",
         "operationId": "update_provider_profile",
         "requestBody": {
           "content": {
@@ -1632,7 +1690,8 @@
           {
             "fdx:admin": []
           }
-        ]
+        ],
+        "description": "update provider profile."
       }
     },
     "/v1/admin/recipients": {
@@ -1640,7 +1699,7 @@
         "tags": [
           "fdx"
         ],
-        "summary": "`GET /v1/admin/recipients` — list registered data recipients.",
+        "summary": "`GET /v1/admin/recipients`",
         "operationId": "list_recipients",
         "responses": {
           "200": {
@@ -1662,7 +1721,8 @@
           {
             "fdx:admin": []
           }
-        ]
+        ],
+        "description": "list registered data recipients."
       }
     },
     "/v1/admin/recipients/{id}/activate": {
@@ -1670,7 +1730,7 @@
         "tags": [
           "fdx"
         ],
-        "summary": "`POST /v1/admin/recipients/{id}/activate` — activate a data recipient.",
+        "summary": "`POST /v1/admin/recipients/{id}/activate`",
         "operationId": "activate_recipient",
         "parameters": [
           {
@@ -1704,7 +1764,8 @@
           {
             "fdx:admin": []
           }
-        ]
+        ],
+        "description": "activate a data recipient."
       }
     },
     "/v1/admin/recipients/{id}/suspend": {
@@ -1712,7 +1773,7 @@
         "tags": [
           "fdx"
         ],
-        "summary": "`POST /v1/admin/recipients/{id}/suspend` — suspend a data recipient.",
+        "summary": "`POST /v1/admin/recipients/{id}/suspend`",
         "operationId": "suspend_recipient",
         "parameters": [
           {
@@ -1746,7 +1807,8 @@
           {
             "fdx:admin": []
           }
-        ]
+        ],
+        "description": "suspend a data recipient."
       }
     },
     "/v1/admin/relations": {
@@ -1775,7 +1837,8 @@
           {
             "sentin8:admin": []
           }
-        ]
+        ],
+        "summary": "`GET /v1/admin/relations`"
       },
       "put": {
         "tags": [
@@ -1810,7 +1873,8 @@
           {
             "sentin8:admin": []
           }
-        ]
+        ],
+        "summary": "`PUT /v1/admin/relations`"
       },
       "delete": {
         "tags": [
@@ -1840,7 +1904,8 @@
           {
             "sentin8:admin": []
           }
-        ]
+        ],
+        "summary": "`DELETE /v1/admin/relations`"
       }
     },
     "/v1/admin/relations/check": {
@@ -1895,7 +1960,8 @@
           {
             "sentin8:admin": []
           }
-        ]
+        ],
+        "summary": "`GET /v1/admin/relations/check`"
       }
     },
     "/v1/admin/ui/{page}": {
@@ -1903,7 +1969,7 @@
         "tags": [
           "admin-ui"
         ],
-        "summary": "GET /v1/admin/ui/{page} — return RFW definition for the requested admin page.",
+        "summary": "`GET /v1/admin/ui/{page}`",
         "operationId": "get_admin_ui",
         "responses": {
           "200": {
@@ -1921,7 +1987,8 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "description": "return RFW definition for the requested admin page."
       }
     },
     "/v1/auth/consent/accounts": {
@@ -1929,7 +1996,7 @@
         "tags": [
           "consent"
         ],
-        "summary": "`GET /v1/auth/consent/accounts` — data endpoint for account selection.\nReturns the customer's accounts at this Data Provider. Called by the\nRFW page's data fetch (proxied by Sentin8:Auth with a short-lived JWT).\nFetches accounts from Bank8:Ledger.",
+        "summary": "`GET /v1/auth/consent/accounts`",
         "operationId": "auth_consent_accounts",
         "responses": {
           "200": {
@@ -1947,7 +2014,8 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "description": "data endpoint for account selection.\nReturns the customer's accounts at this Data Provider. Called by the\nRFW page's data fetch (proxied by Sentin8:Auth with a short-lived JWT).\nFetches accounts from Bank8:Ledger."
       }
     },
     "/v1/auth/consent/approve": {
@@ -1972,7 +2040,8 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "summary": "`POST /v1/auth/consent/approve`"
       }
     },
     "/v1/auth/consent/deny": {
@@ -1997,7 +2066,8 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "summary": "`POST /v1/auth/consent/deny`"
       }
     },
     "/v1/auth/consent/ui": {
@@ -2005,7 +2075,7 @@
         "tags": [
           "consent"
         ],
-        "summary": "`GET /v1/auth/consent/ui` — return RFW consent page definition.\nReturns a JSON RFW definition that auth-ui renders. The definition\nincludes:\n- Scope list with FDX-specific descriptions and Material Icons code points\n- Account selection DataTable (checkboxes, nickname, type, masked number, balance)\n- \"Authorize\" button (POST to /v1/auth/consent/approve)\n- \"Deny\" button (POST to /v1/auth/consent/deny)\n- Data endpoint declaration for account fetch (/v1/auth/consent/accounts)",
+        "summary": "`GET /v1/auth/consent/ui`",
         "operationId": "auth_consent_ui",
         "responses": {
           "200": {
@@ -2023,7 +2093,8 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "description": "return RFW consent page definition.\nReturns a JSON RFW definition that auth-ui renders. The definition\nincludes:\n- Scope list with FDX-specific descriptions and Material Icons code points\n- Account selection DataTable (checkboxes, nickname, type, masked number, balance)\n- \"Authorize\" button (POST to /v1/auth/consent/approve)\n- \"Deny\" button (POST to /v1/auth/consent/deny)\n- Data endpoint declaration for account fetch (/v1/auth/consent/accounts)"
       }
     },
     "/v1/consents": {
@@ -2031,7 +2102,7 @@
         "tags": [
           "consent"
         ],
-        "summary": "`GET /v1/consents` — list consents.",
+        "summary": "`GET /v1/consents`",
         "operationId": "list_consents",
         "responses": {
           "200": {
@@ -2049,13 +2120,14 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "description": "list consents."
       },
       "post": {
         "tags": [
           "consent"
         ],
-        "summary": "`POST /v1/consents` — create a consent grant.",
+        "summary": "`POST /v1/consents`",
         "operationId": "create_consent",
         "responses": {
           "200": {
@@ -2073,7 +2145,8 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "description": "create a consent grant."
       }
     },
     "/v1/consents/{id}": {
@@ -2081,7 +2154,7 @@
         "tags": [
           "consent"
         ],
-        "summary": "`GET /v1/consents/{id}` — consent detail.",
+        "summary": "`GET /v1/consents/{id}`",
         "operationId": "get_consent",
         "responses": {
           "200": {
@@ -2099,7 +2172,8 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "description": "consent detail."
       }
     },
     "/v1/consents/{id}/revoke": {
@@ -2107,7 +2181,7 @@
         "tags": [
           "consent"
         ],
-        "summary": "`POST /v1/consents/{id}/revoke` — revoke a consent.",
+        "summary": "`POST /v1/consents/{id}/revoke`",
         "operationId": "revoke_consent",
         "responses": {
           "200": {
@@ -2125,7 +2199,8 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "description": "revoke a consent."
       }
     },
     "/v1/health": {
@@ -2150,7 +2225,8 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "summary": "`GET /v1/health`"
       }
     },
     "/v1/internal/steps/execute": {
@@ -2158,7 +2234,7 @@
         "tags": [
           "internal"
         ],
-        "summary": "`POST /v1/internal/steps/execute` — Flow proxy-back for FDX domain steps.",
+        "summary": "`POST /v1/internal/steps/execute`",
         "operationId": "execute_step",
         "responses": {
           "200": {
@@ -2176,7 +2252,8 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "description": "Flow proxy-back for FDX domain steps."
       }
     },
     "/v1/recipient/accounts": {
@@ -2184,7 +2261,7 @@
         "tags": [
           "fdx"
         ],
-        "summary": "`GET /v1/recipient/accounts` — list consented accounts for the recipient.\nIf `consent_id` is provided, returns only the accounts the customer\nselected during the provider's consent screen (per FDX UX Guidelines\n§3.1.6 \"Select Accounts\"). The account IDs are stored in\nconsent_resources and used to filter the Ledger account list.\nIf no consent_id is provided, returns all accounts (backward compat).",
+        "summary": "`GET /v1/recipient/accounts`",
         "operationId": "list_recipient_accounts",
         "responses": {
           "200": {
@@ -2202,7 +2279,8 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "description": "list consented accounts for the recipient.\nIf `consent_id` is provided, returns only the accounts the customer\nselected during the provider's consent screen (per FDX UX Guidelines\n§3.1.6 \"Select Accounts\"). The account IDs are stored in\nconsent_resources and used to filter the Ledger account list.\nIf no consent_id is provided, returns all accounts (backward compat)."
       }
     },
     "/v1/recipient/accounts/{id}/transactions": {
@@ -2210,7 +2288,7 @@
         "tags": [
           "fdx"
         ],
-        "summary": "`GET /v1/recipient/accounts/{id}/transactions` — recipient transaction history.",
+        "summary": "`GET /v1/recipient/accounts/{id}/transactions`",
         "operationId": "get_recipient_account_transactions",
         "responses": {
           "200": {
@@ -2228,7 +2306,8 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "description": "recipient transaction history."
       }
     },
     "/v1/recipient/consents": {
@@ -2236,7 +2315,7 @@
         "tags": [
           "fdx"
         ],
-        "summary": "`GET /v1/recipient/consents` — list active consents for the recipient.\nReturns `{\"consents\": [...]}` (wrapped) so the eFintech app's\nFdxConsentsHook can parse `response.data['consents']`.",
+        "summary": "`GET /v1/recipient/consents`",
         "operationId": "list_recipient_consents",
         "parameters": [
           {
@@ -2267,7 +2346,8 @@
           {
             "fdx:read": []
           }
-        ]
+        ],
+        "description": "list active consents for the recipient.\nReturns `{\"consents\": [...]}` (wrapped) so the eFintech app's\nFdxConsentsHook can parse `response.data['consents']`."
       }
     },
     "/v1/recipient/consents/start": {
@@ -2275,7 +2355,7 @@
         "tags": [
           "fdx"
         ],
-        "summary": "`POST /v1/recipient/consents/start` — start consent authorization.\nThe two-ledger recipient flow (fdx DESIGN.md §1 + §4 consent-flow\nsequence): the recipient-side fdx instance writes its OWN registry\n(a `pending` row in `recipient_consents`, in the recipient tenant),\nensures its per-provider OAuth client exists at the provider's\nauthorization server (DCR, cached in `fdx.recipients`), and pushes a\nPAR request whose `state` carries `\"<consent handle>|<app origin>\"`.\nThe AS's authorize screen runs the ceremony; the browser redirect\ncomes back to THIS instance's `/fdx/consents/callback` (the\nregistered redirect_uri), which activates the row and exchanges the\ncode. The provider's grant row is seeded by the provider's OWN\nauth-family consumer from `sentin8:auth:grant:created` — never by\nthis side.",
+        "summary": "`POST /v1/recipient/consents/start`",
         "operationId": "start_consent",
         "requestBody": {
           "content": {
@@ -2304,7 +2384,8 @@
           {
             "fdx:read": []
           }
-        ]
+        ],
+        "description": "start consent authorization.\nThe two-ledger recipient flow (fdx DESIGN.md §1 + §4 consent-flow\nsequence): the recipient-side fdx instance writes its OWN registry\n(a `pending` row in `recipient_consents`, in the recipient tenant),\nensures its per-provider OAuth client exists at the provider's\nauthorization server (DCR, cached in `fdx.recipients`), and pushes a\nPAR request whose `state` carries `\"<consent handle>|<app origin>\"`.\nThe AS's authorize screen runs the ceremony; the browser redirect\ncomes back to THIS instance's `/fdx/consents/callback` (the\nregistered redirect_uri), which activates the row and exchanges the\ncode. The provider's grant row is seeded by the provider's OWN\nauth-family consumer from `sentin8:auth:grant:created` — never by\nthis side."
       }
     },
     "/v1/recipient/consents/{id}": {
@@ -2312,7 +2393,7 @@
         "tags": [
           "fdx"
         ],
-        "summary": "`GET /v1/recipient/consents/{id}` — get a specific recipient consent.",
+        "summary": "`GET /v1/recipient/consents/{id}`",
         "operationId": "get_recipient_consent",
         "parameters": [
           {
@@ -2348,7 +2429,8 @@
           {
             "fdx:read": []
           }
-        ]
+        ],
+        "description": "get a specific recipient consent."
       }
     },
     "/v1/recipient/consents/{id}/refresh": {
@@ -2356,7 +2438,7 @@
         "tags": [
           "fdx"
         ],
-        "summary": "`POST /v1/recipient/consents/{id}/refresh` — trigger data refresh.",
+        "summary": "`POST /v1/recipient/consents/{id}/refresh`",
         "operationId": "refresh_consent",
         "parameters": [
           {
@@ -2390,7 +2472,8 @@
           {
             "fdx:read": []
           }
-        ]
+        ],
+        "description": "trigger data refresh."
       }
     },
     "/v1/recipient/consents/{id}/revoke": {
@@ -2398,7 +2481,7 @@
         "tags": [
           "fdx"
         ],
-        "summary": "`POST /v1/recipient/consents/{id}/revoke` — revoke a recipient consent.",
+        "summary": "`POST /v1/recipient/consents/{id}/revoke`",
         "operationId": "revoke_recipient_consent",
         "parameters": [
           {
@@ -2431,7 +2514,8 @@
           {
             "fdx:read": []
           }
-        ]
+        ],
+        "description": "revoke a recipient consent."
       }
     },
     "/v1/recipient/notifications": {
@@ -2439,7 +2523,7 @@
         "tags": [
           "fdx"
         ],
-        "summary": "`GET /v1/recipient/notifications` — notification feed for the recipient.",
+        "summary": "`GET /v1/recipient/notifications`",
         "operationId": "list_notifications",
         "responses": {
           "200": {
@@ -2457,7 +2541,8 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": []
+        "security": [],
+        "description": "notification feed for the recipient."
       }
     },
     "/v1/recipient/providers": {
@@ -2465,7 +2550,7 @@
         "tags": [
           "fdx"
         ],
-        "summary": "`GET /v1/recipient/providers` — list FDX data providers from the\n`provider_profiles` registry.\nProvider profiles are auto-registered when an environment's\n`is_fdx_provider` flag is turned on (see Sys `update_env`), with the\nenv's auth domain used as the issuer URL. The table has no RLS, so the\ncatalog is visible cross-org — any recipient can discover and connect to\nany active provider. No static seed data is required.\nResponse shape matches the eFintech recipient catalog contract:\n`{ \"providers\": [{ id, name, supportedDataClusters, status, ... }] }`,\nwhere each card reads `name`, `supportedDataClusters`, and `status`.",
+        "summary": "`GET /v1/recipient/providers`",
         "operationId": "list_recipient_providers",
         "responses": {
           "200": {
@@ -2484,7 +2569,8 @@
           {
             "fdx:read": []
           }
-        ]
+        ],
+        "description": "list FDX data providers from the\n`provider_profiles` registry.\nProvider profiles are auto-registered when an environment's\n`is_fdx_provider` flag is turned on (see Sys `update_env`), with the\nenv's auth domain used as the issuer URL. The table has no RLS, so the\ncatalog is visible cross-org — any recipient can discover and connect to\nany active provider. No static seed data is required.\nResponse shape matches the eFintech recipient catalog contract:\n`{ \"providers\": [{ id, name, supportedDataClusters, status, ... }] }`,\nwhere each card reads `name`, `supportedDataClusters`, and `status`."
       }
     },
     "/v1/recipient/providers/{id}": {
@@ -2492,7 +2578,7 @@
         "tags": [
           "fdx"
         ],
-        "summary": "`GET /v1/recipient/providers/{id}` — get a specific FDX data provider.",
+        "summary": "`GET /v1/recipient/providers/{id}`",
         "operationId": "get_recipient_provider",
         "parameters": [
           {
@@ -2525,7 +2611,8 @@
           {
             "fdx:read": []
           }
-        ]
+        ],
+        "description": "get a specific FDX data provider."
       }
     }
   },

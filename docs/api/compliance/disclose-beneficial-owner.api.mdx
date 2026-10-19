@@ -1,15 +1,11 @@
 ---
 id: disclose-beneficial-owner
-title: "`POST /v1/customers/{id}/beneficial-owners` — disclose a beneficial
-owner against a KYC record (idempotent per (kyc, identity_ref) —
-re-disclosing the same owner converges to the same row)."
-description: "`POST /v1/customers/{id}/beneficial-owners` — disclose a beneficial"
-sidebar_label: "`POST /v1/customers/{id}/beneficial-owners` — disclose a beneficial
-owner against a KYC record (idempotent per (kyc, identity_ref) —
-re-disclosing the same owner converges to the same row)."
+title: "`POST /v1/customers/{id}/beneficial-owners`"
+description: "disclose a beneficial"
+sidebar_label: "`POST /v1/customers/{id}/beneficial-owners`"
 hide_title: true
 hide_table_of_contents: true
-api: eJzdlc1u40YMx1+F4CkBpCgfG2+qnhJnWwTtbookPRSOkR2PKHs2Ekc7M7JXMAT0IfoOfY8+Sp+koOSPeF0UObSX+mKBw6HI/4+klhjU1GM6wpnirCDncRyhrcipYCzfZJhiZrwurKenCTHlRhtVPNkFk8MIHX2uyYcrmzWYLlFbDsRBHlVVFUZ3UZJP3rLYvJ5RqeQpNBVhinbyiXTACDPy2plKvDHFuz4qTGzWQG4drFIwPAUF2zSgSwP+/PU3MBlxMKGBSQNVoUJuXfnIjnJyxJrActHAgQIvbnwRe9KOgk+TBKzb3I6rQjHB5trht4+cWV2XxAEmTSAPijN5geFAX8L2tVyXE3IemObkgDiQk1QVP188srMLOLh+d3/z/YejMoM/fr8Aw3PljOJweLSS0TjKBMRzo59MhhGuYz85yoVK5YRLMORFwZ3TraI+OMNTbKN1nL2jCEUbFTDFujYZtm2EwYRCXK5XqK82Et+Kwise2IrvNtfgauoMvrLs+7ROj4/lb5cnRv9WZ1zu01ceHIXaMWUCP8yEn8r817p2mr5a3FfoFv03DPa079UV8cVtV4+PP93eP0AyP0l07YMtyflkabI22coUdzL5j92YrGd5Z4weeaXkVBn2ART88MsQHGnrMjgwGZWVFXhQkYOD50ZH8LLyQ4kssxa/GFPB4FVJK0ja8pzclDwEuz1zdtG1f0lhZmXVVNYL80qFGab4mrIwQk+6diY0mI7GEUpH3W230rsvqqxE168nZotiDQnPcnVxng/exOdvT97Gb84Hp/HkLNfxqf5mcJYPBipXgw4757ZjuiLWTXmsbVkVRrGmva6975cOXIljOtw4dkgu3/+YDB++S0X0ZHh9HYFXrOWmB68dERueRhCcYq86O5SWTbCus6uCXEi08gSFyUk3uiDRtDCapG3SJbIqJc33Nw9weweXldIzik+PjjdjkBtyf+vQRjgn5/sqjo9OepNQKhW/CP3/aMMdaJuRlT2fdBtfaq9dIWd9h45wfiK7bV0zRph222W/TccRzqS50xEulxPl6WdXtK2YP9fkVr3bfRIm0lOjcRvhjFQmYEZLfKYGUxz2SzR+kMzEvaglw72F2kbrG5daUxX+0Xf8Yv4Eo6S/+pyXNpM7Ti1kl6pFv8ptp1C3JzvbEgvF01pNxbePKb+/AIMP7r4=
+api: eJzNlV9u20YQxq8ymCcbIE3/iRWXfbLltDDaxIXtPhSy4KyWQ2ljcpbZXUohBAI9RO6Qe/QoPUkxFGXJVlH4oQWqFxHD2eHw9818XGJQU4/pCGeKs4Kcx3GEtiKngrF8lWGKmfG6sJ4eJsSUG21U8WAXTA4jdPS5Jh8ubNZgukRtORAHuVRVVRjdVUk+ecsS83pGpZKr0FSEKdrJJ9IBI8zIa2cqycYUb1ZVYWKzBnLroG/B8BQUbNqArg348/evYDLiYEIDkwaqQoXcuvKeHeXkiDWB5aKBPQVe0vgs9qQdBZ8mCVj3dDquCsUET8f2v7/nzOq6JA4waQJ5UJzJAwwH+hI2j+W6nJDzwDQnB8SBnLSq+PHsnp1dwN7lu9urHz8clBn88e0MDM+VM4rD/kGP0TjKRIjHRj+YDCNc135wlIsqlRNdgiEvBJ/d3RD1wRmeYhut6+zcilDYqIAp1rXJsG0jDCYUknLZS33xhPhaCPd6YCu5m16Dq6kL+MqyX7V1fHgof8/1xOjfmozzXfWVB0ehdkyZiB9mop/K/EuuHdNXw30Ft+i/0WCH/YquwJe05zzWu/lsLe65JzNVhn0ABT/9NgRH2roM9kxGZWVFDKjIwd5joyPYfpN9WSjZnXhr7QSrVyX10LXlObkpeQh2c8/ZRTfOJYWZFeuorBcNKxVmmGIyP0p07YMtyflkabI22TQdd4U9RuhJ186EBtPROEKZkJuNy7z7ospKOL3cgA3aNXQ8ydXZaT54E5++PXobvzkdHMeTk1zHx/q7wUk+GKhcDToZObedRr0C3dbG2pZVYRRr2pnC25WJwIUkpsOnxM6Jzt//nAzvfkgFejK8vIzAK9Zy0oPXjogNTyMITrFXXRxKyyZY18VVQS4kWnmCwuSkG12QMC2MJhmDdImsSmnz/dUdXN/AeaX0jOLjg8Onsc4Nub9NaCOck/Ortzg8OFqFRKVS8Vbpj79c397Ba/T6+BLO1kfgfzqd/SqKfyedkwuD2hXS+2pSRzg/Es9avztGmHausTuu4whnMuTpCJfLifL0qyvaVsKfa3L9DHdWP5HZGo3bCGekMhFotMRHajDF4YpYfCedSXpRS4c7RtlG6xPnWlMV/jF3vLWHIqe033+mS5vJGacW4pFqsbJo2ynY+V8XW2KheFqrqeSuasrvLyHJ3js=
 sidebar_class_name: "post api-method"
 info_path: docs/api/compliance/bank-8-compliance
 custom_edit_url: null
@@ -27,7 +23,7 @@ import Translate from "@docusaurus/Translate";
 <Heading
   as={"h1"}
   className={"openapi__heading"}
-  children={"`POST /v1/customers/{id}/beneficial-owners` — disclose a beneficial\nowner against a KYC record (idempotent per (kyc, identity_ref) —\nre-disclosing the same owner converges to the same row)."}
+  children={"`POST /v1/customers/{id}/beneficial-owners`"}
 >
 </Heading>
 
@@ -41,7 +37,7 @@ import Translate from "@docusaurus/Translate";
 
 
 
-`POST /v1/customers/{id}/beneficial-owners` — disclose a beneficial
+disclose a beneficial
 owner against a KYC record (idempotent per (kyc, identity_ref) —
 re-disclosing the same owner converges to the same row).
 

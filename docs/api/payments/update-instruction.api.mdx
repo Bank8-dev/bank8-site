@@ -1,13 +1,11 @@
 ---
 id: update-instruction
-title: "`PUT /v1/instructions/{id}` — update an instruction (status updates
-including cancel — the business convention; no `/cancel` subpath)."
-description: "`PUT /v1/instructions/{id}` — update an instruction (status updates"
-sidebar_label: "`PUT /v1/instructions/{id}` — update an instruction (status updates
-including cancel — the business convention; no `/cancel` subpath)."
+title: "`PUT /v1/instructions/{id}`"
+description: "update an instruction (status updates"
+sidebar_label: "`PUT /v1/instructions/{id}`"
 hide_title: true
 hide_table_of_contents: true
-api: eJzNVsFuGzcQ/RViTgmwtuTEh4Q9JW0C+BDEcOReFMGiyJHEhEsyJFeOsFmgH9Ev7JcEQ66lleWoQE/VRRQ5bzjz5s1QLSSxisCn4MW2RpsizCpwHoNI2tkrBRwar0TCO21jCo2kbajAiyBqTBgI3IIVNQIHraACbYGDF2kNFSiMMmifQRyu9i7Y1R9QQcBvjQ6ogKfQYAVRrrEWwFtIW08OYwrarqCCpQu1SBRNoxV03ayAMaa3Tm0JIZ1NaBMthfdGy5zB6Eukq9tj127xBWWiVALlmzRGOnVN8k324ix+XObseoRtjIGuaiHpZGjjT2EahG7WUTCiv6gYT/ehZxjZxCQSnjB5TNdEhBUmlmGczaWwEo1BNWc/2NyjVdquyjo4iTHSz3PoumoX4G0u3YD2m8IZdF33mP28Eb2zsRDxYjymr19XsOiCKv6fqd9HMC3aKRSRhqgIFciAdMedSETPYaWkq73B/vQUqzvtULxnSdcIHQUdApoc6Z1Wpys3COOUNg/8D33+UscPmfI2L3fk3hm30vJ0XE8424n3WG0P6KE8DoRRSk/K6Cq4HL88Lv4HnTXGFsJ+fcUfBgYfhB35fdAJWZTOZxIux5enRWRdYkvXWFWsXx9bf6I8WArCRp0h0tml0TLlVCLKJui0zX36r4EBn866oz6bX99O2GhzMRoCRq1W3Zz989ffvdCZsGxgwJ4RwU3sT+Nnq600DfUkK52asWmNbNFEbTFGinyDltC/MevYfFQM5yw2CxqYz8+hghrT2tHcLR2QBymHJ8ODCqjHbvaD8N13QU0xHGRFLfsJtZdRr5CdMkiBS5cl0wskE3q2exoeE/eJkrGv2NvM+3VvlvPuMcwFucaYynNSMYUGV0QXS471cP7euHvK3GiJJEG+e08+XE3Yxxv2xgu5xrMX52MaDYpgS43hSYOugg2GWAIcn1+ULe9iqoUduP5/Ff2A113LJvyeRt4IbSmHJhg6K4KYwuYCDkYGlYdrRXNh7WIik7ZdiIi3wXQdbX9rMFCjzCrYiKDFgmo8bUHpSGsFfClMxKNoduMdnt30A/s5O3rLn4y53xR2C3QpPZccoIKvuC1/F/LjuUahqJzTtj/4vdx4NiH4Hnj0uNBjXBBvpESfTtrOBr11fTuBChb9X4faKYIEcU99Iu5LjM4XWnlb9lowwq4asSLb4pI+PwHY3D1e
+api: eJy9Vk1vGzcQ/SvEnBJgbcmpDyl7SvoB+BDEcOReFMGiyJHEhCI35KwcYbNAf0R/YX9JMORaWluOCvRQXbTiziPfvHkzVAukVgnkFGq126CnBLMKQo1RkQ3+yoCEpjaK8M76RLHRvAwV1CqqDRJGBrfg1QZBgjVQgfUgoVa0hgoMJh1tnUESrg5biKvfoIKIXxob0YCk2GAFSa9xo0C2QLuaN0wUrV9BBcsQN4qYTWMNdN2sgDHR22B2jNDBE3riR1XXzuqcwehT4qPb463D4hNq4lQi50sWE78NDdVN3iV4fL/M2fUI3zgHXdUCWXK88KdyDUI365iM6g8qwdMD9QzjmESK8ETIU7kmKq6QRIZJMdfKa3QOzVx8E/MavbF+VZ5j0JgS/zyHrqv2BG9z6Qay3xTNoOu6p+rnhVQHn4oQr8Zj/vpxBYsvuOL/WfoDg2nxTpGIPcRFqEBH5DPuFLE8jyulw6Z22L89pereO8z3jOwGoWPSMaLLTO+sOV25AY1T3ny0/3DPH/r4IVPZ5se9uHcurKw+zeuZzfbmPXbbA3poj0fGKKVnZ3QVXI5/Oi7+O5s9JhbKf34tHwaGHNBO8j5aQpF0qLMIl+PL0ybygcQyNN6U6J+Poz9wHoKi8slmiA5+6aymnEpC3URLu9yn/0oM5HTWHfVZMbJQXgwQ4gUL2KTe5umjt167hntOlE4U//z1t6A1ikWTrMeUmNkWPaN/ET6I+agEzkVqFjwQX55DBRukdeC5WhyeB6WE0fZiNOQ7aq3poALuoZvDoPv9q2LTDwdVccNhAh1s0jtgX3l22DJkS/QGyIKd7Uf/U2E+cDL+tXibdb3uw3LePUaEqNeYqFwXlTDocMVyCQqih8s/XLjnzJ3VyBaT+/vi3dVEvL8Rb2ql13j26nzMrW8YtrQYnw3oKthiTIXg+PyiLNUh0Ub5wdbz69uJeFbV+dM8B3fH/+yFvjUJv9Kodsp6zqWJjjkVY0xhewGPRgOXSVrD/b8OiTikbRcq4W10XcfLXxqM3BCzCrYqWrXgWk9bMDbxswG5VC7hCRVe3PSD+aU4urOf5dwvKr8DPpSvRQlQwWfclb8F+ZJcozJc1mnbv/i1nHg2YfgBeHSJ8KVbEG+0xppOxs4GPXZ9O4EKFv1fhE0wDInqnvtF3ReOoS6yyrasteCUXzVqxbFlS/58B4ewMtQ=
 sidebar_class_name: "put api-method"
 info_path: docs/api/payments/bank-8-payments
 custom_edit_url: null
@@ -25,7 +23,7 @@ import Translate from "@docusaurus/Translate";
 <Heading
   as={"h1"}
   className={"openapi__heading"}
-  children={"`PUT /v1/instructions/{id}` — update an instruction (status updates\nincluding cancel — the business convention; no `/cancel` subpath)."}
+  children={"`PUT /v1/instructions/{id}`"}
 >
 </Heading>
 
@@ -39,7 +37,7 @@ import Translate from "@docusaurus/Translate";
 
 
 
-`PUT /v1/instructions/{id}` — update an instruction (status updates
+update an instruction (status updates
 including cancel — the business convention; no `/cancel` subpath).
 
 <Heading

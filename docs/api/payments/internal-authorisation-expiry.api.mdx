@@ -1,25 +1,11 @@
 ---
 id: internal-authorisation-expiry
-title: "`POST /v1/internal/authorisations/expire` — Sentin8:Cron proxy-back for
-the daily Authorisation Expiry run . Scans authorisation
-instructions past their scheme expiry TTL (7d default / 30d pre-auth /
-14d mass-transit / 1h AFD, measured from `transmission_date_time`),
-emits the caad.008 AdministrativeInitiation with
-`ALTERNATE_MESSAGE_REASON_AUTOMATED_AUTHORISATION_EXPIRY` (party `VP`),
-records the Release posting to Bank8:Ledger, and moves the payment to
-`PAYMENT_STATUS_EXPIRED`."
-description: "`POST /v1/internal/authorisations/expire` — Sentin8:Cron proxy-back for"
-sidebar_label: "`POST /v1/internal/authorisations/expire` — Sentin8:Cron proxy-back for
-the daily Authorisation Expiry run . Scans authorisation
-instructions past their scheme expiry TTL (7d default / 30d pre-auth /
-14d mass-transit / 1h AFD, measured from `transmission_date_time`),
-emits the caad.008 AdministrativeInitiation with
-`ALTERNATE_MESSAGE_REASON_AUTOMATED_AUTHORISATION_EXPIRY` (party `VP`),
-records the Release posting to Bank8:Ledger, and moves the payment to
-`PAYMENT_STATUS_EXPIRED`."
+title: "`POST /v1/internal/authorisations/expire`"
+description: "Sentin8:Cron proxy-back for"
+sidebar_label: "`POST /v1/internal/authorisations/expire`"
 hide_title: true
 hide_table_of_contents: true
-api: eJztVttu4zYQ/RVinraA5EsuTqo37cbbGohjw1aKLuxApsWRxY1EaknKidcw0I/oF/ZLipHsjd0s2qCvrV8sDA/ncnhmyC04vrIQzKDkmwKVs75UDo3iOTx4oEs03EmtBgICOKzEvHKZNtLWSzE+l9JswAODXyq07r0WGwi2kGjlUDn65GWZy6SGtz9brchmkwwLTl9uUyIEoJefMXHgQWkorpNoaXXJXZLFVn7FIyylskIDHqTaFNw1pt4FeCDQJkaWFAsCGPJnJpV1pkrIYpnTrE4YmVRMK2SmUi3YeYBqHUvxEmMG1hmpVuCBqvKajm+xqkoK2O08cNLllE94zEi/JmTSsAE7whE10qCAwJkKa4MttbJNiWedDv2dZt54ofSYQVvlxMy/pvQl/gya8kVtzZFbjEttnVQrCx7YR1mWKKja02M47HrDGey+4/lt2w7R34I+Yn9PeKUmDVG7mvOLzvlrVofSWqlWzKJZywSZTXSJtbNT3GI8mkasve62D6pvn6jethtCFuyP335nU1ROquvgg9GKlUY/b/wlTx5Zqs1cuQyZ4DLfsBOVsKMDbrFpwpVlJyHm6kS4JbeOuQylYfU5Y6PjDYuiW/buSjCBKa9yx9rsvCNYadAnd6w9V90LwQpure8MV1YSpJux8OONxwrktjIoWGp0wRY1oCCOtIoFdxg7WeDiB2+usJDOUgIs4Vy0Op1rFopCKmkdzYg1DpR0sintSbpsrhbhbdSf3IVRPx72p9Pwp3486YfT0V0c3kejYRj1b+jr59FkMA2jwegu7v86Hkw+Ldi7khu3YYtfxnVog4k2ogk+aZTF9sqifn7P1eN1cItihcZjXAlW6DU28P1YY07P1WIcfhr276J4GoXR/bSJ1r9ZtMCDAl2maciRX5pB3GUQwD8LgHoGk8pIt4Fg9uABNePkZRL2n3lR5vjXSdZ5GThwnvLry7R34V9eda/8i8vemb88TxP/LPmxd572ejzlPeoOqVJdt8Ze9kuq2z8M7lejby/KPT3jPazW64EVbZIMm/PTymMCc1xxh/WUPGj6Y66fiKFcJqhsXYjiBcUfDiI2mrCw5EmG/lmrAx5IQdtSiea7gJ0HazS2SbDT6jYm4rzg6sj1/+3332q/E+V+G/4On127zLlUpJLK5LTWdOYM1l2S2+Gx4sGpPsDb31h0k2XU08EMttslt3hv8t2OzF8qNPumXXMj+ZK6avaw8yBDLkjBsy084gYC+NBcvH5EiRE8ryjBV5fwzjvsCJMES/e32IejsUN6Bw+W+7dToQXtMfyJrmn+BAEAPcea2oJtY9tCztWq4ivCNj7p9yf1vmun
+api: eJztVttu4zYQ/RVinraAfMvFSfWm3WhbA3Fs2ErRhR3ItDiyuJFILUk5cQ0D/Yh+Yb+kGMne2JtFG/StQP1iYXQ4lzNnhtqC4ysL/gxKvilQOduSyqFRPIcHD3SJhjup1UCAD4c3Ma9cpo209asYn0tpNuCBwS8VWvdeiw34W0i0cqgcPfKyzGVSwzufrVZks0mGBacntykRfNDLz5g48KA0FNdJtPR2yV2SxVb+hkdYSmWFBjxItSm4a0z9C/BAoE2MLCkW+DDkz0wq60yVkMUyp1mdMDKpmFbITKXasPMA1TqW4iXGDKwzUq3AA1XlNR1fY1WVFLDbeeCkyymf4JiRsCZk0rABO8IRNdKgAN+ZCmuDLbWyTYln3S79nWbeeKH0mEFb5cTMv6b0Jf4MmvJFbc2RW4xLbZ1UKwse2EdZliio2tM2HE69oQe773h+27FD9Legj9jfE16pSUPUrub8onv+mtWhtFaqFbNo1jJBZhNdYu3sFDdF5aS69j8YrVhp9POmteTJI0u1mSuXIRNc5ht20nd21LI2myZcWXYyKnN1IsWSW8dchtKwunPYKHPDouiWvbsSTGDKq9yxDjvvClYabJE71pmr3oVgBbe25QxXVhKkl7Hg443HCuS2MihYanTBFjWgoKq1igV3GDtZ4OIHb66wkM5SAizhXLS73WsWiEIqaR1N/RoHSjrZlPYkXTZXi+A2Cid3QRTGw3A6DX4K40kYTEd3cXAfjYZBFN7Q08+jyWAaRIPRXRz+Oh5MPi3Yu5Ibt2GLX8Z1aIOJNqIJPmm0wvZaoQl9z9XjtX+LYoXGY1wJVug1NvD9omJOz9ViHHwahndRPI2C6H7aRAtvFm3woECXaVpb5Je2CncZ+NBZ9zqHRdY56Y7tNBqnKcCkMtJtwJ89eEDjNXnZbeEzL8ocv91N3ZcVAucpv75M+xety6veVevisn/WWp6nSess+bF/nvb7POV90rtUqa7FvhfykupuHVbxq2W2F+WenvEexv78/Y+vrGiTZNj0TyuPCcxxxR3We++g6Y+5fiKGcpmgsnUhihcUfziI2GjCgpInGbbO2l3wQAo6lko03wXsPFijsU2C3XavMRHnBVdHrhfj0TRi/8z+4tuqjy6S/6fyPz+V+7Xu8Nl1ypxLRWqpTE59biZ0Buseye7wGeLBqU7A299FdEdlNNv+DLbbJbd4b/LdjsxfKjT74V1zI/mSpmv2sPMgQy5IybMtPOIGfPjQiKsVUWIEzytK8NX1uvMOJ4IkwdL9LfbhaP2Q7sGD5f6rqNCCzhj+RBcwfwIfgD60mtr8bWPbQs7VquIrwjY+6fcXqzVbtA==
 sidebar_class_name: "post api-method"
 info_path: docs/api/payments/bank-8-payments
 custom_edit_url: null
@@ -37,7 +23,7 @@ import Translate from "@docusaurus/Translate";
 <Heading
   as={"h1"}
   className={"openapi__heading"}
-  children={"`POST /v1/internal/authorisations/expire` — Sentin8:Cron proxy-back for\nthe daily Authorisation Expiry run . Scans authorisation\ninstructions past their scheme expiry TTL (7d default / 30d pre-auth /\n14d mass-transit / 1h AFD, measured from `transmission_date_time`),\nemits the caad.008 AdministrativeInitiation with\n`ALTERNATE_MESSAGE_REASON_AUTOMATED_AUTHORISATION_EXPIRY` (party `VP`),\nrecords the Release posting to Bank8:Ledger, and moves the payment to\n`PAYMENT_STATUS_EXPIRED`."}
+  children={"`POST /v1/internal/authorisations/expire`"}
 >
 </Heading>
 
@@ -51,7 +37,7 @@ import Translate from "@docusaurus/Translate";
 
 
 
-`POST /v1/internal/authorisations/expire` — Sentin8:Cron proxy-back for
+Sentin8:Cron proxy-back for
 the daily Authorisation Expiry run . Scans authorisation
 instructions past their scheme expiry TTL (7d default / 30d pre-auth /
 14d mass-transit / 1h AFD, measured from `transmission_date_time`),

@@ -1,21 +1,11 @@
 ---
 id: migrate-logic-to-wasm
-title: "`POST /v1/logics/{id}/migrate-wasm` — migrate an instruction logic's inline
-hooks to Func WASM modules (Story ).
-Loads the logic, walks its steps, and for every `BasicStep` whose
-`config.hook` is set and `config.wasmModuleId` is absent, creates a
-Func module from the step's config and uploads it via `func_client`.
-Returns the list of created module ids (and any per-step errors)."
-description: "`POST /v1/logics/{id}/migrate-wasm` — migrate an instruction logic's inline"
-sidebar_label: "`POST /v1/logics/{id}/migrate-wasm` — migrate an instruction logic's inline
-hooks to Func WASM modules (Story ).
-Loads the logic, walks its steps, and for every `BasicStep` whose
-`config.hook` is set and `config.wasmModuleId` is absent, creates a
-Func module from the step's config and uploads it via `func_client`.
-Returns the list of created module ids (and any per-step errors)."
+title: "`POST /v1/logics/{id}/migrate-wasm`"
+description: "migrate an instruction logic's inline"
+sidebar_label: "`POST /v1/logics/{id}/migrate-wasm`"
 hide_title: true
 hide_table_of_contents: true
-api: eJztlMFO20AQhl9lNBdAMkmgPSDf4ICE2hREqHpIIrKsJ/E29u52ZxwaWZb6EH3CPkk1TqgoVD330JOl3fn/+XfnW7coZsWYTzGabU1eGOcZhkjJiAv+qsAca7dKRui+Citn7yXcPxquMcNEHINnYsxbPB2N9FMQ2+SiajHH63eYoQ1eyIvumhgrZ3vn4WfWkhbZllQbzNuu67oM345OXvt8CAKmkZK8qJwK7CvfvK4cO2bnVyAlwdOJgG2IBCsjhNqCyTbJyRbz6Tx7oV/cXE/uYLg5Gfan5WHrim64v4FjPfgCfnz7DvsVMB6cZ0mNVQPoRQcMzlfO08yXIawZJMBl4y18Op+MoQ5FUxHD4URC2sLRYObfB1NwH7nXZ/BoqjWD0+hCkTMwvoBlSEAbSltYXBh2diIUF/BYBqaZX9jgl2410IYLcAxM0queNjT6uG99VfQF5oHJSwY2kRFiMDPfh9zlg2UKdR9JExww7Gx6yyZWfWAnsHEGFsvG23tbOfKyGMz8LUmT/P48jgXCct+keDJ3BcOhWhm/hUjpWJsApRQSHw0ww5qkDMpeDCyYYTRSYo5/mwtm6PwyKBLipCLM8cH49dnxL7BfznqiOPkzuNCy/OaJFh3vXgMh2ZJYdo8hg4IqWvW3JQH28vyyCo+auXKWPJMG8KbW/uOrO7i+hfNobEnHp4ORZixUtnSU/ljQZbihxLuAo8HJbklvoTb+mfV/Tv8JTn8DqkXZRh2O0FcZxso4r8NrUqV7O4SnuDlRVvqhYYa5KxT35xzPMyyV+nyKbftgmD6mqut0+UtDaf/X2pjkzINSPp13GZZkCiVq2uKatpjjubUU9eVsTNVople/3m7+7JkpTdh1PwHqXiDx
+api: eJztlM9O20AQxl9lNBdAMkmgPSDf4ICEWgoiVD0kUbKsJ/EWe3e7Mw6NLEt9iD5hn6QaJ2kRVL311pOl3fnzzXy/dYtiVoz5BKPZ1OSFcZZhiJSMuOCvCsyxdqtkhOZVWDk7lzB/Mlxjhok4Bs/EmLd4OhrppyC2yUXNxRxv3mGGNnghL3prYqyc7SsPP7OGtMi2pNpg3nZd12X4dnTyus6HIGAaKcmLplOBfeSb15HXjtn5FUhJsJ8I2IZIsDJCqC2YbJOcbDCfzLIX+btZwXhwniU1Vi+gH/2AwfnKeZr6MoRHBglw2XgLn87H11CHoqmI4XAsIW3gaDD174MpuJfS52fwZKpHBqeShCJnYHwBy5CA1pQ2sLgw7OxYKC7gqQxMU7+wwS/daqANF+AYmKTP2l+oF9d966uiDzAPTF4ysImMEIOZ+l7kVh8sU6h7SarggGFbpi/ZxKoX7ATWzsBi2Xg7t5UjL4vB1N+RNMnv5nEsEJa7JsW+uCsYDrWU8RuIlI61CVBKIfHRADOsScqgTMXAghlGIyXmOFyfDPsV8bB1RTfcuXC8A835ZVCrxUlFmOOD8Y9nx7+AfenhWDHxZ3ChYfntnoIf377vkYCQbEksW8gzKKiiVb8tCbBLzy+r8KSaK2fJM6kAb2rtf311Dzd3cB6NLen4dDBSjYWmLR2lPwZ0Ga4p8VbgaHCyPdIt1MY/K724vRnfw9/2sXg5b/v7hf3H99/iK5uoJgl9lWGsjPNqYpMqNWGL8gTXJ8pMbx5mmLtCsX/O8yzDUunPJ9i2D4bpY6q6To+/NJR2f6W1Sc48KO2TWZdhSaZQsiYtPtIGczy3lqK+oLWpGtX06tfazZ49N6UKu+4no3ET0Q==
 sidebar_class_name: "post api-method"
 info_path: docs/api/payments/bank-8-payments
 custom_edit_url: null
@@ -33,7 +23,7 @@ import Translate from "@docusaurus/Translate";
 <Heading
   as={"h1"}
   className={"openapi__heading"}
-  children={"`POST /v1/logics/{id}/migrate-wasm` — migrate an instruction logic's inline\nhooks to Func WASM modules (Story ).\nLoads the logic, walks its steps, and for every `BasicStep` whose\n`config.hook` is set and `config.wasmModuleId` is absent, creates a\nFunc module from the step's config and uploads it via `func_client`.\nReturns the list of created module ids (and any per-step errors)."}
+  children={"`POST /v1/logics/{id}/migrate-wasm`"}
 >
 </Heading>
 
@@ -47,7 +37,7 @@ import Translate from "@docusaurus/Translate";
 
 
 
-`POST /v1/logics/{id}/migrate-wasm` — migrate an instruction logic's inline
+migrate an instruction logic's inline
 hooks to Func WASM modules (Story ).
 Loads the logic, walks its steps, and for every `BasicStep` whose
 `config.hook` is set and `config.wasmModuleId` is absent, creates a

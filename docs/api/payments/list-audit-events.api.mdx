@@ -1,15 +1,11 @@
 ---
 id: list-audit-events
-title: "`GET /v1/audit` — query audit events (Story ).
-Returns a paginated list of audit events with filters by action,
-target resource type, and date range. Requires `payments:admin` scope."
-description: "`GET /v1/audit` — query audit events (Story )."
-sidebar_label: "`GET /v1/audit` — query audit events (Story ).
-Returns a paginated list of audit events with filters by action,
-target resource type, and date range. Requires `payments:admin` scope."
+title: "`GET /v1/audit`"
+description: "query audit events (Story )."
+sidebar_label: "`GET /v1/audit`"
 hide_title: true
 hide_table_of_contents: true
-api: eJzVVcFu2zgQ/RViTi2gOE63WBS6ZYG0KLDFFml6cg1nLI1lNhTJkiO3riGgH9Ev3C9ZDGXLduzE3expfRFMvuGb4Ty+WQFjFSEfgcdlTZYjjDNwngKydvZtCTkYHXmCTal5QosEycBjwJqYgsSuwGJNkAMWEgQZaAs5fGkoLCGDkmIRtE9bObzWhimo6VL16EBfGh2ohHyGJlIGsZhTjZCvgJdeDo4ctK2gbbOeizFUxJNA0TWhoElC/iJzF6s2sWod+6Q8PFY0ifr7CfL3WJESmHpW4zd1MRwOn/8SpbZMFQXIYOZCjdwt/f7yMAl2d3Ti8lMWG9y/KHcs6OidjRRl/8VwKJ/9w//UkZWbqSQV1UulcJbJsuDRe6OLpKzzz1GCVoekGAJK5pqpjjvrbvqZCt7LewS6hGwrO9Y1Rcbai4h9EBmz7jJeYw5rS+EuTJpIYaLLLWK0gWRgG2Ng3EotIZBJBZzE7u5vt/smNo0uhf2+jk8de1T3j0f0t/JYPiUynQlUhAWs2QjuUnp5Ja28XvcfWvll8HL426EE3ukYta3UFO3dq3xjKXlSRB4ISxUL5zuKSEUTNC+TgTwYAPloLPLb57l9c3WjzhcX5wl4q/7+8VMlxe+JTz37wC4s1fPBJ3tN3AQbFSqPlbbIVCpzRLDqq+a5miWriFuXyj7ZY6aRKbSlkqtTAW1FA3XdiTOq220xZa3tbVf5ADKoiedOjLUiTlbKc8ihrya94JlLzVp3Id3OWe/Q92/jA1nW9pX6I13i+zUsXco6RrlQzCly5+qZKslQhUxRsVPr8Py1cV8lP6MLkkbnvb28e3uj/rpWlx6LOZ29GAwlx1LCZprCUUCbwYJC7BIcDi66Je8i12h3jv5fd3KvDf3bYvrG596gtlJyE4zsdV0eweJCDCv1eZzB3EWW1dVqipE+BtO2styZt7yLUkecmh2PvkfZm+uxuXo0nzta7k7qBZpGQCDT5ClsD8zSR7gfmNxPzOSBwfoI/+7E/i+kmzl6imqD23KN5U/QQpb8LYM5YSkvabRaR14WBXneiTqYnXJKbyVvrm6gbf8B1XtkwQ==
+api: eJzVVcFu2zgQ/RViTi2gOE63WBS6pUASFNhiizQ9uYYzlsYyG4lkyZFb1xDQj+gX7pcshpJlJ7bjNj3VF8HkG74ZzuObFTAWAdIROFxWZDjAOAHryCNra97kkEKpA0+wzjVPaBEhCTj0WBGTl9gVGKwIUsBMgiABbSCFzzX5JSSQU8i8dnErhUtdMnk1Xaoe7elzrT3lkM6wDJRAyOZUIaQr4KWTgwN7bQpomqTnYvQF8cRTsLXPaBKRP8ncxqp1rOpin5SHw4ImQX87Qv4OC1ICU88q/KrOhsPh85+i1IapIA8JzKyvkNulv1/uJsH2jo5cfsxijfuFcseCDs6aQEH2XwyH8rl/+D86sLIzFaWieqlk1jAZFjw6V+osKuv0U5Cg1S4peo+SuWaqwta6nX6ijO/lPQKdQ7KRHeuKAmPlRMTOi4xZtxl3mN3aYrj1kzqQn+h8gxitIQmYuixh3Egt3lMZCziK3d7fbPdNrGudC/tDHR87dq/uH4/ob+WxfHJkOhGoCAtYcym4c+nlhbTyuus/NPJL4OXwr10JvNUhaFOoKZq7V+naUtKoiNQT5ipk1rUUgbLaa15GAzkYAOloLPK7zxPVfU9o6tl7tn6png8+mmvi2pugUDkstEGmXJV7xKm+aJ6rWbSFsHGk5KPZZxCJQpMruSbl0RQ0UNetEIO63SSeV9rctlUOIIGKeG7FRAviaJs8hxROF2enMZH4Wmc2Nqa78XgTJ70bP6z8PRnW5pV6HS/sXQdT/33/oboYZX02p8Ctgycqp5IKZAqKrerC08vSfpH8Sp2RNDXtreTtmxv177U6d5jN6eTFYCg55hI20+T3ApoEFuRDm+BwcNYuORu4QrN19O3VxY3qa799WNtqYxV/ToO798T0lU9didpI6bUvpZy22yNYnIlJxX6PE5jbwLK6Wk0x0AdfNo0st4YtbyHXAaflli8fvKU9s3RvPne03J7OCyxrAYFMkKewHZifj3AfmNZPzOTAMH2Ef3tK/w7penYeo1rjNlxj+eO1kEVPS2BOmMuLGq26yPMsI8dbUTvzUk7pLeXq4gaa5n8B4l9i
 sidebar_class_name: "get api-method"
 info_path: docs/api/payments/bank-8-payments
 custom_edit_url: null
@@ -27,7 +23,7 @@ import Translate from "@docusaurus/Translate";
 <Heading
   as={"h1"}
   className={"openapi__heading"}
-  children={"`GET /v1/audit` — query audit events (Story ).\nReturns a paginated list of audit events with filters by action,\ntarget resource type, and date range. Requires `payments:admin` scope."}
+  children={"`GET /v1/audit`"}
 >
 </Heading>
 
@@ -41,7 +37,7 @@ import Translate from "@docusaurus/Translate";
 
 
 
-`GET /v1/audit` — query audit events (Story ).
+query audit events (Story ).
 Returns a paginated list of audit events with filters by action,
 target resource type, and date range. Requires `payments:admin` scope.
 

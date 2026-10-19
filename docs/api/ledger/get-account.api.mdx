@@ -1,17 +1,11 @@
 ---
 id: get-account
-title: "`GET /v1/accounts/{id}` — account detail.
-.5: customer-realm callers can only fetch their own accounts
-the service layer verifies the account's `customer_id` matches the
-caller's customer before returning. RLS is the backstop."
-description: "`GET /v1/accounts/{id}` — account detail."
-sidebar_label: "`GET /v1/accounts/{id}` — account detail.
-.5: customer-realm callers can only fetch their own accounts
-the service layer verifies the account's `customer_id` matches the
-caller's customer before returning. RLS is the backstop."
+title: "`GET /v1/accounts/{id}`"
+description: "account detail."
+sidebar_label: "`GET /v1/accounts/{id}`"
 hide_title: true
 hide_table_of_contents: true
-api: eJzlVs1u20YQfpXBXGIDtCSnLhDw5rRBYCBpAcc9yYK92h2Jay9nmd2hHEEg0IfoE/ZJiuVSshXZqXvuieTu/H7zzQw3KGoZsZyiI7OkgLMCfUNBifV8YbDEJcmN0tq3LFhgo4KqSSgknQ2yqglLtAYLtIwlNkoqLNBQ1ME2yQiWeJ7V4eJXLDDQ19YGMlhKaKnAqCuqFZYblHWTjEUJlpdY4MKHWgmW2LbWYNfNknJsPEeKSf7tZJIez/syJMo6LFB7FmJJkqppnNV9auO7mMQ3h+79/I607AU6zQkSr276lwGOm16jwChK2thnzb623DvAHkcmc6OSMR1ISf6YFdiEhLHYnMeeuQMcugK18zHr7m6njzBx61wyuoPLKKETsTX1uo+OfwTxvk4bArG8V06xph863Qf/l6wI2te1FSED82wDju68ZTKwCL7eHsbj0TX/1joHdgHsd7LBPwB9s1EirEngiOkBBozgwUqVZBsfxfIyHo9ywFF8TSGV51UQZUZ9V7HnoB9q/u/sLPCVYmz1fW6bFwPtnnLn1VVrgjetlv+MwVZvn37PBTUQ/RCnrkCx4uix/y6HRsWuS7dnk58OW/WzjdHyEuaK79+Vef6UQ6FjGUgZiNo3fXJnk7OXe529wMK3bPpIIuk2WFn3A+pl21hOZ90Bg28/friC8ep0vJUdb6zpbuHvP//acTCPltE1j34uYUu9k0DK1aCVcxQiaMXg2a1hQaIrkIpsAP/AWyPxmqUiiBRWVhM4taYAKwp2YSkm8a3gmwi3T+h9C7USXWWZa87u3sRdGDCnhQ8EgaQNbHk5gstPX8Bmm3Ol76P4ZoQF1iSVHwZ8P9ilwhIPUu8H+8L3RR9K3GN6MuyL7wH8QiyW38H7HvhPvVCPnk5hZaVi275AvLRMBQwcBGfnQYV1is9ZTYlA5W7LfL64gt8v4bxRuqKTt6NJis0kfwtL4VmBrsAVhZhDm4xO81HyXit+Yvr/U/a9au0aWeibjBunLCd82uDSXabEFFenjzsvrbnSmjRIKh8lXW82cxXpj+C6Lh1/bSmk3psVuFLBqnnizHSDxsb0brBcKBfpIJLdnsajy2HzHsPen8OzsQ6HiteYHLo2fWGB97TOPyZdmlwVKZMoMt0MF+daUyNPVA7+DdJs2PXIxw9X2HX/AOeyLrs=
+api: eJzdVs1u20YQfpXBXGIDtCSnLhDw5rRBYCBpAcc9yYK92h2Kay9nmd2hHEEg0IfoE/ZJiiUpybJs1732RHJ3fr/5ZoZrFLWImE/RkVlQwFmGvqagxHq+MJjjguRGae0bFsywVkFVJBSSzhpZVYQ5WoMZWsYcayUlZmgo6mDrZARzPO/V4eJXzDDQ98YGMphLaCjDqEuqFOZrlFWdjEUJlheYYeFDpQRzbBprsG1nSTnWniPFJP9+MkmP530ZEmUdZqg9C7EkSVXXzuoutfFdTOLrQ/d+fkda9gKd9gkSL2+6lwGOm04jwyhKmthlzb6y3DnADkcmc6OSMR1ISf8xy7AOCWOxfR575g5waDPUzsded3s73cHEjXPJ6BYuo4ROxFbU6e4cvwbxvk4TArF8VE6xpled7oP/S68I2leVFSED894GHN15y2SgCL7aHMbj0TX/1jgHtgD2W9ngH4B+2CgRViRwxPQAA0bwYKVMsrWPYnkRj0d9wFF8RSGV500Q9Yx6UrHnoB9q/u/szPCNYmz1fd82LwbaPubOm6tWB28aLf8Zg43ePv2eC2og+iFObYZixdGu/y6HRsW2Tbdnk58OW/WrjdHyAuaK7z/k/fzJh0LHPJAyELWvu+TOJmcv9zp7gcI3bLpIIukmWFl1A+pl25hPZ+0Bg9Xe+Bhd8+jnHDb0OgmkXAVaOUchglYMnt0KChJdgpRkA/gH3pA1XrOUBJHC0moCp1YUYEnBFpZiEt8Ivotw+4jCt1Ap0WUvc829u3dxGwbMqfCBIJA0gS0vRnD55RvY3uZc6fsovh5hhhVJ6Ych3g1vKTHH8fJ0vAlxvLam7YZ34bvCDmXscDsZdsJTkL4Ri+UP8LED90snBH//+RfoFFavlG1aFIgXlimDgWfg7DyosErxOaspkSTfbpKvF1fw+yWc10qXdPJ+NEmxmeSvsBSeFWgzXFKIfWiT0Wl/lLxXih+Zvv386QoOcr99mt16tzH+Z2wYmlboh4xrpywnnJrgUs49Naa4PN3tt7TScmvS0Ch9lHS9Xs9VpD+Ca9t0/L2hkPpsluFSBavmiTvTNRob07vBvFAu0isIH10OW/YY9v4Sno11OFS8wuTQNekLM7ynVf8T0qYpVZIyiSrT9XBxrjXV8kjl4D8gzYFtr3z+dIVt+w8S9SYf
 sidebar_class_name: "get api-method"
 info_path: docs/api/ledger/bank-8-ledger
 custom_edit_url: null
@@ -29,7 +23,7 @@ import Translate from "@docusaurus/Translate";
 <Heading
   as={"h1"}
   className={"openapi__heading"}
-  children={"`GET /v1/accounts/{id}` — account detail.\n.5: customer-realm callers can only fetch their own accounts\nthe service layer verifies the account's `customer_id` matches the\ncaller's customer before returning. RLS is the backstop."}
+  children={"`GET /v1/accounts/{id}`"}
 >
 </Heading>
 
@@ -43,7 +37,7 @@ import Translate from "@docusaurus/Translate";
 
 
 
-`GET /v1/accounts/{id}` — account detail.
+account detail.
 .5: customer-realm callers can only fetch their own accounts
 the service layer verifies the account's `customer_id` matches the
 caller's customer before returning. RLS is the backstop.

@@ -1,19 +1,11 @@
 ---
 id: conclude-case
-title: "`POST /v1/cases/{id}/conclude` — conclude a case as reportable: the
-report kind lands in `suspicious_activities` and
-`bank8:compliance:suspicious:detected` is emitted exactly once —
-Reporting files it through its own durable consume (detection here,
-filing there — the single-filing-executor rule, DESIGN.md §8)."
-description: "`POST /v1/cases/{id}/conclude` — conclude a case as reportable: the"
-sidebar_label: "`POST /v1/cases/{id}/conclude` — conclude a case as reportable: the
-report kind lands in `suspicious_activities` and
-`bank8:compliance:suspicious:detected` is emitted exactly once —
-Reporting files it through its own durable consume (detection here,
-filing there — the single-filing-executor rule, DESIGN.md §8)."
+title: "`POST /v1/cases/{id}/conclude`"
+description: "conclude a case as reportable: the"
+sidebar_label: "`POST /v1/cases/{id}/conclude`"
 hide_title: true
 hide_table_of_contents: true
-api: eJztVcFuIzcM/RWCpxZQ4mRPwdyyzrYIttstkvRQOEFMS7SHG400K2mcGMYA/Yj+Q/+jn9IvKTjjxE63LXrosXOZEUVRfI+PnC0WWmWsZlhTcJ5TxjuDseVERWK4dFihjcH6zvG9pcxoMPHnjnN5G90Gq61uFw5FP6ltvdjh5ORTjkFt2dbckH6VTctYYVx8YlvQoONsk7TqjRVejVFhEd0GljHB7loJKyDQq4Ey5C63YiV2GX7/+RcoNUPiNqYCDxLcbegy58Gaa0rsYH417L6X4OawjpYWnae0Od7BkMROwY8x7jWG4m+TMlCEs+Z9uLmHkUuSsMK+N1ikeDVNd0RNKfMODvbqsL+qpI4HQ25jyGP8Nycn+npNB5p/TWzfD5e8Pj//4eP1DUzWpxOlLk+24vrJcyXnA3nPqwN6R6i08Fwpi7fhgFzwFFwGCTDfV+GebJG1KFVzIK3AfEHh4ayysWm9ULBc7b0rx4VtYTcHycCNlMIO+Ils8RuIwbImdhvGomnll+I5gxQodYrdqgYpGeJjANclTVNB5K5h+GoMLTFAzYnNbViK1whFly9iyRJWno/GvSN+YtuVmCB1ng1cvLu+/Pb748bBb7+efa0aabjUUXugjVkl21KpscK/oRUNZrZdkrLBanZnUEt1te+Wd0/UtKqUP2nqRUsGJSzjILKdpAYyj/ZkftE21xyKhDN4O7A+fXEcEJ9/+G4yvfmmgvc/TSfTiwsDmcJAUoZsE3OQsDJQEoVMI3lNDFJiGuzkOZUBKHhZst1Yz8qKF8shDzgCNZrmh8sb+HgF5y3Zmo/eHJ+gQXGa2lI4/aVDb3DNKY8oTo5PR5Py3FA4CP2/kP8LIb8SzcsMK/xUJq0nCcp9l7zujRqf4fpUZ5ByjgYrceNEGoV+Z7DWjqhmuN0uKPOPyfe9mj93nHbqX1MShaar3mDN5FQLsy0+8GYclzrfjm40GXX3nSb1xazrzfOJc2u5Lf/oe3fQtKocNLjY/aia6PRMoked/vQ4Ttk4kDIOerVt0VNYdbRS3zGmPn8AscmOAw==
+api: eJztlV1uIzcMx69C8KkFlDjZp2Dess62CLbbLZL0oXCCmJZoDzcaaVbSODGMAfYQvUPv0aP0JAVnnNi7268D1C+eoSiK/PEvzhYLrTJWM6wpOM8p453B2HKiIjFcOqzQxmB95/jeUmY0mPhjx7m8jm6D1VaXC4eij9S2Xuywc/Ihx6C2bGtuSJ/KpmWsMC4+sC1o0HG2SVr1xgqvxqiwiG4Dy5hgd6yEFRDo0UAZcpdbsRK7DH98+hVKzZC4janAgwR3G7rMebDmmhI7mF8Nq28luDmso6VF5yltjndlSGKnxY8x7jWG1t8mJVCEs+Z9uLgvI5ckYYV9b7BI8Wqa7kBNKfOuHOzVYX9USR0PhtzGkMf4r05O9O9zHGj+M9i+Hw75fP9z0w7YjXXQwnOliG7DATnwFFwGCTDfI74nW2QtymEOpHjnCwoPZ5WNTeuFguVq7105LmwLuzlIBm6kFHbAT2SL30AMlrVlt2HsiLZ1KZ4zSIFSp9itapCSIT4GcF3SNFUCuWsYvhlDSwxQc2JzG5biNULR1xclZAkrz0fj2hE/se1KTJA6zwYu3lxffv/jcePg99/OvlUBNFzqqAJvY1Y9tlRqrHCyPp0osjzZiusnzyDRYGbbJSkbrGZ3BrUPV/ur8OaJmlZl8IVgXoRiUMIyDgra6WWAebSH+dWduOZQJJzB64H69MVxqPj83Q+T6c13Fbz9ZTqZXlwYyBQGSBmyTcxBwspASRQyjfCaGKTENNjJcypDoeBlyXZjPSsVL5ZDHuoI1Gia7y5v4P0VnLdkaz56dXyCBsVpakvh9JcOvcE1pzxWcXJ8OpqUc0PhIPT8p/fXN/A3xOdf8jiYNf/r+9/1vRtUhZ/KpPUkQXvQJa8gR63PcH2qg0bZo8FK3Dh2RsHfGaz1ZlQz3G4XlPnn5PtezR87TrtbsKYkWou+9QZrJqeamG3xgTfjTNSOHd1oMuruO03qq4HWm+cd59ZyW/7R9+7g8qqC0OBi9zVqotM9iR51xNPjOErjoKBxmqtti57CqqOV+o4x9fcnJv2C1g==
 sidebar_class_name: "post api-method"
 info_path: docs/api/compliance/bank-8-compliance
 custom_edit_url: null
@@ -31,7 +23,7 @@ import Translate from "@docusaurus/Translate";
 <Heading
   as={"h1"}
   className={"openapi__heading"}
-  children={"`POST /v1/cases/{id}/conclude` — conclude a case as reportable: the\nreport kind lands in `suspicious_activities` and\n`bank8:compliance:suspicious:detected` is emitted exactly once —\nReporting files it through its own durable consume (detection here,\nfiling there — the single-filing-executor rule, DESIGN.md §8)."}
+  children={"`POST /v1/cases/{id}/conclude`"}
 >
 </Heading>
 
@@ -45,7 +37,7 @@ import Translate from "@docusaurus/Translate";
 
 
 
-`POST /v1/cases/{id}/conclude` — conclude a case as reportable: the
+conclude a case as reportable: the
 report kind lands in `suspicious_activities` and
 `bank8:compliance:suspicious:detected` is emitted exactly once —
 Reporting files it through its own durable consume (detection here,

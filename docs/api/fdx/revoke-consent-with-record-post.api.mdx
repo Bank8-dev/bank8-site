@@ -1,23 +1,11 @@
 ---
 id: revoke-consent-with-record-post
-title: "`POST /fdx/v6/consents/{consentId}/revoke` — POST alias of the PUT
-revocation surface (fdx DESIGN.md §4): the recipient-side fdx instance
-calls this with the delegated provider token after revoking its own
-registry row, so a fintech-initiated revocation lands on the provider's
-grant ledger and takes effect on the next data call. The delegated
-token's `sub` IS the grant's customer — the same subject the bank's own
-dashboard revokes for."
+title: "`POST /fdx/v6/consents/{id}/revoke`"
 description: "`POST /fdx/v6/consents/{consentId}/revoke` — POST alias of the PUT"
-sidebar_label: "`POST /fdx/v6/consents/{consentId}/revoke` — POST alias of the PUT
-revocation surface (fdx DESIGN.md §4): the recipient-side fdx instance
-calls this with the delegated provider token after revoking its own
-registry row, so a fintech-initiated revocation lands on the provider's
-grant ledger and takes effect on the next data call. The delegated
-token's `sub` IS the grant's customer — the same subject the bank's own
-dashboard revokes for."
+sidebar_label: "`POST /fdx/v6/consents/{id}/revoke`"
 hide_title: true
 hide_table_of_contents: true
-api: eJztlF9uEzEQxq8ympe00uYPpVTVvoEKKA9QRFMJKYkSZz2bNdnYi2eyTRWtxCG4A/fgKJwE2dlGoe0JEE+78tjf/Gbms3coasmYjjFzlskKThN0FXklxtmhxhQ91W5FszY+uzNSzDxlzutZ5VgwQU9chShjusOzwSB8NHHmTRVUMMXPUUNDbRRIQfDp+mYEqjSK4URTSUslxCBuH7wdQUiaRQbgjc9VRqfYJHg+ePlU/KoV0MCbxVfKBNYbFlhQVFt6ZaXDkG1Y3Jo8Nk2CTNnGG7nHdDxNHsnNI1w/19t+fdFvy+b+rv0b6qa/b8kcfn//cVyKyx/4J/ZpAXCS6y1cvb0Zvv/YW2v49fP8NI0HPGWmMmSly0YThG3Gsiib0cRmqiwZpDAMofXxgD5UXHlXG00exK3IgsqFfGzeytglGGFwdzbQLA2Lvwfv7hJgBwpyY4WyomusERO1jpBLZTWDszHbQ44OT2zsJpSkl+RBWQ2iVsRAeR763h6wtBXQShQE+B6MjpEnNqJ2GOa8WcxhePPsmGJvQ4DVmg6DDQsLZVedti6tuFg45ffwgSR3vocJrkkKF9zbWrRSUmCKT6dqDuPEBI3NXfCXGCkJUwypLru53uJjk9yQFWMv4U3Ykb67+hJ5XUU28hm7TCCs1he9V4cG9g+DDoilycgyhXxWrUO6D8MRXH+G15XKCuqe9QYBSYdMuSH/7IYmwZo876EGvRf7pVD0Wtkj6f+m/gdM/ZcFdyj3VRit0Fb6VamMDaPf+DLE9n4f49679QUmDw88Y4Kp0fHZjrafJliES5KOcbdbKKZbXzZNWP62Id8+kbXyRi3CpRhPm6PrFYyCTfMHT9I5zQ==
+api: eJztVW1u00AQvcpo/qSVnA9KqSr/AxVQfkBRk0pISZRsvON4ibNrdsZuqsgSh+AO3IOjcBK0jhuitlwA8SvRzO6b92berHcoasUYTzBxlskKziJ0BXklxtmhxhg9VW5N8zY/vzOSzT0lzut54VgwQk9chCxjvMOzwSD8aOLEmyKgYIw3DYaGyiiQjODT9WgMKjeK4URTTislxCBun7wdQyiaNByAS5+qhE6xjvB88PIp+FULoIHL5RdKBDYlCyypQVt5ZaXDkJQsbkMe6zpCpqT0Ru4xnsyiR3CLhlw/1dt+ddFvZXN/1/4b6rq/b8kCfn37fizFpQ/8p/apADhJ9Rau3o6G7z/2Nhp+/jg/jZsLnhJTGLLSZaMJwjFjWZRNaGoTlecMkhmG0Prmgj4oLryrjCYP4tZkQaVCvmne2tgVGGFwdzawWRkWfw/e3UXADhSkxgolWddYI6bBOqKcK6sZnG2qPdTo8NQ23YSc9Io8KKtB1JoYKE1D39sLlrYCWomCQL4H42PKU9tQ7TAsuFwuYDh6dkxNb0OC1YYOgw2BpbLrTqtLK86WTvk9+cAkdb6HEW5IMhfc21q0UJJhjE+nag7jxAiNTV3wlxjJCWMMpS67qd7iY5OMyIqxl/AmnIjfXX1u+LqCbMPP2FUEIVpd9F4dGtg/DDpQzE1ClinUs2oTyn0YjuH6Bl4XKsmoe9YbBEo6VEoN+WcP1BFW5HlPatB7sQ8F0Rtlj6D/Zuo/8hePNe7CkyDhSfi/E//ETsh9EawgtJV+kStjg1VKn4dR7/djgnuvVxcYPXwQGCOMjW6e+WZNZhFmYaniCe52S8V06/O6DuGvJfn2Sa2UN2oZlmgyq4/WMTgD6/o3m71Kcw==
 sidebar_class_name: "post api-method"
 info_path: docs/api/fdx/bank-8-fdx
 custom_edit_url: null
@@ -35,7 +23,7 @@ import Translate from "@docusaurus/Translate";
 <Heading
   as={"h1"}
   className={"openapi__heading"}
-  children={"`POST /fdx/v6/consents/{consentId}/revoke` — POST alias of the PUT\nrevocation surface (fdx DESIGN.md §4): the recipient-side fdx instance\ncalls this with the delegated provider token after revoking its own\nregistry row, so a fintech-initiated revocation lands on the provider's\ngrant ledger and takes effect on the next data call. The delegated\ntoken's `sub` IS the grant's customer — the same subject the bank's own\ndashboard revokes for."}
+  children={"`POST /fdx/v6/consents/{id}/revoke`"}
 >
 </Heading>
 

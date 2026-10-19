@@ -1,21 +1,11 @@
 ---
 id: create-encrypted-session
-title: "Create a new encrypted card session.
-Inserts a row in `card_sessions` (defined by migration
-`14-payments.sql`) with `status = 'active'` and returns
-the session id together with a short-lived session token (a UUID) and
-the placeholder public key the client should use to encrypt the
-sensitive payload. The session expires after 5 minutes by default."
+title: "`POST /v1/cards/{id}/encrypted-session`"
 description: "Create a new encrypted card session."
-sidebar_label: "Create a new encrypted card session.
-Inserts a row in `card_sessions` (defined by migration
-`14-payments.sql`) with `status = 'active'` and returns
-the session id together with a short-lived session token (a UUID) and
-the placeholder public key the client should use to encrypt the
-sensitive payload. The session expires after 5 minutes by default."
+sidebar_label: "`POST /v1/cards/{id}/encrypted-session`"
 hide_title: true
 hide_table_of_contents: true
-api: eJztlM1uEzEQx19lNBdA2uajgFStxIEPIVWotIL2lESNY0+ypo7temZTotVKPARPyJOgaZpSKFdunCzZM+P//OdndyhmxVhPMJvtmqIwzipMmYoRn+KxwxptISN0SdGWbRZyl0zMPkWssBDnFJkY6w4PRyNdHLEtPms61nj6ASu0KQpF0VOTc/D2tvjwC2tIh2wbWhusu77v+wpfjMaP63xMAqaVhqJoOjm8jXz+OPLEM/u4AmkI9k0B25QJVkYI9Qom2xYvW6wns+qP/Le37YKBSDdw3zRYUxzcdT6YxuPIVITBQEk34CPMNWBvDc/hqaOlj+RgsYW1X+38nMb5+MXBXtWAr8P8Gdx4aWDOYqRleAVPjBW/oSdzMNFBIWlL5GnUdu6qg3cgaUXSUNllG+AmFTkIfkP3KkHSFUV4auDi4vjdMy23K5ODsdSk4KhAbhfBW7ii7a1hNniKotXa4KBlAkl7EzRgGpkiexWo5oZk3ADOH0ijr9kXYjBLoQIvYe1jK8TqgqOlaYMMsMI1SZOUrZxYsMJspMEah5vxUG3kYeddP7w3/+AXcT4uk85cvATCGhcmXh3dO4p/DvOz8hKP4I2G1Wd7HH58+75nA1KxDbHsBlSBo0DKCWvnd+n1+5BuVHfwliKTCohmrfefHJ/D6Sd4nY1t6OBwMFKNTtOWnspfA/oKN1R4J3A0GO+21Im1iQ9K/wfx34P4Gy0dyjar80JfZZiD8VEn05agZztGJ7gZ64+mlGKFtXdY4WNQZxU2inY9wa5bGKaLEvpet69bKnf/zsYUbxaK8WTWV9iQcYrMpMMr2mKNr62lrM9jY0Kruh59nv3swVs6O/18jn3/E/JUDmg=
+api: eJztVM1qFEEQfpWiLkaY7I9GCAMeoiIEiQmanDaL29tdu9Omt7vTVbNxGQZ8CJ/QJ5HKZmNIBG+ePA30VFV/f9Udilky1hPMZrOiKIzTClOmYsSneOywRlvICH2haMsmC7kvTMw+RaywEOcUmRjrDl+MRvpxxLb4rO1Y4+kHrNCmKBRF/5qcg7e3w4dfWUs6ZNvQymDd9X3fV3gwGj+d8zEJmFYaiqLt5PC28uXTyhPP7OMSpCHYkQK2KRMsjRDqFUy2LV42WE+m1aP+t7d0wUCkG7gnDdYUB3fMB5fxODIVYTBQ0g34CDMt2EnDM9hztPCRHMw3sPLLrZ6XcTY+2N+hGvB1mD2HGy8NzFiMtAyv4Zmx4tf0bAYmOigkbYl8GZXO3XTwDiQtSRoq224D3KQi+8Gv6R4lSLqiCHsGLi6O3z3XcdsxORhLTQqOCuR2HryFK9rcCmaDpyg6rQ0OWiaQtBNBCy4jU2SvAFXckIwbwPkDaPQt+0IMZiFU4BWsfGyFWFVwtDBtkAFWuCJpkmYrJxasMBtpsMbhejxUGXnYedcP78Xf/504HxdJPRcvgbDGuYlXh/eK4mMzP2te4iG80bL6bBeHn99/7LIBqdiGWLYGVeAokOaElflde/0+pBvFHbylyKQAolnp/SfH53D6CY6ysQ3tvxiMFKPTtoWn8seCvsI1Fd4CHA3G2yNVYmXig9Gzs9PP5/A3TWaPOXe/1+1/lv9BlmWT1S2hbzLMwfiobrYlqBPbXE9wPdZXUF3ECmvvsMKn4Z5W2Og61BPsurlhuiih7/X4uqVy91atTfFmrtGfTPsKGzJOYzbp8Io2WOORtZR1pdYmtIrryYPbTx/sn0YM+/4XgrEgqw==
 sidebar_class_name: "post api-method"
 info_path: docs/api/payments/bank-8-payments
 custom_edit_url: null
@@ -33,7 +23,7 @@ import Translate from "@docusaurus/Translate";
 <Heading
   as={"h1"}
   className={"openapi__heading"}
-  children={"Create a new encrypted card session.\nInserts a row in `card_sessions` (defined by migration\n`14-payments.sql`) with `status = 'active'` and returns\nthe session id together with a short-lived session token (a UUID) and\nthe placeholder public key the client should use to encrypt the\nsensitive payload. The session expires after 5 minutes by default."}
+  children={"`POST /v1/cards/{id}/encrypted-session`"}
 >
 </Heading>
 

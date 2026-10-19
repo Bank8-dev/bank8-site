@@ -1,17 +1,11 @@
 ---
 id: upsert-risk-profile
-title: "`POST /v1/customers/{id}/risk-profile` — upsert the customer's AML
-risk rating (low/medium/high) with a recorded rationale. The rating
-drives monitoring intensity; a PEP determination forces at least
-`high` (a PEP can never sit below it)."
-description: "`POST /v1/customers/{id}/risk-profile` — upsert the customer's AML"
-sidebar_label: "`POST /v1/customers/{id}/risk-profile` — upsert the customer's AML
-risk rating (low/medium/high) with a recorded rationale. The rating
-drives monitoring intensity; a PEP determination forces at least
-`high` (a PEP can never sit below it)."
+title: "`POST /v1/customers/{id}/risk-profile`"
+description: "upsert the customer's AML"
+sidebar_label: "`POST /v1/customers/{id}/risk-profile`"
 hide_title: true
 hide_table_of_contents: true
-api: eJzlVcFu20gM/RWCl20BJUqCPRTaU+p2gWIbNEjdw8IOGnqGtqYZzagzlF3DELAfsV/YLyko2Y2DBLt7X18kc0gO+d4jtUOhVcZqhjUF6zllvC0wtpxIXAzvLFbYtZmTfE4u339uU1w6z1hg4q8dZ3kd7RarHZoYhIPoK7Wtd2aIL7/kGNSWTc0N6ZtsW8YK4+ILG8ECLWeTXKveWOHNmBUW0W5hGROMl7uwAqkZTJclNpx+yXB59R60JNBKwwq+//W3uszDWDl5BpehoWBJYtrCCzp4bpzUsRNwkiGxicmyhcSUY9Bjl+ehC9RZJ7Tw/PJ036xLbBWoMYsaDxcpZG1S0MRx1ib3Pg/tZklq6I+jnp72BYoTPcJPQ983Lt9fj5DvkcFevR7qkdTxYMhtDHm8/eLsTB+PkcXiP3PUD3f8enHxTBY9eWy6u/7wcQrl+rw8sJPLnbN9qeyc7AVzN/AzkvkMk/NwTOULHzdlw9Z1TVm7Vf1yoAzoiK0DiKcwrXkfNw82uTVnaGJwEtNApnacnWx/A4Lrt9dgWTg1LgwJVGGGM5CAZ8oyD3d6352KRZ0NBQi85gTZCSzYxw04GRTRsNRRp6ONWWXcktRY4b/AgAVmNl1yssVqdlugYn/zMElvv1HTjtI4SOggjkfKOdKTC8s4SGkvnAWF+1cnJjatdxQMPxmxjxzEhVfwWh2ryU/HgaHLq/flZPp7BX/8OSknb94UkCkYjcyQTWLWESlAEoVMg/0I7QLIc5LSUGbwbslmazwrWt4ZDnnoK1CjZV69m8KHG7hsydR8cnF6hgU6q6UtHadnHfoC15zy2MXZ6floUvwbCkep/5+CfETyz80i/E3K1pMLilWXvJ6NWp3h+lyXwgEjLLByVnV2LNjbAmtVeDXD3W5BmT8l3/dq/tpx2qt4TcnprtR/fYE1k1UOZzu85y1WOBkXz8lUi1J332lxT5ZQXxwiLo3hVv7R9/ZoCJVxLHCx/xg10WpMos0wNptx/cUBnP1+3ujDU1h1tFLfMaf+fgAi73ys
+api: eJzdVVFv20YM/isEX9YCSpQEeyi0p9TtgGINGqTuw2AHDX2irWtOd+odZdcwBOxH7Bf2lxSU5EVZgm3P84tkHskjv+8jdUChTcJigRX50nFMeJthaDiS2ODflVhg2ySO8jnadP+5iWFtHWOGkb+2nOR1KPdYHNAEL+xFX6lpnDV9fP4lBa+2ZCquSd9k3zAWGFZf2AhmWHIy0TbqjQXeDFlhFco9rEOE4XLrNyAVg2mThJrjTwkur96DlgRaqd/A9z/+VJelHyonx2AT1ORLkhD38IKOnjsrVWgFrCSIbEIsuYTIlILXY5uWvvXUllZo5fjl6disjVwqUEMWNR4vUsiaqKCJ5aRNjj4P7SaJauimUU9PuwzFih7hp77vG5vurwfIR2SwU6+HeiS23BtSE3wabr84O9PHY2Qx+88cdf0dP19cPJNFTx6bBoaeoWfpp/y8cGGX11zats4ru6le9jwATSg4InMK84rHuKUvo91ygjp4KyH2DGkbycr+FyC4fnsNJQvH2vo+gcrGcAIScExJlv5O77tTBaizIQ+etxwhWYEVu7ADKz3NNUsVVPJNSKrNhqTCAvPteX5sLeUHW3a5dnbyMAyJTRut7LFY3GaogN48jMfbb1Q3A99HXRwZfySHiUisX4deH6MaVuTvX52YUDfOkjf8ZG4+shfrX8FrdSxmfzn2Y3F59T6fzX8t4LffZ/nszZsMEnmjkQmSicyq+wwkkk/U2ydoZ0COo+SGEoOzazZ741jRctawT31fnmot8+rdHD7cwGVDpuKTi9MzzNCWWtracnzWoctwyzENXZydng8mxb8mP0l9d/3h4xz+hYm7v+My2Uv/J52Oa0P4m+SNI+sVszY6bXjQ7AK35zrxR6www8KWqrepcG8zrFTpxQIPhxUl/hRd16n5a8txVPOWotVFqP+6DCumUrlcHPCe91jgbED4ZK5FqbtrtbgnG6bLjhGXxnAj/+h7OxlGZR4zXI1fmjqUGhNp14/PbthtoWd8XL47fTjym5Y26jvk1N8PxhVuHw==
 sidebar_class_name: "post api-method"
 info_path: docs/api/compliance/bank-8-compliance
 custom_edit_url: null
@@ -29,7 +23,7 @@ import Translate from "@docusaurus/Translate";
 <Heading
   as={"h1"}
   className={"openapi__heading"}
-  children={"`POST /v1/customers/{id}/risk-profile` — upsert the customer's AML\nrisk rating (low/medium/high) with a recorded rationale. The rating\ndrives monitoring intensity; a PEP determination forces at least\n`high` (a PEP can never sit below it)."}
+  children={"`POST /v1/customers/{id}/risk-profile`"}
 >
 </Heading>
 
@@ -43,7 +37,7 @@ import Translate from "@docusaurus/Translate";
 
 
 
-`POST /v1/customers/{id}/risk-profile` — upsert the customer's AML
+upsert the customer's AML
 risk rating (low/medium/high) with a recorded rationale. The rating
 drives monitoring intensity; a PEP determination forces at least
 `high` (a PEP can never sit below it).

@@ -1,13 +1,11 @@
 ---
 id: issue-card
-title: "`POST /v1/cards/issuance:issue` — issue a card (delegates to the existing
-card-issuing handler; the business route shape)."
+title: "`POST /v1/cards/issuance/issue`"
 description: "`POST /v1/cards/issuance:issue` — issue a card (delegates to the existing"
-sidebar_label: "`POST /v1/cards/issuance:issue` — issue a card (delegates to the existing
-card-issuing handler; the business route shape)."
+sidebar_label: "`POST /v1/cards/issuance/issue`"
 hide_title: true
 hide_table_of_contents: true
-api: eJzFlttuGzcQhl+FmKsWWB18UtztlRMkQC5SG45zpRjSiBxpmVAkQ3JlC4KAPESfsE8SDHetg5WqadGiuhFBzvwccr4Z7goSziKUQ/C4nJNNEe4LcJ4CJu3sWwUl6BhrGkkMCgoI9KWmmF46tYRyBdLZRDbxEL03Wma33qfoLM9FWdEceZSWnqAEN/lEMrU6OpDirVm6ckZRGGnF+/vAESRNMe+BQY18cKqWiQ02akOIKWg7gwJsbQx7Tl2YY4IS6lorWBeNc2P+p26t2TaEbbwbywNhevQ6LEcK019Ie7RHQ1YUZdCe7w1KeFMbI26ufuuKa2uWIlUkDMYkzoXSM52iwEAiJhdICW3F2KMdscGoWR7/yi4f7bSVEToKN5nWUWIiJRYaxZjPGsvyFQb12sqwzFuPBVq1I5xVxtSskxp5tGMhnanntgvrdQFJJ8M39CoQJmKx2wYNWPPyNr8p1JQnonc2Nik97ff5b//orCEybAzav0KWzkp7uS0gJkx1hF02CpD5GGqE6b8H8MnrH3G3E+gxc+ayk/Sc/harPxjDM+iOa7bXfXj6XYgyPg0gzM+6gPP+2SEi73SM2s7EBO3ny/KpZZUMDVpJ5UPQiUSUzlPWjyTroNMSyuEKjjpBObxfH1Tj+Ob6/Z3oLU56uWh6G5+M6Vj88fX3hliBgi3ET4oMzTBRFMnl6qVHHZO2s4+WDTpszSeo0CpDIZermNRRW4pRBFdz/BV6+rkLBcwpVY57sHeR2faYKijhMKA8YI65Pm63Pfr1I869oe9SDGdTvLyYDs47Fy9OXnTOLwanncnZVHZO5S+Ds+lggFMc7JXJDhPPwP1RrT0St2q5R+6UhbZTl4lp+cip62yeqOdpek82aXspXuYM37RmOTutj3BBVhRT86wVYi9NrXv5xrgHvnWjJTGI5Qosznn/d2/vxPWtuPIoK+qcdvvAtcJuU03huwbrAhYUYhNgv3vSTHEe582D0Er/34jt3eSmRhM9pp43qC1HXQfDaw19Q1ictABwJp7ibYfETbBiWsshrFYTjPQhmPWap7/UFLgU7wtYYNA4MU3ZFVARKr7H4Qo+05IbQtP9O3dNd16gqTmsg5dgXTx5XElJPh21vd8pKL51KGDSfsfMnWKfgA/8guADlAD8HcTeuXfluRUYtLMaZ2zbaPLvG9+OM5M=
+api: eJzFls1uGzcQx1+FmFMLrCz5S3G2JydIgBxSG457UgxpRM5qmVAkQ3JlC4KAPkSfsE8SDHdtSVaipkWL6iKCnPlzyPnNcFeQcBahHIHH5ZxsinBXgPMUMGln3ykoQcfY0FhiUFBAoC8NxfTKqSWUK5DOJrKJh+i90TK79T9FZ3kuyprmyKO09AQluOknkqnT0YEUb83StTOKwlgr3t8HjiBpinkPDGrsg1ONTGzwpDaCmIK2MyjANsawZ+XCHBOU0DRawbponVvz77p1ZpsQNvE+We4J04PXYTlWmP5C2qM9GLKiKIP2fG9QwtvGGHF9+euRuLJmKVJNwmBM4kwoPdMpCgwkYnKBlNBWTDzaMRuM2+XJL+zy0VadjNBRuGnVRImJlFhoFBM+ayzL1xjUGyvDMm89EWjVlnBWmVC7Tmrs0U6EdKaZ2yNYrwtIOhm+odeBMBGL3bRowJqXN/lNoaE8Eb2zsU3pyWDAf7tHZw2RYWPQ/hWydFbayW0BMWFqImyzUYDMx1BjTP89gI9e/4i7rUAPmTOXvaTn9LdY/cEYnkF3WLO77v3Tb0OU8WkBYX7WBZwNTvcRea9j1HYmpmg/X5SPLatkaNBKKu+DTiSidJ6yfiTZBJ2WUI5WcNAJytHdeq8aJ9dXH25Ff3Hcz0XTf/LJmE7En7//0RIrULCF+EmRoRkmiiK5XL30oGPSdvbRskGPrfkENVplKORyFdMmaksxiuAajr9GTz8fQQFzSrXjHuxdZLY9phpK2A8oD5hjro+bTY9+84Bzb+ibFMNphRfn1fCsd/7i+EXv7Hx40pueVrJ3Il8OT6vhECsc7pTJFhPPwP1RrR0SN2q5R26VhbaVy8R0fOTU9Z6eqOdp+kA2aXshXuUMX3dmOTudj3BB1hRT+6wVYidNnXv51rh7vnWjJTGI5Qosznn/9+9uxdWNuPQoa+qdHA2Aa4XdKk3hmwbrAhYUYhvg4Oi4neI8ztsHoZP+HmJtRifPz7r15P7vdHZMJHpIfW9QWz5hEwxH2ZI6gsVxBwtn7THAbkjcMGsmuxzBajXFSL8Fs17z9JeGApftXQELDBqnpi3RAmpCxXc+WsFnWnLzaC+kd9t28gWahsPaezXWxaPHpZTk00Hbu63i42uGAqbdN8/cKfYJeM+vDd5DCcDfTOyd+1yeW4FBO2twxratJv++AucvQpY=
 sidebar_class_name: "post api-method"
 info_path: docs/api/payments/bank-8-payments
 custom_edit_url: null
@@ -25,7 +23,7 @@ import Translate from "@docusaurus/Translate";
 <Heading
   as={"h1"}
   className={"openapi__heading"}
-  children={"`POST /v1/cards/issuance:issue` — issue a card (delegates to the existing\ncard-issuing handler; the business route shape)."}
+  children={"`POST /v1/cards/issuance/issue`"}
 >
 </Heading>
 

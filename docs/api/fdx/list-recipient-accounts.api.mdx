@@ -1,21 +1,11 @@
 ---
 id: list-recipient-accounts
-title: "`GET /v1/recipient/accounts` — list consented accounts for the recipient.
-If `consent_id` is provided, returns only the accounts the customer
-selected during the provider's consent screen (per FDX UX Guidelines
-§3.1.6 'Select Accounts'). The account IDs are stored in
-consent_resources and used to filter the Ledger account list.
-If no consent_id is provided, returns all accounts (backward compat)."
-description: "`GET /v1/recipient/accounts` — list consented accounts for the recipient."
-sidebar_label: "`GET /v1/recipient/accounts` — list consented accounts for the recipient.
-If `consent_id` is provided, returns only the accounts the customer
-selected during the provider's consent screen (per FDX UX Guidelines
-§3.1.6 'Select Accounts'). The account IDs are stored in
-consent_resources and used to filter the Ledger account list.
-If no consent_id is provided, returns all accounts (backward compat)."
+title: "`GET /v1/recipient/accounts`"
+description: "list consented accounts for the recipient."
+sidebar_label: "`GET /v1/recipient/accounts`"
 hide_title: true
 hide_table_of_contents: true
-api: eJztVG1O20AQvcpo/hQk4yTQIuR/VFAUtRSpBAkpichmdxJvcXa3u2uXyLLEIXqH3qNH6Umqcb4ocID+6C/L3jfvzbx53hqjmAfMhjhTDzhO0DryImpr+gozLHSId56kdppMvBNS2tLEgAl6Cs6aQAGzGg+7XX4oCtJrx9WY4dVHTFBaE8lEPhXOFVq23J2vgSE1BpnTQmBWN03TJPi223vJ89lGEGXMyUQuJ4Ut8ugl8lKHoM0cYk7w4ewWJDdoYidI6wjmIhKySiBZeh2XmA3HyTOKycX5ADpVr7MdurMZegK/H38AO7IhJgWbQ5hZ3+pu69KR6c9gsobeaTUBHcB5W2lFKgFPsfQmgDXFsq3cUvGLLEO0C/IjE6ggyVKq9Jvh1iz+Tdi0AkF6IgN7jnw7+80tXJRaUaENhZH59fMo7aXHMMLrlg9O12oj3E9hsJOH/lkA4QlCtJ4UaDMymxk8BVt6SQGEUVAGUhAtzHQRaTX8J1Jz8lsq9mplg7GwM+J1H0RR7CzYmwp5/114BdIunIj7KSa4oJhbTuWcIiboRMwxw9eXhQlqM7OckahjQZjhVJj7kwOO+fOlX3O0zAm8Z0TG7vGmrSMDXKTNPGk9rY7Td1vvd6LcW6ElmUCsZ8SC5S77A7j6AqdOyJwODtMut6RYaabJvwpoEqzIh1VT3bS3+uRsiAthnlD/D+m/G9K/klVjXDreWKSH2HGF0IY3WvqCz1YBHmLVa+/T9UowwW2IxwnmNkQG1fVUBLrxRdPw528l+fUFVgmvxZQjPhw3CeYkFOdrWOM9LTHDUynJMW0lipKbeXERN+MnP9fF+QCb5g8/IiVi
+api: eJztVFtu2zAQvMpif5oAimwnbRDoL0XSwGjTAI0DBLANmybXFhuZZElKjSEI6CF6h96jR+lJipVfQZL//vRLkLQ7Mzs7ZI1RLAJmQ5yrRxwnaB15EbU1fYUZFjrEiSepnSYTJ0JKW5oYMEFPwVkTKGBW43G3yw9FQXrtuBszvPmICUprIpnIf4VzhZYtdudr4JIag8xpKTCrm6ZpEnzb7b3E+WwjiDLmZCK3k8K28uRl5bUOQZsFxJzgw8U9SBZoYidI6wgWIhIySyBZeh1XmA3HyTMIHnjbRwq2A8Pc+hZ250U6Mv05TDelE62moAM4byutSCXgKZbeBLCmWLWdOyh+kWWIdkl+ZAIVJJlKlX6rfYPi34StFAjSExk4cOTb0e7u4arUigptKIzM718naS89hRHetnhwvmEb4WEKgz099C8CCE8QovWkQJuR2c7gKdjSSwogjIIykIJoYa6LSOvhP5FakN9BsVdrG4yFvRGv+yCKYm/BwUzIh+/CK5B26UQ8TDHBJcXccugWFDFBJ2KOGXaqXmdneudJALWZW45A1LEgzHAmzMPZEaf4+U5vOTnmDN5zRcbu/fnxE6wjA9ykzSJpPa1O03c77/ekrK3Qkkwg5jNiyXTX/QHcfIFzJ2ROR8dplyUpZppr8q8WNAlW5MNaVDftrT85G+JSmCfQ06vLAbw+9/T5cPX+hP3P7r/Lblw53lykx9hxhdCGN1v6ghe0DvIQq157bW52gAnuwjxOMLchclFdz0SgO180DX/+VpLf3FOV8FrMOOrDcZNgTkJxzoY1PtAKMzyXkhzDVqIoWcyL+7YZPzlkV5cDbJq/ZUEayA==
 sidebar_class_name: "get api-method"
 info_path: docs/api/fdx/bank-8-fdx
 custom_edit_url: null
@@ -33,7 +23,7 @@ import Translate from "@docusaurus/Translate";
 <Heading
   as={"h1"}
   className={"openapi__heading"}
-  children={"`GET /v1/recipient/accounts` — list consented accounts for the recipient.\nIf `consent_id` is provided, returns only the accounts the customer\nselected during the provider's consent screen (per FDX UX Guidelines\n§3.1.6 'Select Accounts'). The account IDs are stored in\nconsent_resources and used to filter the Ledger account list.\nIf no consent_id is provided, returns all accounts (backward compat)."}
+  children={"`GET /v1/recipient/accounts`"}
 >
 </Heading>
 
@@ -47,7 +37,7 @@ import Translate from "@docusaurus/Translate";
 
 
 
-`GET /v1/recipient/accounts` — list consented accounts for the recipient.
+list consented accounts for the recipient.
 If `consent_id` is provided, returns only the accounts the customer
 selected during the provider's consent screen (per FDX UX Guidelines
 §3.1.6 "Select Accounts"). The account IDs are stored in

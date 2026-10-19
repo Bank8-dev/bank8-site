@@ -1,17 +1,11 @@
 ---
 id: debatch-step
-title: "Execute the `debatch_file` step: split the file's records into chunked
-instruction batches (design §10). The step is idempotent on
-`file_id:chunk_index` — a workflow retry re-enters here and the
-terminal-file guard makes completed work a no-op."
+title: "`POST /v1/internal/files/debatch`"
 description: "The chunk count derives from the file's `size_bytes` (the"
-sidebar_label: "Execute the `debatch_file` step: split the file's records into chunked
-instruction batches (design §10). The step is idempotent on
-`file_id:chunk_index` — a workflow retry re-enters here and the
-terminal-file guard makes completed work a no-op."
+sidebar_label: "`POST /v1/internal/files/debatch`"
 hide_title: true
 hide_table_of_contents: true
-api: eJzdVF2OEzkQvkqpXgCp84d4QL1PLAtahJZBM8NTGCWOXUl747a9rurMZKOW9hB7B+7BUTgJqu6MdoA9AU8t2VVflb+fPqGYHWO9xGyOLUXhiY9CJZqANxU6Ylt8Fp8i1njdENimi3uwqYsCjoo/EMO2pBakIdj6QI8Y1uz/ptXmKMRreCwNfYzrl79/ePd2dfnq5cXlb1frSSGbioONEdsANxQCZCoj+pNf4HydTWEfd1C8I4YByEeW0lndaKLjJpzJwoEK+xSh0M6zUCEH21Qe7mSDYZ5ihSlTMdr+xmGNjoYVViyUscJCnFNkYqxP+HQ+18+3HFy8xQptikJR9NbkHLwdAGd/spackG1DrcH61Pd9X+Gz+eJHnHdJwHTSUBRtJ4daymS74uWI9fKmwpakSbplTixYYTbSYI2zw2J2L9JMn8ez8zOwQh+3SaeJl0BY48bE/fPJvbj4vaRXOj8+h1+1rH5/LoMv//wL5x5IxTbEMpJWgaNAOyOqR4Jze/06pFslN3hLkUkXiKbV+X+8uYaLS3iRjW1o8nQ61x2dtm09lf8t6Cs864k1zqeL8Ug5aE18AP3qjmwnNKi8vhdS+ViDylkD5+DloQlGWzH4KGn0GrlvLDUakhgeO2K/i/D502L+ZArqfMUEz+AdtTnJQE38GNeKvfKuHvBWPjq6Ww8EGrhNZb8N6RYKSTlCoQmpbgwNFQIT3ehpodL6aMJgaNh1pjhozZ4YbGpzICE3QIGBmCYpT7+X8fSfI3+OkMoxq8JCdzLLwfioDuhK0KeOKVjiYTHY/fyzqnBIwsDMmIWbChvNTb3E02ljmD6U0Pd6/FdH5RyxgynebDQpy5u+woaMU1cuT7inI9b4wlrKmr2DCZ2u9EPe+4dBfX9xdY19/xVuduEN
+api: eJztVEuOGzcQvUqhNrGB1s/IwuisHH8Qw4jHmBmvNAM1RZbUjNgkw6rWjCI0kEPkDrlHjpKTBNXSIONPDhDAKwJk1atXVe/xiGK2jPUSszl0FIUnPgqVaALeVuiIbfFZfIpY43VLYNs+7sCmPgo4Kn5PDJuSOpCWYOMDfcfQsP+NVuuDEDfwRFq6ic3Lnz6+f7e6fP3y4vLVVTMpZFNxsDZiW+CWQoBM5YT+9Ac4P2dT2MctFO+IYQTykaX0VhlNtNyEM1nYU2GfIhTaehYq5GCTymNONhjm6U28ia/vyfZC42PjaKSw0qgGWCjXwDl4eZx7YsPgo6QTRXKfMDn1QQxPHLHfRvjrz8X86RR0YIoJnsE76nISigIp3sRGsVfe1SPeykdH9w38/fsfYOAuld0mpDsoJOUAhSakO2FoqRCY6E6jECqdjyaMc4Btb4qDzuyIwaYuBxJyIxQYiGmS8hQrTJmKUcpvHdb40L1yxAoLcU6RibE+4rP5XI9PFXDxDiu0KWob+mpyDt6OgLNfWEOOyLalzmB9HIZhqPD7+eJLnPdJwPTSUhRNJ4caymT74uWA9fK2wo6kTcoyJxasMBtpscbZfjF7kOhMO+fZuQ2s0MdN0mriJRDWuDZx93zyIG38XNBXWj8+hx81rP5wDhu3cM6BVHSxchpaBY4CbY2oGhOc0+s3Id3pcIO3FJmUQDSd1v/57TVcXMKLbGxLk2fTuXJ0mrbxVL4aMFR4VjPWOJ8uTlc6g87ER9DNh4ura/jvaTSfd3v8d3HfnPz/d7IcsspA6F5mORgfVSZ9Cbrok1WWuF+Mnjj/5xWOAhl1cTLMbYWtmqte4vG4NkwfSxgGvf61p3L24d4Ub9Zqp+XtUGFLxql0l0fc0QFrfGEtZTXo3oReKX3xKQyP3ayyxWH4B7o4TY0=
 sidebar_class_name: "post api-method"
 info_path: docs/api/payments/bank-8-payments
 custom_edit_url: null
@@ -29,7 +23,7 @@ import Translate from "@docusaurus/Translate";
 <Heading
   as={"h1"}
   className={"openapi__heading"}
-  children={"Execute the `debatch_file` step: split the file's records into chunked\ninstruction batches (design §10). The step is idempotent on\n`file_id:chunk_index` — a workflow retry re-enters here and the\nterminal-file guard makes completed work a no-op."}
+  children={"`POST /v1/internal/files/debatch`"}
 >
 </Heading>
 
@@ -46,6 +40,11 @@ import Translate from "@docusaurus/Translate";
 The chunk count derives from the file's `size_bytes` (the
 `CHUNK_RECORDS`-record batch shell per chunk); record parsing rides the
 instruction-file-spec version registered for the file's class.
+
+Execute the `debatch_file` step: split the file's records into chunked
+instruction batches (design §10). The step is idempotent on
+`file_id:chunk_index` — a workflow retry re-enters here and the
+terminal-file guard makes completed work a no-op.
 
 <ParamsDetails>
   

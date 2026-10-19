@@ -1,15 +1,11 @@
 ---
 id: create-card
-title: "`POST /v1/cards` — create a card.
-Gated by `FeatureGate::Cards`. The PAN is obfuscated with the
-placeholder `CardEncryption` before being stored in `encrypted_pan`."
-description: "`POST /v1/cards` — create a card."
-sidebar_label: "`POST /v1/cards` — create a card.
-Gated by `FeatureGate::Cards`. The PAN is obfuscated with the
-placeholder `CardEncryption` before being stored in `encrypted_pan`."
+title: "`POST /v1/cards`"
+description: "create a card."
+sidebar_label: "`POST /v1/cards`"
 hide_title: true
 hide_table_of_contents: true
-api: eJzVls9uGzcQxl+FmPNK/q+425MTxEUOqQ3HPSmGdkTOaplQJENyZQuCgDxEn7BPUsxybUm24yRFe6guWnBnPg45v4/cFSScRSjH4HE5J5si3BTgPAVM2tl3CkqQgTDRRGJQUECgLy3F9NqpJZQrkM4msokf0XujZZe39yk6y2NRNjRHfkpLT1CCm34imXodHUjx3CzdOKMoTLTiAnzgEpKm2M2BQU18cKqViQMe1MYQU9B2BgXY1hjOrF2YY4IS2lYrWBc5OYd/M60P25Swqfch8okw3XkdlhOF6TvSHu2LJSuKMmjP+wYlnLfGiMuz34fiwpqlSA0JgzGJY6H0TKcoMJCIyQVSQltRebQTDpjk19WvnPLR1r2M0FG4ad1GiYmUWGgUFa81luUbDOqtlWHZTV0JtGpLuFOpKL8nNfFoKyGdaed2COt1AUknwzv0psODxa4yGrDm15v+ptBSNxC9szG39HB/n/92l84aItPGpP0raOlOaae5BcSEqY2wDUfRY64mmP57Au+z/hF4W4W+FM5gDpKe00/B+oM1PKLuZc1+u5+ufpuijp9MCAO0LuB4/+gpI+91jNrOxBTt59Py/tAqM9K3QScSUTpPnXgk2QadllCOV/DtDCjHN+snRqwuLz5ci73FwV4XWom/vv7Z0ylQ8Njwo/2tc9V0KapzwtQG4oFsrVgNxXVDz5jwVqcm+8sblJS7L6rHfpxS7QKJKfF6txy/68khFDCn1Dg+qr2LbACPqYESHmqHAtg1V5uj++0dzr2hZ9mGoxpPT+rR8eDk1cGrwfHJ6HAwParl4FD+MjqqRyOscbRjni1SHuH8o1o7fG7UuqNzyyza1q7jqKem6+ng4ep63MIPZJO2p+J11/rLPqxrZJ8jXJANxZSvu0IoMjTDRFEkJ/r08ty4W95moyUxnuUKLM55/vfvrsXFlTjzKBsaHA73gR3EabWm8GzAuoAFhZgL3B8e5CFu3DzfE730/wi/nU1/MHmiu7TnDWrLC2yD4XeZzDEsDnpWuu+NhrEtx7BaTTHSH8Gs1zz8paXA3r0pYIFB49RkqxbQECre3/EKPtOSj498Vwyu81m+QNNyDU/ujXVxn3EmJfn0YuzNlrO4G1DAtP/smTvFOQFv+b7BWygB+LuJs7uTrhtbgUE7a3HGsVmTf38D8ChDCw==
+api: eJzNls9uGzcQxl+FmPNK/q+425MTxEUOqQ3HPSmGdkTOaplQJENyJQuCgDxEn7BPUsxybcuy4yRFC1QXLbgzH4ec30fuGhLOIpRj8Liak00RbgpwngIm7ew7BSXIQJhoIjEoKCDQl5Zieu3UCso1SGcT2cSP6L3Rssvb+xSd5bEoG5ojP6WVJyjBTT+RTL2ODqR4bpZunFEUJlpxAT5wCUlT7ObAoCY+ONXKxAH3amOIKWg7gwJsawxn1i7MMUEJbasVbIqcnMO/mdaHPZTwUO995BNhuvU6rCYK03ekPdoXS1YUZdCe9w1KOG+NEZdnvw/FhTUrkRoSBmMSx0LpmU5RYCARkwukhLai8mgnHDDJr6tfOeWjrXsZoaNw07qNEhMpsdAoKl5rLMs3GNRbK8Oqm7oSaNWWcKdSUX5PauLRVkI6087tEDabApJOhnfoTYcHi11lNGDDrx/6m0JL3UD0zsbc0sP9ff57vHTWEJk2Ju1fQUt3So+aW0BMmNoI23AUPeZqgum/J/Au6x+Bt1XoS+EM5iDpOf0UrD9Yww51L2v22/109dsUdfxkQhigTQHH+0dPGXmvY9R2JqZoP5+Wd4dWmZFeBp1IROk8deKRZBt0WkE5XsO3M6Ac32yeGDFvs0DBkcOP9rfOQNOVqM4JUxuIB7KLYjUU1w0947elTk22kjcoKTdaVLvWm1LtAokp8dK2zP3YfkMoYE6pcXwqexeZdY+pgRL2Fgd73YqgADbI1cMp/fYW597QsxjDUY2nJ/XoeHDy6uDV4PhkdDiYHtVycCh/GR3VoxHWOHrkky0odsj9Ua1HKD6odafkli+0rV2HTA9I177B/S21260PZJO2p+J11+XLPkz89fVP0ecIF2RDMeWbrRCKDM0wURTJiT69PDduydtstCQmsVyDxTnP//7dtbi4EmceZUODw+E+sFk4rdYUng3YFLCgEHOB+8ODPMSNm+croZeuLi8+XIv7Fla7i9u6Zf+nVPZoJLpNe96gtrzQNhiuPRM6hsVBz0z3idEwvuUY1uspRvojmM2Gh7+0FNiuNwUsMGicmuzOAhpCxfs8XsNnWvGJkfdkcJ2P7wWalmt4clVsiruMMynJpxdjb7Ycxl2BAqb9l87cKc4JuOQrBpdQAvCnEmd3h1s3tgaDdtbijGOzJv/+Bn6GPVA=
 sidebar_class_name: "post api-method"
 info_path: docs/api/payments/bank-8-payments
 custom_edit_url: null
@@ -27,7 +23,7 @@ import Translate from "@docusaurus/Translate";
 <Heading
   as={"h1"}
   className={"openapi__heading"}
-  children={"`POST /v1/cards` — create a card.\nGated by `FeatureGate::Cards`. The PAN is obfuscated with the\nplaceholder `CardEncryption` before being stored in `encrypted_pan`."}
+  children={"`POST /v1/cards`"}
 >
 </Heading>
 
@@ -41,7 +37,7 @@ import Translate from "@docusaurus/Translate";
 
 
 
-`POST /v1/cards` — create a card.
+create a card.
 Gated by `FeatureGate::Cards`. The PAN is obfuscated with the
 placeholder `CardEncryption` before being stored in `encrypted_pan`.
 

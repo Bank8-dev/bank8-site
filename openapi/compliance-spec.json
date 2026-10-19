@@ -36,7 +36,8 @@
           {
             "sentin8:admin": []
           }
-        ]
+        ],
+        "summary": "`GET /v1/admin/attributes`"
       },
       "put": {
         "tags": [
@@ -71,7 +72,8 @@
           {
             "sentin8:admin": []
           }
-        ]
+        ],
+        "summary": "`PUT /v1/admin/attributes`"
       },
       "delete": {
         "tags": [
@@ -101,7 +103,8 @@
           {
             "sentin8:admin": []
           }
-        ]
+        ],
+        "summary": "`DELETE /v1/admin/attributes`"
       }
     },
     "/v1/admin/overview": {
@@ -109,7 +112,7 @@
         "tags": [
           "admin-ui"
         ],
-        "summary": "GET /v1/admin/overview — the data endpoint behind the overview page:\nalert/case counts for the tenant env.",
+        "summary": "`GET /v1/admin/overview`",
         "operationId": "admin_overview",
         "parameters": [
           {
@@ -139,7 +142,8 @@
           {
             "bank8:admin": []
           }
-        ]
+        ],
+        "description": "the data endpoint behind the overview page:\nalert/case counts for the tenant env."
       }
     },
     "/v1/admin/policy-sets": {
@@ -168,7 +172,8 @@
           {
             "sentin8:admin": []
           }
-        ]
+        ],
+        "summary": "`GET /v1/admin/policy-sets`"
       }
     },
     "/v1/admin/policy-sets/disable": {
@@ -197,7 +202,8 @@
           {
             "sentin8:admin": []
           }
-        ]
+        ],
+        "summary": "`POST /v1/admin/policy-sets/disable`"
       }
     },
     "/v1/admin/policy-sets/enforce": {
@@ -226,7 +232,8 @@
           {
             "sentin8:admin": []
           }
-        ]
+        ],
+        "summary": "`POST /v1/admin/policy-sets/enforce`"
       }
     },
     "/v1/admin/policy-sets/shadow": {
@@ -255,7 +262,8 @@
           {
             "sentin8:admin": []
           }
-        ]
+        ],
+        "summary": "`POST /v1/admin/policy-sets/shadow`"
       }
     },
     "/v1/admin/policy-sets/{name}": {
@@ -295,7 +303,8 @@
           {
             "sentin8:admin": []
           }
-        ]
+        ],
+        "summary": "`GET /v1/admin/policy-sets/{name}`"
       },
       "put": {
         "tags": [
@@ -341,7 +350,8 @@
           {
             "sentin8:admin": []
           }
-        ]
+        ],
+        "summary": "`PUT /v1/admin/policy-sets/{name}`"
       },
       "delete": {
         "tags": [
@@ -371,7 +381,8 @@
           {
             "sentin8:admin": []
           }
-        ]
+        ],
+        "summary": "`DELETE /v1/admin/policy-sets/{name}`"
       }
     },
     "/v1/admin/policy-sets/{name}/test": {
@@ -416,7 +427,8 @@
           {
             "sentin8:admin": []
           }
-        ]
+        ],
+        "summary": "`POST /v1/admin/policy-sets/{name}/test`"
       }
     },
     "/v1/admin/relations": {
@@ -445,7 +457,8 @@
           {
             "sentin8:admin": []
           }
-        ]
+        ],
+        "summary": "`GET /v1/admin/relations`"
       },
       "put": {
         "tags": [
@@ -480,7 +493,8 @@
           {
             "sentin8:admin": []
           }
-        ]
+        ],
+        "summary": "`PUT /v1/admin/relations`"
       },
       "delete": {
         "tags": [
@@ -510,7 +524,8 @@
           {
             "sentin8:admin": []
           }
-        ]
+        ],
+        "summary": "`DELETE /v1/admin/relations`"
       }
     },
     "/v1/admin/relations/check": {
@@ -565,7 +580,8 @@
           {
             "sentin8:admin": []
           }
-        ]
+        ],
+        "summary": "`GET /v1/admin/relations/check`"
       }
     },
     "/v1/admin/ui/{page}": {
@@ -573,7 +589,7 @@
         "tags": [
           "admin-ui"
         ],
-        "summary": "GET /v1/admin/ui/{page} — return the RFW definition for the requested\nadmin page.",
+        "summary": "`GET /v1/admin/ui/{page}`",
         "operationId": "get_admin_ui",
         "parameters": [
           {
@@ -612,7 +628,8 @@
           {
             "bank8:admin": []
           }
-        ]
+        ],
+        "description": "return the RFW definition for the requested\nadmin page."
       }
     },
     "/v1/alerts": {
@@ -620,7 +637,7 @@
         "tags": [
           "handlers"
         ],
-        "summary": "`GET /v1/alerts` — list alerts, optionally by status.",
+        "summary": "`GET /v1/alerts`",
         "operationId": "list_alerts",
         "parameters": [
           {
@@ -649,7 +666,8 @@
               }
             }
           }
-        }
+        },
+        "description": "list alerts, optionally by status."
       }
     },
     "/v1/alerts/{id}/case": {
@@ -657,7 +675,7 @@
         "tags": [
           "handlers"
         ],
-        "summary": "`POST /v1/alerts/{id}/case` — escalate an alert to a case with an\naudited actor claim (the assignee). The alert transitions to\n`escalated` in the same transaction.",
+        "summary": "`POST /v1/alerts/{id}/case`",
         "operationId": "open_case",
         "requestBody": {
           "content": {
@@ -678,7 +696,8 @@
               }
             }
           }
-        }
+        },
+        "description": "escalate an alert to a case with an\naudited actor claim (the assignee). The alert transitions to\n`escalated` in the same transaction."
       }
     },
     "/v1/alerts/{id}/status": {
@@ -686,7 +705,7 @@
         "tags": [
           "handlers"
         ],
-        "summary": "`POST /v1/alerts/{id}/status` — queue operation on an alert (claim /\nreview / close) with an audited actor: the caller's verified identity\ndrives the journal entry; the transition is guarded against terminal\nstates (closed alerts never reopen — a new detection raises a new\nalert).",
+        "summary": "`POST /v1/alerts/{id}/status`",
         "operationId": "update_alert_status",
         "requestBody": {
           "content": {
@@ -710,7 +729,8 @@
           "409": {
             "description": ""
           }
-        }
+        },
+        "description": "queue operation on an alert (claim /\nreview / close) with an audited actor: the caller's verified identity\ndrives the journal entry; the transition is guarded against terminal\nstates (closed alerts never reopen — a new detection raises a new\nalert)."
       }
     },
     "/v1/cases/{id}": {
@@ -718,7 +738,7 @@
         "tags": [
           "handlers"
         ],
-        "summary": "`GET /v1/cases/{id}` — case detail with its alert.",
+        "summary": "`GET /v1/cases/{id}`",
         "operationId": "get_case",
         "responses": {
           "200": {
@@ -729,7 +749,8 @@
               }
             }
           }
-        }
+        },
+        "description": "case detail with its alert."
       }
     },
     "/v1/cases/{id}/conclude": {
@@ -737,7 +758,7 @@
         "tags": [
           "handlers"
         ],
-        "summary": "`POST /v1/cases/{id}/conclude` — conclude a case as reportable: the\nreport kind lands in `suspicious_activities` and\n`bank8:compliance:suspicious:detected` is emitted exactly once —\nReporting files it through its own durable consume (detection here,\nfiling there — the single-filing-executor rule, DESIGN.md §8).",
+        "summary": "`POST /v1/cases/{id}/conclude`",
         "operationId": "conclude_case",
         "requestBody": {
           "content": {
@@ -758,7 +779,8 @@
               }
             }
           }
-        }
+        },
+        "description": "conclude a case as reportable: the\nreport kind lands in `suspicious_activities` and\n`bank8:compliance:suspicious:detected` is emitted exactly once —\nReporting files it through its own durable consume (detection here,\nfiling there — the single-filing-executor rule, DESIGN.md §8)."
       }
     },
     "/v1/cases/{id}/dismiss": {
@@ -766,7 +788,7 @@
         "tags": [
           "handlers"
         ],
-        "summary": "`POST /v1/cases/{id}/dismiss` — dismiss a case as not reportable:\nthe recorded reason lands in the case row and NO suspicious activity\nis emitted — Reporting never sees a dismissed case (a dismissed\ncase is terminal; a new detection opens a new case).",
+        "summary": "`POST /v1/cases/{id}/dismiss`",
         "operationId": "dismiss_case",
         "requestBody": {
           "content": {
@@ -793,7 +815,8 @@
           "422": {
             "description": ""
           }
-        }
+        },
+        "description": "dismiss a case as not reportable:\nthe recorded reason lands in the case row and NO suspicious activity\nis emitted — Reporting never sees a dismissed case (a dismissed\ncase is terminal; a new detection opens a new case)."
       }
     },
     "/v1/cases/{id}/evidence": {
@@ -801,7 +824,7 @@
         "tags": [
           "handlers"
         ],
-        "summary": "`GET /v1/cases/{id}/evidence` — the case's investigation evidence:\nthe originating alert, every sanctions screen against its subject,\nand the customer's risk profile (when resolved). Read-only —\nevidence is the input to the conclude/dismiss decision, never\nmutated by it.",
+        "summary": "`GET /v1/cases/{id}/evidence`",
         "operationId": "get_case_evidence",
         "responses": {
           "200": {
@@ -812,7 +835,8 @@
               }
             }
           }
-        }
+        },
+        "description": "the case's investigation evidence:\nthe originating alert, every sanctions screen against its subject,\nand the customer's risk profile (when resolved). Read-only —\nevidence is the input to the conclude/dismiss decision, never\nmutated by it."
       }
     },
     "/v1/customers/{id}/beneficial-owners": {
@@ -820,7 +844,7 @@
         "tags": [
           "handlers"
         ],
-        "summary": "`GET /v1/customers/{id}/beneficial-owners` — list the customer's\ndisclosed beneficial owners (references only).",
+        "summary": "`GET /v1/customers/{id}/beneficial-owners`",
         "operationId": "list_beneficial_owners",
         "responses": {
           "200": {
@@ -836,13 +860,14 @@
               }
             }
           }
-        }
+        },
+        "description": "list the customer's\ndisclosed beneficial owners (references only)."
       },
       "post": {
         "tags": [
           "handlers"
         ],
-        "summary": "`POST /v1/customers/{id}/beneficial-owners` — disclose a beneficial\nowner against a KYC record (idempotent per (kyc, identity_ref) —\nre-disclosing the same owner converges to the same row).",
+        "summary": "`POST /v1/customers/{id}/beneficial-owners`",
         "operationId": "disclose_beneficial_owner",
         "requestBody": {
           "content": {
@@ -865,7 +890,8 @@
               }
             }
           }
-        }
+        },
+        "description": "disclose a beneficial\nowner against a KYC record (idempotent per (kyc, identity_ref) —\nre-disclosing the same owner converges to the same row)."
       }
     },
     "/v1/customers/{id}/kyc": {
@@ -873,7 +899,7 @@
         "tags": [
           "handlers"
         ],
-        "summary": "`GET /v1/customers/{id}/kyc` — list a customer's KYC records.",
+        "summary": "`GET /v1/customers/{id}/kyc`",
         "operationId": "list_kyc",
         "responses": {
           "200": {
@@ -889,13 +915,14 @@
               }
             }
           }
-        }
+        },
+        "description": "list a customer's KYC records."
       },
       "post": {
         "tags": [
           "handlers"
         ],
-        "summary": "`POST /v1/customers/{id}/kyc` — create a KYC record for a customer.",
+        "summary": "`POST /v1/customers/{id}/kyc`",
         "operationId": "create_kyc",
         "requestBody": {
           "content": {
@@ -918,7 +945,8 @@
               }
             }
           }
-        }
+        },
+        "description": "create a KYC record for a customer."
       }
     },
     "/v1/customers/{id}/pep": {
@@ -926,7 +954,7 @@
         "tags": [
           "handlers"
         ],
-        "summary": "`POST /v1/customers/{id}/pep` — record a PEP (politically exposed\nperson) determination. One live determination per KYC record — a\nre-determination updates it in place (the latest determination is\nauthoritative; history rides the audit journal).",
+        "summary": "`POST /v1/customers/{id}/pep`",
         "operationId": "record_pep_determination",
         "requestBody": {
           "content": {
@@ -947,7 +975,8 @@
               }
             }
           }
-        }
+        },
+        "description": "record a PEP (politically exposed\nperson) determination. One live determination per KYC record — a\nre-determination updates it in place (the latest determination is\nauthoritative; history rides the audit journal)."
       }
     },
     "/v1/customers/{id}/risk-profile": {
@@ -955,7 +984,7 @@
         "tags": [
           "handlers"
         ],
-        "summary": "`POST /v1/customers/{id}/risk-profile` — upsert the customer's AML\nrisk rating (low/medium/high) with a recorded rationale. The rating\ndrives monitoring intensity; a PEP determination forces at least\n`high` (a PEP can never sit below it).",
+        "summary": "`POST /v1/customers/{id}/risk-profile`",
         "operationId": "upsert_risk_profile",
         "requestBody": {
           "content": {
@@ -979,7 +1008,8 @@
           "422": {
             "description": ""
           }
-        }
+        },
+        "description": "upsert the customer's AML\nrisk rating (low/medium/high) with a recorded rationale. The rating\ndrives monitoring intensity; a PEP determination forces at least\n`high` (a PEP can never sit below it)."
       }
     },
     "/v1/health": {
@@ -987,8 +1017,8 @@
         "tags": [
           "meta"
         ],
-        "summary": "`GET /v1/health` — service health payload.",
-        "description": "Carries the binary's build identity (`version`/`build`, BUILDID-1) so\ncaptain's monitor populates `make status`'s VERSION column for every\ninstance — the consuming BINARY's identity, never a shared crate's.",
+        "summary": "`GET /v1/health`",
+        "description": "Carries the binary's build identity (`version`/`build`, BUILDID-1) so\ncaptain's monitor populates `make status`'s VERSION column for every\ninstance — the consuming BINARY's identity, never a shared crate's.\n\nservice health payload.",
         "operationId": "health",
         "responses": {
           "200": {
@@ -1003,7 +1033,7 @@
         "tags": [
           "handlers"
         ],
-        "summary": "`GET /v1/rules` — list the tenant's monitoring rules (thresholds\nderive from the jurisdiction registry — reporting's return-template\ndefinitions — materialized at env-init; never code).",
+        "summary": "`GET /v1/rules`",
         "operationId": "list_rules",
         "responses": {
           "200": {
@@ -1019,7 +1049,8 @@
               }
             }
           }
-        }
+        },
+        "description": "list the tenant's monitoring rules (thresholds\nderive from the jurisdiction registry — reporting's return-template\ndefinitions — materialized at env-init; never code)."
       }
     }
   },

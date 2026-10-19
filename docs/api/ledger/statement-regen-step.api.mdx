@@ -1,13 +1,11 @@
 ---
 id: statement-regen-step
-title: "`POST /v1/internal/statements/regen` — Flow proxy-back for the
-`statement-regen` workflow (design §10)."
+title: "`POST /v1/internal/statements/regen`"
 description: "Authorization mirrors the platform's canonical Flow proxy-back gate"
-sidebar_label: "`POST /v1/internal/statements/regen` — Flow proxy-back for the
-`statement-regen` workflow (design §10)."
+sidebar_label: "`POST /v1/internal/statements/regen`"
 hide_title: true
 hide_table_of_contents: true
-api: eJztVV2O20YMvgoxL/Gi8t8mD4HytC1QIGi2m3bdJ3th0SPamlriqMORvaohoE89QJA79B49Sk5SULY3u9kiJ8iTpJkP5Efy46eDibgRk86N40iBsTR3iclJbHB1dJ5Naq6aWPjg/kT9hsqF4INALAjqEuPah+qFgEX27CyW8GPp91AHf98OV2i3sMFICx5IK5CtS79f5lSSHqYp3ZNtIi0lUp1dpH1Mi2VJAapGItSBhDgC8oKVxdCJNJTD9eU1rAgDBdi7WECmKMevU2kl1WByDp3BQPm8kAWfQUMlMZRWMrClI44XI5gFZKl9iOByRcUWBu9/Gc7e3cJ3D1XCD1cXC3YCFdrCMT1gE2AfQSjsnCXAx+16A9qXtvKNwKe/P8CryTRZ8D543oBYX9Pp9OUIZgXB3oftuucLxDtwAjZ4kaEtyG4pB9ygY4naqAUfO3CC2hJdBQN83HmLDJ7LFtBG8AzIx6hRIPot8YIVgXkeSOTNk4nqCxOs2hpFSGDnEDIny/P9EvPKcXYxMonxNYW+2Le5SY1EjFQRx2WgDXE/W5OYQFJ7FhKTHszlZKKPpzK7+ckkxnqOxFFvsa5LZ/vA499FIQcjtqAKTXrouq5LzKvJ9Hmcn33sZ6CzsRgpNz3y5XPktRNxvOkLLynfUDjNRNVpNIGQbYKLrUnnd4mpKBZea6y9RJOYGmNhUjPeTcfn7Rk/lC/jvn6TGMdrr8mjiyWZ1KyQt6+Hx4Tmy2W7PYoUvldQ+u7I6tNfH8H6cGaZgBJQ5sQbx5To0PPGRijdKmBodSqls8RCmpix0rzXb2dw8ytc1WgLGl6OJsqtl/DaUfhfQJeYHQU5UpuMpscjzV4hPwqdvb+5ncFXG5H1VXxpDmsfjmLOHvDDE/y8CzDISdyG4d9/ppNecE86dvismW9O9c2pvupUsa1VrZHu47gu0bGquQmlqui4zHOzm/Yre/oZJp/9THoX05W+S0yhDpDOzeGwQqHfQtl1evxHQ+FkFjsMDle68PO7LjEFYa5LNj+YLbWqVWupVhfZYdkoq2d+1z22HF0w03X/AQ38vcI=
+api: eJztVUuO20YQvUqhN5YQ6jf2wqBXkwABjHgyTkZZSQOx1CyJHZHVTFdLGkYgkFUOYPgOuUeO4pMERX08ngmyzMorks3Hqlef93gwEddi0plxHCkwluY+MTmJDa6OzrNJzfU2Fj6431GfoXIh+CAQC4K6xLjyoXohYJE9O4slfF/6PdTBPzSDJdoNrDHSnHvSCGSr0u8XOZWkh2lKD2S3kRYSqc76aRfTYllSgGorEepAQhwBec7KYuBEtpTDzdUNLAkDBdi7WECmKMevU2kk1WByDp1BT/m8kDmfQQMlMZBGMrClI479IUwDstQ+RHC5omIDvfc/Dabv7uCbS5Xw3XV/zk6gQls4pgs2AfYRhMLOWQJ83K43oH1pKr8V+PTnB3g1niRz3gfPaxDrazqdvhzCtCDY+7BZdXyBeAdOwAYvMrAF2Q3lgGt0LFEbNedjB05QW6KroIePO2+RwXPZANoIngH5GDUKRL8hnrMiMM8Dibz5YqJ6wwTLpkYREtg5hMzJ4vx+gXnlOOsP5zznpxNf+XBkmEnESBVxHARaE2eXAqGXk7g1w99/Tcb9oUmMryl0LXubm9RcPlx0H3YbYhITSGrPQmLSg7kaj/Xy5bLe/mASYz1H4qhvsa5LZ7vAo19FIQcjtqAKTXpo27ZNzKvx5HmcH33sJqkTthgpNx3y5XPkjRNxvO7aV1K+pnCarO640QRCdhtcbEw6u09MRbHwWmPtJZrE1BgLk5rRbjI6a3B0KV9GXf0mMY5XXpNHF0syqVkib14PjgnNU8neHVcdvlVQ+u7I6tMfH8H6cGaZgBJQ5sRrx5ToCPOtjVC6ZcDQ6FRKZ4mFNDFjpXlv3k7h9me4rtEWNLgajpVbJ4SVo/CvgDYxOwpypDYeTo5Hmr1CfhQ6e397N4X/bET2tNTD52F/NaqvRvU/GFVsal3WSA9xVJfoWJd5G0rdxaOWZ2Y36RR7+qMmn+1MOhNTRd8nplADSGfmcFii0C+hbFs9/m1L4eQVOwwOl6r32X2bmIIwV43NDmZDjW68tVSrieyw3CqrZ3bXPnYc1Zdp238Ab5rXbw==
 sidebar_class_name: "post api-method"
 info_path: docs/api/ledger/bank-8-ledger
 custom_edit_url: null
@@ -25,7 +23,7 @@ import Translate from "@docusaurus/Translate";
 <Heading
   as={"h1"}
   className={"openapi__heading"}
-  children={"`POST /v1/internal/statements/regen` — Flow proxy-back for the\n`statement-regen` workflow (design §10)."}
+  children={"`POST /v1/internal/statements/regen`"}
 >
 </Heading>
 
@@ -47,6 +45,9 @@ is machine identity, not service authorization; anonymous → 401,
 wrong scope → 403. The workflow's env is cross-checked against the
 bearer's env claim (a proxy-back can only act on an env its token
 can address; the platform plane bypasses via `is_platform_admin`).
+
+Flow proxy-back for the
+`statement-regen` workflow (design §10).
 
 <ParamsDetails>
   

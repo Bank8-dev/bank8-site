@@ -1,13 +1,11 @@
 ---
 id: repair-instruction
-title: "`POST /v1/instructions/{id}/repair` — rewind the instruction to a step and
-re-process via Flow (Story )."
-description: "`POST /v1/instructions/{id}/repair` — rewind the instruction to a step and"
-sidebar_label: "`POST /v1/instructions/{id}/repair` — rewind the instruction to a step and
-re-process via Flow (Story )."
+title: "`POST /v1/instructions/{id}/repair`"
+description: "rewind the instruction to a step and"
+sidebar_label: "`POST /v1/instructions/{id}/repair`"
 hide_title: true
 hide_table_of_contents: true
-api: eJy9VU2P2zYQ/SvEnDYAvfamewgE9JCvAnsINvBuT47h0OJYZiKRDDmy1xAE9EfkF+aXFCMqslxvHaCH+kSTnOHMe2+eGiBVRMgW4NWhQksRlhKcx6DIOHunIYOAXpmwMjZSqHPeBgleBVUhYeDgBqyqEDIwGiQYCxl4RVuQoDHmwfguKIO7Ywpx9w4kBPxWm4AaMgo1Soj5FisFWQN08JwwUjC2AAkbFypFkEFdGw1tu0zBGOmN0weOyJ0ltMRL5X1p8q6D6ZfITzfnqd36C+bErQTulwxGPjXW112S09Lvu4UqRe21ItSiuyc2LgjaohiBcw0t17Y3Vq/IjR40lrDAcIbKA6EXxmp8EuREiuTV1Uz8LgJGUoHEJrhKrLEw1hpbvLgGCZWxpqoryGZtK4EMlfzKvGNrnrCBtm3/iXK3Eb2zMTX8cjY7b3fMVOIfmdr/jPGxhEUSSSRF2ImF4ZaQB2RYV4pYgKeU5K7yJfanQ/LFURy2LksOG0TCFE3IVMhc5C4ELLtKV0ZfSNCelHFJhCf5xzn/VbByEFa3HNBdla4w+eW6nknmahqyJSjPShiLYkTnvOeepdFKuJ39ds7+BxOjsYVYK/v1VfbTGbJR2THbB0MoYu58B8Lt7Payiqzjaamt7gqLmNfB0KEzj18+A9liyRN/mv3zx/uHRzHd3UzHEdPG6HaaNPtZ/Pjr+zBRp2PKE6ZE5NlTVn+yASc+uBxjFDujxB+l24urB3LhINK0IW0d26F3sXMNNrgMLj0PEngy5kefev+kWMqM1MghZp0kNskresY6TCaDKZ95Bloy9pV400H3sb/WtdvHCBfyLUZKRi6FxhILRRi58T484y65udLkyJrIBif/cPco7ufitVf5Ficvr2c8q5rDNgbDsxdaCTsMMRU4u75JWwxXpewo9f/L2wluw4wQPtHUl8pYrrEOJZ8lShewu4GTGWX4s861el6XErasgmwBTbNWEf8MZdvy9rcaA4t6KWGnglFrJnPRgDaR1xqyjSojnpU1GCtczXurfCHOPpfPFt9vKnsAfrSs+R9I+IqH9EVu2di2qDTztmj6g7fpxckjhx8Dz2y9lT8jXuc5erp4dzmaE2YZJKz7z3PlNMcEtWcc1T4V6XwCmAeC9xoolS1qVfDdlJN/fwO+7wLk
+api: eJytVU1vGzcQ/SvEnByAsuTUh4BAD0k/AB8CB7J7UgWFWo5WTHZJhpyVLSwW6I/oL+wvKWa5llaRqwJFdaK4nOHMe28eWyBdJlALCHpfo6MESwk+YNRkvbszoCBi0DaurEsUm4K3QULQUddIGDm4BadrBAXWgATrQEHQtAUJBlMRbeiDFNwdU4i7n0FCxG+NjWhAUWxQQiq2WGtQLdA+cMJE0boSJGx8rDWBgqaxBrpumYMx0Qdv9hxReEfoiJc6hMoWfQfTL4mvbs9T+/UXLIhbidwvWUz81brQ9ElOS7/vF7oSTTCa0Ij+nNj4KGiLYgTONXRc25N1ZkV+dKF1hCXGM1QeCIOwzuCzIC9yJK+uZuJHETGRjiQ20ddijaV1zrryzTVIqK2zdVODmnWdBLJU8S3znq15xga6rvse5X4jBe9SbvjtbHbe7pipzD8ytf8Z42MJiyySRJqwFwvDLaGIyLCuNLEATykpfB0qHL4eki+O4nBNVXHYQSRM0YRsjcxF4WPEqq90Zc2FBN1JGZdEeJJ/nPMfBSsPwuqXB3RXlS9tcbmuV5L5hg7ZMpRnJYxFMaJzPnDP0ugk3M5+OGf/o03JulKstfv6Tr04gxqVndRTtIQiFT70INzObi+ryHmelsaZvrCERRMt7Xvz+NdrQC2WPPGn2V8m5XT8eHK0SDxT2pnfXcRJiL7AlMTOavFr5Z/E1QP5uBd5ipC2nm0u+NS7ARuXgunuZjouZNpa003zKIAEVvz86D+/PGuWKCMwmvxZT/Ume8DARN/r5GC2Z16Ajqx7Jz70kHwajom//vhTDDHCx2KLibJBS2GwwlITJm58CFfcJTdX2QKZa3Vw6I93j+J+Lt4HXWxx8vZ6xjNoOGxjMb56oJOww5hygbPrm7zFcNXajVJ//nT/8CguAff5+35Hrv0/0TnMAOEzTUOlreNam1jxXZnaBexu4GQGmQbVu9LA71LCltWgFtC2a53wt1h1HW9/azCyaJcSdjpavWZSFy0Ym3htQG10lfBCm1fzwQrfiLPn8NXih03t9sCXVg3/AwlfcZ9f3I6Na4vaMH+LdvjwU75x8sjhx8Az2+7kS8T7osBAF88uR/PCbIOE9fD81t5wTNRPjKN+ykX6kAHmweC9FirtykaXfDbn5N/fT1T1TA==
 sidebar_class_name: "post api-method"
 info_path: docs/api/payments/bank-8-payments
 custom_edit_url: null
@@ -25,7 +23,7 @@ import Translate from "@docusaurus/Translate";
 <Heading
   as={"h1"}
   className={"openapi__heading"}
-  children={"`POST /v1/instructions/{id}/repair` — rewind the instruction to a step and\nre-process via Flow (Story )."}
+  children={"`POST /v1/instructions/{id}/repair`"}
 >
 </Heading>
 
@@ -39,7 +37,7 @@ import Translate from "@docusaurus/Translate";
 
 
 
-`POST /v1/instructions/{id}/repair` — rewind the instruction to a step and
+rewind the instruction to a step and
 re-process via Flow (Story ).
 
 <Heading

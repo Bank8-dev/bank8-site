@@ -1,21 +1,11 @@
 ---
 id: get-accounts
-title: "`GET /fdx/v6/accounts` — search customer accounts (proxies to Ledger).
-The incoming Bearer (the bank's own customer token OR a delegated
-recipient token — both carry the provider customer as `sub`) is
-forwarded to Ledger, so RLS scopes the rows to the consenting
-customer either way (fdx DESIGN.md §1 — the consent grant keys on the
-token subject)."
-description: "`GET /fdx/v6/accounts` — search customer accounts (proxies to Ledger)."
-sidebar_label: "`GET /fdx/v6/accounts` — search customer accounts (proxies to Ledger).
-The incoming Bearer (the bank's own customer token OR a delegated
-recipient token — both carry the provider customer as `sub`) is
-forwarded to Ledger, so RLS scopes the rows to the consenting
-customer either way (fdx DESIGN.md §1 — the consent grant keys on the
-token subject)."
+title: "`GET /fdx/v6/accounts`"
+description: "search customer accounts (proxies to Ledger)."
+sidebar_label: "`GET /fdx/v6/accounts`"
 hide_title: true
 hide_table_of_contents: true
-api: eJztlEtu2zAQhq8ymE0TgLWctA0C7RIkDYLmASQuUMA2apoaS4xlkiUpPyAI6CF6h96jR+lJ2pEdx0267qorCZrXx39+scYo84BpHyfZEocCrSMvo7bmMsMUc4qfpVK2MjGgQE/BWRMoYFrjYbfLj4yC8tpxCaZ4+wEFKmsimchR6VypVdsweQicUmNQBc0kpnXTNI3At92Dl31ubARZxYJM5HLKsM188zLzWoegTQ6xIHh/9gkUA5qYBGUdQS4jIU8JpCqv4wrT/lA8azG6OO9BMsmWyfwoeTzuCH5+/QaBpFcFqCpEOyMPj1HYc94uNQWIFq4oy8nvdwamVxBoo+yMiU5JevKwx2RjaaavAtiFeeoV7ZQM3N6BhIxKYtRsYDwp7TSZuIkzxdjGApT0ftUe03k71xn5HawAo1CNR/ugw8BMrF9In1H2BCcgWLi7uodWltC28XbR4vP7RjVt8oHZdiUdC/KwkCvYm2RLODu/v7y46cwy+PH9oAXbKYXcSxNhSqsA1nBkYNYnCNX4gVTc76DAGcXCbpyFAp2MBab4XHsUqM3E8rKjjiVhiizg8Ws26fPt3bfcx3DKGSlbgMms+60dF2mTi9YY86POu610yVZmpiq1IhOI5xk543HXlz3ezImTqqDXh50uI2U8aaLJ/zWhETgnH9ZQ3c7B+pOzIc6k2Wn9323/zG1/GKXGuHK8gEjLmLhSasMLqnzJsbUT19egwPkRCty6cSiwsCFyuK7HMtBHXzYNf/5Skd9cKXPptRyzV/vDRmBBMmOj9Guc0gpTPFGKHHt+LsuKMV5cjc1w5/+4OO9h0/wCnoj45Q==
+api: eJztVEtu2zAQvcpgNk0A1XbSNgi0S5A0CJoPkLhAAduoaXIsMZZJlqRkG4KAHqJ36D16lJ6kHdl1DKfLLruSwJl582beI2uMIguYDnCqljhK0DryImprrhWmmFH8LKS0pYkBE/QUnDWBAqY1Hvd6/FEUpNeOSzDF+w+YoLQmkokcFc4VWraA3afAKTUGmdNcYFo3TdMk+LZ39BLnzkYQZczJRC4nhW3mm5eZtzoEbTKIOcH7i08gmaCJ3SCtI8hEJOQugWTpdVxhOhglexCBhJc5yDJEOycPfyaGA+ftUlOAaOGGVEb+sDM0/ZxAG2nn3PachCcPB9x+IszsVQC7MM9Y0c7IwP0DCFBUEPNRQ+NJaqfJxE3859dvMLExBym8X7WzOG8rrcjv0AowDuVkfAg6DM3U+oXwitQzuQSChYebR2hnDy2Mt4uWPv9vVqNNNjRbVNIxJw8LsYKDqVrCxeXj9dVdZ67gx/ejlthOKWRemAgzWgWwhiNDs54glJMnkvGwgwnOKeZ2Yx9M0ImYY4rdqVp2q5Pujp+0mVpWNOpYEKbICzx9zU7cl+ix5X0K55yRss7MzLrfu+MibbKkVb866bzbrq67XTOzKrQkE4j7GTHndrfXfVbmzAmZ0+vjTo8pKe401eT/mtAkWJEPa1K9ztH6yNkQ58LsQI+vLvuwP/F4f6z6+ar8N+E/NmFcORYi0jJ2XSG0YaFKX/DW145cv3kJVieY4NaVowRzGyKH63oiAn30RdPw8ZeS/Ob9qITXYsKeHYyaBHMSig0zqHFGK0zxTEpy7P1KFCXTePEONqOde3J12cem+QW+lfDH
 sidebar_class_name: "get api-method"
 info_path: docs/api/fdx/bank-8-fdx
 custom_edit_url: null
@@ -33,7 +23,7 @@ import Translate from "@docusaurus/Translate";
 <Heading
   as={"h1"}
   className={"openapi__heading"}
-  children={"`GET /fdx/v6/accounts` — search customer accounts (proxies to Ledger).\nThe incoming Bearer (the bank's own customer token OR a delegated\nrecipient token — both carry the provider customer as `sub`) is\nforwarded to Ledger, so RLS scopes the rows to the consenting\ncustomer either way (fdx DESIGN.md §1 — the consent grant keys on the\ntoken subject)."}
+  children={"`GET /fdx/v6/accounts`"}
 >
 </Heading>
 
@@ -47,7 +37,7 @@ import Translate from "@docusaurus/Translate";
 
 
 
-`GET /fdx/v6/accounts` — search customer accounts (proxies to Ledger).
+search customer accounts (proxies to Ledger).
 The incoming Bearer (the bank's own customer token OR a delegated
 recipient token — both carry the provider customer as `sub`) is
 forwarded to Ledger, so RLS scopes the rows to the consenting

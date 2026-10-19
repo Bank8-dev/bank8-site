@@ -1,11 +1,11 @@
 ---
 id: upsert-account-schedule-tag
-title: "`POST /v1/account-schedule-tags` — create/override an account schedule tag."
+title: "`POST /v1/accounts/{id}/schedule-tags`"
 description: "`POST /v1/account-schedule-tags` — create/override an account schedule tag."
-sidebar_label: "`POST /v1/account-schedule-tags` — create/override an account schedule tag."
+sidebar_label: "`POST /v1/accounts/{id}/schedule-tags`"
 hide_title: true
 hide_table_of_contents: true
-api: eJytVduO0zAQ/RVrnkBytt1bWfy2IB6QQKC9PFXVMrUnqSG1g+10qaJIfARfyJegSdLtllaAxPalqXtmfOacmUkDCYsIagolmYICzCT4igIm691bAwrqKlJId6i1r126i3pBpi7pLmEBEioMuKREgXM04HBJoGADtgYkWAcKKkwLkGAo6mArTg4KLnuYsEY8Y4BYYbDokhKj1fFoSBJHjTXtaHNvxnyfg4RAX2sbyIBKoSYJDFgiqAbSumISMQXrmGPuwxITl1JbA20764MpplferDlCe5fIJX7Eqiqt7soffY5Ms9lP7eefSacdElMWkgueSagCS5gsxS46YarjPrFWbkL+gbOEZFPJkNvOj0G660GVGyyu+pKgZfCuON1BrLyLPaOT8Zi/DpuxEVokLERvPrGNT6JR1xA73TFIIDcy7cn3CP13nST8I+yJTTlkRy84+9FKOBuf7kv+3sZoXSHm6L5cqH4A1Ub/qO6DTSSi9hV1l0XSdbBp3U3an2JATWfc5bu3ffr44frm8WRlOzP1Sfz8/kPoQJho5FcUgjUk0Ak80BhHIGFJaeF5Q1Q+pm4VpAUo+MvoggRumavtAL75hsuKVdyOylbyjRlwmuPFeT45y85fHL/Izs4nJ9n8NNfZiX45Oc0nE8xx0vnvct95NzjT6ZQNy+13Sa7JJesuxKtOzHcdqJfBBxJ9kBRcH9tErrCOpKiCN7VOorTzgGHNWpRWE5utHlbg+7c34sOVuKxQLyg7ORrzJjR8X24pHAS0ElYUYk9tfHTcH/HtS3SPUj+1kTuaPHR9om9pVJVoHbOoQ8n/9R5PYXW8nWO2VPUjvGP0TMKCO0NNoWnmGOk2lG3Lx19rCtzFMwndxp+zU9MGjI38bEDlWEbaY/awguDZ1bBUnov/eokcrHU4RLcGJljW/AskfKH17rutnbUSFoSGDZ02A+B1zzK74TTbBHtLs5WbiEutqUp/xM4ezRvbDxLmw8tr6Q3HBLznZYv3PVnfqdZtuO6sgRJdUWPB2D4nf34BTBrB7g==
+api: eJytVV1vEzsQ/SvWPIHkbdKvUPatXN0HJBCoLU9R1E7s2Y1hYxvbmxKtVuJH8Av5JVezu7lJSFSQaF6SWGfGZ86ZGTeQsIyQT6EiXVKAmQTnKWAyzr7VkEPtI4V0j0q52qb7qBak64ruE5YgwWPAJSUKnKMBi0uCHDZgo0GCsZCDx7QACZqiCsZzcsjhuocJo8ULBogVBoM25WK0Oh0NSeKoMbodbe7NmO9LkBDoa20CachTqEkCA5YIeQNp7ZlETMFY5li4sMTEpdRGQ9vO+mCK6Y3Ta45QziayiX+i95VRXfmjz5FpNoep3fwzqbRHYspCcsEzCT6whMlQ7KITpjoeEmvlJuQPOEtIJlUM+dT5MUh3O6hyh+VNXxK0DN4XpzuI3tnYMzobj/nruBkboUXCUvTmE9v4LBp1DbHXHYMEciPTgXw76N/rJOEPYc9syjE7esHZj1bCxfj8UPL3JkZjSzFH++Uq7wcw3+gf88dgEomonKfuskiqDiatu0l7Kgby6Yy7fP+2h48fbu92Jyvbm6kH8fP7D6ECYaKRW1EIRpNAK/BIY5yAhCWlheMN4V1M3SpIC8jhN6MLErhlbrYD+O83XHpWcTsqW8k3ZsB5gVeXxeQiu3x1+iq7uJycZfPzQmVn6vXkvJhMsMBJ578tXOfd4EynUzYst18luSWbjL0Sbzox33WgXgYXSPRBUnB9bBPZ0liSwgena5VEZeYBw5q1qIwiNjv/fwW+f3snPtyIa49qQdnZyZg3oeb7CkPhKKCVsKIQe2rjk9P+iG9fot1JfWDkMZ0ffi12Z8s9eysMg5LoWxr5Co1l4nWo+Na+LaawOt2OPndB3k/9Xm/MJCy4mfIpNM0cI30KVdvy8deaAjf+TEL3SMzZ3GkD2kT+rSEvsIr0RM0vboY99FL81btztNbhEO0amGBV8z+Q8IXW+89hO2slLAg198C0GQD/9CyzO06zTXCwZ1u5ibhWinx6EjvbGVH2GyTMh/du6TTHBHzk/YyPPVnXqdYtxe6sgQptWWPJ2D4nf/4DhRnTrg==
 sidebar_class_name: "post api-method"
 info_path: docs/api/ledger/bank-8-ledger
 custom_edit_url: null
@@ -23,7 +23,7 @@ import Translate from "@docusaurus/Translate";
 <Heading
   as={"h1"}
   className={"openapi__heading"}
-  children={"`POST /v1/account-schedule-tags` — create/override an account schedule tag."}
+  children={"`POST /v1/accounts/{id}/schedule-tags`"}
 >
 </Heading>
 

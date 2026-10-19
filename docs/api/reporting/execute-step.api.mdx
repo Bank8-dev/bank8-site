@@ -1,21 +1,11 @@
 ---
 id: execute-step
-title: "`POST /v1/internal/steps/execute` — Flow proxy-back for filing
-workflow steps (DESIGN.md §4; the proxy-back contract is one of the
-narrow internal-API exceptions — the steps are already
-event-triggered, the proxy-back is their data access). The env rides
-the step input (Flow records it at workflow creation); the dispatch
-owns the guarded state transitions."
-description: "`POST /v1/internal/steps/execute` — Flow proxy-back for filing"
-sidebar_label: "`POST /v1/internal/steps/execute` — Flow proxy-back for filing
-workflow steps (DESIGN.md §4; the proxy-back contract is one of the
-narrow internal-API exceptions — the steps are already
-event-triggered, the proxy-back is their data access). The env rides
-the step input (Flow records it at workflow creation); the dispatch
-owns the guarded state transitions."
+title: "`POST /v1/internal/steps/execute`"
+description: "Flow proxy-back for filing"
+sidebar_label: "`POST /v1/internal/steps/execute`"
 hide_title: true
 hide_table_of_contents: true
-api: eJztVUuOG0cMvQrBlQ2UpBkjC6OzGueHWSQ2PJOVNIipKqq7olZVmcWWRhAE+BC5Q+6Ro+QkAVtSMJl8gGyyijYS2I/kI/n0+oBKbcVmjjEpS6IeHxzmwkIac7oN2CA/sh+Uf6jKBR0Kfxy46psc9tgc0OeknNR+Uil99GPi7Meak8Wq73hD2ByOx+MpNwoHbFQGHgO15FS5GvbV1ZV9Ba5eYrEy2OCdcoEzhYDu3/SzjpX9IFH32Mwf3LPSH969vbuH2fZ6dhl+ZjPW2bndB/j100/wdZ93UCQ/7idL8mtYZYFV7GNqF2mXZb2y52MevPjyq7vbb76bbgL88vNnn4N2/DTTqAt5hVghJ4a8MsQiJRLJO7iQmNy8uwV+9DzyrCMJq3TqQcJAvTCF/SLxlpNOVGLbsnBwzzvGapEoEEgJyHuu9eUU7jsGTluQGLgu0qU4xFQGhRfjxMI+S6gQFUjh90G98Ljwl6fpQqyF1HeLlHdpbAbtQBI4QFVSBhVKNY6DTNHhhrXLJqqSq6LDQtphg39/A3QY0yrbaTVqz9jgktL69US4ZNGYWnx+1jtOGtNreGO45v0FN+5RuB160iz78w3BU88pkDhoOZ1l76CQX1MbU+ugDstNrDXmZAP00XOqbHwSbYzOt7f38PY93BTyHU9eTa+McjAOq8jyl4Cjwy1LPdG9ml6fQraSDaUnpf8X6H8u0D9I6YC6L3YI5UedlZ5iskMN0tuzk3bnuL0eRXq2T4fjGtBdfNMMtTO1N3M8HJZU+Xvpj0cLfxxYzs60JYm0NH3PH44OO6Zg4pkfcM17bPCLk+1N7o2QwfvBiP3JAo/uknHj7UD/iH148oc0qaHD5dnWNzlYjtDOLJ922CDai2FclAHG2AF7Su1ArWFPNe3zG4i8QAY=
+api: eJztVEuOG0cMvQrBlQ2UpBkjC6OzGueHWSQ2PJOVNLCpKqq7olZVmcWWRhAE5BC5Q+6Ro+QkAVuSMZh8gABZpjdqUI/ke+RrHlCprdjMMSZlSdTjg8NcWEhjTrcBG+RH9oPyh6pc0KHwp4Grvslhj80BfU7KSe2VSumjHxNnP9WcLFZ9xxvC5nA8Hk+5UThgozLwGKglp8rVsK+uruwncPUSi5XBBu+UC5wpBHT/pp91rOwHibrHZv7gnpX+ts87KJIf95Ml+TWsssAq9jG1i7TLsl7Z/6a6wouvv7m7/e6H6SbAb79+8SVox08zjZSQV4gVcmLIK0MsUiKRvIPLbCc3726BHz2PDCr8/vMvY6VTDxIG6oUp7BeJt5x0ohLbloWDe94xVotEgUBKQN5zrS+ncN8xcNqCxMB1kS7FIaYyKLwYFQv7LKFCVCCFz0K98DjKlyd1IdZC6rtFyrs0NoN2IAkcoCopgwqlGkchU3S4Ye2y2aXkquiwkHbY4Gx7PbvIn406Z+dlosOYVtmWplF7xgaXlNavJ8Ili8bU4vOF3XHSmF7DG8M17y+4cY7C7dCTZtmfdwieek6BxEHL6WxoB4X8mtqYWgd1WG5irTEnE9BHz6my8Um0MTrf397D2/dwU8h3PHk1vTLKwTisIstfAo4Otyz1RPdqen0K2Ug2lJ6U/vju7d09/P1wPj7X/uRD+9+3/6VvdV9sIcqPOis9xWQLG6S3kZ88PMft9WjW84F0OOpGd7mMdjI7c30zx8NhSZV/lP54tPCngeV8e7YkkZbm8/nD0WHHFMxE8wOueY8NfnXa7+TeCBm8H4zYn47c0V0ybrxt5B+xD08+TLMcOlyeD/cmB8sR2tlRpx02iHb6x8kYYIwdsKfUDtQa9lTTnj8A0C4zew==
 sidebar_class_name: "post api-method"
 info_path: docs/api/reporting/bank-8-reporting
 custom_edit_url: null
@@ -33,7 +23,7 @@ import Translate from "@docusaurus/Translate";
 <Heading
   as={"h1"}
   className={"openapi__heading"}
-  children={"`POST /v1/internal/steps/execute` — Flow proxy-back for filing\nworkflow steps (DESIGN.md §4; the proxy-back contract is one of the\nnarrow internal-API exceptions — the steps are already\nevent-triggered, the proxy-back is their data access). The env rides\nthe step input (Flow records it at workflow creation); the dispatch\nowns the guarded state transitions."}
+  children={"`POST /v1/internal/steps/execute`"}
 >
 </Heading>
 
@@ -47,7 +37,7 @@ import Translate from "@docusaurus/Translate";
 
 
 
-`POST /v1/internal/steps/execute` — Flow proxy-back for filing
+Flow proxy-back for filing
 workflow steps (DESIGN.md §4; the proxy-back contract is one of the
 narrow internal-API exceptions — the steps are already
 event-triggered, the proxy-back is their data access). The env rides

@@ -1,11 +1,11 @@
 ---
 id: sandbox-simulate-swift-agi
-title: "`POST /v1/sandbox/swift-agi:simulate` — simulate a SWIFT AGI payment"
+title: "`POST /v1/sandbox/swift-agi/simulate`"
 description: "`POST /v1/sandbox/swift-agi:simulate` — simulate a SWIFT AGI payment"
-sidebar_label: "`POST /v1/sandbox/swift-agi:simulate` — simulate a SWIFT AGI payment"
+sidebar_label: "`POST /v1/sandbox/swift-agi/simulate`"
 hide_title: true
 hide_table_of_contents: true
-api: eJytVdtu20YQ/ZXFPJOWfFNcvjlFU/ihTWC77YMiKKPdobQJucvszsoWBAH9iH5hv6QYkrpEVo22qF5ELGfOzJ45c7gGxnmEYgwNrmpyHGGSgW8oIFvv7gwUENGZmX+eRlunCpmm8cmWPMW5hQwCfU0U+a03KyjWoL1jciyP2DSV1S3M4HP0Ts6iXlCN8sSrhqAAP/tMmiGDJkhRthTb3NqnDqWLG0PkYN0cMnCpqmCyyUBjMFNrXgnKoPShRoYCUrIGJCmFQE6vXoe2LnJIWlr/1xV8Yu1req3AJgO2XMn9HzpuH3pq7zs2YSMxQq0NZKDgkKg9iI13saPoYjiUP0NRB9tIqwLX4xj18Nvdu0d1++Od6gcL2X8fzlGRrmfV68F6pyIjk7JR9XLIo/YNmULxgtQCnakoqLhyvKBoI0WFH11TYYp2VpEKFFPFCp1RgbQPJirLyjp1pDzrXVSlDx+doVmaz62bn6mfvQqElWq7p4GNMUkta0hRWZLmqLzWKZzBIaNjsAYy2ANP2zvL6JvEbaj0JKQFEkKnyDLub2V68G7P2m7aO2kYZMrZ1iT6ONTTiditjLo+JLJXyq9YpRag7+zUq+PrvCj099Kz3t338hL1bTK4Gl6eEFg/+5KQUyBlbMRZRaZFjqRTsLyCYryGGbovN8XWVYp+lMVTsCxLMdlMjnX16cP7h0c1WJ4P+uBBazQ5zm2x9Z5P6s/f/9gqjxSe1HlNvPDiXI2PrbcgL6CAk8iDLRZkIItwv/ezH56xbio69KP9wHbuA5cl3lyXo6v8+s35m/zqenSRzy5LnV/o70aX5WiEJY7g0Hn2IMc+80+xdh6zm6tglf5QFC3/+c7VXywxObbuRr1tx/ShD2vZ7XOUD3pBkbsvQaYMVTRHpqjYqz69eFf5J9msymoS6RRrcNh29tPdo3p/r24b1AvKL86Gcl8jaaWlcDJgk8GSQuwaHJ6dd0cyxBrdAfT/JpRvKNntCtMzD5oKrZPyKVTyrtPQGJbnYhtdWXnaFt6bCYlPLER5xRjW6xlG+iVUm40cf00UZD0mGSwxWFmddhcyWBAaoWW8hi8kIvm+M+v8sfOlZbvjxUvj3mTbjFutqeFXYycHyyEkQgaz/stdeyM5AZ/E/fAJChClteS0ZteeraFCN084l9gOU35/ARIo3A8=
+api: eJytVdtu20YQ/ZXFPFOWfFNcvjlFU/ihTWA7zYMiyKPdobQJucvszsoWBAH9iH5hvqQYkrpUVoW2qF5ELGfOzJ45c7gCxlmEfAQ1LityHGGcga8pIFvv7gzkENGZqX+ZRFulEpkm8dkWPMGZhQwCfUsU+a03S8hXoL1jciyPWNel1Q1M/0v0Ts6inlOF8sTLmiAHP/1CmiGDOkhRthSb3MqnFqWNG0HkYN0MMnCpLGG8zkBjMBNrTgRlUPhQIUMOKVkDkpRCIKeXp6GtixySltb/dQWfWPuKThVYZ8CWS7n/Q8vtQ0ftfcsmrCVGqLWBDOQcEjUHsfYuthRdDAbyZyjqYGtpVeA6HKMePt29e1S3P9+pbrCQ/ffhHBRpe1adHqx3KjIyKRtVJ4de1L4mkyuek5qjMyUFFZeO5xRtpKjws6tLTNFOS1KBYipZoTMqkPbBRGVZWacOlGe9i6rw4bMzNE2zmXWzM/WrV4GwVE331LcxJqllDSkqCtIcldc6hTPYZ3QE1kAGO+BJc2cZfZ24CZWehLRAQugEWcb9V5nuvduxtp32VhoGmXpsKxJ97OvpSOxGRm0fEtkp5TcsUwPQdXbs1eF1XhX6e+lZ7+47eYn61hlcDS6PCKybfUHIKZAyNuK0JNMgR9IpWF5CPlrBFN3Xm3zjKnk3yvw5WJalGK/Hh7p6+vD+4VH1F+f9LrjfGE0PZzbfeM+T+v77HxvlkcKjOq+I516cq/ax8RbkOeRwFLm/wYIMZBHud3720wtWdUn7frQb2NZ94LLAm+tieNW7fnP+pnd1PbzoTS8L3bvQPwwvi+EQCxzCvvPsQA595p9ibT1mO1fBKvy+KBr+e1tXf7XE5Ni6G/W2GdOHLqxht8tRPug5RW6/BJkyVNIMmaJir7r0/F3pn2WzSqtJpJOvwGHT2S93j+r9vbqtUc+pd3E2kPsaSSsshaMB6wwWFGLb4ODsvD2SIVbo9qBPCGU7zqfDG+99m/4/pXXbxfTC/bpE66ThFEop16puBItzMZq2jjxtKu3sh8RZ5qLVfASr1RQjfQzlei3H3xIFWahxBgsMVpat2Z4M5oRGiByt4CuJrH5s79d7bJ1s0bhC/trq19km41Zrqvlk7HhvnYQ1yGDafesrbyQn4LP4JT5DDqLNhu/GHpuzFZToZglnEttiyu9PY3TtXw==
 sidebar_class_name: "post api-method"
 info_path: docs/api/payments/bank-8-payments
 custom_edit_url: null
@@ -23,7 +23,7 @@ import Translate from "@docusaurus/Translate";
 <Heading
   as={"h1"}
   className={"openapi__heading"}
-  children={"`POST /v1/sandbox/swift-agi:simulate` — simulate a SWIFT AGI payment"}
+  children={"`POST /v1/sandbox/swift-agi/simulate`"}
 >
 </Heading>
 

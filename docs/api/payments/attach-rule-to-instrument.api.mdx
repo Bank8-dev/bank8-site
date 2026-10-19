@@ -1,13 +1,11 @@
 ---
 id: attach-rule-to-instrument
-title: "`POST /v1/rules:attachToInstrument` — attach a decision rule to a payment
-instrument (; the rule still applies per-instruction at runtime)."
+title: "`POST /v1/rules/attach-to-instrument`"
 description: "`POST /v1/rules:attachToInstrument` — attach a decision rule to a payment"
-sidebar_label: "`POST /v1/rules:attachToInstrument` — attach a decision rule to a payment
-instrument (; the rule still applies per-instruction at runtime)."
+sidebar_label: "`POST /v1/rules/attach-to-instrument`"
 hide_title: true
 hide_table_of_contents: true
-api: eJzNVdtuEzEQ/RVrnqi026S3tJinFoHUh6oolKcQtY53Nut2117s2ZYoROIj+EK+BI2dS9OL4JG8JLHHZ86ZOWPPgdQ0gBxBq2YNWgowzsC16BUZZ88LkKCIlK6ufVfjNblrYwP5jmMhA4/fOgx05ooZyDloZ4k35BxU29ZGR5TebXCW14KusFH8i2YtggQ3uUW9wjEeC2YSE5kCMtik4v/jDFrP1MhgYJDt7Q1qIG/sFDIonW8UgYSui3gFBu1Ny5xArhQ/EiQ8Btd5jYIqEwQTEVEHBkFOvNHKF8J5obR2nSVhip1dWGzxTBSeU9lOHYF+rHAYYiX6ryoWiwzIUM0hp7Ezw67GK3e+5jBMPYEFh24KS77DuBBaZ0Oq4H6/z1/b5IZRdoTGgrkd9g+eR12YEIydiomydydy5R7JOoJ88IZQBO1aTACHr6SxjkTpOpt0BdSdNzQDOZrD68AgR+PF+GlNbz5dfr4Svfu9XgpNCh4X5kb8/vlrqUwoUaA2wTib+kxOKLHM9tU+8sSbd4IqTEGBTF2vLdGiz1OgZg5CkfCdJdPgzi5k0CBVjgeodYE93iqqQMKaYS8xycnlWzPF0zLczNWH76ppa3zB8HBQqpOjcnCYHx3vHeeHR4P9fHJQ6nxfvx0clIOBKtUAXrDnxltr2/0bVvR66aJLlx6MbcrXt8fTrnxGS8aeiLPYzU/LsNiI5RnhvK4wULpxMlFgjVNFaeSWx+XH2j1wTWuj0YZYDKsazn9xfiUuh+K0Zbvm+7t9FlzwsdKgfzFgkcE9+pAI9nf30hJ3qVH2EfR/56it0q4vCsLv1GtrZSzL6HzNe8lsI7jfW3aZW/Oi4cYZVGxQOYL5fKICfvH1YsHL3zr0PIvjDO6VN2pSp9HLoEJVcHFHc7jDGUh4ny7+/IopcXjdMbVnjwCP7XouuLyQwWT5eDSu4DNePTBl9QASgN8iPh1vq7g2h1rZaaemHJsw+fMHhT9dhA==
+api: eJzNVduO0zAQ/RVrnkBKtt1bdzFPgEDaBwQqy1Opdl1n0hgSO9iTXapSiY/gC/kSNHZ62y2CR/rS1hkfnzPnjLMEUvMAcgKtWjRoKcA0A9eiV2ScvSpAgiJSurrxXY035G6MDeQ7roUMPH7tMNBLVyxALkE7S/xALkG1bW10RBl8Ds7yWtAVNop/0aJFkOBmn1GvcYzHgpnEg0wBGWyP4v/TDFrP1MhgYJD9x1vUQN7YOWRQOt8oAgldF/EKDNqbljmBXCveESQ8Btd5jYIqEwQTEVEHBkFOPNHKF8J5obR2nSVhiqdHsNrjmSg8prJ/dAT6vsZhiLXov6pYrTIgQzWXvIjOjLsar93VhsM4eQIrLt02lnyHcSG0zobUwZPhkL/2yY2j7AiNBXM7G54+rnprQjB2LmbKfrmU6/RI1hHkvTeEImjXYgI4+8Mx1pEoXWeTroC684YWICdL+DMwyMl0NX3Y09v37z5ci8Hd8SCVJgW7jbkVv3787JUJJQrUJhhnk8/khBL9aZ/sTiaePBdUYSoKZOp6E4kWfZ4KNXMQioTvLJkGnx5BBg1S5XiAWhc4462iCiRsGA4Sk5xcvjdTPC3j7Vy9/qaatsYDgYfTUl2el6Oz/Pzi+CI/Ox+d5LPTUucn+tnotByNVKlGcCCe22xtYvdvWDHrpYsp7TMYbco3t8dDVz6gJWMvxcvo5vu+LBrR7xHO6woDpRsnEwXWOFeURq7fLt/U7p57WhuNNsRmWNXw+W+vrsW7sXjRclzzk6MhCy54W2nQHyxYZXCHPiSCw6PjtMQuNcruQD9I1EG/bh8q3rkE/79I9vYTfqNBWytjWXjna6ad4jmBu+M+F2zmwYhOM6g40nICy+VMBfzo69WKl7926Hl6pxncKW/UrE7DmkGFqmA7Jkv4gguQ8Cp1Kb9mSlxed0zt0WuDB30zSdxPyGDWv24aV/Aer+6ZsroHCcBvL94d77e4toRa2Xmn5lybMPnzG6HDbv0=
 sidebar_class_name: "post api-method"
 info_path: docs/api/payments/bank-8-payments
 custom_edit_url: null
@@ -25,7 +23,7 @@ import Translate from "@docusaurus/Translate";
 <Heading
   as={"h1"}
   className={"openapi__heading"}
-  children={"`POST /v1/rules:attachToInstrument` — attach a decision rule to a payment\ninstrument (; the rule still applies per-instruction at runtime)."}
+  children={"`POST /v1/rules/attach-to-instrument`"}
 >
 </Heading>
 

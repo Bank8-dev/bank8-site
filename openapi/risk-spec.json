@@ -36,7 +36,8 @@
           {
             "sentin8:admin": []
           }
-        ]
+        ],
+        "summary": "`GET /v1/admin/attributes`"
       },
       "put": {
         "tags": [
@@ -71,7 +72,8 @@
           {
             "sentin8:admin": []
           }
-        ]
+        ],
+        "summary": "`PUT /v1/admin/attributes`"
       },
       "delete": {
         "tags": [
@@ -101,7 +103,8 @@
           {
             "sentin8:admin": []
           }
-        ]
+        ],
+        "summary": "`DELETE /v1/admin/attributes`"
       }
     },
     "/v1/admin/overview": {
@@ -109,7 +112,7 @@
         "tags": [
           "admin-ui"
         ],
-        "summary": "GET /v1/admin/overview — the data endpoint behind the overview page:\nlimit/breach counts for the tenant env.",
+        "summary": "`GET /v1/admin/overview`",
         "operationId": "admin_overview",
         "parameters": [
           {
@@ -139,7 +142,8 @@
           {
             "bank8:admin": []
           }
-        ]
+        ],
+        "description": "the data endpoint behind the overview page:\nlimit/breach counts for the tenant env."
       }
     },
     "/v1/admin/policy-sets": {
@@ -168,7 +172,8 @@
           {
             "sentin8:admin": []
           }
-        ]
+        ],
+        "summary": "`GET /v1/admin/policy-sets`"
       }
     },
     "/v1/admin/policy-sets/disable": {
@@ -197,7 +202,8 @@
           {
             "sentin8:admin": []
           }
-        ]
+        ],
+        "summary": "`POST /v1/admin/policy-sets/disable`"
       }
     },
     "/v1/admin/policy-sets/enforce": {
@@ -226,7 +232,8 @@
           {
             "sentin8:admin": []
           }
-        ]
+        ],
+        "summary": "`POST /v1/admin/policy-sets/enforce`"
       }
     },
     "/v1/admin/policy-sets/shadow": {
@@ -255,7 +262,8 @@
           {
             "sentin8:admin": []
           }
-        ]
+        ],
+        "summary": "`POST /v1/admin/policy-sets/shadow`"
       }
     },
     "/v1/admin/policy-sets/{name}": {
@@ -295,7 +303,8 @@
           {
             "sentin8:admin": []
           }
-        ]
+        ],
+        "summary": "`GET /v1/admin/policy-sets/{name}`"
       },
       "put": {
         "tags": [
@@ -341,7 +350,8 @@
           {
             "sentin8:admin": []
           }
-        ]
+        ],
+        "summary": "`PUT /v1/admin/policy-sets/{name}`"
       },
       "delete": {
         "tags": [
@@ -371,7 +381,8 @@
           {
             "sentin8:admin": []
           }
-        ]
+        ],
+        "summary": "`DELETE /v1/admin/policy-sets/{name}`"
       }
     },
     "/v1/admin/policy-sets/{name}/test": {
@@ -416,7 +427,8 @@
           {
             "sentin8:admin": []
           }
-        ]
+        ],
+        "summary": "`POST /v1/admin/policy-sets/{name}/test`"
       }
     },
     "/v1/admin/relations": {
@@ -445,7 +457,8 @@
           {
             "sentin8:admin": []
           }
-        ]
+        ],
+        "summary": "`GET /v1/admin/relations`"
       },
       "put": {
         "tags": [
@@ -480,7 +493,8 @@
           {
             "sentin8:admin": []
           }
-        ]
+        ],
+        "summary": "`PUT /v1/admin/relations`"
       },
       "delete": {
         "tags": [
@@ -510,7 +524,8 @@
           {
             "sentin8:admin": []
           }
-        ]
+        ],
+        "summary": "`DELETE /v1/admin/relations`"
       }
     },
     "/v1/admin/relations/check": {
@@ -565,7 +580,8 @@
           {
             "sentin8:admin": []
           }
-        ]
+        ],
+        "summary": "`GET /v1/admin/relations/check`"
       }
     },
     "/v1/admin/ui/{page}": {
@@ -573,7 +589,7 @@
         "tags": [
           "admin-ui"
         ],
-        "summary": "GET /v1/admin/ui/{page} — return the RFW definition for the requested\nadmin page.",
+        "summary": "`GET /v1/admin/ui/{page}`",
         "operationId": "get_admin_ui",
         "parameters": [
           {
@@ -612,7 +628,8 @@
           {
             "bank8:admin": []
           }
-        ]
+        ],
+        "description": "return the RFW definition for the requested\nadmin page."
       }
     },
     "/v1/exposures": {
@@ -620,7 +637,7 @@
         "tags": [
           "handlers"
         ],
-        "summary": "`GET /v1/exposures` — list measured exposures, optionally by dimension.",
+        "summary": "`GET /v1/exposures`",
         "operationId": "list_exposures",
         "parameters": [
           {
@@ -649,7 +666,8 @@
               }
             }
           }
-        }
+        },
+        "description": "list measured exposures, optionally by dimension."
       }
     },
     "/v1/health": {
@@ -657,8 +675,8 @@
         "tags": [
           "meta"
         ],
-        "summary": "`GET /v1/health` — service health payload.",
-        "description": "Carries the binary's build identity (`version`/`build`, BUILDID-1) so\ncaptain's monitor populates `make status`'s VERSION column for every\ninstance — the consuming BINARY's identity, never a shared crate's.",
+        "summary": "`GET /v1/health`",
+        "description": "Carries the binary's build identity (`version`/`build`, BUILDID-1) so\ncaptain's monitor populates `make status`'s VERSION column for every\ninstance — the consuming BINARY's identity, never a shared crate's.\n\nservice health payload.",
         "operationId": "health",
         "responses": {
           "200": {
@@ -673,7 +691,7 @@
         "tags": [
           "handlers"
         ],
-        "summary": "`GET /v1/limits` — list configured limits with breach state.",
+        "summary": "`GET /v1/limits`",
         "operationId": "list_limits",
         "responses": {
           "200": {
@@ -689,13 +707,14 @@
               }
             }
           }
-        }
+        },
+        "description": "list configured limits with breach state."
       },
       "post": {
         "tags": [
           "handlers"
         ],
-        "summary": "`POST /v1/limits` — upsert a limit threshold (admin-scoped;\nidempotent per (env, limit_type)). The limit_type must be one of the\nschema's CHECK values.",
+        "summary": "`POST /v1/limits`",
         "operationId": "upsert_limit",
         "requestBody": {
           "content": {
@@ -719,7 +738,8 @@
           "422": {
             "description": ""
           }
-        }
+        },
+        "description": "upsert a limit threshold (admin-scoped;\nidempotent per (env, limit_type)). The limit_type must be one of the\nschema's CHECK values."
       }
     },
     "/v1/limits/{id}": {
@@ -727,7 +747,7 @@
         "tags": [
           "handlers"
         ],
-        "summary": "`GET /v1/limits/{id}` — limit detail with breach history.",
+        "summary": "`GET /v1/limits/{id}`",
         "operationId": "get_limit",
         "responses": {
           "200": {
@@ -738,7 +758,8 @@
               }
             }
           }
-        }
+        },
+        "description": "limit detail with breach history."
       }
     },
     "/v1/stress/run": {
@@ -746,7 +767,7 @@
         "tags": [
           "handlers"
         ],
-        "summary": "`POST /v1/stress/run` — run a scenario's shocks against a\npoint-in-time snapshot (on-demand full recompute; never touches the\nincremental hot path). Idempotent per (scenario, snapshot ref).",
+        "summary": "`POST /v1/stress/run`",
         "operationId": "run_stress",
         "requestBody": {
           "content": {
@@ -767,7 +788,8 @@
               }
             }
           }
-        }
+        },
+        "description": "run a scenario's shocks against a\npoint-in-time snapshot (on-demand full recompute; never touches the\nincremental hot path). Idempotent per (scenario, snapshot ref)."
       }
     },
     "/v1/stress/scenarios": {
@@ -775,7 +797,7 @@
         "tags": [
           "handlers"
         ],
-        "summary": "`POST /v1/stress/scenarios` — author a declarative scenario\n(admin-scoped). Idempotent per (env, name): re-authoring a scenario\nupdates its assumptions in place (registry data, not code).",
+        "summary": "`POST /v1/stress/scenarios`",
         "operationId": "create_scenario",
         "requestBody": {
           "content": {
@@ -796,7 +818,8 @@
               }
             }
           }
-        }
+        },
+        "description": "author a declarative scenario\n(admin-scoped). Idempotent per (env, name): re-authoring a scenario\nupdates its assumptions in place (registry data, not code)."
       }
     }
   },

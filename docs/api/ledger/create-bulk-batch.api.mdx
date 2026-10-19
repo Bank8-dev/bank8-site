@@ -1,13 +1,11 @@
 ---
 id: create-bulk-batch
-title: "`POST /v1/account-migrations` — submit a bulk account migration batch
-(Data-Loader-style staging; idempotent re-run via `:bulkRetry`)."
-description: "`POST /v1/account-migrations` — submit a bulk account migration batch"
-sidebar_label: "`POST /v1/account-migrations` — submit a bulk account migration batch
-(Data-Loader-style staging; idempotent re-run via `:bulkRetry`)."
+title: "`POST /v1/account-migrations`"
+description: "submit a bulk account migration batch"
+sidebar_label: "`POST /v1/account-migrations`"
 hide_title: true
 hide_table_of_contents: true
-api: eJzNVs1u2zgQfhViLkkA2vnpHgr21HT3EKBFF2l2L65hU9JYZi2RKjl0aggC9iH2CfdJFiMqlhMbwR56WJ/k4XDmm2++GakF0mUANYMKixI9zCW4Br0m4+xdAQpyj5pwkcVqs8g05WuQ4PF7xEC3rtiBaiF3ltASP+qmqUze3778FpxlW8jXWGt+ol2DoMBl3zCnIY7xWHD+jbEFSDCEdWAUjWccZDDwzWRWLRQYcm8aTgAK7ghr0ehd5XShxMp5ofPcRUuL2BSaUIlZ+2QxhRQBSYl2Op123fwd+3+1tSlTtQe+ex8RSJdYCO8ewxQkkKGKK/hTVxGhkwn1WFkgb2wJ8gXM5T7JUpwPOcTeFi6E82L5HPlSnKcH0ZOO4WLK+YKLPsdF2AXCekw8GzPbWFUw77oR7Ie+g7ex2txyqPvUPOjYZ+wA+Yi9ITTOhsT6zdXVMeefnnAnZCIJpBDaFgNdIH+OJAxHGnQRSFMMg0AWPVMgYaVNhcX+7wBloelYQQdnJ/q1cr7mE2DKJ2TqvrvovfOLGkPQJb7G9gskYwJjCXmsDjIYS29uOLo5qZy9X4ym6N3Ggv9b3NOa7PYcHh8diOVAJkkIrJNOwi+npMCZRB0DiQzF2V7QZ6zns+d6PoM+yJtTegrB2FJk2m7eqrSG1HA5qEdvCEXIXYM9zoB59IZ2oGYtvHIF1GzezY8G8ffPXx7E5fb6cvCejFO4FP/89bcIMasNCS144YmjWU2a/2rPf9WkJx+dLtBPAu0q7LVvbPlOmALrxrH8hceJj1ZsjRZLxRHvkfxuecG7pEZaO96wjQss3kbTGhScBgcSeHbux8X72w9dN1WvytTwUUIvlsSBAoxdub7/Q7d7AifD6n9J1he0ZOxbcduz/LF36jnKnUeRLknB6Ll9aEtjUYrGuyLmJCqTee13XGllcmQlqRasrjnvp7sH8flevG90vsbJzfSKB7vgfCuD/qRDJ2GLPiRoV9PrZOLstbYHof9PLX7G537qCH/QZVNpY7mC6Cs+S92fwfYaJJzo/1zCmnWiZtC2mQ74h6+6js3fI3oeh7mErfZGZ1USv4Q1MvZ+Uja44zdB2sqTBwbC7vwWU8cbupNPN97nOTb0qu/8QMrMPUjIhg+D2hV8x+tH3uz6ERQAf1+kklSbbC1U2paxX7GQYvLvX2Qv/7I=
+api: eJy9ls1u20YQx19lMRfbwEr+SA/B5hS3PRhIkMJxe1EEaUmOqI3IXWZ3Vo5AEOhD9An7JMVwaVGRBKOHoj7Rw9mZ/8z8dqgWSJcB1AwqLEr0MJfgGvSajLMPBSjIPWrCRRarzSLTlK9BgsdvEQPdu2IHqoXcWUJL/KibpjJ5f/r6a3CWbSFfY635iXYNggKXfcWchjjGY8H5N8YWIMEQ1oFVNJ51kMHAJ5NZtVBgyL1pOAEoeCCsRaN3ldOFEivnhc5zFy0tYlNoQiVm7YvFFFIEJCXa6XTadfN37P/F1qZM1R747n1EIF1iIbx7DlOQQIYqruAPXUWETibVY2WBvLElyCOZy32Spbgccoi9LVwJ58XyR+VLcZkeRN90DFdTzhdc9Dkuwi4Q1mPi2ZjZxqqCedeNYn/uJ3gfq809h3pMw4OOfcYJkI/YG0LjbEhdv7u5Oe35xxfdSZlIgBRC22JoF8j/BgnDkQYuAmmKYQBk0XcKJKy0qbDY/ztIWWg6Jejg3Zl5rZyv+Q1wyydk6n666L3zixpD0CW+1u0jJWMCYwn5Wh1kMJbe3HF0c5acvV+MpujdxoL/XdzzTHb7Hp6+OoDlAJMEAnPSSfjpHAqcSdQxkMhQXOyBvmCeL37k+QL6IG/O8RSCsaXItN28VWkNqeFwUM/eEIqQuwZ7nQHz6A3tQM1aeOUIqNm8mx9fxBCz2pDQgteZOLmJiegv9vIXTXrywekC/STQrsKebGPLd8IUWDeO4RYeJz5asTVaLBVHfETyu+UVb4oaae14fzYuMJqNpjUouN7eXg9pJ+MCAAl8Mx7Htfrrd103Vc9cGucIyNEKOJivsSvXT3eYZd+eybDYj1vxGS0Z+1bc9z380DuJv//8S+TOo0iHpGD1PBy0pbEoReNdEXMSlcm89juutDI5MieqBatrzvvx4Ul8ehTvG52vcXI3veFrW3C+lUF/1qGTsEUfkrSb6W0ycfZa24PQy98+fX4S57u4PK7x4Mv0P05+uFuE3+m6qbSxXEn0FetJFMxgewsSznAwl7BmXtQM2jbTAX/3Vdex+VtEz9DPJWy1NzqrEuIS1shi+/uwwR3v+1T05ImFsDt/q9TpHu7ky4n3eY4Nveo7P0CaZwASsuHzX7uCz3j9zPtbP4MC4F8RqSTVJlsLlbZl7BcppJj89w/DtvSt
 sidebar_class_name: "post api-method"
 info_path: docs/api/ledger/bank-8-ledger
 custom_edit_url: null
@@ -25,7 +23,7 @@ import Translate from "@docusaurus/Translate";
 <Heading
   as={"h1"}
   className={"openapi__heading"}
-  children={"`POST /v1/account-migrations` — submit a bulk account migration batch\n(Data-Loader-style staging; idempotent re-run via `:bulkRetry`)."}
+  children={"`POST /v1/account-migrations`"}
 >
 </Heading>
 
@@ -39,7 +37,7 @@ import Translate from "@docusaurus/Translate";
 
 
 
-`POST /v1/account-migrations` — submit a bulk account migration batch
+submit a bulk account migration batch
 (Data-Loader-style staging; idempotent re-run via `:bulkRetry`).
 
 <Heading

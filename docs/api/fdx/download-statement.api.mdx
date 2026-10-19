@@ -1,21 +1,11 @@
 ---
 id: download-statement
-title: "`GET /fdx/v6/accounts/{accountId}/statements/{statementId}` — statement
-download. The Ledger statement object lives in Sentin8:Storage at
-`buckets/statements/objects/{envId}/{accountId}/{statementId}.pdf`;
-this handler mints a short-lived read URL via the Storage link API and
-answers 302 Found with the `Location` header (spec: statement image may
-be served inline or via redirect; §5.0a signed URLs)."
+title: "`GET /fdx/v6/accounts/{id}/statements/{statementId}`"
 description: "`GET /fdx/v6/accounts/{accountId}/statements/{statementId}` — statement"
-sidebar_label: "`GET /fdx/v6/accounts/{accountId}/statements/{statementId}` — statement
-download. The Ledger statement object lives in Sentin8:Storage at
-`buckets/statements/objects/{envId}/{accountId}/{statementId}.pdf`;
-this handler mints a short-lived read URL via the Storage link API and
-answers 302 Found with the `Location` header (spec: statement image may
-be served inline or via redirect; §5.0a signed URLs)."
+sidebar_label: "`GET /fdx/v6/accounts/{id}/statements/{statementId}`"
 hide_title: true
 hide_table_of_contents: true
-api: eJztVNtuE0EM/RXLTyBts2mBCm2fiigoolwERUJqKjKZcbJDN55hxtm2Wq3ER/AP/AefwpcgJ72kLeKZB5525LF9zvicdYdi5hmrY5y5czwpMERKRnzgkcMKXTjjJhj3OYsRWhALFpgox8CZMlYd7gyH+nGUbfJRC7HCt6+wQBtYtKDq0MTYeLtqW37JmtJhtjUtDFZd3/d9gY+H2/f7vAkCZik1sWg5OVxlPrqf+drn7HkOUhO8eP4JrBJkKbMNkWBuhFBRMtll8nKB1fFJcafF5OXBEZQzd162u6WxNixZctldnkauL6+HkMvu+jxy/QR+ffsO15ExX41tAEc1wSG5OaWbewjTL2QFGt9SBs/wQd/HT6sPEpKZExgZ82S6tKckeRN0XZfLjrhVPpvcbhEaRDeb7I1Zap+hNuwaSrDwLBkM5Dok2VJwB4mMg4/vD6H1ZjW7KwqN51PYfzcCw27MhvMZpQyPhjvwIizZwZmXelUwOQxrYSdQk3GU4EGOZKuN5/qFdlyYizFPCTIlRfbceCYIaQWdyPlEVvbg548ng6GB7OdMK2r54QALXJDUQR05J7VgNFJjhffV8n+RCQv0PAtqHvHSEFY4NXz6dEutf9cNl5rAM82o1FKqcYjEoEWe58XKaO3u4AnEFFrvKJWJrI+eWJRz4y1xJsVjs1C416MjePse9qOxNW3tDIZKySnSzFP6Y0JfYEspr0kNB9vrUAxZFoY3Wv937z/s3lvW6lAuokomdC5lbIxnlXSZGr1bO3u9jgtsd7HAKzWxwMo7LPBmqBraGJ0u8Dpk0QZdNzWZPqam7zX8dUnpcu21JnkzVf8fn/QFrh+O1XGHp3SBFe5bS1H/stY0SyV6b333Jxt/5MuDI+z730TEOOg=
+api: eJztVdtu00AQ/ZXRPIHkxmmBCpmnIi6KKBeVIiE1FdnsTuKlzuyyO3FbWZb4CP6B/+BT+BI0SS+hhT7zwJOt9cycM3POrDsUM89YHeHMneFxgSFSMuIDjxxW6MIpN8G4T1mM0IJYsMBEOQbOlLHqcGc41IejbJOPmogVvn2FBdrAoglVhybGxttV2fJz1pAOs61pYbDq+r7vC3w43L5d500QMEupiUXTyeEq8sHtyNc+Z89zkJrgxbOPYJUgS5ltiARzI4SKkskuk5dzrI6OixslJi+fH0I5c2dlu1saa8OSJZfdxdvI9eXVEHLZXb2PXD+Bn1+/wdXJmC/HNoDDmmCf3JzS9XcI089kBRrfUgbP8F7748fVewnJzAmMjHkyXdoTkrwJus7LZUfcKp9Nbr8RGkQ3mzwZs9Q+Q23YNZRg4VkyGMh1SLKl4A4SGQcfDvah9WY1u0sKjecT2Hs3AsNuzIbzKaUMD4Y78CIs2cGpl3qVMNkPa2EnUJNxlOBejmSrjXb9QisuzPmYpwSZkiJ7bjwThLSCTuR8IitP4Mf3R4OhgeznTCtq+f4AC1yQ1EEdOSe1YDRSY4W31fJ3yIQFep4FNY94aQgrnBo+ebyl1r/phgtN4KlGVGop1ThEYtAkz/NiZbR2d/AIYgqtd5TKRNZHTyzKufGWOJPisVko3OvRIbw9gL1obE1bO4OhUnKKNPOU/hjQF9hSymtSw8H2+iiGLAvDG6X/4t675jG52XR3vbP/t+Ff3gY5j6q50JmUsTGe1RPL1KiE69VY3+cFtrtY4KV8WGDlHRZ4PUU92piV/gHqkEULdN3UZPqQmr7X4y9LShf3ZmuSN1NdoKPjvsB1p1gddXhC51jhnrUUdU1b0yyV6K37vz/eWOmXzw+x738BzuBQgA==
 sidebar_class_name: "get api-method"
 info_path: docs/api/fdx/bank-8-fdx
 custom_edit_url: null
@@ -33,7 +23,7 @@ import Translate from "@docusaurus/Translate";
 <Heading
   as={"h1"}
   className={"openapi__heading"}
-  children={"`GET /fdx/v6/accounts/{accountId}/statements/{statementId}` — statement\ndownload. The Ledger statement object lives in Sentin8:Storage at\n`buckets/statements/objects/{envId}/{accountId}/{statementId}.pdf`;\nthis handler mints a short-lived read URL via the Storage link API and\nanswers 302 Found with the `Location` header (spec: statement image may\nbe served inline or via redirect; §5.0a signed URLs)."}
+  children={"`GET /fdx/v6/accounts/{id}/statements/{statementId}`"}
 >
 </Heading>
 

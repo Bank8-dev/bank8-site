@@ -1,17 +1,11 @@
 ---
 id: create-customer
-title: "`POST /v1/customers` — create a customer.
-If the caller is a user token, the `sentin8_auth_user_id` is stamped
-from their token claims so that holder-scoped RLS and
-`resolve_caller_customer_id` can find the row."
-description: "`POST /v1/customers` — create a customer."
-sidebar_label: "`POST /v1/customers` — create a customer.
-If the caller is a user token, the `sentin8_auth_user_id` is stamped
-from their token claims so that holder-scoped RLS and
-`resolve_caller_customer_id` can find the row."
+title: "`POST /v1/customers`"
+description: "create a customer."
+sidebar_label: "`POST /v1/customers`"
 hide_title: true
 hide_table_of_contents: true
-api: eJzdVs2O2zYQfhViLj2U9nrTHFLdkqCHBRKk8G5PtmGPxZHFmCIVkrLXMAT0IfqEfZJiKK3tjbZODjnFJ4Hz98188+MjRNwEyGZgSG3Iw0KCq8lj1M7eKcgg94SRlnkToqvIgwRPXxoK8Z1TB8iOkDsbyUb+xLo2Ok+2N5+Ds/wW8pIq5K94qAkycOvPlMfej/akOLrSoTZ4WFqsiDHUnlFETYEtn0nPnkL02m6glUAVanOWzJ5EEmxjDCxaCXXpLF1TaSVEHQ07fp9yft+nPO3yhZZVzqCjbyg9hNrZ0AF9NZkkvBRyr2uuA3vr/YiulArkj6mZZk/PSiMhRIxN4AhdrCXGYTkvZINiSiicr1gCCiONoq6IK/wjKNDqarym0Qq+h6lUdGd2pJYvwxqYyK8omfb2orcXbJ+JJlAQT50expfOhS6EdXZEVR0Pcm5dLMnvdSBRoDFBrDHfiuhELEkYbbekBDaxZJf+lyAK7UPsHP0qDPbfY7jM5VsV/N8kkuEAfXp9gs0epDiBntvvQp1cJJCBbNT2zZKlS5YuL8l8AeqA1b4zh61zOXenietmikeulfB68ttwqj7qELTdiDXa7Zus217ZKfts73UkEXJXp/Z9Pfn9ymCi8YTqIOhRhxgSpEB543U8QDY7wrUYkM0W7YCb1Z+f7h/Eze725qS+Ev/+/U+/AwSeiBrP7V2RCMjRGPJCB4GJABHdlqxMstVLBKxYN0SsalJzW3hXsa7uDUVuUFdBBKYXoyidUeRHqSRKTD/cC7Rqbld9/y278KdFn/znaEWhrUoYvNuPQUJFsXR8GWoXeCXVGEvI4FmuIIF32fR8Kf54xKo2NNzm59bp+//80C+CiyWjbeFSC/UNk4gZ9afraw7uu5KJd4m9D0mp48B5Ep2RFJwF9xHZjbYkRe2davIojF579AfO2OicuBuzI/SYP949iE9T8bbGvKTRq/EEeLtxvEKTf1GhlbAjHzpok/Ft98TRK7QXrn/iznlGz2kPRHqMN7VBbbkgjU8rsGuqGexu+Zad2mohoeSuy2ZwPK4x0F/etC0/f2nI87AuJOzQa1ybbjIllISKOZkdYUsHHvvu+I4eOD6rm4ZxDA5xK58s3uY51fGq7uJiMJhBkLDu/yBVTrGNxz0fcNxDBsD/stg6LcT0dgSDdtPghnU7n/z7D4s0YzM=
+api: eJzdVs2O2zYQfhViLj2U9nrTHFLdkqCHBRKk8G5PtmGPxZHFmCIVkrLXMAT0IfqEfZJiKK3tXW3dHHKqTwLn75tv/nyEiJsA2QwMqQ15WEhwNXmM2tk7BRnknjDSMm9CdBV5kODpW0MhfnDqANkRcmcj2cifWNdG58n25mtwlt9CXlKF/BUPNUEGbv2V8tj70Z4UR1c61AYPS4sVMYbaM4qoKbDlM+nZU4he2w20EqhCbc6S2ZNIgm2MgUUroS6dpWsqrYSoo2HHH1POH/uUp12+0LLKGXT0DaWHUDsbOqBvJpOEl0Ludc08sLfej+ioVCB/DGeaPT2jRkKIGJvAEbpYS4xDOi9kAzIlFM5XLAGFkUZRV8QM/4gSaHU1XtNoBd9TqUS6MztSy9dhDUzki5JMe3vR2wu2z0QTKIinTg/jS+dCF8I6O6Kqjgc5ty6W5Pc6kCjQmCDWmG9FdCKWJIy2W1ICm1iyS/9TEIX2IXaOfhYG++8xXObyXwz+axLJcIA+vT7BZg9SnEDP7XehTi4SyEA2avtuydIlS5eXxXwF6qCqfWcOW+dy7k4T180Uj1wr4e3kl+FUfdYhaLsRa7Tbd1m3vbJT9tne60gi5K5O7ft28uuVwUTjCdVB0KMOMSRIgfLG63iAbHaEazEgmy3aQW26ERN4qsd4bu+KxHOOxpAXOghMPIvotmRlkq1e43nFuiFiVZOa28K7inV1byhyg7oKInAVMYrSGUV+lDJXYvrpXqBVc7vq22zZhT/t8+Q/RysKbVXC4N1+DBIqiqXjA1C7wJunxlhCBje725sTAyCBV9b0fBB+e8SqNjRc2ucO6dv8/NDP+8Uu0bZwqVP6vkj8j/oL9ZLq+44y8SEV6VNSEn//+ZfInSfRGUnBWXC7kN1oS1LU3qkmj8LotUd/4IyNzombLjtCj/nz3YP4MhXva8xLGr0ZT4CXGMcrNPlXFVoJO/KhgzYZ33ZPHL1Ce+F69fuX+wfxjM3Vy9Qubuv/oKH6sY/0GG9qg9oyMY1PG69rrhnsbvl0ndprIaHk7stmcDyuMdAf3rQtP39ryPNsLiTs0Gtcm24QJZSEimszO8KWDjzlHYejB47P6qZhHIO728oni/d5TnW8qru4GBCuJEhY9/+HKqfYxuOe7zXuIQPgP1VsnfZfejuCQbtpcMO6nU/+/QO74Fug
 sidebar_class_name: "post api-method"
 info_path: docs/api/ledger/bank-8-ledger
 custom_edit_url: null
@@ -29,7 +23,7 @@ import Translate from "@docusaurus/Translate";
 <Heading
   as={"h1"}
   className={"openapi__heading"}
-  children={"`POST /v1/customers` — create a customer.\nIf the caller is a user token, the `sentin8_auth_user_id` is stamped\nfrom their token claims so that holder-scoped RLS and\n`resolve_caller_customer_id` can find the row."}
+  children={"`POST /v1/customers`"}
 >
 </Heading>
 
@@ -43,7 +37,7 @@ import Translate from "@docusaurus/Translate";
 
 
 
-`POST /v1/customers` — create a customer.
+create a customer.
 If the caller is a user token, the `sentin8_auth_user_id` is stamped
 from their token claims so that holder-scoped RLS and
 `resolve_caller_customer_id` can find the row.

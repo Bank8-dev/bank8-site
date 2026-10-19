@@ -1,15 +1,11 @@
 ---
 id: create-adjustment
-title: "`POST /v1/adjustments` — create an adjustment: recompute the account state
-for backdated postings/parameter changes by re-running the on-schedule
-modules from the effective date and submitting a correction batch."
-description: "`POST /v1/adjustments` — create an adjustment: recompute the account state"
-sidebar_label: "`POST /v1/adjustments` — create an adjustment: recompute the account state
-for backdated postings/parameter changes by re-running the on-schedule
-modules from the effective date and submitting a correction batch."
+title: "`POST /v1/adjustments`"
+description: "create an adjustment: recompute the account state"
+sidebar_label: "`POST /v1/adjustments`"
 hide_title: true
 hide_table_of_contents: true
-api: eJzdVs1uGzcQfhViTi3AtX5syc7enKIHAw1SOM6liqDMkrMS7V1yQ3LlCMICfYg+YZ+kmF3Jq0ipYLQ9VRcJ5Px/3zfUFiIuA6QzKEgvycNcgqvIYzTO3mlIQXnCSAvUj3WIJdkIEjx9qSnEt05vIN2CcjbyRboFrKrCqNZ78Bic5bOgVlQi/4qbiiAFlz2S2scxnjTnR6VcbePC6PYC2VkC5TmpaNa00BiJq6s81xcNhTZf79XHD9EbuwQJufMlRkihro2G5iTcORc2SKIpif129ZzYN42EaGLBRz+1g7p9mdN9NyRomuaw0+hrag9C5WzouhgPh/ylKShvKh4epNBHEh0GWqDVop0wafGDct5zM86KDKNaiVBnpYmR9I8g/xtMWixeBYyEEDHWgTN3xS4w/mu4+hYXbYvf+M16R1sXBSc7DdDX8mqs/ylHyHvnFyWFgEs6U2Yj4ZXt/y3rXqZ9lpCHVOzIxlxsJFx9j253do2F0cLvact2l6d270wIxi5FhvbpJu22Rlq5EI1dhvTZm0giKFdRW0sgVXsTN5DOtnDGBdLZvJnLo1yff33/4UEM1qNBv37CZ/Hn73/sJCHQiv4qFZ6UK6s6kogrEju2CR4WfbK58yJD9aRbLe3zDyr0WFIkL9QK7ZKCyDbCU+Jra7lRjuRsworRdUGfbOn4O4jcu7K9fWGM0F1Neq9F9kdxrNQLkFBSXDner1wHSKgwriCFo15BAiv2vt+3P3/FsiroWExwmePNJJ9eJZPr0XVyNZmOk+wyV8lYvZle5tMp5jg9lW0K4+H4KhleJ+M3D6NJOhml45uL4fXot17rh7QzNnct6XYUaxFNdk/HMXofyEZjb8TbFvZfWqMOO+dJdE5yj4MguzSWpKi807WKojCZR7/hWRVGEbM33YLFkvO+u3sQ7+/FbYVqRcn4YggsKs6XG/LfNWgkrMmHrrThxag74uwl2oPQ/2POfQPPy+aI9DUOqgKN5YHUvuC7jo4zWI/4BTgg5FzCihmbzmC7zTDQR180DR9/qcmzzucS1ugNZkWnagkrQs2ozLbwRBt+KrvHKXngCti8qLmSk4eqkXuPW6Woimdt5weiYgxBQrb7g1I6zT4en5nW+AwpAP/PYe92ibZnWyjQLut2e0MXkz9/AZtyLjs=
+api: eJzVVs1u20YQfpXFnBpgaf3Ykh3enKIHAw1SOO6liqAMd4fS2uQus7uUIwgE+hB9wj5JMaRkKlIqGG0v1YXCcv6/75vlFiIuA6QzKEgvycNcgqvIYzTO3mlIQXnCSAvUj3WIJdkIEjx9qSnEd05vIN2Ccjbyi3QLWFWFUa334DE4y2dBrahE/hc3FUEKLnsktY9jPGnOj0q52saF0e0LZGcJlOekolnTQmMkrq7yXF80FNp8vVcfP0Rv7BIk5M6XGCGFujYampNw51zYIImmJPbb1XNi3zQSookFH/3YDur2ZU733ZCgaZrDTqOvqT0IlbOh62I8HPJDU1DeVDw8SKGPJDoMtECrRTth0uIH5bznZpwVGUa1EqHOShMj6Tcg/xtMWixeBYyEEDHWgTN3xS4w/mu4+hYXbYvf+M16R1sXBSc7DdDX8mqs/ylHyHvnFyWFgEs6U2Yj4ZXt/y3rXqZ9lpCHVOzIxlxsJFx9j253do2F0cLvact2l6d2700Ixi5FhvbpJu22Rlq5EI1dhvTZm0giKFdRW0sgVXsTN5DOtnDGBdLZvJnLo1wdfAKt6NdPKjwpV1Z1JBFXJHaUEjwR+mRz50WG6km3gtknGVTosaRIXqgV2iUFkW2Ep8TX1nI3HMnZhGWh64I+2dLxM4jcu7J9+0ILobua9F5w7I/iWI4XIKGkuHK8RLkOkFBhXEEKg/Vo0DfEmmFZ3vdL9aevWFYFHSsGLnO8meTTq2RyPbpOribTcZJd5ioZq7fTy3w6xRynp9pMYTwcXyXD62T89mE0SSejdHxzMbwe/dYL+pBbxuauZdaORy1sye5+OIboI9lo7I1412L7c2sk/vz9D54Hic5J7nEQZJfGkhSVd7pWURQm8+g3PKvCKGKKpluwWHLe93cP4sO9uK1QrSgZXwyBlcP5ckP+uwaNhDX50JU2vBh1R5y9RHsQ+vMvHz4+iCMcPh83d3Cz/e+puFsTkb7GQVWgsTyY2hfcZUfLGaxHvO4PiDmXsGLmpjPYbjMM9KsvmoaPv9TkWdRzCWv0BrOik7CEFaFmdGZbeKIN34vdDJMHroDNi5orObmVGrn3uFWKqnjWdn4gLsYSJGS7r5HSafbx+Mz0xmdIAfijhr3bjdmebaFAu6zbVQ1dTP79BdayJds=
 sidebar_class_name: "post api-method"
 info_path: docs/api/ledger/bank-8-ledger
 custom_edit_url: null
@@ -27,7 +23,7 @@ import Translate from "@docusaurus/Translate";
 <Heading
   as={"h1"}
   className={"openapi__heading"}
-  children={"`POST /v1/adjustments` — create an adjustment: recompute the account state\nfor backdated postings/parameter changes by re-running the on-schedule\nmodules from the effective date and submitting a correction batch."}
+  children={"`POST /v1/adjustments`"}
 >
 </Heading>
 
@@ -41,7 +37,7 @@ import Translate from "@docusaurus/Translate";
 
 
 
-`POST /v1/adjustments` — create an adjustment: recompute the account state
+create an adjustment: recompute the account state
 for backdated postings/parameter changes by re-running the on-schedule
 modules from the effective date and submitting a correction batch.
 

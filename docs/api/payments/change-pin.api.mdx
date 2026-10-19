@@ -1,19 +1,11 @@
 ---
 id: change-pin
-title: "Change a card PIN.
-Verifies `old_pin_hash` against the stored `pin_hash`; on success the
-stored hash is replaced with `new_pin_hash` and `pin_attempts` is
-reset. On failure `pin_attempts` is incremented (same policy as
-`verify_pin`)."
+title: "`POST /v1/cards/{id}/pin/change`"
 description: "Change a card PIN."
-sidebar_label: "Change a card PIN.
-Verifies `old_pin_hash` against the stored `pin_hash`; on success the
-stored hash is replaced with `new_pin_hash` and `pin_attempts` is
-reset. On failure `pin_attempts` is incremented (same policy as
-`verify_pin`)."
+sidebar_label: "`POST /v1/cards/{id}/pin/change`"
 hide_title: true
 hide_table_of_contents: true
-api: eJzlVNtuEzEQ/ZXRPIG0zSaFh2p5KkhIFWpT0cJLEnWn3knWdNc2Hm9KtFqJj+AL+RI0uVSl4Q94suQ5czvn2D0mWgkWMwy0adklwUWGPnCkZL27qLBAU5Nb8V2wDjOMLME7YcGix9PxWI+KxUQbNAELnH7CDI13iV3SKIXQWLMtl38ThfQopuaWsOiHYRgyfDueHNe58gmoSzW7pOlc4Rb55hh5aUWsW0GqGQ5rgBgfGFaUGLWFsOmiTRssZovsRf6H7YJAYChWcH1xNZq7rxzt0rJA6ZtKd7+rSeoSaEXWSdr2kuQjV1A+Rd+BdyCdMSyiiLnbQzQKViByaMhwBY821VA6fnxe2u1rUUrchiQlWJm7yMJpBFMHS7JNF/kYBNaZyLo3V/BKqGUIvrFmAyRzV651l412Kl+PMMOWU+1V2eAlYYaBUo0F5utJrgxI3ttqyIN1+U56zNC6pVfik00NY4H35B7OTp4885LRGxXNncF7hRXXB01+//x1EAh8NDVL2vksg4obVrEEkod9evGx8Y86cGMNO2EdwFGr/S8vbmH6Gc4DmZpPTkdjnbHStKXl+E/AkOGao+wGHI8muyuloCX3rPT/5oa/lOsxbYKykPhHykND1ilLXWw0tjPKDNcTfeJqFcywsJV6aPs77P2yyLBWaxUz7Pt7Ev4Sm2HQ6+8dx/0bXFO0dK9umi2GDGumSpWb9fjAGyzw3BgOas81NZ2OdPSRDItnXr6e3tziMPwBIO+vvA==
+api: eJzlVNtu00AQ/ZXRPIHkxknhoTJPBQmpQm0qWnhJonq6nsRL7d1lZ50SWZb6EXwhX4ImSUvVwBfwZGnnzO2c4+kx0UqwmGGgTcsuCS4y9IEjJevdWYUFmprcim+CdZhhZAneCQsWPR6Px/qpWEy0QROwwOknzNB4l9gljVIIjTXbcvk3UUiPYmpuCYt+GIYhw7fjyWGdC5+AulSzS5rOFW6Rbw6R51bEuhWkmuFxDRDjA8OKEqO2EDZdtGmDxWyRvcj/sF0QCAzFCi7PLkZz95WjXVoWKH1T6e43NUldAq3IOknbXpJ85ArKp+g78A6kM4ZFFDF3e4hGwQpEDg0ZruDephpKx/fPS7t9LUqJ25CkBCtzF1k4jWDqYEm26SIfgsA6E1n35gpeCbUMwTfWbIBk7sq17rLRTuXrEWbYcqq9Khu8JMwwUKqxwHw9yZUByXtbDXmwLt9Jjxlat/RKfLKpYSzwltzdydGTZ14yeqWiuRN4r7Di8lGTXw8/HwUCH03NknY+y6DihlUsgeRhn158bPy9DtxYw05YB3DUav/zs2uYfobTQKbmo+PRWGesNG1pOf4VMGS45ii7Acejye5JKWjJPStdXk6vruGfZJQvl+3/mP2/c1LaBKUs8Y+Uh4asU0q72CgrO1fNcD3Re6BUYoaFrdRw21OyN9ciw1p9WMyw729J+EtshkGfv3cc9z/smqKlW7XebDFkWDNVKvOsxzveYIGnxnBQL6+p6XSkg6szLJ4ZXyXGYfgNMV++3A==
 sidebar_class_name: "post api-method"
 info_path: docs/api/payments/bank-8-payments
 custom_edit_url: null
@@ -31,7 +23,7 @@ import Translate from "@docusaurus/Translate";
 <Heading
   as={"h1"}
   className={"openapi__heading"}
-  children={"Change a card PIN.\nVerifies `old_pin_hash` against the stored `pin_hash`; on success the\nstored hash is replaced with `new_pin_hash` and `pin_attempts` is\nreset. On failure `pin_attempts` is incremented (same policy as\n`verify_pin`)."}
+  children={"`POST /v1/cards/{id}/pin/change`"}
 >
 </Heading>
 

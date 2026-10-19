@@ -1,25 +1,11 @@
 ---
 id: calendar-due-check
-title: "`POST /v1/internal/calendar/schedules/run` — Cron fires this daily.
-Marks due obligations and creates their filing runs — idempotent per
-(obligation, period): the unique index is the dedupe floor, so a
-re-fired calendar never double-creates (reporting DESIGN.md §5/§8).
-Cron owns timing; this owns correctness. The `sentin8:cron` workload
-is granted `bank8:reporting:runs:write` in this service's registration
-(the ledger-storage precedent), so the same Shield gate every human
-mutation passes also gates the scheduled fire — no bypass."
-description: "`POST /v1/internal/calendar/schedules/run` — Cron fires this daily."
-sidebar_label: "`POST /v1/internal/calendar/schedules/run` — Cron fires this daily.
-Marks due obligations and creates their filing runs — idempotent per
-(obligation, period): the unique index is the dedupe floor, so a
-re-fired calendar never double-creates (reporting DESIGN.md §5/§8).
-Cron owns timing; this owns correctness. The `sentin8:cron` workload
-is granted `bank8:reporting:runs:write` in this service's registration
-(the ledger-storage precedent), so the same Shield gate every human
-mutation passes also gates the scheduled fire — no bypass."
+title: "`POST /v1/internal/calendar/schedules/run`"
+description: "Cron fires this daily."
+sidebar_label: "`POST /v1/internal/calendar/schedules/run`"
 hide_title: true
 hide_table_of_contents: true
-api: eJztVUGOGzcQ/EqjL9kFRtKugQCL8Sl2EmMPjgPv5iQtLGrYmqHFac42ScmCICCP8B/8Dz8lLwmas1IcJwc/wLpIaDVrqotV0wdMpo1Yz9FxImHj8aHCMJCY5ALfWqyxMZ7YGnlnM71rOmo2WKHQY6aYXgS7x/qATeBEnPSnGQbvmnJ89j4G1lpsOuoN1ofj8TiedUIW6ySZSiEOgSNF7X12daVflmIjblAYrPFX5x23kxMVsJmgUIEm9IOnRBYVOlKTxaU91vOH6iuM5e9v7u5htr2enWadnfBmStBmT3EmmZfw158f4aUEhrUTipA6F8Ea5/fTBb82somFQFh515ZBIxi20AiZVNrJCawLZZDMseA5S/0QVCUYSBZ88c/xSisu2Mtaz0Jm95gJHFv6AK7ggSWbB4K1D0EqiAHMgoUmys/CWRamLQnYkFeeJic6F0JDkKRkfv7l7vbVb9PewudPP84+f7q5nC64DBp2HCG53nH7fJy3VJogQk1iinEK9x3BMhInxzd1I4GXsAuy8cHYBbsIrRhOZGG5Mry5qc+PrVWDeicu0RIcj/CRZOsa+iGCUOtiGg234Aud1pNtSSYxBTEtwSDUkCVOl2V07YimJ7jrHHkLrUkEOvkeutwbXnCfU4GDwcRIEYyPobSNYp5u25b7LbfDAVZ77Z5ihT2lLqj1hxATVjiY1GGN32AdrNDxOqiBk0uesMYixuQsBn5ty7tRUHhRRHt7vitlJdRmb1KQ/clOp8dW0BI/pbSCwTQb0zpuK4h51bsYXWCdxLuGOJLyYdMrnde39/DmLfw0mKajybPplVJWbd3akfxvw7HCLUkc6V5Nr8eSatMb/gL6e8C+B+zbAvavBBww7Qf1T6IPaTZ441j9lcXrf2P25ri9Ltl6WlLVeSthhWdv6V7KrBus0+DWczwcVibSH+KPRy0/ZpKn3bA14sxKEzp/OFbYkbFq//kBN7THGl+OG21yr9y03Wfl+J/tdnz44n2hAcAKV09bsQ9Wz4jZKTOzwxpRt2txtDaU2gG94TabVntHTP38DWolu88=
+api: eJztVc1u20YQfpXBXGoDlGQHKGCwp6R/8CFNEbsnyYhW3BG51XKWnt2VIggC8hB9h7xHHqVPEszSUg23h95bXkgMZj5+8+03OwdMpo1Yz9FxImHj8aHCMJCY5ALfWqyxMZ7YGvlgM31oOmo2WKHQY6aY3gS7x/qATeBEnPTTDIN3TSmf/R4Dayw2HfUG68PxeBxrnZDFOkmmEohD4EhRc19dXenLUmzEDQqDNf7kvON2cqICNhMUKtCEfvCUyKJCR2qyuLTHev5QvcD4XgLD2glFSJ2LYI3z++mC3xrZxIIYVt61hXkEwxYaIZNKOjmBdeEAkjnCn5/+AGepH4K2DQPJgi/+Kq804oK9rLUWMrvHTODY0kdwBQ8s2TwQrH0IUkEMYBYsNFF+Fs59Mm1JwIa88jQ50bkQGoIkJfPDj3e3P/8y7S18+fzt7Mvnm8vpgkujYccRkusdt9+N/ZZIE0SoSUwxTuG+I1hG4uT4pm4k8BJ2QTY+GLtgF6EVw4ksLFeGNzf1+be1alDvxCVaguMRPpJsXUPfRBBqXUyjgxZ8od16si3JJKYgpiUYhBqyxOmytK4Z0fQEd50jb6E1iUA730OXe8ML7nMqcDCYGCmC8TGUtFFM9ZfNnmw533I6HGC11+wpVthT6oJ6eQgxYYWDSR3WONtez06+n500n53A4kwyY4WO10EdmVzyhDUWMSZnMfClz+5GQeFNEe39+ayUlVCbvUlB9ic7nX5bQUv8NHYVDKbZmNZxW0HMq97F6AJrJ941xJGUD5te6by9vYd37+H1YJqOJq+mV0pZtXVrR/KPCccKtyRxpHs1vR5Dqk1v+Bn08td3d/fwL1RavhTh2Y3w/9z9d+cu7Qf1UaKPaTZ441h9lsWrQcYZnOP2uszY0/apzusGKzx7TBdOZl1NnQ5wPcfDYWUi/Sb+eNTwYyZ5uvS3RpxZ6aTOH44VdmSsjsH8gBvaqx1HY07ulZum+6wc/7a2jg/P7g0dBKxw9bTu+mC1RsxOmZkd1oi6NouFNaHEDugNt9m0mjti6vMVt/Or6A==
 sidebar_class_name: "post api-method"
 info_path: docs/api/reporting/bank-8-reporting
 custom_edit_url: null
@@ -37,7 +23,7 @@ import Translate from "@docusaurus/Translate";
 <Heading
   as={"h1"}
   className={"openapi__heading"}
-  children={"`POST /v1/internal/calendar/schedules/run` — Cron fires this daily.\nMarks due obligations and creates their filing runs — idempotent per\n(obligation, period): the unique index is the dedupe floor, so a\nre-fired calendar never double-creates (reporting DESIGN.md §5/§8).\nCron owns timing; this owns correctness. The `sentin8:cron` workload\nis granted `bank8:reporting:runs:write` in this service's registration\n(the ledger-storage precedent), so the same Shield gate every human\nmutation passes also gates the scheduled fire — no bypass."}
+  children={"`POST /v1/internal/calendar/schedules/run`"}
 >
 </Heading>
 
@@ -51,7 +37,7 @@ import Translate from "@docusaurus/Translate";
 
 
 
-`POST /v1/internal/calendar/schedules/run` — Cron fires this daily.
+Cron fires this daily.
 Marks due obligations and creates their filing runs — idempotent per
 (obligation, period): the unique index is the dedupe floor, so a
 re-fired calendar never double-creates (reporting DESIGN.md §5/§8).

@@ -1,17 +1,11 @@
 ---
 id: simulate-contract
-title: "`POST /v1/contracts:simulate` — execute a module hook against synthetic
-account state . Calls Sentin8:Func `POST /v1/modules/{id}/execute`
-with a mock host-function context; **no persistence occurs** — the raw
-hook result is returned for preview/dry-run use."
+title: "`POST /v1/contracts/simulate`"
 description: "`POST /v1/contracts:simulate` — execute a module hook against synthetic"
-sidebar_label: "`POST /v1/contracts:simulate` — execute a module hook against synthetic
-account state . Calls Sentin8:Func `POST /v1/modules/{id}/execute`
-with a mock host-function context; **no persistence occurs** — the raw
-hook result is returned for preview/dry-run use."
+sidebar_label: "`POST /v1/contracts/simulate`"
 hide_title: true
 hide_table_of_contents: true
-api: eJztVdtu40YM/RWCT9lAvmTbAgv1qRvsYhdosUWS9sUJkvGIlmYtz8zOcOwYhoF+RL+wX1JwJFu5GO0PrJ6kEYc85Dkkd8iqjljOsKWqpoB3BTpPQbFx9nOFJUazSq1iutfOclCascBA3xJFfu+qLZY7lD9kWV6V963R+fbka3RWzqJuaKXkjbeesEQ3/0pHPyZQJfFXrkot3ZtKIPggINhQzE61dqnzX1HUwXjxjyVeby03xEZDbwKRFRP889ffYB14CtFEJqsJnNYpxDEWyIZbQfGnahPhvsDGueUTdJGDsTUWL2J9cm4JVq0Iznyge+8iG1sXIC/Dl+QqeVT3tCbLBSjNZp3rUUBFw9ebsYQ21qec1ytQQzn+F9nHZDV09mAqOOOGQHKC1tVGAzugR9KJqYvpVVArYgrxROD9UJ/rnvjLnverjnTci9HAHIdE+SB6Z2NH2Nvp9ARZnT/jLASKqWU4C2oDGX2G6xL7xG8E44/TH147+M3EaGwNc2WX78pOr2Vf+VhugmGCqJ3P9fvplIdrsmzsuzLHtI5BO7swdZJEJKtIOgXDWyxnO/yPMFjO7vZ3L3l4+P3L9Q1M1heTQ6vE8tA9D1mTPQ+gDnTlvFWtjI0M8aDmW/tczmO4VG0b4Rn8IVrnK052ptpP+hAPt3ZjuMmR9BIaF3m0SFbn8ud+feSf4fz8ZJecn2e0oqOgNrc2o+w5MxECcQqWKli4AD7Q2tBmUoXtKCQLKZI02Yq4cTI+pHAoouMGS3xWnMmhOFigzIqrYap8eFQrLyrc9d05aP9JYxwOcyMt3FM5Z/JG/Ux7SVRfR3ifGf41G+WMtQsE3aWusUVuZGtjqQAfXJU0Q2vmQYWtZNkaTTZmmDIZRKOfb+DLFfzilW5o9HY8xQJNJfEWhsJJg32Ba6EgQ5uOL7ojib5S9onr7/Ia5PWMz+N8lKgT3ypjpYIptPKvU94M1xdY4LFyWBwXm+wbSUCMdru5ivRHaPd7Of6WKMgwuCtwrYJR87Zr/QIbUpXwOdvhkrZY4mW3A0c3AkXMZZyWr/ehjI1jc0iNscB5v0dXrpI7QW1kN6oNloiyjuV2nqv5bIetsnVStdh2PuX5F+AFwSc=
+api: eJztVdtu4zYQ/ZXBPGUD+ZJtCyzUp27Qogu02CJJ++IECU2NJa5lkksO7RiCgX5Ev7BfUgwlX5IY7Q/UTxI9mjlzzplhh6zqiOUMW6pqCvhQoPMUFBtnP1VYYjSr1CqmR+0sB6UZCwz0NVHkj67aYtmh/EOW5VF53xqdv558ic7KWdQNrZQ88dYTlujmX+iQxwSqpP7KVamlR1MJBB8EBBuKOanWLvX5K4o6GC/5scTbreWG2GgYQiCyYoK///wLrANPIZrIZDWB0zqFOMYC2XArKP5QbSLcFdg4tzxBFzkYW2PxqtbPzi3BqhXBhQ/06F1kY+sC5OH4Jr1KH9UjrclyAUqzWWc+Cqjo+PZuLKWN9Sn39QbUkY7/RPZTshr6eDAVXHBDID1B62qjgR3QM+nE1Nf0KqgVMYV4pvDuyM/tIPz1oPtNLzruJOioHIdE+SB6Z2Mv2Pvp9IxYfT7jLASKqWW4CGoDGX2G6xL7xO8E47fTb94m+NXEaGwNc2WXH8rer+XAfCw3wTBB1M5n/r47l+GWLBv7ocw1rWPQzi5MnaQR6SqSTsHwFstZh/9SBsvZw+7htQ5Pv32+vYPJ+mqyH5VY7qfnKXty0AHUXq7ct6qVsZEh7t18b1/aeQzXqm0jvIB/rNbnipPOVLvJUOLp3m4MN7mSXkLjIo8WyepMf57XZ/4eLi/PTsnlZUYrPgpqc28zykEzEyEQp2CpgoUL4AOtDW0mVdiOQrKQIsmQrYgbJ+tDiEMxHTdY4gtyJntysEDZFTfHrfLjs1p5cWE3TOfR+yeDsT/Mg7Rwp3bO4o2GnfZaqIFH+JgV/iUH5Y61CwT9R/1gi93I1sZSAT64KmmG1syDClvpsjWabMwwZTOIRz/dwecb+MEr3dDo/XiKBZpK6i0MhbMBuwLXIkGGNh1f9UdSfaXsSeoz9jow+PS6x5Ol/L8vT3w5bFIpM/GtMla4TqEVxnqPznB9hQUeqMLicAXKzSSIJajr5irS76Hd7eT4a6Iga+OhwLUKRs3bfkkU2JCqRPlZh0vaYonXvTCjO4Ei4bJ4y7c3pyyYwxgJqVjgfLhxV66Sb4LayC2qNlgiysUtX+cNnM86bJWtk6olts8pv38AHmHPnw==
 sidebar_class_name: "post api-method"
 info_path: docs/api/ledger/bank-8-ledger
 custom_edit_url: null
@@ -29,7 +23,7 @@ import Translate from "@docusaurus/Translate";
 <Heading
   as={"h1"}
   className={"openapi__heading"}
-  children={"`POST /v1/contracts:simulate` — execute a module hook against synthetic\naccount state . Calls Sentin8:Func `POST /v1/modules/{id}/execute`\nwith a mock host-function context; **no persistence occurs** — the raw\nhook result is returned for preview/dry-run use."}
+  children={"`POST /v1/contracts/simulate`"}
 >
 </Heading>
 

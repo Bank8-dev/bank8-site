@@ -1,19 +1,11 @@
 ---
 id: update-alert-status
-title: "`POST /v1/alerts/{id}/status` — queue operation on an alert (claim /
-review / close) with an audited actor: the caller's verified identity
-drives the journal entry; the transition is guarded against terminal
-states (closed alerts never reopen — a new detection raises a new
-alert)."
-description: "`POST /v1/alerts/{id}/status` — queue operation on an alert (claim /"
-sidebar_label: "`POST /v1/alerts/{id}/status` — queue operation on an alert (claim /
-review / close) with an audited actor: the caller's verified identity
-drives the journal entry; the transition is guarded against terminal
-states (closed alerts never reopen — a new detection raises a new
-alert)."
+title: "`POST /v1/alerts/{id}/status`"
+description: "queue operation on an alert (claim /"
+sidebar_label: "`POST /v1/alerts/{id}/status`"
 hide_title: true
 hide_table_of_contents: true
-api: eJztVcFuGzcQ/RViLk2AtVcOekg3J0dpgaANUtjOoZCEZESOtHS4wzXJXUUQFuhH9Av7JcGQqmw3RtsPqC4Sho8z8948jg6QcBuhWUCLbByFCKsKfE8Bk/X81kADQ28w0Ud0FNLHmDANESoIdDdQTK+92UNzAO05ESf5iX3vrM7369voWWJRt9Sh/Er7nqABv74lnaACQ1EH2wsaGrgqWdXam73a+KCQVS58VgqrFJCjFbR6djfQQOrUbFR//v6HSi0tGXXyQWmHtlM2KhyMTWTUaFHOlUbnKHwXlTXEyaa9spwPMnDJt34IjO75+ZGnDWREoyP5VQV9kLLJUszsSvyeXUzB8hamqYJkk5PQh6zipXC5zvAjVZgEdV8lhYFyIPaeY8n/YjaTr8dSQfWfRZ9yje9nPzyRRU4ehz79+v76RtXjRZ2Vj/XBmqkuHD9ljf8mvPJ8mpN6VlSvlxxotLRTtdLOR3qudja1GXecRh5S83ggIwW7sWROk1myCXakmGHHuSjiFPavcuiBH2xU2wGDkdRbtByTShQ6y+iWLO1TlO58FEBmpphGCiqQ74kzM1RMO2Uokc45A9pIsYSXnG9lV3SUWi+Po/dRXNxjaqGBp0WDCiLpIdi0h2axqkAGdHX/fn78gl0vJrl30slBFVje+Gyto5HWyJ9fnmnf9c4ia/rmDV2LcvxSvRZgMz8BM8HLd7/U85ufGvXzb/N6/uZNpSKyLs8n6kDElrdVkRWLBp1nm3zI8Uyu1hhJObshvdeORA9nNXHMFBg7afPd2xv1/kpd9qhbOntxPoMKylA3lsKTgKmCkUIsLGbnFyUkCnfID1L/b9B/N+gjS5z2UqIvqe4dWhZlh+DkrHh3AeMFVFDqQgWNNeLb08ZrxejNAg6HNUb6ENw0SfhuoHB09YjB4lo8ulhNFbSERga9OMBn2kMD87Ktzm6kF4G7QXr6ZnNN1V83LrWmPv0jdvXgLYotoIL18S+p80buBNzJGsdd2Zk+a5LXao4dwCFvB9wKtuSUz1dhF4Lm
+api: eJztVdtuGzcQ/RViXpoAa68c9CHdPjlKCwRtkMJ2HgpJSEbkSEuHO1yT3FUEYYF8RL+wX1IMqch2YhT9gOpFi7OHczlzOHuAhNsIzQJaZOMoRFhV4HsKmKznNwYaGHqDiT6go5A+xIRpiFBBoLuBYnrlzR6aA2jPiTjJI/a9szqfr2+jZ8GibqlDeUr7nqABv74lnaACQ1EH2wsbGrgqUdXam73a+KCQVU58VhKrFJCjFbZ6djfQQOpUbFR/f/lLpZaWjDr5oLRD2ykbFQ7GJjJqtCjvlUbnKPwQlTXEyaa9spxfZOKSb/0QGN3z82OfNpARjY7Nryrog6RNlmLuruD33cUULG9hmipINjmB3mcVL6WX60w/tgqTsO6zpDBQBmLvOZb4L2Yz+XssFVT/WfQp5/hx9tMTUeTNY+gbWZXn0xTUs6JpveRAo6WdqpV2PtJztbOpzbyj1nkEzWO5Rwp2Y8mcdF+yCXakmGlH1RVxCvufM/Rg2jaq7YDBSOgtWo5JJQqdZXRLlgFQlOp8FILUGhXTSEEF8j1x9gYqpp0ylEjnmAFtpFjgJedTeeYdpdaL9XsfxaM9phYaqMeLuoSuD9ZM9ekuRNJDsGkPzWJVgch/dX87fvmMXS8WuPfJyR8VWN74bJyjTdbIn16ead/1ziJr+u6GXIty/FK9EmIzPxFzg5dvf6/nN7826rc/5/X89etKRWRdLkfUgYgtb6siKxYNOs82+ZDx3FytMZJydkN6rx2JHs5q4phbYOykzLdvbtS7K3XZo27p7MX5DCooQ91YCk8SpgpGCrF0MTu/KJAo3CE/CP3xj3fXN+pprT9+K8eDxfO/b79un0SfU907tCwKD8GJTsXDCxgvoIKSCCporBH/nvZaK4ZvFnA4rDHS++CmSeC7gcLR3SMGi2vx6mI1VdASGhn44gCfaA8NzMs8zm6kFqG7QWr6bj9N1dcTl1pTn/6Vu3pwJ8UeUMH6+OHpvJEzAXeyrHFXNqPP/sjLM2MHcMjbAbfCLTHl9w9nqHfm
 sidebar_class_name: "post api-method"
 info_path: docs/api/compliance/bank-8-compliance
 custom_edit_url: null
@@ -31,7 +23,7 @@ import Translate from "@docusaurus/Translate";
 <Heading
   as={"h1"}
   className={"openapi__heading"}
-  children={"`POST /v1/alerts/{id}/status` — queue operation on an alert (claim /\nreview / close) with an audited actor: the caller's verified identity\ndrives the journal entry; the transition is guarded against terminal\nstates (closed alerts never reopen — a new detection raises a new\nalert)."}
+  children={"`POST /v1/alerts/{id}/status`"}
 >
 </Heading>
 
@@ -45,7 +37,7 @@ import Translate from "@docusaurus/Translate";
 
 
 
-`POST /v1/alerts/{id}/status` — queue operation on an alert (claim /
+queue operation on an alert (claim /
 review / close) with an audited actor: the caller's verified identity
 drives the journal entry; the transition is guarded against terminal
 states (closed alerts never reopen — a new detection raises a new
