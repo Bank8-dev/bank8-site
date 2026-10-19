@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "bank8-risk",
-    "description": "Sentin8 Bank8:Risk — prudential risk measurement: capital, liquidity, credit (ECL), limits, stress.",
+    "description": "Sentin8 Bank8:Risk - prudential risk measurement: capital, liquidity, credit (ECL), limits, stress.",
     "license": {
       "name": "MIT OR Apache-2.0",
       "identifier": "MIT OR Apache-2.0"
@@ -676,7 +676,7 @@
           "meta"
         ],
         "summary": "`GET /v1/health`",
-        "description": "Carries the binary's build identity (`version`/`build`, BUILDID-1) so\ncaptain's monitor populates `make status`'s VERSION column for every\ninstance — the consuming BINARY's identity, never a shared crate's.\n\nservice health payload.",
+        "description": "Carries the binary's build identity (`version`/`build`, BUILDID-1) so\ncaptain's monitor populates `make status`'s VERSION column for every\ninstance - the consuming BINARY's identity, never a shared crate's.\n\nservice health payload.",
         "operationId": "health",
         "responses": {
           "200": {
@@ -827,7 +827,7 @@
     "schemas": {
       "CreateScenarioRequest": {
         "type": "object",
-        "description": "Request body for authoring a stress scenario — declarative assumption\nset (shock parameters on the measured dimensions); data, never a\nFunc hook (a hook cannot be audited as a filing input — DESIGN.md\n§10 resolved).",
+        "description": "Request body for authoring a stress scenario - declarative assumption\nset (shock parameters on the measured dimensions); data, never a\nFunc hook (a hook cannot be audited as a filing input - DESIGN.md\n§10 resolved).",
         "required": [
           "name",
           "assumptions"
@@ -903,7 +903,7 @@
       },
       "StressRunRequest": {
         "type": "object",
-        "description": "Request body for `POST /v1/stress/run` — an on-demand full recompute\nof the measured dimensions with a scenario's shocks applied.",
+        "description": "Request body for `POST /v1/stress/run` - an on-demand full recompute\nof the measured dimensions with a scenario's shocks applied.",
         "required": [
           "scenario_id"
         ],
@@ -940,7 +940,7 @@
     },
     {
       "name": "risk",
-      "description": "Bank8:Risk — prudential risk measurement: capital, liquidity, credit (ECL), limits, stress"
+      "description": "Bank8:Risk - prudential risk measurement: capital, liquidity, credit (ECL), limits, stress"
     }
   ]
 }

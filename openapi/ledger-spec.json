@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "bank8-ledger",
-    "description": "Sentin8 Bank8:Ledger — core ledger, posting engine, product library.",
+    "description": "Sentin8 Bank8:Ledger - core ledger, posting engine, product library.",
     "license": {
       "name": "MIT OR Apache-2.0",
       "identifier": "MIT OR Apache-2.0"
@@ -154,7 +154,7 @@
             "bank8:ledger:schedules:read": []
           }
         ],
-        "description": "?account_id=` — list account schedule tags."
+        "description": "?account_id=` - list account schedule tags."
       }
     },
     "/v1/account-update-batches": {
@@ -346,7 +346,7 @@
             "bank8:ledger:accounts:write": []
           }
         ],
-        "description": "create account (v1 legacy).\n.5: holder callers can only create accounts owned by\nthemselves. Server-side defence-in-depth:\n- If the caller is a holder (§4.3c — no `holder:view-all` scope) and\nthey did not supply `customer_id`, we resolve it from their Auth\nuser id (via `customers`).\n- If the caller is a holder and they did supply a `customer_id` that\ndoes not match their own, we return 403 (they cannot create\naccounts for someone else).\n- If no `customers` row exists for the holder, we return 403\n— there is no way to own the account, so creating it would leave an\norphan (the list/get handlers then hide it forever).\n- Callers with `holder:view-all` (staff / sys / M2M) are\nunrestricted: they can pass any `customer_id` or none (for\ninternal accounts)."
+        "description": "create account (v1 legacy).\n.5: holder callers can only create accounts owned by\nthemselves. Server-side defence-in-depth:\n- If the caller is a holder (§4.3c - no `holder:view-all` scope) and\nthey did not supply `customer_id`, we resolve it from their Auth\nuser id (via `customers`).\n- If the caller is a holder and they did supply a `customer_id` that\ndoes not match their own, we return 403 (they cannot create\naccounts for someone else).\n- If no `customers` row exists for the holder, we return 403\n- there is no way to own the account, so creating it would leave an\norphan (the list/get handlers then hide it forever).\n- Callers with `holder:view-all` (staff / sys / M2M) are\nunrestricted: they can pass any `customer_id` or none (for\ninternal accounts)."
       }
     },
     "/v1/accounts/{id}": {
@@ -680,7 +680,7 @@
             "bank8:ledger:schedules:write": []
           }
         ],
-        "description": "`POST /v1/account-schedule-tags` — create/override an account schedule tag."
+        "description": "`POST /v1/account-schedule-tags` - create/override an account schedule tag."
       }
     },
     "/v1/accounts/{id}/schedules": {
@@ -932,7 +932,7 @@
             "bank8:ledger:postings:write": []
           }
         ],
-        "description": "`POST /v1/adjustments:bulkRetry` — retry failed adjustments (Sentin8 Jobs\npattern)."
+        "description": "`POST /v1/adjustments:bulkRetry` - retry failed adjustments (Sentin8 Jobs\npattern)."
       }
     },
     "/v1/adjustments/{id}": {
@@ -1191,7 +1191,7 @@
             "bank8:ledger:audit:read": []
           }
         ],
-        "description": "`GET /v1/audit` — query audit events."
+        "description": "`GET /v1/audit` - query audit events."
       }
     },
     "/v1/admin/balances": {
@@ -2892,7 +2892,7 @@
             "bank8:ledger:postings:write": []
           }
         ],
-        "description": "`POST /v1/contracts:simulate` — execute a module hook against synthetic\naccount state . Calls Sentin8:Func `POST /v1/modules/{id}/execute`\nwith a mock host-function context; **no persistence occurs** — the raw\nhook result is returned for preview/dry-run use."
+        "description": "`POST /v1/contracts:simulate` - execute a module hook against synthetic\naccount state . Calls Sentin8:Func `POST /v1/modules/{id}/execute`\nwith a mock host-function context; **no persistence occurs** - the raw\nhook result is returned for preview/dry-run use."
       }
     },
     "/v1/customers": {
@@ -3185,7 +3185,7 @@
             "bank8:ledger:accounts:read": []
           }
         ],
-        "description": "?account_id=` — computed derived values."
+        "description": "?account_id=` - computed derived values."
       }
     },
     "/v1/dlq": {
@@ -3612,7 +3612,7 @@
           }
         },
         "security": [],
-        "description": "Sentin8:Func proxy-back for host functions.\nAuthorization: M2M token with `bank8:ledger:postings:write` (the Func\nruntime authenticates with the posting service's M2M identity because\nhost functions can move money). Tenant context comes from the `env_id`\nin the request body — the Func runtime resolves it from the hook\ncontext, and the M2M token's own env claim is cross-checked."
+        "description": "Sentin8:Func proxy-back for host functions.\nAuthorization: M2M token with `bank8:ledger:postings:write` (the Func\nruntime authenticates with the posting service's M2M identity because\nhost functions can move money). Tenant context comes from the `env_id`\nin the request body - the Func runtime resolves it from the hook\ncontext, and the M2M token's own env claim is cross-checked."
       }
     },
     "/v1/internal/schedules/run": {
@@ -4057,7 +4057,7 @@
           "ledger"
         ],
         "summary": "`GET /v1/parameter-values:viewEffective`",
-        "description": "Results are served from a bounded TTL cache (design §10): the\nparameter-value write path is insert-only with `effective_from`, so a\nshort TTL self-heals and no event-driven invalidation is needed. The\nposting money path never consults this cache — parameter resolution\nthere is transactional by design (a stale fee rate is a correctness\ndefect, not a latency trade).\n\nresolve effective parameter value\nat a point in time, with hierarchy precedence (account > hierarchy > global).",
+        "description": "Results are served from a bounded TTL cache (design §10): the\nparameter-value write path is insert-only with `effective_from`, so a\nshort TTL self-heals and no event-driven invalidation is needed. The\nposting money path never consults this cache - parameter resolution\nthere is transactional by design (a stale fee rate is a correctness\ndefect, not a latency trade).\n\nresolve effective parameter value\nat a point in time, with hierarchy precedence (account > hierarchy > global).",
         "operationId": "view_effective_parameter",
         "responses": {
           "200": {
@@ -5758,7 +5758,7 @@
         "properties": {
           "device_token_ref": {
             "type": "string",
-            "description": "Secret reference (never raw PAN/token material) — §4.4 secret references."
+            "description": "Secret reference (never raw PAN/token material) - §4.4 secret references."
           },
           "device_type": {
             "type": "string"
@@ -6770,7 +6770,7 @@
               "string",
               "null"
             ],
-            "description": "Optional local display_name stamp (VDC §VDC.2 — the ledger never\njoins the platform auth schema; the caller supplies the identity\nfields it already verified)."
+            "description": "Optional local display_name stamp (VDC §VDC.2 - the ledger never\njoins the platform auth schema; the caller supplies the identity\nfields it already verified)."
           },
           "email": {
             "type": [
@@ -6786,7 +6786,7 @@
       },
       "ListAccountsQuery": {
         "type": "object",
-        "description": "`GET /v1/accounts` — list accounts.\n.5: holder callers (§4.3c — no `holder:view-all` scope) see only\naccounts held by their own `customers` row, and only\n`account_type='customer'` accounts (internal accounts are never exposed\nto holders — forced here in the service layer; RLS is the backstop).\nCallers with `holder:view-all` see all env accounts. A holder caller's\n`?customer_id=` query param is ignored — they cannot impersonate another\ncustomer.",
+        "description": "`GET /v1/accounts` - list accounts.\n.5: holder callers (§4.3c - no `holder:view-all` scope) see only\naccounts held by their own `customers` row, and only\n`account_type='customer'` accounts (internal accounts are never exposed\nto holders - forced here in the service layer; RLS is the backstop).\nCallers with `holder:view-all` see all env accounts. A holder caller's\n`?customer_id=` query param is ignored - they cannot impersonate another\ncustomer.",
         "properties": {
           "account_type": {
             "type": [
@@ -6806,7 +6806,7 @@
               "string",
               "null"
             ],
-            "description": "§10.1 — staff-realm env override for internal-account reads.\nValidated against org membership; ignored for customer/delegated\ntokens (env-locked) and never widens customer-data visibility."
+            "description": "§10.1 - staff-realm env override for internal-account reads.\nValidated against org membership; ignored for customer/delegated\ntokens (env-locked) and never widens customer-data visibility."
           },
           "product_id": {
             "type": [
@@ -7345,7 +7345,7 @@
         "properties": {
           "account": {
             "$ref": "#/components/schemas/Value",
-            "description": "Synthetic account state — no persistence occurs."
+            "description": "Synthetic account state - no persistence occurs."
           },
           "hook": {
             "type": "string",
@@ -7666,7 +7666,7 @@
     },
     {
       "name": "ledger",
-      "description": "Bank8:Ledger API — accounts, products, postings, schedules, customers, audit"
+      "description": "Bank8:Ledger API - accounts, products, postings, schedules, customers, audit"
     }
   ]
 }

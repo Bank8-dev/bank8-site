@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "bank8-fdx",
-    "description": "Sentin8 Bank8:FDX — open banking, FDX v6.5 provider/recipient.",
+    "description": "Sentin8 Bank8:FDX - open banking, FDX v6.5 provider/recipient.",
     "license": {
       "name": "MIT OR Apache-2.0",
       "identifier": "MIT OR Apache-2.0"
@@ -61,7 +61,7 @@
           }
         },
         "security": [],
-        "description": "search customer accounts (proxies to Ledger).\nThe incoming Bearer (the bank's own customer token OR a delegated\nrecipient token — both carry the provider customer as `sub`) is\nforwarded to Ledger, so RLS scopes the rows to the consenting\ncustomer either way (fdx DESIGN.md §1 — the consent grant keys on the\ntoken subject)."
+        "description": "search customer accounts (proxies to Ledger).\nThe incoming Bearer (the bank's own customer token OR a delegated\nrecipient token - both carry the provider customer as `sub`) is\nforwarded to Ledger, so RLS scopes the rows to the consenting\ncustomer either way (fdx DESIGN.md §1 - the consent grant keys on the\ntoken subject)."
       }
     },
     "/fdx/v6/accounts/{id}": {
@@ -88,7 +88,7 @@
           }
         },
         "security": [],
-        "description": "`GET /fdx/v6/accounts/{accountId}` — account detail (proxies to Ledger)."
+        "description": "`GET /fdx/v6/accounts/{accountId}` - account detail (proxies to Ledger)."
       }
     },
     "/fdx/v6/accounts/{id}/payment-networks": {
@@ -115,7 +115,7 @@
           }
         },
         "security": [],
-        "description": "`GET /fdx/v6/accounts/{accountId}/payment-networks` — payment network info."
+        "description": "`GET /fdx/v6/accounts/{accountId}/payment-networks` - payment network info."
       }
     },
     "/fdx/v6/accounts/{id}/payment-networks/{paymentNetworkId}": {
@@ -169,7 +169,7 @@
           }
         },
         "security": [],
-        "description": "`GET /fdx/v6/accounts/{accountId}/payment-networks/{paymentNetworkId}/revocation`\n— revocation lifecycle events for the identifier."
+        "description": "`GET /fdx/v6/accounts/{accountId}/payment-networks/{paymentNetworkId}/revocation`\n- revocation lifecycle events for the identifier."
       },
       "put": {
         "tags": [
@@ -194,7 +194,7 @@
           }
         },
         "security": [],
-        "description": "`PUT /fdx/v6/accounts/{accountId}/payment-networks/{paymentNetworkId}/revocation`\n— revoke the payment network identifier (; persists the revocation\nrecord and answers 204 No Content per spec)."
+        "description": "`PUT /fdx/v6/accounts/{accountId}/payment-networks/{paymentNetworkId}/revocation`\n- revoke the payment network identifier (; persists the revocation\nrecord and answers 204 No Content per spec)."
       }
     },
     "/fdx/v6/accounts/{id}/statements": {
@@ -221,7 +221,7 @@
           }
         },
         "security": [],
-        "description": "`GET /fdx/v6/accounts/{accountId}/statements` — list statements (proxy to Ledger)."
+        "description": "`GET /fdx/v6/accounts/{accountId}/statements` - list statements (proxy to Ledger)."
       }
     },
     "/fdx/v6/accounts/{id}/statements/{statementId}": {
@@ -248,7 +248,7 @@
           }
         },
         "security": [],
-        "description": "`GET /fdx/v6/accounts/{accountId}/statements/{statementId}` — statement\ndownload. The Ledger statement object lives in Sentin8:Storage at\n`buckets/statements/objects/{envId}/{accountId}/{statementId}.pdf`;\nthis handler mints a short-lived read URL via the Storage link API and\nanswers 302 Found with the `Location` header (spec: statement image may\nbe served inline or via redirect; §5.0a signed URLs)."
+        "description": "`GET /fdx/v6/accounts/{accountId}/statements/{statementId}` - statement\ndownload. The Ledger statement object lives in Sentin8:Storage at\n`buckets/statements/objects/{envId}/{accountId}/{statementId}.pdf`;\nthis handler mints a short-lived read URL via the Storage link API and\nanswers 302 Found with the `Location` header (spec: statement image may\nbe served inline or via redirect; §5.0a signed URLs)."
       }
     },
     "/fdx/v6/accounts/{id}/transactions": {
@@ -275,7 +275,7 @@
           }
         },
         "security": [],
-        "description": "`GET /fdx/v6/accounts/{accountId}/transactions` — transactions (proxies\nto Ledger; no hardcoded empty results)."
+        "description": "`GET /fdx/v6/accounts/{accountId}/transactions` - transactions (proxies\nto Ledger; no hardcoded empty results)."
       }
     },
     "/fdx/v6/availability": {
@@ -356,7 +356,7 @@
           }
         },
         "security": [],
-        "description": "certification metrics (design\n§10: counts over the tables this service already owns — `data_call*`\nrows in `audit_events` plus consent granted/revoked transitions —\nbehind a short bounded cache; the rollup table + evidence admin page\nare the follow-on). The literal-zero stub is gone: these are real\ncounters now."
+        "description": "certification metrics (design\n§10: counts over the tables this service already owns - `data_call*`\nrows in `audit_events` plus consent granted/revoked transitions -\nbehind a short bounded cache; the rollup table + evidence admin page\nare the follow-on). The literal-zero stub is gone: these are real\ncounters now."
       }
     },
     "/fdx/v6/consents/{id}": {
@@ -383,7 +383,7 @@
           }
         },
         "security": [],
-        "description": "`GET /fdx/v6/consents/{consentId}` — consent grant introspection."
+        "description": "`GET /fdx/v6/consents/{consentId}` - consent grant introspection."
       }
     },
     "/fdx/v6/consents/{id}/lifecycle": {
@@ -410,7 +410,7 @@
           }
         },
         "security": [],
-        "description": "`PUT /fdx/v6/consents/{consentId}/lifecycle` — set the consent duration\nmodel."
+        "description": "`PUT /fdx/v6/consents/{consentId}/lifecycle` - set the consent duration\nmodel."
       }
     },
     "/fdx/v6/consents/{id}/revocation": {
@@ -437,7 +437,7 @@
           }
         },
         "security": [],
-        "description": "`GET /fdx/v6/consents/{consentId}/revocation` — the revocation record\n(reason/initiator/timestamp; )."
+        "description": "`GET /fdx/v6/consents/{consentId}/revocation` - the revocation record\n(reason/initiator/timestamp; )."
       },
       "put": {
         "tags": [
@@ -462,7 +462,7 @@
           }
         },
         "security": [],
-        "description": "`PUT /fdx/v6/consents/{consentId}/revocation` — the FDX\nRevocationRequest (reason/initiator/otherReason). Existing handler\n`handlers::revoke_fdx_consent` is extended here: the revocation\nrow is persisted and a CONSENT_REVOKED notification is queued."
+        "description": "`PUT /fdx/v6/consents/{consentId}/revocation` - the FDX\nRevocationRequest (reason/initiator/otherReason). Existing handler\n`handlers::revoke_fdx_consent` is extended here: the revocation\nrow is persisted and a CONSENT_REVOKED notification is queued."
       }
     },
     "/fdx/v6/consents/{id}/revoke": {
@@ -481,7 +481,7 @@
           }
         },
         "security": [],
-        "description": "`POST /fdx/v6/consents/{consentId}/revoke` — POST alias of the PUT\nrevocation surface (fdx DESIGN.md §4): the recipient-side fdx instance\ncalls this with the delegated provider token after revoking its own\nregistry row, so a fintech-initiated revocation lands on the provider's\ngrant ledger and takes effect on the next data call. The delegated\ntoken's `sub` IS the grant's customer — the same subject the bank's own\ndashboard revokes for."
+        "description": "`POST /fdx/v6/consents/{consentId}/revoke` - POST alias of the PUT\nrevocation surface (fdx DESIGN.md §4): the recipient-side fdx instance\ncalls this with the delegated provider token after revoking its own\nregistry row, so a fintech-initiated revocation lands on the provider's\ngrant ledger and takes effect on the next data call. The delegated\ntoken's `sub` IS the grant's customer - the same subject the bank's own\ndashboard revokes for."
       }
     },
     "/fdx/v6/customers": {
@@ -587,7 +587,7 @@
           }
         },
         "security": [],
-        "description": "create a subscription\n/. The per-subscription HMAC secret is generated here and\nstored as a sentin8-secrets:// reference — never plaintext."
+        "description": "create a subscription\n/. The per-subscription HMAC secret is generated here and\nstored as a sentin8-secrets:// reference - never plaintext."
       }
     },
     "/fdx/v6/notification-subscriptions/{subscriptionId}": {
@@ -2385,7 +2385,7 @@
             "fdx:read": []
           }
         ],
-        "description": "start consent authorization.\nThe two-ledger recipient flow (fdx DESIGN.md §1 + §4 consent-flow\nsequence): the recipient-side fdx instance writes its OWN registry\n(a `pending` row in `recipient_consents`, in the recipient tenant),\nensures its per-provider OAuth client exists at the provider's\nauthorization server (DCR, cached in `fdx.recipients`), and pushes a\nPAR request whose `state` carries `\"<consent handle>|<app origin>\"`.\nThe AS's authorize screen runs the ceremony; the browser redirect\ncomes back to THIS instance's `/fdx/consents/callback` (the\nregistered redirect_uri), which activates the row and exchanges the\ncode. The provider's grant row is seeded by the provider's OWN\nauth-family consumer from `sentin8:auth:grant:created` — never by\nthis side."
+        "description": "start consent authorization.\nThe two-ledger recipient flow (fdx DESIGN.md §1 + §4 consent-flow\nsequence): the recipient-side fdx instance writes its OWN registry\n(a `pending` row in `recipient_consents`, in the recipient tenant),\nensures its per-provider OAuth client exists at the provider's\nauthorization server (DCR, cached in `fdx.recipients`), and pushes a\nPAR request whose `state` carries `\"<consent handle>|<app origin>\"`.\nThe AS's authorize screen runs the ceremony; the browser redirect\ncomes back to THIS instance's `/fdx/consents/callback` (the\nregistered redirect_uri), which activates the row and exchanges the\ncode. The provider's grant row is seeded by the provider's OWN\nauth-family consumer from `sentin8:auth:grant:created` - never by\nthis side."
       }
     },
     "/v1/recipient/consents/{id}": {
@@ -2570,7 +2570,7 @@
             "fdx:read": []
           }
         ],
-        "description": "list FDX data providers from the\n`provider_profiles` registry.\nProvider profiles are auto-registered when an environment's\n`is_fdx_provider` flag is turned on (see Sys `update_env`), with the\nenv's auth domain used as the issuer URL. The table has no RLS, so the\ncatalog is visible cross-org — any recipient can discover and connect to\nany active provider. No static seed data is required.\nResponse shape matches the eFintech recipient catalog contract:\n`{ \"providers\": [{ id, name, supportedDataClusters, status, ... }] }`,\nwhere each card reads `name`, `supportedDataClusters`, and `status`."
+        "description": "list FDX data providers from the\n`provider_profiles` registry.\nProvider profiles are auto-registered when an environment's\n`is_fdx_provider` flag is turned on (see Sys `update_env`), with the\nenv's auth domain used as the issuer URL. The table has no RLS, so the\ncatalog is visible cross-org - any recipient can discover and connect to\nany active provider. No static seed data is required.\nResponse shape matches the eFintech recipient catalog contract:\n`{ \"providers\": [{ id, name, supportedDataClusters, status, ... }] }`,\nwhere each card reads `name`, `supportedDataClusters`, and `status`."
       }
     },
     "/v1/recipient/providers/{id}": {
@@ -2620,7 +2620,7 @@
     "schemas": {
       "ConsentCallbackQuery": {
         "type": "object",
-        "description": "Query params for `GET /fdx/consents/callback` — the OAuth callback after\nthe customer approves/denies consent at the provider's Auth.",
+        "description": "Query params for `GET /fdx/consents/callback` - the OAuth callback after\nthe customer approves/denies consent at the provider's Auth.",
         "properties": {
           "app_redirect_uri": {
             "type": [
@@ -2952,7 +2952,7 @@
     },
     {
       "name": "fdx",
-      "description": "Bank8:FDX — open banking, FDX v6.5 provider/recipient"
+      "description": "Bank8:FDX - open banking, FDX v6.5 provider/recipient"
     }
   ]
 }

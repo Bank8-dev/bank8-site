@@ -96,7 +96,7 @@ vertical. It delivers:
 | Account numbering | Account numbers are generated per product; unique within the environment |
 | Balances & transactions | Every account exposes its current balances (by denomination/address/phase), its full transaction history, and paged statements |
 | Payment devices | Each account can carry registered payment devices (e.g. cards) for payment routing |
-| Attributes | Key–value account attributes extend account data without schema changes |
+| Attributes | Key-value account attributes extend account data without schema changes |
 | Schedule tags | Accounts can be tagged for schedule routing/selection so schedules target groups, not one-by-one lists |
 
 #### 3.2.1 Internal (counterparty) accounts
@@ -131,7 +131,7 @@ destination.
 | Activation | Only an activated product can open accounts; activation is a distinct, audited action |
 | Plans | Accounts are assigned plans; plan migrations move accounts between plans in audited batches |
 | Validation modules | Reusable rule modules (limits, overdraft rules, tiered rates, fee schedules, dormancy, sweeps) validate account lifecycle and posting behaviour |
-| Type-specific validation | Product parameters are validated against the schema of their product type (e.g. credit limit must be > 0; mortgage due-day must be 1–28; savings interest rate must be ≥ 0) - a misconfigured product is rejected at creation, not at the customer's first posting |
+| Type-specific validation | Product parameters are validated against the schema of their product type (e.g. credit limit must be > 0; mortgage due-day must be 1-28; savings interest rate must be ≥ 0) - a misconfigured product is rejected at creation, not at the customer's first posting |
 | Admin catalog | The admin console offers a 13-type product catalog with pre-selected default modules and typed settings forms, so a product manager configures rather than codes |
 
 #### 3.3.1 Product type catalog - the 13 built-in product types
@@ -145,8 +145,8 @@ defaults (all overridable per product / per account):
 | **Current account** | Liability | CAD USD EUR GBP | Interest rate (0.1%), overdraft limit (500), monthly maintenance fee (5.00), inactivity fee (2.00), maximum balance (1,000,000), interest application frequency (daily/monthly/quarterly/annually) + per-fee income-account wiring |
 | **Savings account** | Liability | CAD USD EUR GBP | Interest rate (2%, tiered via `rate_tiers`), minimum balance (100), maximum balance (5,000,000), inactivity fee (1.00), interest application frequency |
 | **Credit card** | Asset | CAD USD EUR GBP | Credit limit (5,000 - must be > 0), APR (18.99%), annual fee, late repayment fee (25), overlimit fee (25), payment due period (25 days), minimum percentage due (3%) |
-| **Loan** | Asset | CAD USD EUR GBP | Fixed interest rate (8.99%), amortisation method (straight line / reducing balance), repayment period (36 months), due amount calculation day (1–28), grace period (5 days), late repayment fee (15), early repayment fee rate (1%) |
-| **Mortgage** | Asset | CAD USD EUR GBP AUD | Fixed rate (5.99%) with fixed-interest period (60 months) toggle, loan term (360 months), due day (1–28), grace period (15 days), late fee (50), amortisation method |
+| **Loan** | Asset | CAD USD EUR GBP | Fixed interest rate (8.99%), amortisation method (straight line / reducing balance), repayment period (36 months), due amount calculation day (1-28), grace period (5 days), late repayment fee (15), early repayment fee rate (1%) |
+| **Mortgage** | Asset | CAD USD EUR GBP AUD | Fixed rate (5.99%) with fixed-interest period (60 months) toggle, loan term (360 months), due day (1-28), grace period (15 days), late fee (50), amortisation method |
 | **Home loan redraw** | Asset | CAD AUD | Variable rate (6.49%), loan term (360), redraw enabled + redraw fee, redraw limit percentage (drives available redraw funds) |
 | **Line of credit** | Asset | CAD USD EUR | Credit limit (50,000), variable rate (7.99%), interest accrual rest type (daily / continuous), minimum repayment (100) |
 | **BNPL loan** | Asset | CAD USD EUR GBP | Instalment count (4), instalment interval (14 days), interest-free period (42 days), late fee (10), minimum purchase amount (50) |
@@ -208,7 +208,7 @@ read time - they can never go stale:
 | `available_credit` | Credit cards | credit limit − current balance (floored at 0) |
 | `remaining_term` | Loans, mortgages, LoC, BNPL, home-loan redraw | loan term − months since opening |
 | `total_outstanding_debt` | Loan family | current balance |
-| `next_repayment_date` | Loan family | `repayment_day` (1–28) → next occurrence |
+| `next_repayment_date` | Loan family | `repayment_day` (1-28) → next occurrence |
 | `available_redraw_funds` | Home loan redraw | balance × redraw limit percentage |
 | `maturity_date` | Time deposits | opening date + term months |
 
