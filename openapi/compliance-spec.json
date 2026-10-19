@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "bank8-compliance",
-    "description": "Sentin8 Bank8:Compliance - AML/CTF: KYC/CDD, sanctions screening, transaction monitoring, alert/case lifecycle.",
+    "description": "Sentin8 Bank8:Compliance — AML/CTF: KYC/CDD, sanctions screening, transaction monitoring, alert/case lifecycle.",
     "license": {
       "name": "MIT OR Apache-2.0",
       "identifier": "MIT OR Apache-2.0"
@@ -37,6 +37,7 @@
             "sentin8:admin": []
           }
         ],
+        "description": "Policy list attributes.",
         "summary": "`GET /v1/admin/attributes`"
       },
       "put": {
@@ -73,6 +74,7 @@
             "sentin8:admin": []
           }
         ],
+        "description": "Policy put attribute.",
         "summary": "`PUT /v1/admin/attributes`"
       },
       "delete": {
@@ -104,6 +106,7 @@
             "sentin8:admin": []
           }
         ],
+        "description": "Policy delete attribute.",
         "summary": "`DELETE /v1/admin/attributes`"
       }
     },
@@ -143,7 +146,7 @@
             "bank8:admin": []
           }
         ],
-        "description": "the data endpoint behind the overview page:\nalert/case counts for the tenant env."
+        "description": "Admin overview.\n\nthe data endpoint behind the overview page:\nalert/case counts for the tenant env."
       }
     },
     "/v1/admin/policy-sets": {
@@ -173,6 +176,7 @@
             "sentin8:admin": []
           }
         ],
+        "description": "Policy list sets.",
         "summary": "`GET /v1/admin/policy-sets`"
       }
     },
@@ -203,6 +207,7 @@
             "sentin8:admin": []
           }
         ],
+        "description": "Policy mode disable.",
         "summary": "`POST /v1/admin/policy-sets/disable`"
       }
     },
@@ -233,6 +238,7 @@
             "sentin8:admin": []
           }
         ],
+        "description": "Policy mode enforce.",
         "summary": "`POST /v1/admin/policy-sets/enforce`"
       }
     },
@@ -263,6 +269,7 @@
             "sentin8:admin": []
           }
         ],
+        "description": "Policy mode shadow.",
         "summary": "`POST /v1/admin/policy-sets/shadow`"
       }
     },
@@ -304,6 +311,7 @@
             "sentin8:admin": []
           }
         ],
+        "description": "Policy get set.",
         "summary": "`GET /v1/admin/policy-sets/{name}`"
       },
       "put": {
@@ -351,6 +359,7 @@
             "sentin8:admin": []
           }
         ],
+        "description": "Policy put set.",
         "summary": "`PUT /v1/admin/policy-sets/{name}`"
       },
       "delete": {
@@ -382,6 +391,7 @@
             "sentin8:admin": []
           }
         ],
+        "description": "Policy delete set.",
         "summary": "`DELETE /v1/admin/policy-sets/{name}`"
       }
     },
@@ -428,6 +438,7 @@
             "sentin8:admin": []
           }
         ],
+        "description": "Policy test set.",
         "summary": "`POST /v1/admin/policy-sets/{name}/test`"
       }
     },
@@ -458,6 +469,7 @@
             "sentin8:admin": []
           }
         ],
+        "description": "Policy list relations.",
         "summary": "`GET /v1/admin/relations`"
       },
       "put": {
@@ -494,6 +506,7 @@
             "sentin8:admin": []
           }
         ],
+        "description": "Policy put relation.",
         "summary": "`PUT /v1/admin/relations`"
       },
       "delete": {
@@ -525,6 +538,7 @@
             "sentin8:admin": []
           }
         ],
+        "description": "Policy delete relation.",
         "summary": "`DELETE /v1/admin/relations`"
       }
     },
@@ -581,6 +595,7 @@
             "sentin8:admin": []
           }
         ],
+        "description": "Policy check relation.",
         "summary": "`GET /v1/admin/relations/check`"
       }
     },
@@ -629,7 +644,7 @@
             "bank8:admin": []
           }
         ],
-        "description": "return the RFW definition for the requested\nadmin page."
+        "description": "Get admin ui.\n\nreturn the RFW definition for the requested\nadmin page."
       }
     },
     "/v1/alerts": {
@@ -667,7 +682,7 @@
             }
           }
         },
-        "description": "list alerts, optionally by status."
+        "description": "List alerts.\n\nlist alerts, optionally by status."
       }
     },
     "/v1/alerts/{id}/case": {
@@ -697,7 +712,7 @@
             }
           }
         },
-        "description": "escalate an alert to a case with an\naudited actor claim (the assignee). The alert transitions to\n`escalated` in the same transaction."
+        "description": "Open case.\n\nescalate an alert to a case with an\naudited actor claim (the assignee). The alert transitions to\n`escalated` in the same transaction."
       }
     },
     "/v1/alerts/{id}/status": {
@@ -730,7 +745,7 @@
             "description": ""
           }
         },
-        "description": "queue operation on an alert (claim /\nreview / close) with an audited actor: the caller's verified identity\ndrives the journal entry; the transition is guarded against terminal\nstates (closed alerts never reopen - a new detection raises a new\nalert)."
+        "description": "Update alert status.\n\nqueue operation on an alert (claim /\nreview / close) with an audited actor: the caller's verified identity\ndrives the journal entry; the transition is guarded against terminal\nstates (closed alerts never reopen — a new detection raises a new\nalert)."
       }
     },
     "/v1/cases/{id}": {
@@ -750,7 +765,7 @@
             }
           }
         },
-        "description": "case detail with its alert."
+        "description": "Get case.\n\ncase detail with its alert."
       }
     },
     "/v1/cases/{id}/conclude": {
@@ -780,7 +795,7 @@
             }
           }
         },
-        "description": "conclude a case as reportable: the\nreport kind lands in `suspicious_activities` and\n`bank8:compliance:suspicious:detected` is emitted exactly once -\nReporting files it through its own durable consume (detection here,\nfiling there - the single-filing-executor rule, DESIGN.md §8)."
+        "description": "Conclude case.\n\nconclude a case as reportable: the\nreport kind lands in `suspicious_activities` and\n`bank8:compliance:suspicious:detected` is emitted exactly once —\nReporting files it through its own durable consume (detection here,\nfiling there — the single-filing-executor rule, DESIGN.md §8)."
       }
     },
     "/v1/cases/{id}/dismiss": {
@@ -816,7 +831,7 @@
             "description": ""
           }
         },
-        "description": "dismiss a case as not reportable:\nthe recorded reason lands in the case row and NO suspicious activity\nis emitted - Reporting never sees a dismissed case (a dismissed\ncase is terminal; a new detection opens a new case)."
+        "description": "Dismiss case.\n\ndismiss a case as not reportable:\nthe recorded reason lands in the case row and NO suspicious activity\nis emitted — Reporting never sees a dismissed case (a dismissed\ncase is terminal; a new detection opens a new case)."
       }
     },
     "/v1/cases/{id}/evidence": {
@@ -836,7 +851,7 @@
             }
           }
         },
-        "description": "the case's investigation evidence:\nthe originating alert, every sanctions screen against its subject,\nand the customer's risk profile (when resolved). Read-only -\nevidence is the input to the conclude/dismiss decision, never\nmutated by it."
+        "description": "Get case evidence.\n\nthe case's investigation evidence:\nthe originating alert, every sanctions screen against its subject,\nand the customer's risk profile (when resolved). Read-only —\nevidence is the input to the conclude/dismiss decision, never\nmutated by it."
       }
     },
     "/v1/customers/{id}/beneficial-owners": {
@@ -861,7 +876,7 @@
             }
           }
         },
-        "description": "list the customer's\ndisclosed beneficial owners (references only)."
+        "description": "List beneficial owners.\n\nlist the customer's\ndisclosed beneficial owners (references only)."
       },
       "post": {
         "tags": [
@@ -891,7 +906,7 @@
             }
           }
         },
-        "description": "disclose a beneficial\nowner against a KYC record (idempotent per (kyc, identity_ref) -\nre-disclosing the same owner converges to the same row)."
+        "description": "Disclose beneficial owner.\n\ndisclose a beneficial\nowner against a KYC record (idempotent per (kyc, identity_ref) —\nre-disclosing the same owner converges to the same row)."
       }
     },
     "/v1/customers/{id}/kyc": {
@@ -916,7 +931,7 @@
             }
           }
         },
-        "description": "list a customer's KYC records."
+        "description": "List kyc.\n\nlist a customer's KYC records."
       },
       "post": {
         "tags": [
@@ -946,7 +961,7 @@
             }
           }
         },
-        "description": "create a KYC record for a customer."
+        "description": "Create kyc.\n\ncreate a KYC record for a customer."
       }
     },
     "/v1/customers/{id}/pep": {
@@ -976,7 +991,7 @@
             }
           }
         },
-        "description": "record a PEP (politically exposed\nperson) determination. One live determination per KYC record - a\nre-determination updates it in place (the latest determination is\nauthoritative; history rides the audit journal)."
+        "description": "Record pep determination.\n\nrecord a PEP (politically exposed\nperson) determination. One live determination per KYC record — a\nre-determination updates it in place (the latest determination is\nauthoritative; history rides the audit journal)."
       }
     },
     "/v1/customers/{id}/risk-profile": {
@@ -1009,7 +1024,7 @@
             "description": ""
           }
         },
-        "description": "upsert the customer's AML\nrisk rating (low/medium/high) with a recorded rationale. The rating\ndrives monitoring intensity; a PEP determination forces at least\n`high` (a PEP can never sit below it)."
+        "description": "Upsert risk profile.\n\nupsert the customer's AML\nrisk rating (low/medium/high) with a recorded rationale. The rating\ndrives monitoring intensity; a PEP determination forces at least\n`high` (a PEP can never sit below it)."
       }
     },
     "/v1/health": {
@@ -1018,7 +1033,7 @@
           "meta"
         ],
         "summary": "`GET /v1/health`",
-        "description": "Carries the binary's build identity (`version`/`build`, BUILDID-1) so\ncaptain's monitor populates `make status`'s VERSION column for every\ninstance - the consuming BINARY's identity, never a shared crate's.\n\nservice health payload.",
+        "description": "Carries the binary's build identity (`version`/`build`, BUILDID-1) so\ncaptain's monitor populates `make status`'s VERSION column for every\ninstance — the consuming BINARY's identity, never a shared crate's.\n\nservice health payload.",
         "operationId": "health",
         "responses": {
           "200": {
@@ -1050,7 +1065,7 @@
             }
           }
         },
-        "description": "list the tenant's monitoring rules (thresholds\nderive from the jurisdiction registry - reporting's return-template\ndefinitions - materialized at env-init; never code)."
+        "description": "List rules.\n\nlist the tenant's monitoring rules (thresholds\nderive from the jurisdiction registry — reporting's return-template\ndefinitions — materialized at env-init; never code)."
       }
     }
   },
@@ -1109,7 +1124,7 @@
       },
       "ConcludeCaseRequest": {
         "type": "object",
-        "description": "Request body for concluding a case as suspicious - the report kind\nuses the shared `ReportKind` vocabulary.",
+        "description": "Request body for concluding a case as suspicious — the report kind\nuses the shared `ReportKind` vocabulary.",
         "required": [
           "report_kind"
         ],
@@ -1121,11 +1136,11 @@
       },
       "CreateKycRequest": {
         "type": "object",
-        "description": "Request body for creating a KYC record - the customer id arrives in\nthe path (`/v1/customers/{id}/kyc`); the body carries no duplicate of\nit."
+        "description": "Request body for creating a KYC record — the customer id arrives in\nthe path (`/v1/customers/{id}/kyc`); the body carries no duplicate of\nit."
       },
       "DiscloseBeneficialOwnerRequest": {
         "type": "object",
-        "description": "Request body for disclosing a beneficial owner - identity by platform\nreference only (a sentin8-secrets:// or identity-plane reference);\ndocument bytes and plaintext identity numbers never enter a bank8\nrow (DESIGN.md §8 invariant).",
+        "description": "Request body for disclosing a beneficial owner — identity by platform\nreference only (a sentin8-secrets:// or identity-plane reference);\ndocument bytes and plaintext identity numbers never enter a bank8\nrow (DESIGN.md §8 invariant).",
         "required": [
           "kyc_id",
           "identity_ref"
@@ -1142,7 +1157,7 @@
       },
       "DismissCaseRequest": {
         "type": "object",
-        "description": "Request body for dismissing a case - the reason is mandatory (a\ndismissal without a recorded reason is unauditable).",
+        "description": "Request body for dismissing a case — the reason is mandatory (a\ndismissal without a recorded reason is unauditable).",
         "required": [
           "reason"
         ],
@@ -1246,7 +1261,7 @@
       },
       "UpdateAlertStatusRequest": {
         "type": "object",
-        "description": "Request body for an alert-status transition (queue operations - the\nactor claim is audited via the caller's identity in the audit\njournal).",
+        "description": "Request body for an alert-status transition (queue operations — the\nactor claim is audited via the caller's identity in the audit\njournal).",
         "required": [
           "status"
         ],
@@ -1258,7 +1273,7 @@
       },
       "UpsertRiskProfileRequest": {
         "type": "object",
-        "description": "Request body for upserting the customer's AML risk rating - the\nrationale is mandatory (a rating without its recorded reasoning is\nunauditable).",
+        "description": "Request body for upserting the customer's AML risk rating — the\nrationale is mandatory (a rating without its recorded reasoning is\nunauditable).",
         "required": [
           "rating",
           "rationale"
@@ -1282,7 +1297,7 @@
     },
     {
       "name": "compliance",
-      "description": "Bank8:Compliance - AML/CTF: KYC/CDD, sanctions screening, transaction monitoring, alert/case lifecycle"
+      "description": "Bank8:Compliance — AML/CTF: KYC/CDD, sanctions screening, transaction monitoring, alert/case lifecycle"
     }
   ]
 }

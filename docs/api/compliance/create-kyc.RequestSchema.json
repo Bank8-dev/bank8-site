@@ -1,1 +1,1 @@
-{"title":"Body","body":{"content":{"application/json":{"schema":{"type":"object","description":"Request body for creating a KYC record - the customer id arrives in\nthe path (`/v1/customers/{id}/kyc`); the body carries no duplicate of\nit.","title":"CreateKycRequest"}}},"required":true}}
+{"title":"Body","body":{"content":{"application/json":{"schema":{"type":"object","description":"Request body for creating a KYC record — the customer id arrives in\nthe path (`/v1/customers/{id}/kyc`); the body carries no duplicate of\nit.","title":"CreateKycRequest"}}},"required":true}}

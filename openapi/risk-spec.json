@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "bank8-risk",
-    "description": "Sentin8 Bank8:Risk - prudential risk measurement: capital, liquidity, credit (ECL), limits, stress.",
+    "description": "Sentin8 Bank8:Risk — prudential risk measurement: capital, liquidity, credit (ECL), limits, stress.",
     "license": {
       "name": "MIT OR Apache-2.0",
       "identifier": "MIT OR Apache-2.0"
@@ -37,6 +37,7 @@
             "sentin8:admin": []
           }
         ],
+        "description": "Policy list attributes.",
         "summary": "`GET /v1/admin/attributes`"
       },
       "put": {
@@ -73,6 +74,7 @@
             "sentin8:admin": []
           }
         ],
+        "description": "Policy put attribute.",
         "summary": "`PUT /v1/admin/attributes`"
       },
       "delete": {
@@ -104,6 +106,7 @@
             "sentin8:admin": []
           }
         ],
+        "description": "Policy delete attribute.",
         "summary": "`DELETE /v1/admin/attributes`"
       }
     },
@@ -143,7 +146,7 @@
             "bank8:admin": []
           }
         ],
-        "description": "the data endpoint behind the overview page:\nlimit/breach counts for the tenant env."
+        "description": "Admin overview.\n\nthe data endpoint behind the overview page:\nlimit/breach counts for the tenant env."
       }
     },
     "/v1/admin/policy-sets": {
@@ -173,6 +176,7 @@
             "sentin8:admin": []
           }
         ],
+        "description": "Policy list sets.",
         "summary": "`GET /v1/admin/policy-sets`"
       }
     },
@@ -203,6 +207,7 @@
             "sentin8:admin": []
           }
         ],
+        "description": "Policy mode disable.",
         "summary": "`POST /v1/admin/policy-sets/disable`"
       }
     },
@@ -233,6 +238,7 @@
             "sentin8:admin": []
           }
         ],
+        "description": "Policy mode enforce.",
         "summary": "`POST /v1/admin/policy-sets/enforce`"
       }
     },
@@ -263,6 +269,7 @@
             "sentin8:admin": []
           }
         ],
+        "description": "Policy mode shadow.",
         "summary": "`POST /v1/admin/policy-sets/shadow`"
       }
     },
@@ -304,6 +311,7 @@
             "sentin8:admin": []
           }
         ],
+        "description": "Policy get set.",
         "summary": "`GET /v1/admin/policy-sets/{name}`"
       },
       "put": {
@@ -351,6 +359,7 @@
             "sentin8:admin": []
           }
         ],
+        "description": "Policy put set.",
         "summary": "`PUT /v1/admin/policy-sets/{name}`"
       },
       "delete": {
@@ -382,6 +391,7 @@
             "sentin8:admin": []
           }
         ],
+        "description": "Policy delete set.",
         "summary": "`DELETE /v1/admin/policy-sets/{name}`"
       }
     },
@@ -428,6 +438,7 @@
             "sentin8:admin": []
           }
         ],
+        "description": "Policy test set.",
         "summary": "`POST /v1/admin/policy-sets/{name}/test`"
       }
     },
@@ -458,6 +469,7 @@
             "sentin8:admin": []
           }
         ],
+        "description": "Policy list relations.",
         "summary": "`GET /v1/admin/relations`"
       },
       "put": {
@@ -494,6 +506,7 @@
             "sentin8:admin": []
           }
         ],
+        "description": "Policy put relation.",
         "summary": "`PUT /v1/admin/relations`"
       },
       "delete": {
@@ -525,6 +538,7 @@
             "sentin8:admin": []
           }
         ],
+        "description": "Policy delete relation.",
         "summary": "`DELETE /v1/admin/relations`"
       }
     },
@@ -581,6 +595,7 @@
             "sentin8:admin": []
           }
         ],
+        "description": "Policy check relation.",
         "summary": "`GET /v1/admin/relations/check`"
       }
     },
@@ -629,7 +644,7 @@
             "bank8:admin": []
           }
         ],
-        "description": "return the RFW definition for the requested\nadmin page."
+        "description": "Get admin ui.\n\nreturn the RFW definition for the requested\nadmin page."
       }
     },
     "/v1/exposures": {
@@ -667,7 +682,7 @@
             }
           }
         },
-        "description": "list measured exposures, optionally by dimension."
+        "description": "List exposures.\n\nlist measured exposures, optionally by dimension."
       }
     },
     "/v1/health": {
@@ -676,7 +691,7 @@
           "meta"
         ],
         "summary": "`GET /v1/health`",
-        "description": "Carries the binary's build identity (`version`/`build`, BUILDID-1) so\ncaptain's monitor populates `make status`'s VERSION column for every\ninstance - the consuming BINARY's identity, never a shared crate's.\n\nservice health payload.",
+        "description": "Carries the binary's build identity (`version`/`build`, BUILDID-1) so\ncaptain's monitor populates `make status`'s VERSION column for every\ninstance — the consuming BINARY's identity, never a shared crate's.\n\nservice health payload.",
         "operationId": "health",
         "responses": {
           "200": {
@@ -708,7 +723,7 @@
             }
           }
         },
-        "description": "list configured limits with breach state."
+        "description": "List limits.\n\nlist configured limits with breach state."
       },
       "post": {
         "tags": [
@@ -739,7 +754,7 @@
             "description": ""
           }
         },
-        "description": "upsert a limit threshold (admin-scoped;\nidempotent per (env, limit_type)). The limit_type must be one of the\nschema's CHECK values."
+        "description": "Upsert limit.\n\nupsert a limit threshold (admin-scoped;\nidempotent per (env, limit_type)). The limit_type must be one of the\nschema's CHECK values."
       }
     },
     "/v1/limits/{id}": {
@@ -759,7 +774,7 @@
             }
           }
         },
-        "description": "limit detail with breach history."
+        "description": "Get limit.\n\nlimit detail with breach history."
       }
     },
     "/v1/stress/run": {
@@ -789,7 +804,7 @@
             }
           }
         },
-        "description": "run a scenario's shocks against a\npoint-in-time snapshot (on-demand full recompute; never touches the\nincremental hot path). Idempotent per (scenario, snapshot ref)."
+        "description": "Run stress.\n\nrun a scenario's shocks against a\npoint-in-time snapshot (on-demand full recompute; never touches the\nincremental hot path). Idempotent per (scenario, snapshot ref)."
       }
     },
     "/v1/stress/scenarios": {
@@ -819,7 +834,7 @@
             }
           }
         },
-        "description": "author a declarative scenario\n(admin-scoped). Idempotent per (env, name): re-authoring a scenario\nupdates its assumptions in place (registry data, not code)."
+        "description": "Create scenario.\n\nauthor a declarative scenario\n(admin-scoped). Idempotent per (env, name): re-authoring a scenario\nupdates its assumptions in place (registry data, not code)."
       }
     }
   },
@@ -827,7 +842,7 @@
     "schemas": {
       "CreateScenarioRequest": {
         "type": "object",
-        "description": "Request body for authoring a stress scenario - declarative assumption\nset (shock parameters on the measured dimensions); data, never a\nFunc hook (a hook cannot be audited as a filing input - DESIGN.md\n§10 resolved).",
+        "description": "Request body for authoring a stress scenario — declarative assumption\nset (shock parameters on the measured dimensions); data, never a\nFunc hook (a hook cannot be audited as a filing input — DESIGN.md\n§10 resolved).",
         "required": [
           "name",
           "assumptions"
@@ -903,7 +918,7 @@
       },
       "StressRunRequest": {
         "type": "object",
-        "description": "Request body for `POST /v1/stress/run` - an on-demand full recompute\nof the measured dimensions with a scenario's shocks applied.",
+        "description": "Request body for `POST /v1/stress/run` — an on-demand full recompute\nof the measured dimensions with a scenario's shocks applied.",
         "required": [
           "scenario_id"
         ],
@@ -940,7 +955,7 @@
     },
     {
       "name": "risk",
-      "description": "Bank8:Risk - prudential risk measurement: capital, liquidity, credit (ECL), limits, stress"
+      "description": "Bank8:Risk — prudential risk measurement: capital, liquidity, credit (ECL), limits, stress"
     }
   ]
 }

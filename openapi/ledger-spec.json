@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "bank8-ledger",
-    "description": "Sentin8 Bank8:Ledger - core ledger, posting engine, product library.",
+    "description": "Sentin8 Bank8:Ledger — core ledger, posting engine, product library.",
     "license": {
       "name": "MIT OR Apache-2.0",
       "identifier": "MIT OR Apache-2.0"
@@ -50,7 +50,7 @@
             "bank8:ledger:accounts:write": []
           }
         ],
-        "description": "submit a bulk account migration batch\n(Data-Loader-style staging; idempotent re-run via `:bulkRetry`)."
+        "description": "Create bulk batch.\n\nsubmit a bulk account migration batch\n(Data-Loader-style staging; idempotent re-run via `:bulkRetry`)."
       }
     },
     "/v1/account-plan-assocs": {
@@ -83,7 +83,7 @@
             "bank8:ledger:products:read": []
           }
         ],
-        "description": "list account↔plan associations."
+        "description": "List plan assocs.\n\nlist account↔plan associations."
       },
       "post": {
         "tags": [
@@ -121,7 +121,7 @@
             "bank8:ledger:products:write": []
           }
         ],
-        "description": "associate an account with a plan."
+        "description": "Create plan assoc.\n\nassociate an account with a plan."
       }
     },
     "/v1/account-schedule-tags": {
@@ -154,7 +154,7 @@
             "bank8:ledger:schedules:read": []
           }
         ],
-        "description": "?account_id=` - list account schedule tags."
+        "description": "List account schedule tags.\n\n?account_id=` — list account schedule tags."
       }
     },
     "/v1/account-update-batches": {
@@ -198,7 +198,7 @@
             "bank8:ledger:accounts:read": []
           }
         ],
-        "description": "list bulk batches (either kind)."
+        "description": "List bulk batches.\n\nlist bulk batches (either kind)."
       }
     },
     "/v1/account-update-batches/{id}/bulk-retry": {
@@ -224,7 +224,7 @@
             "bank8:ledger:accounts:write": []
           }
         ],
-        "description": "retry failed rows in a\nbulk batch (Sentin8 Jobs bulk-operations pattern). Staged rows are applied\naccount-by-account; already-applied rows are skipped (idempotent)."
+        "description": "Bulk retry batch.\n\nretry failed rows in a\nbulk batch (Sentin8 Jobs bulk-operations pattern). Staged rows are applied\naccount-by-account; already-applied rows are skipped (idempotent)."
       }
     },
     "/v1/accounts": {
@@ -305,6 +305,7 @@
             "bank8:ledger:accounts:read": []
           }
         ],
+        "description": "List accounts.",
         "summary": "`GET /v1/accounts`"
       },
       "post": {
@@ -346,7 +347,7 @@
             "bank8:ledger:accounts:write": []
           }
         ],
-        "description": "create account (v1 legacy).\n.5: holder callers can only create accounts owned by\nthemselves. Server-side defence-in-depth:\n- If the caller is a holder (§4.3c - no `holder:view-all` scope) and\nthey did not supply `customer_id`, we resolve it from their Auth\nuser id (via `customers`).\n- If the caller is a holder and they did supply a `customer_id` that\ndoes not match their own, we return 403 (they cannot create\naccounts for someone else).\n- If no `customers` row exists for the holder, we return 403\n- there is no way to own the account, so creating it would leave an\norphan (the list/get handlers then hide it forever).\n- Callers with `holder:view-all` (staff / sys / M2M) are\nunrestricted: they can pass any `customer_id` or none (for\ninternal accounts)."
+        "description": "Create account.\n\ncreate account (v1 legacy).\n.5: holder callers can only create accounts owned by\nthemselves. Server-side defence-in-depth:\n- If the caller is a holder (§4.3c — no `holder:view-all` scope) and\nthey did not supply `customer_id`, we resolve it from their Auth\nuser id (via `customers`).\n- If the caller is a holder and they did supply a `customer_id` that\ndoes not match their own, we return 403 (they cannot create\naccounts for someone else).\n- If no `customers` row exists for the holder, we return 403\n— there is no way to own the account, so creating it would leave an\norphan (the list/get handlers then hide it forever).\n- Callers with `holder:view-all` (staff / sys / M2M) are\nunrestricted: they can pass any `customer_id` or none (for\ninternal accounts)."
       }
     },
     "/v1/accounts/{id}": {
@@ -391,7 +392,7 @@
             "bank8:ledger:accounts:read": []
           }
         ],
-        "description": "account detail.\n.5: customer-realm callers can only fetch their own accounts\nthe service layer verifies the account's `customer_id` matches the\ncaller's customer before returning. RLS is the backstop."
+        "description": "Get account.\n\naccount detail.\n.5: customer-realm callers can only fetch their own accounts\nthe service layer verifies the account's `customer_id` matches the\ncaller's customer before returning. RLS is the backstop."
       },
       "put": {
         "tags": [
@@ -441,7 +442,7 @@
             "bank8:ledger:accounts:write": []
           }
         ],
-        "description": "update account (status, nickname)."
+        "description": "Update account.\n\nupdate account (status, nickname)."
       }
     },
     "/v1/accounts/{id}/attributes": {
@@ -474,7 +475,7 @@
             "bank8:ledger:accounts:read": []
           }
         ],
-        "description": "list account attribute values."
+        "description": "List account attributes.\n\nlist account attribute values."
       },
       "put": {
         "tags": [
@@ -512,7 +513,7 @@
             "bank8:ledger:accounts:write": []
           }
         ],
-        "description": "upsert account attribute values."
+        "description": "Upsert account attribute.\n\nupsert account attribute values."
       }
     },
     "/v1/accounts/{id}/balances": {
@@ -557,7 +558,7 @@
             "bank8:ledger:balances:read": []
           }
         ],
-        "description": "live balances."
+        "description": "Get account balances.\n\nlive balances."
       }
     },
     "/v1/accounts/{id}/devices": {
@@ -590,7 +591,7 @@
             "bank8:ledger:accounts:read": []
           }
         ],
-        "description": "list attached payment devices."
+        "description": "List payment devices.\n\nlist attached payment devices."
       },
       "post": {
         "tags": [
@@ -628,7 +629,7 @@
             "bank8:ledger:accounts:write": []
           }
         ],
-        "description": "attach a payment device."
+        "description": "Attach payment device.\n\nattach a payment device."
       }
     },
     "/v1/accounts/{id}/schedule-tags": {
@@ -680,7 +681,7 @@
             "bank8:ledger:schedules:write": []
           }
         ],
-        "description": "`POST /v1/account-schedule-tags` - create/override an account schedule tag."
+        "description": "Upsert account schedule tag.\n\n`POST /v1/account-schedule-tags` — create/override an account schedule tag."
       }
     },
     "/v1/accounts/{id}/schedules": {
@@ -725,7 +726,7 @@
             "bank8:ledger:schedules:read": []
           }
         ],
-        "description": "list schedules for an account."
+        "description": "List account schedules.\n\nlist schedules for an account."
       }
     },
     "/v1/accounts/{id}/statements": {
@@ -770,7 +771,7 @@
             "bank8:ledger:accounts:read": []
           }
         ],
-        "description": "list statements."
+        "description": "Get account statements.\n\nlist statements."
       }
     },
     "/v1/accounts/{id}/transactions": {
@@ -835,7 +836,7 @@
             "bank8:ledger:accounts:read": []
           }
         ],
-        "description": "transaction history."
+        "description": "Get account transactions.\n\ntransaction history."
       }
     },
     "/v1/adjustments": {
@@ -868,7 +869,7 @@
             "bank8:ledger:postings:read": []
           }
         ],
-        "description": "list adjustments (with `:batchGet` variant)."
+        "description": "List adjustments.\n\nlist adjustments (with `:batchGet` variant)."
       },
       "post": {
         "tags": [
@@ -909,7 +910,7 @@
             "bank8:ledger:postings:write": []
           }
         ],
-        "description": "create an adjustment: recompute the account state\nfor backdated postings/parameter changes by re-running the on-schedule\nmodules from the effective date and submitting a correction batch."
+        "description": "Create adjustment.\n\ncreate an adjustment: recompute the account state\nfor backdated postings/parameter changes by re-running the on-schedule\nmodules from the effective date and submitting a correction batch."
       }
     },
     "/v1/adjustments/bulk-retry": {
@@ -932,7 +933,7 @@
             "bank8:ledger:postings:write": []
           }
         ],
-        "description": "`POST /v1/adjustments:bulkRetry` - retry failed adjustments (Sentin8 Jobs\npattern)."
+        "description": "Bulk retry adjustments.\n\n`POST /v1/adjustments:bulkRetry` — retry failed adjustments (Sentin8 Jobs\npattern)."
       }
     },
     "/v1/adjustments/{id}": {
@@ -962,7 +963,7 @@
             "bank8:ledger:postings:read": []
           }
         ],
-        "description": "adjustment detail."
+        "description": "Get adjustment.\n\nadjustment detail."
       }
     },
     "/v1/admin/accounts": {
@@ -989,7 +990,7 @@
           }
         },
         "security": [],
-        "description": "admin view of `GET /v1/accounts` (same\nhandler)."
+        "description": "Admin accounts.\n\nadmin view of `GET /v1/accounts` (same\nhandler)."
       },
       "post": {
         "tags": [
@@ -1014,7 +1015,7 @@
           }
         },
         "security": [],
-        "description": "create-account form submission."
+        "description": "Submit account form.\n\ncreate-account form submission."
       }
     },
     "/v1/admin/accounts/{id}": {
@@ -1041,7 +1042,7 @@
           }
         },
         "security": [],
-        "description": "update-account form submission."
+        "description": "Submit account edit.\n\nupdate-account form submission."
       }
     },
     "/v1/admin/attributes": {
@@ -1071,6 +1072,7 @@
             "sentin8:admin": []
           }
         ],
+        "description": "Policy list attributes.",
         "summary": "`GET /v1/admin/attributes`"
       },
       "put": {
@@ -1107,6 +1109,7 @@
             "sentin8:admin": []
           }
         ],
+        "description": "Policy put attribute.",
         "summary": "`PUT /v1/admin/attributes`"
       },
       "delete": {
@@ -1138,6 +1141,7 @@
             "sentin8:admin": []
           }
         ],
+        "description": "Policy delete attribute.",
         "summary": "`DELETE /v1/admin/attributes`"
       }
     },
@@ -1191,7 +1195,7 @@
             "bank8:ledger:audit:read": []
           }
         ],
-        "description": "`GET /v1/audit` - query audit events."
+        "description": "List audit events.\n\n`GET /v1/audit` — query audit events."
       }
     },
     "/v1/admin/balances": {
@@ -1218,7 +1222,7 @@
           }
         },
         "security": [],
-        "description": "account balances view (RFW DataTable rows)."
+        "description": "Admin balances.\n\naccount balances view (RFW DataTable rows)."
       }
     },
     "/v1/admin/customers": {
@@ -1245,7 +1249,7 @@
           }
         },
         "security": [],
-        "description": "admin view of `GET /v1/customers`."
+        "description": "Admin customers.\n\nadmin view of `GET /v1/customers`."
       }
     },
     "/v1/admin/dlq": {
@@ -1272,7 +1276,7 @@
           }
         },
         "security": [],
-        "description": "admin view of `GET /v1/dlq`."
+        "description": "List dlq alias.\n\nadmin view of `GET /v1/dlq`."
       }
     },
     "/v1/admin/dlq/{id}/discard": {
@@ -1299,7 +1303,7 @@
           }
         },
         "security": [],
-        "description": "discard a DLQ entry (no republish)."
+        "description": "Discard dlq entry.\n\ndiscard a DLQ entry (no republish)."
       }
     },
     "/v1/admin/dlq/{id}/republish": {
@@ -1335,7 +1339,7 @@
           }
         },
         "security": [],
-        "description": "RFW alias of\n`POST /v1/dlq/{id}/republish`."
+        "description": "Admin republish dlq.\n\nRFW alias of\n`POST /v1/dlq/{id}/republish`."
       }
     },
     "/v1/admin/flag-definitions": {
@@ -1362,7 +1366,7 @@
           }
         },
         "security": [],
-        "description": "admin view of\n`GET /v1/flag-definitions`."
+        "description": "Admin flag definitions.\n\nadmin view of\n`GET /v1/flag-definitions`."
       }
     },
     "/v1/admin/flags": {
@@ -1389,7 +1393,7 @@
           }
         },
         "security": [],
-        "description": "admin view of `GET /v1/flags`."
+        "description": "Admin flags.\n\nadmin view of `GET /v1/flags`."
       },
       "post": {
         "tags": [
@@ -1414,7 +1418,7 @@
           }
         },
         "security": [],
-        "description": "create-flag form submission."
+        "description": "Submit flag form.\n\ncreate-flag form submission."
       }
     },
     "/v1/admin/jobs": {
@@ -1435,7 +1439,7 @@
           }
         },
         "security": [],
-        "description": "admin view of `GET /v1/jobs`."
+        "description": "Admin list jobs.\n\nadmin view of `GET /v1/jobs`."
       }
     },
     "/v1/admin/overview": {
@@ -1462,7 +1466,7 @@
           }
         },
         "security": [],
-        "description": "the overview page's data (accounts-backed\nsummary; same handler as `GET /v1/accounts`)."
+        "description": "Admin overview.\n\nthe overview page's data (accounts-backed\nsummary; same handler as `GET /v1/accounts`)."
       }
     },
     "/v1/admin/parameters": {
@@ -1489,7 +1493,7 @@
           }
         },
         "security": [],
-        "description": "admin view of `GET /v1/parameters`."
+        "description": "Admin parameters.\n\nadmin view of `GET /v1/parameters`."
       },
       "post": {
         "tags": [
@@ -1514,7 +1518,7 @@
           }
         },
         "security": [],
-        "description": "create-parameter form submission."
+        "description": "Submit parameter form.\n\ncreate-parameter form submission."
       }
     },
     "/v1/admin/policy-sets": {
@@ -1544,6 +1548,7 @@
             "sentin8:admin": []
           }
         ],
+        "description": "Policy list sets.",
         "summary": "`GET /v1/admin/policy-sets`"
       }
     },
@@ -1574,6 +1579,7 @@
             "sentin8:admin": []
           }
         ],
+        "description": "Policy mode disable.",
         "summary": "`POST /v1/admin/policy-sets/disable`"
       }
     },
@@ -1604,6 +1610,7 @@
             "sentin8:admin": []
           }
         ],
+        "description": "Policy mode enforce.",
         "summary": "`POST /v1/admin/policy-sets/enforce`"
       }
     },
@@ -1634,6 +1641,7 @@
             "sentin8:admin": []
           }
         ],
+        "description": "Policy mode shadow.",
         "summary": "`POST /v1/admin/policy-sets/shadow`"
       }
     },
@@ -1675,6 +1683,7 @@
             "sentin8:admin": []
           }
         ],
+        "description": "Policy get set.",
         "summary": "`GET /v1/admin/policy-sets/{name}`"
       },
       "put": {
@@ -1722,6 +1731,7 @@
             "sentin8:admin": []
           }
         ],
+        "description": "Policy put set.",
         "summary": "`PUT /v1/admin/policy-sets/{name}`"
       },
       "delete": {
@@ -1753,6 +1763,7 @@
             "sentin8:admin": []
           }
         ],
+        "description": "Policy delete set.",
         "summary": "`DELETE /v1/admin/policy-sets/{name}`"
       }
     },
@@ -1799,6 +1810,7 @@
             "sentin8:admin": []
           }
         ],
+        "description": "Policy test set.",
         "summary": "`POST /v1/admin/policy-sets/{name}/test`"
       }
     },
@@ -1826,7 +1838,7 @@
           }
         },
         "security": [],
-        "description": "posting batches list (RFW DataTable)."
+        "description": "List postings batches.\n\nposting batches list (RFW DataTable)."
       },
       "post": {
         "tags": [
@@ -1851,7 +1863,7 @@
           }
         },
         "security": [],
-        "description": "new-posting form submission (batch of one)."
+        "description": "Submit posting form.\n\nnew-posting form submission (batch of one)."
       }
     },
     "/v1/admin/products": {
@@ -1878,7 +1890,7 @@
           }
         },
         "security": [],
-        "description": "admin view of `GET /v1/products`."
+        "description": "Admin list products.\n\nadmin view of `GET /v1/products`."
       },
       "post": {
         "tags": [
@@ -1903,7 +1915,7 @@
           }
         },
         "security": [],
-        "description": "handle product creation form submission.\nCalled by the RFW form renderer when the user clicks \"Create Product\".\nCreates the product and returns an `AdminUiResponse::redirect` so the\nRFW renderer navigates back to the products list."
+        "description": "Submit product form.\n\nhandle product creation form submission.\nCalled by the RFW form renderer when the user clicks \"Create Product\".\nCreates the product and returns an `AdminUiResponse::redirect` so the\nRFW renderer navigates back to the products list."
       }
     },
     "/v1/admin/products/{id}": {
@@ -1939,7 +1951,7 @@
           }
         },
         "security": [],
-        "description": "admin view of `GET /v1/products/{id}`."
+        "description": "Admin get product.\n\nadmin view of `GET /v1/products/{id}`."
       },
       "put": {
         "tags": [
@@ -1964,7 +1976,7 @@
           }
         },
         "security": [],
-        "description": "handle product edit form submission."
+        "description": "Submit product edit.\n\nhandle product edit form submission."
       }
     },
     "/v1/admin/products/{id}/activate": {
@@ -1995,7 +2007,7 @@
           }
         },
         "security": [],
-        "description": "RFW alias of\n`POST /v1/products/{id}/activate`."
+        "description": "Admin activate product.\n\nRFW alias of\n`POST /v1/products/{id}/activate`."
       }
     },
     "/v1/admin/products/{id}/versions": {
@@ -2031,7 +2043,7 @@
           }
         },
         "security": [],
-        "description": "admin view of\n`GET /v1/products/{id}/versions`."
+        "description": "Admin list product versions.\n\nadmin view of\n`GET /v1/products/{id}/versions`."
       },
       "post": {
         "tags": [
@@ -2056,7 +2068,7 @@
           }
         },
         "security": [],
-        "description": "create a new product version."
+        "description": "Submit product version.\n\ncreate a new product version."
       }
     },
     "/v1/admin/reconcile": {
@@ -2083,7 +2095,7 @@
           }
         },
         "security": [],
-        "description": "reconciliation summary (posting totals)."
+        "description": "Admin reconcile summary.\n\nreconciliation summary (posting totals)."
       }
     },
     "/v1/admin/relations": {
@@ -2113,6 +2125,7 @@
             "sentin8:admin": []
           }
         ],
+        "description": "Policy list relations.",
         "summary": "`GET /v1/admin/relations`"
       },
       "put": {
@@ -2149,6 +2162,7 @@
             "sentin8:admin": []
           }
         ],
+        "description": "Policy put relation.",
         "summary": "`PUT /v1/admin/relations`"
       },
       "delete": {
@@ -2180,6 +2194,7 @@
             "sentin8:admin": []
           }
         ],
+        "description": "Policy delete relation.",
         "summary": "`DELETE /v1/admin/relations`"
       }
     },
@@ -2236,6 +2251,7 @@
             "sentin8:admin": []
           }
         ],
+        "description": "Policy check relation.",
         "summary": "`GET /v1/admin/relations/check`"
       }
     },
@@ -2263,7 +2279,7 @@
           }
         },
         "security": [],
-        "description": "admin view of\n`GET /v1/restriction-definitions`."
+        "description": "Admin restriction definitions.\n\nadmin view of\n`GET /v1/restriction-definitions`."
       }
     },
     "/v1/admin/restriction-sets": {
@@ -2290,7 +2306,7 @@
           }
         },
         "security": [],
-        "description": "admin view of\n`GET /v1/restriction-sets`."
+        "description": "Admin restriction sets.\n\nadmin view of\n`GET /v1/restriction-sets`."
       },
       "post": {
         "tags": [
@@ -2315,7 +2331,7 @@
           }
         },
         "security": [],
-        "description": "create-restriction form submission."
+        "description": "Submit restriction form.\n\ncreate-restriction form submission."
       }
     },
     "/v1/admin/schedules": {
@@ -2342,7 +2358,7 @@
           }
         },
         "security": [],
-        "description": "admin view of `GET /v1/schedules`."
+        "description": "Admin list schedules.\n\nadmin view of `GET /v1/schedules`."
       }
     },
     "/v1/admin/settings": {
@@ -2369,7 +2385,7 @@
           }
         },
         "security": [],
-        "description": "static ledger settings payload."
+        "description": "Admin settings.\n\nstatic ledger settings payload."
       }
     },
     "/v1/admin/statements": {
@@ -2396,7 +2412,7 @@
           }
         },
         "security": [],
-        "description": "recent statements (RFW DataTable rows)."
+        "description": "Admin statements.\n\nrecent statements (RFW DataTable rows)."
       }
     },
     "/v1/admin/ui/{page}": {
@@ -2423,7 +2439,7 @@
           }
         },
         "security": [],
-        "description": "return RFW definition for the requested admin page."
+        "description": "Get admin ui.\n\nreturn RFW definition for the requested admin page."
       }
     },
     "/v1/audit": {
@@ -2450,7 +2466,7 @@
           }
         },
         "security": [],
-        "description": "alias of `GET /v1/admin/audit` (same handler)."
+        "description": "Audit events alias.\n\nalias of `GET /v1/admin/audit` (same handler)."
       }
     },
     "/v1/audit/action-logs": {
@@ -2494,7 +2510,7 @@
             "bank8:ledger:audit:read": []
           }
         ],
-        "description": "action-filtered audit view (business Audit\nAPI `action_logs`)."
+        "description": "List action logs.\n\naction-filtered audit view (business Audit\nAPI `action_logs`)."
       }
     },
     "/v1/calendar/bookkeeping-date/{date}": {
@@ -2536,7 +2552,7 @@
             "bank8:ledger:schedules:read": []
           }
         ],
-        "description": "bookkeeping date for a day."
+        "description": "Get bookkeeping date.\n\nbookkeeping date for a day."
       },
       "put": {
         "tags": [
@@ -2574,7 +2590,7 @@
             "bank8:ledger:schedules:write": []
           }
         ],
-        "description": "set the bookkeeping date."
+        "description": "Upsert bookkeeping date.\n\nset the bookkeeping date."
       }
     },
     "/v1/calendars": {
@@ -2607,7 +2623,7 @@
             "bank8:ledger:schedules:read": []
           }
         ],
-        "description": "list calendars."
+        "description": "List calendars.\n\nlist calendars."
       },
       "post": {
         "tags": [
@@ -2645,7 +2661,7 @@
             "bank8:ledger:schedules:write": []
           }
         ],
-        "description": "create a calendar."
+        "description": "Create calendar.\n\ncreate a calendar."
       }
     },
     "/v1/calendars/{id}/events": {
@@ -2678,7 +2694,7 @@
             "bank8:ledger:schedules:read": []
           }
         ],
-        "description": "list calendar events."
+        "description": "List calendar events.\n\nlist calendar events."
       },
       "post": {
         "tags": [
@@ -2719,7 +2735,7 @@
             "bank8:ledger:schedules:write": []
           }
         ],
-        "description": "add a calendar event."
+        "description": "Create calendar event.\n\nadd a calendar event."
       }
     },
     "/v1/calendars/{id}/periods": {
@@ -2752,7 +2768,7 @@
             "bank8:ledger:schedules:read": []
           }
         ],
-        "description": "list calendar periods."
+        "description": "List calendar periods.\n\nlist calendar periods."
       },
       "post": {
         "tags": [
@@ -2790,7 +2806,7 @@
             "bank8:ledger:schedules:write": []
           }
         ],
-        "description": "add a calendar period."
+        "description": "Create calendar period.\n\nadd a calendar period."
       }
     },
     "/v1/contract-events": {
@@ -2823,7 +2839,7 @@
             "bank8:ledger:audit:read": []
           }
         ],
-        "description": "contract execution history (audit events with\ntarget_resource_type='contract'/'func_hook')."
+        "description": "List contract events.\n\ncontract execution history (audit events with\ntarget_resource_type='contract'/'func_hook')."
       }
     },
     "/v1/contract-modules": {
@@ -2856,7 +2872,7 @@
             "bank8:ledger:products:read": []
           }
         ],
-        "description": "contract module catalog (Func modules\nregistered per product; sourced from the products' contract_modules field)."
+        "description": "List contract modules.\n\ncontract module catalog (Func modules\nregistered per product; sourced from the products' contract_modules field)."
       }
     },
     "/v1/contracts/simulate": {
@@ -2892,7 +2908,7 @@
             "bank8:ledger:postings:write": []
           }
         ],
-        "description": "`POST /v1/contracts:simulate` - execute a module hook against synthetic\naccount state . Calls Sentin8:Func `POST /v1/modules/{id}/execute`\nwith a mock host-function context; **no persistence occurs** - the raw\nhook result is returned for preview/dry-run use."
+        "description": "Simulate contract.\n\n`POST /v1/contracts:simulate` — execute a module hook against synthetic\naccount state . Calls Sentin8:Func `POST /v1/modules/{id}/execute`\nwith a mock host-function context; **no persistence occurs** — the raw\nhook result is returned for preview/dry-run use."
       }
     },
     "/v1/customers": {
@@ -2945,7 +2961,7 @@
             "bank8:ledger:accounts:read": []
           }
         ],
-        "description": "list/search customers.\nOptional `?search=<text>` filters by display_name or email (case-insensitive\nsubstring match). Without a search term, returns all customers in the\ncaller's org/env (subject to RLS)."
+        "description": "List customers.\n\nlist/search customers.\nOptional `?search=<text>` filters by display_name or email (case-insensitive\nsubstring match). Without a search term, returns all customers in the\ncaller's org/env (subject to RLS)."
       },
       "post": {
         "tags": [
@@ -2986,7 +3002,7 @@
             "bank8:ledger:customers:write": []
           }
         ],
-        "description": "create a customer.\nIf the caller is a user token, the `sentin8_auth_user_id` is stamped\nfrom their token claims so that holder-scoped RLS and\n`resolve_caller_customer_id` can find the row."
+        "description": "Create customer.\n\ncreate a customer.\nIf the caller is a user token, the `sentin8_auth_user_id` is stamped\nfrom their token claims so that holder-scoped RLS and\n`resolve_caller_customer_id` can find the row."
       }
     },
     "/v1/customers/{id}": {
@@ -3031,7 +3047,7 @@
             "bank8:ledger:accounts:read": []
           }
         ],
-        "description": "customer detail."
+        "description": "Get customer.\n\ncustomer detail."
       }
     },
     "/v1/customers/{id}/link-auth": {
@@ -3085,6 +3101,7 @@
             "bank8:ledger:customers:write": []
           }
         ],
+        "description": "Link auth.",
         "summary": "`POST /v1/customers/{id}/link-auth`"
       }
     },
@@ -3140,7 +3157,7 @@
             "bank8:ledger:customers:write": []
           }
         ],
-        "description": "update customer (display name / contact)."
+        "description": "Update customer.\n\nupdate customer (display name / contact)."
       }
     },
     "/v1/derived-parameter-values": {
@@ -3185,7 +3202,7 @@
             "bank8:ledger:accounts:read": []
           }
         ],
-        "description": "?account_id=` - computed derived values."
+        "description": "Get derived parameters.\n\n?account_id=` — computed derived values."
       }
     },
     "/v1/dlq": {
@@ -3218,7 +3235,7 @@
             "bank8:ledger:dlq:read": []
           }
         ],
-        "description": "list dead-letter queue entries (local posting DLQ + Cron schedule DLQ)."
+        "description": "List dlq.\n\nlist dead-letter queue entries (local posting DLQ + Cron schedule DLQ)."
       }
     },
     "/v1/dlq/{id}/republish": {
@@ -3256,7 +3273,7 @@
             "bank8:ledger:dlq:republish": []
           }
         ],
-        "description": "republish a DLQ entry (local posting or Cron schedule)."
+        "description": "Republish dlq.\n\nrepublish a DLQ entry (local posting or Cron schedule)."
       }
     },
     "/v1/flag-definitions": {
@@ -3283,7 +3300,7 @@
           }
         },
         "security": [],
-        "description": "list flag definitions."
+        "description": "List flag definitions.\n\nlist flag definitions."
       },
       "post": {
         "tags": [
@@ -3308,7 +3325,7 @@
           }
         },
         "security": [],
-        "description": "create a flag definition."
+        "description": "Create flag definition.\n\ncreate a flag definition."
       }
     },
     "/v1/flags": {
@@ -3335,7 +3352,7 @@
           }
         },
         "security": [],
-        "description": "list flags."
+        "description": "List flags.\n\nlist flags."
       },
       "post": {
         "tags": [
@@ -3360,7 +3377,7 @@
           }
         },
         "security": [],
-        "description": "set a flag on an account or customer."
+        "description": "Create flag.\n\nset a flag on an account or customer."
       }
     },
     "/v1/global-parameters": {
@@ -3393,7 +3410,7 @@
             "bank8:ledger:products:read": []
           }
         ],
-        "description": "list global parameters."
+        "description": "List global parameters.\n\nlist global parameters."
       },
       "post": {
         "tags": [
@@ -3431,7 +3448,7 @@
             "bank8:ledger:products:write": []
           }
         ],
-        "description": "create/update a global parameter."
+        "description": "Upsert global parameter.\n\ncreate/update a global parameter."
       }
     },
     "/v1/global-parameters/{id}": {
@@ -3461,7 +3478,7 @@
             "bank8:ledger:products:read": []
           }
         ],
-        "description": "global parameter detail."
+        "description": "Get global parameter.\n\nglobal parameter detail."
       }
     },
     "/v1/health": {
@@ -3481,6 +3498,7 @@
           }
         },
         "security": [],
+        "description": "Health .",
         "summary": "`GET /v1/health`"
       }
     },
@@ -3514,7 +3532,7 @@
             "bank8:ledger:accounts:read": []
           }
         ],
-        "description": "list internal accounts (nickname/product_type\nfilter). Staff-realm callers may pass the org-validated `?env_id=` override\nper tenant-isolation design §10.1 (handled by the shared env resolution)."
+        "description": "List internal accounts.\n\nlist internal accounts (nickname/product_type\nfilter). Staff-realm callers may pass the org-validated `?env_id=` override\nper tenant-isolation design §10.1 (handled by the shared env resolution)."
       },
       "post": {
         "tags": [
@@ -3555,7 +3573,7 @@
             "bank8:ledger:accounts:write": []
           }
         ],
-        "description": "create an internal account\n(counterparty plumbing: cash deposit, clearing, suspense, etc.)."
+        "description": "Create internal account.\n\ncreate an internal account\n(counterparty plumbing: cash deposit, clearing, suspense, etc.)."
       }
     },
     "/v1/internal-accounts/{id}": {
@@ -3585,7 +3603,7 @@
             "bank8:ledger:accounts:read": []
           }
         ],
-        "description": "internal account detail."
+        "description": "Get internal account.\n\ninternal account detail."
       }
     },
     "/v1/internal/func-host": {
@@ -3612,7 +3630,7 @@
           }
         },
         "security": [],
-        "description": "Sentin8:Func proxy-back for host functions.\nAuthorization: M2M token with `bank8:ledger:postings:write` (the Func\nruntime authenticates with the posting service's M2M identity because\nhost functions can move money). Tenant context comes from the `env_id`\nin the request body - the Func runtime resolves it from the hook\ncontext, and the M2M token's own env claim is cross-checked."
+        "description": "Func host.\n\nSentin8:Func proxy-back for host functions.\nAuthorization: M2M token with `bank8:ledger:postings:write` (the Func\nruntime authenticates with the posting service's M2M identity because\nhost functions can move money). Tenant context comes from the `env_id`\nin the request body — the Func runtime resolves it from the hook\ncontext, and the M2M token's own env claim is cross-checked."
       }
     },
     "/v1/internal/schedules/run": {
@@ -3636,7 +3654,7 @@
           }
         },
         "security": [],
-        "description": "Cron proxy-back endpoint.\nCron calls this when a Ledger schedule fires. Ledger executes the scheduled\nwork (§4.3): it resolves the schedule's `schedule_type`, loads the affected\naccount(s) with their product modules + parameters, runs the on-schedule\nmodule functions to generate posting instructions, and submits them as one\natomic posting batch. A `bank8_ledger_jobs` row records the outcome\n`failed` + `error_message` when any step fails (never unconditionally\ncompleted); `last_run_at` is updated only via propagated, awaited writes."
+        "description": "Internal schedule run.\n\nCron proxy-back endpoint.\nCron calls this when a Ledger schedule fires. Ledger executes the scheduled\nwork (§4.3): it resolves the schedule's `schedule_type`, loads the affected\naccount(s) with their product modules + parameters, runs the on-schedule\nmodule functions to generate posting instructions, and submits them as one\natomic posting batch. A `bank8_ledger_jobs` row records the outcome\n`failed` + `error_message` when any step fails (never unconditionally\ncompleted); `last_run_at` is updated only via propagated, awaited writes."
       }
     },
     "/v1/internal/statements/regen": {
@@ -3717,7 +3735,7 @@
             "bank8:ledger:jobs:read": []
           }
         ],
-        "description": "list jobs."
+        "description": "List jobs.\n\nlist jobs."
       }
     },
     "/v1/jobs/{id}": {
@@ -3762,7 +3780,7 @@
             "bank8:ledger:jobs:read": []
           }
         ],
-        "description": "job detail."
+        "description": "Get job.\n\njob detail."
       }
     },
     "/v1/jobs/{id}/retry": {
@@ -3804,7 +3822,7 @@
             "bank8:ledger:jobs:admin": []
           }
         ],
-        "description": "retry a failed job."
+        "description": "Retry job.\n\nretry a failed job."
       }
     },
     "/v1/jobs:batchRepublish": {
@@ -3837,7 +3855,7 @@
             "bank8:ledger:jobs:admin": []
           }
         ],
-        "description": "override failed jobs (mark as OVERRIDDEN)."
+        "description": "Batch republish jobs.\n\noverride failed jobs (mark as OVERRIDDEN)."
       }
     },
     "/v1/journal-events": {
@@ -3891,7 +3909,7 @@
             "bank8:ledger:postings:read": []
           }
         ],
-        "description": "query the journal."
+        "description": "List journal events.\n\nquery the journal."
       }
     },
     "/v1/journal-events/{id}": {
@@ -3921,7 +3939,7 @@
             "bank8:ledger:postings:read": []
           }
         ],
-        "description": "one journal event."
+        "description": "Get journal event.\n\none journal event."
       }
     },
     "/v1/journal-events/{id}/replay": {
@@ -3944,7 +3962,7 @@
             "bank8:ledger:postings:write": []
           }
         ],
-        "description": "re-drive a journal event\nidempotently . The journal row carries the full operation payload;\nposting replays are no-ops thanks to posting idempotency keys. Other\nresource kinds re-apply the recorded operation."
+        "description": "Replay journal event.\n\nre-drive a journal event\nidempotently . The journal row carries the full operation payload;\nposting replays are no-ops thanks to posting idempotency keys. Other\nresource kinds re-apply the recorded operation."
       }
     },
     "/v1/parameter-value-hierarchy-nodes": {
@@ -3971,7 +3989,7 @@
           }
         },
         "security": [],
-        "description": "list hierarchy nodes."
+        "description": "List hierarchy nodes.\n\nlist hierarchy nodes."
       },
       "post": {
         "tags": [
@@ -3996,7 +4014,7 @@
           }
         },
         "security": [],
-        "description": "create a hierarchy node."
+        "description": "Create hierarchy node.\n\ncreate a hierarchy node."
       }
     },
     "/v1/parameter-values": {
@@ -4023,7 +4041,7 @@
           }
         },
         "security": [],
-        "description": "list parameter values."
+        "description": "List parameter values.\n\nlist parameter values."
       },
       "post": {
         "tags": [
@@ -4048,7 +4066,7 @@
           }
         },
         "security": [],
-        "description": "create a parameter value."
+        "description": "Create parameter value.\n\ncreate a parameter value."
       }
     },
     "/v1/parameter-values:viewEffective": {
@@ -4057,7 +4075,7 @@
           "ledger"
         ],
         "summary": "`GET /v1/parameter-values:viewEffective`",
-        "description": "Results are served from a bounded TTL cache (design §10): the\nparameter-value write path is insert-only with `effective_from`, so a\nshort TTL self-heals and no event-driven invalidation is needed. The\nposting money path never consults this cache - parameter resolution\nthere is transactional by design (a stale fee rate is a correctness\ndefect, not a latency trade).\n\nresolve effective parameter value\nat a point in time, with hierarchy precedence (account > hierarchy > global).",
+        "description": "Results are served from a bounded TTL cache (design §10): the\nparameter-value write path is insert-only with `effective_from`, so a\nshort TTL self-heals and no event-driven invalidation is needed. The\nposting money path never consults this cache — parameter resolution\nthere is transactional by design (a stale fee rate is a correctness\ndefect, not a latency trade).\n\nresolve effective parameter value\nat a point in time, with hierarchy precedence (account > hierarchy > global).",
         "operationId": "view_effective_parameter",
         "responses": {
           "200": {
@@ -4102,7 +4120,7 @@
           }
         },
         "security": [],
-        "description": "list parameters."
+        "description": "List parameters.\n\nlist parameters."
       },
       "post": {
         "tags": [
@@ -4127,7 +4145,7 @@
           }
         },
         "security": [],
-        "description": "create a parameter definition."
+        "description": "Create parameter.\n\ncreate a parameter definition."
       }
     },
     "/v1/plans": {
@@ -4160,7 +4178,7 @@
             "bank8:ledger:products:read": []
           }
         ],
-        "description": "list plans."
+        "description": "List plans.\n\nlist plans."
       },
       "post": {
         "tags": [
@@ -4201,7 +4219,7 @@
             "bank8:ledger:products:write": []
           }
         ],
-        "description": "create a plan."
+        "description": "Create plan.\n\ncreate a plan."
       }
     },
     "/v1/plans/{id}": {
@@ -4231,7 +4249,7 @@
             "bank8:ledger:products:read": []
           }
         ],
-        "description": "plan detail."
+        "description": "Get plan.\n\nplan detail."
       }
     },
     "/v1/plans/{id}/migrations": {
@@ -4264,7 +4282,7 @@
             "bank8:ledger:products:write": []
           }
         ],
-        "description": "migrate accounts onto a plan\n(PlanMigration): re-associates the from-plan accounts and closes it."
+        "description": "Migrate plan.\n\nmigrate accounts onto a plan\n(PlanMigration): re-associates the from-plan accounts and closes it."
       }
     },
     "/v1/post-posting-failures": {
@@ -4297,7 +4315,7 @@
             "bank8:ledger:postings:read": []
           }
         ],
-        "description": "list post-posting hook failures."
+        "description": "List post posting failures.\n\nlist post-posting hook failures."
       }
     },
     "/v1/post-posting-failures/{id}/republish": {
@@ -4320,7 +4338,7 @@
             "bank8:ledger:postings:write": []
           }
         ],
-        "description": "re-run the post-posting\nhook for a committed batch (delegates to Sentin8:Func)."
+        "description": "Republish post posting failure.\n\nre-run the post-posting\nhook for a committed batch (delegates to Sentin8:Func)."
       }
     },
     "/v1/postings": {
@@ -4363,7 +4381,7 @@
             "bank8:ledger:postings:write": []
           }
         ],
-        "description": "synchronous posting instruction batch."
+        "description": "Create posting.\n\nsynchronous posting instruction batch."
       }
     },
     "/v1/postings/async": {
@@ -4399,7 +4417,7 @@
             "bank8:ledger:postings:write": []
           }
         ],
-        "description": "async posting via Bus (enqueues to Bus stream)."
+        "description": "Create posting async.\n\nasync posting via Bus (enqueues to Bus stream)."
       }
     },
     "/v1/postings/{id}": {
@@ -4444,7 +4462,7 @@
             "bank8:ledger:postings:read": []
           }
         ],
-        "description": "batch status."
+        "description": "Get posting.\n\nbatch status."
       }
     },
     "/v1/postings/{id}/instructions": {
@@ -4479,7 +4497,7 @@
             "bank8:ledger:postings:read": []
           }
         ],
-        "description": "list instructions in a batch."
+        "description": "Get posting instructions.\n\nlist instructions in a batch."
       }
     },
     "/v1/processing-groups": {
@@ -4512,7 +4530,7 @@
             "bank8:ledger:schedules:read": []
           }
         ],
-        "description": "list processing groups."
+        "description": "List processing groups.\n\nlist processing groups."
       },
       "post": {
         "tags": [
@@ -4550,7 +4568,7 @@
             "bank8:ledger:schedules:write": []
           }
         ],
-        "description": "create/update a processing group."
+        "description": "Upsert processing group.\n\ncreate/update a processing group."
       }
     },
     "/v1/processing-groups/{id}/pause": {
@@ -4577,7 +4595,7 @@
             "bank8:ledger:schedules:write": []
           }
         ],
-        "description": "pause EOD processing."
+        "description": "Pause processing group.\n\npause EOD processing."
       }
     },
     "/v1/processing-groups/{id}/resume": {
@@ -4604,7 +4622,7 @@
             "bank8:ledger:schedules:write": []
           }
         ],
-        "description": "resume EOD processing."
+        "description": "Resume processing group.\n\nresume EOD processing."
       }
     },
     "/v1/products": {
@@ -4637,7 +4655,7 @@
             "bank8:ledger:products:read": []
           }
         ],
-        "description": "list products."
+        "description": "List products.\n\nlist products."
       },
       "post": {
         "tags": [
@@ -4675,7 +4693,7 @@
             "bank8:ledger:products:write": []
           }
         ],
-        "description": "create a product."
+        "description": "Create product.\n\ncreate a product."
       }
     },
     "/v1/products/{id}": {
@@ -4720,7 +4738,7 @@
             "bank8:ledger:products:read": []
           }
         ],
-        "description": "product detail."
+        "description": "Get product.\n\nproduct detail."
       },
       "put": {
         "tags": [
@@ -4770,7 +4788,7 @@
             "bank8:ledger:products:write": []
           }
         ],
-        "description": "update product."
+        "description": "Update product.\n\nupdate product."
       }
     },
     "/v1/products/{id}/activate": {
@@ -4805,7 +4823,7 @@
             "bank8:ledger:products:publish": []
           }
         ],
-        "description": "activate a product.\nAlso accepts `ledger:write` (broad write scope) for end-user app tokens."
+        "description": "Activate product.\n\nactivate a product.\nAlso accepts `ledger:write` (broad write scope) for end-user app tokens."
       }
     },
     "/v1/products/{id}/versions": {
@@ -4850,7 +4868,7 @@
             "bank8:ledger:products:read": []
           }
         ],
-        "description": "list product versions."
+        "description": "List product versions.\n\nlist product versions."
       },
       "post": {
         "tags": [
@@ -4900,7 +4918,7 @@
             "bank8:ledger:products:write": []
           }
         ],
-        "description": "create a product version."
+        "description": "Create product version.\n\ncreate a product version."
       }
     },
     "/v1/restriction-definitions": {
@@ -4927,7 +4945,7 @@
           }
         },
         "security": [],
-        "description": "list restriction definitions."
+        "description": "List restriction definitions.\n\nlist restriction definitions."
       },
       "post": {
         "tags": [
@@ -4952,7 +4970,7 @@
           }
         },
         "security": [],
-        "description": "create a restriction definition."
+        "description": "Create restriction definition.\n\ncreate a restriction definition."
       }
     },
     "/v1/restriction-sets": {
@@ -4979,7 +4997,7 @@
           }
         },
         "security": [],
-        "description": "list restriction sets."
+        "description": "List restriction sets.\n\nlist restriction sets."
       },
       "post": {
         "tags": [
@@ -5004,7 +5022,7 @@
           }
         },
         "security": [],
-        "description": "apply a restriction set to an account or customer."
+        "description": "Create restriction set.\n\napply a restriction set to an account or customer."
       }
     },
     "/v1/schedule-tags": {
@@ -5037,7 +5055,7 @@
             "bank8:ledger:schedules:read": []
           }
         ],
-        "description": "list schedule tags."
+        "description": "List schedule tags.\n\nlist schedule tags."
       },
       "post": {
         "tags": [
@@ -5078,7 +5096,7 @@
             "bank8:ledger:schedules:write": []
           }
         ],
-        "description": "create a schedule tag (activation group)."
+        "description": "Create schedule tag.\n\ncreate a schedule tag (activation group)."
       }
     },
     "/v1/schedule-tags/{id}/assocs": {
@@ -5111,7 +5129,7 @@
             "bank8:ledger:schedules:write": []
           }
         ],
-        "description": "attach a tag to a schedule\n(tag status ACTIVE/INACTIVE controls the schedule)."
+        "description": "Associate schedule tag.\n\nattach a tag to a schedule\n(tag status ACTIVE/INACTIVE controls the schedule)."
       }
     },
     "/v1/schedules": {
@@ -5165,7 +5183,7 @@
             "bank8:ledger:schedules:read": []
           }
         ],
-        "description": "list schedules."
+        "description": "List schedules.\n\nlist schedules."
       },
       "post": {
         "tags": [
@@ -5203,7 +5221,7 @@
             "bank8:ledger:schedules:write": []
           }
         ],
-        "description": "create a schedule, delegating execution to Cron.\nLedger stores a local reference in `schedules` and creates the actual\nschedule in Cron via `POST /v1/schedules`. Cron fires the schedule and\nproxy-calls Ledger's `POST /v1/internal/schedules/run` to execute the work."
+        "description": "Create schedule.\n\ncreate a schedule, delegating execution to Cron.\nLedger stores a local reference in `schedules` and creates the actual\nschedule in Cron via `POST /v1/schedules`. Cron fires the schedule and\nproxy-calls Ledger's `POST /v1/internal/schedules/run` to execute the work."
       }
     },
     "/v1/schedules/{id}": {
@@ -5248,7 +5266,7 @@
             "bank8:ledger:schedules:read": []
           }
         ],
-        "description": "schedule detail."
+        "description": "Get schedule.\n\nschedule detail."
       }
     },
     "/v1/streams": {
@@ -5271,7 +5289,7 @@
             "bank8:ledger:accounts:read": []
           }
         ],
-        "description": "client-facing streaming catalog: the `event_type`\nfamilies the ledger emits on the `bus:{envId}:ledger` stream family\n(business \"Core Streaming API\"; topic mapping in design §11)."
+        "description": "List streams.\n\nclient-facing streaming catalog: the `event_type`\nfamilies the ledger emits on the `bus:{envId}:ledger` stream family\n(business \"Core Streaming API\"; topic mapping in design §11)."
       }
     },
     "/v1/supervisor-contracts": {
@@ -5304,7 +5322,7 @@
             "bank8:ledger:products:read": []
           }
         ],
-        "description": "list supervisor contracts."
+        "description": "List supervisor contracts.\n\nlist supervisor contracts."
       },
       "post": {
         "tags": [
@@ -5345,7 +5363,7 @@
             "bank8:ledger:products:write": []
           }
         ],
-        "description": "create a cross-account contract."
+        "description": "Create supervisor contract.\n\ncreate a cross-account contract."
       }
     },
     "/v1/supervisor-contracts/{id}": {
@@ -5375,7 +5393,7 @@
             "bank8:ledger:products:read": []
           }
         ],
-        "description": "supervisor contract detail."
+        "description": "Get supervisor contract.\n\nsupervisor contract detail."
       }
     },
     "/v2/balances/end": {
@@ -5408,7 +5426,7 @@
             "bank8:ledger:balances:read": []
           }
         ],
-        "description": "end-of-period balances (month buckets by default)."
+        "description": "Balances v2 end.\n\nend-of-period balances (month buckets by default)."
       }
     },
     "/v2/balances/live": {
@@ -5441,7 +5459,7 @@
             "bank8:ledger:balances:read": []
           }
         ],
-        "description": "current committed balances per account."
+        "description": "Balances v2 live.\n\ncurrent committed balances per account."
       }
     },
     "/v2/balances/series": {
@@ -5506,7 +5524,7 @@
             "bank8:ledger:balances:read": []
           }
         ],
-        "description": "balance series over a time range (bucket scan)."
+        "description": "Balances v2 series.\n\nbalance series over a time range (bucket scan)."
       }
     }
   },
@@ -5758,7 +5776,7 @@
         "properties": {
           "device_token_ref": {
             "type": "string",
-            "description": "Secret reference (never raw PAN/token material) - §4.4 secret references."
+            "description": "Secret reference (never raw PAN/token material) — §4.4 secret references."
           },
           "device_type": {
             "type": "string"
@@ -6770,7 +6788,7 @@
               "string",
               "null"
             ],
-            "description": "Optional local display_name stamp (VDC §VDC.2 - the ledger never\njoins the platform auth schema; the caller supplies the identity\nfields it already verified)."
+            "description": "Optional local display_name stamp (VDC §VDC.2 — the ledger never\njoins the platform auth schema; the caller supplies the identity\nfields it already verified)."
           },
           "email": {
             "type": [
@@ -6786,7 +6804,7 @@
       },
       "ListAccountsQuery": {
         "type": "object",
-        "description": "`GET /v1/accounts` - list accounts.\n.5: holder callers (§4.3c - no `holder:view-all` scope) see only\naccounts held by their own `customers` row, and only\n`account_type='customer'` accounts (internal accounts are never exposed\nto holders - forced here in the service layer; RLS is the backstop).\nCallers with `holder:view-all` see all env accounts. A holder caller's\n`?customer_id=` query param is ignored - they cannot impersonate another\ncustomer.",
+        "description": "`GET /v1/accounts` — list accounts.\n.5: holder callers (§4.3c — no `holder:view-all` scope) see only\naccounts held by their own `customers` row, and only\n`account_type='customer'` accounts (internal accounts are never exposed\nto holders — forced here in the service layer; RLS is the backstop).\nCallers with `holder:view-all` see all env accounts. A holder caller's\n`?customer_id=` query param is ignored — they cannot impersonate another\ncustomer.",
         "properties": {
           "account_type": {
             "type": [
@@ -6806,7 +6824,7 @@
               "string",
               "null"
             ],
-            "description": "§10.1 - staff-realm env override for internal-account reads.\nValidated against org membership; ignored for customer/delegated\ntokens (env-locked) and never widens customer-data visibility."
+            "description": "§10.1 — staff-realm env override for internal-account reads.\nValidated against org membership; ignored for customer/delegated\ntokens (env-locked) and never widens customer-data visibility."
           },
           "product_id": {
             "type": [
@@ -7345,7 +7363,7 @@
         "properties": {
           "account": {
             "$ref": "#/components/schemas/Value",
-            "description": "Synthetic account state - no persistence occurs."
+            "description": "Synthetic account state — no persistence occurs."
           },
           "hook": {
             "type": "string",
@@ -7666,7 +7684,7 @@
     },
     {
       "name": "ledger",
-      "description": "Bank8:Ledger API - accounts, products, postings, schedules, customers, audit"
+      "description": "Bank8:Ledger API — accounts, products, postings, schedules, customers, audit"
     }
   ]
 }
