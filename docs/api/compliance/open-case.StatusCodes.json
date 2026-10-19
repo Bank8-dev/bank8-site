@@ -1,1 +1,1 @@
-{"responses":{"200":{"description":"","content":{"application/json":{"schema":{}}}}}}
+{"responses":{"200":{"description":"","content":{"application/json":{"schema":{"type":"object","description":"Case opened ack.","required":["case_id","alert_id"],"properties":{"alert_id":{"type":"string","format":"uuid","description":"The originating alert."},"assignee":{"type":["string","null"],"description":"The assignee."},"case_id":{"type":"string","format":"uuid","description":"The new case id."}},"title":"CaseOpened"}}}}}}

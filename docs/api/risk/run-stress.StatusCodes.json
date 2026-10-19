@@ -1,1 +1,1 @@
-{"responses":{"200":{"description":"","content":{"application/json":{"schema":{}}}}}}
+{"responses":{"200":{"description":"","content":{"application/json":{"schema":{"type":"object","description":"Stress-run result envelope.","required":["result_id","scenario_id","snapshot_ref"],"properties":{"result_id":{"type":"string","description":"The persisted result row id."},"scenario_id":{"type":"string","format":"uuid","description":"The scenario id."},"snapshot_ref":{"type":"string","description":"The snapshot reference."}},"title":"StressRunAccepted"}}}}}}

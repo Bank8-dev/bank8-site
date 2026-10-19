@@ -1,1 +1,1 @@
-{"responses":{"200":{"description":"","content":{"application/json":{"schema":{}}}},"409":{"description":""}}}
+{"responses":{"200":{"description":"","content":{"application/json":{"schema":{"type":"object","description":"Alert-status update ack.","required":["id","status"],"properties":{"id":{"type":"string","format":"uuid","description":"The alert id."},"status":{"type":"string","description":"The new status."}},"title":"AlertStatusUpdated"}}}},"409":{"description":""}}}

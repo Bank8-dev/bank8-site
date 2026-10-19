@@ -5,7 +5,7 @@ description: "Revoke consent with record."
 sidebar_label: "`PUT /fdx/v6/consents/{id}/revocation`"
 hide_title: true
 hide_table_of_contents: true
-api: eJztVO1q2zAUfRVxf23gxmm3laJ/3ZpBKW1Klo5BEhLVuom1OpIqXbspxrCH2BPuScZ13M9s7AX2y0I69+uc41sDqVUEOYHM2YiWYJaA8xgUGWdPNUgIWLkbnHfv8ztD+Txg5oKGBAJGzw8RZA0H/T5/NMYsGM8JQMLwDBJOTpxc1qC8L0zWpk+/R4bUELMc1wpk3TRNk8D7/v5ungtHQpWUoyUORw0t8t0u8tzEaOxKUI7i88k30XWexsx5FCtFCFwlYlYGQ/cgJ7PkVYpRO/NDpOCZxXbm3tRO7eLyaizSpd6k1WHagWJad6dT3aRM2nbIhfj14+dDL1M7enwY4W2JkcSbgCo6mxpryChyIXWUYxi1t297YrAxkXieXFldYJjaRXeKUnbiLPXmQaCFMFHghtBq1CLHgLKt/tTR1AZ3xyiPIZpIqIWyWijxaXjxZXAxno8GX4dngxNhHZllpxXjb0ssUfcggTVS7tgcviRIwCvKQcIuI+YFFZCAsUvHipGhAkHCtbI3R3tLvYHXEnxhoe2R+MgIyToyj86jFRxk7Cpp1a0Oex+ED64yGkMaMDPeoCXusjAZ2ohcz6o1lzs/HYvhSBx7leW4d9Drc0uaKy0Nhj8CmgQq5qltqt/b3155F2mt7LPUf/HESwYWr8esn36N/6b7h+no3jPRhBtKfaGMZSHKUDCLWwdOYOuk6nC7c1qKIAFptrvq0YizBHIXiSPq+lpFvApF0/D1bYmhWwmVCkZds00nsyaBHJVmj0xquMF7kHCcZejZ/pUqSu5sZ7U1s2e/yuXVGJrmN0Kp6zs=
+api: eJztVd9v4jgQ/leseWqlQLp7e9UqbxSy2mhbqEKo7gQVmHgg3oKd2g4/RPO/ryZJCy23J9379aVhPB5/8/mbzwdwfGkhGEOqlUXl4NEDnaPhTmoVCQjA4EY/4bRZn26ly6YGU20EeGDwuUDrbrTYQ3CgIo6KBAfgeb6SaVXG/2m1ophNM1xz+nL7HCEAPf+JqQMPBNrUyJyyIYAkQ/at9xeLcaPrEnF9DrswyK1WvlTSSe608bXL0MRV9JK1mM24QcHme+YynKic79eoXEuh22rzxMxbRcaVoBzWNHa6VLc3URcWkc1eO6+jtm3s7LLd9C4NCmKvhgUevAEjInNDVDqJlno+Lh0JsM5ItTwjoNdJOtNOtxsOh9P7207ybRDfsRdWhe/jwUPUC+PX33HYje6jsJ+wFxb1e9FD1Bt1btnLRN2Fcfd7p1pIBj/C/jQaDkfVxoew3xvEUHpQ0Tdt4L/hGh+BqWK1gsfSg485v8N+MxpGfQIej25D9sKGYXcUR8nf0/ChBjkahvG0002iQZ+9sEHyPYyhLD1w0q2o7tmtQ1mWp3Q7U2AVsDldTUXu56sv9O89lO7J1T6hYBdKs0ail9T8l6tP55v62jFeuAyVI/2iqDP/OM+8k9ZKtaxURHJthOLbVOfIltxh1ZfFtDDS7SEYP34kK66QvWmQhqtRX3uiJmp2P0qYvxA7f3PtN0nWPzRfkSj9o2pnrPWKZKL+6+S0WbiT1lE3GVdihWaiZs2XDYLGAxZi9+oDMyYtw51DJVCwDA0G1elHPBNl9JaycjRWWoeiGjnOuoP+MOwn0zh8GPwIe0xpJxeNVVD+c4EFCpqwNbpMkwflBZlEzl0GAZzzId8RAR6Q4cRHawp3fJ2Ttt4N4VHA74fgGP8YKWm+F7qagUasc66evrYWYnc2B0MSkPrKbigjIH20mM5RMdoi1dKrNLO5bv/JcqM3UqDxDaYyl6gcdb+SKSpboVZ8TYfdRQkbxKyT8zTD1uf2FRmOoHMWEs0/JpQebIj/CtJV+1MdyrV1a65OSv9Gae+ZnX1s8sTx/5fyv0q58UyHO+fnKy4VXUNhVsRhresx1CraXIP3+hpb8CCQ9UP7Ju9HDzJtHe04HObc4sisypLCzwWaxmY23Eg+J4mOybwz5IIUMj7AE+5ra6R7ayWEi9JXBeE7e7XLx5MxvB8l4MG8eezXWtAWw7eEj28hAJqlShqVJ1exA6y4WhZ8Sbl1Sfr7BSJz8tM=
 sidebar_class_name: "put api-method"
 info_path: docs/api/fdx/bank-8-fdx
 custom_edit_url: null
@@ -39,10 +39,18 @@ import Translate from "@docusaurus/Translate";
 
 Revoke consent with record.
 
-`PUT /fdx/v6/consents/{consentId}/revocation` — the FDX
+`PUT /fdx/v6/consents/{consentId}/revocation` - the FDX
 RevocationRequest (reason/initiator/otherReason). Existing handler
 `handlers::revoke_fdx_consent` is extended here: the revocation
 row is persisted and a CONSENT_REVOKED notification is queued.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
 
 <ParamsDetails>
   

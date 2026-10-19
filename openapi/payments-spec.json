@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "bank8-payments",
-    "description": "Sentin8 Bank8:Payments — payment orchestration, delegates to Sentin8:Flow.",
+    "description": "Sentin8 Bank8:Payments - payment orchestration, delegates to Sentin8:Flow.",
     "license": {
       "name": "MIT OR Apache-2.0",
       "identifier": "MIT OR Apache-2.0"
@@ -21,7 +21,12 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ThreeDsRecordResponse"
+                  }
+                }
               }
             }
           },
@@ -46,10 +51,15 @@
         "operationId": "list_account_links",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Account link list",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AccountLinkResponse"
+                  }
+                }
               }
             }
           },
@@ -74,7 +84,12 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AccountLinkResponse"
+                  }
+                }
               }
             }
           },
@@ -101,7 +116,9 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/AccountLinkResponse"
+                }
               }
             }
           },
@@ -126,7 +143,9 @@
             "description": "Account link deactivated",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/ResourceIdAck"
+                }
               }
             }
           },
@@ -150,10 +169,15 @@
         "operationId": "list_account_ranges",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Account range list",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AccountRangeResponse"
+                  }
+                }
               }
             }
           },
@@ -178,7 +202,9 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/AccountRangeResponse"
+                }
               }
             }
           },
@@ -206,7 +232,9 @@
               "application/json": {
                 "schema": {
                   "type": "array",
-                  "items": {}
+                  "items": {
+                    "$ref": "#/components/schemas/PrincipalAttr"
+                  }
                 }
               }
             }
@@ -231,17 +259,21 @@
         "requestBody": {
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/PutAttributeBody"
+              }
             }
           },
           "required": true
         },
         "responses": {
-          "200": {
+          "201": {
             "description": "Attribute stored",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/AttributeUpserted"
+                }
               }
             }
           },
@@ -304,7 +336,9 @@
             "description": "Admin calendars rows (latest 50)",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/AdminDataRows"
+                }
               }
             }
           },
@@ -331,7 +365,9 @@
             "description": "Admin cards rows (latest 50)",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/AdminDataRows"
+                }
               }
             }
           },
@@ -358,7 +394,9 @@
             "description": "Admin cores rows (latest 50)",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/AdminDataRows"
+                }
               }
             }
           },
@@ -385,7 +423,9 @@
             "description": "Admin decisions rows (latest 50)",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/AdminDataRows"
+                }
               }
             }
           },
@@ -412,7 +452,9 @@
             "description": "Admin directories rows (latest 50)",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/AdminDataRows"
+                }
               }
             }
           },
@@ -439,7 +481,9 @@
             "description": "Admin files rows (latest 50)",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/AdminDataRows"
+                }
               }
             }
           },
@@ -464,10 +508,12 @@
         "operationId": "list_instructions_admin",
         "responses": {
           "200": {
-            "description": "Recent instructions (admin view)",
+            "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/AdminDataRows"
+                }
               }
             }
           },
@@ -490,7 +536,9 @@
             "description": "Admin integrations rows (latest 50)",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/AdminDataRows"
+                }
               }
             }
           },
@@ -517,7 +565,9 @@
             "description": "Admin mandates rows (latest 50)",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/AdminDataRows"
+                }
               }
             }
           },
@@ -542,10 +592,12 @@
         "operationId": "overview",
         "responses": {
           "200": {
-            "description": "Admin overview counts",
+            "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/AdminOverviewStats"
+                }
               }
             }
           },
@@ -568,7 +620,9 @@
             "description": "Admin parameters rows (latest 50)",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/AdminDataRows"
+                }
               }
             }
           },
@@ -593,10 +647,12 @@
         "operationId": "list_payments_admin",
         "responses": {
           "200": {
-            "description": "Recent payments (admin view)",
+            "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/AdminDataRows"
+                }
               }
             }
           },
@@ -621,7 +677,9 @@
               "application/json": {
                 "schema": {
                   "type": "array",
-                  "items": {}
+                  "items": {
+                    "$ref": "#/components/schemas/PolicySetRow"
+                  }
                 }
               }
             }
@@ -648,7 +706,9 @@
         "requestBody": {
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/PolicyModeBody"
+              }
             }
           },
           "required": true
@@ -679,7 +739,9 @@
         "requestBody": {
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/PolicyModeBody"
+              }
             }
           },
           "required": true
@@ -710,7 +772,9 @@
         "requestBody": {
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/PolicyModeBody"
+              }
             }
           },
           "required": true
@@ -754,7 +818,9 @@
             "description": "The policy set",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/PolicySetDetail"
+                }
               }
             }
           },
@@ -792,17 +858,21 @@
         "requestBody": {
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/PutPolicySetBody"
+              }
             }
           },
           "required": true
         },
         "responses": {
-          "200": {
+          "201": {
             "description": "Policy set stored",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/PolicySetMutated"
+                }
               }
             }
           },
@@ -874,7 +944,9 @@
         "requestBody": {
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/TestPolicySetBody"
+              }
             }
           },
           "required": true
@@ -884,7 +956,9 @@
             "description": "Dry-run decision trace",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/PolicyTestOutcome"
+                }
               }
             }
           },
@@ -914,7 +988,9 @@
               "application/json": {
                 "schema": {
                   "type": "array",
-                  "items": {}
+                  "items": {
+                    "$ref": "#/components/schemas/RelationRecordRow"
+                  }
                 }
               }
             }
@@ -939,7 +1015,9 @@
         "requestBody": {
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/PutRelationBody"
+              }
             }
           },
           "required": true
@@ -949,7 +1027,9 @@
             "description": "Relation stored",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/RelationUpserted"
+                }
               }
             }
           },
@@ -1041,7 +1121,9 @@
             "description": "The check verdict",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/RelationCheckResult"
+                }
               }
             }
           },
@@ -1069,7 +1151,9 @@
             "description": "Admin rules rows (latest 50)",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/AdminDataRows"
+                }
               }
             }
           },
@@ -1094,10 +1178,12 @@
         "operationId": "get_settings_admin",
         "responses": {
           "200": {
-            "description": "Service settings",
+            "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/AdminSettingsResponse"
+                }
               }
             }
           },
@@ -1118,10 +1204,12 @@
         "operationId": "get_simulator_admin",
         "responses": {
           "200": {
-            "description": "Simulator state",
+            "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/AdminSimulatorState"
+                }
               }
             }
           },
@@ -1145,7 +1233,9 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/AdminUiResponse"
+                }
               }
             }
           },
@@ -1171,7 +1261,9 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/AggregationResponse"
+                }
               }
             }
           },
@@ -1321,7 +1413,7 @@
             "bank8:payments:app:dashboards:read": []
           }
         ],
-        "description": "Validate app dashboard version.\n\n`POST /v1/app/dashboard-versions:validate` — validate a dashboard version."
+        "description": "Validate app dashboard version.\n\n`POST /v1/app/dashboard-versions:validate` - validate a dashboard version."
       }
     },
     "/v1/app/template-presets": {
@@ -1546,7 +1638,7 @@
             "bank8:payments:app:templates:read": []
           }
         ],
-        "description": "Validate app template version.\n\n`POST /v1/app/template-versions:validate` — validate a template version\npayload without creating it."
+        "description": "Validate app template version.\n\n`POST /v1/app/template-versions:validate` - validate a template version\npayload without creating it."
       }
     },
     "/v1/audit": {
@@ -1630,10 +1722,15 @@
         "operationId": "list_business_day_definitions",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Business day definition list",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BusinessDayDefinitionResponse"
+                  }
+                }
               }
             }
           },
@@ -1658,7 +1755,12 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BusinessDayDefinitionResponse"
+                  }
+                }
               }
             }
           },
@@ -1682,10 +1784,15 @@
         "operationId": "list_calendars",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Calendar list",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CalendarResponse"
+                  }
+                }
               }
             }
           },
@@ -1707,10 +1814,12 @@
         "operationId": "create_calendar",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Created calendar",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/CalendarResponse"
+                }
               }
             }
           },
@@ -1734,10 +1843,15 @@
         "operationId": "list_card_products",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Card product list",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CardProductResponse"
+                  }
+                }
               }
             }
           },
@@ -1762,7 +1876,12 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CardProductResponse"
+                  }
+                }
               }
             }
           },
@@ -1789,7 +1908,9 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/CardProductResponse"
+                }
               }
             }
           },
@@ -1815,7 +1936,12 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CardTokenResponse"
+                  }
+                }
               }
             }
           },
@@ -1840,10 +1966,15 @@
         "operationId": "list_cardholders",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Cardholder list",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CardholderResponse"
+                  }
+                }
               }
             }
           },
@@ -1868,7 +1999,12 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CardholderResponse"
+                  }
+                }
               }
             }
           },
@@ -1880,7 +2016,7 @@
           }
         },
         "security": [],
-        "description": "Create cardholder.\n\ncreate a cardholder.\n.7: `customer_id` is a Ledger customer id (by value; existence is the\ncaller's contract — Ledger owns customer validation via its public API;\nno cross-schema FK)."
+        "description": "Create cardholder.\n\ncreate a cardholder.\n.7: `customer_id` is a Ledger customer id (by value; existence is the\ncaller's contract - Ledger owns customer validation via its public API;\nno cross-schema FK)."
       }
     },
     "/v1/cardholders/{id}": {
@@ -1895,7 +2031,9 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/CardholderResponse"
+                }
               }
             }
           },
@@ -2414,7 +2552,7 @@
             "bank8:payments:issuance:write": []
           }
         ],
-        "description": "Issue card.\n\n`POST /v1/cards/issuance:issue` — issue a card (delegates to the existing\ncard-issuing handler; the business route shape)."
+        "description": "Issue card.\n\n`POST /v1/cards/issuance:issue` - issue a card (delegates to the existing\ncard-issuing handler; the business route shape)."
       }
     },
     "/v1/cards/issuance/{id}/get-details": {
@@ -2452,7 +2590,7 @@
             "bank8:payments:issuance:read": []
           }
         ],
-        "description": "Get card details.\n\n`POST /v1/cards/issuance/{id}:getDetails` — fetch the encrypted card\ndetails (ECDH P-256 session; client-side decrypt only, §4.12)."
+        "description": "Get card details.\n\n`POST /v1/cards/issuance/{id}:getDetails` - fetch the encrypted card\ndetails (ECDH P-256 session; client-side decrypt only, §4.12)."
       }
     },
     "/v1/cards/issuance/{id}/get-pin": {
@@ -2490,7 +2628,7 @@
             "bank8:payments:issuance:read": []
           }
         ],
-        "description": "Get card pin.\n\n`POST /v1/cards/issuance/{id}:getPIN` — fetch the encrypted PIN block."
+        "description": "Get card pin.\n\n`POST /v1/cards/issuance/{id}:getPIN` - fetch the encrypted PIN block."
       }
     },
     "/v1/cards/issuance/{id}/replace": {
@@ -2528,7 +2666,7 @@
             "bank8:payments:issuance:write": []
           }
         ],
-        "description": "Replace card issuance.\n\n`POST /v1/cards/issuance/{id}:replace` — replace a card (delegates to the\nexisting replace handler; business route shape)."
+        "description": "Replace card issuance.\n\n`POST /v1/cards/issuance/{id}:replace` - replace a card (delegates to the\nexisting replace handler; business route shape)."
       }
     },
     "/v1/cards/issuance/{id}/reset-lvt": {
@@ -2566,7 +2704,7 @@
             "bank8:payments:issuance:write": []
           }
         ],
-        "description": "Reset card lvt.\n\n`POST /v1/cards/issuance/{id}:resetLVT` — reset the Limited Value Tracker\n(contactless accumulator; )."
+        "description": "Reset card lvt.\n\n`POST /v1/cards/issuance/{id}:resetLVT` - reset the Limited Value Tracker\n(contactless accumulator; )."
       }
     },
     "/v1/cards/issuance/{id}/reset-pin-attempts": {
@@ -2604,7 +2742,7 @@
             "bank8:payments:issuance:write": []
           }
         ],
-        "description": "Reset pin attempts.\n\n`POST /v1/cards/issuance/{id}:resetPINAttempts` — reset the PIN try counter."
+        "description": "Reset pin attempts.\n\n`POST /v1/cards/issuance/{id}:resetPINAttempts` - reset the PIN try counter."
       }
     },
     "/v1/cards/issuance/{id}/update-pin": {
@@ -2652,7 +2790,7 @@
             "bank8:payments:issuance:write": []
           }
         ],
-        "description": "Update card pin.\n\n`POST /v1/cards/issuance/{id}:updatePIN` — update the card PIN (hashes the\nnew PIN server-side; never stored in clear, §4.12)."
+        "description": "Update card pin.\n\n`POST /v1/cards/issuance/{id}:updatePIN` - update the card PIN (hashes the\nnew PIN server-side; never stored in clear, §4.12)."
       }
     },
     "/v1/cards/products/{id}": {
@@ -2843,7 +2981,7 @@
             "bank8:payments:cards:write": []
           }
         ],
-        "description": "Add card product account ranges.\n\n`POST /v1/cards/products/{id}:addAccountRanges` — attach BIN account\nranges to a card product."
+        "description": "Add card product account ranges.\n\n`POST /v1/cards/products/{id}:addAccountRanges` - attach BIN account\nranges to a card product."
       }
     },
     "/v1/cards/products/{id}/remove-account-ranges": {
@@ -2891,7 +3029,7 @@
             "bank8:payments:cards:write": []
           }
         ],
-        "description": "Remove card product account ranges.\n\n`POST /v1/cards/products/{id}:removeAccountRanges` — detach BIN account\nranges."
+        "description": "Remove card product account ranges.\n\n`POST /v1/cards/products/{id}:removeAccountRanges` - detach BIN account\nranges."
       }
     },
     "/v1/cards/sessions/initiate": {
@@ -2899,19 +3037,27 @@
         "tags": [
           "payments"
         ],
-        "summary": "`POST /v1/cards/sessions/initiate`",
         "operationId": "initiate_card_session",
         "requestBody": {
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/InitiateCardSessionRequest"
+              }
             }
           },
           "required": true
         },
         "responses": {
           "200": {
-            "description": "Session created (public key + token)"
+            "description": "Session created (public key + token)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EncryptedSessionResponse"
+                }
+              }
+            }
           },
           "403": {
             "description": "Missing bank8:payments:issuance:write scope"
@@ -2922,7 +3068,8 @@
             "bank8:payments:issuance:write": []
           }
         ],
-        "description": "Initiate card session.\n\n`POST /v1/cards/sessions:initiate` — initiate an encrypted card session\n(client key exchange; delegates to the existing session handler)."
+        "description": "Initiate card session.",
+        "summary": "`POST /v1/cards/sessions/initiate`"
       }
     },
     "/v1/cards/{id}": {
@@ -2977,10 +3124,12 @@
         "operationId": "update_card",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Updated card",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/CardResponse"
+                }
               }
             }
           },
@@ -3007,7 +3156,9 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/CardLifecycleAck"
+                }
               }
             }
           },
@@ -3034,7 +3185,9 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/EncryptedSessionResponse"
+                }
               }
             }
           },
@@ -3061,7 +3214,9 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/CardLifecycleAck"
+                }
               }
             }
           },
@@ -3088,7 +3243,9 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/PinChangeResult"
+                }
               }
             }
           },
@@ -3115,7 +3272,9 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/PinVerifyResult"
+                }
               }
             }
           },
@@ -3190,7 +3349,9 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/CardReplaceAck"
+                }
               }
             }
           },
@@ -3217,7 +3378,9 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/CardLifecycleAck"
+                }
               }
             }
           },
@@ -3411,10 +3574,12 @@
         "operationId": "delete_core",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Core deactivated",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/ResourceIdAck"
+                }
               }
             }
           },
@@ -3436,10 +3601,12 @@
         "operationId": "update_core",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Updated core",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/CoreResponse"
+                }
               }
             }
           },
@@ -3542,7 +3709,7 @@
             "bank8:payments:cores:write": []
           }
         ],
-        "description": "Create core version.\n\n`POST /v1/core-versions` — create a core version."
+        "description": "Create core version.\n\n`POST /v1/core-versions` - create a core version."
       }
     },
     "/v1/dashboards": {
@@ -3554,10 +3721,15 @@
         "operationId": "list_dashboards",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Dashboard list",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DashboardResponse"
+                  }
+                }
               }
             }
           },
@@ -3579,10 +3751,12 @@
         "operationId": "create_dashboard",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Created dashboard",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/DashboardResponse"
+                }
               }
             }
           },
@@ -3609,7 +3783,9 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/DashboardResponse"
+                }
               }
             }
           },
@@ -3636,7 +3812,9 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/DashboardVersionResponse"
+                }
               }
             }
           },
@@ -3663,7 +3841,9 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/DashboardVersionResponse"
+                }
               }
             }
           },
@@ -3687,10 +3867,15 @@
         "operationId": "list_files",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "File list",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/FileResponse"
+                  }
+                }
               }
             }
           },
@@ -3715,7 +3900,12 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/FileResponse"
+                  }
+                }
               }
             }
           },
@@ -3742,7 +3932,9 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/FileResponse"
+                }
               }
             }
           },
@@ -3769,7 +3961,9 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/FileSubmitAck"
+                }
               }
             }
           },
@@ -3792,10 +3986,12 @@
         "operationId": "health",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Liveness/build identity",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/LiveHealth"
+                }
               }
             }
           },
@@ -3823,7 +4019,12 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/InstructionBatchResponse"
+                  }
+                }
               }
             }
           },
@@ -3946,7 +4147,7 @@
             "bank8:payments:files:write": []
           }
         ],
-        "description": "Create specification version.\n\n`POST /v1beta/instruction-file-specification-versions` — create a file\nspecification version."
+        "description": "Create specification version.\n\n`POST /v1beta/instruction-file-specification-versions` - create a file\nspecification version."
       }
     },
     "/v1/instruction-file-specifications": {
@@ -3958,10 +4159,15 @@
         "operationId": "list_specifications",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Specification list",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/InstructionFileSpecificationResponse"
+                  }
+                }
               }
             }
           },
@@ -3986,7 +4192,12 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/InstructionFileSpecificationResponse"
+                  }
+                }
               }
             }
           },
@@ -4010,10 +4221,15 @@
         "operationId": "list_instruction_files",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Instruction file list",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/InstructionFileResponse"
+                  }
+                }
               }
             }
           },
@@ -4038,7 +4254,12 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/InstructionFileResponse"
+                  }
+                }
               }
             }
           },
@@ -4086,7 +4307,7 @@
             "bank8:payments:files:read": []
           }
         ],
-        "description": "Validate specification version.\n\n`POST /v1beta/instruction-file-specification-versions:validate` — validate\na specification version payload without creating it (active-version\nsemantics; the design's `:validate` convention)."
+        "description": "Validate specification version.\n\n`POST /v1beta/instruction-file-specification-versions:validate` - validate\na specification version payload without creating it (active-version\nsemantics; the design's `:validate` convention)."
       }
     },
     "/v1/instructions": {
@@ -4191,7 +4412,7 @@
             "bank8:payments:instructions:write": []
           }
         ],
-        "description": "Bulk retry instructions.\n\n`POST /v1/instructions:bulkRetry` — bulk retry errored instructions\n(Sentin8 Jobs pattern)."
+        "description": "Bulk retry instructions.\n\n`POST /v1/instructions:bulkRetry` - bulk retry errored instructions\n(Sentin8 Jobs pattern)."
       }
     },
     "/v1/instructions/{id}": {
@@ -4292,7 +4513,7 @@
             "bank8:payments:instructions:write": []
           }
         ],
-        "description": "Update instruction.\n\nupdate an instruction (status updates\nincluding cancel — the business convention; no `/cancel` subpath)."
+        "description": "Update instruction.\n\nupdate an instruction (status updates\nincluding cancel - the business convention; no `/cancel` subpath)."
       }
     },
     "/v1/instructions/{id}/cancel": {
@@ -4375,7 +4596,7 @@
             "bank8:payments:instructions:write": []
           }
         ],
-        "description": "Process instruction by id.\n\n`POST /v1/instructions/{id}:process` — process the instruction now\n(business route shape; wraps the state-machine step)."
+        "description": "Process instruction by id.\n\n`POST /v1/instructions/{id}:process` - process the instruction now\n(business route shape; wraps the state-machine step)."
       }
     },
     "/v1/instructions/{id}/process": {
@@ -4416,7 +4637,7 @@
             "bank8:payments:instructions:write": []
           }
         ],
-        "description": "Process instruction.\n\n`POST /v1/instructions:process` — process an instruction against its\nlogic (moves it to processing; the worker continues the workflow)."
+        "description": "Process instruction.\n\n`POST /v1/instructions:process` - process an instruction against its\nlogic (moves it to processing; the worker continues the workflow)."
       }
     },
     "/v1/instructions/{id}/repair": {
@@ -4625,7 +4846,7 @@
             "bank8:payments:integrations:write": []
           }
         ],
-        "description": "Retry integration version.\n\n`POST /v1/integration-versions/{id}:retry` — retry a failed integration\nversion (business convention; )."
+        "description": "Retry integration version.\n\n`POST /v1/integration-versions/{id}:retry` - retry a failed integration\nversion (business convention; )."
       }
     },
     "/v1/integrations": {
@@ -4733,7 +4954,7 @@
             "bank8:payments:integrations:write": []
           }
         ],
-        "description": "Integration callback.\n\n`POST /v1/integrations:callback/{token}` — the HTTPAsyncStep contract\n(§4.4): an integration calls back with the response payload after an\narbitrary delay; the waiting instruction resumes its workflow."
+        "description": "Integration callback.\n\n`POST /v1/integrations:callback/{token}` - the HTTPAsyncStep contract\n(§4.4): an integration calls back with the response payload after an\narbitrary delay; the waiting instruction resumes its workflow."
       }
     },
     "/v1/integrations/payment-initiation-apps": {
@@ -4859,10 +5080,12 @@
         "operationId": "delete_integration",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Integration deactivated",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/ResourceIdAck"
+                }
               }
             }
           },
@@ -4884,10 +5107,12 @@
         "operationId": "update_integration",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Updated integration",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationResponse"
+                }
               }
             }
           },
@@ -4914,7 +5139,9 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/AccountLinkResponse"
+                }
               }
             }
           },
@@ -4973,7 +5200,9 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/CalendarResponse"
+                }
               }
             }
           },
@@ -4997,7 +5226,9 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/CardholderResponse"
+                }
               }
             }
           },
@@ -5021,7 +5252,9 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/CardResponse"
+                }
               }
             }
           },
@@ -5039,14 +5272,16 @@
           "payments-internal"
         ],
         "summary": "`POST /v1/internal/files/debatch`",
-        "description": "The chunk count derives from the file's `size_bytes` (the\n`CHUNK_RECORDS`-record batch shell per chunk); record parsing rides the\ninstruction-file-spec version registered for the file's class.\n\nExecute the `debatch_file` step: split the file's records into chunked\ninstruction batches (design §10). The step is idempotent on\n`file_id:chunk_index` — a workflow retry re-enters here and the\nterminal-file guard makes completed work a no-op.",
+        "description": "The chunk count derives from the file's `size_bytes` (the\n`CHUNK_RECORDS`-record batch shell per chunk); record parsing rides the\ninstruction-file-spec version registered for the file's class.\n\nExecute the `debatch_file` step: split the file's records into chunked\ninstruction batches (design §10). The step is idempotent on\n`file_id:chunk_index` - a workflow retry re-enters here and the\nterminal-file guard makes completed work a no-op.",
         "operationId": "debatch_step",
         "responses": {
           "200": {
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/DebatchResponse"
+                }
               }
             }
           },
@@ -5069,7 +5304,9 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/InstructionResponse"
+                }
               }
             }
           },
@@ -5087,10 +5324,12 @@
         "operationId": "update_instruction_internal",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Updated instruction",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/InstructionResponse"
+                }
               }
             }
           },
@@ -5115,7 +5354,9 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationResponse"
+                }
               }
             }
           },
@@ -5139,7 +5380,9 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/MandateResponse"
+                }
               }
             }
           },
@@ -5163,7 +5406,9 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/ManualDecisionResponse"
+                }
               }
             }
           },
@@ -5187,7 +5432,9 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/ParameterResponse"
+                }
               }
             }
           },
@@ -5211,7 +5458,9 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/PaymentInstrumentResponse"
+                }
               }
             }
           },
@@ -5235,7 +5484,9 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/PaymentResponse"
+                }
               }
             }
           },
@@ -5259,7 +5510,9 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/RuleResponse"
+                }
               }
             }
           },
@@ -5282,7 +5535,9 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/ScheduleTriggerResponse"
+                }
               }
             }
           },
@@ -5307,7 +5562,9 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/ProxyBackResponse"
+                }
               }
             }
           },
@@ -5331,7 +5588,12 @@
             "description": "Logics list",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LogicResponse"
+                  }
+                }
               }
             }
           },
@@ -5397,7 +5659,9 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/LogicResponse"
+                }
               }
             }
           },
@@ -5424,7 +5688,9 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/MigrateWasmResponse"
+                }
               }
             }
           },
@@ -5562,10 +5828,12 @@
         "operationId": "update_mandate",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Updated mandate",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/MandateResponse"
+                }
               }
             }
           },
@@ -5592,7 +5860,12 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ManualDecisionResponse"
+                  }
+                }
               }
             }
           },
@@ -5619,7 +5892,9 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/ManualDecisionResponse"
+                }
               }
             }
           },
@@ -5646,7 +5921,9 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/ManualDecisionSubmitted"
+                }
               }
             }
           },
@@ -5670,10 +5947,15 @@
         "operationId": "list_membership_directories",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Directory list",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MembershipDirectoryResponse"
+                  }
+                }
               }
             }
           },
@@ -5698,7 +5980,12 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MembershipDirectoryResponse"
+                  }
+                }
               }
             }
           },
@@ -5725,7 +6012,9 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/MembershipDirectoryResponse"
+                }
               }
             }
           },
@@ -5763,7 +6052,7 @@
             "bank8:payments:membership-directories:read": []
           }
         ],
-        "description": "Search membership directory records.\n\n`POST /v1/membership-directory-records:search` — registry-validated\nmembership directory search (BIC reachability, account resolution)."
+        "description": "Search membership directory records.\n\n`POST /v1/membership-directory-records:search` - registry-validated\nmembership directory search (BIC reachability, account resolution)."
       }
     },
     "/v1/membership-directory-versions": {
@@ -5848,8 +6137,10 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
-                "schema": {}
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -5896,9 +6187,13 @@
         "operationId": "openmetrics_federate",
         "responses": {
           "200": {
-            "description": "Federation metrics",
+            "description": "Federation metrics (OpenMetrics text)",
             "content": {
-              "text/plain": {}
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
             }
           },
           "403": {
@@ -5922,9 +6217,13 @@
         "operationId": "openmetrics_metrics",
         "responses": {
           "200": {
-            "description": "OpenMetrics metrics",
+            "description": "OpenMetrics metrics (text)",
             "content": {
-              "text/plain": {}
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
             }
           },
           "403": {
@@ -6067,10 +6366,15 @@
         "operationId": "list_parameters",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Parameter list",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ParameterResponse"
+                  }
+                }
               }
             }
           },
@@ -6095,7 +6399,12 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ParameterResponse"
+                  }
+                }
               }
             }
           },
@@ -6122,7 +6431,9 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/ParameterResponse"
+                }
               }
             }
           },
@@ -6144,10 +6455,12 @@
         "operationId": "delete_parameter",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Parameter deleted",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/ResourceIdAck"
+                }
               }
             }
           },
@@ -6169,10 +6482,12 @@
         "operationId": "update_parameter",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Updated parameter",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/ParameterResponse"
+                }
               }
             }
           },
@@ -6288,7 +6603,7 @@
             "bank8:payments:payments:read": []
           }
         ],
-        "description": "Search payees.\n\n`POST /v1/payees:search` — registry-validated payee search."
+        "description": "Search payees.\n\n`POST /v1/payees:search` - registry-validated payee search."
       }
     },
     "/v1/payees/{id}": {
@@ -6404,10 +6719,15 @@
         "operationId": "list_payment_instruments",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Instrument list",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PaymentInstrumentResponse"
+                  }
+                }
               }
             }
           },
@@ -6432,7 +6752,12 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PaymentInstrumentResponse"
+                  }
+                }
               }
             }
           },
@@ -6456,7 +6781,9 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/PaymentInstrumentResponse"
+                }
               }
             }
           },
@@ -6478,10 +6805,12 @@
         "operationId": "delete_payment_instrument",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Instrument deactivated",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/ResourceIdAck"
+                }
               }
             }
           },
@@ -6503,10 +6832,12 @@
         "operationId": "update_payment_instrument",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Updated instrument",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/PaymentInstrumentResponse"
+                }
               }
             }
           },
@@ -6642,7 +6973,9 @@
         "requestBody": {
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/SearchRecordsRequest"
+              }
             }
           },
           "required": true
@@ -6824,10 +7157,15 @@
         "operationId": "list_rule_sets",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Rule set list",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RuleSetResponse"
+                  }
+                }
               }
             }
           },
@@ -6852,7 +7190,12 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RuleSetResponse"
+                  }
+                }
               }
             }
           },
@@ -7099,7 +7442,7 @@
             "bank8:payments:rules:write": []
           }
         ],
-        "description": "Attach rule to instrument.\n\n`POST /v1/rules:attachToInstrument` — attach a decision rule to a payment\ninstrument (; the rule still applies per-instruction at runtime)."
+        "description": "Attach rule to instrument.\n\n`POST /v1/rules:attachToInstrument` - attach a decision rule to a payment\ninstrument (; the rule still applies per-instruction at runtime)."
       }
     },
     "/v1/rules/detach-from-instrument": {
@@ -7132,7 +7475,7 @@
             "bank8:payments:rules:write": []
           }
         ],
-        "description": "Detach rule from instrument.\n\n`POST /v1/rules:detachFromInstrument` — detach a rule from an instrument"
+        "description": "Detach rule from instrument.\n\n`POST /v1/rules:detachFromInstrument` - detach a rule from an instrument"
       }
     },
     "/v1/rules/{id}/publish": {
@@ -7224,7 +7567,7 @@
             "bank8:payments:sandbox:write": []
           }
         ],
-        "description": "Sandbox simulate card txn.\n\n`POST /v1/sandbox/cards:simulate` — simulate a card transaction."
+        "description": "Sandbox simulate card txn.\n\n`POST /v1/sandbox/cards:simulate` - simulate a card transaction."
       }
     },
     "/v1/sandbox/credit-transfers/simulate": {
@@ -7264,7 +7607,7 @@
             "bank8:payments:sandbox:write": []
           }
         ],
-        "description": "Sandbox simulate credit transfer.\n\n`POST /v1/sandbox/credit-transfers:simulate` — simulate an SEPA credit\ntransfer."
+        "description": "Sandbox simulate credit transfer.\n\n`POST /v1/sandbox/credit-transfers:simulate` - simulate an SEPA credit\ntransfer."
       }
     },
     "/v1/sandbox/fedwire/simulate": {
@@ -7304,7 +7647,7 @@
             "bank8:payments:sandbox:write": []
           }
         ],
-        "description": "Sandbox simulate fedwire.\n\n`POST /v1/sandbox/fedwire:simulate` — simulate a FedWire payment."
+        "description": "Sandbox simulate fedwire.\n\n`POST /v1/sandbox/fedwire:simulate` - simulate a FedWire payment."
       }
     },
     "/v1/sandbox/instructions/{id}/resume": {
@@ -7342,7 +7685,7 @@
             "bank8:payments:sandbox:write": []
           }
         ],
-        "description": "Sandbox resume instruction.\n\n`POST /v1/sandbox/instructions/{id}:resume` — fast-forward a stuck\ninstruction through its state machine."
+        "description": "Sandbox resume instruction.\n\n`POST /v1/sandbox/instructions/{id}:resume` - fast-forward a stuck\ninstruction through its state machine."
       }
     },
     "/v1/sandbox/scheduled-payments/{id}/fast-forward": {
@@ -7380,7 +7723,7 @@
             "bank8:payments:sandbox:write": []
           }
         ],
-        "description": "Sandbox fast forward scheduled.\n\n`POST /v1/sandbox/scheduled-payments/{id}:fastForward` — execute the next\nscheduled occurrence immediately (+ )."
+        "description": "Sandbox fast forward scheduled.\n\n`POST /v1/sandbox/scheduled-payments/{id}:fastForward` - execute the next\nscheduled occurrence immediately (+ )."
       }
     },
     "/v1/sandbox/swift-agi/simulate": {
@@ -7420,7 +7763,7 @@
             "bank8:payments:sandbox:write": []
           }
         ],
-        "description": "Sandbox simulate swift agi.\n\n`POST /v1/sandbox/swift-agi:simulate` — simulate a SWIFT AGI payment"
+        "description": "Sandbox simulate swift agi.\n\n`POST /v1/sandbox/swift-agi:simulate` - simulate a SWIFT AGI payment"
       }
     },
     "/v1/tasks": {
@@ -7434,7 +7777,12 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TaskResponse"
+                  }
+                }
               }
             }
           },
@@ -7462,7 +7810,9 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/TaskResponse"
+                }
               }
             }
           },
@@ -7489,7 +7839,9 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/TaskResponse"
+                }
               }
             }
           },
@@ -7516,7 +7868,9 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/TaskResponse"
+                }
               }
             }
           },
@@ -7543,7 +7897,9 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/TaskResponse"
+                }
               }
             }
           },
@@ -7567,10 +7923,15 @@
         "operationId": "list_templates",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Template list",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TemplateResponse"
+                  }
+                }
               }
             }
           },
@@ -7592,10 +7953,12 @@
         "operationId": "create_template",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Created template",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/TemplateResponse"
+                }
               }
             }
           },
@@ -7622,7 +7985,9 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/TemplateResponse"
+                }
               }
             }
           },
@@ -7649,7 +8014,9 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/TemplateVersionResponse"
+                }
               }
             }
           },
@@ -7676,7 +8043,9 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/TemplateVersionResponse"
+                }
               }
             }
           },
@@ -7721,7 +8090,7 @@
             "bank8:payments:users:read": []
           }
         ],
-        "description": "List users.\n\nlist users visible to this environment (read view;\nidentities stay in Sentin8:Auth — this is a projection)."
+        "description": "List users.\n\nlist users visible to this environment (read view;\nidentities stay in Sentin8:Auth - this is a projection)."
       }
     },
     "/v1beta/scheduled-payments": {
@@ -7911,23 +8280,83 @@
             "bank8:payments:scheduled-payments:write": []
           }
         ],
-        "description": "Fast forward scheduled payment.\n\n`POST /v1beta/scheduled-payments/{id}:fastForward` — execute the next\noccurrence immediately (; non-sandbox)."
+        "description": "Fast forward scheduled payment.\n\n`POST /v1beta/scheduled-payments/{id}:fastForward` - execute the next\noccurrence immediately (; non-sandbox)."
       }
     }
   },
   "components": {
     "schemas": {
+      "AccountLinkResponse": {
+        "type": "object",
+        "required": [
+          "id",
+          "account_id",
+          "is_default",
+          "status",
+          "created_at",
+          "updated_at"
+        ],
+        "properties": {
+          "account_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "core_account_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "display_name": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "is_default": {
+            "type": "boolean"
+          },
+          "payment_instrument_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uuid"
+          },
+          "status": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
       "AccountRangeResponse": {
         "type": "object",
         "required": [
           "id",
-          "product_id",
-          "account_range_id",
+          "card_product_id",
+          "bin_range",
+          "pan_length",
+          "status",
           "created_at"
         ],
         "properties": {
-          "account_range_id": {
+          "bin_range": {
             "type": "string"
+          },
+          "card_product_id": {
+            "type": "string",
+            "format": "uuid"
           },
           "created_at": {
             "type": "string",
@@ -7937,9 +8366,12 @@
             "type": "string",
             "format": "uuid"
           },
-          "product_id": {
-            "type": "string",
-            "format": "uuid"
+          "pan_length": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "status": {
+            "type": "string"
           }
         }
       },
@@ -7954,6 +8386,374 @@
             "items": {
               "type": "string"
             }
+          }
+        }
+      },
+      "AdminDataRows": {
+        "oneOf": [
+          {
+            "type": "object",
+            "description": "The default `{ items: [rows] }` envelope the RFW table reads.",
+            "required": [
+              "items"
+            ],
+            "properties": {
+              "items": {
+                "type": "object",
+                "description": "The default `{ items: [rows] }` envelope the RFW table reads.",
+                "required": [
+                  "items"
+                ],
+                "properties": {
+                  "items": {
+                    "type": "array",
+                    "items": {},
+                    "description": "The row documents."
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "description": "The `GET /v1/admin/{resource}` rows payload: the per-resource row\ndocuments the RFW DataTable renders (row cells and per-resource\ncolumn sets are service-defined; the RFW renderer reads them\ndynamically)."
+      },
+      "AdminFeatures": {
+        "type": "object",
+        "description": "The feature flag set.",
+        "required": [
+          "instructions_sync",
+          "instructions_async",
+          "cards",
+          "cards_encrypted",
+          "files",
+          "mandates",
+          "recurring",
+          "manual_decisions",
+          "tasks",
+          "templates",
+          "dashboards",
+          "membership_directories",
+          "calendars",
+          "sandbox"
+        ],
+        "properties": {
+          "calendars": {
+            "type": "boolean",
+            "description": "Calendars enabled."
+          },
+          "cards": {
+            "type": "boolean",
+            "description": "Card module enabled."
+          },
+          "cards_encrypted": {
+            "type": "boolean",
+            "description": "Encrypted card sessions enabled."
+          },
+          "dashboards": {
+            "type": "boolean",
+            "description": "Dashboards enabled."
+          },
+          "files": {
+            "type": "boolean",
+            "description": "File processing enabled."
+          },
+          "instructions_async": {
+            "type": "boolean",
+            "description": "Asynchronous instruction processing enabled."
+          },
+          "instructions_sync": {
+            "type": "boolean",
+            "description": "Synchronous instruction processing enabled."
+          },
+          "mandates": {
+            "type": "boolean",
+            "description": "Mandates enabled."
+          },
+          "manual_decisions": {
+            "type": "boolean",
+            "description": "Manual decision tasks enabled."
+          },
+          "membership_directories": {
+            "type": "boolean",
+            "description": "Membership directories enabled."
+          },
+          "recurring": {
+            "type": "boolean",
+            "description": "Recurring instructions enabled."
+          },
+          "sandbox": {
+            "type": "boolean",
+            "description": "Simulator enabled."
+          },
+          "tasks": {
+            "type": "boolean",
+            "description": "Task API enabled."
+          },
+          "templates": {
+            "type": "boolean",
+            "description": "Templates enabled."
+          }
+        }
+      },
+      "AdminOverviewStats": {
+        "type": "object",
+        "description": "Admin overview counters (OAPEC-9 typed body).",
+        "required": [
+          "instructions_total",
+          "payments_total"
+        ],
+        "properties": {
+          "instructions_total": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Total payment instructions."
+          },
+          "payments_total": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Total payments."
+          }
+        }
+      },
+      "AdminSettingsResponse": {
+        "type": "object",
+        "description": "Enabled feature gates for this instance (OAPEC-9 typed body).",
+        "required": [
+          "service",
+          "features"
+        ],
+        "properties": {
+          "features": {
+            "$ref": "#/components/schemas/AdminFeatures",
+            "description": "Feature-by-feature enablement."
+          },
+          "service": {
+            "type": "string",
+            "description": "The service identifier."
+          }
+        }
+      },
+      "AdminSimulatorState": {
+        "type": "object",
+        "description": "Simulator state (OAPEC-9 typed body).",
+        "required": [
+          "simulator"
+        ],
+        "properties": {
+          "simulator": {
+            "$ref": "#/components/schemas/AdminSimulatorToggle",
+            "description": "Whether the card/insight simulator is enabled."
+          }
+        }
+      },
+      "AdminSimulatorToggle": {
+        "type": "object",
+        "description": "The simulator toggle.",
+        "required": [
+          "enabled"
+        ],
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "description": "Enabled state."
+          }
+        }
+      },
+      "AdminUiAction": {
+        "type": "object",
+        "description": "An action button shown in the page header.",
+        "required": [
+          "label",
+          "action_type"
+        ],
+        "properties": {
+          "action_type": {
+            "$ref": "#/components/schemas/AdminUiActionType",
+            "description": "The action kind (link / submit / dialog)."
+          },
+          "endpoint": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Endpoint to POST to (for submit actions)."
+          },
+          "icon": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Material Icons code point (hex string) for the button."
+          },
+          "label": {
+            "type": "string",
+            "description": "Button label."
+          },
+          "route": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Route to navigate to (for link actions)."
+          }
+        }
+      },
+      "AdminUiActionType": {
+        "type": "string",
+        "description": "The kind of a header action button.",
+        "enum": [
+          "link",
+          "submit",
+          "dialog"
+        ]
+      },
+      "AdminUiPage": {
+        "type": "object",
+        "description": "A complete admin UI page definition returned by `GET /v1/admin/ui/{page}`.",
+        "required": [
+          "title",
+          "widgets"
+        ],
+        "properties": {
+          "actions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdminUiAction"
+            },
+            "description": "Optional actions shown in the page header (buttons)."
+          },
+          "title": {
+            "type": "string",
+            "description": "The page title (shown in breadcrumb and header)."
+          },
+          "widgets": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RemoteWidget"
+            },
+            "description": "The root widget tree."
+          }
+        }
+      },
+      "AdminUiResponse": {
+        "oneOf": [
+          {
+            "type": "object",
+            "description": "Render this page definition.",
+            "required": [
+              "page",
+              "response_type"
+            ],
+            "properties": {
+              "page": {
+                "$ref": "#/components/schemas/AdminUiPage",
+                "description": "The page definition to render."
+              },
+              "response_type": {
+                "type": "string",
+                "enum": [
+                  "page"
+                ]
+              }
+            }
+          },
+          {
+            "type": "object",
+            "description": "Redirect to this route (e.g. after a successful form submission).",
+            "required": [
+              "route",
+              "response_type"
+            ],
+            "properties": {
+              "response_type": {
+                "type": "string",
+                "enum": [
+                  "redirect"
+                ]
+              },
+              "route": {
+                "type": "string",
+                "description": "The route to navigate to."
+              }
+            }
+          },
+          {
+            "type": "object",
+            "description": "An error occurred (validation error, server error, etc.).",
+            "required": [
+              "message",
+              "response_type"
+            ],
+            "properties": {
+              "field_errors": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/FieldError"
+                },
+                "description": "Per-field validation errors, when applicable."
+              },
+              "message": {
+                "type": "string",
+                "description": "Human-readable error message."
+              },
+              "response_type": {
+                "type": "string",
+                "enum": [
+                  "error"
+                ]
+              }
+            }
+          }
+        ],
+        "description": "The response from an admin UI endpoint.\n\n- `GET /v1/admin/ui/{page}` → `AdminUiResponse::Page(page_def)`\n- `POST /v1/admin/{resource}` → `AdminUiResponse::Page(updated_page_def)` or `AdminUiResponse::Redirect(route)`"
+      },
+      "AggregationBucket": {
+        "type": "object",
+        "description": "One aggregation bucket.",
+        "required": [
+          "value"
+        ],
+        "properties": {
+          "bucket": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The group key (absent for global aggregates)."
+          },
+          "value": {
+            "type": "string",
+            "description": "The aggregate value rendered as text (numeric-as-text contract)."
+          }
+        }
+      },
+      "AggregationResponse": {
+        "type": "object",
+        "description": "Whitelisted-SQL aggregation result (OAPEC-9 typed body).",
+        "required": [
+          "aggregation"
+        ],
+        "properties": {
+          "aggregation": {
+            "type": "string",
+            "description": "The aggregation name that ran."
+          },
+          "buckets": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/AggregationBucket"
+            },
+            "description": "Buckets when `group_by` is present."
+          },
+          "value": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Single scalar (rendered as text) when no `group_by`."
           }
         }
       },
@@ -7995,6 +8795,19 @@
           "rule_id": {
             "type": "string",
             "format": "uuid"
+          }
+        }
+      },
+      "AttributeUpserted": {
+        "type": "object",
+        "description": "An attribute upsert result.",
+        "required": [
+          "status"
+        ],
+        "properties": {
+          "status": {
+            "type": "string",
+            "description": "Always `upserted`."
           }
         }
       },
@@ -8070,6 +8883,115 @@
               "format": "uuid"
             },
             "description": "Empty = retry all errored instructions in the env."
+          }
+        }
+      },
+      "BusinessDayDefinitionResponse": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "weekend_days",
+          "holidays",
+          "created_at",
+          "updated_at"
+        ],
+        "properties": {
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "holidays": {},
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "weekend_days": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        }
+      },
+      "ButtonType": {
+        "type": "string",
+        "description": "Button visual style.",
+        "enum": [
+          "primary",
+          "secondary",
+          "danger",
+          "ghost",
+          "link"
+        ]
+      },
+      "CalendarResponse": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "calendar_type",
+          "configuration",
+          "timezone",
+          "created_at",
+          "updated_at"
+        ],
+        "properties": {
+          "business_day_definition_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uuid"
+          },
+          "calendar_type": {
+            "type": "string"
+          },
+          "configuration": {},
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string"
+          },
+          "timezone": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "CardLifecycleAck": {
+        "type": "object",
+        "description": "Card lifecycle mutation acknowledgement (activate/freeze/unfreeze).",
+        "required": [
+          "id",
+          "status"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "The affected card id."
+          },
+          "status": {
+            "type": "string",
+            "description": "The new card status."
           }
         }
       },
@@ -8159,6 +9081,62 @@
           }
         }
       },
+      "CardProductResponse": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "type",
+          "status",
+          "created_at"
+        ],
+        "properties": {
+          "account_range_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uuid"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          }
+        }
+      },
+      "CardReplaceAck": {
+        "type": "object",
+        "description": "Replacement-issuance acknowledgement.",
+        "required": [
+          "id",
+          "replaces"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "The newly issued card id."
+          },
+          "replaces": {
+            "type": "string",
+            "format": "uuid",
+            "description": "The replaced (disabled) card id."
+          }
+        }
+      },
       "CardResponse": {
         "type": "object",
         "required": [
@@ -8208,6 +9186,51 @@
           }
         }
       },
+      "CardTokenResponse": {
+        "type": "object",
+        "description": "API response for a card token.",
+        "required": [
+          "id",
+          "card_id",
+          "token_status",
+          "created_at"
+        ],
+        "properties": {
+          "card_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "device_type": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "token_reference": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "token_requestor_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "token_status": {
+            "type": "string"
+          }
+        }
+      },
       "CardholderResponse": {
         "type": "object",
         "required": [
@@ -8245,6 +9268,23 @@
             "type": "string"
           }
         }
+      },
+      "ChartType": {
+        "type": "string",
+        "description": "Chart kind.",
+        "enum": [
+          "bar",
+          "line",
+          "pie"
+        ]
+      },
+      "ContainerDirection": {
+        "type": "string",
+        "description": "Layout direction for a container's children.",
+        "enum": [
+          "vertical",
+          "horizontal"
+        ]
       },
       "CoreBalanceEndpointRequest": {
         "type": "object",
@@ -8447,7 +9487,7 @@
           "customer_id": {
             "type": "string",
             "format": "uuid",
-            "description": "Ledger customer id (by value — Ledger's public API validated it)."
+            "description": "Ledger customer id (by value - Ledger's public API validated it)."
           },
           "first_name": {
             "type": [
@@ -8777,7 +9817,7 @@
               "string",
               "null"
             ],
-            "description": "RFC 5545 RRULE (e.g. FREQ=MONTHLY) — Sentin8:Cron is UTC-only."
+            "description": "RFC 5545 RRULE (e.g. FREQ=MONTHLY) - Sentin8:Cron is UTC-only."
           },
           "schedule_type": {
             "type": "string",
@@ -8845,6 +9885,145 @@
           }
         }
       },
+      "DashboardResponse": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "status",
+          "created_at",
+          "updated_at"
+        ],
+        "properties": {
+          "active_version_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uuid"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "DashboardVersionResponse": {
+        "type": "object",
+        "required": [
+          "id",
+          "dashboard_id",
+          "version",
+          "default_filter_values",
+          "layout",
+          "status",
+          "created_at"
+        ],
+        "properties": {
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dashboard_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "default_filter_values": {},
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "layout": {},
+          "primary_widget_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "status": {
+            "type": "string"
+          },
+          "version": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "DebatchResponse": {
+        "type": "object",
+        "description": "Proxy-back response - the same shape the instruction step contract uses.",
+        "required": [
+          "status"
+        ],
+        "properties": {
+          "error": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "output": {},
+          "status": {
+            "type": "string"
+          }
+        }
+      },
+      "Decision": {
+        "oneOf": [
+          {
+            "type": "object",
+            "required": [
+              "decision"
+            ],
+            "properties": {
+              "decision": {
+                "type": "string",
+                "enum": [
+                  "allow"
+                ]
+              }
+            }
+          },
+          {
+            "type": "object",
+            "required": [
+              "reason",
+              "decision"
+            ],
+            "properties": {
+              "decision": {
+                "type": "string",
+                "enum": [
+                  "deny"
+                ]
+              },
+              "reason": {
+                "type": "string"
+              }
+            }
+          }
+        ]
+      },
       "DetachRuleFromInstrumentRequest": {
         "type": "object",
         "required": [
@@ -8859,6 +10038,41 @@
           "rule_id": {
             "type": "string",
             "format": "uuid"
+          }
+        }
+      },
+      "EncryptedSessionResponse": {
+        "type": "object",
+        "description": "Response returned when an encrypted card session is created.",
+        "required": [
+          "session_id",
+          "card_id",
+          "session_type",
+          "session_token",
+          "public_key",
+          "expires_at"
+        ],
+        "properties": {
+          "card_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "expires_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "public_key": {
+            "type": "string"
+          },
+          "session_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "session_token": {
+            "type": "string"
+          },
+          "session_type": {
+            "type": "string"
           }
         }
       },
@@ -8881,6 +10095,230 @@
           "skipped": {
             "type": "integer",
             "format": "int64"
+          }
+        }
+      },
+      "FieldCondition": {
+        "type": "object",
+        "description": "A visibility condition for a form field.",
+        "required": [
+          "field",
+          "equals"
+        ],
+        "properties": {
+          "equals": {
+            "description": "The value that must match for this field to be visible."
+          },
+          "field": {
+            "type": "string",
+            "description": "The key of the field whose value to check."
+          }
+        }
+      },
+      "FieldError": {
+        "type": "object",
+        "description": "A per-field validation error.",
+        "required": [
+          "field",
+          "message"
+        ],
+        "properties": {
+          "field": {
+            "type": "string",
+            "description": "The form field key the error refers to."
+          },
+          "message": {
+            "type": "string",
+            "description": "The validation message shown under the field."
+          }
+        }
+      },
+      "FileResponse": {
+        "type": "object",
+        "required": [
+          "id",
+          "filename",
+          "content_type",
+          "size_bytes",
+          "sentin8_buck_path",
+          "status",
+          "created_at"
+        ],
+        "properties": {
+          "content_type": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "filename": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "sentin8_buck_path": {
+            "type": "string"
+          },
+          "size_bytes": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "status": {
+            "type": "string"
+          }
+        }
+      },
+      "FileSubmitAck": {
+        "type": "object",
+        "description": "File debatch submission acknowledgement.",
+        "required": [
+          "id",
+          "status",
+          "batches"
+        ],
+        "properties": {
+          "batches": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "Instruction batch ids produced by the debatch workflow."
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "The processed file id."
+          },
+          "status": {
+            "type": "string",
+            "description": "The resulting status."
+          }
+        }
+      },
+      "FormFieldOption": {
+        "type": "object",
+        "description": "One choice of a select-type form field.",
+        "required": [
+          "value",
+          "label"
+        ],
+        "properties": {
+          "label": {
+            "type": "string",
+            "description": "The displayed label."
+          },
+          "value": {
+            "type": "string",
+            "description": "The submitted value."
+          }
+        }
+      },
+      "FormFieldType": {
+        "type": "string",
+        "description": "Input widget type for a form field.",
+        "enum": [
+          "text",
+          "email",
+          "password",
+          "number",
+          "decimal",
+          "date",
+          "date_time",
+          "select",
+          "multiselect",
+          "autocomplete",
+          "checkbox",
+          "toggle",
+          "textarea",
+          "file",
+          "hidden",
+          "key_value"
+        ]
+      },
+      "FormFieldValidation": {
+        "type": "object",
+        "description": "Validation constraints for a form field.",
+        "properties": {
+          "custom_message": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Message overriding the default validation error."
+          },
+          "max": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "format": "double",
+            "description": "Maximum numeric value."
+          },
+          "max_length": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "format": "int32",
+            "description": "Maximum string length.",
+            "minimum": 0
+          },
+          "min": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "format": "double",
+            "description": "Minimum numeric value."
+          },
+          "min_length": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "format": "int32",
+            "description": "Minimum string length.",
+            "minimum": 0
+          },
+          "pattern": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Regex pattern the value must match."
+          }
+        }
+      },
+      "FormMethod": {
+        "type": "string",
+        "description": "HTTP method used for form submission.",
+        "enum": [
+          "post",
+          "put"
+        ]
+      },
+      "InitiateCardSessionRequest": {
+        "type": "object",
+        "description": "`POST /v1/cards/sessions:initiate` - initiate an encrypted card session\n(client key exchange; delegates to the existing session handler).\nClient-initiated encrypted-session request (OAPEC-9 typed body).",
+        "required": [
+          "card_id"
+        ],
+        "properties": {
+          "card_id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "The card to open the session for."
+          },
+          "session_type": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Session type (`pin_verify` | `pin_change` | `3ds`); default `3ds`."
           }
         }
       },
@@ -8908,6 +10346,111 @@
         "properties": {
           "app_type": {
             "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          }
+        }
+      },
+      "InstructionBatchResponse": {
+        "type": "object",
+        "required": [
+          "id",
+          "instruction_file_id",
+          "name",
+          "instruction_ids",
+          "status",
+          "created_at"
+        ],
+        "properties": {
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "instruction_file_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "instruction_ids": {},
+          "name": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          }
+        }
+      },
+      "InstructionFileResponse": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "direction",
+          "status",
+          "created_at"
+        ],
+        "properties": {
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "direction": {
+            "type": "string"
+          },
+          "file_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uuid"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          }
+        }
+      },
+      "InstructionFileSpecificationResponse": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "capacity_limit",
+          "status",
+          "created_at"
+        ],
+        "properties": {
+          "calendar_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uuid"
+          },
+          "capacity_limit": {
+            "type": "integer",
+            "format": "int32"
           },
           "created_at": {
             "type": "string",
@@ -9080,6 +10623,48 @@
           }
         }
       },
+      "LiveHealth": {
+        "type": "object",
+        "description": "The `GET /v1/health` liveness payload every service returns: the\nstatus string, the serving service's short name, build identity, and\n(when the process tracks them) the count of live connections.\n`service` and `active_connections` stay absent when a service does\nnot set them (e.g. the bus mounts the generic handler).",
+        "required": [
+          "status"
+        ],
+        "properties": {
+          "active_connections": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "format": "int64",
+            "description": "Live socket count when the traffic counter is mounted."
+          },
+          "build": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Build hash (`sentin8::build_info::build_hash()`)."
+          },
+          "service": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The serving service's short name (absent when the generic handler\ndoes not carry one)."
+          },
+          "status": {
+            "type": "string",
+            "description": "Always `ok` on a live instance."
+          },
+          "version": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Build identity id (`sentin8::build_info::id()`)."
+          }
+        }
+      },
       "LogicResponse": {
         "type": "object",
         "required": [
@@ -9197,6 +10782,230 @@
           "updated_at": {
             "type": "string",
             "format": "date-time"
+          }
+        }
+      },
+      "ManualDecisionResponse": {
+        "type": "object",
+        "required": [
+          "id",
+          "decision_type",
+          "status",
+          "created_at"
+        ],
+        "properties": {
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "decision_type": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "instruction_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uuid"
+          },
+          "status": {
+            "type": "string"
+          },
+          "submitted_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "submitted_by": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      },
+      "ManualDecisionSubmitted": {
+        "type": "object",
+        "description": "Manual-decision submission acknowledgement (OAPEC-9 typed body).",
+        "required": [
+          "id",
+          "status",
+          "submitted_by",
+          "decision",
+          "task_id"
+        ],
+        "properties": {
+          "decision": {
+            "description": "The decision payload."
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "The decision id."
+          },
+          "status": {
+            "type": "string",
+            "description": "The resulting task status."
+          },
+          "submitted_by": {
+            "type": "string",
+            "description": "The submitting principal."
+          },
+          "task_id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "The originating task id."
+          }
+        }
+      },
+      "MembershipDirectoryResponse": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "directory_type",
+          "status",
+          "entries",
+          "created_at",
+          "updated_at"
+        ],
+        "properties": {
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "directory_type": {
+            "type": "string"
+          },
+          "entries": {},
+          "file_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uuid"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "MigrateWasmResponse": {
+        "type": "object",
+        "required": [
+          "logic_id",
+          "modules"
+        ],
+        "properties": {
+          "logic_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "modules": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MigrationModule"
+            }
+          }
+        }
+      },
+      "MigrationModule": {
+        "type": "object",
+        "required": [
+          "step_name",
+          "hook"
+        ],
+        "properties": {
+          "error": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "hook": {
+            "type": "string"
+          },
+          "module_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "step_name": {
+            "type": "string"
+          }
+        }
+      },
+      "ParameterResponse": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "parameter_type",
+          "value",
+          "status",
+          "version",
+          "created_at",
+          "updated_at"
+        ],
+        "properties": {
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string"
+          },
+          "parameter_type": {
+            "type": "string"
+          },
+          "payment_instrument_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uuid"
+          },
+          "status": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "value": {
+            "type": "string"
+          },
+          "version": {
+            "type": "integer",
+            "format": "int32"
           }
         }
       },
@@ -9352,6 +11161,82 @@
           }
         }
       },
+      "PinChangeResponse": {
+        "type": "object",
+        "required": [
+          "card_id",
+          "changed"
+        ],
+        "properties": {
+          "card_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "changed": {
+            "type": "boolean"
+          }
+        }
+      },
+      "PinChangeResult": {
+        "type": "object",
+        "description": "Result of a PIN change operation.",
+        "required": [
+          "card_id",
+          "changed"
+        ],
+        "properties": {
+          "card_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "changed": {
+            "type": "boolean"
+          }
+        }
+      },
+      "PinVerifyResponse": {
+        "type": "object",
+        "required": [
+          "card_id",
+          "verified",
+          "attempts_remaining"
+        ],
+        "properties": {
+          "attempts_remaining": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "card_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "verified": {
+            "type": "boolean"
+          }
+        }
+      },
+      "PinVerifyResult": {
+        "type": "object",
+        "description": "Result of a PIN verification.",
+        "required": [
+          "card_id",
+          "verified",
+          "attempts_remaining"
+        ],
+        "properties": {
+          "attempts_remaining": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "card_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "verified": {
+            "type": "boolean"
+          }
+        }
+      },
       "PlatformUserResponse": {
         "type": "object",
         "required": [
@@ -9383,6 +11268,243 @@
           }
         }
       },
+      "PolicyModeBody": {
+        "type": "object",
+        "description": "`POST /v1/admin/policy-sets/{mode}` body (RFW row actions).",
+        "required": [
+          "policy_set_name"
+        ],
+        "properties": {
+          "enabled": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "policy_set_name": {
+            "type": "string"
+          }
+        }
+      },
+      "PolicySetDetail": {
+        "type": "object",
+        "description": "One policy set in the detail view (adds the full policy text).",
+        "required": [
+          "policy_set_name",
+          "description",
+          "policies",
+          "origin",
+          "mode",
+          "version",
+          "enabled",
+          "created_at",
+          "updated_at"
+        ],
+        "properties": {
+          "created_at": {
+            "type": "string",
+            "description": "Creation instant (RFC 3339)."
+          },
+          "description": {
+            "type": "string",
+            "description": "Human description."
+          },
+          "enabled": {
+            "type": "boolean",
+            "description": "Whether the set participates in evaluation."
+          },
+          "mode": {
+            "type": "string",
+            "description": "Evaluation mode."
+          },
+          "origin": {
+            "type": "string",
+            "description": "Row origin (`platform`/`tenant`)."
+          },
+          "policies": {
+            "type": "string",
+            "description": "The full policy text (Shield policy language)."
+          },
+          "policy_set_name": {
+            "type": "string",
+            "description": "The set name."
+          },
+          "schema": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Optional schema text bound to the set."
+          },
+          "updated_at": {
+            "type": "string",
+            "description": "Last update instant (RFC 3339)."
+          },
+          "version": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Monotonic revision."
+          }
+        }
+      },
+      "PolicySetMutated": {
+        "type": "object",
+        "description": "A stored policy-set mutation result.",
+        "required": [
+          "policy_set_name",
+          "version",
+          "mode"
+        ],
+        "properties": {
+          "mode": {
+            "type": "string",
+            "description": "The evaluation mode after the mutation."
+          },
+          "policy_set_name": {
+            "type": "string",
+            "description": "The set name."
+          },
+          "version": {
+            "type": "integer",
+            "format": "int32",
+            "description": "The revision after the mutation."
+          }
+        }
+      },
+      "PolicySetRow": {
+        "type": "object",
+        "description": "One policy set in the list view (the RFW row shape).",
+        "required": [
+          "id",
+          "policy_set_name",
+          "description",
+          "origin",
+          "mode",
+          "version",
+          "enabled",
+          "policies_len",
+          "updated_at"
+        ],
+        "properties": {
+          "description": {
+            "type": "string",
+            "description": "Human description."
+          },
+          "enabled": {
+            "type": "boolean",
+            "description": "Whether the set participates in evaluation."
+          },
+          "id": {
+            "type": "string",
+            "description": "The set name; doubles as the RFW row id."
+          },
+          "mode": {
+            "type": "string",
+            "description": "Evaluation mode (`shadow`/`enforced`)."
+          },
+          "origin": {
+            "type": "string",
+            "description": "Row origin (`platform` enroll-managed vs `tenant`)."
+          },
+          "policies_len": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Number of policy statements in the set."
+          },
+          "policy_set_name": {
+            "type": "string",
+            "description": "The set name."
+          },
+          "updated_at": {
+            "type": "string",
+            "description": "Last update instant (RFC 3339)."
+          },
+          "version": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Monotonic revision."
+          }
+        }
+      },
+      "PolicyTestOutcome": {
+        "type": "object",
+        "description": "A dry-run (test) outcome; nothing was stored.",
+        "required": [
+          "policy_set_name",
+          "action",
+          "decision",
+          "would_deny"
+        ],
+        "properties": {
+          "action": {
+            "type": "string",
+            "description": "The action evaluated."
+          },
+          "decision": {
+            "$ref": "#/components/schemas/Decision",
+            "description": "The enforce-mode decision."
+          },
+          "policy_set_name": {
+            "type": "string",
+            "description": "The set name the candidate text was compiled under."
+          },
+          "would_deny": {
+            "type": "boolean",
+            "description": "Whether the shadow evaluation would deny."
+          }
+        }
+      },
+      "PrincipalAttr": {
+        "type": "object",
+        "description": "One principal attribute in the list view.",
+        "required": [
+          "subject_id",
+          "attr_key",
+          "attr_value",
+          "origin"
+        ],
+        "properties": {
+          "attr_key": {
+            "type": "string",
+            "description": "The attribute key."
+          },
+          "attr_value": {
+            "description": "The attribute value (free-form JSON by contract)."
+          },
+          "origin": {
+            "type": "string",
+            "description": "Row origin."
+          },
+          "subject_id": {
+            "type": "string",
+            "description": "The attribute owner (subject id)."
+          }
+        }
+      },
+      "ProxyBackResponse": {
+        "type": "object",
+        "required": [
+          "status"
+        ],
+        "properties": {
+          "error": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "next_step": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "output": {},
+          "status": {
+            "type": "string"
+          }
+        }
+      },
       "PublishRuleVersionRequest": {
         "type": "object",
         "required": [
@@ -9391,6 +11513,24 @@
         "properties": {
           "expected_parameters": {},
           "implementation": {
+            "type": "string"
+          }
+        }
+      },
+      "PutAttributeBody": {
+        "type": "object",
+        "description": "`PUT /v1/admin/attributes` body - one principal attribute.",
+        "required": [
+          "subject_id",
+          "attr_key",
+          "attr_value"
+        ],
+        "properties": {
+          "attr_key": {
+            "type": "string"
+          },
+          "attr_value": {},
+          "subject_id": {
             "type": "string"
           }
         }
@@ -9410,6 +11550,572 @@
             ]
           }
         }
+      },
+      "PutPolicySetBody": {
+        "type": "object",
+        "description": "`PUT /v1/admin/policy-sets/{name}` body.",
+        "required": [
+          "policies"
+        ],
+        "properties": {
+          "description": {
+            "type": "string"
+          },
+          "enabled": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "mode": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "policies": {
+            "type": "string"
+          },
+          "schema": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      },
+      "PutRelationBody": {
+        "type": "object",
+        "description": "`PUT /v1/admin/relations` body - one relation tuple.",
+        "required": [
+          "subject_type",
+          "subject_id",
+          "relation",
+          "object_type",
+          "object_id"
+        ],
+        "properties": {
+          "object_id": {
+            "type": "string"
+          },
+          "object_type": {
+            "type": "string"
+          },
+          "relation": {
+            "type": "string"
+          },
+          "subject_id": {
+            "type": "string"
+          },
+          "subject_type": {
+            "type": "string"
+          }
+        }
+      },
+      "RelationCheckResult": {
+        "type": "object",
+        "description": "A relation connectivity check result.",
+        "required": [
+          "subject",
+          "relation",
+          "object",
+          "direct",
+          "transitive",
+          "connected",
+          "tuple_count"
+        ],
+        "properties": {
+          "connected": {
+            "type": "boolean",
+            "description": "`direct || transitive`."
+          },
+          "direct": {
+            "type": "boolean",
+            "description": "Whether a direct tuple exists."
+          },
+          "object": {
+            "type": "string",
+            "description": "The object in `type/id` form."
+          },
+          "relation": {
+            "type": "string",
+            "description": "The relation checked."
+          },
+          "subject": {
+            "type": "string",
+            "description": "The subject in `type/id` form."
+          },
+          "transitive": {
+            "type": "boolean",
+            "description": "Whether a transitive path exists."
+          },
+          "tuple_count": {
+            "type": "integer",
+            "description": "Number of tuples inspected.",
+            "minimum": 0
+          }
+        }
+      },
+      "RelationRecordRow": {
+        "type": "object",
+        "description": "One relation tuple in the list view.",
+        "required": [
+          "subject_type",
+          "subject_id",
+          "relation",
+          "object_type",
+          "object_id",
+          "origin"
+        ],
+        "properties": {
+          "object_id": {
+            "type": "string",
+            "description": "The object entity id."
+          },
+          "object_type": {
+            "type": "string",
+            "description": "The object entity type."
+          },
+          "origin": {
+            "type": "string",
+            "description": "Row origin."
+          },
+          "relation": {
+            "type": "string",
+            "description": "The relation name."
+          },
+          "subject_id": {
+            "type": "string",
+            "description": "The subject entity id."
+          },
+          "subject_type": {
+            "type": "string",
+            "description": "The subject entity type."
+          }
+        }
+      },
+      "RelationUpserted": {
+        "type": "object",
+        "description": "A relation-tuple upsert result.",
+        "required": [
+          "id",
+          "status"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "The stored tuple id."
+          },
+          "status": {
+            "type": "string",
+            "description": "Always `upserted`."
+          }
+        }
+      },
+      "RemoteWidget": {
+        "oneOf": [
+          {
+            "type": "object",
+            "required": [
+              "type",
+              "children"
+            ],
+            "properties": {
+              "children": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/RemoteWidget"
+                },
+                "description": "Child widgets.\n\n`no_recursion` keeps the derive from forwarding the reference\ncollection back into [`RemoteWidget`]'s manual `ToSchema::schemas` -\nrecursion terminates at the `$ref` (see the RemoteWidget schema impl)."
+              },
+              "direction": {
+                "$ref": "#/components/schemas/ContainerDirection",
+                "description": "Layout direction of the children."
+              },
+              "padding": {
+                "type": "number",
+                "format": "double",
+                "description": "Outer padding."
+              },
+              "spacing": {
+                "type": "number",
+                "format": "double",
+                "description": "Gap between children."
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "container"
+                ]
+              }
+            }
+          },
+          {
+            "type": "object",
+            "required": [
+              "type",
+              "text"
+            ],
+            "properties": {
+              "align": {
+                "$ref": "#/components/schemas/TextAlign",
+                "description": "Text alignment."
+              },
+              "max_lines": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "format": "int32",
+                "description": "Maximum lines before ellipsis.",
+                "minimum": 0
+              },
+              "text": {
+                "type": "string",
+                "description": "The text content."
+              },
+              "text_type": {
+                "$ref": "#/components/schemas/WidgetTextType",
+                "description": "Style variant."
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "text"
+                ]
+              }
+            }
+          },
+          {
+            "type": "object",
+            "required": [
+              "type",
+              "columns",
+              "data_endpoint"
+            ],
+            "properties": {
+              "columns": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/WidgetDataTableColumn"
+                },
+                "description": "Column definitions."
+              },
+              "data_endpoint": {
+                "type": "string",
+                "description": "The data endpoint to fetch rows (relative to the service's `/v1/admin/` prefix).\nE.g. `\"/accounts\"` → `GET /v1/admin/accounts`."
+              },
+              "empty_message": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Message shown when there are no rows."
+              },
+              "filterable": {
+                "type": "boolean",
+                "description": "Whether column filtering is enabled."
+              },
+              "page_size": {
+                "type": "integer",
+                "format": "int32",
+                "description": "Rows per page (0 = renderer default).",
+                "minimum": 0
+              },
+              "row_actions": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/WidgetButton"
+                },
+                "description": "Per-row action buttons. Each button's route/endpoint supports `{row.id}` substitution."
+              },
+              "row_link": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Optional row click action - navigates to this route with `{row.id}` substitution."
+              },
+              "sortable": {
+                "type": "boolean",
+                "description": "Whether column sorting is enabled."
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "data_table"
+                ]
+              }
+            }
+          },
+          {
+            "type": "object",
+            "required": [
+              "type",
+              "fields",
+              "submit_endpoint"
+            ],
+            "properties": {
+              "cancel_label": {
+                "type": "string",
+                "description": "Cancel button label."
+              },
+              "fields": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/WidgetFormField"
+                },
+                "description": "Form fields in render order."
+              },
+              "method": {
+                "$ref": "#/components/schemas/FormMethod",
+                "description": "HTTP method for submission."
+              },
+              "submit_endpoint": {
+                "type": "string",
+                "description": "The endpoint to POST the form data to (relative to `/v1/admin/`).\nE.g. `\"/accounts\"` → `POST /v1/admin/accounts`."
+              },
+              "submit_label": {
+                "type": "string",
+                "description": "Submit button label."
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "form"
+                ]
+              }
+            }
+          },
+          {
+            "type": "object",
+            "required": [
+              "type",
+              "label"
+            ],
+            "properties": {
+              "button_type": {
+                "$ref": "#/components/schemas/ButtonType",
+                "description": "Visual/emphasis style."
+              },
+              "endpoint": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Endpoint to POST to (for action buttons, relative to `/v1/admin/`).\nEndpoint to POST to (for action buttons, relative to `/v1/admin/`)."
+              },
+              "icon": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Material Icons code point (hex string)."
+              },
+              "label": {
+                "type": "string",
+                "description": "Button label."
+              },
+              "route": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Route to navigate to (for link buttons). Supports `{param}` substitution."
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "button"
+                ]
+              }
+            }
+          },
+          {
+            "type": "object",
+            "required": [
+              "type"
+            ],
+            "properties": {
+              "actions": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/WidgetButton"
+                },
+                "description": "Buttons rendered in the card footer/header."
+              },
+              "children": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/RemoteWidget"
+                },
+                "description": "Card body widgets (`no_recursion` - see [`RemoteWidget`])."
+              },
+              "subtitle": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Card subtitle."
+              },
+              "title": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Card title."
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "card"
+                ]
+              }
+            }
+          },
+          {
+            "type": "object",
+            "required": [
+              "type",
+              "chart_type",
+              "data_endpoint"
+            ],
+            "properties": {
+              "chart_type": {
+                "$ref": "#/components/schemas/ChartType",
+                "description": "The chart kind."
+              },
+              "data_endpoint": {
+                "type": "string",
+                "description": "Endpoint that returns the chart series data."
+              },
+              "height": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "format": "double",
+                "description": "Height in logical pixels."
+              },
+              "title": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Chart title."
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "chart"
+                ]
+              }
+            }
+          },
+          {
+            "type": "object",
+            "required": [
+              "type",
+              "widget_name"
+            ],
+            "properties": {
+              "data_endpoint": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "The data endpoint the native widget calls."
+              },
+              "props": {
+                "description": "Props passed to the native widget (service-specific)."
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "native"
+                ]
+              },
+              "widget_name": {
+                "type": "string",
+                "description": "The native widget name the dash recognizes.\nBuilt-in hosts: `posting_console`, `payment_simulator`, `workflow_visualizer`."
+              }
+            }
+          },
+          {
+            "type": "object",
+            "required": [
+              "type",
+              "children"
+            ],
+            "properties": {
+              "children": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/RemoteWidget"
+                },
+                "description": "Child widgets (`no_recursion` - see [`RemoteWidget`])."
+              },
+              "spacing": {
+                "type": "number",
+                "format": "double",
+                "description": "Gap between children."
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "row"
+                ]
+              }
+            }
+          },
+          {
+            "type": "object",
+            "required": [
+              "type",
+              "children"
+            ],
+            "properties": {
+              "children": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/RemoteWidget"
+                },
+                "description": "Child widgets (`no_recursion` - see [`RemoteWidget`])."
+              },
+              "spacing": {
+                "type": "number",
+                "format": "double",
+                "description": "Gap between children."
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "column"
+                ]
+              }
+            }
+          },
+          {
+            "type": "object",
+            "required": [
+              "type"
+            ],
+            "properties": {
+              "size": {
+                "type": "number",
+                "format": "double",
+                "description": "Gap size in logical pixels."
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "spacer"
+                ]
+              }
+            }
+          }
+        ]
       },
       "RemoveAccountRangesRequest": {
         "type": "object",
@@ -9450,6 +12156,25 @@
             "type": "integer",
             "description": "Step index to rewind to (0 = restart from beginning).",
             "minimum": 0
+          }
+        }
+      },
+      "ResourceIdAck": {
+        "type": "object",
+        "description": "Generic resource mutation acknowledgement (`status` reflects the new state).",
+        "required": [
+          "id",
+          "status"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "The affected resource id."
+          },
+          "status": {
+            "type": "string",
+            "description": "The resulting status."
           }
         }
       },
@@ -9549,6 +12274,47 @@
             "type": "string"
           },
           "rule_type": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "version": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "RuleSetResponse": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "status",
+          "version",
+          "created_at",
+          "updated_at"
+        ],
+        "properties": {
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
             "type": "string"
           },
           "status": {
@@ -9666,6 +12432,27 @@
           }
         }
       },
+      "ScheduleTriggerResponse": {
+        "type": "object",
+        "required": [
+          "schedule_id",
+          "instruction_id",
+          "status"
+        ],
+        "properties": {
+          "instruction_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "schedule_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "status": {
+            "type": "string"
+          }
+        }
+      },
       "ScheduledPaymentResponse": {
         "type": "object",
         "required": [
@@ -9711,6 +12498,18 @@
           }
         }
       },
+      "SearchRecordsRequest": {
+        "type": "object",
+        "description": "Directory record-search filters (registry-validated; the search surface\naccepts dynamic record documents, carried as a JSON value).",
+        "required": [
+          "filters"
+        ],
+        "properties": {
+          "filters": {
+            "description": "Free-form search operators validated against the record registry."
+          }
+        }
+      },
       "SetCardProfileRequest": {
         "type": "object",
         "required": [
@@ -9734,6 +12533,57 @@
             "type": "string"
           },
           "status": {
+            "type": "string"
+          }
+        }
+      },
+      "TaskResponse": {
+        "type": "object",
+        "required": [
+          "id",
+          "task_type",
+          "status",
+          "approval_stages",
+          "current_stage",
+          "created_at"
+        ],
+        "properties": {
+          "approval_stages": {},
+          "assignee_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "current_stage": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "deadline": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "reviewer_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "status": {
+            "type": "string"
+          },
+          "task_type": {
             "type": "string"
           }
         }
@@ -9765,6 +12615,183 @@
           "template_id": {
             "type": "string",
             "format": "uuid"
+          }
+        }
+      },
+      "TemplateResponse": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "status",
+          "created_at",
+          "updated_at"
+        ],
+        "properties": {
+          "active_version_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uuid"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string"
+          },
+          "scheme": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "status": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "TemplateVersionResponse": {
+        "type": "object",
+        "required": [
+          "id",
+          "template_id",
+          "version",
+          "variables",
+          "base_instruction",
+          "inputs",
+          "status",
+          "created_at"
+        ],
+        "properties": {
+          "base_instruction": {},
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "inputs": {},
+          "status": {
+            "type": "string"
+          },
+          "template_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "variables": {},
+          "version": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "TestPolicySetBody": {
+        "type": "object",
+        "description": "`POST /v1/admin/policy-sets/{name}/test` body.",
+        "required": [
+          "policies",
+          "subject_id"
+        ],
+        "properties": {
+          "action": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "policies": {
+            "type": "string"
+          },
+          "roles": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Sample live-role names for role-based candidate rules."
+          },
+          "schema": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "scopes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "subject_id": {
+            "type": "string"
+          },
+          "token_tp": {
+            "type": "string"
+          }
+        }
+      },
+      "TextAlign": {
+        "type": "string",
+        "description": "Text alignment.",
+        "enum": [
+          "left",
+          "center",
+          "right"
+        ]
+      },
+      "ThreeDsRecordResponse": {
+        "type": "object",
+        "required": [
+          "id",
+          "transaction_id",
+          "authentication_status",
+          "created_at"
+        ],
+        "properties": {
+          "authentication_status": {
+            "type": "string"
+          },
+          "card_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uuid"
+          },
+          "challenge_method": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "transaction_id": {
+            "type": "string"
           }
         }
       },
@@ -9940,7 +12967,469 @@
           }
         }
       },
-      "Value": {}
+      "Value": {},
+      "WidgetButton": {
+        "type": "object",
+        "description": "A button (submit, cancel, row action, or link).",
+        "required": [
+          "label"
+        ],
+        "properties": {
+          "button_type": {
+            "$ref": "#/components/schemas/ButtonType",
+            "description": "Visual/emphasis style."
+          },
+          "endpoint": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Endpoint to POST to (for action buttons, relative to `/v1/admin/`).\nEndpoint to POST to (for action buttons, relative to `/v1/admin/`)."
+          },
+          "icon": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Material Icons code point (hex string)."
+          },
+          "label": {
+            "type": "string",
+            "description": "Button label."
+          },
+          "route": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Route to navigate to (for link buttons). Supports `{param}` substitution."
+          }
+        }
+      },
+      "WidgetCard": {
+        "type": "object",
+        "description": "A glass card panel with optional title and children.",
+        "properties": {
+          "actions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WidgetButton"
+            },
+            "description": "Buttons rendered in the card footer/header."
+          },
+          "children": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RemoteWidget"
+            },
+            "description": "Card body widgets (`no_recursion` - see [`RemoteWidget`])."
+          },
+          "subtitle": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Card subtitle."
+          },
+          "title": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Card title."
+          }
+        }
+      },
+      "WidgetChart": {
+        "type": "object",
+        "description": "A simple chart backed by a data endpoint.",
+        "required": [
+          "chart_type",
+          "data_endpoint"
+        ],
+        "properties": {
+          "chart_type": {
+            "$ref": "#/components/schemas/ChartType",
+            "description": "The chart kind."
+          },
+          "data_endpoint": {
+            "type": "string",
+            "description": "Endpoint that returns the chart series data."
+          },
+          "height": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "format": "double",
+            "description": "Height in logical pixels."
+          },
+          "title": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Chart title."
+          }
+        }
+      },
+      "WidgetColumn": {
+        "type": "object",
+        "description": "A vertical layout column.",
+        "required": [
+          "children"
+        ],
+        "properties": {
+          "children": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RemoteWidget"
+            },
+            "description": "Child widgets (`no_recursion` - see [`RemoteWidget`])."
+          },
+          "spacing": {
+            "type": "number",
+            "format": "double",
+            "description": "Gap between children."
+          }
+        }
+      },
+      "WidgetContainer": {
+        "type": "object",
+        "description": "A scrollable container with layout direction and padding.",
+        "required": [
+          "children"
+        ],
+        "properties": {
+          "children": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RemoteWidget"
+            },
+            "description": "Child widgets.\n\n`no_recursion` keeps the derive from forwarding the reference\ncollection back into [`RemoteWidget`]'s manual `ToSchema::schemas` -\nrecursion terminates at the `$ref` (see the RemoteWidget schema impl)."
+          },
+          "direction": {
+            "$ref": "#/components/schemas/ContainerDirection",
+            "description": "Layout direction of the children."
+          },
+          "padding": {
+            "type": "number",
+            "format": "double",
+            "description": "Outer padding."
+          },
+          "spacing": {
+            "type": "number",
+            "format": "double",
+            "description": "Gap between children."
+          }
+        }
+      },
+      "WidgetDataTable": {
+        "type": "object",
+        "description": "A data table with server-side rows, sorting, filtering, and pagination.",
+        "required": [
+          "columns",
+          "data_endpoint"
+        ],
+        "properties": {
+          "columns": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WidgetDataTableColumn"
+            },
+            "description": "Column definitions."
+          },
+          "data_endpoint": {
+            "type": "string",
+            "description": "The data endpoint to fetch rows (relative to the service's `/v1/admin/` prefix).\nE.g. `\"/accounts\"` → `GET /v1/admin/accounts`."
+          },
+          "empty_message": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Message shown when there are no rows."
+          },
+          "filterable": {
+            "type": "boolean",
+            "description": "Whether column filtering is enabled."
+          },
+          "page_size": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Rows per page (0 = renderer default).",
+            "minimum": 0
+          },
+          "row_actions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WidgetButton"
+            },
+            "description": "Per-row action buttons. Each button's route/endpoint supports `{row.id}` substitution."
+          },
+          "row_link": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Optional row click action - navigates to this route with `{row.id}` substitution."
+          },
+          "sortable": {
+            "type": "boolean",
+            "description": "Whether column sorting is enabled."
+          }
+        }
+      },
+      "WidgetDataTableColumn": {
+        "type": "object",
+        "description": "One column of a [`WidgetDataTable`].",
+        "required": [
+          "key",
+          "label"
+        ],
+        "properties": {
+          "format": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Formatter hint (e.g. `iban`, `currency`, `datetime`)."
+          },
+          "key": {
+            "type": "string",
+            "description": "Row-data key for this column."
+          },
+          "label": {
+            "type": "string",
+            "description": "Column header label."
+          },
+          "sortable": {
+            "type": "boolean",
+            "description": "Whether this column sorts."
+          },
+          "width": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "format": "double",
+            "description": "Fixed width in logical pixels."
+          }
+        }
+      },
+      "WidgetForm": {
+        "type": "object",
+        "description": "A form with fields and a submit action.",
+        "required": [
+          "fields",
+          "submit_endpoint"
+        ],
+        "properties": {
+          "cancel_label": {
+            "type": "string",
+            "description": "Cancel button label."
+          },
+          "fields": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WidgetFormField"
+            },
+            "description": "Form fields in render order."
+          },
+          "method": {
+            "$ref": "#/components/schemas/FormMethod",
+            "description": "HTTP method for submission."
+          },
+          "submit_endpoint": {
+            "type": "string",
+            "description": "The endpoint to POST the form data to (relative to `/v1/admin/`).\nE.g. `\"/accounts\"` → `POST /v1/admin/accounts`."
+          },
+          "submit_label": {
+            "type": "string",
+            "description": "Submit button label."
+          }
+        }
+      },
+      "WidgetFormField": {
+        "type": "object",
+        "description": "One input field of a [`WidgetForm`].",
+        "required": [
+          "key",
+          "label"
+        ],
+        "properties": {
+          "default_value": {
+            "description": "Initial value."
+          },
+          "field_type": {
+            "$ref": "#/components/schemas/FormFieldType",
+            "description": "Input widget type."
+          },
+          "help_text": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Helper text shown below the field."
+          },
+          "key": {
+            "type": "string",
+            "description": "Field key in the submitted payload."
+          },
+          "label": {
+            "type": "string",
+            "description": "Display label."
+          },
+          "options": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/FormFieldOption"
+            },
+            "description": "Choices for select-type fields."
+          },
+          "placeholder": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Hint shown inside the empty field."
+          },
+          "required": {
+            "type": "boolean",
+            "description": "Whether submission fails without a value."
+          },
+          "validation": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/FormFieldValidation",
+                "description": "Validation constraints."
+              }
+            ]
+          },
+          "visible_if": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/FieldCondition",
+                "description": "Conditional visibility: only show this field when another field\nmatches a value. Example: `{\"field\": \"auth_mode\", \"equals\": \"staff\"}`"
+              }
+            ]
+          },
+          "width": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "format": "double",
+            "description": "Width in logical pixels."
+          }
+        }
+      },
+      "WidgetNative": {
+        "type": "object",
+        "description": "A native widget host - the dash renders a built-in Flutter widget.",
+        "required": [
+          "widget_name"
+        ],
+        "properties": {
+          "data_endpoint": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The data endpoint the native widget calls."
+          },
+          "props": {
+            "description": "Props passed to the native widget (service-specific)."
+          },
+          "widget_name": {
+            "type": "string",
+            "description": "The native widget name the dash recognizes.\nBuilt-in hosts: `posting_console`, `payment_simulator`, `workflow_visualizer`."
+          }
+        }
+      },
+      "WidgetRow": {
+        "type": "object",
+        "description": "A horizontal layout row.",
+        "required": [
+          "children"
+        ],
+        "properties": {
+          "children": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RemoteWidget"
+            },
+            "description": "Child widgets (`no_recursion` - see [`RemoteWidget`])."
+          },
+          "spacing": {
+            "type": "number",
+            "format": "double",
+            "description": "Gap between children."
+          }
+        }
+      },
+      "WidgetSpacer": {
+        "type": "object",
+        "description": "An empty gap.",
+        "properties": {
+          "size": {
+            "type": "number",
+            "format": "double",
+            "description": "Gap size in logical pixels."
+          }
+        }
+      },
+      "WidgetText": {
+        "type": "object",
+        "description": "A text label with optional styling.",
+        "required": [
+          "text"
+        ],
+        "properties": {
+          "align": {
+            "$ref": "#/components/schemas/TextAlign",
+            "description": "Text alignment."
+          },
+          "max_lines": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "format": "int32",
+            "description": "Maximum lines before ellipsis.",
+            "minimum": 0
+          },
+          "text": {
+            "type": "string",
+            "description": "The text content."
+          },
+          "text_type": {
+            "$ref": "#/components/schemas/WidgetTextType",
+            "description": "Style variant."
+          }
+        }
+      },
+      "WidgetTextType": {
+        "type": "string",
+        "description": "Text style variant.",
+        "enum": [
+          "body",
+          "heading",
+          "subheading",
+          "caption",
+          "label",
+          "title"
+        ]
+      }
     }
   },
   "security": [],
@@ -9951,7 +13440,7 @@
     },
     {
       "name": "payments",
-      "description": "Bank8:Payments admin API — instructions, payments, logics, rules, integrations, cores, cards, mandates, audit"
+      "description": "Bank8:Payments admin API - instructions, payments, logics, rules, integrations, cores, cards, mandates, audit"
     }
   ]
 }

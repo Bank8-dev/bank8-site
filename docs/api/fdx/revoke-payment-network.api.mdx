@@ -5,7 +5,7 @@ description: "Revoke payment network."
 sidebar_label: "`PUT /fdx/v6/accounts/{id}/payment-networks/{paymentNetworkId}/revocation`"
 hide_title: true
 hide_table_of_contents: true
-api: eJzlVNtq3DAQ/RUxTy0oaydNQ3Cf0pZCKLmQ7kJhd0kUeXatrldSpbGTxRjyEf3CfkkZ203S3fYhz30wMqMzl3NmNA2QWkbIprDI72EuwXkMioyzpzlkELB2K7z2arNGS9cW6c6FFUgIGL2zESNkDRykKR85Rh2MZ2fI4OIzSNDOElriW+V9aXQXOvkWGdJA1AWuFWRN27athMN0fzfOuSOhKirQErtjDh3yzS7yzMRo7FJQgeLTx69Cc4GWkqidR7FUhMBZIuoqGNpANp3LrRBXHV8x8BUD39HMzuzN5WQskkV+n9RHidLaVZZi0gx/p3mbDF57g1dMmsFy3hsYw4L2ItzM7M+HH6JXuKt5K6swOXNeGAzi1TvhMUQTKXbQpzAzG1C7kAtl+Yt3GKI4SA/FuRMfevXZVUSP+vUIJKyRCse99RWBBK+ogAx2iZkXMwIJxi4cN4YMlQgZ3Cq7Ot7j0dpW+gtzs8fiPSMybher4TxawU7GLmXXxPpo9Fb44GqTY0gCauMNWmImpdFoI3I+q9ac7ux0LC6uxIlXusC9g1HKJT2q+FdAK6FmZbui0tF+b/Iu0lrZZ6H/0f6Xq3SzLUXz9Er+h/mjjWc9Ce8p8aUylvWuQslC9MPY7yIJ9RFI+M0UJGQm7wb2T5Z8sc2zW1CPYzmXULhIHLhpblXESSjbls3fKwzDHqhVMOqWh3Y6byUUqHKemGkDK9xABidao+cHU6uyYgI7+6ydP3tcl5MxtO0vO67njw==
+api: eJzdVVFv4jgQ/ivWPLVSIN1er1rlnihktdG1gEKo7lQqapIp8TbYWduhRZD/vhonWyjcPuzr8YIzHo+/+eab8RYsXxoIHuA5e4NHD1SJmluhZJRBABrX6gXnJd+sUNq5RPuq9At4oPF7hcbeqGwDwRZSJS1KS0teloVIXQj/m1GSbCbNccVpZTclQgBq8Q1TCx5kaFItSvKGAJIc2ZfBPyzGtWpCxM097EwjN0r6QgoruFXaVzZHHTvrOeswk3ONGVtsmM1xJlvEnRYx0+8RGZcZ+bBUSYPSHm5pTJXOZvLMILKn1mHeWE1Xm6fzbpu70JgRaw0s8OAdGJFYaqLRCjSU835rT4CxWsjlCQGDXtKb9/r9cDKZj297yZdRfMd2zJnH8eg+GoTxz+847EfjKBwmbMei4SC6jwbT3i3bzeRdGPe/9txGMvo7HM6jyWTqDt6Hw8EohtoDR9+8hf+O62EPTFZFAY+1B8c+v8J+M51EQwIeT29DtmOTsD+No+TfeXjfgJxOwnje6yfRaMh2bJR8DWOoaw+ssAXFPak61HV9SLfVFTqDKak0jtzLiyv6+whlfFR9nqZoDGvUnLEzqVir2HPi4uri02mMobKMVzZHaUnOmDWef5x63gljhFw6UZF6W934JlUlsiW36NI0mFZa2A0ED4/H3MUOGWtVy1rc3ZmcyafxNGH+c/bmr699nqaqktb423YVZbV/pHXjb1vLsDGQz17kTzPZaZlwiI/uZCKjjJ8Fanb2FytRG2Gsca77IDPZNIVrJi7NK2rDLi+u2FCxfsMsHWWmxNT1zAptrmiilBW1fcltDgGcpiV+Ox/wgMZMvB9I4RtflaSoD623l+1H6e/tx5aauvpZOeW3El1w+fK5Q6PyuIITYk1+ZjfkEZAMOkyVKBkdEXLpOWmsr7t/slKrtchQ+xpTUQqUlhgqRIrSONSSr+iyuyhho5j1Sp7m2LnsXtCYea/OfzrUHqypYg7SRfdTYyqVsSsuD0L/QlS/z/7TMREHb8H/X9XtQLT4Zv2y4EIS25UuiIZG4s276sH6Gjz4mSd4EIjMtcHHHGnjOEsnzHexP3qQK2Mp8Ha74AanuqhrMn+vULezZc214AsS7AMN8Bx5Rnp52MILbiCANpdOQvDJvagojZOXu348aNzxNAEPFu2Dv1IZHdH8lfDxVwiAOsuJwM1lZ9tCweWy4kvybULS7wep0vT0
 sidebar_class_name: "put api-method"
 info_path: docs/api/fdx/bank-8-fdx
 custom_edit_url: null
@@ -40,8 +40,16 @@ import Translate from "@docusaurus/Translate";
 Revoke payment network.
 
 `PUT /fdx/v6/accounts/{accountId}/payment-networks/{paymentNetworkId}/revocation`
-— revoke the payment network identifier (; persists the revocation
+- revoke the payment network identifier (; persists the revocation
 record and answers 204 No Content per spec).
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
 
 <ParamsDetails>
   

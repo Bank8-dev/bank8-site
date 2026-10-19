@@ -1,1 +1,1 @@
-{"responses":{"200":{"description":"Step executed","content":{"application/json":{"schema":{}}}}}}
+{"responses":{"200":{"description":"Step executed","content":{"application/json":{"schema":{"type":"object","description":"Response from the proxy-back handler.","required":["status"],"properties":{"error":{"type":["string","null"]},"next_step":{"type":["string","null"]},"output":{},"status":{"type":"string"}},"title":"ProxyBackResponse"}}}}}}

@@ -5,7 +5,7 @@ description: "Revoke consent with record post."
 sidebar_label: "`POST /fdx/v6/consents/{id}/revoke`"
 hide_title: true
 hide_table_of_contents: true
-api: eJztVV1uE0EMvorll7bSNgmlVNW+gQooD1DUHwkpqZrJjjc7ZDOzjJ00VbQSh+AO3IOjcBLk3W2I2nICeNqV7bG/z/48s0ExM8Z0hFnwTF7wJsFQUTTigh9aTDHSKszptvPf3jkpbiNlIdrbKrBggpG4Ui9jusGjwUA/ljiLrtIsmOJFk8PCyhmQguDT+eUVmNIZhn1LJc2MEIOE1nl9BVo0azAAL2NuMjrAOsHjwcunyc+6BBZ4Of1CmcBiyQJTarLNovGyx5AtWcKCItZ1gkzZMjq5x3R0kzyLFTq+oHyh5QvKtzf2Yz9pCPRzu+6vTvpdKPc33d/Q1v22bRP49e37Lt2QP3Ac+6ckYT+3azh7ezl8/7G3sPDzx/FB2hyIlLnKkZdDdpZAw5xnMT6jsc9MWTJI4biFqwfstitVDCtnKYKEOXkwuVBsGjx3fgZOGMKdVzQzxxLvIYa7BDiAgdx5oaw4dN6Ja3LtQC6NtwzBN9Ueauzx2Dcdh5LsjCIYb0HMnBgoz3U23QFPawFrxICC78HVLuSxb6DuMUx4OZ3A8PLZUTa9VQebBW2Hr4ap8fO9jpc1XEyDiS14RZKH2MMEFyRFUIV3Mq6MFJji06m67TgxQefzoBoUJyVhilrq9DC3a3wspEvy4vwpvNGI9N3Z5wZvqMg3+JyfJaDW1Unv1baB/e2gFWLpMvJMWs+bhZb7MLyC8wt4XZmsoMOj3kAhWa2UO4rPBtQJrihyC2rQe9GalPTC+J3UfxP1H/qTxxw3em2IXhv/9+af2Ru5r1QuQmvpV6VxXuW0jKXKod2hEbb7sDrB5OFhYUwwdbZ5LppVukmw0MVLR7jZTA3TdSzrWs1flxS7q3llojNTXbTRTb2zsqoMrOvfEu9lxQ==
+api: eJztVdtu2zAM/RWCL20B57KuKwq/beg25GHrsKbAgKRoFIuOtTiSJzJpisDfs//Ylw203Sxouy/YnmxQEnkOeY60QzELxnSCWfBMXvA2wVBRNOKCH1lMMdImLOmuW7+7d1LcRcpCtHdVYMEEI3Glq4zpDk+HQ/1Y4iy6SrNgil+bHBY2zoAUBF+ursdgSmcYji2VtDBCDBLaxZsxaNGswQC8jrnJ6ATrBM+Gr58nv+wSWOD1/DtlAqs1C8ypybaIxssRQ7ZmCSuKWNcJMmXr6OQB08lt8iJW6PiC8oWWLyjf/tRP/awhMMjtdrA5H3RbebDr/ka2HrRtm0HvkGzIHxlO/XOKcJzbLVy+vx59/NxfWfj18+wkbQ5EylzlyEuPnSXQbc6zGJ/R1GemLBmkcNyC1QN235Mqho2zFEHCkjyYXCg27V06vwAnDOHeK5qFY4kPEMN9AhzAQO68UFb0nHfimlwHkEvjLUPwTbXHGkc89U2/oSS7oAjGWxCzJAbKc51Md8DTVsAaMaDg+zA+hDz1DdQjhhmv5zMYXb84SOg1YTYr2g9eA3Pjl0cdK2u4mAcTW+iKIw+xjwmuSIqg6u4kXBkpMMXnE3X7UWKCzudB9SdOSsIUtdRFL7dbfCqia/Li/AW80x3ph8tv0INQkW/QOb9IQGOb8/6bffMG+yErwNJl5Jm0mjcrLfZpNIarr/C2MllBvdP+UAFZrZM7ii9uqBPcUOQW0rD/qg0p5ZXxB6n/Juc/5GdPGe70whC9MP475p9wjDxUKhWhrQyq0jivUlrHUqXQumeCrRM255g8PieMCabONo9EY6LbBAu1XDrB3W5umG5iWdca/rGm2F3IGxOdmavFJrf1gVlVF1jXvwFmj1zY
 sidebar_class_name: "post api-method"
 info_path: docs/api/fdx/bank-8-fdx
 custom_edit_url: null
@@ -39,12 +39,12 @@ import Translate from "@docusaurus/Translate";
 
 Revoke consent with record post.
 
-`POST /fdx/v6/consents/{consentId}/revoke` — POST alias of the PUT
+`POST /fdx/v6/consents/{consentId}/revoke` - POST alias of the PUT
 revocation surface (fdx DESIGN.md §4): the recipient-side fdx instance
 calls this with the delegated provider token after revoking its own
 registry row, so a fintech-initiated revocation lands on the provider's
 grant ledger and takes effect on the next data call. The delegated
-token's `sub` IS the grant's customer — the same subject the bank's own
+token's `sub` IS the grant's customer - the same subject the bank's own
 dashboard revokes for.
 
 <ParamsDetails>

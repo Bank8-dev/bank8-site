@@ -1,1 +1,1 @@
-{"responses":{"200":{"description":"","content":{"application/json":{"schema":{}}}},"422":{"description":""}}}
+{"responses":{"200":{"description":"","content":{"application/json":{"schema":{"type":"object","description":"Limit-upsert ack.","required":["id","limit_type","threshold"],"properties":{"id":{"type":"string","format":"uuid","description":"The limit row id."},"limit_type":{"type":"string","description":"The limit kind."},"threshold":{"type":"string","description":"The threshold."}},"title":"LimitUpserted"}}}},"422":{"description":""}}}

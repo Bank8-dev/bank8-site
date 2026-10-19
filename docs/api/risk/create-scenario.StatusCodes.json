@@ -1,1 +1,1 @@
-{"responses":{"200":{"description":"","content":{"application/json":{"schema":{}}}}}}
+{"responses":{"200":{"description":"","content":{"application/json":{"schema":{"type":"object","description":"A configured limit with its current breach state.\nScenario-created ack.","required":["id","name"],"properties":{"id":{"type":"string","format":"uuid","description":"The scenario id."},"name":{"type":"string","description":"The scenario name."}},"title":"ScenarioCreated"}}}}}}

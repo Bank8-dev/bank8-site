@@ -1,1 +1,1 @@
-{"responses":{"200":{"description":"OK","content":{"application/json":{"schema":{}}}},"401":{"description":"Not authenticated"}}}
+{"responses":{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","required":["schedule_id","instruction_id","status"],"properties":{"instruction_id":{"type":"string","format":"uuid"},"schedule_id":{"type":"string","format":"uuid"},"status":{"type":"string"}},"title":"ScheduleTriggerResponse"}}}},"401":{"description":"Not authenticated"}}}

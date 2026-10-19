@@ -1,1 +1,1 @@
-{"title":"Body","body":{"content":{"application/json":{"schema":{}}},"required":true}}
+{"title":"Body","body":{"content":{"application/json":{"schema":{"type":"object","description":"Directory record-search filters (registry-validated; the search surface\naccepts dynamic record documents, carried as a JSON value).","required":["filters"],"properties":{"filters":{"description":"Free-form search operators validated against the record registry."}},"title":"SearchRecordsRequest"}}},"required":true}}

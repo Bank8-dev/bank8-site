@@ -1,1 +1,1 @@
-{"title":"Body"}
+{"title":"Body","body":{"content":{"application/json":{"schema":{"type":"object","required":["party_name"],"properties":{"contact":{"title":"Value"},"party_name":{"type":"string"},"party_type":{"type":"string","description":"MERCHANT | INDIVIDUAL | VENDOR | DATA_RECIPIENT"},"registered_id":{"type":["string","null"]},"registry":{"type":["string","null"]}},"title":"CreatePipPartyRequest"}}},"required":true}}

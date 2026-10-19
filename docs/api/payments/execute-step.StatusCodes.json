@@ -1,1 +1,1 @@
-{"responses":{"200":{"description":"OK","content":{"application/json":{"schema":{}}}},"401":{"description":"Not authenticated"}}}
+{"responses":{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","required":["status"],"properties":{"error":{"type":["string","null"]},"next_step":{"type":["string","null"]},"output":{},"status":{"type":"string"}},"title":"ProxyBackResponse"}}}},"401":{"description":"Not authenticated"}}}
