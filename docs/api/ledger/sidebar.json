@@ -1,0 +1,1627 @@
+[
+  {
+    "type": "category",
+    "label": "ledger",
+    "link": {
+      "type": "doc",
+      "id": "api/ledger/bank-8-ledger"
+    },
+    "items": [
+      {
+        "type": "doc",
+        "id": "api/ledger/bank-8-ledger",
+        "label": "Overview",
+        "className": "api-overview"
+      },
+      {
+        "type": "category",
+        "label": "v1",
+        "link": {
+          "type": "doc",
+          "id": "api/ledger/create-bulk-batch"
+        },
+        "items": [
+          {
+            "type": "doc",
+            "id": "api/ledger/create-bulk-batch",
+            "label": "`POST v1/account-migrations`",
+            "className": "api-method post"
+          },
+          {
+            "type": "category",
+            "label": "v1/account-plan-assocs",
+            "link": {
+              "type": "doc",
+              "id": "api/ledger/list-plan-assocs"
+            },
+            "items": [
+              {
+                "type": "doc",
+                "id": "api/ledger/list-plan-assocs",
+                "label": "`GET v1/account-plan-assocs`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/create-plan-assoc",
+                "label": "`POST v1/account-plan-assocs`",
+                "className": "api-method post"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "doc",
+            "id": "api/ledger/list-account-schedule-tags",
+            "label": "`GET v1/account-schedule-tags`",
+            "className": "api-method get"
+          },
+          {
+            "type": "category",
+            "label": "v1/account-update-batches",
+            "link": {
+              "type": "doc",
+              "id": "api/ledger/bulk-retry-batch"
+            },
+            "items": [
+              {
+                "type": "doc",
+                "id": "api/ledger/bulk-retry-batch",
+                "label": "`POST v1/account-update-batches/{id}/bulk-retry`",
+                "className": "api-method post"
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/list-bulk-batches",
+                "label": "`GET v1/account-update-batches`",
+                "className": "api-method get"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "category",
+            "label": "v1/accounts",
+            "link": {
+              "type": "doc",
+              "id": "api/ledger/list-account-attributes"
+            },
+            "items": [
+              {
+                "type": "category",
+                "label": "v1/accounts/{id}",
+                "link": {
+                  "type": "doc",
+                  "id": "api/ledger/list-account-attributes"
+                },
+                "items": [
+                  {
+                    "type": "category",
+                    "label": "v1/accounts/{id}/attributes",
+                    "link": {
+                      "type": "doc",
+                      "id": "api/ledger/list-account-attributes"
+                    },
+                    "items": [
+                      {
+                        "type": "doc",
+                        "id": "api/ledger/list-account-attributes",
+                        "label": "`GET v1/accounts/{id}/attributes`",
+                        "className": "api-method get"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "api/ledger/upsert-account-attribute",
+                        "label": "`PUT v1/accounts/{id}/attributes`",
+                        "className": "api-method put"
+                      }
+                    ],
+                    "collapsed": true
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/ledger/get-account-balances",
+                    "label": "`GET v1/accounts/{id}/balances`",
+                    "className": "api-method get"
+                  },
+                  {
+                    "type": "category",
+                    "label": "v1/accounts/{id}/devices",
+                    "link": {
+                      "type": "doc",
+                      "id": "api/ledger/list-payment-devices"
+                    },
+                    "items": [
+                      {
+                        "type": "doc",
+                        "id": "api/ledger/list-payment-devices",
+                        "label": "`GET v1/accounts/{id}/devices`",
+                        "className": "api-method get"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "api/ledger/attach-payment-device",
+                        "label": "`POST v1/accounts/{id}/devices`",
+                        "className": "api-method post"
+                      }
+                    ],
+                    "collapsed": true
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/ledger/upsert-account-schedule-tag",
+                    "label": "`POST v1/accounts/{id}/schedule-tags`",
+                    "className": "api-method post"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/ledger/list-account-schedules",
+                    "label": "`GET v1/accounts/{id}/schedules`",
+                    "className": "api-method get"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/ledger/get-account-statements",
+                    "label": "`GET v1/accounts/{id}/statements`",
+                    "className": "api-method get"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/ledger/get-account-transactions",
+                    "label": "`GET v1/accounts/{id}/transactions`",
+                    "className": "api-method get"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/ledger/get-account",
+                    "label": "`GET v1/accounts/{id}`",
+                    "className": "api-method get"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/ledger/update-account",
+                    "label": "`PUT v1/accounts/{id}`",
+                    "className": "api-method put"
+                  }
+                ],
+                "collapsed": true
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/list-accounts",
+                "label": "`GET v1/accounts`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/create-account",
+                "label": "`POST v1/accounts`",
+                "className": "api-method post"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "category",
+            "label": "v1/adjustments",
+            "link": {
+              "type": "doc",
+              "id": "api/ledger/get-adjustment"
+            },
+            "items": [
+              {
+                "type": "doc",
+                "id": "api/ledger/get-adjustment",
+                "label": "`GET v1/adjustments/{id}`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/bulk-retry-adjustments",
+                "label": "`POST v1/adjustments/bulk-retry`",
+                "className": "api-method post"
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/list-adjustments",
+                "label": "`GET v1/adjustments`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/create-adjustment",
+                "label": "`POST v1/adjustments`",
+                "className": "api-method post"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "category",
+            "label": "v1/admin",
+            "link": {
+              "type": "doc",
+              "id": "api/ledger/submit-account-edit"
+            },
+            "items": [
+              {
+                "type": "category",
+                "label": "v1/admin/accounts",
+                "link": {
+                  "type": "doc",
+                  "id": "api/ledger/submit-account-edit"
+                },
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "api/ledger/submit-account-edit",
+                    "label": "`PUT v1/admin/accounts/{id}`",
+                    "className": "api-method put"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/ledger/admin-accounts",
+                    "label": "`GET v1/admin/accounts`",
+                    "className": "api-method get"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/ledger/submit-account-form",
+                    "label": "`POST v1/admin/accounts`",
+                    "className": "api-method post"
+                  }
+                ],
+                "collapsed": true
+              },
+              {
+                "type": "category",
+                "label": "v1/admin/attributes",
+                "link": {
+                  "type": "doc",
+                  "id": "api/ledger/policy-delete-attribute"
+                },
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "api/ledger/policy-delete-attribute",
+                    "label": "`DELETE v1/admin/attributes`",
+                    "className": "api-method delete"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/ledger/policy-list-attributes",
+                    "label": "`GET v1/admin/attributes`",
+                    "className": "api-method get"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/ledger/policy-put-attribute",
+                    "label": "`PUT v1/admin/attributes`",
+                    "className": "api-method put"
+                  }
+                ],
+                "collapsed": true
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/list-audit-events",
+                "label": "`GET v1/admin/audit`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/admin-balances",
+                "label": "`GET v1/admin/balances`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/admin-customers",
+                "label": "`GET v1/admin/customers`",
+                "className": "api-method get"
+              },
+              {
+                "type": "category",
+                "label": "v1/admin/dlq",
+                "link": {
+                  "type": "doc",
+                  "id": "api/ledger/discard-dlq-entry"
+                },
+                "items": [
+                  {
+                    "type": "category",
+                    "label": "v1/admin/dlq/{id}",
+                    "link": {
+                      "type": "doc",
+                      "id": "api/ledger/discard-dlq-entry"
+                    },
+                    "items": [
+                      {
+                        "type": "doc",
+                        "id": "api/ledger/discard-dlq-entry",
+                        "label": "`POST v1/admin/dlq/{id}/discard`",
+                        "className": "api-method post"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "api/ledger/admin-republish-dlq",
+                        "label": "`POST v1/admin/dlq/{id}/republish`",
+                        "className": "api-method post"
+                      }
+                    ],
+                    "collapsed": true
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/ledger/list-dlq-alias",
+                    "label": "`GET v1/admin/dlq`",
+                    "className": "api-method get"
+                  }
+                ],
+                "collapsed": true
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/admin-flag-definitions",
+                "label": "`GET v1/admin/flag-definitions`",
+                "className": "api-method get"
+              },
+              {
+                "type": "category",
+                "label": "v1/admin/flags",
+                "link": {
+                  "type": "doc",
+                  "id": "api/ledger/admin-flags"
+                },
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "api/ledger/admin-flags",
+                    "label": "`GET v1/admin/flags`",
+                    "className": "api-method get"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/ledger/submit-flag-form",
+                    "label": "`POST v1/admin/flags`",
+                    "className": "api-method post"
+                  }
+                ],
+                "collapsed": true
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/admin-list-jobs",
+                "label": "`GET v1/admin/jobs`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/admin-overview",
+                "label": "`GET v1/admin/overview`",
+                "className": "api-method get"
+              },
+              {
+                "type": "category",
+                "label": "v1/admin/parameters",
+                "link": {
+                  "type": "doc",
+                  "id": "api/ledger/admin-parameters"
+                },
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "api/ledger/admin-parameters",
+                    "label": "`GET v1/admin/parameters`",
+                    "className": "api-method get"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/ledger/submit-parameter-form",
+                    "label": "`POST v1/admin/parameters`",
+                    "className": "api-method post"
+                  }
+                ],
+                "collapsed": true
+              },
+              {
+                "type": "category",
+                "label": "v1/admin/policy-sets",
+                "link": {
+                  "type": "doc",
+                  "id": "api/ledger/policy-test-set"
+                },
+                "items": [
+                  {
+                    "type": "category",
+                    "label": "v1/admin/policy-sets/{name}",
+                    "link": {
+                      "type": "doc",
+                      "id": "api/ledger/policy-test-set"
+                    },
+                    "items": [
+                      {
+                        "type": "doc",
+                        "id": "api/ledger/policy-test-set",
+                        "label": "`POST v1/admin/policy-sets/{name}/test`",
+                        "className": "api-method post"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "api/ledger/policy-delete-set",
+                        "label": "`DELETE v1/admin/policy-sets/{name}`",
+                        "className": "api-method delete"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "api/ledger/policy-get-set",
+                        "label": "`GET v1/admin/policy-sets/{name}`",
+                        "className": "api-method get"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "api/ledger/policy-put-set",
+                        "label": "`PUT v1/admin/policy-sets/{name}`",
+                        "className": "api-method put"
+                      }
+                    ],
+                    "collapsed": true
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/ledger/policy-mode-disable",
+                    "label": "`POST v1/admin/policy-sets/disable`",
+                    "className": "api-method post"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/ledger/policy-mode-enforce",
+                    "label": "`POST v1/admin/policy-sets/enforce`",
+                    "className": "api-method post"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/ledger/policy-mode-shadow",
+                    "label": "`POST v1/admin/policy-sets/shadow`",
+                    "className": "api-method post"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/ledger/policy-list-sets",
+                    "label": "`GET v1/admin/policy-sets`",
+                    "className": "api-method get"
+                  }
+                ],
+                "collapsed": true
+              },
+              {
+                "type": "category",
+                "label": "v1/admin/postings",
+                "link": {
+                  "type": "doc",
+                  "id": "api/ledger/list-postings-batches"
+                },
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "api/ledger/list-postings-batches",
+                    "label": "`GET v1/admin/postings`",
+                    "className": "api-method get"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/ledger/submit-posting-form",
+                    "label": "`POST v1/admin/postings`",
+                    "className": "api-method post"
+                  }
+                ],
+                "collapsed": true
+              },
+              {
+                "type": "category",
+                "label": "v1/admin/products",
+                "link": {
+                  "type": "doc",
+                  "id": "api/ledger/admin-activate-product"
+                },
+                "items": [
+                  {
+                    "type": "category",
+                    "label": "v1/admin/products/{id}",
+                    "link": {
+                      "type": "doc",
+                      "id": "api/ledger/admin-activate-product"
+                    },
+                    "items": [
+                      {
+                        "type": "doc",
+                        "id": "api/ledger/admin-activate-product",
+                        "label": "`POST v1/admin/products/{id}/activate`",
+                        "className": "api-method post"
+                      },
+                      {
+                        "type": "category",
+                        "label": "v1/admin/products/{id}/versions",
+                        "link": {
+                          "type": "doc",
+                          "id": "api/ledger/admin-list-product-versions"
+                        },
+                        "items": [
+                          {
+                            "type": "doc",
+                            "id": "api/ledger/admin-list-product-versions",
+                            "label": "`GET v1/admin/products/{id}/versions`",
+                            "className": "api-method get"
+                          },
+                          {
+                            "type": "doc",
+                            "id": "api/ledger/submit-product-version",
+                            "label": "`POST v1/admin/products/{id}/versions`",
+                            "className": "api-method post"
+                          }
+                        ],
+                        "collapsed": true
+                      },
+                      {
+                        "type": "doc",
+                        "id": "api/ledger/admin-get-product",
+                        "label": "`GET v1/admin/products/{id}`",
+                        "className": "api-method get"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "api/ledger/submit-product-edit",
+                        "label": "`PUT v1/admin/products/{id}`",
+                        "className": "api-method put"
+                      }
+                    ],
+                    "collapsed": true
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/ledger/admin-list-products",
+                    "label": "`GET v1/admin/products`",
+                    "className": "api-method get"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/ledger/submit-product-form",
+                    "label": "`POST v1/admin/products`",
+                    "className": "api-method post"
+                  }
+                ],
+                "collapsed": true
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/admin-reconcile-summary",
+                "label": "`GET v1/admin/reconcile`",
+                "className": "api-method get"
+              },
+              {
+                "type": "category",
+                "label": "v1/admin/relations",
+                "link": {
+                  "type": "doc",
+                  "id": "api/ledger/policy-check-relation"
+                },
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "api/ledger/policy-check-relation",
+                    "label": "`GET v1/admin/relations/check`",
+                    "className": "api-method get"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/ledger/policy-delete-relation",
+                    "label": "`DELETE v1/admin/relations`",
+                    "className": "api-method delete"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/ledger/policy-list-relations",
+                    "label": "`GET v1/admin/relations`",
+                    "className": "api-method get"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/ledger/policy-put-relation",
+                    "label": "`PUT v1/admin/relations`",
+                    "className": "api-method put"
+                  }
+                ],
+                "collapsed": true
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/admin-restriction-definitions",
+                "label": "`GET v1/admin/restriction-definitions`",
+                "className": "api-method get"
+              },
+              {
+                "type": "category",
+                "label": "v1/admin/restriction-sets",
+                "link": {
+                  "type": "doc",
+                  "id": "api/ledger/admin-restriction-sets"
+                },
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "api/ledger/admin-restriction-sets",
+                    "label": "`GET v1/admin/restriction-sets`",
+                    "className": "api-method get"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/ledger/submit-restriction-form",
+                    "label": "`POST v1/admin/restriction-sets`",
+                    "className": "api-method post"
+                  }
+                ],
+                "collapsed": true
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/admin-list-schedules",
+                "label": "`GET v1/admin/schedules`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/admin-settings",
+                "label": "`GET v1/admin/settings`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/admin-statements",
+                "label": "`GET v1/admin/statements`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/get-admin-ui",
+                "label": "`GET v1/admin/ui/{page}`",
+                "className": "api-method get"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "category",
+            "label": "v1/audit",
+            "link": {
+              "type": "doc",
+              "id": "api/ledger/list-action-logs"
+            },
+            "items": [
+              {
+                "type": "doc",
+                "id": "api/ledger/list-action-logs",
+                "label": "`GET v1/audit/action-logs`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/audit-events-alias",
+                "label": "`GET v1/audit`",
+                "className": "api-method get"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "category",
+            "label": "v1/calendar/bookkeeping-date/{date}",
+            "link": {
+              "type": "doc",
+              "id": "api/ledger/get-bookkeeping-date"
+            },
+            "items": [
+              {
+                "type": "doc",
+                "id": "api/ledger/get-bookkeeping-date",
+                "label": "`GET v1/calendar/bookkeeping-date/{date}`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/upsert-bookkeeping-date",
+                "label": "`PUT v1/calendar/bookkeeping-date/{date}`",
+                "className": "api-method put"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "category",
+            "label": "v1/calendars",
+            "link": {
+              "type": "doc",
+              "id": "api/ledger/list-calendar-events"
+            },
+            "items": [
+              {
+                "type": "category",
+                "label": "v1/calendars/{id}",
+                "link": {
+                  "type": "doc",
+                  "id": "api/ledger/list-calendar-events"
+                },
+                "items": [
+                  {
+                    "type": "category",
+                    "label": "v1/calendars/{id}/events",
+                    "link": {
+                      "type": "doc",
+                      "id": "api/ledger/list-calendar-events"
+                    },
+                    "items": [
+                      {
+                        "type": "doc",
+                        "id": "api/ledger/list-calendar-events",
+                        "label": "`GET v1/calendars/{id}/events`",
+                        "className": "api-method get"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "api/ledger/create-calendar-event",
+                        "label": "`POST v1/calendars/{id}/events`",
+                        "className": "api-method post"
+                      }
+                    ],
+                    "collapsed": true
+                  },
+                  {
+                    "type": "category",
+                    "label": "v1/calendars/{id}/periods",
+                    "link": {
+                      "type": "doc",
+                      "id": "api/ledger/list-calendar-periods"
+                    },
+                    "items": [
+                      {
+                        "type": "doc",
+                        "id": "api/ledger/list-calendar-periods",
+                        "label": "`GET v1/calendars/{id}/periods`",
+                        "className": "api-method get"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "api/ledger/create-calendar-period",
+                        "label": "`POST v1/calendars/{id}/periods`",
+                        "className": "api-method post"
+                      }
+                    ],
+                    "collapsed": true
+                  }
+                ],
+                "collapsed": true
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/list-calendars",
+                "label": "`GET v1/calendars`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/create-calendar",
+                "label": "`POST v1/calendars`",
+                "className": "api-method post"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "doc",
+            "id": "api/ledger/list-contract-events",
+            "label": "`GET v1/contract-events`",
+            "className": "api-method get"
+          },
+          {
+            "type": "doc",
+            "id": "api/ledger/list-contract-modules",
+            "label": "`GET v1/contract-modules`",
+            "className": "api-method get"
+          },
+          {
+            "type": "doc",
+            "id": "api/ledger/simulate-contract",
+            "label": "`POST v1/contracts/simulate`",
+            "className": "api-method post"
+          },
+          {
+            "type": "category",
+            "label": "v1/customers",
+            "link": {
+              "type": "doc",
+              "id": "api/ledger/link-auth"
+            },
+            "items": [
+              {
+                "type": "category",
+                "label": "v1/customers/{id}",
+                "link": {
+                  "type": "doc",
+                  "id": "api/ledger/link-auth"
+                },
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "api/ledger/link-auth",
+                    "label": "`POST v1/customers/{id}/link-auth`",
+                    "className": "api-method post"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/ledger/update-customer",
+                    "label": "`PUT v1/customers/{id}/update`",
+                    "className": "api-method put"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/ledger/get-customer",
+                    "label": "`GET v1/customers/{id}`",
+                    "className": "api-method get"
+                  }
+                ],
+                "collapsed": true
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/list-customers",
+                "label": "`GET v1/customers`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/create-customer",
+                "label": "`POST v1/customers`",
+                "className": "api-method post"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "doc",
+            "id": "api/ledger/get-derived-parameters",
+            "label": "`GET v1/derived-parameter-values`",
+            "className": "api-method get"
+          },
+          {
+            "type": "category",
+            "label": "v1/dlq",
+            "link": {
+              "type": "doc",
+              "id": "api/ledger/republish-dlq"
+            },
+            "items": [
+              {
+                "type": "doc",
+                "id": "api/ledger/republish-dlq",
+                "label": "`POST v1/dlq/{id}/republish`",
+                "className": "api-method post"
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/list-dlq",
+                "label": "`GET v1/dlq`",
+                "className": "api-method get"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "category",
+            "label": "v1/flag-definitions",
+            "link": {
+              "type": "doc",
+              "id": "api/ledger/list-flag-definitions"
+            },
+            "items": [
+              {
+                "type": "doc",
+                "id": "api/ledger/list-flag-definitions",
+                "label": "`GET v1/flag-definitions`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/create-flag-definition",
+                "label": "`POST v1/flag-definitions`",
+                "className": "api-method post"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "category",
+            "label": "v1/flags",
+            "link": {
+              "type": "doc",
+              "id": "api/ledger/list-flags"
+            },
+            "items": [
+              {
+                "type": "doc",
+                "id": "api/ledger/list-flags",
+                "label": "`GET v1/flags`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/create-flag",
+                "label": "`POST v1/flags`",
+                "className": "api-method post"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "category",
+            "label": "v1/global-parameters",
+            "link": {
+              "type": "doc",
+              "id": "api/ledger/get-global-parameter"
+            },
+            "items": [
+              {
+                "type": "doc",
+                "id": "api/ledger/get-global-parameter",
+                "label": "`GET v1/global-parameters/{id}`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/list-global-parameters",
+                "label": "`GET v1/global-parameters`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/upsert-global-parameter",
+                "label": "`POST v1/global-parameters`",
+                "className": "api-method post"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "doc",
+            "id": "api/ledger/health",
+            "label": "`GET v1/health`",
+            "className": "api-method get"
+          },
+          {
+            "type": "category",
+            "label": "v1/internal",
+            "link": {
+              "type": "doc",
+              "id": "api/ledger/func-host"
+            },
+            "items": [
+              {
+                "type": "doc",
+                "id": "api/ledger/func-host",
+                "label": "`POST v1/internal/func-host`",
+                "className": "api-method post"
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/internal-schedule-run",
+                "label": "`POST v1/internal/schedules/run`",
+                "className": "api-method post"
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/statement-regen-step",
+                "label": "`POST v1/internal/statements/regen`",
+                "className": "api-method post"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "category",
+            "label": "v1/internal-accounts",
+            "link": {
+              "type": "doc",
+              "id": "api/ledger/get-internal-account"
+            },
+            "items": [
+              {
+                "type": "doc",
+                "id": "api/ledger/get-internal-account",
+                "label": "`GET v1/internal-accounts/{id}`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/list-internal-accounts",
+                "label": "`GET v1/internal-accounts`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/create-internal-account",
+                "label": "`POST v1/internal-accounts`",
+                "className": "api-method post"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "category",
+            "label": "v1/jobs",
+            "link": {
+              "type": "doc",
+              "id": "api/ledger/retry-job"
+            },
+            "items": [
+              {
+                "type": "category",
+                "label": "v1/jobs/{id}",
+                "link": {
+                  "type": "doc",
+                  "id": "api/ledger/retry-job"
+                },
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "api/ledger/retry-job",
+                    "label": "`POST v1/jobs/{id}/retry`",
+                    "className": "api-method post"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/ledger/get-job",
+                    "label": "`GET v1/jobs/{id}`",
+                    "className": "api-method get"
+                  }
+                ],
+                "collapsed": true
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/list-jobs",
+                "label": "`GET v1/jobs`",
+                "className": "api-method get"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "doc",
+            "id": "api/ledger/batch-republish-jobs",
+            "label": "`POST v1/jobs:batchRepublish`",
+            "className": "api-method post"
+          },
+          {
+            "type": "category",
+            "label": "v1/journal-events",
+            "link": {
+              "type": "doc",
+              "id": "api/ledger/replay-journal-event"
+            },
+            "items": [
+              {
+                "type": "category",
+                "label": "v1/journal-events/{id}",
+                "link": {
+                  "type": "doc",
+                  "id": "api/ledger/replay-journal-event"
+                },
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "api/ledger/replay-journal-event",
+                    "label": "`POST v1/journal-events/{id}/replay`",
+                    "className": "api-method post"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/ledger/get-journal-event",
+                    "label": "`GET v1/journal-events/{id}`",
+                    "className": "api-method get"
+                  }
+                ],
+                "collapsed": true
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/list-journal-events",
+                "label": "`GET v1/journal-events`",
+                "className": "api-method get"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "category",
+            "label": "v1/parameter-value-hierarchy-nodes",
+            "link": {
+              "type": "doc",
+              "id": "api/ledger/list-hierarchy-nodes"
+            },
+            "items": [
+              {
+                "type": "doc",
+                "id": "api/ledger/list-hierarchy-nodes",
+                "label": "`GET v1/parameter-value-hierarchy-nodes`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/create-hierarchy-node",
+                "label": "`POST v1/parameter-value-hierarchy-nodes`",
+                "className": "api-method post"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "category",
+            "label": "v1/parameter-values",
+            "link": {
+              "type": "doc",
+              "id": "api/ledger/list-parameter-values"
+            },
+            "items": [
+              {
+                "type": "doc",
+                "id": "api/ledger/list-parameter-values",
+                "label": "`GET v1/parameter-values`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/create-parameter-value",
+                "label": "`POST v1/parameter-values`",
+                "className": "api-method post"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "doc",
+            "id": "api/ledger/view-effective-parameter",
+            "label": "`GET v1/parameter-values:viewEffective`",
+            "className": "api-method get"
+          },
+          {
+            "type": "category",
+            "label": "v1/parameters",
+            "link": {
+              "type": "doc",
+              "id": "api/ledger/list-parameters"
+            },
+            "items": [
+              {
+                "type": "doc",
+                "id": "api/ledger/list-parameters",
+                "label": "`GET v1/parameters`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/create-parameter",
+                "label": "`POST v1/parameters`",
+                "className": "api-method post"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "category",
+            "label": "v1/plans",
+            "link": {
+              "type": "doc",
+              "id": "api/ledger/migrate-plan"
+            },
+            "items": [
+              {
+                "type": "category",
+                "label": "v1/plans/{id}",
+                "link": {
+                  "type": "doc",
+                  "id": "api/ledger/migrate-plan"
+                },
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "api/ledger/migrate-plan",
+                    "label": "`POST v1/plans/{id}/migrations`",
+                    "className": "api-method post"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/ledger/get-plan",
+                    "label": "`GET v1/plans/{id}`",
+                    "className": "api-method get"
+                  }
+                ],
+                "collapsed": true
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/list-plans",
+                "label": "`GET v1/plans`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/create-plan",
+                "label": "`POST v1/plans`",
+                "className": "api-method post"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "category",
+            "label": "v1/post-posting-failures",
+            "link": {
+              "type": "doc",
+              "id": "api/ledger/republish-post-posting-failure"
+            },
+            "items": [
+              {
+                "type": "doc",
+                "id": "api/ledger/republish-post-posting-failure",
+                "label": "`POST v1/post-posting-failures/{id}/republish`",
+                "className": "api-method post"
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/list-post-posting-failures",
+                "label": "`GET v1/post-posting-failures`",
+                "className": "api-method get"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "category",
+            "label": "v1/postings",
+            "link": {
+              "type": "doc",
+              "id": "api/ledger/get-posting-instructions"
+            },
+            "items": [
+              {
+                "type": "category",
+                "label": "v1/postings/{id}",
+                "link": {
+                  "type": "doc",
+                  "id": "api/ledger/get-posting-instructions"
+                },
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "api/ledger/get-posting-instructions",
+                    "label": "`GET v1/postings/{id}/instructions`",
+                    "className": "api-method get"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/ledger/get-posting",
+                    "label": "`GET v1/postings/{id}`",
+                    "className": "api-method get"
+                  }
+                ],
+                "collapsed": true
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/create-posting-async",
+                "label": "`POST v1/postings/async`",
+                "className": "api-method post"
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/create-posting",
+                "label": "`POST v1/postings`",
+                "className": "api-method post"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "category",
+            "label": "v1/processing-groups",
+            "link": {
+              "type": "doc",
+              "id": "api/ledger/pause-processing-group"
+            },
+            "items": [
+              {
+                "type": "category",
+                "label": "v1/processing-groups/{id}",
+                "link": {
+                  "type": "doc",
+                  "id": "api/ledger/pause-processing-group"
+                },
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "api/ledger/pause-processing-group",
+                    "label": "`POST v1/processing-groups/{id}/pause`",
+                    "className": "api-method post"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/ledger/resume-processing-group",
+                    "label": "`POST v1/processing-groups/{id}/resume`",
+                    "className": "api-method post"
+                  }
+                ],
+                "collapsed": true
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/list-processing-groups",
+                "label": "`GET v1/processing-groups`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/upsert-processing-group",
+                "label": "`POST v1/processing-groups`",
+                "className": "api-method post"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "category",
+            "label": "v1/products",
+            "link": {
+              "type": "doc",
+              "id": "api/ledger/activate-product"
+            },
+            "items": [
+              {
+                "type": "category",
+                "label": "v1/products/{id}",
+                "link": {
+                  "type": "doc",
+                  "id": "api/ledger/activate-product"
+                },
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "api/ledger/activate-product",
+                    "label": "`POST v1/products/{id}/activate`",
+                    "className": "api-method post"
+                  },
+                  {
+                    "type": "category",
+                    "label": "v1/products/{id}/versions",
+                    "link": {
+                      "type": "doc",
+                      "id": "api/ledger/list-product-versions"
+                    },
+                    "items": [
+                      {
+                        "type": "doc",
+                        "id": "api/ledger/list-product-versions",
+                        "label": "`GET v1/products/{id}/versions`",
+                        "className": "api-method get"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "api/ledger/create-product-version",
+                        "label": "`POST v1/products/{id}/versions`",
+                        "className": "api-method post"
+                      }
+                    ],
+                    "collapsed": true
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/ledger/get-product",
+                    "label": "`GET v1/products/{id}`",
+                    "className": "api-method get"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/ledger/update-product",
+                    "label": "`PUT v1/products/{id}`",
+                    "className": "api-method put"
+                  }
+                ],
+                "collapsed": true
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/list-products",
+                "label": "`GET v1/products`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/create-product",
+                "label": "`POST v1/products`",
+                "className": "api-method post"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "category",
+            "label": "v1/restriction-definitions",
+            "link": {
+              "type": "doc",
+              "id": "api/ledger/list-restriction-definitions"
+            },
+            "items": [
+              {
+                "type": "doc",
+                "id": "api/ledger/list-restriction-definitions",
+                "label": "`GET v1/restriction-definitions`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/create-restriction-definition",
+                "label": "`POST v1/restriction-definitions`",
+                "className": "api-method post"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "category",
+            "label": "v1/restriction-sets",
+            "link": {
+              "type": "doc",
+              "id": "api/ledger/list-restriction-sets"
+            },
+            "items": [
+              {
+                "type": "doc",
+                "id": "api/ledger/list-restriction-sets",
+                "label": "`GET v1/restriction-sets`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/create-restriction-set",
+                "label": "`POST v1/restriction-sets`",
+                "className": "api-method post"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "category",
+            "label": "v1/schedule-tags",
+            "link": {
+              "type": "doc",
+              "id": "api/ledger/associate-schedule-tag"
+            },
+            "items": [
+              {
+                "type": "doc",
+                "id": "api/ledger/associate-schedule-tag",
+                "label": "`POST v1/schedule-tags/{id}/assocs`",
+                "className": "api-method post"
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/list-schedule-tags",
+                "label": "`GET v1/schedule-tags`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/create-schedule-tag",
+                "label": "`POST v1/schedule-tags`",
+                "className": "api-method post"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "category",
+            "label": "v1/schedules",
+            "link": {
+              "type": "doc",
+              "id": "api/ledger/get-schedule"
+            },
+            "items": [
+              {
+                "type": "doc",
+                "id": "api/ledger/get-schedule",
+                "label": "`GET v1/schedules/{id}`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/list-schedules",
+                "label": "`GET v1/schedules`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/create-schedule",
+                "label": "`POST v1/schedules`",
+                "className": "api-method post"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "doc",
+            "id": "api/ledger/list-streams",
+            "label": "`GET v1/streams`",
+            "className": "api-method get"
+          },
+          {
+            "type": "category",
+            "label": "v1/supervisor-contracts",
+            "link": {
+              "type": "doc",
+              "id": "api/ledger/get-supervisor-contract"
+            },
+            "items": [
+              {
+                "type": "doc",
+                "id": "api/ledger/get-supervisor-contract",
+                "label": "`GET v1/supervisor-contracts/{id}`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/list-supervisor-contracts",
+                "label": "`GET v1/supervisor-contracts`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/ledger/create-supervisor-contract",
+                "label": "`POST v1/supervisor-contracts`",
+                "className": "api-method post"
+              }
+            ],
+            "collapsed": true
+          }
+        ],
+        "collapsed": true
+      },
+      {
+        "type": "category",
+        "label": "v2/balances",
+        "link": {
+          "type": "doc",
+          "id": "api/ledger/balances-v-2-end"
+        },
+        "items": [
+          {
+            "type": "doc",
+            "id": "api/ledger/balances-v-2-end",
+            "label": "`GET v2/balances/end`",
+            "className": "api-method get"
+          },
+          {
+            "type": "doc",
+            "id": "api/ledger/balances-v-2-live",
+            "label": "`GET v2/balances/live`",
+            "className": "api-method get"
+          },
+          {
+            "type": "doc",
+            "id": "api/ledger/balances-v-2-series",
+            "label": "`GET v2/balances/series`",
+            "className": "api-method get"
+          }
+        ],
+        "collapsed": true
+      }
+    ],
+    "collapsed": true
+  }
+]

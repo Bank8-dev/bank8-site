@@ -1,0 +1,2263 @@
+[
+  {
+    "type": "category",
+    "label": "payments",
+    "link": {
+      "type": "doc",
+      "id": "api/payments/bank-8-payments"
+    },
+    "items": [
+      {
+        "type": "doc",
+        "id": "api/payments/bank-8-payments",
+        "label": "Overview",
+        "className": "api-overview"
+      },
+      {
+        "type": "category",
+        "label": "v1",
+        "link": {
+          "type": "doc",
+          "id": "api/payments/get-3-ds-records"
+        },
+        "items": [
+          {
+            "type": "doc",
+            "id": "api/payments/get-3-ds-records",
+            "label": "`GET v1/3ds-records`",
+            "className": "api-method get"
+          },
+          {
+            "type": "category",
+            "label": "v1/account-links",
+            "link": {
+              "type": "doc",
+              "id": "api/payments/delete-account-link"
+            },
+            "items": [
+              {
+                "type": "category",
+                "label": "v1/account-links/{id}",
+                "link": {
+                  "type": "doc",
+                  "id": "api/payments/delete-account-link"
+                },
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "api/payments/delete-account-link",
+                    "label": "`DELETE v1/account-links/{id}`",
+                    "className": "api-method delete"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/get-account-link",
+                    "label": "`GET v1/account-links/{id}`",
+                    "className": "api-method get"
+                  }
+                ],
+                "collapsed": true
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/list-account-links",
+                "label": "`GET v1/account-links`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/create-account-link",
+                "label": "`POST v1/account-links`",
+                "className": "api-method post"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "category",
+            "label": "v1/account-ranges",
+            "link": {
+              "type": "doc",
+              "id": "api/payments/list-account-ranges"
+            },
+            "items": [
+              {
+                "type": "doc",
+                "id": "api/payments/list-account-ranges",
+                "label": "`GET v1/account-ranges`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/create-account-range",
+                "label": "`POST v1/account-ranges`",
+                "className": "api-method post"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "category",
+            "label": "v1/admin",
+            "link": {
+              "type": "doc",
+              "id": "api/payments/policy-delete-attribute"
+            },
+            "items": [
+              {
+                "type": "category",
+                "label": "v1/admin/attributes",
+                "link": {
+                  "type": "doc",
+                  "id": "api/payments/policy-delete-attribute"
+                },
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "api/payments/policy-delete-attribute",
+                    "label": "`DELETE v1/admin/attributes`",
+                    "className": "api-method delete"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/policy-list-attributes",
+                    "label": "`GET v1/admin/attributes`",
+                    "className": "api-method get"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/policy-put-attribute",
+                    "label": "`PUT v1/admin/attributes`",
+                    "className": "api-method put"
+                  }
+                ],
+                "collapsed": true
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/list-calendars-admin",
+                "label": "`GET v1/admin/calendars`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/list-cards-admin",
+                "label": "`GET v1/admin/cards`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/list-cores-admin",
+                "label": "`GET v1/admin/cores`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/list-decisions-admin",
+                "label": "`GET v1/admin/decisions`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/list-directories-admin",
+                "label": "`GET v1/admin/directories`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/list-files-admin",
+                "label": "`GET v1/admin/files`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/list-instructions-admin",
+                "label": "`GET v1/admin/instructions`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/list-integrations-admin",
+                "label": "`GET v1/admin/integrations`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/list-mandates-admin",
+                "label": "`GET v1/admin/mandates`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/overview",
+                "label": "`GET v1/admin/overview`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/list-parameters-admin",
+                "label": "`GET v1/admin/parameters`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/list-payments-admin",
+                "label": "`GET v1/admin/payments`",
+                "className": "api-method get"
+              },
+              {
+                "type": "category",
+                "label": "v1/admin/policy-sets",
+                "link": {
+                  "type": "doc",
+                  "id": "api/payments/policy-test-set"
+                },
+                "items": [
+                  {
+                    "type": "category",
+                    "label": "v1/admin/policy-sets/{name}",
+                    "link": {
+                      "type": "doc",
+                      "id": "api/payments/policy-test-set"
+                    },
+                    "items": [
+                      {
+                        "type": "doc",
+                        "id": "api/payments/policy-test-set",
+                        "label": "`POST v1/admin/policy-sets/{name}/test`",
+                        "className": "api-method post"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "api/payments/policy-delete-set",
+                        "label": "`DELETE v1/admin/policy-sets/{name}`",
+                        "className": "api-method delete"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "api/payments/policy-get-set",
+                        "label": "`GET v1/admin/policy-sets/{name}`",
+                        "className": "api-method get"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "api/payments/policy-put-set",
+                        "label": "`PUT v1/admin/policy-sets/{name}`",
+                        "className": "api-method put"
+                      }
+                    ],
+                    "collapsed": true
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/policy-mode-disable",
+                    "label": "`POST v1/admin/policy-sets/disable`",
+                    "className": "api-method post"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/policy-mode-enforce",
+                    "label": "`POST v1/admin/policy-sets/enforce`",
+                    "className": "api-method post"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/policy-mode-shadow",
+                    "label": "`POST v1/admin/policy-sets/shadow`",
+                    "className": "api-method post"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/policy-list-sets",
+                    "label": "`GET v1/admin/policy-sets`",
+                    "className": "api-method get"
+                  }
+                ],
+                "collapsed": true
+              },
+              {
+                "type": "category",
+                "label": "v1/admin/relations",
+                "link": {
+                  "type": "doc",
+                  "id": "api/payments/policy-check-relation"
+                },
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "api/payments/policy-check-relation",
+                    "label": "`GET v1/admin/relations/check`",
+                    "className": "api-method get"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/policy-delete-relation",
+                    "label": "`DELETE v1/admin/relations`",
+                    "className": "api-method delete"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/policy-list-relations",
+                    "label": "`GET v1/admin/relations`",
+                    "className": "api-method get"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/policy-put-relation",
+                    "label": "`PUT v1/admin/relations`",
+                    "className": "api-method put"
+                  }
+                ],
+                "collapsed": true
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/list-rules-admin",
+                "label": "`GET v1/admin/rules`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/get-settings-admin",
+                "label": "`GET v1/admin/settings`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/get-simulator-admin",
+                "label": "`GET v1/admin/simulator`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/get-admin-ui",
+                "label": "`GET v1/admin/ui/{page}`",
+                "className": "api-method get"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "doc",
+            "id": "api/payments/query-aggregations",
+            "label": "`GET v1/aggregations`",
+            "className": "api-method get"
+          },
+          {
+            "type": "doc",
+            "id": "api/payments/list-allowed-endpoints",
+            "label": "`GET v1/allowed-endpoints`",
+            "className": "api-method get"
+          },
+          {
+            "type": "category",
+            "label": "v1/app",
+            "link": {
+              "type": "doc",
+              "id": "api/payments/validate-app-dashboard-version"
+            },
+            "items": [
+              {
+                "type": "category",
+                "label": "v1/app/dashboard-versions",
+                "link": {
+                  "type": "doc",
+                  "id": "api/payments/validate-app-dashboard-version"
+                },
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "api/payments/validate-app-dashboard-version",
+                    "label": "`POST v1/app/dashboard-versions/validate`",
+                    "className": "api-method post"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/list-app-dashboard-versions",
+                    "label": "`GET v1/app/dashboard-versions`",
+                    "className": "api-method get"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/create-app-dashboard-version",
+                    "label": "`POST v1/app/dashboard-versions`",
+                    "className": "api-method post"
+                  }
+                ],
+                "collapsed": true
+              },
+              {
+                "type": "category",
+                "label": "v1/app/template-presets",
+                "link": {
+                  "type": "doc",
+                  "id": "api/payments/delete-template-preset"
+                },
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "api/payments/delete-template-preset",
+                    "label": "`DELETE v1/app/template-presets/{id}`",
+                    "className": "api-method delete"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/list-template-presets",
+                    "label": "`GET v1/app/template-presets`",
+                    "className": "api-method get"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/create-template-preset",
+                    "label": "`POST v1/app/template-presets`",
+                    "className": "api-method post"
+                  }
+                ],
+                "collapsed": true
+              },
+              {
+                "type": "category",
+                "label": "v1/app/template-versions",
+                "link": {
+                  "type": "doc",
+                  "id": "api/payments/validate-app-template-version"
+                },
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "api/payments/validate-app-template-version",
+                    "label": "`POST v1/app/template-versions/validate`",
+                    "className": "api-method post"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/list-app-template-versions",
+                    "label": "`GET v1/app/template-versions`",
+                    "className": "api-method get"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/create-app-template-version",
+                    "label": "`POST v1/app/template-versions`",
+                    "className": "api-method post"
+                  }
+                ],
+                "collapsed": true
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "doc",
+            "id": "api/payments/list-audit-events",
+            "label": "`GET v1/audit`",
+            "className": "api-method get"
+          },
+          {
+            "type": "category",
+            "label": "v1/business-day-definitions",
+            "link": {
+              "type": "doc",
+              "id": "api/payments/list-business-day-definitions"
+            },
+            "items": [
+              {
+                "type": "doc",
+                "id": "api/payments/list-business-day-definitions",
+                "label": "`GET v1/business-day-definitions`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/create-business-day-definition",
+                "label": "`POST v1/business-day-definitions`",
+                "className": "api-method post"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "category",
+            "label": "v1/calendars",
+            "link": {
+              "type": "doc",
+              "id": "api/payments/list-calendars"
+            },
+            "items": [
+              {
+                "type": "doc",
+                "id": "api/payments/list-calendars",
+                "label": "`GET v1/calendars`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/create-calendar",
+                "label": "`POST v1/calendars`",
+                "className": "api-method post"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "category",
+            "label": "v1/card-products",
+            "link": {
+              "type": "doc",
+              "id": "api/payments/get-card-product"
+            },
+            "items": [
+              {
+                "type": "doc",
+                "id": "api/payments/get-card-product",
+                "label": "`GET v1/card-products/{id}`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/list-card-products",
+                "label": "`GET v1/card-products`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/create-card-product",
+                "label": "`POST v1/card-products`",
+                "className": "api-method post"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "doc",
+            "id": "api/payments/list-card-tokens",
+            "label": "`GET v1/card-tokens`",
+            "className": "api-method get"
+          },
+          {
+            "type": "category",
+            "label": "v1/cardholders",
+            "link": {
+              "type": "doc",
+              "id": "api/payments/get-cardholder"
+            },
+            "items": [
+              {
+                "type": "doc",
+                "id": "api/payments/get-cardholder",
+                "label": "`GET v1/cardholders/{id}`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/list-cardholders",
+                "label": "`GET v1/cardholders`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/create-cardholder",
+                "label": "`POST v1/cardholders`",
+                "className": "api-method post"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "category",
+            "label": "v1/cards",
+            "link": {
+              "type": "doc",
+              "id": "api/payments/activate-card"
+            },
+            "items": [
+              {
+                "type": "category",
+                "label": "v1/cards/{id}",
+                "link": {
+                  "type": "doc",
+                  "id": "api/payments/activate-card"
+                },
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "api/payments/activate-card",
+                    "label": "`POST v1/cards/{id}/activate`",
+                    "className": "api-method post"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/create-encrypted-session",
+                    "label": "`POST v1/cards/{id}/encrypted-session`",
+                    "className": "api-method post"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/freeze-card",
+                    "label": "`POST v1/cards/{id}/freeze`",
+                    "className": "api-method post"
+                  },
+                  {
+                    "type": "category",
+                    "label": "v1/cards/{id}/pin",
+                    "link": {
+                      "type": "doc",
+                      "id": "api/payments/change-pin"
+                    },
+                    "items": [
+                      {
+                        "type": "doc",
+                        "id": "api/payments/change-pin",
+                        "label": "`POST v1/cards/{id}/pin/change`",
+                        "className": "api-method post"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "api/payments/verify-pin",
+                        "label": "`POST v1/cards/{id}/pin/verify`",
+                        "className": "api-method post"
+                      }
+                    ],
+                    "collapsed": true
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/set-card-profile",
+                    "label": "`PUT v1/cards/{id}/profile`",
+                    "className": "api-method put"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/replace-card",
+                    "label": "`POST v1/cards/{id}/replace`",
+                    "className": "api-method post"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/unfreeze-card",
+                    "label": "`POST v1/cards/{id}/unfreeze`",
+                    "className": "api-method post"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/get-card",
+                    "label": "`GET v1/cards/{id}`",
+                    "className": "api-method get"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/update-card",
+                    "label": "`PATCH v1/cards/{id}`",
+                    "className": "api-method patch"
+                  }
+                ],
+                "collapsed": true
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/update-3-ds-record",
+                "label": "`PUT v1/cards/3ds-records/{id}`",
+                "className": "api-method put"
+              },
+              {
+                "type": "category",
+                "label": "v1/cards/card-order-batches",
+                "link": {
+                  "type": "doc",
+                  "id": "api/payments/list-card-order-batches"
+                },
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "api/payments/list-card-order-batches",
+                    "label": "`GET v1/cards/card-order-batches`",
+                    "className": "api-method get"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/create-card-order-batch",
+                    "label": "`POST v1/cards/card-order-batches`",
+                    "className": "api-method post"
+                  }
+                ],
+                "collapsed": true
+              },
+              {
+                "type": "category",
+                "label": "v1/cards/card-orders",
+                "link": {
+                  "type": "doc",
+                  "id": "api/payments/list-card-orders"
+                },
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "api/payments/list-card-orders",
+                    "label": "`GET v1/cards/card-orders`",
+                    "className": "api-method get"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/create-card-order",
+                    "label": "`POST v1/cards/card-orders`",
+                    "className": "api-method post"
+                  }
+                ],
+                "collapsed": true
+              },
+              {
+                "type": "category",
+                "label": "v1/cards/card-tokens/{id}",
+                "link": {
+                  "type": "doc",
+                  "id": "api/payments/get-card-token"
+                },
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "api/payments/get-card-token",
+                    "label": "`GET v1/cards/card-tokens/{id}`",
+                    "className": "api-method get"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/update-card-token",
+                    "label": "`PUT v1/cards/card-tokens/{id}`",
+                    "className": "api-method put"
+                  }
+                ],
+                "collapsed": true
+              },
+              {
+                "type": "category",
+                "label": "v1/cards/cardholders/{id}",
+                "link": {
+                  "type": "doc",
+                  "id": "api/payments/list-cardholder-cards"
+                },
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "api/payments/list-cardholder-cards",
+                    "label": "`GET v1/cards/cardholders/{id}/cards`",
+                    "className": "api-method get"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/update-cardholder",
+                    "label": "`PUT v1/cards/cardholders/{id}`",
+                    "className": "api-method put"
+                  }
+                ],
+                "collapsed": true
+              },
+              {
+                "type": "category",
+                "label": "v1/cards/issuance",
+                "link": {
+                  "type": "doc",
+                  "id": "api/payments/get-card-details"
+                },
+                "items": [
+                  {
+                    "type": "category",
+                    "label": "v1/cards/issuance/{id}",
+                    "link": {
+                      "type": "doc",
+                      "id": "api/payments/get-card-details"
+                    },
+                    "items": [
+                      {
+                        "type": "doc",
+                        "id": "api/payments/get-card-details",
+                        "label": "`POST v1/cards/issuance/{id}/get-details`",
+                        "className": "api-method post"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "api/payments/get-card-pin",
+                        "label": "`POST v1/cards/issuance/{id}/get-pin`",
+                        "className": "api-method post"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "api/payments/replace-card-issuance",
+                        "label": "`POST v1/cards/issuance/{id}/replace`",
+                        "className": "api-method post"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "api/payments/reset-card-lvt",
+                        "label": "`POST v1/cards/issuance/{id}/reset-lvt`",
+                        "className": "api-method post"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "api/payments/reset-pin-attempts",
+                        "label": "`POST v1/cards/issuance/{id}/reset-pin-attempts`",
+                        "className": "api-method post"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "api/payments/update-card-pin",
+                        "label": "`POST v1/cards/issuance/{id}/update-pin`",
+                        "className": "api-method post"
+                      }
+                    ],
+                    "collapsed": true
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/issue-card",
+                    "label": "`POST v1/cards/issuance/issue`",
+                    "className": "api-method post"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/list-issuance",
+                    "label": "`GET v1/cards/issuance`",
+                    "className": "api-method get"
+                  }
+                ],
+                "collapsed": true
+              },
+              {
+                "type": "category",
+                "label": "v1/cards/products/{id}",
+                "link": {
+                  "type": "doc",
+                  "id": "api/payments/list-card-product-account-ranges"
+                },
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "api/payments/list-card-product-account-ranges",
+                    "label": "`GET v1/cards/products/{id}/account-ranges`",
+                    "className": "api-method get"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/add-card-product-account-ranges",
+                    "label": "`POST v1/cards/products/{id}/add-account-ranges`",
+                    "className": "api-method post"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/remove-card-product-account-ranges",
+                    "label": "`POST v1/cards/products/{id}/remove-account-ranges`",
+                    "className": "api-method post"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/get-card-product-plan",
+                    "label": "`GET v1/cards/products/{id}`",
+                    "className": "api-method get"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/update-card-product-plan",
+                    "label": "`PUT v1/cards/products/{id}`",
+                    "className": "api-method put"
+                  }
+                ],
+                "collapsed": true
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/initiate-card-session",
+                "label": "`POST v1/cards/sessions/initiate`",
+                "className": "api-method post"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/list-cards",
+                "label": "`GET v1/cards`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/create-card",
+                "label": "`POST v1/cards`",
+                "className": "api-method post"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "doc",
+            "id": "api/payments/list-config-packs",
+            "label": "`GET v1/config-packs`",
+            "className": "api-method get"
+          },
+          {
+            "type": "doc",
+            "id": "api/payments/list-core-versions",
+            "label": "`GET v1/core-versions`",
+            "className": "api-method get"
+          },
+          {
+            "type": "category",
+            "label": "v1/cores",
+            "link": {
+              "type": "doc",
+              "id": "api/payments/update-core-balance-endpoint"
+            },
+            "items": [
+              {
+                "type": "category",
+                "label": "v1/cores/{id}",
+                "link": {
+                  "type": "doc",
+                  "id": "api/payments/update-core-balance-endpoint"
+                },
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "api/payments/update-core-balance-endpoint",
+                    "label": "`PUT v1/cores/{id}/balance-endpoint`",
+                    "className": "api-method put"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/create-core-version",
+                    "label": "`POST v1/cores/{id}/versions`",
+                    "className": "api-method post"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/delete-core",
+                    "label": "`DELETE v1/cores/{id}`",
+                    "className": "api-method delete"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/get-core",
+                    "label": "`GET v1/cores/{id}`",
+                    "className": "api-method get"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/update-core",
+                    "label": "`PATCH v1/cores/{id}`",
+                    "className": "api-method patch"
+                  }
+                ],
+                "collapsed": true
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/list-cores",
+                "label": "`GET v1/cores`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/create-core",
+                "label": "`POST v1/cores`",
+                "className": "api-method post"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "category",
+            "label": "v1/dashboards",
+            "link": {
+              "type": "doc",
+              "id": "api/payments/publish-dashboard"
+            },
+            "items": [
+              {
+                "type": "category",
+                "label": "v1/dashboards/{id}",
+                "link": {
+                  "type": "doc",
+                  "id": "api/payments/publish-dashboard"
+                },
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "api/payments/publish-dashboard",
+                    "label": "`POST v1/dashboards/{id}/publish`",
+                    "className": "api-method post"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/create-dashboard-version",
+                    "label": "`POST v1/dashboards/{id}/versions`",
+                    "className": "api-method post"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/get-dashboard",
+                    "label": "`GET v1/dashboards/{id}`",
+                    "className": "api-method get"
+                  }
+                ],
+                "collapsed": true
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/list-dashboards",
+                "label": "`GET v1/dashboards`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/create-dashboard",
+                "label": "`POST v1/dashboards`",
+                "className": "api-method post"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "category",
+            "label": "v1/files",
+            "link": {
+              "type": "doc",
+              "id": "api/payments/submit-file"
+            },
+            "items": [
+              {
+                "type": "category",
+                "label": "v1/files/{id}",
+                "link": {
+                  "type": "doc",
+                  "id": "api/payments/submit-file"
+                },
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "api/payments/submit-file",
+                    "label": "`POST v1/files/{id}/submit`",
+                    "className": "api-method post"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/get-file",
+                    "label": "`GET v1/files/{id}`",
+                    "className": "api-method get"
+                  }
+                ],
+                "collapsed": true
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/list-files",
+                "label": "`GET v1/files`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/upload-file",
+                "label": "`POST v1/files`",
+                "className": "api-method post"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "doc",
+            "id": "api/payments/health",
+            "label": "`GET v1/health`",
+            "className": "api-method get"
+          },
+          {
+            "type": "doc",
+            "id": "api/payments/list-instruction-batches",
+            "label": "`GET v1/instruction-batches`",
+            "className": "api-method get"
+          },
+          {
+            "type": "category",
+            "label": "v1/instruction-file-specification-versions",
+            "link": {
+              "type": "doc",
+              "id": "api/payments/create-specification-version"
+            },
+            "items": [
+              {
+                "type": "doc",
+                "id": "api/payments/create-specification-version",
+                "label": "`POST v1/instruction-file-specification-versions/validate`",
+                "className": "api-method post"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/list-instruction-file-specification-versions",
+                "label": "`GET v1/instruction-file-specification-versions`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/create-instruction-file-specification-version",
+                "label": "`POST v1/instruction-file-specification-versions`",
+                "className": "api-method post"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "category",
+            "label": "v1/instruction-file-specifications",
+            "link": {
+              "type": "doc",
+              "id": "api/payments/list-specifications"
+            },
+            "items": [
+              {
+                "type": "doc",
+                "id": "api/payments/list-specifications",
+                "label": "`GET v1/instruction-file-specifications`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/create-specification",
+                "label": "`POST v1/instruction-file-specifications`",
+                "className": "api-method post"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "category",
+            "label": "v1/instruction-files",
+            "link": {
+              "type": "doc",
+              "id": "api/payments/validate-specification-version"
+            },
+            "items": [
+              {
+                "type": "doc",
+                "id": "api/payments/validate-specification-version",
+                "label": "`POST v1/instruction-files/{id}/initiate`",
+                "className": "api-method post"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/list-instruction-files",
+                "label": "`GET v1/instruction-files`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/create-instruction-file",
+                "label": "`POST v1/instruction-files`",
+                "className": "api-method post"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "category",
+            "label": "v1/instructions",
+            "link": {
+              "type": "doc",
+              "id": "api/payments/cancel-instruction"
+            },
+            "items": [
+              {
+                "type": "category",
+                "label": "v1/instructions/{id}",
+                "link": {
+                  "type": "doc",
+                  "id": "api/payments/cancel-instruction"
+                },
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "api/payments/cancel-instruction",
+                    "label": "`POST v1/instructions/{id}/cancel`",
+                    "className": "api-method post"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/process-instruction-by-id",
+                    "label": "`POST v1/instructions/{id}/cancel-async`",
+                    "className": "api-method post"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/process-instruction",
+                    "label": "`POST v1/instructions/{id}/process`",
+                    "className": "api-method post"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/repair-instruction",
+                    "label": "`POST v1/instructions/{id}/repair`",
+                    "className": "api-method post"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/retry-instruction",
+                    "label": "`POST v1/instructions/{id}/retry`",
+                    "className": "api-method post"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/get-instruction",
+                    "label": "`GET v1/instructions/{id}`",
+                    "className": "api-method get"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/update-instruction",
+                    "label": "`PUT v1/instructions/{id}`",
+                    "className": "api-method put"
+                  }
+                ],
+                "collapsed": true
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/bulk-retry-instructions",
+                "label": "`POST v1/instructions/bulk-retry`",
+                "className": "api-method post"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/list-instructions",
+                "label": "`GET v1/instructions`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/create-instruction",
+                "label": "`POST v1/instructions`",
+                "className": "api-method post"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "category",
+            "label": "v1/integration-versions",
+            "link": {
+              "type": "doc",
+              "id": "api/payments/retry-integration-version"
+            },
+            "items": [
+              {
+                "type": "doc",
+                "id": "api/payments/retry-integration-version",
+                "label": "`POST v1/integration-versions/{id}/retry`",
+                "className": "api-method post"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/list-integration-versions",
+                "label": "`GET v1/integration-versions`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/create-integration-version",
+                "label": "`POST v1/integration-versions`",
+                "className": "api-method post"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "category",
+            "label": "v1/integrations",
+            "link": {
+              "type": "doc",
+              "id": "api/payments/delete-integration"
+            },
+            "items": [
+              {
+                "type": "category",
+                "label": "v1/integrations/{id}",
+                "link": {
+                  "type": "doc",
+                  "id": "api/payments/delete-integration"
+                },
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "api/payments/delete-integration",
+                    "label": "`DELETE v1/integrations/{id}`",
+                    "className": "api-method delete"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/get-integration",
+                    "label": "`GET v1/integrations/{id}`",
+                    "className": "api-method get"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/update-integration",
+                    "label": "`PATCH v1/integrations/{id}`",
+                    "className": "api-method patch"
+                  }
+                ],
+                "collapsed": true
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/integration-callback",
+                "label": "`POST v1/integrations/callback/{token}`",
+                "className": "api-method post"
+              },
+              {
+                "type": "category",
+                "label": "v1/integrations/payment-initiation-apps",
+                "link": {
+                  "type": "doc",
+                  "id": "api/payments/list-initiation-apps"
+                },
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "api/payments/list-initiation-apps",
+                    "label": "`GET v1/integrations/payment-initiation-apps`",
+                    "className": "api-method get"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/create-initiation-app",
+                    "label": "`POST v1/integrations/payment-initiation-apps`",
+                    "className": "api-method post"
+                  }
+                ],
+                "collapsed": true
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/list-integrations",
+                "label": "`GET v1/integrations`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/create-integration",
+                "label": "`POST v1/integrations`",
+                "className": "api-method post"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "category",
+            "label": "v1/internal",
+            "link": {
+              "type": "doc",
+              "id": "api/payments/get-account-link-internal"
+            },
+            "items": [
+              {
+                "type": "doc",
+                "id": "api/payments/get-account-link-internal",
+                "label": "`GET v1/internal/account-links/{id}`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/internal-authorisation-expiry",
+                "label": "`POST v1/internal/authorisations/expire`",
+                "className": "api-method post"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/get-calendar-internal",
+                "label": "`GET v1/internal/calendars/{id}`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/get-cardholder-internal",
+                "label": "`GET v1/internal/cardholders/{id}`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/get-card-internal",
+                "label": "`GET v1/internal/cards/{id}`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/debatch-step",
+                "label": "`POST v1/internal/files/debatch`",
+                "className": "api-method post"
+              },
+              {
+                "type": "category",
+                "label": "v1/internal/instructions/{id}",
+                "link": {
+                  "type": "doc",
+                  "id": "api/payments/get-instruction-internal"
+                },
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "api/payments/get-instruction-internal",
+                    "label": "`GET v1/internal/instructions/{id}`",
+                    "className": "api-method get"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/update-instruction-internal",
+                    "label": "`PATCH v1/internal/instructions/{id}`",
+                    "className": "api-method patch"
+                  }
+                ],
+                "collapsed": true
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/get-integration-internal",
+                "label": "`GET v1/internal/integrations/{id}`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/get-mandate-internal",
+                "label": "`GET v1/internal/mandates/{id}`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/get-manual-decision-internal",
+                "label": "`GET v1/internal/manual-decisions/{id}`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/get-parameter-internal",
+                "label": "`GET v1/internal/parameters/{id}`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/get-payment-instrument-internal",
+                "label": "`GET v1/internal/payment-instruments/{id}`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/get-payment-internal",
+                "label": "`GET v1/internal/payments/{id}`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/get-rule-internal",
+                "label": "`GET v1/internal/rules/{id}`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/trigger-schedule-internal",
+                "label": "`POST v1/internal/schedules/trigger`",
+                "className": "api-method post"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/execute-step",
+                "label": "`POST v1/internal/steps/execute`",
+                "className": "api-method post"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "category",
+            "label": "v1/logics",
+            "link": {
+              "type": "doc",
+              "id": "api/payments/migrate-logic-to-wasm"
+            },
+            "items": [
+              {
+                "type": "category",
+                "label": "v1/logics/{id}",
+                "link": {
+                  "type": "doc",
+                  "id": "api/payments/migrate-logic-to-wasm"
+                },
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "api/payments/migrate-logic-to-wasm",
+                    "label": "`POST v1/logics/{id}/migrate-wasm`",
+                    "className": "api-method post"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/get-logic",
+                    "label": "`GET v1/logics/{id}`",
+                    "className": "api-method get"
+                  }
+                ],
+                "collapsed": true
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/list-logics",
+                "label": "`GET v1/logics`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/create-logic",
+                "label": "`POST v1/logics`",
+                "className": "api-method post"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "category",
+            "label": "v1/mandates",
+            "link": {
+              "type": "doc",
+              "id": "api/payments/get-mandate"
+            },
+            "items": [
+              {
+                "type": "category",
+                "label": "v1/mandates/{id}",
+                "link": {
+                  "type": "doc",
+                  "id": "api/payments/get-mandate"
+                },
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "api/payments/get-mandate",
+                    "label": "`GET v1/mandates/{id}`",
+                    "className": "api-method get"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/update-mandate",
+                    "label": "`PATCH v1/mandates/{id}`",
+                    "className": "api-method patch"
+                  }
+                ],
+                "collapsed": true
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/list-mandates",
+                "label": "`GET v1/mandates`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/create-mandate",
+                "label": "`POST v1/mandates`",
+                "className": "api-method post"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "category",
+            "label": "v1/manual-decisions",
+            "link": {
+              "type": "doc",
+              "id": "api/payments/submit-manual-decision"
+            },
+            "items": [
+              {
+                "type": "category",
+                "label": "v1/manual-decisions/{id}",
+                "link": {
+                  "type": "doc",
+                  "id": "api/payments/submit-manual-decision"
+                },
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "api/payments/submit-manual-decision",
+                    "label": "`POST v1/manual-decisions/{id}/submit`",
+                    "className": "api-method post"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/get-manual-decision",
+                    "label": "`GET v1/manual-decisions/{id}`",
+                    "className": "api-method get"
+                  }
+                ],
+                "collapsed": true
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/list-manual-decisions",
+                "label": "`GET v1/manual-decisions`",
+                "className": "api-method get"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "category",
+            "label": "v1/membership-directories",
+            "link": {
+              "type": "doc",
+              "id": "api/payments/get-membership-directory"
+            },
+            "items": [
+              {
+                "type": "doc",
+                "id": "api/payments/get-membership-directory",
+                "label": "`GET v1/membership-directories/{id}`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/list-membership-directories",
+                "label": "`GET v1/membership-directories`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/create-membership-directory",
+                "label": "`POST v1/membership-directories`",
+                "className": "api-method post"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "doc",
+            "id": "api/payments/search-membership-directory-records",
+            "label": "`POST v1/membership-directory-records/search`",
+            "className": "api-method post"
+          },
+          {
+            "type": "category",
+            "label": "v1/membership-directory-versions",
+            "link": {
+              "type": "doc",
+              "id": "api/payments/list-membership-directory-versions"
+            },
+            "items": [
+              {
+                "type": "doc",
+                "id": "api/payments/list-membership-directory-versions",
+                "label": "`GET v1/membership-directory-versions`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/create-membership-directory-version",
+                "label": "`POST v1/membership-directory-versions`",
+                "className": "api-method post"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "doc",
+            "id": "api/payments/metrics",
+            "label": "`GET v1/metrics`",
+            "className": "api-method get"
+          },
+          {
+            "type": "doc",
+            "id": "api/payments/list-on-us-routing",
+            "label": "`GET v1/on-us/routing`",
+            "className": "api-method get"
+          },
+          {
+            "type": "category",
+            "label": "v1/openmetrics",
+            "link": {
+              "type": "doc",
+              "id": "api/payments/openmetrics-federate"
+            },
+            "items": [
+              {
+                "type": "doc",
+                "id": "api/payments/openmetrics-federate",
+                "label": "`GET v1/openmetrics/federate`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/openmetrics-metrics",
+                "label": "`GET v1/openmetrics/metrics`",
+                "className": "api-method get"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "category",
+            "label": "v1/parameter-values",
+            "link": {
+              "type": "doc",
+              "id": "api/payments/update-parameter-value"
+            },
+            "items": [
+              {
+                "type": "doc",
+                "id": "api/payments/update-parameter-value",
+                "label": "`PUT v1/parameter-values/{id}`",
+                "className": "api-method put"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/list-parameter-values",
+                "label": "`GET v1/parameter-values`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/create-parameter-value",
+                "label": "`POST v1/parameter-values`",
+                "className": "api-method post"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "category",
+            "label": "v1/parameters",
+            "link": {
+              "type": "doc",
+              "id": "api/payments/delete-parameter"
+            },
+            "items": [
+              {
+                "type": "category",
+                "label": "v1/parameters/{id}",
+                "link": {
+                  "type": "doc",
+                  "id": "api/payments/delete-parameter"
+                },
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "api/payments/delete-parameter",
+                    "label": "`DELETE v1/parameters/{id}`",
+                    "className": "api-method delete"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/get-parameter",
+                    "label": "`GET v1/parameters/{id}`",
+                    "className": "api-method get"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/update-parameter",
+                    "label": "`PATCH v1/parameters/{id}`",
+                    "className": "api-method patch"
+                  }
+                ],
+                "collapsed": true
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/list-parameters",
+                "label": "`GET v1/parameters`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/create-parameter",
+                "label": "`POST v1/parameters`",
+                "className": "api-method post"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "category",
+            "label": "v1/payees",
+            "link": {
+              "type": "doc",
+              "id": "api/payments/delete-payee"
+            },
+            "items": [
+              {
+                "type": "category",
+                "label": "v1/payees/{id}",
+                "link": {
+                  "type": "doc",
+                  "id": "api/payments/delete-payee"
+                },
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "api/payments/delete-payee",
+                    "label": "`DELETE v1/payees/{id}`",
+                    "className": "api-method delete"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/get-payee",
+                    "label": "`GET v1/payees/{id}`",
+                    "className": "api-method get"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/update-payee",
+                    "label": "`PUT v1/payees/{id}`",
+                    "className": "api-method put"
+                  }
+                ],
+                "collapsed": true
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/search-payees",
+                "label": "`POST v1/payees/search`",
+                "className": "api-method post"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/list-payees",
+                "label": "`GET v1/payees`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/create-payee",
+                "label": "`POST v1/payees`",
+                "className": "api-method post"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "category",
+            "label": "v1/payment-instruments",
+            "link": {
+              "type": "doc",
+              "id": "api/payments/delete-payment-instrument"
+            },
+            "items": [
+              {
+                "type": "category",
+                "label": "v1/payment-instruments/{id}",
+                "link": {
+                  "type": "doc",
+                  "id": "api/payments/delete-payment-instrument"
+                },
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "api/payments/delete-payment-instrument",
+                    "label": "`DELETE v1/payment-instruments/{id}`",
+                    "className": "api-method delete"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/get-payment-instrument",
+                    "label": "`GET v1/payment-instruments/{id}`",
+                    "className": "api-method get"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/update-payment-instrument",
+                    "label": "`PATCH v1/payment-instruments/{id}`",
+                    "className": "api-method patch"
+                  }
+                ],
+                "collapsed": true
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/list-payment-instruments",
+                "label": "`GET v1/payment-instruments`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/create-payment-instrument",
+                "label": "`POST v1/payment-instruments`",
+                "className": "api-method post"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "doc",
+            "id": "api/payments/list-payment-statuses",
+            "label": "`GET v1/payment-statuses`",
+            "className": "api-method get"
+          },
+          {
+            "type": "category",
+            "label": "v1/payments",
+            "link": {
+              "type": "doc",
+              "id": "api/payments/get-payment"
+            },
+            "items": [
+              {
+                "type": "doc",
+                "id": "api/payments/get-payment",
+                "label": "`GET v1/payments/{id}`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/list-payments",
+                "label": "`GET v1/payments`",
+                "className": "api-method get"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "doc",
+            "id": "api/payments/search-records",
+            "label": "`POST v1/records/search`",
+            "className": "api-method post"
+          },
+          {
+            "type": "doc",
+            "id": "api/payments/list-roles",
+            "label": "`GET v1/roles`",
+            "className": "api-method get"
+          },
+          {
+            "type": "category",
+            "label": "v1/rule-set-versions",
+            "link": {
+              "type": "doc",
+              "id": "api/payments/retry-rule-set-version"
+            },
+            "items": [
+              {
+                "type": "doc",
+                "id": "api/payments/retry-rule-set-version",
+                "label": "`POST v1/rule-set-versions/{id}/retry`",
+                "className": "api-method post"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/list-rule-set-versions",
+                "label": "`GET v1/rule-set-versions`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/create-rule-set-version",
+                "label": "`POST v1/rule-set-versions`",
+                "className": "api-method post"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "category",
+            "label": "v1/rule-sets",
+            "link": {
+              "type": "doc",
+              "id": "api/payments/list-rule-sets"
+            },
+            "items": [
+              {
+                "type": "doc",
+                "id": "api/payments/list-rule-sets",
+                "label": "`GET v1/rule-sets`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/create-rule-set",
+                "label": "`POST v1/rule-sets`",
+                "className": "api-method post"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "category",
+            "label": "v1/rule-versions",
+            "link": {
+              "type": "doc",
+              "id": "api/payments/retry-rule-version"
+            },
+            "items": [
+              {
+                "type": "doc",
+                "id": "api/payments/retry-rule-version",
+                "label": "`POST v1/rule-versions/{id}/retry`",
+                "className": "api-method post"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/list-rule-versions",
+                "label": "`GET v1/rule-versions`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/create-rule-version",
+                "label": "`POST v1/rule-versions`",
+                "className": "api-method post"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "category",
+            "label": "v1/rules",
+            "link": {
+              "type": "doc",
+              "id": "api/payments/publish-rule-version"
+            },
+            "items": [
+              {
+                "type": "doc",
+                "id": "api/payments/publish-rule-version",
+                "label": "`POST v1/rules/{id}/publish`",
+                "className": "api-method post"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/attach-rule-to-instrument",
+                "label": "`POST v1/rules/attach-to-instrument`",
+                "className": "api-method post"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/detach-rule-from-instrument",
+                "label": "`POST v1/rules/detach-from-instrument`",
+                "className": "api-method post"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/list-rules",
+                "label": "`GET v1/rules`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/create-rule",
+                "label": "`POST v1/rules`",
+                "className": "api-method post"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "category",
+            "label": "v1/sandbox",
+            "link": {
+              "type": "doc",
+              "id": "api/payments/sandbox-simulate-card-txn"
+            },
+            "items": [
+              {
+                "type": "doc",
+                "id": "api/payments/sandbox-simulate-card-txn",
+                "label": "`POST v1/sandbox/cards/simulate`",
+                "className": "api-method post"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/sandbox-simulate-credit-transfer",
+                "label": "`POST v1/sandbox/credit-transfers/simulate`",
+                "className": "api-method post"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/sandbox-simulate-fedwire",
+                "label": "`POST v1/sandbox/fedwire/simulate`",
+                "className": "api-method post"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/sandbox-resume-instruction",
+                "label": "`POST v1/sandbox/instructions/{id}/resume`",
+                "className": "api-method post"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/sandbox-fast-forward-scheduled",
+                "label": "`POST v1/sandbox/scheduled-payments/{id}/fast-forward`",
+                "className": "api-method post"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/sandbox-simulate-swift-agi",
+                "label": "`POST v1/sandbox/swift-agi/simulate`",
+                "className": "api-method post"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "category",
+            "label": "v1/tasks",
+            "link": {
+              "type": "doc",
+              "id": "api/payments/approve-task"
+            },
+            "items": [
+              {
+                "type": "category",
+                "label": "v1/tasks/{id}",
+                "link": {
+                  "type": "doc",
+                  "id": "api/payments/approve-task"
+                },
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "api/payments/approve-task",
+                    "label": "`POST v1/tasks/{id}/approve`",
+                    "className": "api-method post"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/claim-task",
+                    "label": "`POST v1/tasks/{id}/claim`",
+                    "className": "api-method post"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/reject-task",
+                    "label": "`POST v1/tasks/{id}/reject`",
+                    "className": "api-method post"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/get-task",
+                    "label": "`GET v1/tasks/{id}`",
+                    "className": "api-method get"
+                  }
+                ],
+                "collapsed": true
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/list-tasks",
+                "label": "`GET v1/tasks`",
+                "className": "api-method get"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "category",
+            "label": "v1/templates",
+            "link": {
+              "type": "doc",
+              "id": "api/payments/publish-template"
+            },
+            "items": [
+              {
+                "type": "category",
+                "label": "v1/templates/{id}",
+                "link": {
+                  "type": "doc",
+                  "id": "api/payments/publish-template"
+                },
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "api/payments/publish-template",
+                    "label": "`POST v1/templates/{id}/publish`",
+                    "className": "api-method post"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/create-template-version",
+                    "label": "`POST v1/templates/{id}/versions`",
+                    "className": "api-method post"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/payments/get-template",
+                    "label": "`GET v1/templates/{id}`",
+                    "className": "api-method get"
+                  }
+                ],
+                "collapsed": true
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/list-templates",
+                "label": "`GET v1/templates`",
+                "className": "api-method get"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/create-template",
+                "label": "`POST v1/templates`",
+                "className": "api-method post"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "doc",
+            "id": "api/payments/list-users",
+            "label": "`GET v1/users`",
+            "className": "api-method get"
+          }
+        ],
+        "collapsed": true
+      },
+      {
+        "type": "category",
+        "label": "v1beta/scheduled-payments",
+        "link": {
+          "type": "doc",
+          "id": "api/payments/fast-forward-scheduled-payment"
+        },
+        "items": [
+          {
+            "type": "category",
+            "label": "v1beta/scheduled-payments/{id}",
+            "link": {
+              "type": "doc",
+              "id": "api/payments/fast-forward-scheduled-payment"
+            },
+            "items": [
+              {
+                "type": "doc",
+                "id": "api/payments/fast-forward-scheduled-payment",
+                "label": "`POST v1beta/scheduled-payments/{id}/fast-forward`",
+                "className": "api-method post"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/cancel-scheduled-payment",
+                "label": "`DELETE v1beta/scheduled-payments/{id}`",
+                "className": "api-method delete"
+              },
+              {
+                "type": "doc",
+                "id": "api/payments/get-scheduled-payment",
+                "label": "`GET v1beta/scheduled-payments/{id}`",
+                "className": "api-method get"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "type": "doc",
+            "id": "api/payments/list-scheduled-payments",
+            "label": "`GET v1beta/scheduled-payments`",
+            "className": "api-method get"
+          },
+          {
+            "type": "doc",
+            "id": "api/payments/create-scheduled-payment",
+            "label": "`POST v1beta/scheduled-payments`",
+            "className": "api-method post"
+          }
+        ],
+        "collapsed": true
+      }
+    ],
+    "collapsed": true
+  }
+]
