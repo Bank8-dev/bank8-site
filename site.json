@@ -3,7 +3,7 @@
   "name": "Bank8",
   "org": "Bank8-dev",
   "domain": "bank8.dev",
-  "tagline": "Secure Post-Quantum-Safe Core Banking & ISO 20022 Payment Platform That Heals and Scales Itself.",
+  "tagline": "Secure Post-Quantum-Safe Core Banking, ISO 20022 Payments & Open Banking Platform That Heals and Scales Itself.",
   "accent": "#1B6CA8",
   "pillarsLead": "Bank8 inherits the Sentin8 security model by construction - every service runs behind the platform's authorization pipeline, tenant isolation, and post-quantum TLS.",
   "pillars": [
