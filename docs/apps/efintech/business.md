@@ -141,5 +141,5 @@ in this app today.
 
 ---
 
-**Design attribution:** bank8:efintech and its underlying concepts were designed by Hamid Jahanzad <Hamid@Jahanzad.com>.
+**Architecture & Design:** bank8:efintech and its underlying concepts were designed by [Hamid Jahanzad](https://www.linkedin.com/in/hamidjahanzad/).
 

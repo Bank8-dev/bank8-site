@@ -79,4 +79,4 @@ harvested content. Custom domain (bank8.dev) via `static/CNAME`
 
 ---
 
-**Design attribution:** Bank8:Site and its underlying concepts were designed by Hamid Jahanzad <Hamid@Jahanzad.com>.
+**Architecture & Design:** Bank8:Site and its underlying concepts were designed by [Hamid Jahanzad](https://www.linkedin.com/in/hamidjahanzad/).
