@@ -1,4 +1,4 @@
-# README.md: Bank8:Site - bank8.dev
+# Bank8:Site - bank8.dev
 
 > The Bank8 public website at [bank8.dev](https://bank8.dev): every
 > product, app, and SDK of the finance vertical, with its banking
