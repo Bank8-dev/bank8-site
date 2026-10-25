@@ -159,14 +159,6 @@
       "href": "https://sentin8.dev/"
     },
     {
-      "slug": "hotel8",
-      "name": "Hotel8",
-      "chip": "hotel8.dev",
-      "accent": "#C08A3E",
-      "summary": "Delegates payments to Bank8:Payments for its property commerce.",
-      "href": "https://hotel8.dev/"
-    },
-    {
       "slug": "bill8",
       "name": "Bill8",
       "chip": "bill8.dev",
@@ -177,7 +169,7 @@
   ],
   "crossrefs": [
     {
-      "label": "Bank8:Payments is consumed by hotel8 and bill8",
+      "label": "Bank8:Payments settles billing for bill8",
       "url": "https://bank8.dev/docs/products/payments/"
     }
   ]
