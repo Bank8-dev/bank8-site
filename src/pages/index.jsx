@@ -12,7 +12,7 @@ const productPrefix = 'products';
 const mapPlanes = [
   {
     title: 'Core banking',
-    items: ['Bank8:Ledger', 'Bank8:Payments', 'Bank8:OpenCA'],
+    items: ['Bank8:Ledger', 'Bank8:Payments', 'OpenFin8:CA'],
   },
   {
     title: 'Oversight',

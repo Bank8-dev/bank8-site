@@ -1,0 +1,64 @@
+---
+id: auth-consent-accounts
+title: "`GET /v1/auth/consent/accounts`"
+description: "Auth consent accounts."
+sidebar_label: "`GET /v1/auth/consent/accounts`"
+hide_title: true
+hide_table_of_contents: true
+api: eJzlVdtu3EYM/RViXmID0q6dFoWrt60vgdumNmwHCeA1ktkRtZpY4kyH1Nqbhf69oLRrG3b7BX0SNCIPyXMONRsjdsmmuDUuECOJuctMiJis+EDnpSmM7aT+uv361ToXOhI2mUnIUU/ZFBvz/uBAHyWySz5qrinMxR8mU1xR3GJjbIyNdwPy9DtryMawq7G1b3PPTr7AttjUdSyhxTRlsYItkkC0zFKn0C1rQFphEyLC3sXs8vQ4/xXqQMgypyohViG1+wVIjVCF9GBTiSXEFFa+xARlcN0AuPcnlktM00u71neGaNdNsGU2p+Prk7O89eRb/wPLffD8lJ/rdCk0DZYZcBiq7HiBRSjXcH6th3N6rv1U0gtjU0EOjMnbRsFBkiWONiFJs4a9B58w9yWSeGeb/WxOu2wswTJYghCRICy+oxOQAPeIcWhjJBYoUI5tlDU8eKlDJ3PytFJAWkLlsSl5CG+G8SE8EE9MZsRLg6Yws63el898m77v+8z8fHD4VrW/goD6ZWxYsDRD5E9vIz96Zm1Ba6vWW4NN2amSSytotAqj65KXtSlu77JXELNO6l3ezis8mdOcSisWkMoYPInKvvsMjA06zZ/M6QqlSzSOv7PYO35CAisgtWc4UbTLreITOLYqNyzWo7BXZ58h2iW+YxjKViiuhr2YwqMfw64Hto+KoV9VASxwHZLkjV9hCb9/vtmfzOlME/FF/SqFFn6zdH9UjOZUYVqUOuhaLlFMZqKV2hRmujqcKu/THY0v9tRTFZT/naRqmMrTUe6seU3ptlW4iEhn2vPxDHI4ng0uyxeW7lWzYc6nFdpT+Va/TB5B3bpf7CTJXY3uXg2v4Vzb5GmZDWx7ymNjHQJ3ziFzSBAqUPijvCofdc7GOyRGbZxsq31/PL+BiyuYRetqzN9PDnS2YTUqj+lfA/rMrDDxONvB5HA8ioGltfQC+tuH0xv4Tw6/vaZp8/xT+3+aUNZRaRN8lGlsrCeltUuNUjM68tasDk023B3jHTDcLZl58uVdZurAopGbzcIyfkpN3+vx3x2m7b6vbPJ2oa69veszU6MtVenbjbnH9fh3wqiwK9t02tGbG6a/e7EyH05vTN//A82KcL8=
+sidebar_class_name: "get api-method"
+info_path: docs/api/openfin8-ca/openfin-8-ca
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"`GET /v1/auth/consent/accounts`"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v1/auth/consent/accounts"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Auth consent accounts.
+
+data endpoint for account selection.
+Returns the customer's accounts at this Data Provider. Called by the
+RFW page's data fetch (proxied by Sentin8:Auth with a short-lived JWT).
+Fetches accounts from Bank8:Ledger.
+
+<ParamsDetails>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./auth-consent-accounts.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./auth-consent-accounts.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

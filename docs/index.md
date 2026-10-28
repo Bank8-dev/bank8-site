@@ -22,7 +22,7 @@ graph TD
     subgraph vertical["bank8 vertical"]
         LEDGER["Bank8:Ledger"]
         PAY["Bank8:Payments"]
-        FDX["Bank8:OpenCA"]
+        FDX["OpenFin8:CA"]
         RPT["Bank8:Reporting"]
         RSK["Bank8:Risk"]
         CMP["Bank8:Compliance"]
@@ -40,7 +40,7 @@ graph TD
 |---|---|
 | [Ledger](/docs/products/ledger) | core ledger - accounts, products, postings, balances |
 | [Payments](/docs/products/payments) | orchestration over ISO 20022 schemes, cards, mandates |
-| [Open Banking (CA)](/docs/products/open-ca) | open banking - consent-checked data sharing |
+| [Open Banking (CA)](/docs/products/openfin8-ca) | open banking - consent-checked data sharing |
 | [Reporting](/docs/products/reporting) | regulatory filings - calendar, generation, submission |
 | [Risk](/docs/products/risk) | prudential risk - capital, liquidity, limits, ECL |
 | [Compliance](/docs/products/compliance) | AML/CTF - KYC, screening, monitoring, cases |

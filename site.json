@@ -54,15 +54,15 @@
       ]
     },
     {
-      "slug": "open-ca",
+      "slug": "openfin8-ca",
       "kind": "service",
-      "name": "Bank8:OpenCA",
-      "repo": "bank8-open-ca",
-      "org": "Bank8-dev",
-      "summary": "Canadian open banking (FDX v6.x): consent-checked data sharing between institutions, notifications, recipient registry - the consent authority for every provider call.",
+      "name": "OpenFin8:CA",
+      "repo": "openfin8-ca",
+      "org": "OpenFin8",
+      "summary": "Canadian open banking (FDX v6.x, the OpenFin8 vertical): consent-checked data sharing between institutions, notifications, recipient registry - the consent authority for every provider call.",
       "scopes": [
-        "bank8:open-ca:consents:read",
-        "bank8:open-ca:providers:read"
+        "openfin8:ca:consents:read",
+        "openfin8:ca:providers:read"
       ]
     },
     {

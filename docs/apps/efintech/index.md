@@ -7,7 +7,7 @@ sidebar_position: 2
 The fintech side of open banking: a registered FDX data recipient
 consuming consented provider data. This app demonstrates the full
 recipient flow - client registration, consent initiation, callback
-activation, and consented reads through Bank8:OpenCA.
+activation, and consented reads through OpenFin8:CA.
 
 ## What it demonstrates
 

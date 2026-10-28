@@ -15,9 +15,9 @@
       "categoryLinkSource": "info"
     }
   },
-  "open-ca": {
-    "specPath": "openapi/open-ca-spec.json",
-    "outputDir": "docs/api/open-ca",
+  "openfin8-ca": {
+    "specPath": "openapi/openfin8-ca-spec.json",
+    "outputDir": "docs/api/openfin8-ca",
     "sidebarOptions": {
       "groupPathsBy": "tag",
       "categoryLinkSource": "info"
