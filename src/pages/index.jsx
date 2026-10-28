@@ -20,7 +20,7 @@ const mapPlanes = [
   },
   {
     title: 'Apps',
-    items: ['eBank', 'eFinTech', 'eTeller', 'Bank8 Admin'],
+    items: ['eBank', 'eTeller', 'Bank8 Admin'],
   },
   {
     title: 'SDK',

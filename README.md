@@ -14,7 +14,8 @@
 
 bank8.dev is the finance vertical's product site: a landing page
 detailing all six services (ledger, payments, fdx, reporting, risk,
-compliance), four apps (ebank, efintech, eteller, admin), and the bank8
+compliance), three apps (ebank, eteller, admin; the recipient app
+eOpenCA lives on openfin8.dev), and the bank8
 SDK; per-product pages with use cases in detail and API surface tables;
 the vertical's security invariants; developer lifecycle; samples; and a
 **Reference** section harvested at build time from each unit repo's own
