@@ -100,14 +100,6 @@
       "summary": "The retail customer app: account opening, balances, transfers, statements, notifications - and the customer side of FDX consent review and revocation."
     },
     {
-      "slug": "efintech",
-      "kind": "app",
-      "name": "eFinTech",
-      "repo": "bank8-efintech",
-      "org": "Bank8-dev",
-      "summary": "The FDX recipient app: a fintech consuming consented bank data through the open-banking flows."
-    },
-    {
       "slug": "eteller",
       "kind": "app",
       "name": "eTeller",

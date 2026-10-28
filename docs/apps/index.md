@@ -4,14 +4,16 @@ sidebar_position: 1
 
 # The bank8 apps
 
-Four Flutter experiences - customer, fintech recipient, staff, and
+Three Flutter experiences - customer, staff, and
 admin - every one thin by design: all backend access rides the
 Sentin8:BFF proxy, and no token ever reaches a client bundle.
+(The recipient app - the former eFintech - moved to the OpenFin8
+vertical as [eOpenCA](https://openfin8.dev/docs/apps/openfin8-eopenca/).)
 
 | App | Who it serves |
 |---|---|
 | [eBank](/docs/apps/ebank) | retail & business customers |
-| [eFinTech](/docs/apps/efintech) | FDX data recipients (fintechs) |
+| [eTeller](/docs/apps/eteller) | staff terminal - teller operations |
 | [eTeller](/docs/apps/eteller) | branch staff |
 | [Bank8 Admin](/docs/apps/admin) | staff administration (RFW in Dash) |
 
@@ -31,14 +33,6 @@ activation, FDX provider administration).
 - Transfer command shape: one `POST /v1/postings` with
   `idempotency_key` - retries safe by construction.
 
-## eFinTech - the FDX recipient app
-
-The fintech side of open banking: a registered data recipient
-consuming consented provider data. Consents start at consent
-initiation and activate at callback - the recipient's own registry
-(`recipient_consents`) is the fintech's bookkeeping of its customers'
-grants.
-
 ## eTeller - the staff terminal
 
 Teller operations: customer search, account servicing, posting
@@ -54,5 +48,5 @@ zero compile-time coupling to the platform's admin host.
 ## Deep dive
 
 Each app's reference section carries its full docs trio: [eBank](/docs/reference/ebank/),
-[eFinTech](/docs/reference/efintech/), [eTeller](/docs/reference/eteller/),
+[eTeller](/docs/reference/eteller/),
 [Admin](/docs/reference/admin/).

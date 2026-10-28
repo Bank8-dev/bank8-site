@@ -15,7 +15,7 @@ service inherits the authorization pipeline and audit posture.
 graph TD
     subgraph apps["Flutter apps"]
         EB["ebank (customer)"]
-        EF["efintech (FDX recipient)"]
+        EF["eOpenCA (moved to openfin8.dev)"]
         ET["eteller (staff)"]
         AD["admin (staff)"]
     end
