@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "bank8-open-ca",
-    "description": "Sentin8 Bank8:OpenCA - Canadian open banking (FDX v6.x). The FDX API specification is licensed by FDX and is not published; this spec documents the bank8-owned surfaces only (see the service repo specs/README.md).",
+    "description": "Sentin8 Bank8:OpenCA - CA open-banking data provider (FDX v6.x wire): consent-checked data sharing, the in-place successor of bank8-fdx.",
     "license": {
       "name": "MIT OR Apache-2.0",
       "identifier": "MIT OR Apache-2.0"
@@ -38,9 +38,7 @@
           {
             "sentin8:admin": []
           }
-        ],
-        "description": "Policy list attributes.",
-        "summary": "`GET /v1/admin/attributes`"
+        ]
       },
       "put": {
         "tags": [
@@ -79,9 +77,7 @@
           {
             "sentin8:admin": []
           }
-        ],
-        "description": "Policy put attribute.",
-        "summary": "`PUT /v1/admin/attributes`"
+        ]
       },
       "delete": {
         "tags": [
@@ -111,17 +107,15 @@
           {
             "sentin8:admin": []
           }
-        ],
-        "description": "Policy delete attribute.",
-        "summary": "`DELETE /v1/admin/attributes`"
+        ]
       }
     },
     "/v1/admin/audit": {
       "get": {
         "tags": [
-          "fdx"
+          "open-banking"
         ],
-        "summary": "`GET /v1/admin/audit`",
+        "summary": "`GET /v1/admin/audit` - audit trail (admin).",
         "operationId": "list_admin_audit",
         "responses": {
           "200": {
@@ -143,16 +137,15 @@
           {
             "fdx:admin": []
           }
-        ],
-        "description": "List admin audit.\n\naudit trail (admin)."
+        ]
       }
     },
     "/v1/admin/consents": {
       "get": {
         "tags": [
-          "fdx"
+          "open-banking"
         ],
-        "summary": "`GET /v1/admin/consents`",
+        "summary": "`GET /v1/admin/consents` - consent overview (admin).",
         "operationId": "list_all_consents",
         "parameters": [
           {
@@ -188,8 +181,7 @@
           {
             "fdx:admin": []
           }
-        ],
-        "description": "List all consents.\n\nconsent overview (admin)."
+        ]
       }
     },
     "/v1/admin/policy-sets": {
@@ -220,9 +212,7 @@
           {
             "sentin8:admin": []
           }
-        ],
-        "description": "Policy list sets.",
-        "summary": "`GET /v1/admin/policy-sets`"
+        ]
       }
     },
     "/v1/admin/policy-sets/disable": {
@@ -253,9 +243,7 @@
           {
             "sentin8:admin": []
           }
-        ],
-        "description": "Policy mode disable.",
-        "summary": "`POST /v1/admin/policy-sets/disable`"
+        ]
       }
     },
     "/v1/admin/policy-sets/enforce": {
@@ -286,9 +274,7 @@
           {
             "sentin8:admin": []
           }
-        ],
-        "description": "Policy mode enforce.",
-        "summary": "`POST /v1/admin/policy-sets/enforce`"
+        ]
       }
     },
     "/v1/admin/policy-sets/shadow": {
@@ -319,9 +305,7 @@
           {
             "sentin8:admin": []
           }
-        ],
-        "description": "Policy mode shadow.",
-        "summary": "`POST /v1/admin/policy-sets/shadow`"
+        ]
       }
     },
     "/v1/admin/policy-sets/{name}": {
@@ -363,9 +347,7 @@
           {
             "sentin8:admin": []
           }
-        ],
-        "description": "Policy get set.",
-        "summary": "`GET /v1/admin/policy-sets/{name}`"
+        ]
       },
       "put": {
         "tags": [
@@ -415,9 +397,7 @@
           {
             "sentin8:admin": []
           }
-        ],
-        "description": "Policy put set.",
-        "summary": "`PUT /v1/admin/policy-sets/{name}`"
+        ]
       },
       "delete": {
         "tags": [
@@ -447,9 +427,7 @@
           {
             "sentin8:admin": []
           }
-        ],
-        "description": "Policy delete set.",
-        "summary": "`DELETE /v1/admin/policy-sets/{name}`"
+        ]
       }
     },
     "/v1/admin/policy-sets/{name}/test": {
@@ -498,17 +476,15 @@
           {
             "sentin8:admin": []
           }
-        ],
-        "description": "Policy test set.",
-        "summary": "`POST /v1/admin/policy-sets/{name}/test`"
+        ]
       }
     },
     "/v1/admin/provider-profile": {
       "get": {
         "tags": [
-          "fdx"
+          "open-banking"
         ],
-        "summary": "`GET /v1/admin/provider-profile`",
+        "summary": "`GET /v1/admin/provider-profile` - get provider profile.",
         "operationId": "get_provider_profile",
         "responses": {
           "200": {
@@ -529,14 +505,13 @@
           {
             "fdx:admin": []
           }
-        ],
-        "description": "Get provider profile.\n\nget provider profile."
+        ]
       },
       "put": {
         "tags": [
-          "fdx"
+          "open-banking"
         ],
-        "summary": "`PUT /v1/admin/provider-profile`",
+        "summary": "`PUT /v1/admin/provider-profile` - update provider profile.",
         "operationId": "update_provider_profile",
         "requestBody": {
           "content": {
@@ -567,16 +542,15 @@
           {
             "fdx:admin": []
           }
-        ],
-        "description": "Update provider profile.\n\nupdate provider profile."
+        ]
       }
     },
     "/v1/admin/recipients": {
       "get": {
         "tags": [
-          "fdx"
+          "open-banking"
         ],
-        "summary": "`GET /v1/admin/recipients`",
+        "summary": "`GET /v1/admin/recipients` - list registered data recipients.",
         "operationId": "list_recipients",
         "responses": {
           "200": {
@@ -598,16 +572,15 @@
           {
             "fdx:admin": []
           }
-        ],
-        "description": "List recipients.\n\nlist registered data recipients."
+        ]
       }
     },
     "/v1/admin/recipients/{id}/activate": {
       "post": {
         "tags": [
-          "fdx"
+          "open-banking"
         ],
-        "summary": "`POST /v1/admin/recipients/{id}/activate`",
+        "summary": "`POST /v1/admin/recipients/{id}/activate` - activate a data recipient.",
         "operationId": "activate_recipient",
         "parameters": [
           {
@@ -643,16 +616,15 @@
           {
             "fdx:admin": []
           }
-        ],
-        "description": "Activate recipient.\n\nactivate a data recipient."
+        ]
       }
     },
     "/v1/admin/recipients/{id}/suspend": {
       "post": {
         "tags": [
-          "fdx"
+          "open-banking"
         ],
-        "summary": "`POST /v1/admin/recipients/{id}/suspend`",
+        "summary": "`POST /v1/admin/recipients/{id}/suspend` - suspend a data recipient.",
         "operationId": "suspend_recipient",
         "parameters": [
           {
@@ -688,8 +660,7 @@
           {
             "fdx:admin": []
           }
-        ],
-        "description": "Suspend recipient.\n\nsuspend a data recipient."
+        ]
       }
     },
     "/v1/admin/relations": {
@@ -720,9 +691,7 @@
           {
             "sentin8:admin": []
           }
-        ],
-        "description": "Policy list relations.",
-        "summary": "`GET /v1/admin/relations`"
+        ]
       },
       "put": {
         "tags": [
@@ -761,9 +730,7 @@
           {
             "sentin8:admin": []
           }
-        ],
-        "description": "Policy put relation.",
-        "summary": "`PUT /v1/admin/relations`"
+        ]
       },
       "delete": {
         "tags": [
@@ -793,9 +760,7 @@
           {
             "sentin8:admin": []
           }
-        ],
-        "description": "Policy delete relation.",
-        "summary": "`DELETE /v1/admin/relations`"
+        ]
       }
     },
     "/v1/admin/relations/check": {
@@ -852,9 +817,7 @@
           {
             "sentin8:admin": []
           }
-        ],
-        "description": "Policy check relation.",
-        "summary": "`GET /v1/admin/relations/check`"
+        ]
       }
     },
     "/v1/admin/ui/{page}": {
@@ -862,7 +825,7 @@
         "tags": [
           "admin-ui"
         ],
-        "summary": "`GET /v1/admin/ui/{page}`",
+        "summary": "GET /v1/admin/ui/{page} - return RFW definition for the requested admin page.",
         "operationId": "get_admin_ui",
         "responses": {
           "200": {
@@ -882,8 +845,7 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": [],
-        "description": "Get admin ui.\n\nreturn RFW definition for the requested admin page."
+        "security": []
       }
     },
     "/v1/auth/consent/accounts": {
@@ -891,7 +853,7 @@
         "tags": [
           "consent"
         ],
-        "summary": "`GET /v1/auth/consent/accounts`",
+        "summary": "`GET /v1/auth/consent/accounts` - data endpoint for account selection.\nReturns the customer's accounts at this Data Provider. Called by the\nRFW page's data fetch (proxied by Sentin8:Auth with a short-lived JWT).\nFetches accounts from Bank8:Ledger.",
         "operationId": "auth_consent_accounts",
         "responses": {
           "200": {
@@ -899,7 +861,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/FdxAccountsPassthrough"
+                  "$ref": "#/components/schemas/AccountsPassthrough"
                 }
               }
             }
@@ -911,8 +873,7 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": [],
-        "description": "Auth consent accounts.\n\ndata endpoint for account selection.\nReturns the customer's accounts at this Data Provider. Called by the\nRFW page's data fetch (proxied by Sentin8:Auth with a short-lived JWT).\nFetches accounts from Bank8:Ledger."
+        "security": []
       }
     },
     "/v1/auth/consent/approve": {
@@ -949,9 +910,7 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": [],
-        "description": "Auth consent approve.",
-        "summary": "`POST /v1/auth/consent/approve`"
+        "security": []
       }
     },
     "/v1/auth/consent/deny": {
@@ -988,9 +947,7 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": [],
-        "description": "Auth consent deny.",
-        "summary": "`POST /v1/auth/consent/deny`"
+        "security": []
       }
     },
     "/v1/auth/consent/ui": {
@@ -998,7 +955,7 @@
         "tags": [
           "consent"
         ],
-        "summary": "`GET /v1/auth/consent/ui`",
+        "summary": "`GET /v1/auth/consent/ui` - return RFW consent page definition.\nReturns a JSON RFW definition that auth-ui renders. The definition\nincludes:\n- Scope list with FDX-specific descriptions and Material Icons code points\n- Account selection DataTable (checkboxes, nickname, type, masked number, balance)\n- \"Authorize\" button (POST to /v1/auth/consent/approve)\n- \"Deny\" button (POST to /v1/auth/consent/deny)\n- Data endpoint declaration for account fetch (/v1/auth/consent/accounts)",
         "operationId": "auth_consent_ui",
         "responses": {
           "200": {
@@ -1006,7 +963,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/FdxAccountsPassthrough"
+                  "$ref": "#/components/schemas/AccountsPassthrough"
                 }
               }
             }
@@ -1018,8 +975,7 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": [],
-        "description": "Auth consent ui.\n\nreturn RFW consent page definition.\nReturns a JSON RFW definition that auth-ui renders. The definition\nincludes:\n- Scope list with FDX-specific descriptions and Material Icons code points\n- Account selection DataTable (checkboxes, nickname, type, masked number, balance)\n- \"Authorize\" button (POST to /v1/auth/consent/approve)\n- \"Deny\" button (POST to /v1/auth/consent/deny)\n- Data endpoint declaration for account fetch (/v1/auth/consent/accounts)"
+        "security": []
       }
     },
     "/v1/consents": {
@@ -1027,7 +983,7 @@
         "tags": [
           "consent"
         ],
-        "summary": "`GET /v1/consents`",
+        "summary": "`GET /v1/consents` - list consents.",
         "operationId": "list_consents",
         "responses": {
           "200": {
@@ -1047,14 +1003,13 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": [],
-        "description": "List consents.\n\nlist consents."
+        "security": []
       },
       "post": {
         "tags": [
           "consent"
         ],
-        "summary": "`POST /v1/consents`",
+        "summary": "`POST /v1/consents` - create a consent grant.",
         "operationId": "create_consent",
         "responses": {
           "200": {
@@ -1074,8 +1029,7 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": [],
-        "description": "Create consent.\n\ncreate a consent grant."
+        "security": []
       }
     },
     "/v1/consents/{id}": {
@@ -1083,7 +1037,7 @@
         "tags": [
           "consent"
         ],
-        "summary": "`GET /v1/consents/{id}`",
+        "summary": "`GET /v1/consents/{id}` - consent detail.",
         "operationId": "get_consent",
         "responses": {
           "200": {
@@ -1103,8 +1057,7 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": [],
-        "description": "Get consent.\n\nconsent detail."
+        "security": []
       }
     },
     "/v1/consents/{id}/revoke": {
@@ -1112,7 +1065,7 @@
         "tags": [
           "consent"
         ],
-        "summary": "`POST /v1/consents/{id}/revoke`",
+        "summary": "`POST /v1/consents/{id}/revoke` - revoke a consent.",
         "operationId": "revoke_consent",
         "responses": {
           "200": {
@@ -1132,8 +1085,7 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": [],
-        "description": "Revoke consent.\n\nrevoke a consent."
+        "security": []
       }
     },
     "/v1/health": {
@@ -1160,9 +1112,7 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": [],
-        "description": "Health .",
-        "summary": "`GET /v1/health`"
+        "security": []
       }
     },
     "/v1/internal/steps/execute": {
@@ -1170,7 +1120,7 @@
         "tags": [
           "internal"
         ],
-        "summary": "`POST /v1/internal/steps/execute`",
+        "summary": "`POST /v1/internal/steps/execute` - Flow proxy-back for FDX domain steps.",
         "operationId": "execute_step",
         "requestBody": {
           "content": {
@@ -1200,16 +1150,15 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": [],
-        "description": "Execute step.\n\nFlow proxy-back for FDX domain steps."
+        "security": []
       }
     },
     "/v1/recipient/accounts": {
       "get": {
         "tags": [
-          "fdx"
+          "open-banking"
         ],
-        "summary": "`GET /v1/recipient/accounts`",
+        "summary": "`GET /v1/recipient/accounts` - list consented accounts for the recipient.\nIf `consent_id` is provided, returns only the accounts the customer\nselected during the provider's consent screen (per FDX UX Guidelines\n\u00a73.1.6 \"Select Accounts\"). The account IDs are stored in\nconsent_resources and used to filter the Ledger account list.\nIf no consent_id is provided, returns all accounts (backward compat).",
         "operationId": "list_recipient_accounts",
         "responses": {
           "200": {
@@ -1217,7 +1166,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/FdxAccountsPassthrough"
+                  "$ref": "#/components/schemas/AccountsPassthrough"
                 }
               }
             }
@@ -1229,16 +1178,15 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": [],
-        "description": "List recipient accounts.\n\nlist consented accounts for the recipient.\nIf `consent_id` is provided, returns only the accounts the customer\nselected during the provider's consent screen (per FDX UX Guidelines\n\u00a73.1.6 \"Select Accounts\"). The account IDs are stored in\nconsent_resources and used to filter the Ledger account list.\nIf no consent_id is provided, returns all accounts (backward compat)."
+        "security": []
       }
     },
     "/v1/recipient/accounts/{id}/transactions": {
       "get": {
         "tags": [
-          "fdx"
+          "open-banking"
         ],
-        "summary": "`GET /v1/recipient/accounts/{id}/transactions`",
+        "summary": "`GET /v1/recipient/accounts/{id}/transactions` - recipient transaction history.",
         "operationId": "get_recipient_account_transactions",
         "responses": {
           "200": {
@@ -1246,7 +1194,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/FdxAccountsPassthrough"
+                  "$ref": "#/components/schemas/AccountsPassthrough"
                 }
               }
             }
@@ -1258,16 +1206,15 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": [],
-        "description": "Get recipient account transactions.\n\nrecipient transaction history."
+        "security": []
       }
     },
     "/v1/recipient/consents": {
       "get": {
         "tags": [
-          "fdx"
+          "open-banking"
         ],
-        "summary": "`GET /v1/recipient/consents`",
+        "summary": "`GET /v1/recipient/consents` - list active consents for the recipient.\nReturns `{\"consents\": [...]}` (wrapped) so the eFintech app's\nFdxConsentsHook can parse `response.data['consents']`.",
         "operationId": "list_recipient_consents",
         "parameters": [
           {
@@ -1300,16 +1247,15 @@
           {
             "fdx:read": []
           }
-        ],
-        "description": "List recipient consents.\n\nlist active consents for the recipient.\nReturns `{\"consents\": [...]}` (wrapped) so the eFintech app's\nFdxConsentsHook can parse `response.data['consents']`."
+        ]
       }
     },
     "/v1/recipient/consents/start": {
       "post": {
         "tags": [
-          "fdx"
+          "open-banking"
         ],
-        "summary": "`POST /v1/recipient/consents/start`",
+        "summary": "`POST /v1/recipient/consents/start` - start consent authorization.\nThe two-ledger recipient flow (bank8-open-ca DESIGN.md \u00a71 + \u00a74 consent-flow\nsequence): the recipient-side open-banking instance writes its OWN registry\n(a `pending` row in `recipient_consents`, in the recipient tenant),\nensures its per-provider OAuth client exists at the provider's\nauthorization server (DCR, cached in `open_ca.recipients`), and pushes a\nPAR request whose `state` carries `\"<consent handle>|<app origin>\"`.\nThe AS's authorize screen runs the ceremony; the browser redirect\ncomes back to THIS instance's `/fdx/consents/callback` (the\nregistered redirect_uri), which activates the row and exchanges the\ncode. The provider's grant row is seeded by the provider's OWN\nauth-family consumer from `sentin8:auth:grant:created` - never by\nthis side.",
         "operationId": "start_consent",
         "requestBody": {
           "content": {
@@ -1340,16 +1286,15 @@
           {
             "fdx:read": []
           }
-        ],
-        "description": "Start consent.\n\nstart consent authorization.\nThe two-ledger recipient flow (fdx DESIGN.md \u00a71 + \u00a74 consent-flow\nsequence): the recipient-side fdx instance writes its OWN registry\n(a `pending` row in `recipient_consents`, in the recipient tenant),\nensures its per-provider OAuth client exists at the provider's\nauthorization server (DCR, cached in `fdx.recipients`), and pushes a\nPAR request whose `state` carries `\"<consent handle>|<app origin>\"`.\nThe AS's authorize screen runs the ceremony; the browser redirect\ncomes back to THIS instance's `/fdx/consents/callback` (the\nregistered redirect_uri), which activates the row and exchanges the\ncode. The provider's grant row is seeded by the provider's OWN\nauth-family consumer from `sentin8:auth:grant:created` - never by\nthis side."
+        ]
       }
     },
     "/v1/recipient/consents/{id}": {
       "get": {
         "tags": [
-          "fdx"
+          "open-banking"
         ],
-        "summary": "`GET /v1/recipient/consents/{id}`",
+        "summary": "`GET /v1/recipient/consents/{id}` - get a specific recipient consent.",
         "operationId": "get_recipient_consent",
         "parameters": [
           {
@@ -1385,16 +1330,15 @@
           {
             "fdx:read": []
           }
-        ],
-        "description": "Get recipient consent.\n\nget a specific recipient consent."
+        ]
       }
     },
     "/v1/recipient/consents/{id}/refresh": {
       "post": {
         "tags": [
-          "fdx"
+          "open-banking"
         ],
-        "summary": "`POST /v1/recipient/consents/{id}/refresh`",
+        "summary": "`POST /v1/recipient/consents/{id}/refresh` - trigger data refresh.",
         "operationId": "refresh_consent",
         "parameters": [
           {
@@ -1430,16 +1374,15 @@
           {
             "fdx:read": []
           }
-        ],
-        "description": "Refresh consent.\n\ntrigger data refresh."
+        ]
       }
     },
     "/v1/recipient/consents/{id}/revoke": {
       "post": {
         "tags": [
-          "fdx"
+          "open-banking"
         ],
-        "summary": "`POST /v1/recipient/consents/{id}/revoke`",
+        "summary": "`POST /v1/recipient/consents/{id}/revoke` - revoke a recipient consent.",
         "operationId": "revoke_recipient_consent",
         "parameters": [
           {
@@ -1472,16 +1415,15 @@
           {
             "fdx:read": []
           }
-        ],
-        "description": "Revoke recipient consent.\n\nrevoke a recipient consent."
+        ]
       }
     },
     "/v1/recipient/notifications": {
       "get": {
         "tags": [
-          "fdx"
+          "open-banking"
         ],
-        "summary": "`GET /v1/recipient/notifications`",
+        "summary": "`GET /v1/recipient/notifications` - notification feed for the recipient.",
         "operationId": "list_notifications",
         "responses": {
           "200": {
@@ -1501,16 +1443,15 @@
             "description": "Missing the FDX consent/scope gate"
           }
         },
-        "security": [],
-        "description": "List notifications.\n\nnotification feed for the recipient."
+        "security": []
       }
     },
     "/v1/recipient/providers": {
       "get": {
         "tags": [
-          "fdx"
+          "open-banking"
         ],
-        "summary": "`GET /v1/recipient/providers`",
+        "summary": "`GET /v1/recipient/providers` - list FDX data providers from the\n`provider_profiles` registry.\nProvider profiles are auto-registered when an environment's\n`is_fdx_provider` flag is turned on (see Sys `update_env`), with the\nenv's auth domain used as the issuer URL. The table has no RLS, so the\ncatalog is visible cross-org - any recipient can discover and connect to\nany active provider. No static seed data is required.\nResponse shape matches the eFintech recipient catalog contract:\n`{ \"providers\": [{ id, name, supportedDataClusters, status, ... }] }`,\nwhere each card reads `name`, `supportedDataClusters`, and `status`.",
         "operationId": "list_recipient_providers",
         "responses": {
           "200": {
@@ -1531,16 +1472,15 @@
           {
             "fdx:read": []
           }
-        ],
-        "description": "List recipient providers.\n\nlist FDX data providers from the\n`provider_profiles` registry.\nProvider profiles are auto-registered when an environment's\n`is_fdx_provider` flag is turned on (see Sys `update_env`), with the\nenv's auth domain used as the issuer URL. The table has no RLS, so the\ncatalog is visible cross-org - any recipient can discover and connect to\nany active provider. No static seed data is required.\nResponse shape matches the eFintech recipient catalog contract:\n`{ \"providers\": [{ id, name, supportedDataClusters, status, ... }] }`,\nwhere each card reads `name`, `supportedDataClusters`, and `status`."
+        ]
       }
     },
     "/v1/recipient/providers/{id}": {
       "get": {
         "tags": [
-          "fdx"
+          "open-banking"
         ],
-        "summary": "`GET /v1/recipient/providers/{id}`",
+        "summary": "`GET /v1/recipient/providers/{id}` - get a specific FDX data provider.",
         "operationId": "get_recipient_provider",
         "parameters": [
           {
@@ -1575,13 +1515,15 @@
           {
             "fdx:read": []
           }
-        ],
-        "description": "Get recipient provider.\n\nget a specific FDX data provider."
+        ]
       }
     }
   },
   "components": {
     "schemas": {
+      "AccountsPassthrough": {
+        "description": "FDX account/customer/statement passthrough envelope (OAPEC-9 honest\nfreeform): the forwarded provider document (Ledger/Payments payload,\nCSDF-minimized) is provider-controlled, so the response body IS the\nforwarded document itself - serialized transparently (wire-identical),\ndocumented as an open object to keep the schema non-empty without\ninventing fields the ledger owns."
+      },
       "AdminAuditRow": {
         "type": "object",
         "description": "Admin audit row.",
@@ -1807,6 +1749,24 @@
           }
         }
       },
+      "AvailabilityStatus": {
+        "type": "object",
+        "description": "Availability endpoint document.",
+        "required": [
+          "status",
+          "description"
+        ],
+        "properties": {
+          "description": {
+            "type": "string",
+            "description": "Human description of the outage window (if any)."
+          },
+          "status": {
+            "type": "string",
+            "description": "Availability status (always `available` when serving)."
+          }
+        }
+      },
       "ButtonType": {
         "type": "string",
         "description": "Button visual style.",
@@ -1817,6 +1777,35 @@
           "ghost",
           "link"
         ]
+      },
+      "CapabilityAnnouncement": {
+        "type": "object",
+        "description": "FDX capability announcement.",
+        "required": [
+          "fdxVersion",
+          "capabilities",
+          "dataClusters"
+        ],
+        "properties": {
+          "capabilities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Announced operation capabilities."
+          },
+          "dataClusters": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Announced data clusters."
+          },
+          "fdxVersion": {
+            "type": "string",
+            "description": "The FDX spec version served."
+          }
+        }
       },
       "CertificationMetricCounters": {
         "type": "object",
@@ -1980,6 +1969,69 @@
           }
         }
       },
+      "ConsentIntrospection": {
+        "type": "object",
+        "description": "Consent introspection document.",
+        "required": [
+          "consentId",
+          "customerId",
+          "status",
+          "scopes",
+          "dataClusters",
+          "createdAt",
+          "resources"
+        ],
+        "properties": {
+          "consentId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "The consent id."
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Creation timestamp."
+          },
+          "customerId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "The customer that granted the consent."
+          },
+          "dataClusters": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Granted data clusters."
+          },
+          "expiresAt": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time",
+            "description": "Expiry (absent for unlimited consents)."
+          },
+          "resources": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ConsentResource"
+            },
+            "description": "Resource-level grants."
+          },
+          "scopes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Granted scopes."
+          },
+          "status": {
+            "type": "string",
+            "description": "The consent status."
+          }
+        }
+      },
       "ConsentLifecycleResponse": {
         "type": "object",
         "description": "Consent lifecycle read/update result.",
@@ -2025,6 +2077,32 @@
           "redirect_url": {
             "type": "string",
             "description": "The URL to navigate back to (the auth flow continuation)."
+          }
+        }
+      },
+      "ConsentResource": {
+        "type": "object",
+        "description": "One consented resource.",
+        "required": [
+          "resourceType",
+          "resourceId",
+          "dataClusters"
+        ],
+        "properties": {
+          "dataClusters": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Data clusters granted on the resource."
+          },
+          "resourceId": {
+            "type": "string",
+            "description": "The resource id."
+          },
+          "resourceType": {
+            "type": "string",
+            "description": "Resource type (e.g. `account`)."
           }
         }
       },
@@ -2333,145 +2411,6 @@
             }
           }
         ]
-      },
-      "FdxAccountsPassthrough": {
-        "description": "FDX account/customer/statement passthrough envelope (OAPEC-9 honest\nfreeform): the forwarded provider document (Ledger/Payments payload,\nCSDF-minimized) is provider-controlled, so the response body IS the\nforwarded document itself - serialized transparently (wire-identical),\ndocumented as an open object to keep the schema non-empty without\ninventing fields the ledger owns."
-      },
-      "FdxAvailability": {
-        "type": "object",
-        "description": "Availability endpoint document.",
-        "required": [
-          "status",
-          "description"
-        ],
-        "properties": {
-          "description": {
-            "type": "string",
-            "description": "Human description of the outage window (if any)."
-          },
-          "status": {
-            "type": "string",
-            "description": "Availability status (always `available` when serving)."
-          }
-        }
-      },
-      "FdxCapability": {
-        "type": "object",
-        "description": "FDX capability announcement.",
-        "required": [
-          "fdxVersion",
-          "capabilities",
-          "dataClusters"
-        ],
-        "properties": {
-          "capabilities": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "Announced operation capabilities."
-          },
-          "dataClusters": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "Announced data clusters."
-          },
-          "fdxVersion": {
-            "type": "string",
-            "description": "The FDX spec version served."
-          }
-        }
-      },
-      "FdxConsentIntrospection": {
-        "type": "object",
-        "description": "Consent introspection document.",
-        "required": [
-          "consentId",
-          "customerId",
-          "status",
-          "scopes",
-          "dataClusters",
-          "createdAt",
-          "resources"
-        ],
-        "properties": {
-          "consentId": {
-            "type": "string",
-            "format": "uuid",
-            "description": "The consent id."
-          },
-          "createdAt": {
-            "type": "string",
-            "format": "date-time",
-            "description": "Creation timestamp."
-          },
-          "customerId": {
-            "type": "string",
-            "format": "uuid",
-            "description": "The customer that granted the consent."
-          },
-          "dataClusters": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "Granted data clusters."
-          },
-          "expiresAt": {
-            "type": [
-              "string",
-              "null"
-            ],
-            "format": "date-time",
-            "description": "Expiry (absent for unlimited consents)."
-          },
-          "resources": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/FdxConsentResource"
-            },
-            "description": "Resource-level grants."
-          },
-          "scopes": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "Granted scopes."
-          },
-          "status": {
-            "type": "string",
-            "description": "The consent status."
-          }
-        }
-      },
-      "FdxConsentResource": {
-        "type": "object",
-        "description": "One consented resource.",
-        "required": [
-          "resourceType",
-          "resourceId",
-          "dataClusters"
-        ],
-        "properties": {
-          "dataClusters": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "Data clusters granted on the resource."
-          },
-          "resourceId": {
-            "type": "string",
-            "description": "The resource id."
-          },
-          "resourceType": {
-            "type": "string",
-            "description": "Resource type (e.g. `account`)."
-          }
-        }
       },
       "FieldCondition": {
         "type": "object",
@@ -4796,7 +4735,7 @@
       "description": "Shield policy administration (shared surface)"
     },
     {
-      "name": "fdx",
+      "name": "open-ca",
       "description": "Bank8:OpenCA - open banking, FDX v6.5 provider/recipient"
     }
   ]

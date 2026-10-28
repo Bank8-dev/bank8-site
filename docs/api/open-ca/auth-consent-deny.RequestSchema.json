@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"type":"object","description":"`POST /v1/auth/consent/deny` - record consent denial.","properties":{"redirect_uri":{"type":["string","null"]},"state":{"type":["string","null"]}},"title":"ConsentDenyRequest"}}},"required":true}}

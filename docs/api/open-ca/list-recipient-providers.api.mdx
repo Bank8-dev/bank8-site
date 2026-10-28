@@ -1,0 +1,86 @@
+---
+id: list-recipient-providers
+title: "`GET /v1/recipient/providers` - list FDX data providers from the
+`provider_profiles` registry.
+Provider profiles are auto-registered when an environment's
+`is_fdx_provider` flag is turned on (see Sys `update_env`), with the
+env's auth domain used as the issuer URL. The table has no RLS, so the
+catalog is visible cross-org - any recipient can discover and connect to
+any active provider. No static seed data is required.
+Response shape matches the eFintech recipient catalog contract:
+`{ 'providers': [{ id, name, supportedDataClusters, status, ... }] }`,
+where each card reads `name`, `supportedDataClusters`, and `status`."
+description: "`GET /v1/recipient/providers` - list FDX data providers from the"
+sidebar_label: "`GET /v1/recipient/providers` - list FDX data providers from the
+`provider_profiles` registry.
+Provider profiles are auto-registered when an environment's
+`is_fdx_provider` flag is turned on (see Sys `update_env`), with the
+env's auth domain used as the issuer URL. The table has no RLS, so the
+catalog is visible cross-org - any recipient can discover and connect to
+any active provider. No static seed data is required.
+Response shape matches the eFintech recipient catalog contract:
+`{ 'providers': [{ id, name, supportedDataClusters, status, ... }] }`,
+where each card reads `name`, `supportedDataClusters`, and `status`."
+hide_title: true
+hide_table_of_contents: true
+api: eJztVk1vGzcQ/SsDXpwAlGynRRHszXU+EDSpC9kuCkiCd0yOtIxX5IbDXUsQ9r8Hs6sPW3bgAj30kpO0JOfxzcybGa5VwjmrbKxCRX5wi/7O+bmaavmOmFzwn6zKVOk43UQyrnLk000VQ+MsRVZaReIqeCZW2Vq9OTmRH0tsoqvEXGXq4g+llQk+kU+yi1VVOtOBH39lObJWbApaoPxLq4pUpsLtVzJJ6QOs0ZYDbDmAwYRlmA87Lt9qF8mKQ3uOUy0fFcXkepb7rf19GCOulFYu0YL/Cw8gn+LqkI2zSiuPC5IrmGuK17FUWs3s8m+KLKBacV1VISay7zDheVlz6kPMCVP9jB8PjPeEOUVJ4SHhq4Lgw7t/oOkNIBW0p27JlBiJh6rVQvUZtFmIC0wqU3Xd+fIY/a8tkrM9xs7Ff0VsS+SIobeE69HnDqgL2YsYu+ut46rEFYhZZ78J3YsII5o7Tr3ioTfq7Z9Nycuy2VzTHt4jMGA2OI+TwBSbLgWtVsmlkh44do7RPgXrSVMku0P5oX2nzdGmVlXbyqlfT355Wq1fHLPzc5jZZRYJLbAJFXWoTKaOLq1UNu7E1+2rbDxtp4fU8o/vr+C4OT3eNY3jHcUcBiANpdOjlYDstmAWw0LCMvH5dlG6zcyVxDnEPkur4cTvUr7dBYwEWKcwiPuw3BfkAT2Qb1wMfkE+HfHE545vZna562M5zEqcg2NIdfRkIXh4xURwuWLI68piohvyTf5aw71LRc+QfHPEcmUBNizQeaiZLGCf1wdCBtF4wtuSoEAGH2D0+VIDhx5n2zgcQ+PYyTETA/MgxDkMAP0KdlEEg15UbkJDEdBbMMF7MglSmHg5iia5Zi+rIfwZOkE7A0xk+4A7hm13Gk78VhbABVYEC0ymoN4L+uB8IlM8YtDTlY4e0aRs4vM1TPZddaIyGK/BWd3VoYZni0hvykzDcDiEdgptrif+vqBIQGgKMBgtiMIYcsHJNeTPIuW6C0Te4+XSeheUiiCDa07SuytMhcrUD/Qo5etnoaveTd3IIHw76GaiwSfN4pJ8cv4t/C6nsouK/PkZDOD8DB5O0cfShldd9/1tuIR7F+l1JvFj8mlgCjJ328RwgdI4dC8hP6hKNARcG0PMIUKYQc9tZpfiaOkMSUFn602rVF8+XcHFCM4qNAUN3gxPxD0rjGeO4rMHWq2a7RxRJ8PTfqkKnBboH0D/LOqfRf0/FvWjItxN2kTLdFyV6LyItu6fHH3Bj1Vz2r3DNl4q/fhVWAROcmq9vkWm61i2rSx/qynKjJtq1WB0kuJuyGlVEFqpofFa3dFKZerMGKoEt8Gy7t4Dh29bGY27bvTx/ZVq2+9M2w3b
+sidebar_class_name: "get api-method"
+info_path: docs/api/open-ca/bank-8-open-ca
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"`GET /v1/recipient/providers` - list FDX data providers from the\n`provider_profiles` registry.\nProvider profiles are auto-registered when an environment's\n`is_fdx_provider` flag is turned on (see Sys `update_env`), with the\nenv's auth domain used as the issuer URL. The table has no RLS, so the\ncatalog is visible cross-org - any recipient can discover and connect to\nany active provider. No static seed data is required.\nResponse shape matches the eFintech recipient catalog contract:\n`{ 'providers': [{ id, name, supportedDataClusters, status, ... }] }`,\nwhere each card reads `name`, `supportedDataClusters`, and `status`."}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v1/recipient/providers"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+`GET /v1/recipient/providers` - list FDX data providers from the
+`provider_profiles` registry.
+Provider profiles are auto-registered when an environment's
+`is_fdx_provider` flag is turned on (see Sys `update_env`), with the
+env's auth domain used as the issuer URL. The table has no RLS, so the
+catalog is visible cross-org - any recipient can discover and connect to
+any active provider. No static seed data is required.
+Response shape matches the eFintech recipient catalog contract:
+`{ "providers": [{ id, name, supportedDataClusters, status, ... }] }`,
+where each card reads `name`, `supportedDataClusters`, and `status`.
+
+<ParamsDetails>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./list-recipient-providers.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./list-recipient-providers.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

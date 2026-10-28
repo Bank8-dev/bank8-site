@@ -1,0 +1,80 @@
+---
+id: auth-consent-ui
+title: "`GET /v1/auth/consent/ui` - return RFW consent page definition.
+Returns a JSON RFW definition that auth-ui renders. The definition
+includes:
+- Scope list with FDX-specific descriptions and Material Icons code points
+- Account selection DataTable (checkboxes, nickname, type, masked number, balance)
+- 'Authorize' button (POST to /v1/auth/consent/approve)
+- 'Deny' button (POST to /v1/auth/consent/deny)
+- Data endpoint declaration for account fetch (/v1/auth/consent/accounts)"
+description: "`GET /v1/auth/consent/ui` - return RFW consent page definition."
+sidebar_label: "`GET /v1/auth/consent/ui` - return RFW consent page definition.
+Returns a JSON RFW definition that auth-ui renders. The definition
+includes:
+- Scope list with FDX-specific descriptions and Material Icons code points
+- Account selection DataTable (checkboxes, nickname, type, masked number, balance)
+- 'Authorize' button (POST to /v1/auth/consent/approve)
+- 'Deny' button (POST to /v1/auth/consent/deny)
+- Data endpoint declaration for account fetch (/v1/auth/consent/accounts)"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVk1vGzcQ/SuDOUnArmSnRZHsTfVH4LaJDUtFC1hGQpGzWkZckiVnZSuC/nsxK8t2oxx6b08LLmfefL1HcouslhmrO9TBZ/KM9wWGSEmxDf7KYIWq4+bT0+6nzmKBiXKUdcZqi29OTuRjKOtko3hhhde/YiGILIjVFlWMzuoec/wli8kWs26oVce+l+d/gtI6dJ7HusscWkrjzIqpJc8QVc7cpNAtGyC/JhciweB6cnNxVr6DJnjKPPd1IqpDaocVcENQh/SgkiEDMYW1NZTABN31gIPfyCwpjW/URtYZotq4oEwx92fT88uytd629iuZIdj87F9KdSk4R6aAHPooh77AIpgNXE3l59y/xH4OaTmTq6GETMkqJ+DASfkcVSLPbgODB5uotIY8W63csJj7gzcZUBmUhxDJQ1h8Ic3AAVZEsU9j31jwwZfURt7Ag+UmdDz31q8F0C+htuRM7s1dXz6EB59HWCBbdoQVTvYjyDcv/cbdbrcr8MeT0+OpfQwMwpR9wkwGe8sfji0/2JwlBYkts36i1jhrmeRSMaFEyaS7ZHmD1d198Q3E5/cXMxivT8cScXwA6OxnKCERd8nD7eUfB2SIaklgqLbeCsBo7m97owwKfplef+yNX/aBG7UvpuwsJPKGUh7BrHkNIs3UrjOUq7kvYdon72zmvttSWJkjaVtbDa+Sl8EZ+KC4HzxcSYqggyGIwXrOgvXUecjkSPcJnStWM7VwBAPdkF4twiPlArzVK69aKoA3kQpoVV6RAd+1C0oFLJRTXtNQMOc46bgJyX6lOcKiYw4eBjfX05lQ56iVKgrPD67n5Df/xsuQ3/Quki+QN31NYEg7tT9QRIgHcUNNrBsYHAd/Yt4QC2yJmyCn0JIYC4yKG6zwO6PHAq2vg9DtwOCF8qu3paik1Aq/5dC0V8Jb+FmsqutI/mwCJZxNel2V4iwsNVLK86ExEMKufxo9guhzWB0oVvZjEYmLeW5Usn5Z9BS3voxOaYLcaU05hwShhn1utXkUyTmryWeS3GWcopGrGVzfwiQq3VD5ZnQi5fWHQW0pfddgV+CaUt4XdzI63f+KIXOr/Cvo/7XzX9HOP/i+RakTK2R65HF0ynrhR5ec7O11dYfrUyz6C39/ffcPggI7K6+CJmQWm+12oTL9ntxuJ7//6ig9HdJrlax0Wla7AhtSRsh6t8UVbfZXCkUBXCvXSS5Hz4Ld/SvJv7+Y4W73NxSqBfs=
+sidebar_class_name: "get api-method"
+info_path: docs/api/open-ca/bank-8-open-ca
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"`GET /v1/auth/consent/ui` - return RFW consent page definition.\nReturns a JSON RFW definition that auth-ui renders. The definition\nincludes:\n- Scope list with FDX-specific descriptions and Material Icons code points\n- Account selection DataTable (checkboxes, nickname, type, masked number, balance)\n- 'Authorize' button (POST to /v1/auth/consent/approve)\n- 'Deny' button (POST to /v1/auth/consent/deny)\n- Data endpoint declaration for account fetch (/v1/auth/consent/accounts)"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v1/auth/consent/ui"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+`GET /v1/auth/consent/ui` - return RFW consent page definition.
+Returns a JSON RFW definition that auth-ui renders. The definition
+includes:
+- Scope list with FDX-specific descriptions and Material Icons code points
+- Account selection DataTable (checkboxes, nickname, type, masked number, balance)
+- "Authorize" button (POST to /v1/auth/consent/approve)
+- "Deny" button (POST to /v1/auth/consent/deny)
+- Data endpoint declaration for account fetch (/v1/auth/consent/accounts)
+
+<ParamsDetails>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./auth-consent-ui.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./auth-consent-ui.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      
