@@ -54,18 +54,6 @@
       ]
     },
     {
-      "slug": "openfin8-ca",
-      "kind": "service",
-      "name": "OpenFin8:CA",
-      "repo": "openfin8-ca",
-      "org": "OpenFin8",
-      "summary": "Canadian open banking (FDX v6.x, the OpenFin8 vertical): consent-checked data sharing between institutions, notifications, recipient registry - the consent authority for every provider call.",
-      "scopes": [
-        "openfin8:ca:consents:read",
-        "openfin8:ca:providers:read"
-      ]
-    },
-    {
       "slug": "reporting",
       "kind": "service",
       "name": "Bank8:Reporting",
@@ -165,12 +153,24 @@
       "accent": "#7B4FBF",
       "summary": "Delegates payments to Bank8:Payments for billing settlement.",
       "href": "https://bill8.dev/"
+    },
+    {
+      "slug": "openfin8",
+      "name": "OpenFin8",
+      "chip": "openfin8.dev",
+      "accent": "#0E7C66",
+      "summary": "The open-finance vertical: bank8 composes the OpenFin8:CA provider role for consent-checked data sharing.",
+      "href": "https://openfin8.dev/"
     }
   ],
   "crossrefs": [
     {
       "label": "Bank8:Payments settles billing for bill8",
       "url": "https://bank8.dev/docs/products/payments/"
+    },
+    {
+      "label": "Open banking is served by the OpenFin8 vertical",
+      "url": "https://openfin8.dev/"
     }
   ]
 }

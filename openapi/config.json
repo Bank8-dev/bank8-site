@@ -15,14 +15,6 @@
       "categoryLinkSource": "info"
     }
   },
-  "openfin8-ca": {
-    "specPath": "openapi/openfin8-ca-spec.json",
-    "outputDir": "docs/api/openfin8-ca",
-    "sidebarOptions": {
-      "groupPathsBy": "tag",
-      "categoryLinkSource": "info"
-    }
-  },
   "reporting": {
     "specPath": "openapi/reporting-spec.json",
     "outputDir": "docs/api/reporting",
