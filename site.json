@@ -54,15 +54,15 @@
       ]
     },
     {
-      "slug": "fdx",
+      "slug": "open-ca",
       "kind": "service",
-      "name": "Bank8:FDX",
-      "repo": "bank8-fdx",
+      "name": "Bank8:OpenCA",
+      "repo": "bank8-open-ca",
       "org": "Bank8-dev",
-      "summary": "FDX v6.5 open banking: consent-checked data sharing between institutions, notifications, recipient registry - the consent authority for every provider call.",
+      "summary": "Canadian open banking (FDX v6.x): consent-checked data sharing between institutions, notifications, recipient registry - the consent authority for every provider call.",
       "scopes": [
-        "bank8:fdx:consents:read",
-        "bank8:fdx:providers:read"
+        "bank8:open-ca:consents:read",
+        "bank8:open-ca:providers:read"
       ]
     },
     {
@@ -143,7 +143,7 @@
       "name": "bank8 Rust SDK",
       "repo": "bank8-sdk",
       "org": "Bank8-dev",
-      "summary": "The unified namespace facade (bank8::ledger::…, bank8::payments::…) over the contracts crates - the typed integration surface for every bank8 API.",
+      "summary": "The unified namespace facade (bank8::ledger::\u2026, bank8::payments::\u2026) over the contracts crates - the typed integration surface for every bank8 API.",
       "href": "/docs/sdk/"
     }
   ],

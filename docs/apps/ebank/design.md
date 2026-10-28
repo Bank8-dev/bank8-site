@@ -24,7 +24,7 @@ product activation, FDX provider administration); the app's listing manifest
 **What eBank does NOT own (delegates):** identity and consent issuance
 (Sentin8:Auth); financial truth (Bank8:Ledger); payment orchestration
 (Bank8:Payments); the FDX provider gateway and consent enforcement
-(Bank8:FDX); persistence (Sentin8:DB, via BFF); object storage (storage,
+(Bank8:OpenCA); persistence (Sentin8:DB, via BFF); object storage (storage,
 via BFF); notifications (post, via BFF); session/token custody (Sentin8:BFF);
 policy decisions (Shield within each backend service).
 
@@ -36,7 +36,7 @@ graph TD
     BFF --> AUTH1[Sentin8:Auth]
     BFF --> LED[Bank8:Ledger]
     BFF --> PAY[Bank8:Payments]
-    BFF --> FDX[Bank8:FDX]
+    BFF --> FDX[Bank8:OpenCA]
     BFF --> DB[db]
     BFF --> STG[storage]
     BFF --> POST[post]
@@ -112,7 +112,7 @@ service-owned and referenced by id:
 | Accounts, balances, postings, statements | Bank8:Ledger | read via proxy; account opening via `POST /v1/accounts` |
 | Products (13 product libraries incl. current, savings, US checking/savings, Shariah savings, time deposit, loan, credit card, mortgage, LOC, wallet, BNPL, home-loan redraw) | Bank8:Ledger | read via `GET /v1/products`; admin activation/override via `POST /v1/products/{id}/versions` |
 | Payments, account links (payees) | Bank8:Payments | read via `GET /v1/payments`, `GET /v1/account-links` |
-| Provider profile, recipients, FDX consents | Bank8:FDX | read/revoke via `/fdx/v6/*` + `/v1/admin/recipients` |
+| Provider profile, recipients, FDX consents | Bank8:OpenCA | read/revoke via `/fdx/v6/*` + `/v1/admin/recipients` |
 | Statement objects | storage | signed-read URLs only (`POST /v1/storage/sign-read`) |
 | Notifications | post | inbox read + mark-read (`/v1/messages*`) |
 
@@ -135,9 +135,9 @@ app itself has no listening port.
 | Payments history | `GET /proxy/bank8-payments/v1/payments`, `GET /v1/account-links` | customer session | payee + payment view |
 | Statements | `GET /v1/accounts/{id}/statements`, `GET /v1/accounts/statements`; `POST /proxy/storage/v1/storage/sign-read` | customer session; `storage:env:read` | signed download URLs |
 | Messages | `GET /proxy/post/v1/messages?mine&unread&limit`, `GET /v1/messages/{id}`, `POST /v1/messages/{id}/read` | customer session; `post:read/write` | inbox + unread badge |
-| FDX consents (customer side) | `GET /proxy/bank8-fdx/v1/fdx/v6/consents`, `PUT /fdx/v6/consents/{id}/revocation` | customer session; `fdx:provider:read/write` | review + revoke sharing |
+| FDX consents (customer side) | `GET /proxy/bank8-open-ca/v1/fdx/v6/consents`, `PUT /fdx/v6/consents/{id}/revocation` | customer session; `fdx:provider:read/write` | review + revoke sharing |
 | FDX capability | `GET /v1/fdx/v6/capability` | customer session | provider meta |
-| FDX recipients (admin) | `GET /v1/admin/recipients` | staff; `bank8:fdx:admin` | registration monitoring |
+| FDX recipients (admin) | `GET /v1/admin/recipients` | staff; `bank8:open-ca:admin` | registration monitoring |
 | Admin products | `GET /v1/products`, `POST /v1/products/{id}/versions` | staff; `bank8:ledger:products:write` (+`accounts:write:any` onboarding assist) | activate / parameter override |
 | Admin dashboard | runtime context only | staff | no backend calls |
 

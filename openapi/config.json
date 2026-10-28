@@ -15,14 +15,6 @@
       "categoryLinkSource": "info"
     }
   },
-  "fdx": {
-    "specPath": "openapi/fdx-spec.json",
-    "outputDir": "docs/api/fdx",
-    "sidebarOptions": {
-      "groupPathsBy": "tag",
-      "categoryLinkSource": "info"
-    }
-  },
   "reporting": {
     "specPath": "openapi/reporting-spec.json",
     "outputDir": "docs/api/reporting",
@@ -42,6 +34,14 @@
   "compliance": {
     "specPath": "openapi/compliance-spec.json",
     "outputDir": "docs/api/compliance",
+    "sidebarOptions": {
+      "groupPathsBy": "tag",
+      "categoryLinkSource": "info"
+    }
+  },
+  "open-ca": {
+    "specPath": "openapi/open-ca-spec.json",
+    "outputDir": "docs/api/open-ca",
     "sidebarOptions": {
       "groupPathsBy": "tag",
       "categoryLinkSource": "info"

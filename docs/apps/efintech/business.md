@@ -24,23 +24,23 @@ custom_edit_url: https://github.com/Bank8-dev/bank8-efintech/edit/main/BUSINESS.
 
 | Capability | Delivered through |
 |---|---|
-| External provider catalog browsing + provider detail | Bank8:FDX recipient APIs |
-| Consent journey initiation (hand-off to hosted authorization UI) | Bank8:FDX + Sentin8:Auth |
-| Consent status tracking (bounded polling to a terminal state) | Bank8:FDX |
-| Consent revocation and refresh from the fintech side | Bank8:FDX |
-| Consented account listing (consent-filtered) | Bank8:FDX |
-| Consented transaction history (paginated) | Bank8:FDX |
+| External provider catalog browsing + provider detail | Bank8:OpenCA recipient APIs |
+| Consent journey initiation (hand-off to hosted authorization UI) | Bank8:OpenCA + Sentin8:Auth |
+| Consent status tracking (bounded polling to a terminal state) | Bank8:OpenCA |
+| Consent revocation and refresh from the fintech side | Bank8:OpenCA |
+| Consented account listing (consent-filtered) | Bank8:OpenCA |
+| Consented transaction history (paginated) | Bank8:OpenCA |
 | Instance admin overview (staff) | runtime context |
-| FDX recipient-side administration (staff) | Bank8:FDX |
+| FDX recipient-side administration (staff) | Bank8:OpenCA |
 
 **What eFintech does NOT own (business boundary):**
 
 | Concern | Owning service |
 |---|---|
 | Identity, hosted sign-in and consent UI | Sentin8:Auth |
-| Provider gateway, consent enforcement, data retrieval | Bank8:FDX |
+| Provider gateway, consent enforcement, data retrieval | Bank8:OpenCA |
 | Financial truth at the provider bank | Bank8:Ledger / Bank8:Payments (provider side) |
-| Session/token custody (incl. provider tokens) | Sentin8:BFF / Bank8:FDX |
+| Session/token custody (incl. provider tokens) | Sentin8:BFF / Bank8:OpenCA |
 | Structured persistence | Sentin8:DB |
 | Document/object bytes | storage |
 
@@ -63,7 +63,7 @@ Operations it triggers *upstream*:
 
 | Operation in app | Upstream effect |
 |---|---|
-| Consent start → customer authorizes | Consent lifecycle transitions in Bank8:FDX (and provider-side notification) |
+| Consent start → customer authorizes | Consent lifecycle transitions in Bank8:OpenCA (and provider-side notification) |
 | Consent revoke | Consent-terminated event; linked recipient tokens invalidated |
 | Consent refresh | Re-authorization journey; consent lifecycle restarts |
 
@@ -111,7 +111,7 @@ in this app today.
 |---|---|
 | Sentin8:Auth | Sign-in/sign-up; hosted consent UI; consent authorization |
 | Sentin8:BFF | Session custody, token attach, scope gating, proxy |
-| Bank8:FDX | Provider registry, consent lifecycle, consented data retrieval |
+| Bank8:OpenCA | Provider registry, consent lifecycle, consented data retrieval |
 | Sentin8:App | Instance provisioning, runtime context, listing |
 | Sentin8:TLS | Hostname → instance resolution, TLS termination |
 | Provider side (Bank8:eBank tenant) | Supplies the consented accounts/transactions through the provider plane |

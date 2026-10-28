@@ -1,1 +1,0 @@
-{"title":"Body","body":{"content":{"application/json":{"schema":{"type":"object","required":["method_type"],"properties":{"instrument":{"title":"Value"},"method_type":{"type":"string","description":"e.g. US_ACH | US_RTP | CARD"}},"title":"CreatePipPaymentMethodRequest"}}},"required":true}}

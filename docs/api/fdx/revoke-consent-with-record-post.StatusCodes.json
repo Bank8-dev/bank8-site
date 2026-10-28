@@ -1,1 +1,0 @@
-{"responses":{"200":{"description":"Revoked via the POST alias (delegates to the PUT revocation surface)"},"403":{"description":"Delegated subject must be the grant's customer"}}}

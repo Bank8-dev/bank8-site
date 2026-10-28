@@ -34,10 +34,10 @@ custom_edit_url: https://github.com/Bank8-dev/bank8-ebank/edit/main/BUSINESS.md
 | External payments & payee history view | Bank8:Payments |
 | Statement list and secure download | Bank8:Ledger + storage signed URLs |
 | In-app notification inbox with unread indicator | post + SSE |
-| FDX consent review and revocation (customer side) | Bank8:FDX |
+| FDX consent review and revocation (customer side) | Bank8:OpenCA |
 | Instance admin overview (staff) | runtime context |
 | Product activation & parameter overrides (staff) | Bank8:Ledger |
-| FDX provider profile, recipient registry, consent monitoring (staff) | Bank8:FDX |
+| FDX provider profile, recipient registry, consent monitoring (staff) | Bank8:OpenCA |
 
 **What eBank does NOT own (business boundary):**
 
@@ -46,7 +46,7 @@ custom_edit_url: https://github.com/Bank8-dev/bank8-ebank/edit/main/BUSINESS.md
 | Identity, consent issuance, hosted sign-in | Sentin8:Auth |
 | Financial truth (balances, postings, products) | Bank8:Ledger |
 | Payment orchestration, limits, risk | Bank8:Payments |
-| FDX provider gateway, consent enforcement, data minimization | Bank8:FDX |
+| FDX provider gateway, consent enforcement, data minimization | Bank8:OpenCA |
 | Session/token custody | Sentin8:BFF |
 | Structured persistence | Sentin8:DB |
 | Statement/document bytes | storage |
@@ -74,7 +74,7 @@ Business events the app triggers *upstream* by performing operations:
 | Operation in app | Upstream event fired by the owning service |
 |---|---|
 | Transfer / account opening / customer provisioning | Ledger posting & account events (Bank8:Ledger) |
-| Consent revocation | FDX consent lifecycle event (Bank8:FDX) |
+| Consent revocation | FDX consent lifecycle event (Bank8:OpenCA) |
 | Product activation / override (staff) | Ledger product event (Bank8:Ledger) |
 
 **Inbound (consumed):** notification events delivered over SSE
@@ -122,7 +122,7 @@ the inbox unread badge live.
 | Sentin8:BFF | Session custody, token attach, scope gating, proxy |
 | Bank8:Ledger | Products, accounts, balances, postings, statements, customers |
 | Bank8:Payments | Payments and payee history |
-| Bank8:FDX | Consent surfaces, provider profile, recipients |
+| Bank8:OpenCA | Consent surfaces, provider profile, recipients |
 | Sentin8:App | Instance provisioning, runtime context, listing |
 | Sentin8:Bus + post | Notification fan-out to the SSE stream |
 | Sentin8:TLS | Hostname → instance resolution, TLS termination |
