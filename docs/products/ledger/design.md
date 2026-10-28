@@ -36,7 +36,7 @@ graph TD
     subgraph vertical["bank8 vertical"]
         LEDGER["Bank8:Ledger"]
         PAY["Bank8:Payments"]
-        FDX["Bank8:OpenCA"]
+        FDX["Bank8:FDX"]
         PG[("bank8 database")]
     end
     subgraph clients

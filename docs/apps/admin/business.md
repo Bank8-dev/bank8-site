@@ -28,7 +28,7 @@ custom_edit_url: https://github.com/Bank8-dev/bank8-admin/edit/main/BUSINESS.md
 | Sentin8 service enablement per environment (view + toggle) | Sentin8:Sys |
 | Ledger administration: products (create), accounts, postings, schedules, DLQ, balances, customers, audit | Bank8:Ledger admin APIs + RFW |
 | Payments administration: instructions, rules, cards, files, integrations, manual decisions, mandates, templates, calendars, dashboards | Bank8:Payments admin APIs + RFW |
-| FDX administration: provider profile, recipients, consents | Bank8:OpenCA admin APIs + RFW |
+| FDX administration: provider profile, recipients, consents | Bank8:FDX admin APIs + RFW |
 | RFW-rendered service admin pages (fetch, render, submit) | platform RFW contract via BFF |
 
 **What Admin does NOT own (business boundary):**
@@ -37,7 +37,7 @@ custom_edit_url: https://github.com/Bank8-dev/bank8-admin/edit/main/BUSINESS.md
 |---|---|
 | Staff identity and sign-in | Sentin8:Auth |
 | Session/token custody, scope gating | Sentin8:BFF |
-| Admin UX definitions and their business logic | Bank8:Ledger / Bank8:Payments / Bank8:OpenCA |
+| Admin UX definitions and their business logic | Bank8:Ledger / Bank8:Payments / Bank8:FDX |
 | Vertical service enablement state | Sentin8:Sys |
 | Structured persistence | Sentin8:DB |
 | Policy decisions | Shield within each service |
@@ -111,7 +111,7 @@ refresh on page entry.
 | Sentin8:BFF | Staff session, token attach, scope gating, proxy |
 | Bank8:Ledger | Ledger admin data + RFW definitions + health |
 | Bank8:Payments | Payments admin data + RFW definitions + health |
-| Bank8:OpenCA | FDX admin data + RFW definitions + health |
+| Bank8:FDX | FDX admin data + RFW definitions + health |
 | Sentin8:Sys | Service enablement per environment |
 | Sentin8:App | Instance provisioning, runtime context, listing |
 | Sentin8:TLS | Hostname → instance resolution, TLS termination |
