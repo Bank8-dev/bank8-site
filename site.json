@@ -24,6 +24,10 @@
       "summary": "Compliance detects (KYC, screening, monitoring); Reporting is the single filing executor - separation of duty is structural."
     },
     {
+      "title": "Zero-downtime product releases",
+      "summary": "Product logic ships as WASM edge functions on Sentin8:Func - upload, validate, simulate, activate as data operations; no core restart, no migration window. A buggy hook is sandboxed away from the ledger's atomic commit."
+    },
+    {
       "title": "Tenant isolation on every row",
       "summary": "Every table FORCE-RLS'd on env_id; customer-held records add holder scoping. The bank8 database is the vertical's own - the platform never queries it."
     }

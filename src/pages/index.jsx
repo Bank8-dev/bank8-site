@@ -2,7 +2,7 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 import {
-  Hero, SystemMap, Section, StartHere, ProductGrid, AppGrid, SdkGrid, VerticalShowcase, SecurityPillars,
+  Hero, SystemMap, Section, StartHere, ProductGrid, AppGrid, SdkGrid, VerticalShowcase, SecurityPillars, UseCaseGrid,
 } from '@sentin8/site-engine/components';
 import site from '../../site.json';
 
@@ -19,6 +19,10 @@ const mapPlanes = [
     items: ['Bank8:Risk', 'Bank8:Compliance', 'Bank8:Reporting'],
   },
   {
+    title: 'Extensibility',
+    items: ['Sentin8:Func (WASM)'],
+  },
+  {
     title: 'Apps',
     items: ['eBank', 'eTeller', 'Bank8 Admin'],
   },
@@ -27,6 +31,11 @@ const mapPlanes = [
     items: ['bank8 Rust SDK', 'Rust + Flutter clients'],
   },
 ];
+
+const edgeWire =
+`[ Bank8:Ledger ] ──(atomic commit)──> [ Sentin8:Func WASM sandbox ]
+       ▲                                      │
+       └────(host calls · PQC proxy-back)─────┘`;
 
 export default function Home() {
   return (
@@ -61,6 +70,35 @@ export default function Home() {
             href: '/docs/developers',
           },
         ]} />
+
+        <Section
+          id="extensibility"
+          title="Extend products with edge functions"
+          lead="Bank8 decouples the core ledger from product logic: custom banking behavior compiles to WASM and runs in Sentin8:Func, the platform's isolated execution service. No script engine ever enters the transaction loop - a crashing hook is sandboxed away from money movement."
+        >
+          <pre className="s8-wire" aria-label="ledger and edge function wire diagram"><code>{edgeWire}</code></pre>
+          <UseCaseGrid items={[
+            {
+              name: 'Total blast-radius isolation',
+              summary: 'Fee hooks, tiered pricing, and limits run as sandboxed WASM: linear memory + fuel + epoch deadline, WASI rejected outright, imports allowlisted.',
+              body: 'The core ledger carries no WASM runtime - it implements only the proxy-back endpoint. A module failure surfaces as a structured error, never as a ledger defect.',
+            },
+            {
+              name: 'Polyglot authoring',
+              summary: 'Rust and TypeScript are first-class targets; any language that lowers to standard WASM works. No proprietary DSL, no vendor lock-in.',
+              body: 'Modules are plain WASM binaries validated at upload: exports checked, imports matched to declared host functions.',
+            },
+            {
+              name: 'Zero-downtime releases',
+              summary: 'Upload, validate, simulate, activate - product logic deploys like configuration. draft → active supersedes the running version without a core restart.',
+              body: 'Ledger product versions pin their own module; Payment logics migrate inline hooks automatically via POST /v1/logics/{id}/migrate-wasm.',
+            },
+          ]} />
+          <p style={{ textAlign: 'center', margin: '1rem 0 0' }}>
+            <a className="s8-btn" href="/docs/extensibility/">How edge functions work →</a>
+            <a className="s8-btn" href="/docs/products/ledger/" style={{ marginLeft: '0.6rem' }}>The ledger invariants →</a>
+          </p>
+        </Section>
 
         {site.units?.length ? (
           <Section

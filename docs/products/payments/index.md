@@ -27,6 +27,19 @@ the only writer of money positions** (never shadow-written here).
 - **Re-drive worker** - at-fault settlements re-drive automatically
   (embedded SSE consumer over Bus events).
 
+### Extensible instruction logic
+- **Hooks as WASM** - instruction logics compose `BasicStep` hooks
+  whose code runs as sandboxed WASM modules on Sentin8:Func (see
+  [Extending Bank8](/docs/extensibility)); the orchestrator stays out
+  of the sandbox and out of the blast radius.
+- **Zero-downtime logic releases** - ship a new hook with plain
+  uploads: `upload → validate → activate` on Func supersedes the
+  running module without a payments restart; per-step
+  `wasmModuleId` bindings point at the new version.
+- **Bulk migration** - `POST /v1/logics/{id}/migrate-wasm` walks an
+  instruction logic's inline hooks and turns them into Func modules
+  automatically (per-step results reported).
+
 ### Cross-vertical consumers
 - **Hotel8 commerce** - property POS/settlement flows delegate here.
 - **Bill8 settlement** - billing payments settle through the same
@@ -41,6 +54,7 @@ the only writer of money positions** (never shadow-written here).
 | Cards | authorizations, captures | `bank8:payments:cards:*` |
 | Mandates | `GET/POST /v1/mandates`, lifecycle | `bank8:payments:mandates:*` |
 | Rules | routing/validation rules | `bank8:payments:rules:*` |
+| Logics (hooks) | `GET/POST /v1/logics`, `POST /v1/logics/{id}/migrate-wasm` (inline hooks → Func WASM) | `bank8:payments:logics:*` |
 
 ## Events (the vertical's busiest emitter)
 

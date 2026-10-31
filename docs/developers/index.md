@@ -48,6 +48,11 @@ SQL and re-run `vertical init`.
   (see [samples](/docs/samples))
 - **Events**: subscribe to `bank8:{service}:{resource}:{operation}`
   through Sentin8:Bus (declarative triggers at enrollment)
+- **Product logic**: author WASM edge functions (Rust and TypeScript
+  first-class; any WASM producer works) and deploy them to
+  Sentin8:Func - the ledger fires `pre_posting`/`post_posting`
+  hooks around the atomic commit and hosts them through the
+  proxy-back endpoint. See [Extending Bank8](/docs/extensibility).
 
 ## E2E
 

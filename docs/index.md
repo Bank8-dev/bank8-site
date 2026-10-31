@@ -28,6 +28,9 @@ graph TD
         CMP["Bank8:Compliance"]
     end
     EB & EF & ET & AD -->|"via Sentin8:BFF"| vertical
+    LEDGER -->|"hooks: pre/post_posting · scheduled"| FUNC["Sentin8:Func (WASM)"]
+    PAY -->|"instruction logics"| FUNC
+    FUNC -->|"host calls · proxy-back"| LEDGER
     PAY -->|"postings"| LEDGER
     FDX -->|"consent-checked reads"| LEDGER & PAY
     CMP -->|"suspicious:detected"| RPT
@@ -44,6 +47,21 @@ graph TD
 | [Reporting](/docs/products/reporting) | regulatory filings - calendar, generation, submission |
 | [Risk](/docs/products/risk) | prudential risk - capital, liquidity, limits, ECL |
 | [Compliance](/docs/products/compliance) | AML/CTF - KYC, screening, monitoring, cases |
+| Edge functions ([extensibility](/docs/extensibility)) | product logic as isolated WASM on Sentin8:Func - the product factory's hook plane |
+
+## Extending Bank8: edge functions
+
+Bank8 decouples the core ledger from product logic. Custom banking
+behavior - fee hooks, tiered interest, velocity limits, sweeps -
+compiles to WASM and runs in **Sentin8:Func**, the platform's isolated
+edge-function service. The ledger fires `pre_posting` / `post_posting` /
+`scheduled_event` / activation hooks around its atomic commit, and the
+sandbox calls back through a certificate-bound host-function endpoint.
+Modules are polyglot (Rust and TypeScript first-class, any WASM producer
+beyond that), deployed as data operations (`upload → validate →
+simulate → activate`, **no core restart**), and can never touch money
+movement except through the same validation pipeline every posting
+rides. Read [Extending Bank8](/docs/extensibility).
 
 ## Security
 

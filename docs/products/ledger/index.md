@@ -43,6 +43,8 @@ service owns exclusively.
 | Schedules | `GET/POST /v1/schedules`, tags, associations | `bank8:ledger:schedules:*` |
 | Customers | `GET/POST /v1/customers`, link-auth | `bank8:ledger:customers:write` |
 | Parameters | `/v1/parameters`, `viewEffective`, derived values | `bank8:ledger:parameters:*` |
+| Product versions (WASM) | `POST/GET /v1/products/{id}/versions` - per-version WASM registry (`wasm_hash`, language, hooks); pending → active pointer, no restart | `bank8:ledger:products:write` |
+| Function hooks | `POST /v1/contracts/simulate` (synthetic-state dry run), `POST /v1/internal/func-host` (Sentin8:Func proxy-back: `get_account`, `get_balance`, `set_flag`, `create_posting`) | M2M + hook scopes |
 
 ## Invariants
 
@@ -52,6 +54,12 @@ service owns exclusively.
   unique index + ON CONFLICT.
 - Audit + outbox inserts propagate errors *inside* the posting
   transaction: a posting whose audit/event write fails never commits.
+- Product logic is external by construction: hooks compile to WASM
+  and run in Sentin8:Func around the atomic commit - the ledger has
+  **no WASM runtime of its own**, only the proxy-back handler. Even a
+  hook-initiated posting re-enters the full validation pipeline
+  (unbalanced batches still rejected 422). Read
+  [Extending Bank8](/docs/extensibility).
 
 ## Full documentation
 

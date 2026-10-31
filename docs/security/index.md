@@ -29,6 +29,12 @@ certificate-only identity, and stores every table behind FORCE RLS on
    regress.
 6. **Separation of duty** - Compliance detects; Reporting files. Risk
    measures; the ledger records. No service both detects and files.
+7. **Extension code never touches the commit** - tenant hooks run as
+   sandboxed WASM on Sentin8:Func (fuel + memory + epoch deadline, WASI
+   rejected, imports allowlisted), invoked around the ledger's atomic
+   commit. A hook moves money only by re-entering the posting pipeline
+   through the certificate-bound proxy-back endpoint - so unbalanced
+   batches are still rejected and idempotency still dedupes.
 
 ## Open banking between institutions
 
