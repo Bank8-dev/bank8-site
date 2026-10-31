@@ -73,7 +73,7 @@ export default function Home() {
 
         <Section
           id="extensibility"
-          title="Extend products with edge functions"
+          title="Customise and extend products with edge functions"
           lead="Bank8 decouples the core ledger from product logic: custom banking behavior compiles to WASM and runs in Sentin8:Func, the platform's isolated execution service. No script engine ever enters the transaction loop - a crashing hook is sandboxed away from money movement."
         >
           <pre className="s8-wire" aria-label="ledger and edge function wire diagram"><code>{edgeWire}</code></pre>
