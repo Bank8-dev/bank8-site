@@ -62,6 +62,7 @@ graph TD
 | `/docs/developers/` | Single-repo story, lifecycle, Make targets |
 | `/docs/samples/` | cURL + Dart + Rust first calls |
 | `/docs/reference/{unit}/` | Harvested README/DESIGN/BUSINESS per unit |
+| `/privacy` · `/terms` | Vertical legal pages: Privacy Policy and Terms of Service (also every footer legal link target) |
 
 ## 5. Development
 
