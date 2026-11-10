@@ -13,13 +13,8 @@ service owns exclusively.
 ## Use cases
 
 ### Retail & business banking
-- **Account opening** - products compose validation modules (limits,
-  overdraft rules, sweeps, tiered rates); parameters resolve through
-  the hierarchy (global → product → account) so a product change never
-  needs data migration.
-- **Transfers** - a transfer is one `POST /v1/postings` call with a
-  batch and a single instruction; retries with the same
-  `idempotency_key` are safe by construction.
+- **Account opening** - an open product factory: any financial product is creatable as data (free-form type + parameters + validation modules); products compose validation modules (limits, overdraft rules, sweeps, tiered rates) and parameters resolve through the hierarchy (global → product → account) so a product change never needs data migration. Read [The product factory](/docs/products/product-factory).
+- **Transfers** - a transfer is one `POST /v1/postings` call with a batch and a single instruction; retries with the same `idempotency_key` are safe by construction.
 - **Scheduled postings** - due schedules generate posting batches in
   one transaction per batch (recurring fees, sweeps, interest).
 
@@ -59,6 +54,7 @@ service owns exclusively.
   **no WASM runtime of its own**, only the proxy-back handler. Even a
   hook-initiated posting re-enters the full validation pipeline
   (unbalanced batches still rejected 422). Read
+  [The product factory](/docs/products/product-factory) and
   [Extending Bank8](/docs/extensibility).
 
 ## Full documentation

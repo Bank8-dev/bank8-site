@@ -41,6 +41,7 @@ graph TD
 
 | Product | Role |
 |---|---|
+| [Product factory](/docs/products/product-factory) | limitless products - any financial product created as data on one unified ledger (no fixed catalog) |
 | [Ledger](/docs/products/ledger) | core ledger - accounts, products, postings, balances |
 | [Payments](/docs/products/payments) | orchestration over ISO 20022 schemes, cards, mandates |
 | [Open Banking](https://openfin8.dev/) (the OpenFin8 vertical) | consent-checked data sharing - composed from the openfin8 vertical |
@@ -51,8 +52,9 @@ graph TD
 
 ## Extending Bank8: edge functions
 
-Bank8 decouples the core ledger from product logic. Custom banking
-behavior - fee hooks, tiered interest, velocity limits, sweeps -
+Bank8 decouples the core ledger from product logic. There is no fixed
+product catalog - **any** financial product is created as data, and custom
+banking behavior - fee hooks, tiered interest, velocity limits, sweeps -
 compiles to WASM and runs in **Sentin8:Func**, the platform's isolated
 edge-function service. The ledger fires `pre_posting` / `post_posting` /
 `scheduled_event` / activation hooks around its atomic commit, and the
@@ -61,7 +63,8 @@ Modules are polyglot (Rust and TypeScript first-class, any WASM producer
 beyond that), deployed as data operations (`upload → validate →
 simulate → activate`, **no core restart**), and can never touch money
 movement except through the same validation pipeline every posting
-rides. Read [Extending Bank8](/docs/extensibility).
+rides. Read [The product factory](/docs/products/product-factory) and
+[Extending Bank8](/docs/extensibility).
 
 ## Security
 

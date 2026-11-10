@@ -10,10 +10,11 @@ Most cores that promise "extensibility" embed a scripting engine
 inside the transaction loop: one bad script can steal the ledger's
 CPU, corrupt its state machine, or take the whole core down with it.
 Bank8 takes the opposite path - **the core ledger contains no product
-code and no script engine at all**. Custom banking logic compiles to
-WebAssembly and runs in **Sentin8:Func**, the platform's dedicated
-edge-function execution service, invoked asynchronously from well-defined
-ledger hooks.
+code and no script engine at all**. Products are limitless data
+compositions (see [The product factory](/docs/products/product-factory)),
+and custom banking logic compiles to WebAssembly and runs in
+**Sentin8:Func**, the platform's dedicated edge-function execution
+service, invoked asynchronously from well-defined ledger hooks.
 
 ## The wire
 

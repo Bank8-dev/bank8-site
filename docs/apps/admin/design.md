@@ -31,7 +31,7 @@ graph TD
     BFF -->|RFW definitions| LED[bank8-ledger]
     BFF -->|admin data APIs| LED
     BFF -->|RFW + admin data| PAY[bank8-payments]
-    BFF -->|RFW + admin data| FDX[openfin8-ca]
+    BFF -->|RFW + admin data| FDX[OpenFin8:CA<br/>(open banking)]
     BFF -->|service enablement| SYS[Sentin8:Sys]
     BFF --> DB[db]
     BFF --> STG[storage]
@@ -109,7 +109,7 @@ state:
 | RFW admin UI definitions | each service (`GET /v1/admin/ui/{page}`) | fetch + render + submit |
 | Ledger admin data (products, accounts, postings, schedules, DLQ, balances, customers, audit) | Bank8:Ledger | list/read (+ product create) via admin data APIs |
 | Payments admin data (instructions, rules, cards, files, integrations, manual-decisions, mandates, templates, calendars, dashboards) | Bank8:Payments | list/read via admin data APIs |
-| FDX admin data (provider profile, recipients, consents) | OpenFin8 | read via admin data APIs |
+| Open-banking admin data (provider profile, recipients, consents) | OpenFin8:CA | read via admin data APIs |
 | Service enablement | Sentin8:Sys | read + toggle per env |
 | Service health | each service `/v1/health` | read |
 
@@ -128,7 +128,7 @@ All backend calls are BFF-proxied; the app has no listening port.
 | RFW data actions | `POST /proxy/{service}/v1/admin/{resource}` | staff; service admin scopes | forms/mutations (POST alias contract) |
 | Ledger sections | `GET /v1/products`, `POST /v1/products`, `GET /v1/accounts`, `GET /v1/postings`, `GET /v1/schedules`, `GET /v1/dlq`, `GET /v1/balances`, `GET /v1/customers`, `GET /v1/audit` | staff; `bank8:ledger:*` admin scopes | hand-written section pages |
 | Payments sections | `GET /v1/instructions`, `GET /v1/rules`, `GET /v1/cards`, `GET /v1/files`, `GET /v1/integrations`, `GET /v1/manual-decisions`, `GET /v1/mandates`, `GET /v1/templates`, `GET /v1/calendars`, `GET /v1/dashboards` | staff; `bank8:payments:*` admin scopes | hand-written section pages |
-| FDX sections | `GET /v1/provider/profile`, `GET /v1/recipient/providers`, `GET /v1/admin/consents` | staff; `openfin8:ca:*` admin scopes | hand-written section pages |
+| Open-banking sections | `GET /v1/provider/profile`, `GET /v1/recipient/providers`, `GET /v1/admin/consents` | staff; `openfin8:ca:*` admin scopes | hand-written section pages |
 
 **OAuth scope manifest** (~56 scopes): identity (`openid`, `profile`,
 `email`, `offline_access`); ledger (products/accounts/postings/schedules

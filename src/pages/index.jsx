@@ -83,6 +83,11 @@ export default function Home() {
           </div>
           <UseCaseGrid items={[
             {
+              name: 'Limitless products, one ledger',
+              summary: 'No fixed product catalog: any financial product - retail checking, mortgages, BNPL, tokenized asset balances - is created as data on the same unified ledger.',
+              body: 'A product is a row (free-form type + parameters + validation modules), not a code path. Unknown types are first-class and compose from the full module library; shipped blueprints are starting points, never a ceiling.',
+            },
+            {
               name: 'Total blast-radius isolation',
               summary: 'Fee hooks, tiered pricing, and limits run as sandboxed WASM: linear memory + fuel + epoch deadline, WASI rejected outright, imports allowlisted.',
               body: 'The core ledger carries no WASM runtime - it implements only the proxy-back endpoint. A module failure surfaces as a structured error, never as a ledger defect.',
@@ -99,7 +104,8 @@ export default function Home() {
             },
           ]} />
           <p style={{ textAlign: 'center', margin: '1rem 0 0' }}>
-            <a className="s8-btn" href="/docs/extensibility/">How edge functions work →</a>
+            <a className="s8-btn" href="/docs/products/product-factory/">The limitless product factory →</a>
+            <a className="s8-btn" href="/docs/extensibility/" style={{ marginLeft: '0.6rem' }}>How edge functions work →</a>
             <a className="s8-btn" href="/docs/products/ledger/" style={{ marginLeft: '0.6rem' }}>The ledger invariants →</a>
           </p>
         </Section>
