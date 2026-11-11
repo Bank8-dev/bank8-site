@@ -3,7 +3,7 @@
   "name": "Bank8",
   "org": "Bank8-dev",
   "domain": "bank8.dev",
-  "tagline": "Open-Source Post-Quantum Core Banking Platform (Apache 2.0): ISO 20022 payments, ledger and FX in Rust - heals and scales itself.",
+  "tagline": "Open-Source Post-Quantum Core Banking Platform - ISO 20022 Payments, Ledger and FX That Heals and Scales Itself.",
   "accent": "#1B6CA8",
   "pillarsLead": "Bank8 inherits the Sentin8 security model by construction - every service runs behind the platform's authorization pipeline, tenant isolation, and post-quantum TLS.",
   "pillars": [
@@ -168,5 +168,6 @@
       "label": "Open banking is served by the OpenFin8 vertical",
       "url": "https://openfin8.dev/"
     }
-  ]
+  ],
+  "heroTagline": "Open-Source Post-Quantum Core Banking Platform - ISO 20022 payments, ledger and FX; heals and scales itself."
 }
