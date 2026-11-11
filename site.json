@@ -3,7 +3,7 @@
   "name": "Bank8",
   "org": "Bank8-dev",
   "domain": "bank8.dev",
-  "tagline": "Secure Post-Quantum-Safe Core Banking, ISO 20022 Payments Platform That Heals and Scales Itself.",
+  "tagline": "Open-Source Post-Quantum Core Banking Platform (Apache 2.0): ISO 20022 payments, ledger and FX in Rust - heals and scales itself.",
   "accent": "#1B6CA8",
   "pillarsLead": "Bank8 inherits the Sentin8 security model by construction - every service runs behind the platform's authorization pipeline, tenant isolation, and post-quantum TLS.",
   "pillars": [
@@ -127,7 +127,7 @@
       "name": "bank8 Rust SDK",
       "repo": "bank8-sdk",
       "org": "Bank8-dev",
-      "summary": "The unified namespace facade (bank8::ledger::\u2026, bank8::payments::\u2026) over the contracts crates - the typed integration surface for every bank8 API.",
+      "summary": "The unified namespace facade (bank8::ledger::…, bank8::payments::…) over the contracts crates - the typed integration surface for every bank8 API.",
       "href": "/docs/sdk/"
     }
   ],
