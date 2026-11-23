@@ -6,7 +6,7 @@
   "tagline": "Open-Source Secure Post-Quantum-Safe Core Banking, ISO 20022 Payments Platform That Heals and Scales Itself.",
   "heroEyebrow": "Open-Source Core Banking",
   "heroTitle": "Bank8: Autonomous Quantum-Safe Core Banking",
-  "heroDescription": "A complete core banking system for regulated institutions: a double-entry ledger of record with provable invariants, ISO 20022 payment orchestration across every rail, prudential risk from Basel capital to IFRS 9 provisions, AML/CTF detection, and jurisdiction-aware regulatory filing. Money movement is idempotent, consent-checked data sharing is built in, and products release with zero downtime on a ledger that never shadow-writes a balance.",
+  "heroDescription": "Core banking for regulated institutions. A ledger of record with provable invariants, ISO 20022 payments on every rail, prudential risk, AML detection and regulatory filing in one system.",
   "accent": "#1B6CA8",
   "pillarsLead": "Bank8 inherits the Sentin8 security model by construction - every service runs behind the platform's authorization pipeline, tenant isolation, and post-quantum TLS.",
   "pillars": [
